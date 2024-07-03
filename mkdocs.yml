@@ -23,7 +23,7 @@ theme:
     - search.highlight
     - search.share
     - search.suggest
-    - toc.integrate
+#    - toc.integrate
 
   plugins:
     - typeset
@@ -46,10 +46,6 @@ theme:
         icon: material/weather-sunny
         name: Lülitu tumedale režiimile
 
-#markdown_extensions:
-#   - toc:
-#      permalink: true
-
 markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
@@ -63,6 +59,8 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.mark
   - attr_list
+  - toc:
+      permalink: true
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji 
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
@@ -71,14 +69,16 @@ markdown_extensions:
 copyright: Copyright &copy; 2024 Priit Paap
 
 nav:
-  - Avalehele: http://127.0.0.1:8000/
-  - Õppematerjalid:
-    - 'Sissejuhatuseks':
-      - 'Sissejuhatuseks': intro.md
-    - 'Windows':
+  - Avalehele: https://priitpaap.github.io
+  - Operatsioonisüsteemid:
+    - 'Windows OS':
       - 'Windowsi paigaldamine virutaalmasinale': leht1.md
       - 'Windows Serveri paigaldamine virutaalmasinale': leht2.md 
-    - 'Linux':
+    - 'Linux OS':
       - 'Linuxi paigaldamine virutaalmasinale': leht3.md
       - 'Linux serveri paigaldamine virutaalmasinale': leht4.md 
-  - Mingi tore link: https://priiduveeb.eu
+ # - Mingi tore link: https://priiduveeb.eu
+  - Skriptimine:
+    - 'Bash skriptid':
+      - 'Lession 1': bash1.md
+      - 'Lession 2': bash2.md 

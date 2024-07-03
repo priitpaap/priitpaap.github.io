@@ -1,1 +1,1 @@
-icon:material/microsoft-windows
+icon:material/debian

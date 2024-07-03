@@ -1,4 +1,4 @@
-icon:simple/linux
+icon:material/microsoft-windows
 # Teema 1
 
 Oi oi, Tere tulemast minu lehele lugema seda toredat teksti!
