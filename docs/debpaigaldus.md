@@ -24,6 +24,14 @@ Soovitavad parameetrid CLI puhul:
 - Mälu (RAM): Vähemalt 2 GB
 - Kõvaketas: Vähemalt 16 GB
 
+=== "GUI puhul"
+
+    Content for Tab 1
+
+=== "CLI puhul"
+
+    Content for Tab 2
+
 
 
 
