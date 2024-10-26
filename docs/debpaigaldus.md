@@ -45,13 +45,13 @@ Antud juhend on loodud "Graphical install" näitel.
 
 Kõigepealt tuleb teha keele ja asukoha ning klaviatuuri valik:
 - Select a language: English
-- Select your location: other -> Europe -> Estonia
+    - Select your location: other -> Europe -> Estonia
 - Configure locales: en_US-UTF-8
 - Configure the keyboard: Estonian
 
  Võrgu seadistamine:
  - Kui VM-il on võrgukaart, mis on ühendatud võrguga, mis jagab DHCP kaudu parameetreid automaatselt, siis saadakse ka võrguparameetrid automaatselt.
- - 
+ - Kui võrguparameetreid automaatselt ei tuvastata, siis äeldakse, et "Network autoconfiguration failed"
 
 
 
