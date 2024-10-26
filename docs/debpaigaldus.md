@@ -69,11 +69,11 @@ Kõigepealt tuleb teha keele ja asukoha ning klaviatuuri valik. Järgnevalt on a
     ![Installer](images/Lang4.png)
 
 
+Edasi toimub võrgu seadistamine:
 
+- Kui VM-il on võrgukaart, mis on ühendatud võrguga, mis jagab DHCP kaudu parameetreid automaatselt, siis saadakse ka võrguparameetrid automaatselt japaigaldusprotsess jätkub.
+- Kui võrguparameetreid automaatselt ei tuvastata, siis tuleb teade, et "Network autoconfiguration failed" ja parameetrid tuleb lisada käsitsi.
 
- Võrgu seadistamine:
- - Kui VM-il on võrgukaart, mis on ühendatud võrguga, mis jagab DHCP kaudu parameetreid automaatselt, siis saadakse ka võrguparameetrid automaatselt.
- - Kui võrguparameetreid automaatselt ei tuvastata, siis äeldakse, et "Network autoconfiguration failed"
 
 
 
