@@ -43,7 +43,8 @@ Käivitades VM-i saab kõigepealt valida paigaldusviisi vahel ehk millist instal
 
 Antud juhend on loodud "Graphical install" näitel. Vali "Graphical install"
 
-![Installer](priitpaap.github.io/images/deb1.png)
+![Installer](images\deb1.png)
+![Installer](images/computer.png)
 
 Kõigepealt tuleb teha keele ja asukoha ning klaviatuuri valik:
 
@@ -56,7 +57,7 @@ Kõigepealt tuleb teha keele ja asukoha ning klaviatuuri valik:
 
 === "Image Card 2"
 
-    ![Installer](images/computer.png)
+    ![Image title](https://dummyimage.com/600x400/eee/aaa){ align=left }
 
 - Select a language: English
     - Select your location: other -> Europe -> Estonia
