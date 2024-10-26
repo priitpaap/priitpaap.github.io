@@ -97,6 +97,15 @@ Edasi toimub võrgu seadistamine:
 
 Järgnevalt on vaja määrata arvutile võrgunimi (hostname) ja domeen. Kui domeeni ei kasutata, siis võib välja täitmata jätta ja edasi liikuda.
 
+=== "Hostname"
+
+    ![Installer](images/net5.png)
+
+=== "Domain"
+
+    ![Installer](images/net6.png)
+
+
 
 
 
