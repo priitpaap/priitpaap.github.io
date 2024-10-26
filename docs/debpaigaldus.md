@@ -52,11 +52,11 @@ Kõigepealt tuleb teha keele ja asukoha ning klaviatuuri valik:
 
 === "Image Card 1"
 
-    ![Installer](images/deb1.png)
+    ![Installer](images/computer.png)
 
 === "Image Card 2"
 
-    ![Installer](images/deb2.png)
+    ![Installer](images/computer.png)
 
 - Select a language: English
     - Select your location: other -> Europe -> Estonia
@@ -69,40 +69,3 @@ Kõigepealt tuleb teha keele ja asukoha ning klaviatuuri valik:
 
 
 
-
-
-
-
-
-
-
-
-## Alamteema
-
-!!! warning
-
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
-    nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
-    massa, nec semper lorem quam in massa.
-
-Siin on `/var/lob/somefolder` kood
-
-Nüüd tuleb pikem koodirida:
-
-```
-sudo -i
-apt update
-// See on kommentaar
-# some other comment
-```
-
-Code for specific language:
-
-``` ps1
-Get-Childitem
-echo kala
-
-```
-
-
-### Kolmanda taseme teema
