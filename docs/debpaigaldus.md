@@ -26,7 +26,7 @@ Soovitavad parameetrid:
 
     Soovitavad parameetrid CLI puhul:
 
-    - Protsessor (CPU): Vähemalt 1 virtuaalset protsessor
+    - Protsessor (CPU): Vähemalt 1 virtuaalne protsessor
     - Mälu (RAM): Vähemalt 2 GB
     - Kõvaketas: Vähemalt 16 GB
 
@@ -117,7 +117,7 @@ Edasi toimub kasutajate ja paroolide seadistamine
 
     Soovitus on jätta 'root' kasutaja parool määramata. Selle tulemuena paigaldatakse 'sudo' ja kasutatakse seda kui soovime käske käivitada juurkasutaja õigustes. Parooli määramisel sudo ei paigaldata ja juurkasutaja alla saab siseneda näiteks 'su -' käsuga.
 
-- Seejärel tuleb sisestada kasutaja andmed (nami, kasutajanimi ja luua parool).
+- Seejärel tuleb sisestada kasutaja andmed (nimi, kasutajanimi ja luua parool).
 
 === "Root Password"
 
@@ -134,6 +134,9 @@ Edasi toimub kasutajate ja paroolide seadistamine
 === "Password"
 
     ![Installer](images/user4.png)
+
+
+Paigaldus jätkub kettapartitsioonide seadistamisega. Kasutame automaatset ketaste jaotust. 
 
 
 
