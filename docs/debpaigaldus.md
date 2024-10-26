@@ -52,7 +52,7 @@ Kõigepealt tuleb teha keele ja asukoha ning klaviatuuri valik:
 
 === "Image Card 1"
 
-    ![Installer](debpaigaldus/images/deb1.png)
+    ![Installer](images/deb1.png)
 
 === "Image Card 2"
 
