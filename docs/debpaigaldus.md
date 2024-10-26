@@ -30,6 +30,23 @@ Soovitavad parameetrid:
     - Mälu (RAM): Vähemalt 2 GB
     - Kõvaketas: Vähemalt 16 GB
 
+## Paigaldusprotsess
+
+Käivitades VM-i saab kõigepealt valida paigaldusviisi vahel ehk millist installerit kasutatakse. 
+- Graphical Install: Installer koos hiire toega;
+- Install: Installer ilma hiire toeta.
+
+Antud juhendis valime "Graphical install"
+
+
+
+!!! info
+
+    Pane tähele, et antud valik mõjutab ainult paigaldusprotsessi, mitte tulemust. Ehk Graphical Install ei tähenda, et paigalduks Debian koos GUI-ga.
+
+    
+
+
 
 
 
