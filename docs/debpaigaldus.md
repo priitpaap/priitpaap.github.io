@@ -72,13 +72,13 @@ Kõigepealt tuleb teha keele ja asukoha ning klaviatuuri valik. Järgnevalt on a
 Edasi toimub võrgu seadistamine:
 
 - Kui VM-il on võrgukaart, mis on ühendatud võrguga, mis jagab DHCP kaudu parameetreid automaatselt, siis saadakse ka võrguparameetrid automaatselt ja paigaldusprotsess jätkub.
-- Kui võrguparameetreid automaatselt ei tuvastata, siis tuleb teade, et "Network autoconfiguration failed" ja parameetrid tuleb lisada käsitsi oma võrgule sobivad parameetrid (IP address, subnet mask, gateway, DNS servers).
+- Kui võrguparameetreid automaatselt ei tuvastata, siis tuleb teade, et "Network autoconfiguration failed" ja tuleb lisada käsitsi oma võrgule sobivad parameetrid (IP address, subnet mask, gateway, DNS servers).
 
 === "Autoconfiguration failed"
 
     ![Installer](images/deb2.png)
 
-=== "Manual"
+=== "Manually"
 
     ![Installer](images/net1.png)
 
@@ -93,6 +93,11 @@ Edasi toimub võrgu seadistamine:
 === "DNS"
 
     ![Installer](images/net4.png)
+
+
+Järgnevalt on vaja määrata arvutile võrgunimi (hostname) ja domeen. Kui domeeni ei kasutata, siis võib välja täitmata jätta ja edasi liikuda.
+
+
 
 
 
