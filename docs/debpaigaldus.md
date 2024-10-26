@@ -111,14 +111,29 @@ Järgnevalt on vaja määrata arvutile võrgunimi (hostname) ja domeen. Kui dome
 
 Edasi toimub kasutajate ja paroolide seadistamine
 
-- Küsitake root kasutaja parooli. Parooli võib seadistada, või jätta määramata.
+- Küsitake root kasutaja ehk juurkasutaja parooli. Parooli võib seadistada, või jätta määramata.
 
 !!! info
 
-    Soovitus on jätta 'root' kasutaja parool määramata. Selle tulemuena paigaldatakse 'sudo' ja kasutatakse seda kui soovime käske käivitada juurkasutaja õigustes. Parooli määramisel sudo ei paigaldata ja juur kasutaja alla saab siseneda näiteks 'su -' käsuga.
+    Soovitus on jätta 'root' kasutaja parool määramata. Selle tulemuena paigaldatakse 'sudo' ja kasutatakse seda kui soovime käske käivitada juurkasutaja õigustes. Parooli määramisel sudo ei paigaldata ja juurkasutaja alla saab siseneda näiteks 'su -' käsuga.
 
-- Kui võrguparameetreid automaatselt ei tuvastata, siis tuleb teade, et "Network autoconfiguration failed" ja tuleb lisada käsitsi oma võrgule sobivad parameetrid (IP address, subnet mask, gateway, DNS servers).
+- Seejärel tuleb sisestada kasutaja andmed (nami, kasutajanimi ja luua parool).
 
+=== "root account"
+
+    ![Installer](images/user1.png)
+
+=== "Name for the new user"
+
+    ![Installer](images/user2.png)
+
+=== "Username"
+
+    ![Installer](images/user3.png)
+
+=== "Password"
+
+    ![Installer](images/user4.png)
 
 
 
