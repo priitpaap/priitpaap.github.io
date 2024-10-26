@@ -43,12 +43,20 @@ Käivitades VM-i saab kõigepealt valida paigaldusviisi vahel ehk millist instal
 
 Antud juhend on loodud "Graphical install" näitel. Vali "Graphical install"
 
-![Image title](https://dummyimage.com/600x400/eee/aaa){ align=left }
+![Installer](images/deb1.png)
 
 Kõigepealt tuleb teha keele ja asukoha ning klaviatuuri valik:
 
 - Select a language: English
 - Select your location: other -> Europe -> Estonia
+
+=== "Image Card 1"
+
+    ![Installer](images/deb1.png)
+
+=== "Image Card 2"
+
+    ![Installer](images/deb2.png)
 
 - Select a language: English
     - Select your location: other -> Europe -> Estonia
