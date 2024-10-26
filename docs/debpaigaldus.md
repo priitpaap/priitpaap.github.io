@@ -41,7 +41,22 @@ Käivitades VM-i saab kõigepealt valida paigaldusviisi vahel ehk millist instal
 
     Pane tähele, et antud valik mõjutab ainult paigaldusprotsessi, mitte tulemust. Ehk Graphical Install ei tähenda, et paigalduks Debian koos GUI-ga. GUI või CLI Debiani saame tehes valikuid hiljem paigaldusprotsessi tarkvara osas.
 
-Antud juhendis valime "Graphical install"
+Antud juhend on loodud "Graphical install" näitel.
+
+Kõigepealt tuleb teha keele ja asukoha ning klaviatuuri valik:
+- Select a language: English
+- Select your location: other -> Europe -> Estonia
+- Configure locales: en_US-UTF-8
+- Configure the keyboard: Estonian
+
+ Võrgu seadistamine:
+ - Kui VM-il on võrgukaart, mis on ühendatud võrguga, mis jagab DHCP kaudu parameetreid automaatselt, siis saadakse ka võrguparameetrid automaatselt.
+ - 
+
+
+
+
+
 
 
 
