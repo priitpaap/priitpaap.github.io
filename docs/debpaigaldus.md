@@ -43,7 +43,7 @@ Käivitades VM-i saab kõigepealt valida paigaldusviisi vahel ehk millist instal
 
 Antud juhend on loodud "Graphical install" näitel. Vali "Graphical install"
 
-![Installer](images/deb1.png)
+![Installer](/images/deb1.png)
 
 Kõigepealt tuleb teha keele ja asukoha ning klaviatuuri valik:
 
