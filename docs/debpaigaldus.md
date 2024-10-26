@@ -8,9 +8,9 @@ Debian Linuxi puhul saab paigaldada ühest iso failist operatsioonisüsteemi nii
 
 Graafilise keskkonnaga VM-i jaoks on vajalikud kõrgemad ressursid, kuna kasutajaliides ja GUI-rakendused nõuavad rohkem mälu ja protsessorijõudlust.
 Soovitavad parameetrid GUI puhul:
-* Protsessor (CPU): Vähemalt 2 virtuaalset protsessorit
-* Mälu (RAM): Vähemalt 4 GB
-* Kõvaketas: Vähemalt 16 GB
+  Protsessor (CPU): Vähemalt 2 virtuaalset protsessorit
+  - Mälu (RAM): Vähemalt 4 GB
+  - Kõvaketas: Vähemalt 16 GB
 * Graafikamälu Vähemalt 16MB suurte monitoride jaoks
 * Soovitav kasutada Xfce töölauda, sest see on vähem ressursinõudlikum ja tööta seetõttu VM-il sujuvamalt.
 
