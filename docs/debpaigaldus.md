@@ -33,8 +33,9 @@ Soovitavad parameetrid:
 ## Paigaldusprotsess
 
 Käivitades VM-i saab kõigepealt valida paigaldusviisi vahel ehk millist installerit kasutatakse. 
+
 - Graphical Install: Installer koos hiire toega;
-- Install: Installer ilma hiire toeta.
+    - Install: Installer ilma hiire toeta.
 
 Antud juhendis valime "Graphical install"
 
