@@ -41,7 +41,9 @@ Käivitades VM-i saab kõigepealt valida paigaldusviisi vahel ehk millist instal
 
     Pane tähele, et antud valik mõjutab ainult paigaldusprotsessi, mitte tulemust. Ehk Graphical Install ei tähenda, et paigalduks Debian koos GUI-ga. GUI või CLI Debiani saame tehes valikuid hiljem paigaldusprotsessi tarkvara osas.
 
-Antud juhend on loodud "Graphical install" näitel.
+Antud juhend on loodud "Graphical install" näitel. Vali "Graphical install"
+
+![Image title](https://dummyimage.com/600x400/eee/aaa){ align=left }
 
 Kõigepealt tuleb teha keele ja asukoha ning klaviatuuri valik:
 
