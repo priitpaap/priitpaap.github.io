@@ -15,10 +15,10 @@ Soovitavad parameetrid GUI puhul:
   Soovitav kasutada Xfce töölauda, sest see on vähem ressursinõudlikum ja tööta seetõttu VM-il sujuvamalt.
 
 Ilma graafilise töölauata VM-i jaoks on vaja vähem mälu ja töötlemisvõimsust, sest töö toimib ainult CLI-režiimis.
-* Soovitavad parameetrid CLI puhul:
-* Protsessor (CPU): Vähemalt 1 virtuaalset protsessor
-* Mälu (RAM): Vähemalt 2 GB
-* Kõvaketas: Vähemalt 16 GB
+- Soovitavad parameetrid CLI puhul:
+- Protsessor (CPU): Vähemalt 1 virtuaalset protsessor
+- Mälu (RAM): Vähemalt 2 GB
+- Kõvaketas: Vähemalt 16 GB
 
 - Item 1
 - Item 2
