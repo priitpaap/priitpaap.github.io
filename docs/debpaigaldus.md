@@ -74,6 +74,10 @@ Edasi toimub võrgu seadistamine:
 - Kui VM-il on võrgukaart, mis on ühendatud võrguga, mis jagab DHCP kaudu parameetreid automaatselt, siis saadakse ka võrguparameetrid automaatselt ja paigaldusprotsess jätkub.
 - Kui võrguparameetreid automaatselt ei tuvastata, siis tuleb teade, et "Network autoconfiguration failed" ja tuleb lisada käsitsi oma võrgule sobivad parameetrid (IP address, subnet mask, gateway, DNS servers).
 
+!!! info
+
+    Mitme DNS serveri puhul eralda need tühikuga, ära kasuta koma.
+
 === "Autoconfiguration failed"
 
     ![Installer](images/deb2.png)
@@ -105,6 +109,15 @@ Järgnevalt on vaja määrata arvutile võrgunimi (hostname) ja domeen. Kui dome
 
     ![Installer](images/net6.png)
 
+Edasi toimub kasutajate ja paroolide seadistamine
+
+- Küsitake root kasutaja parooli. Parooli võib seadistada, või jätta määramata.
+
+!!! info
+
+    Soovitus on jätta 'root' kasutaja parool määramata. Selle tulemuena paigaldatakse 'sudo' ja kasutatakse seda kui soovime käske käivitada juurkasutaja õigustes. Parooli määramisel sudo ei paigaldata ja juur kasutaja alla saab siseneda näiteks 'su -' käsuga.
+
+- Kui võrguparameetreid automaatselt ei tuvastata, siis tuleb teade, et "Network autoconfiguration failed" ja tuleb lisada käsitsi oma võrgule sobivad parameetrid (IP address, subnet mask, gateway, DNS servers).
 
 
 
