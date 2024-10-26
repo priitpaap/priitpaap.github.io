@@ -1,8 +1,24 @@
 icon:material/debian
 
-# Teema 1
+# Debian Linuxi paigaldamine
 
-Oi oi, Tere tulemast minu lehele lugema seda toredat teksti!
+##  Riistvara nõuded
+
+Debian Linuxi puhul saab paigaldada ühest iso failist operatsioonisüsteemi nii graafilise töölauaga (GUI) kui ilma (CLI). Järgnevalt on toodud soovitatavad parameetrid virutaalmasinal (VM) ülesannete sooritamiseks.
+
+Graafilise keskkonnaga VM-i jaoks on vajalikud kõrgemad ressursid, kuna kasutajaliides ja GUI-rakendused nõuavad rohkem mälu ja protsessorijõudlust.
+Soovitavad parameetrid GUI puhul:
+Protsessor (CPU): Vähemalt 2 virtuaalset protsessorit
+Mälu (RAM): Vähemalt 4 GB
+Kõvaketas: Vähemalt 16 GB
+Graafikamälu Vähemalt 16MB suurte monitoride jaoks
+
+Ilma graafilise töölauata VM-i jaoks on vaja vähem mälu ja töötlemisvõimsust, sest töö toimib ainult CLI-režiimis.
+Soovitavad parameetrid CLI puhul:
+Protsessor (CPU): Vähemalt 1 virtuaalset protsessor
+Mälu (RAM): Vähemalt 2 GB
+Kõvaketas: Vähemalt 16 GB
+
 
 ## Alamteema
 
