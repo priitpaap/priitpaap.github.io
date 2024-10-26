@@ -10,7 +10,7 @@ Graafilise keskkonnaga VM-i jaoks on vajalikud kõrgemad ressursid, kuna kasutaj
 
 Ilma graafilise töölauata VM-i jaoks on vaja vähem mälu ja töötlemisvõimsust, sest töö toimib ainult CLI-režiimis.
 
-=== "GUI puhul"
+=== "Soovitavad parameetrid GUI puhul"
 
     Soovitavad parameetrid GUI puhul:
   
@@ -20,7 +20,7 @@ Ilma graafilise töölauata VM-i jaoks on vaja vähem mälu ja töötlemisvõims
     - Graafikamälu Vähemalt 16MB suurte monitoride jaoks
     - Soovitav kasutada Xfce töölauda, sest see on vähem ressursinõudlikum ja tööta seetõttu VM-il sujuvamalt.
 
-=== "CLI puhul"
+=== "Soovitavad parameetrid CLI puhul"
 
     Soovitavad parameetrid CLI puhul:
 
