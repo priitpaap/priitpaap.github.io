@@ -119,7 +119,7 @@ Edasi toimub kasutajate ja paroolide seadistamine
 
 - Seejärel tuleb sisestada kasutaja andmed (nami, kasutajanimi ja luua parool).
 
-=== "root account"
+=== "Root Password"
 
     ![Installer](images/user1.png)
 
