@@ -44,6 +44,10 @@ Käivitades VM-i saab kõigepealt valida paigaldusviisi vahel ehk millist instal
 Antud juhend on loodud "Graphical install" näitel.
 
 Kõigepealt tuleb teha keele ja asukoha ning klaviatuuri valik:
+
+- Select a language: English
+- Select your location: other -> Europe -> Estonia
+
 - Select a language: English
     - Select your location: other -> Europe -> Estonia
 - Configure locales: en_US-UTF-8
