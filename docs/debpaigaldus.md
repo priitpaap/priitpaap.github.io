@@ -183,4 +183,17 @@ Kui välisvõrku pääsemiseks kasutatakse puhverserverit, siis on järgmises ak
     ![Installer](images/soft5.png)
 
 
-XXXx
+Tarkvara valiku aknas saame linnukestega valida millise tarkvara me valime. Graafilise kasutajaliidesega Debiani puhul tuleb valida meelepärane kasutajaliides. Ilma graafilise liidesega Debiani puhul tuleb eemaldada linnukesed kasutajaliideste eest.
+
+- GUI: valime Xfce töölaua, SSH serveri ja standard system utilities
+- CLI: SSH serveri ja standard system utilities
+
+=== "GUI"
+
+    ![Installer](images/softGUI.png)
+
+=== "CLI"
+
+    ![Installer](images/softCLI.png)
+
+Viimaseks valikuks on paigaldusprotsessid alglaaduri paigaldamine.
