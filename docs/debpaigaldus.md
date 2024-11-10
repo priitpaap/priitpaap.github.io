@@ -20,7 +20,7 @@ Soovitavad parameetrid:
     - Mälu (RAM): Vähemalt 4 GB
     - Kõvaketas: Vähemalt 16 GB
     - Graafikamälu Vähemalt 16MB suurte monitoride jaoks
-    - Soovitav kasutada Xfce töölauda, sest see on vähem ressursinõudlikum ja tööta seetõttu VM-il sujuvamalt.
+    - Soovitav kasutada Xfce töölauda, sest see on vähem ressursinõudlikum ja töötab seetõttu VM-il sujuvamalt.
 
 === "CLI"
 
@@ -32,16 +32,16 @@ Soovitavad parameetrid:
 
 ## Paigaldusprotsess
 
-Käivitades VM-i saab kõigepealt valida paigaldusviisi vahel ehk millist installerit kasutatakse. 
+Käivitades VM-i saab kõigepealt valida paigaldusviisi vahel ehk millist paigaldajat kasutatakse. 
 
 - Graphical Install: Installer koos hiire toega
 - Install: Installer ilma hiire toeta
 
 !!! info
 
-    Pane tähele, et antud valik mõjutab ainult paigaldusprotsessi, mitte tulemust. Ehk Graphical Install ei tähenda, et paigalduks Debian koos GUI-ga. GUI või CLI Debiani saame tehes valikuid hiljem paigaldusprotsessi tarkvara osas.
+    Pane tähele, et antud valik mõjutab ainult paigaldusprotsessi, mitte tulemust. Ehk "graphical install" ei tähenda, et paigalduks Debian koos GUI-ga. GUI või CLI Debiani saame tehes valikuid hiljem paigaldusprotsessi tarkvara osas.
 
-Antud juhend on loodud "Graphical install" näitel. Vali paigaldusprotsessi alustamiseks "Graphical install".
+Antud juhend on loodud "Graphical install" näitel, kasutades legacy virtuaalmasinat (MBR). Vali paigaldusprotsessi alustamiseks "Graphical install".
 
 ![Debiani Installer](images/deb1.png)
 
