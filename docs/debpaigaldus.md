@@ -32,7 +32,7 @@ Soovitavad parameetrid:
 
 ## Paigaldusprotsess
 
-Käivitades VM-i saab kõigepealt valida paigaldusviisi vahel ehk millist paigaldajat kasutatakse. 
+Käivitades VM-i saab kõigepealt valida paigaldusviisi vahel ehk millist paigaldajat (installerit) kasutatakse. 
 
 - Graphical Install: Installer koos hiire toega
 - Install: Installer ilma hiire toeta
@@ -52,19 +52,19 @@ Kõigepealt tuleb teha keele ja asukoha ning klaviatuuri valik. Järgnevalt on a
 - Configure locales: en_US-UTF-8
 - Configure the keyboard: Estonian
 
-=== "Keel"
+=== "Language"
 
     ![Installer](images/Lang1.png)
 
-=== "Asukoht"
+=== "Location"
 
     ![Installer](images/Lang2.png)
 
-=== "Lokaaslus"
+=== "Locales"
 
     ![Installer](images/Lang3.png)
 
-=== "Klaviatuur"
+=== "Keyboard"
 
     ![Installer](images/Lang4.png)
 
@@ -111,7 +111,7 @@ Järgnevalt on vaja määrata arvutile võrgunimi (hostname) ja domeen. Kui dome
 
 Edasi toimub kasutajate ja paroolide seadistamine
 
-- Küsitake root kasutaja ehk juurkasutaja parooli. Parooli võib seadistada, või jätta määramata.
+- Küsitakse root kasutaja ehk juurkasutaja parooli. Parooli võib seadistada või jätta määramata.
 
 !!! info
 
@@ -119,11 +119,11 @@ Edasi toimub kasutajate ja paroolide seadistamine
 
 - Seejärel tuleb sisestada kasutaja andmed (nimi, kasutajanimi ja luua parool).
 
-=== "Root Password"
+=== "Root password"
 
     ![Installer](images/user1.png)
 
-=== "Name for the new user"
+=== "Name for the user"
 
     ![Installer](images/user2.png)
 
@@ -136,7 +136,7 @@ Edasi toimub kasutajate ja paroolide seadistamine
     ![Installer](images/user4.png)
 
 
-Paigaldus jätkub kettapartitsioonide seadistamisega. Kasutame automaatset ketaste jaotust, mis on soovitav algajatele ja paigaldame kõik failid ühele partitsioonile.
+Paigaldus jätkub kettajaotuse ehk partitsioonide seadistamisega. Kasutame automaatset ketaste jaotust, mis on soovitav algajatele ja paigaldame kõik failid ühele partitsioonile.
 
 - Partitioning method: Guided - use entire Disk
 - Select disk to partition: ühe ketta puhul on see juba valitud
@@ -159,8 +159,11 @@ Paigaldus jätkub kettapartitsioonide seadistamisega. Kasutame automaatset ketas
 
     ![Installer](images/disk4.png)
 
-Järgmisena jõuame tarkvara valiku juurde. Küsitakse, kas meil on veel mõni paigaldusmeedium peale praeguse, vastame eitavalt. Seejärel soovib Debian pöörduda tarkvara allalaadimiseks tarkvara varamu poole. Vali riigiks Eesti ja nimekirjast ükskõik milline ametilikest Debiani tarkvara varamutest. 
-Kui välisvõrku pääsemiseks kasutatakse puhverserverit, siis on järgmises aknas võimalik see määrata, kuid tavaliselt jäetakse see tühjaks. Seejärel küsitakse veel pakettide populaarsusuuringuses osalemise kohta, selle saab valida vastavalt isiklikule eelistusele.
+Järgmisena jõuame tarkvara allalaadisega seotud valikute juurde. 
+- Küsitakse, kas meil on veel mõni paigaldusmeedium peale praeguse, vastame eitavalt. 
+- Seejärel soovib Debian pöörduda tarkvara allalaadimiseks tarkvara varamu poole. Vali riigiks Eesti ja nimekirjast ükskõik milline ametilikest Debiani tarkvara varamutest. 
+- Kui välisvõrku pääsemiseks kasutatakse puhverserverit, siis on järgmises aknas võimalik see määrata, kuid tavaliselt jäetakse see tühjaks. 
+- Seejärel küsitakse veel pakettide populaarsusuuringuses osalemise kohta, selle saab valida vastavalt isiklikule eelistusele.
 
 === "Exrta installation media"
 
