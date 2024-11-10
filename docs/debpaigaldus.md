@@ -188,7 +188,7 @@ Järgmisena jõuame tarkvara allalaadisega seotud valikute juurde.
 
 Tarkvara valiku aknas saame linnukestega valida millise tarkvara me valime. 
 
-!!!
+!!! info
     Vastavalt siin tehtud valikule saamegi GUI või CLI Debiani.
 
  Graafilise kasutajaliidesega Debiani puhul tuleb valida meelepärane kasutajaliides. Ilma graafilise liidesega Debiani puhul tuleb eemaldada linnukesed kasutajaliideste eest.
@@ -204,7 +204,7 @@ Tarkvara valiku aknas saame linnukestega valida millise tarkvara me valime.
 
     ![Installer](images/softCLI.png)
 
-Viimaseks valikuks on paigaldusprotsessid alglaaduri paigaldamine. Kui tegemist on ainukese operatsioonisüsteemiga arvutis tule GRUB alglaadus kindlasti paigaldada ja valida ketas kuhu alglaadur lisatakse (N: sda).
+Viimaseks valikuks on paigaldusprotsessis alglaaduri paigaldamine. Kui tegemist on ainukese operatsioonisüsteemiga arvutis tuleb GRUB alglaadur kindlasti paigaldada ja valida peamine ketas kuhu alglaadur lisatakse (N: sda).
 
 === "Install GRUB"
 
@@ -214,7 +214,7 @@ Viimaseks valikuks on paigaldusprotsessid alglaaduri paigaldamine. Kui tegemist 
 
     ![Installer](images/grub2.png)
 
-Seejärel on paigaldusprotsess lõppenud ja vajalik on taaskäivitus, mille järgselt käivitub GUI versiooni puhul valitud kasutajaliides ja CLI versiooni puhul mittegraafiline Debian.
+Seejärel on paigaldusprotsess lõppenud ja vajalik on taaskäivitus, mille järgselt käivitub GUI versiooni puhul valitud kasutajaliides ja CLI versiooni puhul mittegraafiline Debian Linux.
 
 === "Finish"
 
@@ -239,5 +239,5 @@ Seejärel on paigaldusprotsess lõppenud ja vajalik on taaskäivitus, mille jär
 
 !!! info
 
-    CLI Debiani puhul võib esmase Linuxi kasutja jaoks tunduda, et parooli sisestamisel ei teki tärne, see on tavapärane nähtus. Tuleb sisestada parool ja vajutada "Enterit".
+    CLI Debiani puhul võib esmase Linuxi kasutaja jaoks tunduda, et parooli sisestamisel ei teki tärne, see on  Linuxis tavapärane nähtus. Tuleb sisestada parool tavapärasel viisil ja vajutada "Enterit".
 
