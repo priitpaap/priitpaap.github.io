@@ -161,6 +161,7 @@ Paigaldus jätkub kettajaotuse ehk partitsioonide seadistamisega. Kasutame autom
 
 
 Järgmisena jõuame tarkvara allalaadisega seotud valikute juurde. 
+
 - Küsitakse, kas meil on veel mõni paigaldusmeedium peale praeguse, vastame eitavalt.
 - Seejärel soovib Debian pöörduda tarkvara allalaadimiseks tarkvara varamu poole. Vali riigiks Eesti ja nimekirjast ükskõik milline ametilikest Debiani tarkvara varamutest.
 - Kui välisvõrku pääsemiseks kasutatakse puhverserverit, siis on järgmises aknas võimalik see määrata, kuid tavaliselt jäetakse see tühjaks. 
