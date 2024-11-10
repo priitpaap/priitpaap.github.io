@@ -221,6 +221,10 @@ Viimaseks valikuks on paigaldusprotsessis alglaaduri paigaldamine. Kui tegemist 
 
 Seejärel on paigaldusprotsess lõppenud ja vajalik on taaskäivitus, mille järgselt käivitub GUI versiooni puhul valitud kasutajaliides ja CLI versiooni puhul mittegraafiline Debian Linux.
 
+!!! info
+
+    CLI Debiani puhul võib esmase Linuxi kasutaja jaoks tunduda, et parooli sisestamisel ei teki tärne, see on  Linuxis tavapärane nähtus. Tuleb sisestada parool tavapärasel viisil ja vajutada "Enterit".
+
 === "Finish"
 
     ![Installer](images/finish.png)
@@ -240,9 +244,4 @@ Seejärel on paigaldusprotsess lõppenud ja vajalik on taaskäivitus, mille jär
 === "CLI login"
 
     ![Installer](images/login4.png)
-
-
-!!! info
-
-    CLI Debiani puhul võib esmase Linuxi kasutaja jaoks tunduda, et parooli sisestamisel ei teki tärne, see on  Linuxis tavapärane nähtus. Tuleb sisestada parool tavapärasel viisil ja vajutada "Enterit".
 
