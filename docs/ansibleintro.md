@@ -1,6 +1,6 @@
 # Ansible ülevaade
 
-Ansible on avatud lähtekoodiga ja tasuta IT-süsteemide haldamise tööriist, mis aitab automatiseerida konfiguratsiooni haldust, rakenduste juurutamist ja serverite haldamist. See on "agentless" tööriist, mis tähendab, et see ei nõua sihtsüsteemidel eraldi agendi installimist – kõik toimub üle SSH (Linuxi puhul) või WinRM-i (Windowsi puhul).
+Ansible on avatud lähtekoodiga ja tasuta IT-süsteemide haldamise tööriist, mis aitab automatiseerida konfiguratsioonihaldust, rakenduste juurutamist ja serverite haldamist. Ansible on "agentless" tööriist, mis tähendab, et see ei nõua sihtsüsteemidel (klientidel) eraldi agendi installimist – kõik toimub üle SSH (Linuxi puhul) või WinRM-i (Windowsi puhul).
 
 Ansible algne arendaja ja haldaja on ettevõte Red Hat, mis omandas Ansible 2015. aastal. Kuigi Red Hat pakub ka Ansible’ile tuge ja täiendavaid tööriistu (näiteks Red Hat Ansible Automation Platform), on Ansible’i põhiversioon ja paljud selle komponendid avatud lähtekoodiga ja kõigile tasuta kättesaadavad GitHubis.
 
