@@ -86,4 +86,4 @@ nav:
   - Automatiseerimine:
     - 'Ansible':
       - 'Ansible ülevaade': ansibleintro.md
-      - 'Lession 2': bash2.md 
+  
