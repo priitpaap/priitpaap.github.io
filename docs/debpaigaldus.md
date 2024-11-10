@@ -183,7 +183,7 @@ Kui välisvõrku pääsemiseks kasutatakse puhverserverit, siis on järgmises ak
     ![Installer](images/soft5.png)
 
 
-Tarkvara valiku aknas saame linnukestega valida millise tarkvara me valime. Graafilise kasutajaliidesega Debiani puhul tuleb valida meelepärane kasutajaliides. Ilma graafilise liidesega Debiani puhul tuleb eemaldada linnukesed kasutajaliideste eest.
+Tarkvara valiku aknas saame linnukestega valida millise tarkvara me valime. Vastavalt siin tehtud valikule saamegi GUI või CLI Debiani. Graafilise kasutajaliidesega Debiani puhul tuleb valida meelepärane kasutajaliides. Ilma graafilise liidesega Debiani puhul tuleb eemaldada linnukesed kasutajaliideste eest.
 
 - GUI: valime Xfce töölaua, SSH serveri ja standard system utilities
 - CLI: SSH serveri ja standard system utilities
@@ -196,4 +196,40 @@ Tarkvara valiku aknas saame linnukestega valida millise tarkvara me valime. Graa
 
     ![Installer](images/softCLI.png)
 
-Viimaseks valikuks on paigaldusprotsessid alglaaduri paigaldamine.
+Viimaseks valikuks on paigaldusprotsessid alglaaduri paigaldamine. Kui tegemist on ainukese operatsioonisüsteemiga arvutis tule GRUB alglaadus kindlasti paigaldada ja valida ketas kuhu alglaadur lisatakse (N: sda).
+
+=== "Install GRUB"
+
+    ![Installer](images/grub1.png)
+
+=== "Device for boot loader"
+
+    ![Installer](images/grub2.png)
+
+Seejärel on paigaldusprotsess lõppenud ja vajalik on taaskäivitus, mille järgselt käivitub GUI versiooni puhul valitud kasutajaliides ja CLI versiooni puhul mittegraafiline Debian.
+
+=== "Finish"
+
+    ![Installer](images/finish.png)
+
+=== "GUI"
+
+    ![Installer](images/login1.png)
+
+=== "GUI login"
+
+    ![Installer](images/login2.png)
+
+=== "CLI"
+
+    ![Installer](images/login3.png)
+
+=== "CLI login"
+
+    ![Installer](images/login4.png)
+
+
+!!! info
+
+    CLI Debiani puhul võib esmase Linuxi kasutja jaoks tunduda, et parooli sisestamisel ei teki tärne, see on tavapärane nähtus. Tuleb sisestada parool ja vajutada "Enterit".
+
