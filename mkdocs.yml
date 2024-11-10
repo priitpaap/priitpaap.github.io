@@ -84,6 +84,6 @@ nav:
       - 'Debian Linuxi paigaldamine virutaalmasinale': debpaigaldus.md 
  # - Mingi tore link: https://priiduveeb.eu
   - Automatiseerimine:
-    - 'Bash skriptid':
-      - 'Lession 1': bash1.md
+    - 'Ansible':
+      - 'Ansible ülevaade': ansibleintro.md
       - 'Lession 2': bash2.md 
