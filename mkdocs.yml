@@ -81,7 +81,7 @@ nav:
       - 'Windowsi paigaldamine virutaalmasinale': leht1.md
       - 'Windows Serveri paigaldamine virutaalmasinale': leht2.md 
     - 'Linux OS':
-      - 'Linuxi paigaldamine virutaalmasinale': debpaigaldus.md 
+      - 'Debian Linuxi paigaldamine virutaalmasinale': debpaigaldus.md 
  # - Mingi tore link: https://priiduveeb.eu
   - Automatiseerimine:
     - 'Bash skriptid':
