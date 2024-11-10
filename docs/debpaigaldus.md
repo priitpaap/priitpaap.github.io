@@ -159,9 +159,28 @@ Paigaldus jätkub kettapartitsioonide seadistamisega. Kasutame automaatset ketas
 
     ![Installer](images/disk4.png)
 
-Järgmiseks valikuks on 
+Järgmisena jõuame tarkvara valiku juurde. Küsitakse, kas meil on veel mõni paigaldusmeedium peale praeguse, vastame eitavalt. Seejärel soovib Debian pöörduda tarkvara allalaadimiseks tarkvara varamu poole. Vali riigiks Eesti ja nimekirjast ükskõik milline ametilikest Debiani tarkvara varamutest. 
+Kui välisvõrku pääsemiseks kasutatakse puhverserverit, siis on järgmises aknas võimalik see määrata, kuid tavaliselt jäetakse see tühjaks. Seejärel küsitakse veel pakettide populaarsusuuringuses osalemise kohta, selle saab valida vastavalt isiklikule eelistusele.
+
+=== "Exrta installation media"
+
+    ![Installer](images/soft1.png)
+
+=== "Archive mirror country"
+
+    ![Installer](images/soft2.png)
+
+=== "Archive mirror"
+
+    ![Installer](images/soft3.png)
+
+=== "Proxy"
+
+    ![Installer](images/soft4.png)
+
+=== "Popularity-contest"
+
+    ![Installer](images/soft5.png)
 
 
-
-
-
+XXXx
