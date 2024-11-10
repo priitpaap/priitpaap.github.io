@@ -209,7 +209,7 @@ Tarkvara valiku aknas saame linnukestega valida millise tarkvara me oma Debianil
 Viimaseks valikuks on paigaldusprotsessis alglaaduri paigaldamine. Kui tegemist on ainukese operatsioonisüsteemiga arvutis tuleb GRUB alglaadur kindlasti paigaldada ja valida peamine ketas kuhu alglaadur lisatakse (N: sda).
 
 !!! warning
-    Kaui sa alglaadurit ei paigalda, siis ei laeta ka Debian operatsioonisüsteemi ehk peale paigaldusprotsessi Debian linux ei käivitu.
+    Kui sa alglaadurit ei paigalda, siis ei laeta ka Debian operatsioonisüsteemi ehk peale paigaldusprotsessi Debian linux ei käivitu.
 
 === "Install GRUB"
 
