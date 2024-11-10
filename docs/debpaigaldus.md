@@ -165,7 +165,7 @@ Järgmisena jõuame tarkvara allalaadisega seotud valikute juurde.
 - Küsitakse, kas meil on veel mõni paigaldusmeedium peale praeguse, vastame eitavalt.
 - Seejärel soovib Debian pöörduda tarkvara allalaadimiseks tarkvara varamu poole. Vali riigiks Eesti ja nimekirjast ükskõik milline ametilikest Debiani tarkvara varamutest.
 - Kui välisvõrku pääsemiseks kasutatakse puhverserverit, siis on järgmises aknas võimalik see määrata, kuid tavaliselt jäetakse see tühjaks. 
-- Seejärel küsitakse veel pakettide populaarsusuuringuses osalemise kohta, selle saab valida vastavalt isiklikule eelistusele.
+- Seejärel küsitakse veel pakettide populaarsusuuringuses osalemise kohta (statistika saatmine), selle saab valida vastavalt isiklikule eelistusele.
 
 === "Exrta installation media"
 
@@ -188,7 +188,7 @@ Järgmisena jõuame tarkvara allalaadisega seotud valikute juurde.
     ![Installer](images/soft5.png)
 
 
-Tarkvara valiku aknas saame linnukestega valida millise tarkvara me valime. 
+Tarkvara valiku aknas saame linnukestega valida millise tarkvara me oma Debianile peale paigaldame. 
 
 !!! info
     Vastavalt siin tehtud valikule saamegi GUI või CLI Debiani.
@@ -207,6 +207,9 @@ Tarkvara valiku aknas saame linnukestega valida millise tarkvara me valime.
     ![Installer](images/softCLI.png)
 
 Viimaseks valikuks on paigaldusprotsessis alglaaduri paigaldamine. Kui tegemist on ainukese operatsioonisüsteemiga arvutis tuleb GRUB alglaadur kindlasti paigaldada ja valida peamine ketas kuhu alglaadur lisatakse (N: sda).
+
+!!! warning
+    Kaui sa alglaadurit ei paigalda, siis ei laeta ka Debian operatsioonisüsteemi ehk peale paigaldusprotsessi Debian linux ei käivitu.
 
 === "Install GRUB"
 
