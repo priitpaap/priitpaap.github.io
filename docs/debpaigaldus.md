@@ -2,9 +2,10 @@ icon:material/debian
 
 # Debian Linuxi paigaldamine
 
+Juhendis kasutatav tarkvara: Debian 12.7
+
 ##  Riistvara nõuded
 
-Kasutatav tarkvara: Debian 12.7
 
 Debian Linuxi puhul saab paigaldada ühest iso failist operatsioonisüsteemi nii graafilise töölauaga (GUI) kui ilma (CLI). Järgnevalt on toodud soovitatavad parameetrid virutaalmasinal (VM) ülesannete sooritamiseks.
 
