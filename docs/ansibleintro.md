@@ -21,9 +21,9 @@ Ansible’i peamised võimalused ja eelised on:
 
 Ansible’i struktuur koosneb mitmest põhikomponendist, mis töötavad koos, et võimaldada IT-automatiseerimist. Siin on peamised elemendid ja nende rollid, mida on oluline mõista Ansible õppimisel:
 
-- Ansible control node (CN): see on arvuti, millelt Ansible’i käske ja playbooke käivitatakse. See on süsteemi haldamise keskus, kust administraatorid Ansible’i abil hallatavaid masinaid kontrollivad ja neile ülesandeid saadavad.
-- Managed Nodes: need on kõik süsteemid, mida Control Node haldab. Need on masinad, kuhu Ansible saadab käske ja ülesandeid.
-- Inventory: fail või skript, mis sisaldab kõik hallatavad masinad. Need võivad olla staatilised (lihtsad tekstifailid) või dünaamilised (skriptid, mis hangivad andmeid välistest allikatest).
+- **Ansible control node (CN):** see on arvuti, millelt Ansible’i käske ja playbooke käivitatakse. See on süsteemi haldamise keskus, kust administraatorid Ansible’i abil hallatavaid masinaid kontrollivad ja neile ülesandeid saadavad.
+- **Managed Nodes:** need on kõik süsteemid, mida Control Node haldab. Need on masinad, kuhu Ansible saadab käske ja ülesandeid.
+- **Inventory:** fail või skript, mis sisaldab kõik hallatavad masinad. Need võivad olla staatilised (lihtsad tekstifailid) või dünaamilised (skriptid, mis hangivad andmeid välistest allikatest).
 - Playbooks: playbookid on Ansible’i skriptid, mis määravad ülesannete jada ja nende täitmise järjekorra. Need on kirjutatud YAML-formaadis ja määravad, milliseid ülesandeid tuleb teatud hostidel täita. Iga playbook koosneb "playdest", mis kirjeldavad konkreetset ülesannete kogumit, mida käivitatakse sihtmasinates.
 - Modules: moodulid on Ansible’i põhikomponendid, mis täidavad konkreetseid toiminguid, näiteks tarkvara installimine, teenuse taaskäivitamine või failide kopeerimine. Ansible sisaldab sadu sisseehitatud mooduleid, kuid võimaldab ka luua kohandatud mooduleid vastavalt vajadusele.
 - Roles: rollid on struktuur, mis võimaldab playbooke ja teisi faile paremini organiseerida ja koodi taaskasutada. Rollid jagavad ülesanded erinevatesse kaustadesse ja failidesse, nagu tasks, vars, handlers, templates, files. Rollide abil saab konfiguratsioone ja ülesandeid jagada ja uuesti kasutada, muutes keerukate automatiseerimisprotsesside loomise lihtsamaks.
