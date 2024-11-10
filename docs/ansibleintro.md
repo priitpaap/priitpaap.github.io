@@ -21,3 +21,6 @@ Ansible’i peamised võimalused ja eelised on:
 
 Ansible’i struktuur koosneb mitmest põhikomponendist, mis töötavad koos, et võimaldada tõhusat IT-automatiseerimist. Siin on peamised elemendid ja nende rollid:
 
+- Ansible control node (CN): see on arvuti, millelt Ansible’i käske ja playbooke käivitatakse. See on süsteemi haldamise keskus, kust administraatorid Ansible’i abil hallatavaid masinaid kontrollivad ja neile ülesandeid saadavad.
+- Managed Nodes: need on kõik süsteemid, mida Control Node haldab. Need on masinad, kuhu Ansible saadab käske ja ülesandeid.
+- Inventory: fail või skript, mis sisaldab kõik hallatavad masinad. Need võivad olla staatilised (lihtsad tekstifailid) või dünaamilised (skriptid, mis hangivad andmeid välistest allikatest).
