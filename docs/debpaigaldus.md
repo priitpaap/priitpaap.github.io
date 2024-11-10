@@ -186,7 +186,12 @@ Järgmisena jõuame tarkvara allalaadisega seotud valikute juurde.
     ![Installer](images/soft5.png)
 
 
-Tarkvara valiku aknas saame linnukestega valida millise tarkvara me valime. Vastavalt siin tehtud valikule saamegi GUI või CLI Debiani. Graafilise kasutajaliidesega Debiani puhul tuleb valida meelepärane kasutajaliides. Ilma graafilise liidesega Debiani puhul tuleb eemaldada linnukesed kasutajaliideste eest.
+Tarkvara valiku aknas saame linnukestega valida millise tarkvara me valime. 
+
+!!!
+    Vastavalt siin tehtud valikule saamegi GUI või CLI Debiani.
+
+ Graafilise kasutajaliidesega Debiani puhul tuleb valida meelepärane kasutajaliides. Ilma graafilise liidesega Debiani puhul tuleb eemaldada linnukesed kasutajaliideste eest.
 
 - GUI: valime Xfce töölaua, SSH serveri ja standard system utilities
 - CLI: SSH serveri ja standard system utilities
