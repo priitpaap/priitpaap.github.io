@@ -136,7 +136,30 @@ Edasi toimub kasutajate ja paroolide seadistamine
     ![Installer](images/user4.png)
 
 
-Paigaldus jätkub kettapartitsioonide seadistamisega. Kasutame automaatset ketaste jaotust. 
+Paigaldus jätkub kettapartitsioonide seadistamisega. Kasutame automaatset ketaste jaotust, mis on soovitav algajatele ja paigaldame kõik failid ühele partitsioonile.
+
+- Partitioning method: Guided - use entire Disk
+- Select disk to partition: ühe ketta puhul on see juba valitud
+- Partitioning scheme: All files in one partiton
+- Write changes to disk: Yes
+
+=== "Partitioning method"
+
+    ![Installer](images/disk1.png)
+
+=== "Select disk to partition"
+
+    ![Installer](images/disk2.png)
+
+=== "Partitioning scheme"
+
+    ![Installer](images/disk3.png)
+
+=== "Write changes to disk"
+
+    ![Installer](images/disk4.png)
+
+Järgmiseks valikuks on 
 
 
 
