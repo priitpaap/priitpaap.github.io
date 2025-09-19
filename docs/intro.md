@@ -1,1 +1,0 @@
-icon:material/microsoft-windows
