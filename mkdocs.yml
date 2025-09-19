@@ -81,24 +81,24 @@ nav:
   #    - 'Windowsi paigaldamine virutaalmasinale': leht1.md
   #    - 'Windows Serveri paigaldamine virutaalmasinale': leht2.md 
     - 'Linux OS':
-      - 'Debian Linuxi paigaldamine virutaalmasinale': debpaigaldus.md 
+      - 'Debian Linuxi paigaldamine virutaalmasinale': linux/debpaigaldus.md 
  # - Mingi tore link: https://priiduveeb.eu
   - Automatiseerimine:
     - 'Ansible':
-      - 'Ansible ülevaade': ansibleintro.md
-      - 'Ansible paigaldamine': ansibleinstall.md
-      - 'Inventory ja hostide haldus': ansibleinventory.md
-      - 'Hallatavate hostide ühendamine': ansiblenodes.md
-      - 'Moodulid ja ad-hoc käsud': ansiblemodules.md
-      - 'Playbookid ja YAML': ansibleplaybooks.md
-      - 'Muutujad ja Jinja2 mallid': ansiblevars.md
-      - 'Tingimuslikkus ja tsüklid': ansibleconditions.md
-      - 'Rollid ja struktuur': ansibleroles.md
-      - 'Ansible Galaxy ja kogukonna rollid': ansiblerolesgalaxy.md
-      - 'Ansible konfiguratsioon ja optimeerimine': ansibleconf.md
-      - 'Turvalisus ja Ansible Vault': ansiblevault.md
-      - 'Projektipõhine lõppharjutus': ansiblefinal.md
-      - 'Ansible parimad praktikad': ansiblebestpractises.md
+      - 'Ansible ülevaade': ansible/ansibleintro.md
+      - 'Ansible paigaldamine': ansible/ansibleinstall.md
+      - 'Inventory ja hostide haldus': ansible/ansibleinventory.md
+      - 'Hallatavate hostide ühendamine': ansible/ansiblenodes.md
+      - 'Moodulid ja ad-hoc käsud': ansible/ansiblemodules.md
+      - 'Playbookid ja YAML': ansible/ansibleplaybooks.md
+      - 'Muutujad ja Jinja2 mallid': ansible/ansiblevars.md
+      - 'Tingimuslikkus ja tsüklid': ansible/ansibleconditions.md
+      - 'Rollid ja struktuur': ansible/ansibleroles.md
+      - 'Ansible Galaxy ja kogukonna rollid': ansible/ansiblerolesgalaxy.md
+      - 'Ansible konfiguratsioon ja optimeerimine': ansible/ansibleconf.md
+      - 'Turvalisus ja Ansible Vault': ansible/ansiblevault.md
+      - 'Projektipõhine lõppharjutus': ansible/ansiblefinal.md
+      - 'Ansible parimad praktikad': ansible/ansiblebestpractises.md
 
 
 
