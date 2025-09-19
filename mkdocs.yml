@@ -72,18 +72,38 @@ markdown_extensions:
       custom_checkbox: true
 
 
-copyright: Copyright &copy; 2024 Priit Paap
+copyright: Copyright &copy; 2025 Priit Paap
 
 nav:
-  - Avalehele: https://priitpaap.github.io
+  - Avalehele: https://itasjad.priiduveeb.eu
   - Operatsioonisüsteemid:
-    - 'Windows OS':
-      - 'Windowsi paigaldamine virutaalmasinale': leht1.md
-      - 'Windows Serveri paigaldamine virutaalmasinale': leht2.md 
+  #  - 'Windows OS':
+  #    - 'Windowsi paigaldamine virutaalmasinale': leht1.md
+  #    - 'Windows Serveri paigaldamine virutaalmasinale': leht2.md 
     - 'Linux OS':
       - 'Debian Linuxi paigaldamine virutaalmasinale': debpaigaldus.md 
  # - Mingi tore link: https://priiduveeb.eu
   - Automatiseerimine:
     - 'Ansible':
       - 'Ansible ülevaade': ansibleintro.md
+      - 'Ansible paigaldamine': ansibleinstall.md
+      - 'Inventory ja hostide haldus': ansibleinventory.md
+      - 'Hallatavate hostide ühendamine': ansiblenodes.md
+      - 'Moodulid ja ad-hoc käsud': ansiblemodules.md
+      - 'Playbookid ja YAML': ansibleplaybooks.md
+      - 'Muutujad ja Jinja2 mallid': ansiblevars.md
+      - 'Tingimuslikkus ja tsüklid': ansibleconditions.md
+      - 'Rollid ja struktuur': ansibleroles.md
+      - 'Ansible Galaxy ja kogukonna rollid': ansiblerolesgalaxy.md
+      - 'Ansible konfiguratsioon ja optimeerimine': ansibleconf.md
+      - 'Turvalisus ja Ansible Vault': ansiblevault.md
+      - 'Projektipõhine lõppharjutus': ansiblefinal.md
+      - 'Ansible parimad praktikad': ansiblebestpractises.md
+
+
+
+
+
+
+
   

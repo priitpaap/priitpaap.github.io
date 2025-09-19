@@ -2,7 +2,7 @@ icon:material/debian
 
 # Debian Linuxi paigaldamine
 
-Juhendis kasutatav tarkvara: Debian 12.7
+Juhendis kasutatav tarkvara: Debian 12.10
 
 ##  Riistvara nõuded
 
@@ -22,7 +22,7 @@ Soovitavad parameetrid:
     - Protsessor (CPU): Vähemalt 2 virtuaalset protsessorit
     - Mälu (RAM): Vähemalt 4 GB
     - Kõvaketas: Vähemalt 16 GB
-    - Graafikamälu Vähemalt 16MB suurte monitoride jaoks
+    - Graafikamälu Vähemalt 16MB suuremate monitoride jaoks
     - Soovitav kasutada Xfce töölauda, sest see on vähem ressursinõudlikum ja töötab seetõttu VM-il sujuvamalt.
 
 === "CLI"
@@ -48,7 +48,7 @@ Antud juhend on loodud "Graphical install" näitel, kasutades legacy virtuaalmas
 
 ![Debiani Installer](images/deb1.png)
 
-Kõigepealt tuleb teha keele ja asukoha ning klaviatuuri valik. Järgnevalt on antud soovituslikud valikud, mida võid vastavalt oma soovile kohadada:
+Kõigepealt tuleb teha keele ja asukoha ning klaviatuuri valik. Järgnevalt on antud soovituslikud valikud, mida võid vastavalt oma soovile kohandada:
 
 - Select a language: English
 - Select your location: other -> Europe -> Estonia
