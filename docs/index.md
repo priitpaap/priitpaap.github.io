@@ -1,6 +1,5 @@
 # Tere tulemast!
 
-!!! warning
-    Tegemist on testlehega, ehk hetkel on siin mõned katsetused ja midagi asjalikku pole.
+Tegemist on õppematerjalide lehega kust võib mõned juhendid ja materjalid juba leida.
 
-Võimalik, et siia hakkab mingit dokumentatsiooni ja juhendeid tekkima tulevikus.
+Tasapisi täieneb.
