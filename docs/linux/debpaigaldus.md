@@ -46,7 +46,7 @@ Käivitades VM-i saab kõigepealt valida paigaldusviisi vahel ehk millist paigal
 
 Antud juhend on loodud "Graphical install" näitel, kasutades legacy virtuaalmasinat (MBR). Vali paigaldusprotsessi alustamiseks "Graphical install".
 
-![Debiani Installer](images/debpaigaldus/deb1.png)
+![Debiani Installer](images/deb1.png)
 
 Kõigepealt tuleb teha keele ja asukoha ning klaviatuuri valik. Järgnevalt on antud soovituslikud valikud, mida võid vastavalt oma soovile kohandada:
 
@@ -57,19 +57,19 @@ Kõigepealt tuleb teha keele ja asukoha ning klaviatuuri valik. Järgnevalt on a
 
 === "Language"
 
-    ![Installer](images/debpaigaldus/Lang1.png)
+    ![Installer](images/Lang1.png)
 
 === "Location"
 
-    ![Installer](images/debpaigaldus/Lang2.png)
+    ![Installer](images/Lang2.png)
 
 === "Locales"
 
-    ![Installer](images/debpaigaldus/Lang3.png)
+    ![Installer](images/Lang3.png)
 
 === "Keyboard"
 
-    ![Installer](images/debpaigaldus/Lang4.png)
+    ![Installer](images/Lang4.png)
 
 
 Edasi toimub võrgu seadistamine:
@@ -83,34 +83,34 @@ Edasi toimub võrgu seadistamine:
 
 === "Autoconfiguration failed"
 
-    ![Installer](images/debpaigaldus/deb2.png)
+    ![Installer](images/deb2.png)
 
 === "Manually"
 
-    ![Installer](images/debpaigaldus/net1.png)
+    ![Installer](images/net1.png)
 
 === "IP/subnet"
 
-    ![Installer](images/debpaigaldus/net2.png)
+    ![Installer](images/net2.png)
 
 === "Gateway"
 
-    ![Installer](images/debpaigaldus/net3.png)
+    ![Installer](images/net3.png)
 
 === "DNS"
 
-    ![Installer](images/debpaigaldus/net4.png)
+    ![Installer](images/net4.png)
 
 
 Järgnevalt on vaja määrata arvutile võrgunimi (hostname) ja domeen. Kui domeeni ei kasutata, siis võib välja täitmata jätta ja edasi liikuda.
 
 === "Hostname"
 
-    ![Installer](images/debpaigaldus/net5.png)
+    ![Installer](images/net5.png)
 
 === "Domain"
 
-    ![Installer](images/debpaigaldus/net6.png)
+    ![Installer](images/net6.png)
 
 Edasi toimub kasutajate ja paroolide seadistamine
 
@@ -124,19 +124,19 @@ Edasi toimub kasutajate ja paroolide seadistamine
 
 === "Root password"
 
-    ![Installer](images/debpaigaldus/user1.png)
+    ![Installer](images/user1.png)
 
 === "Name for the user"
 
-    ![Installer](images/debpaigaldus/user2.png)
+    ![Installer](images/user2.png)
 
 === "Username"
 
-    ![Installer](images/debpaigaldus/user3.png)
+    ![Installer](images/user3.png)
 
 === "Password"
 
-    ![Installer](images/debpaigaldus/user4.png)
+    ![Installer](images/user4.png)
 
 
 Paigaldus jätkub kettajaotuse ehk partitsioonide seadistamisega. Kasutame automaatset ketaste jaotust, mis on soovitav algajatele ja paigaldame kõik failid ühele partitsioonile.
@@ -148,19 +148,19 @@ Paigaldus jätkub kettajaotuse ehk partitsioonide seadistamisega. Kasutame autom
 
 === "Partitioning method"
 
-    ![Installer](images/debpaigaldus/disk1.png)
+    ![Installer](images/disk1.png)
 
 === "Select disk to partition"
 
-    ![Installer](images/debpaigaldus/disk2.png)
+    ![Installer](images/disk2.png)
 
 === "Partitioning scheme"
 
-    ![Installer](images/debpaigaldus/disk3.png)
+    ![Installer](images/disk3.png)
 
 === "Write changes to disk"
 
-    ![Installer](images/debpaigaldus/disk4.png)
+    ![Installer](images/disk4.png)
 
 
 Järgmisena jõuame tarkvara allalaadisega seotud valikute juurde. 
@@ -172,23 +172,23 @@ Järgmisena jõuame tarkvara allalaadisega seotud valikute juurde.
 
 === "Exrta installation media"
 
-    ![Installer](images/debpaigaldus/soft1.png)
+    ![Installer](images/soft1.png)
 
 === "Archive mirror country"
 
-    ![Installer](images/debpaigaldus/soft2.png)
+    ![Installer](images/soft2.png)
 
 === "Archive mirror"
 
-    ![Installer](images/debpaigaldus/soft3.png)
+    ![Installer](images/soft3.png)
 
 === "Proxy"
 
-    ![Installer](images/debpaigaldus/soft4.png)
+    ![Installer](images/soft4.png)
 
 === "Popularity-contest"
 
-    ![Installer](images/debpaigaldus/soft5.png)
+    ![Installer](images/soft5.png)
 
 
 Tarkvara valiku aknas saame linnukestega valida millise tarkvara me oma Debianile peale paigaldame. 
@@ -203,11 +203,11 @@ Tarkvara valiku aknas saame linnukestega valida millise tarkvara me oma Debianil
 
 === "GUI"
 
-    ![Installer](images/debpaigaldus/softGUI.png)
+    ![Installer](images/softGUI.png)
 
 === "CLI"
 
-    ![Installer](images/debpaigaldus/softCLI.png)
+    ![Installer](images/softCLI.png)
 
 Viimaseks valikuks on paigaldusprotsessis alglaaduri paigaldamine. Kui tegemist on ainukese operatsioonisüsteemiga arvutis tuleb GRUB alglaadur kindlasti paigaldada ja valida peamine ketas kuhu alglaadur lisatakse (N: sda).
 
@@ -216,11 +216,11 @@ Viimaseks valikuks on paigaldusprotsessis alglaaduri paigaldamine. Kui tegemist 
 
 === "Install GRUB"
 
-    ![Installer](images/debpaigaldus/grub1.png)
+    ![Installer](images/grub1.png)
 
 === "Device for boot loader"
 
-    ![Installer](images/debpaigaldus/grub2.png)
+    ![Installer](images/grub2.png)
 
 Seejärel on paigaldusprotsess lõppenud ja vajalik on taaskäivitus, mille järgselt käivitub GUI versiooni puhul valitud kasutajaliides ja CLI versiooni puhul mittegraafiline Debian Linux.
 
@@ -230,21 +230,21 @@ Seejärel on paigaldusprotsess lõppenud ja vajalik on taaskäivitus, mille jär
 
 === "Finish"
 
-    ![Installer](images/debpaigaldus/finish.png)
+    ![Installer](images/finish.png)
 
 === "GUI"
 
-    ![Installer](images/debpaigaldus/login1.png)
+    ![Installer](images/login1.png)
 
 === "GUI login"
 
-    ![Installer](images/debpaigaldus/login2.png)
+    ![Installer](images/login2.png)
 
 === "CLI"
 
-    ![Installer](images/debpaigaldus/login3.png)
+    ![Installer](images/login3.png)
 
 === "CLI login"
 
-    ![Installer](images/debpaigaldus/login4.png)
+    ![Installer](images/login4.png)
 
