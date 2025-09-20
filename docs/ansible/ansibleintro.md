@@ -51,6 +51,7 @@ Ansible koosneb mitmest osast, mis kõik aitavad automatiseerimist ellu viia. Va
 ![Ansible ülesehitus](images/ansible/Ansible_skeem1.jpg)
 ![Ansible ülesehitus](images\ansible\Ansible_skeem1.jpg)
 ![Ansible ülesehitus](images/Ansible_skeem1.jpg)
+![Ansible ülesehitus](images/ansible/Ansible_skeem1.jpg)
 ---
 
 ## Kuidas Ansible't kasutada?
