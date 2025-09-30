@@ -77,12 +77,8 @@ copyright: Copyright &copy; 2025 Priit Paap
 nav:
   - Avalehele: https://itasjad.priiduveeb.eu
   - Operatsioonisüsteemid:
-  #  - 'Windows OS':
-  #    - 'Windowsi paigaldamine virutaalmasinale': leht1.md
-  #    - 'Windows Serveri paigaldamine virutaalmasinale': leht2.md 
     - 'Linux OS':
       - 'Debian Linuxi paigaldamine virutaalmasinale': linux/debpaigaldus.md 
- # - Mingi tore link: https://priiduveeb.eu
   - Automatiseerimine:
     - 'Ansible':
       - 'Ansible ülevaade': ansible/ansibleintro.md
