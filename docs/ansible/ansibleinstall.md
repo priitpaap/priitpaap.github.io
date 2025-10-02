@@ -39,7 +39,7 @@ Debiani kasutajatel tuleb lisada külge Ubuntu PPA.
     Tegemist on Ansible ametliku PPA-ga, aga mitte Debiani ametliku PPA-ga. Debiani ametlik backports on alternatiiv, kui ei soovita Ubuntu PPA-d kasutada.
 
 
-**Debian 12** kasutajad saavad kasutada Ubuntu 24.04 PPA-d mille koodnimeks on `noble`. Ansible paigaldub järgmiste käskude abil:
+**Debian 12/13** kasutajad saavad kasutada Ubuntu 24.04 PPA-d mille koodnimeks on `noble`. Ansible paigaldub järgmiste käskude abil:
 
 ```bash
 UBUNTU_CODENAME=noble
@@ -79,7 +79,7 @@ pipx upgrade --include-injected ansible
 
 !!! info
 
-    Debian 12 ja teised uuemad distributsioonid nagu Ubuntu 23.04+ järgivad standardit, mis kaitseb süsteemset Pythonit juhusliku süsteemi rikkumise eest. Seetõttu midagi `pip` abil paigaldades antakse veateade "externally-managed environment". Ehk süsteemi haldab APT pakihaldur ja sinna ei tohiks isegi kasutaja tasmele enam pip abil pakette paigaldada.
+    Debian 12+ ja teised uuemad distributsioonid nagu Ubuntu 23.04+ järgivad standardit, mis kaitseb süsteemset Pythonit juhusliku süsteemi rikkumise eest. Seetõttu midagi `pip` abil paigaldades antakse veateade "externally-managed environment". Ehk süsteemi haldab APT pakihaldur ja sinna ei tohiks isegi kasutaja tasmele enam pip abil pakette paigaldada.
 
 Soovituslik on kasutada **virtuaalset keskkonda**. Järgnevalt paigaldame keskkonna loomiseks vajaliku paki ja loome uue virtuaalse keskkonna nimega **ansible-venv**. Seejärel paigaldame sinna Ansible (virtuaalne keskkond on isoleeritud Python'i keskkond, kus saab paigaldada sõltuvusi ilma süsteemi tasemel muudatusi tegemata):
 
@@ -154,7 +154,7 @@ Süsteemne paigaldus võimaldab kõigil kasutajatel kasutada Ansible'it
 
 **Kui paigaldasid pip või pipx abil:**
 
-Ansible on kasutaja-kohane (nt `~/.local/bin/ansible`)
+Ansible on kasutajapõhine (nt `~/.local/bin/ansible`)
 Failid soovitatakse hoida kasutaja kodukataloogi all:
 
 - `~/ansible/`

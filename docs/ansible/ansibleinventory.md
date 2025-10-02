@@ -5,7 +5,7 @@
 Selles peatükis õpid:
 
 - Mis on Ansible *inventory* ja miks see on oluline
-- Kuidas luua *inventory* fail (INI ja YAML)
+- Kuidas luua *inventory* fail (.INI ja .YAML)
 - Kuidas lisada hoste, gruppe ja muutujaid
 - Kuidas kontrollida ja hallata *inventory*'t
 
