@@ -25,8 +25,8 @@ Selles peatükis õpid:
 - **ping** – kontrollib, kas hostiga saab ühenduda (Linux);  
 - **win_ping** – kontrollib ühendust Windows hostiga;  
 - **copy** – kopeerib faile;  
-- **package / apt / yum / dnf** – paigaldab või eemaldab tarkvara;  
-- **service** – käivitab või peatab teenuseid;  
+- **apt / yum / dnf** – paigaldab või eemaldab tarkvara (olenevalt Linuxi distributsioonist);  
+- **service / systemd** – käivitab või peatab teenuseid;  
 - **user** – haldab kasutajakontosid;
 - **win_feature** - paigaldab või eemaldab Windowsi Serveri rollid ja funktsioonid. 
 
@@ -68,7 +68,7 @@ Näiteks:
 ### Süntaks
 
 ```bash
-ansible <hostid> -m <moodul> -a "<argumendid>" -i <inventory>
+ansible <host või grupp> -m <moodul> -a "<argumendid>" -i <inventory>
 ```
 
 - `<hostid>` – hosti alias või grupi nimi inventory failist.  
@@ -146,6 +146,19 @@ ansible winservers -m win_service -a "name=Spooler state=restarted" -i hosts.ini
 - `win_service` – teenuste haldamine.  
 - `win_user` – kasutajate haldamine.  
 
+---
+### Kust leida abi moodulite kasutamisel?
+
+Kui sa ei tea, kuidas mõni moodul töötab või milliseid argumente ta toetab, on mitu võimalust abi saamiseks:
+
+- **Ansible dokumentatsioon** – iga mooduli kohta on olemas detailne juhend ja näited:  
+  [https://docs.ansible.com/ansible/latest/collections/index_module.html](https://docs.ansible.com/ansible/latest/collections/index_module.html)
+
+- **Käsurea abi** – saad otse terminalis mooduli kohta infot:  
+  ```bash
+  ansible-doc ping
+  ansible-doc copy
+  ansible-doc -l      # näitab kõiki saadaval mooduleid
 
 ---
 
