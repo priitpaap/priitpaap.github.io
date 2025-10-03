@@ -53,7 +53,7 @@ Ansible koosneb mitmest osast, mis kõik aitavad automatiseerimist ellu viia. Va
 
 ## Kuidas Ansible't kasutada?
 
-Vaatame kõiki etappe ka lähemalt, aga lühike näide kuidas asnible't kasutada oleks järgmine:
+Vaatame kõiki etappe ka järgnevates teemades lähemalt, aga lühike näide, kuidas asnible't kasutada, oleks järgmine:
 
 1. **Paigalda ansible**
 2. **Kirjuta inventuurifail** — näiteks `hosts.ini`, kus loetled kõik serverid.
