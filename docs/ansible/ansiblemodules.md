@@ -19,15 +19,43 @@ Selles peatükis õpid:
 - Ansible ei logi lihtsalt hosti sisse ja ei käivita käske otse – ta kasutab mooduleid, mis tagavad idempotentse ja standardiseeritud tulemuse.  
 
 !!! info
-    *Idempotentsus* tähendab seda, et sama playbook’i või mooduli käivitamine mitu korda järjest ei muuda süsteemi seisundit pärast esimest edukat käivitust.
+    **Idempotentsus** tähendab seda, et sama playbook’i või mooduli käivitamine mitu korda järjest ei muuda süsteemi seisundit pärast esimest edukat käivitust.
 
 ### Näited moodulitest
-- **ping** – kontrollib, kas hostiga saab ühenduda (Linux).  
-- **win_ping** – kontrollib ühendust Windows hostiga.  
-- **copy** – kopeerib faile.  
-- **package / apt / yum / dnf** – paigaldab või eemaldab tarkvara.  
-- **service** – käivitab või peatab teenuseid.  
-- **user** – haldab kasutajakontosid.  
+- **ping** – kontrollib, kas hostiga saab ühenduda (Linux);  
+- **win_ping** – kontrollib ühendust Windows hostiga;  
+- **copy** – kopeerib faile;  
+- **package / apt / yum / dnf** – paigaldab või eemaldab tarkvara;  
+- **service** – käivitab või peatab teenuseid;  
+- **user** – haldab kasutajakontosid;
+- **win_feature** - paigaldab või eemaldab Windowsi Serveri rollid ja funktsioonid. 
+
+### Mooduli nime kasutamine (lühike vs täisnimi)
+
+Ansible’is saab mooduleid kutsuda kas **lühinimega** või **täisnimega**:
+
+```bash
+# Lühinimi (builtin moodul)
+ansible all -m ping
+
+# Täisnimi (täpne nimeruum)
+ansible all -m ansible.builtin.ping
+```
+
+- Lühivorm (ping, copy, service) on mugavam ja töötab siis, kui moodul on Ansible enda sisseehitatud kogust (*builtin*).
+- Täisvorm (n: ansible.builtin.ping) muutus oluliseks alates Ansible Collections süsteemist (versioon 2.9+). See väldib segadust, kui sama nimega moodul on saadaval mitmes kogus.
+
+**Kogu** (collection) on moodulite, plugin’ite ja rollide kogumik.
+Ansible jagas moodulid kogudesse, et neid oleks lihtsam hallata ja uuendada.
+
+Näiteks:
+
+- ansible.builtin – Ansible enda sisseehitatud moodulid (nt ping, copy).
+- ansible.windows – Microsoft Windowsi moodulid.
+- community.general – kogukonna loodud moodulid, mida pole vaikimisi Ansible sees.
+
+!!! info
+    Enamasti piisab lühinimest, aga dokumentatsioonis näed sageli ka täisnimekujusid. Kui võtad mooduli väljastpoolt Ansible sisseehitatud kogu, tuleb kasutada täisnime.
 
 ---
 
@@ -46,7 +74,7 @@ ansible <hostid> -m <moodul> -a "<argumendid>" -i <inventory>
 - `<hostid>` – hosti alias või grupi nimi inventory failist.  
 - `-m` – määrab mooduli.  
 - `-a` – annab moodulile argumendid.  
-- `-i` – määrab inventory faili (kui see ei ole vaikimisi).  
+- `-i` – määrab inventory faili (ilma selleta kasutatakse vaikimisi faili).  
 
 ---
 
@@ -117,6 +145,7 @@ ansible winservers -m win_service -a "name=Spooler state=restarted" -i hosts.ini
 - `win_package` – tarkvara paigaldamine MSI/exe abil.  
 - `win_service` – teenuste haldamine.  
 - `win_user` – kasutajate haldamine.  
+
 
 ---
 
