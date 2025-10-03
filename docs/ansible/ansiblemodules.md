@@ -18,6 +18,9 @@ Selles peatükis õpid:
 - Moodulid on nagu **tööriistad** – igal ühel on kindel funktsioon (nt failide kopeerimine, pakettide paigaldamine, kasutajate haldus).  
 - Ansible ei logi lihtsalt hosti sisse ja ei käivita käske otse – ta kasutab mooduleid, mis tagavad idempotentse ja standardiseeritud tulemuse.  
 
+!!! info
+    *Idempotentsus* tähendab seda, et sama playbook’i või mooduli käivitamine mitu korda järjest ei muuda süsteemi seisundit pärast esimest edukat käivitust.
+
 ### Näited moodulitest
 - **ping** – kontrollib, kas hostiga saab ühenduda (Linux).  
 - **win_ping** – kontrollib ühendust Windows hostiga.  

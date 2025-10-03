@@ -300,7 +300,7 @@ Ansible toetab Windowsi haldamist **WinRM (Windows Remote Management)** kaudu, m
     $cert.Thumbprint
     ```
 
-    Seejärel loo uus HTTPS listener (muuda hosname selliseks nagu kasutasid sertifikaadi loomisel):
+    Seejärel loo uus HTTPS listener (muuda hostname selliseks nagu kasutasid sertifikaadi loomisel):
     ```powershell
     winrm create winrm/config/Listener?Address=*+Transport=HTTPS "@{Hostname=`"win1.local`"; CertificateThumbprint=`"$($cert.Thumbprint)`"}"
     ```
