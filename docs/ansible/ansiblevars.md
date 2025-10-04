@@ -24,52 +24,52 @@ Olulisemad viisid:
 
 1. **Playbooki sees `vars:` all**
 
-Muutujad saab defineerida playbooki sees võtme `vars:` all.
+  Muutujad saab defineerida playbooki sees võtme `vars:` all.
 
-```yaml
----
-- name: Muutujate näide
-  hosts: webservers
-  become: yes
+  ```yaml
+  ---
+  - name: Muutujate näide
+    hosts: webservers
+    become: yes
 
-  vars:
-    web_package: nginx
-    web_root: /var/www/html
+    vars:
+      web_package: nginx
+      web_root: /var/www/html
 
-  tasks:
-    - name: Paigalda veebiserver
-      apt:
-        name: "{{ web_package }}"
-        state: present
+    tasks:
+      - name: Paigalda veebiserver
+        apt:
+          name: "{{ web_package }}"
+          state: present
 
-    - name: Loo veebikataloog
-      file:
-        path: "{{ web_root }}/demo"
-        state: directory
-        owner: www-data
-        group: www-data
-        mode: '0755'
-```
+      - name: Loo veebikataloog
+        file:
+          path: "{{ web_root }}/demo"
+          state: directory
+          owner: www-data
+          group: www-data
+          mode: '0755'
+  ```
 
-Selgitus:
+ Selgitus:
 
-- `vars:` all defineeritakse muutujad web_package ja web_root.
-- Muutujaid kasutatakse topeltlainelistes sulgudes {{ }}.
-- Kui muutuja väärtust hiljem muuta, ei pea seda igal pool käsitsi asendama.
+ - `vars:` all defineeritakse muutujad web_package ja web_root.
+ - Muutujaid kasutatakse topeltlainelistes sulgudes {{ }}.
+ - Kui muutuja väärtust hiljem muuta, ei pea seda igal pool käsitsi asendama.
 
-!!! info
-    Kui muutujad on pikemad või peavad kehtima mitmes playbookis, tasub need hoida eraldi failides (nt **group_vars/** või **host_vars/** kataloogides).
+ !!! info
+     Kui muutujad on pikemad või peavad kehtima mitmes playbookis, tasub need hoida eraldi failides (nt **group_vars/** või **host_vars/** kataloogides).
 
 
 2. **Muutujad eraldi failis (group_vars või host_vars)**
 
-Kataloogistruktuur:
-```
-inventory/
-├─ hosts.yaml
-├─ group_vars/
-│  └─ webservers.yml
-```
+ Kataloogistruktuur:
+ ```
+ inventory/
+ ├─ hosts.yaml
+ ├─ group_vars/
+ │  └─ webservers.yml
+ ```
 
 Fail `group_vars/webservers.yml` sisu:
 ```yaml
@@ -133,12 +133,12 @@ Allpool on levinumad tasemed (madalaimast kõrgeimani):
 
 | Tasand | Näide / Asukoht | Prioriteet |
 |--------|-----------------|------------|
-| Role defaults | Rolli `defaults/main.yml` | 🔽 madalaim |
+| Role defaults | `defaults/main.yml` | 🔽 madalaim |
 | Inventory grupimuutujad | `group_vars/webservers.yml` | ↑ |
 | Inventory hostimuutujad | `host_vars/web1.yml` | ↑ |
 | Playbooki `vars:` | Playbooki sees määratud `vars:` | ↑ |
 | Playbooki `vars_files:` | Playbooki sees viidatud eraldi failid | ↑ |
-| `set_fact` ülesanded | Määratud jooksutamise ajal | ↑ |
+| `set_fact` ülesanded | Määratud käivitamise ajal | ↑ |
 | Käsurea muutujad | `-e "var=value"` | 🔼 kõrgeim |
 
 ---
