@@ -1,16 +1,13 @@
-# Muutujad ja Jinja2 mallid
+# Muutujad ja nende kasutamine
 
 ## Eesmärk
 
 Selles peatükis õpid:
 
 - Mis on Ansible muutujad ja miks neid kasutada
-- Kuidas määrata muutujate väärtusi
+- Kuidas ja kus määrata muutujate väärtusi
 - Kus muutujad asuvad (vars, group_vars, host_vars, käsurealt jne)
-- Mis on Jinja2 mallid ja miks neid vaja on
-- Kuidas kasutada muutujad Jinja2 mallides
-- Kuidas mallidest luua konfiguratsioonifaile
-
+- Muutujate loomise head tavad
 ---
 
 ## Mis on muutujad?
@@ -125,6 +122,24 @@ all:
           web_root: /var/www/html
 ```
 
+---
+
+## Muutujate prioriteedid
+
+Kui sama muutuja on määratud mitmes kohas, peab Ansible otsustama, millist väärtust kasutada.  
+Selleks on olemas **prioriteetide hierarhia**: kõrgema prioriteediga määrang kirjutab madalama üle.
+
+Allpool on levinumad tasemed (madalaimast kõrgeimani):
+
+| Tasand | Näide / Asukoht | Prioriteet |
+|--------|-----------------|------------|
+| Role defaults | Rolli `defaults/main.yml` | 🔽 madalaim |
+| Inventory grupimuutujad | `group_vars/webservers.yml` | ↑ |
+| Inventory hostimuutujad | `host_vars/web1.yml` | ↑ |
+| Playbooki `vars:` | Playbooki sees määratud `vars:` | ↑ |
+| Playbooki `vars_files:` | Playbooki sees viidatud eraldi failid | ↑ |
+| `set_fact` ülesanded | Määratud jooksutamise ajal | ↑ |
+| Käsurea muutujad | `-e "var=value"` | 🔼 kõrgeim |
 
 ---
 
@@ -145,115 +160,148 @@ Ansible asendab `{{ web_root }}` jooksutamisel vastava väärtusega.
 
 ---
 
-## Jinja2 mallid
+### Loendite (list) kasutamine
 
-**Jinja2** on Ansible vaikimisi kasutatav mallimootor, millega saab dünaamiliselt luua konfiguratsioonifaile, skripte või muud sisu.
-
-Mallid on tavalised tekstifailid, kus kasutatakse muutujate ja kontrolllausete süntaksit (nt if, for).
-
-Faili laiend on tavaliselt `.j2`.
-
-### Näide mallifailist
-
-Fail `nginx.conf.j2`:
-
-```jinja2
-server {
-    listen 80;
-    server_name {{ server_name }};
-
-    root {{ web_root }}/html;
-
-    location / {
-        index index.html;
-    }
-}
-```
-
-### Playbook, mis kasutab malli
+Sageli on vaja teha sama tegevust mitme väärtusega (nt paigaldada mitu paketti või luua mitu kataloogi).  
+Sellisel juhul on mugav määrata väärtused **loendina (list)** ja kasutada neid tsükliga `loop:`.
 
 ```yaml
 ---
-- name: NGINX konfiguratsiooni loomine mallist
+- name: Paigalda mitmeid pakette
   hosts: webservers
   become: yes
+
   vars:
-    server_name: example.com
-    web_root: /var/www
+    packages:
+      - nginx
+      - curl
+      - vim
+
   tasks:
-    - name: Loo konfiguratsioonifail mallist
-      template:
-        src: nginx.conf.j2
-        dest: /etc/nginx/sites-available/default
-      notify: Taaskäivita nginx
-
-  handlers:
-    - name: Taaskäivita nginx
-      service:
-        name: nginx
-        state: restarted
-```
-
-### Selgitus
-
-- Mallifaili muutujad (`{{ server_name }}` ja `{{ web_root }}`) asendatakse jooksutamise ajal nende väärtustega.
-- `template:` moodul kopeerib mallifaili sihtmasinasse ja teeb asendused.
-- `notify:` ja `handlers:` on viis teha teatud tegevus (nt teenuse taaskäivitamine) ainult siis, kui mallifaili sisu muutus.
-
----
-
-## Jinja2 süntaksi põhitõed
-
-- Muutuja: `{{ variable_name }}`
-- Tingimus:
-```jinja2
-{% if use_ssl %}
-listen 443 ssl;
-{% else %}
-listen 80;
-{% endif %}
-```
-- Tsükkel:
-```jinja2
-{% for site in sites %}
-server_name {{ site }};
-{% endfor %}
+    - name: Paigalda vajalikud paketid
+      apt:
+        name: "{{ item }}"
+        state: present
+      loop: "{{ packages }}"
 ```
 
 ---
 
-## Head tavad muutujate ja mallide kasutamisel
+## Muutujate andmetüübid
+
+Ansible kasutab YAML-andmetüüpe. Muutujad ei ole ainult tekst (string), vaid võivad olla ka numbrid, tõeväärtused, loendid ja sõnastikud.  
+Õige andmetüübi valik muudab playbookid paindlikumaks ja lihtsamaks.
+
+| Tüüp          | Näide | Selgitus |
+|---------------|-------|----------|
+| String        | `web_package: "nginx"` | Tekstiväärtus. Soovitatav panna jutumärkidesse, eriti kui sisaldab tühikuid või erimärke. |
+| Täisarv (int) | `max_clients: 200` | Kasutatakse arvulistes seadistustes. |
+| Tõeväärtus (bool) | `debug_mode: true` | Saab väärtusteks `true` või `false`. |
+| Loend (list)  | ```yaml<br>packages:<br>  - nginx<br>  - curl<br>  - vim``` | Mitme elemendi kogum, mida saab tsüklis läbi käia. |
+| Sõnastik (dict) | ```yaml<br>app:<br>  name: demo<br>  port: 8080``` | Võtme-väärtuse paaride kogum. Kasulik keerukamate seadistuste jaoks. |
+
+### Näited andmetüüpide kasutamisest
+
+```yaml
+vars:
+  web_package: "nginx"           # string
+  max_clients: 200               # int
+  debug_mode: true               # bool
+  packages:                      # list
+    - nginx
+    - curl
+    - vim
+  app:                            # dict
+    name: demo
+    port: 8080
+
+tasks:
+  - name: Paigalda vajalikud paketid
+    apt:
+      name: "{{ item }}"
+      state: present
+    loop: "{{ packages }}"
+
+  - name: Kuva rakenduse nime ja pordi info
+    debug:
+      msg: "Rakendus {{ app.name }} töötab pordis {{ app.port }}"
+```
+
+---
+
+## Faktide (facts) kasutamine
+
+Lisaks enda loodud muutujatele kogub Ansible **automaatselt iga hosti kohta süsteemiteavet**, mida nimetatakse *facts*.  
+Need sisaldavad näiteks:
+
+- operatsioonisüsteemi nime ja versiooni,
+- tuuma (kernel) infot,
+- IP-aadresse ja võrguliideseid,
+- mälu ja protsessorite infot,
+- ajavööndi jpm.
+
+See info on kättesaadav playbookides spetsiaalse muutuja `ansible_facts` kaudu.
+
+### Näide
+
+```yaml
+- name: Kuva hosti operatsioonisüsteem
+  hosts: all
+  tasks:
+    - name: Kuva OS info
+      debug:
+        msg: "Hosti OS on {{ ansible_facts['distribution'] }}"
+```
+
+Faktide kogumine toimub automaatselt enne playbooki ülesannete täitmist (välja arvatud juhul, kui `gather_facts: false` on määratud).
+Saad vaadata kõiki kättesaadavaid fakte käsuga:
+
+```bash
+ansible all -m setup
+```
+
+`setup` kuvab kõik saadaval olevad faktid JSON-formaadis.
+---
+## Head tavad muutujate kasutamisel
 
 - Hoia muutujad eraldi failides (group_vars, host_vars) selguse huvides.
 - Kasuta selgeid ja ühtseid muutujate nimesid.
+- Pane vaikimisi väärtused madala prioriteediga kohta (nt group_vars/)
 - Ära pane salasõnu või tundlikke andmeid otse playbooki – kasuta Ansible Vault’i.
-- Testi malli `--check` ja `--diff` lipuga enne tootmiskeskkonnas kasutamist.
-- Kasuta mallides idempotentsust – väldi juhuslikke dünaamilisi väärtusi, mis muudavad faili igal jooksutusel.
 
 ---
 
 ## Harjutus
 
 1. Loo `group_vars/webservers.yml` fail ja määra seal:
-   - `server_name: mydemo.local`
-   - `web_root: /var/www/demo`
-2. Loo `templates/` kataloog ja sinna fail `demo.conf.j2`, mis sisaldab:
-```jinja2
-server {
-    listen 80;
-    server_name {{ server_name }};
-    root {{ web_root }};
-}
+
+```bash
+web_package: nginx
+web_root: /var/www/web
 ```
-3. Loo playbook, mis kopeerib malli sihtmasinasse `/etc/nginx/sites-available/demo`.
-4. Käivita playbook ja veendu, et fail on loodud õigete väärtustega.
-5. Muuda `server_name` muutujat ja käivita playbook uuesti – vaata, kas fail muutus ja teenus taaskäivitati.
+
+2. Loo host_vars/web1.yml fail, kus määrad teise väärtuse web_root muutujale.
+
+```bash
+web_root: /srv/web1_site
+```
+
+3. Loo lihtne playbook, mis:
+
+paigaldab {{ web_package }}
+loob kataloogi {{ web_root }}
+
+4. Käivita playbook ja testi, kas eri hostidel kasutati erinevaid väärtusi.
+5. Katseta muutujat käsurealt, nt:
+```bash
+ansible-playbook site.yml -e "web_root=/tmp/test_site"
+```
+
+Peakid märkama, et käsurealt määratud väärtus kirjutab üle nii grupi- kui ka hostimuutujad.
 
 ---
 
 ## Rohkem infot
 
 - [Using Variables in Ansible](https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_variables.html)
-- [Ansible Template Module](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/template_module.html)
-- [Jinja2 Documentation](https://jinja.palletsprojects.com/en/latest/templates/)
 
