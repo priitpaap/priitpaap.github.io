@@ -58,8 +58,8 @@ Playbook koosneb **ühest või mitmest play'st**. Iga play ütleb:
 1. Milliseid hoste see puudutab
 2. Milliseid ülesandeid (tasks) tuleb teha
 
-- **Play** = seos hostide ja tasks'ide vahel.
-- **Task** = üks konkreetne tegevus mooduliga.
+**Play** = seos hostide ja tasks'ide vahel.
+**Task** = üks konkreetne tegevus mooduliga.
 
 Kui ühe play all on palju tasks’e, täidetakse need järjestikku.
 
