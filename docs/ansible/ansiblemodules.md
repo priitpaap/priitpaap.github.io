@@ -155,6 +155,10 @@ Kui sa ei tea, kuidas mõni moodul töötab või milliseid argumente ta toetab, 
   [https://docs.ansible.com/ansible/latest/collections/index_module.html](https://docs.ansible.com/ansible/latest/collections/index_module.html)
 
 - **Käsurea abi** – saad otse terminalis mooduli kohta infot: 
+  ```bash
+  ansible winservers -m win_feature -a "name=Web-Server state=present" -i hosts.ini
+  ```
+
 
   ```bash
   ansible-doc ping
