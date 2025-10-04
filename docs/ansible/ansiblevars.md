@@ -114,6 +114,18 @@ ansible-playbook site.yml -e "web_package=nginx"
 web1 web_package=nginx web_root=/var/www/html
 ```
 
+```yaml
+all:
+  children:
+    webservers:
+      hosts:
+        web1:
+          ansible_host: 192.168.56.11
+          web_package: nginx
+          web_root: /var/www/html
+```
+
+
 ---
 
 ## Muutujate kasutamine ülesannetes
