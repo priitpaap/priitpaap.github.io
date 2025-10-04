@@ -116,7 +116,11 @@ Kui tahad ainult näha, mida tehakse (tegelikult ei käivitata):
 ansible-playbook paigalda_nginx.yml --check
 ```
 
-Playbookid, mis vajavad  ülesannete jaoks *become* (sudo) õigusi, saab käivitada nii:
+!!! info
+  `--check` ei garanteeri 100% identsust tegeliku jooksuga (nt mõne mooduli puhul ei saa muutust ette ennustada)
+
+
+Playbookid, mis vajavad  ülesannete (tasks) jaoks *become* (sudo) õigusi, saab käivitada nii:
 
 ```bash
 ansible-playbook paigalda_nginx.yml -l web1 --become
@@ -142,16 +146,6 @@ ansible-playbook seadista_nginx.yml --diff
 
 ---
 
-## Harjutus
-
-1. Kirjuta playbook, mis loob `/tmp/ansible_test` kataloogi kõigis hostides.
-2. Tee playbook, mis paigaldab paketi `curl`.
-3. Lisa playbooki ülesanne, mis paneb teenuse `ssh` käima ja lubab selle automaatse käivitamise.
-4. Käivita oma playbook esmalt `--check` režiimis ja siis päriselt.
-5. Proovi suunata playbook ainult ühele hostile `-l` parameetriga.
-
----
-
 ## Head tavad playbookide kirjutamisel
 
 - **Hoia lihtsana** – tee playbookid loetavaks, et ka teised (või sina ise hiljem) saaksid aru, mida need teevad.
@@ -164,6 +158,35 @@ ansible-playbook seadista_nginx.yml --diff
 - **Versioonihaldus (git)** – hoia playbookid ja inventory git’is, et oleks võimalik muudatusi jälgida.
 
 ---
+
+## Playbookide kvaliteedi kontroll: `ansible-lint`
+
+Kui oled kirjutanud oma esimese playbooki, võib olla raske märgata, kas kõik on tehtud parimate tavade järgi.  
+Siin tuleb appi tööriist **`ansible-lint`** – see on lihtne programm, mis kontrollib playbooke ja rolle ning annab vihjeid, kuidas neid paremaks muuta.
+
+`ansible-lint` aitab näiteks:
+
+- Leida valesti kasutatud või vananenud mooduleid
+- Märgata YAML-i süntaksi probleeme
+- Soovitada paremaid praktikaid (nt muutujate ja tingimuste kasutamisel)
+- Tagada, et sinu playbook oleks ühtlaselt loetav ja hooldatav
+
+Näide kasutamisest:
+
+```bash
+ansible-lint minu_playbook.yml
+```
+
+---
+
+## Harjutus
+
+1. Kirjuta playbook, mis loob `/tmp/ansible_test` kataloogi kõigis hostides (moodul: ansible.builtin.file)
+2. Tee playbook, mis paigaldab paketi `curl` (moodul: ansible.builtin.package või ansible.builtin.apt).
+3. Lisa playbooki ülesanne, mis paneb teenuse `ssh` käima ja lubab selle automaatse käivitamise (moodul: ansible.builtin.service).
+4. Käivita oma playbook esmalt `--check` režiimis ja siis päriselt.
+5. Proovi suunata playbook ainult ühele hostile `-l` parameetriga.
+
 
 ## Rohkem infot
 
