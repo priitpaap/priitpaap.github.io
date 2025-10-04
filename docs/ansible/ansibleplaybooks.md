@@ -160,6 +160,8 @@ ansible-playbook seadista_nginx.yml --diff
 - **Kasuta rolle** kui playbook muutub suureks – rollid aitavad hoida koodi korrastatuna.
 - **Ära kasuta "shell" või "command" moodulit ilma vajaduseta** – eelista spetsiaalseid mooduleid (`apt`, `service`, `file` jne).
 - **Versioonihaldus (git)** – hoia playbookid ja inventory git’is, et oleks võimalik muudatusi jälgida.
+- **Kommentaarid YAML-is:** `#` – aitab enda jaoks kommentaare ja märkmeid teha.
+- **Idempotentsus:** - Ansible ülesanded peaksid olema korduvkäivitatavad, muutmata midagi kui süsteem on juba soovitud seisundis.
 
 ---
 
@@ -179,6 +181,14 @@ Näide kasutamisest:
 
 ```bash
 ansible-lint minu_playbook.yml
+```
+
+Tööriist ei ole vaikimisi Ansible’iga kaasas, vaid tuleb eraldi paigaldada. Olenevalt kuidas Ansible on paigaldatud, saad selle paigaldada nii:
+
+```bash
+apt install ansible-lint  # pakihaldurist
+pipx install ansible-lint  # pipx abil
+pip install ansible-lint  # pip abil
 ```
 
 ---
