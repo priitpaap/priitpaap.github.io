@@ -150,6 +150,51 @@ ansible-playbook seadista_nginx.yml --diff
 
 ---
 
+## Muutujate kasutamine (vars)
+
+Sageli on mugav hoida korduvaid väärtusi (nt kataloogiteed, paketid või pordid) muutujates.  
+See teeb playbooki lühemaks ja hõlpsamini hallatavaks.
+
+Muutujad saab defineerida playbooki sees võtme `vars:` all.
+
+### Näide: muutujate kasutamine
+
+```yaml
+---
+- name: Muutujate näide
+  hosts: webservers
+  become: yes
+
+  vars:
+    web_package: nginx
+    web_root: /var/www/html
+
+  tasks:
+    - name: Paigalda veebiserver
+      apt:
+        name: "{{ web_package }}"
+        state: present
+
+    - name: Loo veebikataloog
+      file:
+        path: "{{ web_root }}/demo"
+        state: directory
+        owner: www-data
+        group: www-data
+        mode: '0755'
+```
+
+Selgitus:
+
+- `vars:` all defineeritakse muutujad web_package ja web_root.
+- Muutujaid kasutatakse topeltlainelistes sulgudes {{ }}.
+- Kui muutuja väärtust hiljem muuta, ei pea seda igal pool käsitsi asendama.
+
+!!! info
+  Kui muutujad on pikemad või peavad kehtima mitmes playbookis, tasub need hoida eraldi failides (nt **group_vars/** või **host_vars/** kataloogides).
+
+---
+
 ## Head tavad playbookide kirjutamisel
 
 - **Hoia lihtsana** – tee playbookid loetavaks, et ka teised (või sina ise hiljem) saaksid aru, mida need teevad.
