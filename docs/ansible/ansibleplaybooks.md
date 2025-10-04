@@ -28,10 +28,12 @@ YAML (YAML Ain’t Markup Language) on lihtne andmevorming, mida Ansible kasutab
 
 Olulised reeglid:
 
-- Taandamine (indentation) tühikutega, mitte tab-idega
+- Taandamine (indentation) tühikutega, mitte tab-idega. Tühikute arv taandamisel on vaba, aga peab olema järjepidev (nt 2 või 4 tühikut)
 - Võtme-väärtuse paarid: `võti: väärtus`
 - Loetelud: `- element`
 - Sõnumite või käskude kirjeldused võivad olla jutumärkides kui sisaldavad erisümboleid
+- `---` faili alguses pole Ansible jaoks kohustuslik, aga on YAML standardi osa
+- YAML-is ei tohi kasutada `:` sümbolit väärtuses ilma jutumärkideta
 
 Näide:
 
