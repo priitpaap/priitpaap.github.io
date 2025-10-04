@@ -72,7 +72,7 @@ all:
 ```          
 
 !!! warning
-    YAML-is tuleb kasutada taanete jaoks tühikuid, mitte TAB-e. Vale taandus = viga. Iga järgmise taseme element = järjepidev arv tühikuid (n: 2 või 4).
+    YAML-is tuleb kasutada taanete jaoks tühikuid, mitte TAB-e. Vale taandus = viga. Iga järgmise taseme element = järjepidev arv tühikuid (standardiks 2 tühikut).
 
 
 ---

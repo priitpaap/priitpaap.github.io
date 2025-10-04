@@ -15,10 +15,7 @@ Selles peatükis õpid:
 
 ## Mis on muutujad?
 
-**Muutujad** võimaldavad hoida korduvaid väärtusi ühes kohas.  
-See muudab playbookid lihtsamaks, loetavamaks ja hooldatavamaks.
-
-Näiteks kui mitmes ülesandes tuleb kasutada sama kataloogi teed või paketi nime, siis on mõistlik määrata see muutuja alla.
+**Muutujad** võimaldavad hoida korduvaid väärtusi ühes kohas. See muudab playbookid lihtsamaks, loetavamaks ja hooldatavamaks. Sageli on mugav hoida korduvaid väärtusi (nt kataloogiteed, paketid või pordid) muutujates. See teeb playbooki lühemaks ja hõlpsamini hallatavaks.
 
 ---
 
@@ -30,37 +27,79 @@ Olulisemad viisid:
 
 1. **Playbooki sees `vars:` all**
 
+Muutujad saab defineerida playbooki sees võtme `vars:` all.
+
 ```yaml
 ---
-- name: Lihtne playbook muutujatega
+- name: Muutujate näide
   hosts: webservers
+  become: yes
+
   vars:
     web_package: nginx
     web_root: /var/www/html
+
   tasks:
     - name: Paigalda veebiserver
       apt:
         name: "{{ web_package }}"
         state: present
+
+    - name: Loo veebikataloog
+      file:
+        path: "{{ web_root }}/demo"
+        state: directory
+        owner: www-data
+        group: www-data
+        mode: '0755'
 ```
+
+Selgitus:
+
+- `vars:` all defineeritakse muutujad web_package ja web_root.
+- Muutujaid kasutatakse topeltlainelistes sulgudes {{ }}.
+- Kui muutuja väärtust hiljem muuta, ei pea seda igal pool käsitsi asendama.
+
+!!! info
+    Kui muutujad on pikemad või peavad kehtima mitmes playbookis, tasub need hoida eraldi failides (nt **group_vars/** või **host_vars/** kataloogides).
+
 
 2. **Muutujad eraldi failis (group_vars või host_vars)**
 
 Kataloogistruktuur:
 ```
-inventor/
-├─ hosts.ini
+inventory/
+├─ hosts.yaml
 ├─ group_vars/
 │  └─ webservers.yml
 ```
 
-Fail `group_vars/webservers.yml`:
+Fail `group_vars/webservers.yml` sisu:
+```yaml
+web_package: nginx
+web_root: /var/www/html
+```
+Playbook kasutab neid muutujad automaatselt, kui `hosts:` määratud grupp on `webservers`.
+
+Kui vajad, et **erinevad hostid kasutaksid eri väärtusi**, on mugav kasutada `host_vars/` kataloogi.
+
+```
+inventory/
+├─ hosts.yaml
+├─ host_vars/
+│  └─ web1.yml
+```
+
+Fail `host_vars/web1.yml` sisu:
 ```yaml
 web_package: nginx
 web_root: /var/www/html
 ```
 
-Playbook kasutab neid muutujad automaatselt, kui `hosts:` määratud grupp on `webservers`.
+Playbook kasutab neid muutujad automaatselt, kui `hosts:` määratud on `web1`.
+
+!!! info
+    host_vars/ kataloogis olev fail peab kandma sama nime kui inventory’s määratud host.    
 
 3. **Muutujad käsurealt**
 
