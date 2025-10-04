@@ -126,7 +126,7 @@ ansible winservers -m win_service -a "name=Spooler state=restarted" -i hosts.ini
 
 ---
 
-## Levinumad moodulid (õppuritele kasulikud)
+## Levinumad moodulid
 
 ### Linux
 - `ping` – ühenduse kontroll.  
@@ -147,19 +147,20 @@ ansible winservers -m win_service -a "name=Spooler state=restarted" -i hosts.ini
 - `win_user` – kasutajate haldamine.  
 
 ---
-### Kust leida abi moodulite kasutamisel?
+## Kust leida abi moodulite kasutamisel?
 
 Kui sa ei tea, kuidas mõni moodul töötab või milliseid argumente ta toetab, on mitu võimalust abi saamiseks:
 
 - **Ansible dokumentatsioon** – iga mooduli kohta on olemas detailne juhend ja näited:  
   [https://docs.ansible.com/ansible/latest/collections/index_module.html](https://docs.ansible.com/ansible/latest/collections/index_module.html)
 
-- **Käsurea abi** – saad otse terminalis mooduli kohta infot:  
+- **Käsurea abi** – saad otse terminalis mooduli kohta infot: 
+
   ```bash
   ansible-doc ping
   ansible-doc copy
   ansible-doc -l      # näitab kõiki saadaval mooduleid
-
+  ```
 ---
 
 ## Head tavad
