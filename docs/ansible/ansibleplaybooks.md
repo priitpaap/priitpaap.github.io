@@ -191,7 +191,7 @@ Selgitus:
 - Kui muutuja väärtust hiljem muuta, ei pea seda igal pool käsitsi asendama.
 
 !!! info
-  Kui muutujad on pikemad või peavad kehtima mitmes playbookis, tasub need hoida eraldi failides (nt **group_vars/** või **host_vars/** kataloogides).
+    Kui muutujad on pikemad või peavad kehtima mitmes playbookis, tasub need hoida eraldi failides (nt **group_vars/** või **host_vars/** kataloogides).
 
 ---
 
