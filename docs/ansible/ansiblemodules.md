@@ -152,7 +152,7 @@ ansible winservers -m win_service -a "name=Spooler state=restarted" -i hosts.ini
 Kui sa ei tea, kuidas mõni moodul töötab või milliseid argumente ta toetab, on mitu võimalust abi saamiseks:
 
 - **Ansible dokumentatsioon** – iga mooduli kohta on olemas detailne juhend ja näited:  
-  [https://docs.ansible.com/ansible/latest/collections/index_module.html](https://docs.ansible.com/ansible/latest/collections/index_module.html)
+  [https://docs.ansible.com/ansible/latest/collections/index_module.html](https://docs.ansible.com/ansible/latest/collections/index_module.html){:target="_blank"} 
 
 - **Käsurea abi** – saad otse terminalis mooduli kohta infot, näiteks: 
   ```bash
