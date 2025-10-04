@@ -15,9 +15,9 @@ Selles peatükis õpid:
 Playbookid kirjutatakse **YAML** formaadis, mis on loetav ja lihtne struktuurne keel.
 
 Playbook võimaldab:
-- Korrata tegevusi usaldusväärselt mitmes masinas korraga
-- Dokumenteerida, mida täpselt tehakse
-- Automatiseerida keerulisemaid töövooge (nt tarkvara paigaldus, teenuste seadistamine)
+  - Korrata tegevusi usaldusväärselt mitmes masinas korraga
+  - Dokumenteerida, mida täpselt tehakse
+  - Automatiseerida keerulisemaid töövooge (nt tarkvara paigaldus, teenuste seadistamine)
 
 ---
 
