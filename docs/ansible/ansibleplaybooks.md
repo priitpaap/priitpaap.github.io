@@ -53,6 +53,7 @@ Näide:
 ## Playbooki ülesehitus
 
 Playbook koosneb **ühest või mitmest play'st**. Iga play ütleb:
+
 1. Milliseid hoste see puudutab
 2. Milliseid ülesandeid (tasks) tuleb teha
 
@@ -77,6 +78,7 @@ Playbook koosneb **ühest või mitmest play'st**. Iga play ütleb:
 ```
 
 Selgitus:
+
 - `hosts: webservers` → see play rakendub gruppi „webservers” kuuluvatele hostidele  
 - `become: yes` → käsud tehakse sudo õigustes  
 - `apt:` ja `service:` → moodulid, millega vastav tegevus tehakse  
