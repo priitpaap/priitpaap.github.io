@@ -111,9 +111,15 @@ Kui tahad ainult näha, mida tehakse (tegelikult ei käivitata):
 ansible-playbook paigalda_nginx.yml --check
 ```
 
+Playbookid, mis vajavad  ülesannete jaoks *become* (sudo) õigusi, saab käivitada nii:
+
+```bash
+ansible-playbook paigalda_nginx.yml -l web1 --become
+```
+
 ---
 
-## Praktikaülesanded
+## Harjutus
 
 1. Kirjuta playbook, mis loob `/tmp/ansible_test` kataloogi kõigis hostides.
 2. Tee playbook, mis paigaldab paketi `curl`.
@@ -122,14 +128,6 @@ ansible-playbook paigalda_nginx.yml --check
 5. Proovi suunata playbook ainult ühele hostile `-l` parameetriga.
 
 ---
-
-## Kokkuvõte
-
-- **Playbookid** on Ansible keskne automatiseerimise viis.  
-- Need on kirjutatud **YAML** formaadis.  
-- Playbook koosneb: `hosts`, `tasks` ja vajadusel muutujad, rollid jpm.  
-- Käivitatakse käsuga `ansible-playbook`.  
-- Playbooke saab turvaliselt testida `--check` režiimis.
 
 ## Head tavad playbookide kirjutamisel
 
