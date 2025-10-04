@@ -59,7 +59,10 @@ Playbook koosneb **ühest või mitmest play'st**. Iga play ütleb:
 1. Milliseid hoste see puudutab
 2. Milliseid ülesandeid (tasks) tuleb teha
 
-### Väike näide
+ - **Play** = seos hostide ja tasks'ide vahel.
+ - **Task** = üks konkreetne tegevus mooduliga.
+
+### Väike näide (nginx veebiserveri paigaldamine Debiani laadsetele Linuxitele)
 
 ```yaml
 ---
@@ -117,6 +120,24 @@ Playbookid, mis vajavad  ülesannete jaoks *become* (sudo) õigusi, saab käivit
 
 ```bash
 ansible-playbook paigalda_nginx.yml -l web1 --become
+```
+
+### Kasulikud lisaparameetrid käivitamisel
+
+Kui tahad rohkem infot näha, kasuta **verbose** lippu `-v` (või `-vvv` detailsema logi jaoks):
+
+```bash
+ansible-playbook paigalda_nginx.yml -v
+ansible-playbook paigalda_nginx.yml -vvv
+```
+
+- `-v` - näitab lühikest lisainfot, nt millised käsud jooksevad.
+- `-vvv` - näitab väga detailset infot, sh mooduli täpseid käske ja ühenduse logi (hea veaotsinguks).
+
+Kui tahad näha, mida muudetakse (eriti konfiguratsioonifailide puhul), kasuta --diff lippu. `--diff` lipp võrdleb **hosti praegust seisundit** (näiteks faili sisu või teenuse olekut) ja **seda, millisesse seisundisse playbook tahab selle viia**.
+
+```bash
+ansible-playbook seadista_nginx.yml --diff
 ```
 
 ---
