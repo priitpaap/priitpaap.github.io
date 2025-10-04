@@ -27,7 +27,8 @@ Playbook võimaldab:
 YAML (YAML Ain’t Markup Language) on lihtne andmevorming, mida Ansible kasutab playbookide jaoks.
 
 Olulised reeglid:
-- Taandamine (indentation) tühikutega, mitte tabidega
+
+- Taandamine (indentation) tühikutega, mitte tab-idega
 - Võtme-väärtuse paarid: `võti: väärtus`
 - Loetelud: `- element`
 - Sõnumite või käskude kirjeldused võivad olla jutumärkides kui sisaldavad erisümboleid
