@@ -85,9 +85,9 @@ Kui ühe play all on palju tasks’e, täidetakse need järjestikku.
 
 Selgitus:
 
-- `hosts: webservers` → see play rakendub gruppi „webservers” kuuluvatele hostidele  
-- `become: yes` → käsud tehakse sudo õigustes  
-- `apt:` ja `service:` → moodulid, millega vastav tegevus tehakse  
+- `hosts: webservers` - see play rakendub gruppi „webservers” kuuluvatele hostidele  
+- `become: yes` - käsud tehakse sudo õigustes  
+- `apt:` ja `service:` - moodulid, millega vastav tegevus tehakse  
 
 ---
 
@@ -100,7 +100,7 @@ ansible-playbook failinimi.yml
 ```
 
 !!! info
-  Kui inventory pole vaikimisi määratud, tuleb kasutada ka `-i` lippu
+    Kui inventory pole vaikimisi määratud, tuleb kasutada ka `-i` lippu
 
 Näiteks:
 
@@ -121,7 +121,7 @@ ansible-playbook paigalda_nginx.yml --check
 ```
 
 !!! info
-  `--check` ei garanteeri 100% identsust tegeliku jooksuga (nt mõne mooduli puhul ei saa muutust ette ennustada)
+    `--check` ei garanteeri 100% identsust tegeliku jooksuga (nt mõne mooduli puhul ei saa muutust ette ennustada)
 
 
 Playbookid, mis vajavad  ülesannete (tasks) jaoks *become* (sudo) õigusi, saab käivitada nii:
