@@ -11,8 +11,7 @@ Selles peatükis õpid:
 
 ## Mis on Playbook?
 
-**Playbook** on Ansible keskne osa, kus kirjeldatakse samm-sammult, mida masinates teha tuleb.  
-Playbookid kirjutatakse **YAML** formaadis, mis on loetav ja lihtne struktuurne keel.
+**Playbook** on Ansible keskne osa, kus kirjeldatakse samm-sammult, mida masinates teha tuleb. Kui Ansible käsud on nagu üksikud käsklused, siis playbook on nagu skript, mis need käsud järjest täidab. Playbookid kirjutatakse **YAML** formaadis, mis on loetav ja lihtne struktuurne keel.
 
 Playbook võimaldab:
 
@@ -28,7 +27,7 @@ YAML (YAML Ain’t Markup Language) on lihtne andmevorming, mida Ansible kasutab
 
 Olulised reeglid:
 
-- Taandamine (indentation) tühikutega, mitte tab-idega. Tühikute arv taandamisel on vaba, aga peab olema järjepidev (nt 2 või 4 tühikut)
+- Taandamine (indentation) tühikutega, mitte tab-idega. Tühikute arv taandamisel on vaba, aga peab olema järjepidev (standardiks on 2 tühikut). 
 - Võtme-väärtuse paarid: `võti: väärtus`
 - Loetelud: `- element`
 - Sõnumite või käskude kirjeldused võivad olla jutumärkides kui sisaldavad erisümboleid
@@ -61,6 +60,8 @@ Playbook koosneb **ühest või mitmest play'st**. Iga play ütleb:
 
  - **Play** = seos hostide ja tasks'ide vahel.
  - **Task** = üks konkreetne tegevus mooduliga.
+
+Kui ühe play all on palju tasks’e, täidetakse need järjestikku.
 
 ### Väike näide (nginx veebiserveri paigaldamine Debiani laadsetele Linuxitele)
 
@@ -97,6 +98,9 @@ Playbook käivitatakse käsuga:
 ```bash
 ansible-playbook failinimi.yml
 ```
+
+!!! info
+  Kui inventory pole vaikimisi määratud, tuleb kasutada ka `-i` lippu
 
 Näiteks:
 
