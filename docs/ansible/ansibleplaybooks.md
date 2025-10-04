@@ -27,7 +27,7 @@ YAML (YAML Ain’t Markup Language) on lihtne andmevorming, mida Ansible kasutab
 
 Olulised reeglid:
 
-- Taandamine (indentation) tühikutega, mitte tab-idega. Tühikute arv taandamisel on vaba, aga peab olema järjepidev (standardiks on 2 tühikut). 
+- Taandamine (indentation) tühikutega, mitte tab-idega. Tühikute arv taandamisel on vaba, aga peab olema järjepidev (**standardiks on 2 tühikut**). 
 - Võtme-väärtuse paarid: `võti: väärtus`
 - Loetelud: `- element`
 - Sõnumite või käskude kirjeldused võivad olla jutumärkides kui sisaldavad erisümboleid
@@ -58,8 +58,8 @@ Playbook koosneb **ühest või mitmest play'st**. Iga play ütleb:
 1. Milliseid hoste see puudutab
 2. Milliseid ülesandeid (tasks) tuleb teha
 
- - **Play** = seos hostide ja tasks'ide vahel.
- - **Task** = üks konkreetne tegevus mooduliga.
+- **Play** = seos hostide ja tasks'ide vahel.
+- **Task** = üks konkreetne tegevus mooduliga.
 
 Kui ühe play all on palju tasks’e, täidetakse need järjestikku.
 
