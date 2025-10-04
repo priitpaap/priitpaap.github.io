@@ -121,7 +121,7 @@ ansible-playbook paigalda_nginx.yml --check
 ```
 
 !!! info
-    `--check` ei garanteeri 100% identsust tegeliku jooksuga (nt mõne mooduli puhul ei saa muutust ette ennustada)
+    `--check` ei garanteeri 100% identsust tegeliku käivitamisega (nt mõne mooduli puhul ei saa muutust ette ennustada)
 
 
 Playbookid, mis vajavad  ülesannete (tasks) jaoks *become* (sudo) õigusi, saab käivitada nii:
