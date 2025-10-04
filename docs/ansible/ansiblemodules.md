@@ -156,15 +156,11 @@ Kui sa ei tea, kuidas mõni moodul töötab või milliseid argumente ta toetab, 
 
 - **Käsurea abi** – saad otse terminalis mooduli kohta infot: 
   ```bash
-  ansible winservers -m win_feature -a "name=Web-Server state=present" -i hosts.ini
-  ```
-
-
-  ```bash
   ansible-doc ping
   ansible-doc copy
-  ansible-doc -l      # näitab kõiki saadaval mooduleid
+  ansible-doc -l # näitab kõiki saadaval mooduleid
   ```
+
 ---
 
 ## Head tavad
