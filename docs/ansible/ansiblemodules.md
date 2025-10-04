@@ -8,7 +8,7 @@ Selles peatükis õpid:
 - Mis on Ansible moodulid ja miks neid kasutatakse  
 - Kuidas käivitada ad-hoc käske Ansible abil  
 - Levinumad moodulid ja nende kasutamine (Linux ja Windows)  
-- Kuidas testida ja harjutada moodulite kasutamist  
+- Kuidas leida abi moodulite kasutamise kohta
 
 ---
 
@@ -32,17 +32,17 @@ Selles peatükis õpid:
 
 ### Mooduli nime kasutamine (lühike vs täisnimi)
 
-Ansible’is saab mooduleid kutsuda kas **lühinimega** või **täisnimega**:
+Ansible’is saab mooduleid kutsuda kas **lühinimega** või **täisnimega**. Näiteks:
 
 ```bash
-# Lühinimi (builtin moodul)
+# Lühinimi
 ansible all -m ping
 
-# Täisnimi (täpne nimeruum)
+# Täisnimi
 ansible all -m ansible.builtin.ping
 ```
 
-- Lühivorm (ping, copy, service) on mugavam ja töötab siis, kui moodul on Ansible enda sisseehitatud kogust (*builtin*).
+- Lühivorm (ping, copy, service) on mugavam ja töötab siis, kui moodul pärineb Ansible enda sisseehitatud kogust (*builtin*).
 - Täisvorm (n: ansible.builtin.ping) muutus oluliseks alates Ansible Collections süsteemist (versioon 2.9+). See väldib segadust, kui sama nimega moodul on saadaval mitmes kogus.
 
 **Kogu** (collection) on moodulite, plugin’ite ja rollide kogumik.
@@ -71,9 +71,9 @@ Näiteks:
 ansible <host või grupp> -m <moodul> -a "<argumendid>" -i <inventory>
 ```
 
-- `<hostid>` – hosti alias või grupi nimi inventory failist.  
-- `-m` – määrab mooduli.  
-- `-a` – annab moodulile argumendid.  
+- `<host või grupp>` – hosti alias või grupi nimi inventory failist;  
+- `-m` – määrab mooduli;  
+- `-a` – annab moodulile argumendid;  
 - `-i` – määrab inventory faili (ilma selleta kasutatakse vaikimisi faili).  
 
 ---
@@ -154,7 +154,7 @@ Kui sa ei tea, kuidas mõni moodul töötab või milliseid argumente ta toetab, 
 - **Ansible dokumentatsioon** – iga mooduli kohta on olemas detailne juhend ja näited:  
   [https://docs.ansible.com/ansible/latest/collections/index_module.html](https://docs.ansible.com/ansible/latest/collections/index_module.html)
 
-- **Käsurea abi** – saad otse terminalis mooduli kohta infot: 
+- **Käsurea abi** – saad otse terminalis mooduli kohta infot, näiteks: 
   ```bash
   ansible-doc ping
   ansible-doc copy
@@ -174,12 +174,15 @@ Kui sa ei tea, kuidas mõni moodul töötab või milliseid argumente ta toetab, 
 
 ## Harjutus
 
+Teosta ad-hoc käskude abil järgmised tegevused:
+
 1. Kontrolli, et saad ühenduse Linuxi ja Windowsi hostidega (`ping`, `win_ping`).  
 2. Loo oma kodukataloogi fail `test.txt` ja kopeeri see kõikidesse Linux hostidesse `/tmp` alla.  
-3. Paigalda Linux hostidesse pakett `htop` (või Apache, kui kasutad webservereid).  
-4. Luba ja käivita Windows hostides teenus `Spooler`.  
-5. Proovi eemaldada mõni pakett Linuxist ad-hoc käsuga.  
-6. Katseta `command` või `win_command` moodulit ja võrdle tulemusi `shell` mooduliga.  
+3. Paigalda kõikidesse Linux hostidesse paketid `htop` ja `nginx`.  
+4. Paigalda Windows hostidesse veebiserveri roll (IIS).
+5. Proovi eemaldada eelnevalt paigaldatud `nginx` pakett Linuxi hostidest.  
+6. Katseta Linuxi hostides `command` moodulit ja käivita käsk `uptime`.
+7. Katsete Windowsi hostides `win_command` ja `win_shell` mooduleid ja käivita käsk `hostname`.
 
 ---
 
