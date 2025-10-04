@@ -166,7 +166,7 @@ Kui sa ei tea, kuidas mõni moodul töötab või milliseid argumente ta toetab, 
 ## Head tavad
 
 - Kasuta **ad-hoc käske ainult kiireks testimiseks** – päris konfiguratsiooni jaoks kirjuta playbookid.  
-- Kasuta mooduleid, mitte käske `command` või `shell`, sest moodulid on idempotentsed.  
+- Kasuta võimalusel mooduleid, mitte käske `command` või `shell`, sest moodulid on idempotentsed.  
 - Alusta alati ühenduse testimisest moodulitega `ping` või `win_ping`.  
 - Kasuta `-b` (become), kui vajad root õigusi Linuxi hostides.  
 
