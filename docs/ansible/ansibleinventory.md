@@ -1,4 +1,4 @@
-# Hostide haldus *inventory* abil
+# Ansible *inventory*
 
 ## Eesmärk
 
