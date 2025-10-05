@@ -17,7 +17,7 @@ Selles peatükis õpid:
 
 **Jinja2** on Ansible vaikimisi kasutatav mallimootor, millega saab dünaamiliselt luua konfiguratsioonifaile, skripte või muud sisu.
 
-- Mall on tavaline tekstifail (nt konfiguratsioonifail või skript), kus kasutatakse **muutujaid** ja **juhtlauseid** (nt `if`, `for`).
+- Mall on tavaline tekstifail (nt konfiguratsioonifail või skript), kus kasutatakse **muutujaid** ja **tingimuslauseid** (nt `if`, `for`).
 - Faili laiend on tavaliselt `.j2`.
 - Käivitamisel asendab Ansible mallis olevad muutujad nende väärtustega ning loob sihtmasinas lõppfaili.
 
