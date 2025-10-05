@@ -13,7 +13,7 @@ Selles peatükis õpid:
 
 ---
 
-## Mis on Jinja2 mallid
+## Mis on Jinja2 mallid ja miks need on kasulikud
 
 **Jinja2** on Ansible vaikimisi kasutatav mallimootor, millega saab dünaamiliselt luua konfiguratsioonifaile, skripte või muud sisu.
 
@@ -21,7 +21,20 @@ Selles peatükis õpid:
 - Faili laiend on tavaliselt `.j2`.
 - Käivitamisel asendab Ansible mallis olevad muutujad nende väärtustega ning loob sihtmasinas lõppfaili.
 
-Lihtne näide mallifailist. Fail `templates/nginx.conf.j2`:
+Enamik serveriteenuseid (nt **Nginx, Apache, SSH, MariaDB, Docker** jne) vajavad **konfiguratsioonifaile**, et määrata nende seadistusi.
+
+Kui seadistad servereid käsitsi, pead iga teenuse jaoks:
+- kirjutama või muutma konfiguratsioonifaile,
+- kopeerima need õigesse kohta (nt `/etc/nginx/sites-available/default`),
+- tagama, et õiged väärtused (nt `server_name`, pordid, kaustateed) on igas serveris õiged.
+
+Ansiblega mallide kasutamine teeb selle lihtsamaks:
+- **Mall (template)** on konfiguratsioonifaili alus, kus muutuvad osad (nt `server_name`, `web_root`) on kirjutatud muutujatena `{{ ... }}`.
+- Playbook koos `template` mooduliga kopeerib malli õigesse asukohta ja asendab muutujad sihtmasina jaoks sobivate väärtustega.
+
+### Lihtne näide mallifailist ja selle kasutamisest
+
+Fail `templates/nginx.conf.j2`:
 
 ```jinja2
 server {
