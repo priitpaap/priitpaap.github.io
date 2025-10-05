@@ -36,9 +36,7 @@ server {
 }
 ```
 
----
-
-### Playbook, mis kasutab malli
+Playbook, mis kasutab kasutab seda malli:
 
 ```yaml
 ---
@@ -62,7 +60,7 @@ server {
         state: restarted
 ```
 
-### Selgitus
+Selgitus
 
 - Mallifaili muutujad (`{{ server_name }}` ja `{{ web_root }}`) asendatakse playbooki jooksutamise ajal nende väärtustega.
 - `template:` moodul kopeerib mallifaili sihtmasinasse ja teeb asendused.
