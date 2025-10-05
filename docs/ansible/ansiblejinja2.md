@@ -90,59 +90,59 @@ Selgitus:
 
     Tingimuslause abil saab faili teatud osa lisada ainult siis, kui muutuja vastab teatud tingimusele.
 
-  Näide: kui `use_ssl` muutuja on `true`, kuulab server porti 443, muidu 80. Vastavalt sellele täidetakse ka sihtfail.
+    Näide: kui `use_ssl` muutuja on `true`, kuulab server porti 443, muidu 80. Vastavalt sellele täidetakse ka sihtfail.
 
-  ```jinja2
-  {% if use_ssl %}
-  listen 443 ssl;
-  {% else %}
-  listen 80;
-  {% endif %}
-  ```
+    ```jinja2
+    {% if use_ssl %}
+    listen 443 ssl;
+    {% else %}
+    listen 80;
+    {% endif %}
+    ```
 
-  Kui `use_ssl = true`, läheb lõppfaili:
+    Kui `use_ssl = true`, läheb lõppfaili:
 
-  ```bash
-  listen 443 ssl;
-  ```
+    ```bash
+    listen 443 ssl;
+    ```
 
-  Kui `use_ssl = false` või muutujat pole määratud, läheb lõppfaili:
+    Kui `use_ssl = false` või muutujat pole määratud, läheb lõppfaili:
 
-  ```bash
-  listen 80;
-  ```
+    ```bash
+    listen 80;
+    ```
 
 - Tsükkel:
 
-  Tsükliga saab luua korduvaid konfiguratsiooniridu, näiteks mitu domeeninime või IP-d.
+    Tsükliga saab luua korduvaid konfiguratsiooniridu, näiteks mitu domeeninime või IP-d.
 
-  ```jinja2
-  {% for site in sites %}
-  server_name {{ site }};
-  {% endfor %}
-  ```
+    ```jinja2
+    {% for site in sites %}
+    server_name {{ site }};
+    {% endfor %}
+    ```
 
-  Kui muutuja `sites` on määratud loendina:
-  ```yaml
-  sites:
-  - example.com
-  - test.example.com
-  - demo.example.com
-  ```
+    Kui muutuja `sites` on määratud loendina:
+    ```yaml
+    sites:
+    - example.com
+    - test.example.com
+    - demo.example.com
+    ```
 
-  Siis mallist tekib järgmine lõppfail:
+    Siis mallist tekib järgmine sihtfail:
 
-  ```bash
-  server_name example.com;
-  server_name test.example.com;
-  server_name demo.example.com;
-  ```
+    ```bash
+    server_name example.com;
+    server_name test.example.com;
+    server_name demo.example.com;
+    ```
 
 - Kommentaar failis:
 
-  ```jinja2
-  {# See slgitav on kommentaar, mida lõpfaili ei lisata #}
-  ```
+    ```jinja2
+    {# See slgitav on kommentaar, mida lõpfaili ei lisata #}
+    ```
 
 ---
 
