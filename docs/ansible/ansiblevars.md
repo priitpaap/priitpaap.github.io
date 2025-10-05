@@ -79,6 +79,8 @@ inventory/
 ├─ hosts.yaml
 ├─ group_vars/
 │  └─ webservers.yml
+├─ host_vars/
+│  └─ web1.yml
 ```
 
 Fail `group_vars/webservers.yml` sisu:
@@ -90,19 +92,11 @@ Playbook kasutab neid muutujad automaatselt, kui `hosts:` määratud grupp on `w
 
 Kui vajad, et **erinevad hostid kasutaksid eri väärtusi**, on mugav kasutada `host_vars/` kataloogi.
 
-```
-inventory/
-├─ hosts.yaml
-├─ host_vars/
-│  └─ web1.yml
-```
-
 Fail `host_vars/web1.yml` sisu:
 ```yaml
 web_package: nginx
 web_root: /var/www/html
 ```
-
 Playbook kasutab neid muutujad automaatselt, kui `hosts:` määratud on `web1`.
 
 !!! info
