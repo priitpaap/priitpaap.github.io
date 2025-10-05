@@ -196,8 +196,8 @@ Ansible kasutab YAML-andmetüüpe. Muutujad ei ole ainult tekst (string), vaid v
 | String        | `web_package: "nginx"` | Tekstiväärtus. Soovitatav panna jutumärkidesse, eriti kui sisaldab tühikuid või erimärke. |
 | Täisarv (int) | `max_clients: 200` | Kasutatakse arvulistes seadistustes. |
 | Tõeväärtus (bool) | `debug_mode: true` | Saab väärtusteks `true` või `false`. |
-| Loend (list)  | ```yaml<br>packages:<br>  - nginx<br>  - curl<br>  - vim``` | Mitme elemendi kogum, mida saab tsüklis läbi käia. |
-| Sõnastik (dict) | ```yaml<br>app:<br>  name: demo<br>  port: 8080``` | Võtme-väärtuse paaride kogum. Kasulik keerukamate seadistuste jaoks. |
+| Loend (list)  | `packages: [nginx, curl, vim]` | Mitme elemendi kogum, mida saab tsüklis läbi käia. |
+| Sõnastik (dict) | `app: { name: demo, port: 8080 }` | Võtme-väärtuse paaride kogum. Kasulik keerukamate seadistuste jaoks. |
 
 ### Näited andmetüüpide kasutamisest
 
