@@ -196,17 +196,16 @@ Praktikas paigutatakse mallid eraldi `templates/` kataloogi.
 
 Näide:
 ```
-└─ myproject/
-   ├─ ansible.cfg
-   ├─ inventory/
-   │  ├─ hosts.yaml
-   │  ├─ group_vars/
-   │  │  └─ webservers.yml
-   │  └─ host_vars/
-   │     └─ web1.yml
-   ├─ templates/
-   │  └─ nginx.conf.j2
-   └─ site.yml
+/etc/ansible/myproject/
+├─ inventory/
+│  ├─ hosts.yaml
+│  ├─ group_vars/
+│  │  └─ webservers.yml
+│  └─ host_vars/
+│     └─ web1.yml
+├─ templates/
+│  └─ nginx.conf.j2
+└─ site.yml
 ```
 
 See struktuur aitab hoida playbooki ja mallifailid korrastatuna.
