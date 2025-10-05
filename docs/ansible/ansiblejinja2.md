@@ -99,7 +99,9 @@ server_name {{ site }};
 {% endfor %}
 ```
 Kommentaar failis:
+```jinja2
 {# See on kommentaar, mida lõplikku faili ei lisata #}
+```
 
 Jinja2 võimaldab kasutada ka filtreid (nt | default(), | upper, | join(', ')). Filtrid tulevad kasuks, kui on vaja väärtust töödelda või vormindada.
 
