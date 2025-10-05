@@ -141,7 +141,7 @@ Selgitus:
 - **Kommentaar failis:**
 
     ```jinja2
-    {# See slgitav on kommentaar, mida lõpfaili ei lisata #}
+    {# See selgitav on kommentaar, mida lõpfaili ei lisata #}
     ```
 
 ---
@@ -214,12 +214,14 @@ See struktuur aitab hoida playbooki ja mallifailid korrastatuna.
 
 ## Mallide testimine
 
-- Testi malli `--check` ja `--diff` lipuga enne *production* keskkonnas kasutamist.
-    ```bash
-    ansible-playbook site.yml --check --diff
-    ```
-    `--check` näitab, mida playbook muudaks, ilma et muudatusi tegelikult teeks.
-    `--diff` näitab failide erinevusi enne ja pärast mallist genereerimist.
+Testi malli `--check` ja `--diff` lipuga enne *production* keskkonnas kasutamist.
+
+```bash
+ansible-playbook site.yml --check --diff
+```
+
+  `--check` näitab, mida playbook muudaks, ilma et muudatusi tegelikult teeks.
+  `--diff` näitab failide erinevusi enne ja pärast mallist genereerimist.
 
 ---
 
