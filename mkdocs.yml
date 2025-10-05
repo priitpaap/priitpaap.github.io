@@ -88,7 +88,7 @@ nav:
       - 'Moodulid ja ad-hoc käsud': ansible/ansiblemodules.md
       - 'Playbookid ja YAML': ansible/ansibleplaybooks.md
       - 'Muutujad ja nende kasutamine': ansible/ansiblevars.md
-#      - 'Jinja2 mallid': ansible/ansiblejinja2.md
+      - 'Jinja2 mallid': ansible/ansiblejinja2.md
 #      - 'Tingimuslikkus ja tsüklid': ansible/ansibleconditions.md
 #      - 'Rollid ja struktuur': ansible/ansibleroles.md
 #      - 'Ansible Galaxy ja kogukonna rollid': ansible/ansiblerolesgalaxy.md
