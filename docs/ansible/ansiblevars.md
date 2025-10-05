@@ -14,62 +14,75 @@ Selles peatükis õpid:
 
 **Muutujad** võimaldavad hoida korduvaid väärtusi ühes kohas. See muudab playbookid lihtsamaks, loetavamaks ja hooldatavamaks. Sageli on mugav hoida korduvaid väärtusi (nt kataloogiteed, paketid või pordid) muutujates. See teeb playbooki lühemaks ja hõlpsamini hallatavaks.
 
----
-
-## Muutujate määramise viisid
-
 Muutujaid saab määrata mitmel tasemel. Ansible kasutab **prioriteetide hierarhiat**, kus kõrgema taseme väärtus asendab madalama oma.
 
-Olulisemad viisid:
+Kui sama muutuja on määratud mitmes kohas, peab Ansible otsustama, millist väärtust kasutada.  
+Selleks on olemas **prioriteetide hierarhia**: kõrgema prioriteediga määrang kirjutab madalama üle.
 
-1. **Playbooki sees `vars:` all**
+Allpool on levinumad tasemed (madalaimast kõrgeimani):
 
-  Muutujad saab defineerida playbooki sees võtme `vars:` all.
+| Tasand | Näide / Asukoht | Prioriteet |
+|--------|-----------------|------------|
+| Role defaults | `defaults/main.yml` | 🔽 madalaim |
+| Inventory grupimuutujad | `group_vars/webservers.yml` | ↑ |
+| Inventory hostimuutujad | `host_vars/web1.yml` | ↑ |
+| Playbooki `vars:` | Playbooki sees määratud `vars:` | ↑ |
+| Playbooki `vars_files:` | Playbooki sees viidatud eraldi failid | ↑ |
+| `set_fact` ülesanded | Määratud käivitamise ajal | ↑ |
+| Käsurea muutujad | `-e "var=value"` | 🔼 kõrgeim |
 
-  ```yaml
-  ---
-  - name: Muutujate näide
-    hosts: webservers
-    become: yes
+---
 
-    vars:
-      web_package: nginx
-      web_root: /var/www/html
+## Olulisemad muutujate määramise viisid
 
-    tasks:
-      - name: Paigalda veebiserver
-        apt:
-          name: "{{ web_package }}"
-          state: present
+### Muutujate määramine Playbooki sees `vars:` all
 
-      - name: Loo veebikataloog
-        file:
-          path: "{{ web_root }}/demo"
-          state: directory
-          owner: www-data
-          group: www-data
-          mode: '0755'
-  ```
+Muutujad saab defineerida playbooki sees võtme `vars:` all.
 
- Selgitus:
+```yaml
+---
+- name: Muutujate näide
+  hosts: webservers
+  become: yes
 
- - `vars:` all defineeritakse muutujad web_package ja web_root.
- - Muutujaid kasutatakse topeltlainelistes sulgudes {{ }}.
- - Kui muutuja väärtust hiljem muuta, ei pea seda igal pool käsitsi asendama.
+  vars:
+    web_package: nginx
+    web_root: /var/www/html
 
- !!! info
-     Kui muutujad on pikemad või peavad kehtima mitmes playbookis, tasub need hoida eraldi failides (nt **group_vars/** või **host_vars/** kataloogides).
+  tasks:
+    - name: Paigalda veebiserver
+      apt:
+        name: "{{ web_package }}"
+        state: present
+
+    - name: Loo veebikataloog
+      file:
+        path: "{{ web_root }}/demo"
+        state: directory
+        owner: www-data
+        group: www-data
+        mode: '0755'
+```
+
+Selgitus:
+
+- `vars:` all defineeritakse muutujad web_package ja web_root.
+- Muutujaid kasutatakse topeltlainelistes sulgudes {{ }}.
+- Kui muutuja väärtust hiljem muuta, ei pea seda igal pool käsitsi asendama.
+
+!!! info
+    Kui muutujad on pikemad või peavad kehtima mitmes playbookis, tasub need hoida eraldi failides (nt **group_vars/** või **host_vars/** kataloogides).
 
 
-2. **Muutujad eraldi failis (group_vars või host_vars)**
+### Muutujad eraldi failis (group_vars või host_vars)
 
- Kataloogistruktuur:
- ```
- inventory/
- ├─ hosts.yaml
- ├─ group_vars/
- │  └─ webservers.yml
- ```
+Kataloogistruktuur:
+```
+inventory/
+├─ hosts.yaml
+├─ group_vars/
+│  └─ webservers.yml
+```
 
 Fail `group_vars/webservers.yml` sisu:
 ```yaml
@@ -98,13 +111,13 @@ Playbook kasutab neid muutujad automaatselt, kui `hosts:` määratud on `web1`.
 !!! info
     host_vars/ kataloogis olev fail peab kandma sama nime kui inventory’s määratud host.    
 
-3. **Muutujad käsurealt**
+### Muutujate määramine käsurealt
 
 ```bash
 ansible-playbook site.yml -e "web_package=nginx"
 ```
 
-4. **Inventorifailis**
+### Muutujate määramine inventory failis
 
 ```ini
 [webservers]
@@ -121,25 +134,6 @@ all:
           web_package: nginx
           web_root: /var/www/html
 ```
-
----
-
-## Muutujate prioriteedid
-
-Kui sama muutuja on määratud mitmes kohas, peab Ansible otsustama, millist väärtust kasutada.  
-Selleks on olemas **prioriteetide hierarhia**: kõrgema prioriteediga määrang kirjutab madalama üle.
-
-Allpool on levinumad tasemed (madalaimast kõrgeimani):
-
-| Tasand | Näide / Asukoht | Prioriteet |
-|--------|-----------------|------------|
-| Role defaults | `defaults/main.yml` | 🔽 madalaim |
-| Inventory grupimuutujad | `group_vars/webservers.yml` | ↑ |
-| Inventory hostimuutujad | `host_vars/web1.yml` | ↑ |
-| Playbooki `vars:` | Playbooki sees määratud `vars:` | ↑ |
-| Playbooki `vars_files:` | Playbooki sees viidatud eraldi failid | ↑ |
-| `set_fact` ülesanded | Määratud käivitamise ajal | ↑ |
-| Käsurea muutujad | `-e "var=value"` | 🔼 kõrgeim |
 
 ---
 
