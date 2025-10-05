@@ -85,10 +85,10 @@ Selgitus:
 
 ## Jinja2 süntaksi põhitõed
 
-- Muutuja: `{{ variable_name }}`
-- Tingimus:
+- **Muutuja:** `{{ variable_name }}`
+- **Tingimus:**
 
-  Tingimuslause abil saab faili teatud osa lisada ainult siis, kui muutuja vastab teatud tingimusele.
+    Tingimuslause abil saab faili teatud osa lisada ainult siis, kui muutuja vastab teatud tingimusele.
 
   Näide: kui `use_ssl` muutuja on `true`, kuulab server porti 443, muidu 80. Vastavalt sellele täidetakse ka sihtfail.
 
