@@ -73,7 +73,7 @@ Playbook, mis kasutab kasutab seda malli:
         state: restarted
 ```
 
-Selgitus
+Selgitus:
 
 - Mallifaili muutujad (`{{ server_name }}` ja `{{ web_root }}`) asendatakse playbooki jooksutamise ajal nende väärtustega.
 - `template:` moodul kopeerib mallifaili sihtmasinasse ja teeb asendused.
