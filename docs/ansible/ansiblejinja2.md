@@ -144,7 +144,6 @@ Selgitus:
     {# See selgitav on kommentaar, mida lõpfaili ei lisata #}
     ```
 
----
 
 ### Filtrite kasutamine Jinja2 mallides
 
@@ -191,6 +190,7 @@ Filtrit rakendatakse püstkriipsuga (`|`) muutuja järele.
     allowed_hosts = host1.example.com, host2.example.com
     ```
 
+---
 
 ## Kataloogistruktuur
 
@@ -212,6 +212,8 @@ Näide:
 
 See struktuur aitab hoida playbooki ja mallifailid korrastatuna.
 
+---
+
 ## Mallide testimine
 
 Testi malli `--check` ja `--diff` lipuga enne *production* keskkonnas kasutamist.
@@ -232,6 +234,8 @@ ansible-playbook site.yml --check --diff
 - Kasuta mallides idempotentsust – väldi juhuslikke väärtusi (nt ajatemplid), mis põhjustavad, et fail muutub igal jooksutusel.
 - Väldi mallides liigset loogikat – keerulisemad tingimused ja arvutused on parem teha Ansible’i poolel (nt set_fact või vars).
 
+---
+
 ## Harjutus
 
 1. Loo `templates/` kataloog ja sinna fail `demo.conf.j2`, mis sisaldab:
@@ -245,6 +249,8 @@ server {
 2. Loo playbook, mis kopeerib malli sihtmasinasse `/etc/nginx/sites-available/demo`.
 3. Käivita playbook ja veendu, et fail on loodud õigete väärtustega.
 4. Muuda `server_name` muutujat ja käivita playbook uuesti – vaata, kas fail muutus ja teenus taaskäivitati.
+
+---
 
 ## Rohkem infot
 
