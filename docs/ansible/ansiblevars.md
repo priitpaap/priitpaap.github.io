@@ -32,7 +32,7 @@ Allpool on levinumad tasemed (madalaimast kõrgeimani):
 
 ## Olulisemad muutujate määramise viisid
 
-### Muutujate määramine Playbooki sees `vars:` all
+### Muutujate määramine Playbooki sees
 
 Muutujad saab defineerida playbooki sees võtme `vars:` all.
 
