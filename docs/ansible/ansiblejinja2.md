@@ -35,7 +35,7 @@ server {
         index index.html;
     }
 }
-
+```
 ---
 
 ### Playbook, mis kasutab malli
