@@ -118,7 +118,7 @@ ansible-playbook site.yml -e "web_package=nginx"
 
 ### Muutujate määramine inventory failis
 
-Seda võimalust vaatasime ka juba inventory materjalis.
+Seda võimalust vaatasime ka juba inventory materjalis. YAML-formaadis inventory on eelistatud, kuna see toetab keerukamaid andmestruktuure (nt loendid ja sõnastikud) ning on paremini loetav ja hallatav.
 
 Näide: 
 
@@ -260,6 +260,8 @@ ansible all -m setup
 ```
 
 `setup` kuvab kõik saadaval olevad faktid JSON-formaadis.
+
+Kui soovid kiirendada testimist või kui facts pole vajalikud, lisa playbooki alguses `gather_facts: false`.
 
 ---
 
