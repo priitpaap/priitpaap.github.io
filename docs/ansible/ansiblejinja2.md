@@ -85,27 +85,110 @@ Selgitus:
 
 - Muutuja: `{{ variable_name }}`
 - Tingimus:
-```jinja2
-{% if use_ssl %}
-listen 443 ssl;
-{% else %}
-listen 80;
-{% endif %}
-```
-- Tsükkel:
-```jinja2
-{% for site in sites %}
-server_name {{ site }};
-{% endfor %}
-```
-Kommentaar failis:
-```jinja2
-{# See on kommentaar, mida lõplikku faili ei lisata #}
-```
 
-Jinja2 võimaldab kasutada ka filtreid (nt | default(), | upper, | join(', ')). Filtrid tulevad kasuks, kui on vaja väärtust töödelda või vormindada.
+  Tingimuslause abil saab faili teatud osa lisada ainult siis, kui muutuja vastab teatud tingimusele.
+
+  Näide: kui `use_ssl` muutuja on `true`, kuulab server porti 443, muidu 80. Vastavalt sellele täidetakse ka sihtfail.
+
+  ```jinja2
+  {% if use_ssl %}
+  listen 443 ssl;
+  {% else %}
+  listen 80;
+  {% endif %}
+  ```
+
+  Kui `use_ssl = true`, läheb lõppfaili:
+
+  ```bash
+  listen 443 ssl;
+  ```
+
+  Kui `use_ssl = false` või muutujat pole määratud, läheb lõppfaili:
+
+  ```bash
+  listen 80;
+  ```
+
+- Tsükkel:
+
+  Tsükliga saab luua korduvaid konfiguratsiooniridu, näiteks mitu domeeninime või IP-d.
+
+  ```jinja2
+  {% for site in sites %}
+  server_name {{ site }};
+  {% endfor %}
+  ```
+
+  Kui muutuja `sites` on määratud loendina:
+  ```yaml
+  sites:
+  - example.com
+  - test.example.com
+  - demo.example.com
+  ```
+
+  Siis mallist tekib järgmine lõppfail:
+
+  ```bash
+  server_name example.com;
+  server_name test.example.com;
+  server_name demo.example.com;
+  ```
+
+- Kommentaar failis:
+
+  ```jinja2
+  {# See slgitav on kommentaar, mida lõpfaili ei lisata #}
+  ```
 
 ---
+
+### Filtrite kasutamine Jinja2 mallides
+
+**Filtrid** on väikesed tööriistad, millega saab mallis olevat muutuja väärtust **muuta või töödelda** enne, kui see faili kirjutatakse. Jinja2 võimaldab kasutada erinevaid filtreid (nt | default(), | upper, | join(', ')).
+
+Filtrit rakendatakse püstkriipsuga (`|`) muutuja järele.
+
+Üldine kuju:
+```jinja2
+{{ muutuja | filter_nimi }}
+```
+
+- `default()` – kasutab varuväärtust, kui muutuja pole määratud. Näide:
+  
+  ```jinja2
+  server_name {{ server_name | default('localhost') }}
+  ```
+  Kui server_name on määratud, kasutatakse selle väärtust.
+  Kui muutuja puudub, pannakse localhost.
+
+- `upper` – muudab teksti suurtähtedeks. Näide:
+
+  ```jinja2
+  WELCOME_MESSAGE="{{ welcome_text | upper }}"
+  ```
+
+  Kui welcome_text on tere tulemast, läheb faili TERE TULEMAST.
+
+- `join()` – liidab loendi elemendid üheks stringiks. Näide:
+
+  ```jinja2
+  allowed_hosts = {{ hosts | join(', ') }}
+  ```
+
+  Kui hosts on loend:
+  ```jinja2
+  hosts:
+    - host1.example.com
+    - host2.example.com
+  ```
+
+  Siis tulemus on:
+  ```jinja2
+  allowed_hosts = host1.example.com, host2.example.com
+  ```
+
 
 ## Kataloogistruktuur
 
