@@ -160,6 +160,8 @@ Ansible asendab `{{ web_root }}` playbooki käivitamisel vastava väärtusega.
 Sageli on vaja teha sama tegevust mitme väärtusega (nt paigaldada mitu paketti või luua mitu kataloogi).  
 Sellisel juhul on mugav määrata väärtused **loendina (list)** ja kasutada neid tsükliga `loop:`.
 
+Näide: 
+
 ```yaml
 ---
 - name: Paigalda mitmeid pakette
