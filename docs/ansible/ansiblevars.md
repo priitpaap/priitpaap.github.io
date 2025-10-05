@@ -241,7 +241,7 @@ Need sisaldavad näiteks:
 
 See info on kättesaadav playbookides spetsiaalse muutuja `ansible_facts` kaudu.
 
-### Näide
+Näide:
 
 ```yaml
 - name: Kuva hosti operatsioonisüsteem
