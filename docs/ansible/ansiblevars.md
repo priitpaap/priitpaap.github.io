@@ -269,29 +269,28 @@ ansible all -m setup
 
 1. Loo `group_vars/webservers.yml` fail ja määra seal:
 
-```bash
-web_package: nginx
-web_root: /var/www/web
-```
+    ```bash
+    web_package: nginx
+    web_root: /var/www/web
+    ```
 
 2. Loo host_vars/web1.yml fail, kus määrad teise väärtuse web_root muutujale.
 
-```bash
-web_root: /srv/web1_site
-```
+    ```bash
+    web_root: /srv/web1_site
+    ```
 
 3. Loo lihtne playbook, mis:
 
-paigaldab {{ web_package }}
-loob kataloogi {{ web_root }}
+    paigaldab {{ web_package }}
+    loob kataloogi {{ web_root }}
 
 4. Käivita playbook ja testi, kas eri hostidel kasutati erinevaid väärtusi.
 5. Katseta muutujat käsurealt, nt:
-```bash
-ansible-playbook site.yml -e "web_root=/tmp/test_site"
-```
-
-Peakid märkama, et käsurealt määratud väärtus kirjutab üle nii grupi- kui ka hostimuutujad.
+    ```bash
+    ansible-playbook site.yml -e "web_root=/tmp/test_site"
+    ```
+    Peakid märkama, et käsurealt määratud väärtus kirjutab üle nii grupi- kui ka hostimuutujad.
 
 ---
 
