@@ -36,6 +36,8 @@ Allpool on levinumad tasemed (madalaimast kõrgeimani):
 
 Muutujad saab defineerida playbooki sees võtme `vars:` all.
 
+Näide:
+
 ```yaml
 ---
 - name: Muutujate näide
@@ -73,6 +75,8 @@ Selgitus:
 
 ### Muutujad eraldi failis (group_vars või host_vars)
 
+Näide:
+
 Kataloogistruktuur:
 ```
 inventory/
@@ -104,11 +108,17 @@ Playbook kasutab neid muutujad automaatselt, kui `hosts:` määratud on `web1`.
 
 ### Muutujate määramine käsurealt
 
+Näide:
+
 ```bash
 ansible-playbook site.yml -e "web_package=nginx"
 ```
 
 ### Muutujate määramine inventory failis
+
+Seda võimalust vaatasime ka juba inventory materjalis.
+
+Näide: 
 
 ```ini
 [webservers]
@@ -141,7 +151,7 @@ Näide:
     state: directory
 ```
 
-Ansible asendab `{{ web_root }}` jooksutamisel vastava väärtusega.
+Ansible asendab `{{ web_root }}` playbooki käivitamisel vastava väärtusega.
 
 ---
 
