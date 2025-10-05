@@ -260,10 +260,12 @@ ansible all -m setup
 ```
 
 `setup` kuvab kõik saadaval olevad faktid JSON-formaadis.
+
 ---
+
 ## Head tavad muutujate kasutamisel
 
-- Hoia muutujad eraldi failides (group_vars, host_vars) selguse huvides.
+- Hoia korduvaid muutujad eraldi failides (group_vars, host_vars) selguse huvides.
 - Kasuta selgeid ja ühtseid muutujate nimesid.
 - Pane vaikimisi väärtused madala prioriteediga kohta (nt group_vars/)
 - Ära pane salasõnu või tundlikke andmeid otse playbooki – kasuta Ansible Vault’i.
