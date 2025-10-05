@@ -8,8 +8,8 @@ Selles peatükis õpid:
 - Kuidas luua mallifaile
 - Kuidas kasutada mallides muutujaid, tingimusi ja tsükleid
 - Kuidas kasutada `template` moodulit mallide paigaldamiseks
-- Head tavad mallide kirjutamisel
 - Kuidas kontrollida malli töö `--check` ja `--diff` abil
+- Head tavad mallide kirjutamisel
 
 ---
 
@@ -24,11 +24,13 @@ Selles peatükis õpid:
 Enamik serveriteenuseid (nt **Nginx, Apache, SSH, MariaDB, Docker** jne) vajavad **konfiguratsioonifaile**, et määrata nende seadistusi.
 
 Kui seadistad servereid käsitsi, pead iga teenuse jaoks:
+
 - kirjutama või muutma konfiguratsioonifaile,
 - kopeerima need õigesse kohta (nt `/etc/nginx/sites-available/default`),
 - tagama, et õiged väärtused (nt `server_name`, pordid, kaustateed) on igas serveris õiged.
 
-Ansiblega mallide kasutamine teeb selle lihtsamaks:
+Ansible mallide kasutamine teeb selle lihtsamaks:
+
 - **Mall (template)** on konfiguratsioonifaili alus, kus muutuvad osad (nt `server_name`, `web_root`) on kirjutatud muutujatena `{{ ... }}`.
 - Playbook koos `template` mooduliga kopeerib malli õigesse asukohta ja asendab muutujad sihtmasina jaoks sobivate väärtustega.
 
