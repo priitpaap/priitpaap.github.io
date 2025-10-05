@@ -87,6 +87,8 @@ inventory/
 │  └─ web1.yml
 ```
 
+Kui vajad, et **erinevad grupid kasutaksid eri väärtusi**, on mugav kasutada `group_vars/` kataloogi.
+
 Fail `group_vars/webservers.yml` sisu:
 ```yaml
 web_package: nginx
