@@ -112,7 +112,7 @@ Selgitus:
     listen 80;
     ```
 
-- Tsükkel:
+- **Tsükkel:**
 
     Tsükliga saab luua korduvaid konfiguratsiooniridu, näiteks mitu domeeninime või IP-d.
 
@@ -138,7 +138,7 @@ Selgitus:
     server_name demo.example.com;
     ```
 
-- Kommentaar failis:
+- **Kommentaar failis:**
 
     ```jinja2
     {# See slgitav on kommentaar, mida lõpfaili ei lisata #}
@@ -157,39 +157,39 @@ Filtrit rakendatakse püstkriipsuga (`|`) muutuja järele.
 {{ muutuja | filter_nimi }}
 ```
 
-- `default()` – kasutab varuväärtust, kui muutuja pole määratud. Näide:
+- **`default()`** – kasutab varuväärtust, kui muutuja pole määratud. Näide:
   
-  ```jinja2
-  server_name {{ server_name | default('localhost') }}
-  ```
-  Kui server_name on määratud, kasutatakse selle väärtust.
-  Kui muutuja puudub, pannakse localhost.
+    ```jinja2
+    server_name {{ server_name | default('localhost') }}
+    ```
+    Kui server_name on määratud, kasutatakse selle väärtust.
+    Kui muutuja puudub, pannakse localhost.
 
-- `upper` – muudab teksti suurtähtedeks. Näide:
+- **`upper`** – muudab teksti suurtähtedeks. Näide:
 
-  ```jinja2
-  WELCOME_MESSAGE="{{ welcome_text | upper }}"
-  ```
+    ```jinja2
+    WELCOME_MESSAGE="{{ welcome_text | upper }}"
+    ```
 
-  Kui welcome_text on tere tulemast, läheb faili TERE TULEMAST.
+    Kui welcome_text on tere tulemast, läheb faili TERE TULEMAST.
 
-- `join()` – liidab loendi elemendid üheks stringiks. Näide:
+- **`join()`** – liidab loendi elemendid üheks stringiks. Näide:
 
-  ```jinja2
-  allowed_hosts = {{ hosts | join(', ') }}
-  ```
+    ```jinja2
+    allowed_hosts = {{ hosts | join(', ') }}
+    ```
 
-  Kui hosts on loend:
-  ```jinja2
-  hosts:
-    - host1.example.com
-    - host2.example.com
-  ```
+    Kui hosts on loend:
+    ```jinja2
+    hosts:
+      - host1.example.com
+      - host2.example.com
+    ```
 
-  Siis tulemus on:
-  ```jinja2
-  allowed_hosts = host1.example.com, host2.example.com
-  ```
+    Siis tulemus on:
+    ```jinja2
+    allowed_hosts = host1.example.com, host2.example.com
+    ```
 
 
 ## Kataloogistruktuur
