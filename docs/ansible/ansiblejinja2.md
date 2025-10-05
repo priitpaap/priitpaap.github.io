@@ -22,7 +22,6 @@ Selles peatükis õpid:
 - Käivitamisel asendab Ansible mallis olevad muutujad nende väärtustega ning loob sihtmasinas lõppfaili.
 
 Lihtne näide mallifailist:
-
 Fail `templates/nginx.conf.j2`:
 
 ```jinja2
@@ -36,7 +35,7 @@ server {
         index index.html;
     }
 }
-```
+
 ---
 
 ### Playbook, mis kasutab malli
