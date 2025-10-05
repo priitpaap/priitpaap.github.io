@@ -14,10 +14,7 @@ Selles peatükis õpid:
 
 **Muutujad** võimaldavad hoida korduvaid väärtusi ühes kohas. See muudab playbookid lihtsamaks, loetavamaks ja hooldatavamaks. Sageli on mugav hoida korduvaid väärtusi (nt kataloogiteed, paketid või pordid) muutujates. See teeb playbooki lühemaks ja hõlpsamini hallatavaks.
 
-Muutujaid saab määrata mitmel tasemel. Ansible kasutab **prioriteetide hierarhiat**, kus kõrgema taseme väärtus asendab madalama oma.
-
-Kui sama muutuja on määratud mitmes kohas, peab Ansible otsustama, millist väärtust kasutada.  
-Selleks on olemas **prioriteetide hierarhia**: kõrgema prioriteediga määrang kirjutab madalama üle.
+Muutujaid saab määrata mitmel tasemel. Kui sama muutuja on määratud mitmes kohas, peab Ansible otsustama, millist väärtust kasutada. Ansible kasutab **prioriteetide hierarhiat**, kus kõrgema taseme väärtus asendab madalama oma.  
 
 Allpool on levinumad tasemed (madalaimast kõrgeimani):
 
