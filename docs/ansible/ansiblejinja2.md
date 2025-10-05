@@ -21,8 +21,7 @@ Selles peatükis õpid:
 - Faili laiend on tavaliselt `.j2`.
 - Käivitamisel asendab Ansible mallis olevad muutujad nende väärtustega ning loob sihtmasinas lõppfaili.
 
-Lihtne näide mallifailist:
-Fail `templates/nginx.conf.j2`:
+Lihtne näide mallifailist. Fail `templates/nginx.conf.j2`:
 
 ```jinja2
 server {
