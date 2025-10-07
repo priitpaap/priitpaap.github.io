@@ -299,16 +299,15 @@ Eelised:
 
 ## Harjutus
 
-1. Loo projektikausta *inventory* kaust ja sinna alla fail `hosts.yml`, kuhu lisad vähemalt kaks gruppi.
+1. Loo kodukausta Ansible jaoks uus kaust "ansible-lab ja sinna alla "inventory" kaust. Inventory kausta alla loo omakorda fail `hosts.yml`, kuhu lisad vähemalt kaks gruppi.
 2. Lisa gruppidele muutujad kasutades `group_vars/` kataloogi.
-3. Kontrolli *inventory* faili:
+3. Kontrolli *inventory* faili, kas kõik sai kirjutatud korrektselt ja Ansible suudab seda lugeda:
+
    ```bash
    ansible-inventory -i hosts.yml --graph
+   ansible-inventory -i hosts.yml --list
    ```
-4. Testi ühendust:
-   ```bash
-   ansible -i hosts.yml all -m ping
-   ```
+
 
 ---
 

@@ -1,4 +1,4 @@
-# Ansible konfiguratsioon ja parimad tavad
+# Ansible levinumad seadistused
 
 ## Eesmärk
 
@@ -6,7 +6,7 @@ Selles peatükis õpid:
 
 - Mis on `ansible.cfg`
 - Millises järjekorras Ansible seadistusfaili otsib
-- Millised levinumad  prameetrid, mida fili lisada projekti tasemel
+- Millised levinumad prameetrid, mida seadistusfaili lisada projekti tasemel
 
 ---
 
@@ -78,7 +78,7 @@ forks = 10
 # Üldine mooduli/ühenduse timeout sekundites
 timeout = 30
 
-# Python-tõlgi automaatne tuvastus (hea heterogeensetes süsteemides). Kaotab ära Warning teated, mis on seotud Pythoni versiooni tuvastamisega.
+# Python-tõlgi automaatne tuvastus (hea heterogeensetes süsteemides). Kaotab ära Warning teated, mis on seotud Pythoni tuvastamisega.
 interpreter_python = auto_silent
 
 # Lülita välja lõbus lehm :), vajadusel. Ansible suudab vaikimisi kuvada teatud sõnumeid ja hoiatusi cowsay stiilis (lehmakujuline ASCII-kunst), kui süsteemis on paigaldatud `cowsay` pakett.
@@ -141,3 +141,24 @@ ansible-config dump --only-changed
 - Pööra tähelepanu turvalisusele: ära jäta **production** keskkonnas `host_key_checking=False` ja väldi salasõnade hoidmist selges tekstis (kasuta **Ansible Vault**).
 
 ---
+
+## Harjutus
+
+1. **Loo projekti kaust ja ansible.cfg**
+   - Loo projektikausta fail `ansible.cfg`
+   - Lisa sinna vähemalt järgmised sätted:
+
+   [defaults]
+     inventory = inventory/hosts.yaml
+     interpreter_python = auto_silent
+     stdout_callback = yaml
+     retry_files_enabled = False
+     host_key_checking = False
+     forks = 10
+     
+## Rohkem infot
+
+- [Ansible Configuration File Documentation](https://docs.ansible.com/ansible/latest/reference_appendices/config.html){:target="_blank"}
+- [ansible-config käsu juhend](https://docs.ansible.com/ansible/latest/cli/ansible-config.html){:target="_blank"}
+- [Ansible Best Practices](https://docs.ansible.com/ansible/latest/tips_tricks/index.html){:target="_blank"}
+- [Performance Tuning](https://docs.ansible.com/ansible/latest/user_guide/playbooks_tuning.html){:target="_blank"}

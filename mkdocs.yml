@@ -84,7 +84,7 @@ nav:
       - 'Ansible ülevaade': ansible/ansibleintro.md
       - 'Ansible paigaldamine': ansible/ansibleinstall.md
       - 'Ansible inventory': ansible/ansibleinventory.md
-      - 'Ansible konfiguratsioon ja parimad tavad': ansible/ansibleconf.md      
+      - 'Ansible levinumad seadistused': ansible/ansibleconf.md      
       - 'Hallatavate hostide ühendamine': ansible/ansiblenodes.md
       - 'Moodulid ja ad-hoc käsud': ansible/ansiblemodules.md
       - 'Playbookid ja YAML': ansible/ansibleplaybooks.md
