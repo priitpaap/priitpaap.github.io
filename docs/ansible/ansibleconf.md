@@ -15,6 +15,7 @@ Selles peatükis õpid:
 `ansible.cfg` on Ansible’i seadistusfail, millega juhid vaikimisi käitumist (inventory asukoht, rollide teed, väljundi formaat, ühenduse sätted jpm).
 
 **Otsingujärjekord (kõrgeim → madalaim):**
+
 1. **Käesoleva töökausta** fail `ansible.cfg` (soovitatav asukoht)
 2. `~/.ansible.cfg` (kasutajaprofiili tasemel)
 3. `/etc/ansible/ansible.cfg` (süsteemne, kui kaust olemas)
