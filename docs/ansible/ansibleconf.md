@@ -1,8 +1,12 @@
-# ansible.cfg – seadistused ja parimad tavad
+# Ansible konfiguratsioon ja parimad tavad
 
 ## Eesmärk
 
-Selles peatükis selgitame, mis on `ansible.cfg`, kus see asub, millises järjekorras Ansible seadistusfaili otsib ning millised on **praktilised ja ohutud** võtmesätted, mida lisada projekti tasemel.
+Selles peatükis õpid:
+
+- Mis on `ansible.cfg`
+- Millises järjekorras Ansible seadistusfaili otsib
+- Millised levinumad  prameetrid, mida fili lisada projekti tasemel
 
 ---
 
@@ -11,38 +15,37 @@ Selles peatükis selgitame, mis on `ansible.cfg`, kus see asub, millises järjek
 `ansible.cfg` on Ansible’i seadistusfail, millega juhid vaikimisi käitumist (inventory asukoht, rollide teed, väljundi formaat, ühenduse sätted jpm).
 
 **Otsingujärjekord (kõrgeim → madalaim):**
-1. **Käesoleva töökausta** fail `ansible.cfg` (soovitatav projektipõhiselt)
+1. **Käesoleva töökausta** fail `ansible.cfg` (soovitatav asukoht)
 2. `~/.ansible.cfg` (kasutajaprofiili tasemel)
-3. `/etc/ansible/ansible.cfg` (süsteemne, kui olemas)
+3. `/etc/ansible/ansible.cfg` (süsteemne, kui kaust olemas)
 
-> Kontrolli, millist faili kasutatakse:
-> ```bash
-> ansible --version
-> ```
-> või vaata, mis sätted on muudetud:
-> ```bash
-> ansible-config dump --only-changed
-> ```
+Kontrolli, millist faili kasutatakse:
 
+```bash
+ansible --version
+```
+
+Tulemusest on näha config faili asukoht real:
+
+```bash
+    config file = 
+```
+Kui üldakse et `no config`, siis ei suutnud Ansible sedistusfaili asukohta leida ja fail tuleb ise luua.
 ---
 
 ## Soovitatud asukoht
-Projekti põhine lähenemine (nagu kursusel kasutame):
+Soovitav ongi peale Ansible paigaldust luua projektikaust ja sinan `ansible.cfg`, kus asuvad selle projekti põhised Ansible seeaded. Näiteks:
+
 ```
-/etc/ansible/myproject/
+~/myproject/
 ├─ ansible.cfg
-├─ inventory/
-│  └─ hosts.yaml
-├─ templates/
-│  └─ nginx.conf.j2
-└─ site.yml
 ```
 
 ---
 
-## Näidis `ansible.cfg` (projekti tasemel)
+## Näidis `ansible.cfg` koos levinumate seadetega
 
-> **Märkus:** kõik read on kommenteeritud, et oleks selge, milleks säte on. Kopeeri vajadusel oma projekti ja kohanda.
+Järgnevalt on esitatud ühe `ansible.cfg` faili sisu koos levinumate parameetritega. Kopeeri vajadusel oma projekti ja kohanda.
 
 ```ini
 [defaults]
