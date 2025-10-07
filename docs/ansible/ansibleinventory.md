@@ -98,19 +98,16 @@ See tähendab, et ka üksik host ilmub nii `all` kui `ungrouped` nimekirjas. Pla
 
 ## Vaikimisi *inventory* fail
 
-Traditsiooniliselt otsib Ansible *inventory*'t failist:
+Traditsiooniliselt otsis Ansible *inventory*'t failist:
 ```
 /etc/ansible/hosts
 ```
-See kehtib **peamiselt siis, kui Ansible on paigaldatud süsteemi tasemel paketihalduri (nt apt, yum) kaudu**.
+See ei kehti enam **viimaste versioonide** ja **pip** või **pipx** abil, paigaldatud Ansible puhul:
 
-Kui paigaldad Ansible'i **pip** või **pipx** abil, siis:
-
-- Ansible ei kasuta vaikimisi `/etc/ansible/hosts`
 - Kui sa Ansible käsu puhul `-i` argumenti ei määra ega konfigureeri `ansible.cfg` faili, on vaikimisi *inventory*'ks ainult `localhost`
-- Süsteemne `/etc/ansible/ansible.cfg` fail puudub, seega peab seadistuse tegema projekti või kasutaja tasemel
+- Süsteemne `ansible.cfg` fail puudub, seega peab seadistuse tegema projekti või kasutaja tasemel ja ise projektikausta vastava faili looma.
 
-Vaikimisi *inventory* otsimise järjekord pip/pipx puhul on:
+Vaikimisi *inventory* otsimise järjekord:
 
 1. **Käsurea `-i` argument**
 2. **Keskkonnamuutuja `ANSIBLE_INVENTORY`**

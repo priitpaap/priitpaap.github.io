@@ -84,6 +84,7 @@ nav:
       - 'Ansible ülevaade': ansible/ansibleintro.md
       - 'Ansible paigaldamine': ansible/ansibleinstall.md
       - 'Ansible inventory': ansible/ansibleinventory.md
+      - 'Ansible konfiguratsioon ja optimeerimine': ansible/ansibleconf.md      
       - 'Hallatavate hostide ühendamine': ansible/ansiblenodes.md
       - 'Moodulid ja ad-hoc käsud': ansible/ansiblemodules.md
       - 'Playbookid ja YAML': ansible/ansibleplaybooks.md
@@ -92,7 +93,6 @@ nav:
 #      - 'Tingimuslikkus ja tsüklid': ansible/ansibleconditions.md
 #      - 'Rollid ja struktuur': ansible/ansibleroles.md
 #      - 'Ansible Galaxy ja kogukonna rollid': ansible/ansiblerolesgalaxy.md
-#      - 'Ansible konfiguratsioon ja optimeerimine': ansible/ansibleconf.md
 #      - 'Turvalisus ja Ansible Vault': ansible/ansiblevault.md
 #      - 'Projektipõhine lõppharjutus': ansible/ansiblefinal.md
 #      - 'Ansible parimad praktikad': ansible/ansiblebestpractises.md
