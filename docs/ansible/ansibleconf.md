@@ -49,63 +49,59 @@ Järgnevalt on esitatud ühe `ansible.cfg` faili sisu koos levinumate parameetri
 
 ```ini
 [defaults]
-# Inventory asukoht (võib olla YAML või INI)
+# Inventory asukoht (võib olla YAML või INI) ja võb viidata ka ainult kautale inventory/ kui kasutatakse mitut inventory faili.
 inventory = inventory/hosts.yaml
 
 # Rollide otsinguteed (projekti 'roles' kaust eespool)
 roles_path = roles:~/.ansible/roles:/usr/share/ansible/roles
 
-# Vaikimisi väljundi formaater (loetavam kui 'default')
+# Vaikimisi väljundi formaatija (väljund loetavam kui 'default'- lihtsam lugeda ja tõrkeid leida)
 stdout_callback = yaml
 
-# Salvestame retry-faile? Tavaliselt mitte.
+# Salvestame retry-faile? Tavaliselt mitte. Vaikimisi, kui playbooki käivitamine mingil põhjusel ebaõnnestub mõne hosti puhul, loob Ansible sinu töökausta (või määratud kausta) nn *retry-faili*, mille faili lõpp on .retry. See fail sisaldab **nimekirja hostidest, kus playbook ebaõnnestus**. Selle eesmärk on, et saad järgmise käsuga uuesti käivitada playbooki ainult nende probleemsete hostide peal. N: ansible-playbook site.yml --limit @site.retry
 retry_files_enabled = False
 
-# Vähenda 'host key checking' probleeme labokeskkonnas.
-# Tootmises võid selle uuesti True peale panna.
+# Vähenda 'host key checking' probleeme katsetamisel. Production keskkonnas võid selle uuesti True peale panna.
 host_key_checking = False
 
-# Kogume fakte targalt (vähem müra ja kiiremini kui alati).
+# Kogume fakte (facts) targalt (vähem müra ja kiiremini kui alati). Nendest on räägitud playbookide materjalis.
 gathering = smart
 
-# Faktide vahemälu (kiirendab playbooke suuremas keskkonnas)
+# Faktide vahemälu - lubada vastavalt vajadusele (kiirendab playbooke suuremas keskkonnas)
 # fact_caching = jsonfile
 # fact_caching_connection = .ansible_cache
 # fact_caching_timeout = 7200
 
-# Mitu paralleelset ühendust (vaikimisi 5). Labos 10–20 on ok.
+# Mitu paralleelset ühendust (vaikimisi 5). Laboris 10–20 on ok.
 forks = 10
 
 # Üldine mooduli/ühenduse timeout sekundites
 timeout = 30
 
-# Python-tõlgi automaatne tuvastus (hea heterogeensetes süsteemides)
+# Python-tõlgi automaatne tuvastus (hea heterogeensetes süsteemides). Kaotab ära Warning teated, mis on seotud Pythoni versiooni tuvastamisega.
 interpreter_python = auto_silent
 
-# Lülita ära lõbus lehm :) (stabiilsem väljund)
+# Lülita välja lõbus lehm :), vajadusel. Ansible suudab vaikimisi kuvada teatud sõnumeid ja hoiatusi cowsay stiilis (lehmakujuline ASCII-kunst), kui süsteemis on paigaldatud `cowsay` pakett.
 nocows = 1
 
-# Faili diffitamine (kasulik templatingu/konfi puhul)
+# Faili diffitamine  lubada vastavalt vajadusele (need seaded aitavad jälgida failide muutusi, eriti mallide ja konfiguratsioonifailide puhul.)
 # diff_always = True
 # diff_ignore_lines = ^#
-
-# Callback pluginad (vajadusel nt ajastatistikaks)
-# callback_whitelist = profile_tasks
 
 [privilege_escalation]
 # Vaikimisi sudo kasutus
 become = True
 become_method = sudo
-become_ask_pass = False   # Kui vajad parooli, kasuta --ask-become-pass
+become_ask_pass = False   # Kui vajad parooli, kasuta Ansible käsu lõpus --ask-become-pass
 
 [ssh_connection]
-# SSH pipelining kiirendab oluliselt (vajab sudoers 'requiretty' = off)
+# SSH pipelining kiirendab oluliselt. Vähendab SSH ühenduse kaudu tehtavaid ühenduse loomisi ja sulgemisi - suurte ülesannete jaoks kiirem. Vajab sudoers faili muutmist 'sudo visudo' ja lisada faili 'Defaults:student !use_pty' (kui kasutajanimeks on student) 
 pipelining = True
 
-# Stabiilsem control_path erinevate süsteemidega
+# Stabiilsem control_path erinevate süsteemidega - kasuta kui näed file name too long teateid.
 control_path = %(directory)s/%%h-%%p-%%r
 
-# 1–2 paralleelset üritust ühe hosti kohta (vaikimisi 5) – labos ok jätta default
+# 1–2 paralleelset üritust ühe hosti kohta (vaikimisi 5) – laboris ok jätta default
 # ssh_args = -o ControlMaster=auto -o ControlPersist=60s
 
 # Kui kasutad teistsuguseid võtmeid/porti, võid lisada:
@@ -129,31 +125,19 @@ control_path = %(directory)s/%%h-%%p-%%r
 - **pipelining = True** – vähendab SSH round-trip’e; võib vajada sudoers seadistust.
 - **control_path** – lühem/ühtlasem SSH control socketi tee (vältimaks “too long” vigu).
 
----
+Kui soovid kiiresti vaadata, mis on konfiguratsioonis muudetud võrreldes vaikimisi sätetega, siis selleks on eraldi käsk:
 
-## Windowsi hostid (märkus)
-
-Windowsi masinate puhul seadistatakse enamasti **inventorys** vastavad ühenduse argumendid
-(nt `ansible_connection=winrm`, `ansible_user`, `ansible_password`, `ansible_winrm_transport` jne).  
-`ansible.cfg` tasemel ei ole tavaliselt vaja eraldi Windows-spetsiifilisi sätteid – need jäävad hosti või grupi muutujatesse.
+```bash
+ansible-config dump --only-changed
+```
 
 ---
 
 ## Hea tava
 
 - Hoia **projekti tasemel** `ansible.cfg`, et seadistused oleksid reprodutseeritavad.
-- Väldi globaalse `/etc/ansible/ansible.cfg` muutmist, kui see pole vältimatu.
+- Kui on olemas globaalne fail `/etc/ansible/ansible.cfg`, siis väldi selle muutmist.
 - Kontrolli muudatusi käsuga `ansible-config dump --only-changed`.
-- Pööra tähelepanu turvalisusele: ära jäta **tootmises** `host_key_checking=False` ja väldi salasõnade hoidmist selges tekstis (kasuta **Ansible Vault**).
+- Pööra tähelepanu turvalisusele: ära jäta **production** keskkonnas `host_key_checking=False` ja väldi salasõnade hoidmist selges tekstis (kasuta **Ansible Vault**).
 
 ---
-
-## Kiirkontroll
-
-```bash
-# Kas see projektikonf on kasutusel?
-ansible --version
-
-# Mis on muudetud võrreldes vaikimisi sätetega?
-ansible-config dump --only-changed
-```
