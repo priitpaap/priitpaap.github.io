@@ -32,10 +32,9 @@ Tulemusest on näha config faili asukoht real:
     config file = 
 ```
 Kui üldakse et `no config`, siis ei suutnud Ansible sedistusfaili asukohta leida ja fail tuleb ise luua.
----
 
-## Soovitatud asukoht
-Soovitav ongi peale Ansible paigaldust luua projektikaust ja sinan `ansible.cfg`, kus asuvad selle projekti põhised Ansible seeaded. Näiteks:
+### Seadistusfaili soovitatav asukoht
+Soovitav ongi peale Ansible paigaldust luua projektikaust ja sinna `ansible.cfg`, kus asuvad selle projekti põhised Ansible seeaded. Näiteks:
 
 ```
 ~/myproject/
