@@ -141,7 +141,7 @@ Ansible töötab väga paindlikult — faile võid hoida erinevates kohtades, s�
 
 | Paigaldusmeetod | Mõju / muutused |
 |------------------|----------------------|
-| **APT pakihaluri kaudu paigaldades (nt Ubuntu PPA)** | Ansible installitakse süsteemi tasemel PATH-i; varasemad versioonid lõid kausta `/etc/ansible/` ja ka alamkausta `roles/`. **Viimased versioonid enam automaatselt `/etc/ansible/` kausta ei loo** kausta , pead ise sobivasse kohta projektikausta looma ja seadeid haldama `ansible.cfg` kaudu. |  
+| **APT pakihaluri kaudu paigaldades (nt Ubuntu PPA)** | Ansible installitakse süsteemi tasemel PATH-i. Varasemad versioonid lõid kausta `/etc/ansible/` ja ka alamkausta `roles/`. **Viimased versioonid enam automaatselt `/etc/ansible/` kausta ei loo**, pead ise sobivasse kohta projektikausta looma ja seadeid haldama `ansible.cfg` kaudu. |  
 | **pip / pipx (kasutajapõhine paigaldus)** | Ansible programmifailid paigutatakse kasutaja tasemele. Automaatselt `/etc/ansible/` kausta ei looda, pead ise sobivasse kohta projektikausta looma ja seadeid haldama `ansible.cfg` kaudu. |
 
 **Ansible faile on seega mõistlik hoida tänapäevalt projektipõhiselt eraldi kaustas.** Kausta võib luua kodukasuta, näiteks:
