@@ -34,7 +34,7 @@ Tulemusest on näha config faili asukoht real:
 Kui üldakse et `no config`, siis ei suutnud Ansible sedistusfaili asukohta leida ja fail tuleb ise luua.
 
 ### Seadistusfaili soovitatav asukoht
-Soovitav ongi peale Ansible paigaldust luua projektikaust ja sinna `ansible.cfg`, kus asuvad selle projekti põhised Ansible seeaded. Näiteks:
+Soovitav ongi peale Ansible paigaldust luua projektikaust ja sinna `ansible.cfg`, kus asuvad selle projekti põhised Ansible seaded. Näiteks:
 
 ```
 ~/myproject/
@@ -96,7 +96,7 @@ become_ask_pass = False   # Kui vajad parooli, kasuta Ansible käsu lõpus --ask
 
 [ssh_connection]
 # SSH pipelining kiirendab oluliselt. Vähendab SSH ühenduse kaudu tehtavaid ühenduse loomisi ja sulgemisi - suurte ülesannete jaoks kiirem. Vajab sudoers faili muutmist 'sudo visudo' ja lisada faili 'Defaults:student !use_pty' (kui kasutajanimeks on student) 
-pipelining = True
+#pipelining = True
 
 # Stabiilsem control_path erinevate süsteemidega - kasuta kui näed file name too long teateid.
 control_path = %(directory)s/%%h-%%p-%%r
@@ -110,7 +110,7 @@ control_path = %(directory)s/%%h-%%p-%%r
 
 ---
 
-## Selgitused olulisematele sätetele
+## Kokkuvõtvad selgitused olulisematele sätetele
 
 - **inventory** – viitab projekti inventory failile/kaustale, ei pea iga kord `-i` kasutama.
 - **roles_path** – määrab rollide otsinguteed; esimesena projekti `roles/`.
@@ -135,7 +135,7 @@ ansible-config dump --only-changed
 
 ## Hea tava
 
-- Hoia **projekti tasemel** `ansible.cfg`, et seadistused oleksid reprodutseeritavad.
+- Hoia `ansible.cfg` **projekti tasemel**.
 - Kui on olemas globaalne fail `/etc/ansible/ansible.cfg`, siis väldi selle muutmist.
 - Kontrolli muudatusi käsuga `ansible-config dump --only-changed`.
 - Pööra tähelepanu turvalisusele: ära jäta **production** keskkonnas `host_key_checking=False` ja väldi salasõnade hoidmist selges tekstis (kasuta **Ansible Vault**).
@@ -148,6 +148,7 @@ ansible-config dump --only-changed
    - Loo projektikausta fail `ansible.cfg`
    - Lisa sinna vähemalt järgmised sätted:
 
+   ```bash
    [defaults]
      inventory = inventory/hosts.yaml
      interpreter_python = auto_silent
@@ -155,6 +156,10 @@ ansible-config dump --only-changed
      retry_files_enabled = False
      host_key_checking = False
      forks = 10
+   [privilege_escalation]
+     become = True
+     become_method = sudo  
+   ```
      
 ## Rohkem infot
 
