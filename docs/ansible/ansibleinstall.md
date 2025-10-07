@@ -137,36 +137,37 @@ See tähendab, et Ansible töötab sinu enda masina (localhost) peal.
 
 ## Kuhu salvestada Ansible failid?
 
-Sõltuvalt sellest, kuidas sa Ansible paigaldasid (APT või pip/pipx abil), võib muutuda ka see, kuhu on kõige mõistlikum panna oma playbookid, inventarifailid ja rollid.
+Ansible töötab väga paindlikult — faile võid hoida erinevates kohtades, sõltuvalt sellest, kuidas Ansible paigaldasid ja millist struktuuri projektile soovid. Alljärgnevalt mõned juhised ja soovitused.
 
-**Kui paigaldasid APT/Ubuntu PPA kaudu:**
+| Paigaldusmeetod | Mõju / muutused |
+|------------------|----------------------|
+| **APT pakihaluri kaudu paigaldades (nt Ubuntu PPA)** | Ansible installitakse süsteemi tasemel PATH-i; varasemad versioonid lõid kausta `/etc/ansible/` ja ka alamkausta `roles/`. **Viimased versioonid enam automaatselt `/etc/ansible/` kausta ei loo** kausta , pead ise sobivasse kohta projektikausta looma ja seadeid haldama `ansible.cfg` kaudu. |  
+| **pip / pipx (kasutajapõhine paigaldus)** | Ansible programmifailid paigutatakse kasutaja tasemele. Automaatselt `/etc/ansible/` kausta ei looda, pead ise sobivasse kohta projektikausta looma ja seadeid haldama `ansible.cfg` kaudu. |
 
-Ansible on paigaldatud süsteemse taseme PATH-i (näiteks /usr/bin/ansible)
-Oletatakse, et kasutaja töötab süsteemi laiuses ja salvestab oma failid kuhugi nagu:
-
-- `~/ansible/`
-- `~/projekti-nimi/playbooks/`
-
-Vaikimisi rollide asukoht:
-`/etc/ansible/roles/`
-
-Süsteemne paigaldus võimaldab kõigil kasutajatel kasutada Ansible'it
-
-**Kui paigaldasid pip või pipx abil:**
-
-Ansible on kasutajapõhine (nt `~/.local/bin/ansible`)
-Failid soovitatakse hoida kasutaja kodukataloogi all:
+**Ansible faile on seega mõistlik hoida tänapäevalt projektipõhiselt eraldi kaustas.** Kausta võib luua kodukasuta, näiteks:
 
 - `~/ansible/`
-- `~/projects/my-playbooks/`
+- `~/projekti-nimi/`
 
-Ansible ei kasuta /etc/ansible/ kausta, kui just ei sätesta seda ansible.cfg abil
+Projektikausta struktuuri näide. Näites olevate failide ja kautsde otstarbest räägime eraldi järgnevates materjalides:
 
-Rollide vaikeasukoht võib olla näiteks:
-`~/.ansible/roles/`
+```bash
+~/ansible-project/
+├─ ansible.cfg # projekti konfiguratsioon
+├─ inventory/  # projekti inventory kaust
+│ ├─ hosts.yaml
+│ └─ group_vars/ # gruppide muutujad
+│ └─ webservers.yml
+│ └─ host_vars/ # hostide muutujad
+│ └─ web1.yml
+├─ templates/ # projekti mallide kaust
+│ └─ nginx.conf.j2
+└─ site.yml
+└─ roles/  # rollide kaust (kui kasutad rolle)
+```
 
 !!! info
-    Kui kasutad pipx-i või virtualenv-i, soovitatakse hoida kõik seotud failid ühe projekti sees ja kasutada lokaliseeritud ansible.cfg faili.
+    Soovitus on luua iga projekti jaoks eraldi `ansible.cfg` fail kuhu määrata selle projekti jaoks vajalikud Ansible seaded.
 
 ## Harjutus
 
