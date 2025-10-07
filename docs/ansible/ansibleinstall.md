@@ -149,7 +149,7 @@ Ansible töötab väga paindlikult — faile võid hoida erinevates kohtades, s�
 - `~/ansible/`
 - `~/projekti-nimi/`
 
-Projektikausta struktuuri näide. Näites olevate failide ja kautsde otstarbest räägime eraldi järgnevates materjalides:
+Projektikausta struktuuri näide. Näites olevate failide ja kaustade otstarbest räägime eraldi järgnevates materjalides:
 
 ```bash
 ~/ansible-project/
