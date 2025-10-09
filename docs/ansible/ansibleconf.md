@@ -87,7 +87,6 @@ nocows = 1
 
 [privilege_escalation]
 # Vaikimisi sudo kasutus
-become = True
 become_method = sudo
 become_ask_pass = False   # Kui vajad parooli, kasuta Ansible käsu lõpus --ask-become-pass
 
@@ -153,7 +152,6 @@ ansible-config dump --only-changed
      host_key_checking = False
      forks = 10
    [privilege_escalation]
-     become = True
      become_method = sudo  
    ```
      
