@@ -175,9 +175,9 @@ Projektikausta struktuuri näide. Näites olevate failide ja kaustade otstarbest
 
 1. Paigalda Debian virtuaalmasin Xfce kasutajaliidesega.
 2. Paigalda sinna ansible kasutades ühete ülalpool toodud meetoditest.
-2. Kontrolli versiooni `ansible --version`
-3. Käivita test: `ansible localhost -m ping`
-4. Kui tuleb veateade, proovi see lahendada.
+3. Kontrolli versiooni `ansible --version`
+4. Käivita test: `ansible localhost -m ping`
+5. Kui tuleb veateade, proovi see lahendada.
 
 ---
 
