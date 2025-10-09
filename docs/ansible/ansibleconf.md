@@ -55,9 +55,6 @@ inventory = inventory/hosts.yaml
 # Rollide otsinguteed (projekti 'roles' kaust eespool)
 roles_path = roles:~/.ansible/roles:/usr/share/ansible/roles
 
-# Vaikimisi väljundi formaatija (väljund loetavam kui 'default'- lihtsam lugeda ja tõrkeid leida)
-stdout_callback = yaml
-
 # Salvestame retry-faile? Tavaliselt mitte. Vaikimisi, kui playbooki käivitamine mingil põhjusel ebaõnnestub mõne hosti puhul, loob Ansible sinu töökausta (või määratud kausta) nn *retry-faili*, mille faili lõpp on .retry. See fail sisaldab **nimekirja hostidest, kus playbook ebaõnnestus**. Selle eesmärk on, et saad järgmise käsuga uuesti käivitada playbooki ainult nende probleemsete hostide peal. N: ansible-playbook site.yml --limit @site.retry
 retry_files_enabled = False
 
@@ -114,7 +111,6 @@ control_path = %(directory)s/%%h-%%p-%%r
 
 - **inventory** – viitab projekti inventory failile/kaustale, ei pea iga kord `-i` kasutama.
 - **roles_path** – määrab rollide otsinguteed; esimesena projekti `roles/`.
-- **stdout_callback = yaml** – teeb väljundi loetavamaks (eriti `debug` ja `register`).
 - **retry_files_enabled = False** – ei tekita `*.retry` faile (labos harilikult pole vaja).
 - **host_key_checking = False** – lihtsustab labos esmakontakti; *tootmises* pane True.
 - **gathering = smart** – kogub fakte optimaalselt, mitte iga kord täismahus.
@@ -152,7 +148,7 @@ ansible-config dump --only-changed
    [defaults]
      inventory = inventory/hosts.yaml
      interpreter_python = auto_silent
-     stdout_callback = yaml
+     gathering = smart
      retry_files_enabled = False
      host_key_checking = False
      forks = 10
