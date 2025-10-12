@@ -79,7 +79,7 @@ Tingimusi saab määrata ka nimekirjana. Kõik tingimused peavad siis olema tõe
 
 Sageli kontrollitakse, kas muutuja on olemas või omab kindlat väärtust.
 
-### Muutuja olemasolu kontroll (`is defined`)
+**Muutuja olemasolu kontroll (`is defined`):**
 
 ```yaml
 - name: Loo kataloog ainult siis, kui muutuja on määratud
@@ -89,7 +89,7 @@ Sageli kontrollitakse, kas muutuja on olemas või omab kindlat väärtust.
   when: custom_dir is defined
 ```
 
-### Muutuja väärtuse kontroll (`is not defined`, `is truthy`, `is falsy`)
+**Muutuja väärtuse kontroll (`is not defined`, `is truthy`, `is falsy`):**
 
 ```yaml
 - name: Tee midagi ainult siis, kui lipp on tõene
