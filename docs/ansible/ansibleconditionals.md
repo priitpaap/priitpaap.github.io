@@ -160,6 +160,7 @@ Selgitus:
 ## Testimine ja veaotsing
 
 Tingimuslike taskide kontrollimiseks on kasulik kasutada:
+
 - `--check` – näitab, mis toimuks, ilma et tegelikult muudaks;
 - `-v` või `-vvv` – kuvab täpse põhjuse, miks mõni task jäi „skipped“;
 - `debug:` – väljastab muutujate väärtusi.
