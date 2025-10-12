@@ -236,21 +236,6 @@ ansible-playbook site.yml --check --diff
 
 ---
 
-## Harjutus
-
-1. Loo `templates/` kataloog ja sinna fail `demo.conf.j2`, mis sisaldab:
-```jinja2
-server {
-    listen 80;
-    server_name {{ server_name }};
-    root {{ web_root }};
-}
-```
-2. Loo playbook, mis kopeerib malli sihtmasinasse `/etc/nginx/sites-available/demo`.
-3. Käivita playbook ja veendu, et fail on loodud õigete väärtustega.
-4. Muuda `server_name` muutujat ja käivita playbook uuesti – vaata, kas fail muutus ja teenus taaskäivitati.
-
----
 
 ## Rohkem infot
 

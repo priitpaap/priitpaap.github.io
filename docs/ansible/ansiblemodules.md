@@ -172,20 +172,6 @@ Kui sa ei tea, kuidas mõni moodul töötab või milliseid argumente ta toetab, 
 
 ---
 
-## Harjutus
-
-Teosta ad-hoc käskude abil järgmised tegevused:
-
-1. Kontrolli, et saad ühenduse Linuxi ja Windowsi hostidega (`ping`, `win_ping`).  
-2. Loo oma kodukataloogi fail `test.txt` ja kopeeri see kõikidesse Linux hostidesse `/tmp` alla.  
-3. Paigalda kõikidesse Linux hostidesse paketid `htop` ja `nginx`.  
-4. Paigalda Windows hostidesse veebiserveri roll (IIS).
-5. Proovi eemaldada eelnevalt paigaldatud `nginx` pakett Linuxi hostidest.  
-6. Katseta Linuxi hostides `command` moodulit ja käivita käsk `uptime`.
-7. Katsete Windowsi hostides `win_command` ja `win_shell` mooduleid ja käivita käsk `hostname`.
-
----
-
 ## Rohkem infot
 
 - [Ansible modules](https://docs.ansible.com/ansible/latest/collections/index_module.html){:target="_blank"}   

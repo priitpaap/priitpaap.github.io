@@ -136,25 +136,7 @@ ansible-config dump --only-changed
 - Pööra tähelepanu turvalisusele: ära jäta **production** keskkonnas `host_key_checking=False` ja väldi salasõnade hoidmist selges tekstis (kasuta **Ansible Vault**).
 
 ---
-
-## Harjutus
-
-1. **Loo projekti kaust ja ansible.cfg**
-   - Loo projektikausta fail `ansible.cfg`
-   - Lisa sinna vähemalt järgmised sätted:
-
-   ```bash
-   [defaults]
-     inventory = inventory/hosts.yaml
-     interpreter_python = auto_silent
-     gathering = smart
-     retry_files_enabled = False
-     host_key_checking = False
-     forks = 10
-   [privilege_escalation]
-     become_method = sudo  
-   ```
-     
+ 
 ## Rohkem infot
 
 - [Ansible Configuration File Documentation](https://docs.ansible.com/ansible/latest/reference_appendices/config.html){:target="_blank"}

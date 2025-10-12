@@ -388,7 +388,7 @@ Ansible toetab Windowsi haldamist **WinRM (Windows Remote Management)** kaudu, m
 8. Kontrolli ühendust Ansible’iga
 
     ```bash
-    ansible -i hosts.ini windows -m win_ping
+    ansible win1 -m win_ping
     ```
 
     Kui kõik on korras, näed väljundit:  
@@ -409,21 +409,6 @@ Ansible toetab Windowsi haldamist **WinRM (Windows Remote Management)** kaudu, m
 - Hoia Linuxi ja Windowsi hostid eraldi gruppides.  
 - Grupeeri hostid loogiliselt (nt webservers, dbservers, test, prod) – see lihtsustab playbookide haldamist.
 - Kasuta alias-nimesid hostide jaoks, et vältida IP-aadresside kasutamist otse playbookides. See muudab konfiguratsiooni loetavamaks ja paremini hallatavaks.
-
----
-
-## Harjutus
-
-1. Loo oma inventuuri faili kaks gruppi: **linux** ja **windows**.  
-2. Lisa sinna vähemalt 2 Linuxi ja 2 Windowsi hosti.  
-3. Linuxi puhul seadista ühendus SSH võtmega.  
-4. Windowsi puhul luba seadista esimesele serverile ühendus OpenSSH abil ja teisele WinRM-i abil.
-5. Lisa vajalikud *inventory* muutujad.  
-6. Kontrolli ühendust:  
-   ```bash
-   ansible -i hosts.ini linux -m ping
-   ansible -i hosts.ini windows -m win_ping
-   ```
 
 ---
 

@@ -187,20 +187,6 @@ Näide:
 
 ---
 
-## Harjutus
-
-1. Loo playbook, mis:
-   - paigaldab `nginx` ainult siis, kui OS on *Debian*;
-   - käivitab teenuse ainult siis, kui `install_web` muutuja on `true`;
-   - väljastab `debug` sõnumi, kui mõlemad tingimused on täidetud.
-
-2. Lisa kontroll, mis loob `/tmp/ansible_condition_test` kataloogi ainult siis, kui `create_dir` muutuja on määratud.
-
-3. Testi oma playbooki `--check` ja `-v` valikutega.  
-   Märka, millised taskid jäetakse vahele (`skipped`).
-
----
-
 ## Rohkem infot
 
 - [Ansible Conditionals](https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_conditionals.html){:target="_blank"}  

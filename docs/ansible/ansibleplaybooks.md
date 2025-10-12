@@ -193,15 +193,6 @@ pip install ansible-lint  # pip abil
 
 ---
 
-## Harjutus
-
-1. Kirjuta playbook, mis loob `/tmp/ansible_test` kataloogi kõigis hostides (moodul: ansible.builtin.file)
-2. Tee playbook, mis paigaldab paketi `curl` (moodul: ansible.builtin.package või ansible.builtin.apt).
-3. Lisa playbooki ülesanne, mis paneb teenuse `ssh` käima ja lubab selle automaatse käivitamise (moodul: ansible.builtin.service).
-4. Käivita oma playbook esmalt `--check` režiimis ja siis päriselt.
-5. Proovi suunata playbook ainult ühele hostile `-l` parameetriga.
-
-
 ## Rohkem infot
 
 - [Ansible playbooks](https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_intro.html){:target="_blank"}   

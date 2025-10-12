@@ -169,15 +169,6 @@ Projektikausta struktuuri näide. Näites olevate failide ja kaustade otstarbest
 !!! info
     Soovitus on luua iga projekti jaoks eraldi `ansible.cfg` fail kuhu määrata selle projekti jaoks vajalikud Ansible seaded.
 
-## Harjutus
-
-📌 **Tee ise järele:**
-
-1. Paigalda Debian virtuaalmasin Xfce kasutajaliidesega.
-2. Paigalda sinna ansible kasutades ühete ülalpool toodud meetoditest.
-3. Kontrolli versiooni `ansible --version`
-4. Käivita test: `ansible localhost -m ping`
-5. Kui tuleb veateade, proovi see lahendada.
 
 ---
 
