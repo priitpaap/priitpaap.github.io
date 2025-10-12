@@ -22,13 +22,11 @@ Näiteks:
 - paigalda pakett ainult Debianil;  
 - käivita teatud task ainult siis, kui eelmine õnnestus või muutuja on määratud.
 
----
-
-## Lihtne näide
+**Lihtne näide:**
 
 ```yaml
 ---
-- name: Tingimuslik näide
+- name: Tingimuslikkuse näide
   hosts: all
   become: yes
   tasks:
@@ -41,7 +39,7 @@ Näiteks:
 
 Selgitus:
 
-- `when:` määrab, et see task täidetakse **ainult siis**, kui sihtmasina `os_family` on *Debian*.
+- `when:` määrab, et see task täidetakse **ainult siis**, kui sihtmasina `os_family` on *Debian* (meeldetuletuseks: Ansible kogub gather_fact parameetreid hostide kohta).
 - Kui host on nt CentOS (RedHat), siis see task jäetakse vahele (`skipped`).
 
 ---
