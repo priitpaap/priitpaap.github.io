@@ -58,17 +58,17 @@ Playbook, mis kasutab kasutab seda malli:
 - name: NGINX konfiguratsiooni loomine mallist
   hosts: webservers
   become: yes
+
   vars:
     server_name: example.com
     web_root: /var/www
+
   tasks:
     - name: Loo konfiguratsioonifail mallist
       template:
         src: nginx.conf.j2
         dest: /etc/nginx/sites-available/default
-      notify: Taaskäivita nginx
 
-  handlers:
     - name: Taaskäivita nginx
       service:
         name: nginx
@@ -79,7 +79,6 @@ Selgitus:
 
 - Mallifaili muutujad (`{{ server_name }}` ja `{{ web_root }}`) asendatakse playbooki jooksutamise ajal nende väärtustega.
 - `template:` moodul kopeerib mallifaili sihtmasinasse ja teeb asendused.
-- `notify:` ja `handlers:` on viis teha teatud tegevus (nt teenuse taaskäivitamine) ainult siis, kui mallifaili sisu muutus.
 
 ---
 
