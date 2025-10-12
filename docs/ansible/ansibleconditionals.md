@@ -113,6 +113,18 @@ Näide, kus kontrollitakse loendi pikkust ja väärtust:
   when: servers | length > 3
 ```
 
+**Näide kombineeritud tingimustest:**
+
+```yaml
+- name: Paigalda MariaDB, kui OS on Debian ja muutuja db_enabled on true
+  apt:
+    name: mariadb-server
+    state: present
+  when:
+    - ansible_facts['os_family'] == "Debian"
+    - db_enabled | default(false)
+```
+
 ---
 
 ## Tingimused mooduli tulemuse põhjal
@@ -142,20 +154,6 @@ Selgitus:
 - `register:` salvestab mooduli väljundi muutujasse `nginx_status`.
 - `rc` (return code) väärtus `0` tähendab, et käsk õnnestus.
 - Kui see **ei olnud 0**, käivitatakse teenus uuesti.
-
----
-
-## Näide: kombineeritud tingimused
-
-```yaml
-- name: Paigalda MariaDB, kui OS on Debian ja muutuja db_enabled on true
-  apt:
-    name: mariadb-server
-    state: present
-  when:
-    - ansible_facts['os_family'] == "Debian"
-    - db_enabled | default(false)
-```
 
 ---
 
