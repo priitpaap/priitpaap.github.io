@@ -138,6 +138,7 @@ Paljud moodulid salvestavad oma tulemuse muutujasse (`register:`). Seda saab kas
 ```
 
 Selgitus:
+
 - `register:` salvestab mooduli väljundi muutujasse `nginx_status`.
 - `rc` (return code) väärtus `0` tähendab, et käsk õnnestus.
 - Kui see **ei olnud 0**, käivitatakse teenus uuesti.
