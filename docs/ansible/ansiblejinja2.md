@@ -229,9 +229,9 @@ ansible-playbook site.yml --check --diff
 
 ## Head tavad mallide kasutamisel
 
-- Hoia mallifailid eraldi templates/ kataloogis.
+- Hoia mallifailid eraldi `templates/` kataloogis.
 - Testi mallid `--check` ja `--diff` abil enne tootmiskeskkonnas käivitamist.
-- Kasuta mallides idempotentsust – väldi juhuslikke väärtusi (nt ajatemplid), mis põhjustavad, et fail muutub igal jooksutusel.
+- Kasuta mallides idempotentsust – väldi juhuslikke väärtusi (nt ajatemplid), mis põhjustavad, et fail muutub igal käivitamisel.
 - Väldi mallides liigset loogikat – keerulisemad tingimused ja arvutused on parem teha Ansible’i poolel (nt set_fact või vars).
 
 ---
