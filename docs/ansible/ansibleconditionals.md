@@ -1,4 +1,4 @@
-# Tingimuslikkus Ansible’is
+# Tingimuslikkus
 
 ## Eesmärk
 
