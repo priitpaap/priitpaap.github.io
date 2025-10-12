@@ -64,13 +64,13 @@ Tingimustes saab kasutada **Jinja2 loogikaoperaatoreid**:
 Tingimusi saab määrata ka nimekirjana. Kõik tingimused peavad siis olema tõesed (AND):
 
 ```yaml
-- name: Paigalda nginx ainult Debian 12 serveritesse
+- name: Paigalda nginx ainult Debian 13 serveritesse
   apt:
     name: nginx
     state: present
   when:
     - ansible_facts['os_family'] == "Debian"
-    - ansible_facts['distribution_major_version'] == "12"
+    - ansible_facts['distribution_major_version'] == "13"
 ```
 
 ---
