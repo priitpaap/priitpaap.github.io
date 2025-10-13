@@ -85,7 +85,7 @@ Tänapäeval soovitab Ansible kasutada **`loop:`**-i, sest:
 - name: Loo kasutajad
   user:
     name: "{{ item.name }}"
-    state: present
+   0 state: present
     groups: "{{ item.groups | default(omit) }}"
   loop:
     - { name: "alice", groups: "sudo" }
