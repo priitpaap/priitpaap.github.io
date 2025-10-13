@@ -77,39 +77,67 @@ Tänapäeval soovitab Ansible kasutada **`loop:`**-i, sest:
 
 ---
 
-## Tsüklid loendite üle
+## Tsüklite kasutamine loendite puhul
+
+Tsüklite abil saab sama tegevust korrata iga loendi elemendi jaoks — näiteks paigaldada mitu paketti, luua mitu kasutajat või tekitada mitu kataloogi ühe playbooki sees.
 
 **Mitme kasutaja loomine:**
 
 ```yaml
-- name: Loo kasutajad
-  user:
-    name: "{{ item.name }}"
-    state: present
-    groups: "{{ item.groups | default(omit) }}"
-  loop:
-    - { name: "alice", groups: "sudo" }
-    - { name: "bob" }
+- name: Loo kasutajad  
+  user:  # Kasutajate haldamiseks mõeldud Ansible moodul
+    name: "{{ item.name }}"  # Määrab kasutaja nime vastavalt loendis olevale väärtusele
+    state: present    # Loob kasutaja, kui teda pole (või jätab alles, kui juba olemas)
+    groups: "{{ item.groups | default(omit) }}"  
+      # Lisab kasutaja gruppi, kui 'groups' on määratud
+      # Kui 'groups' pole määratud (nt teisel kasutajal), siis 'omit' jätab selle välja
+  loop:                # Kordab seda task’i iga elemendi puhul allolevas loendis
+    - { name: "alice", groups: "sudo" }  # Esimene kasutaja, lisatakse gruppi sudo
+    - { name: "bob" }                    # Teine kasutaja, ilma grupita
+
 ```
 
 **Mitme kataloogi loomine:**
 
 ```yaml
-- name: Loo kataloogi
-  file:
-    path: "{{ item }}"
-    state: directory
-    mode: "0755"
-  loop:
-    - /opt/app/logs
-    - /opt/app/data
+- name: Loo kataloogid  
+  file:                 # Kasutatakse Ansible 'file' moodulit failisüsteemi haldamiseks
+    path: "{{ item }}"  # Kataloogi tee, mille väärtus tuleb tsüklis loendist
+    state: directory    # Määrab, et objekt peab olema kataloog (loob selle, kui puudub)
+    mode: "0755"        # Seab õigused: omaniku kirjutus/lugemisõigus, teistele lugemisõigus
+  loop:                 # Käivitab task’i iga alloleva loendi elemendi jaoks kordamööda
+    - /opt/app/logs     # Esimene kataloog, mis luuakse
+    - /opt/app/data     # Teine kataloog, mis luuakse
+
+```
+
+**Muutuja kasutamine tsüklina**
+
+```yaml
+---
+- name: Paigalda mitmeid pakette 
+  hosts: webservers    become: yes                       # Käivitatakse sudo õigustes (vajalik pakettide paigaldamiseks)
+
+  vars:                             
+    packages:                       # Muutujana loend paketitest, mida soovime paigaldada
+      - nginx
+      - curl
+      - vim
+
+  tasks:                            
+    - name: Paigalda vajalikud paketid       
+      apt:                                   # Kasutame 'apt' moodulit (Debiani/Ubuntu süsteemides)
+        name: "{{ item }}"                   # Paigaldatav paketi nimi tuleb tsükli elemendist
+        state: present                       # Tagab, et pakett on olemas (paigaldatud)
+      loop: "{{ packages }}"                 # Tsükkel – kordab ülesannet iga loendis oleva paketi jaoks
+
 ```
 
 ---
 
-## Tsüklid sõnastike (dict) üle
+## Tsüklite kasutamine sõnastike (dict) puhul
 
-Sõnastikke on mugav tsükliks vormida Jinja2 filtriga **`dict2items`** (teeb `{key:…, value:…}` loendi).
+Tsüklite abil saab töödelda ka sõnastikke, kus iga element koosneb võtme–väärtuse paarist — näiteks seadistused, kasutajanimed koos gruppidega või paketid koos versioonidega. Sõnastikke on mugav tsükliks vormida Jinja2 filtriga **`dict2items`** (teeb `{key:…, value:…}` loendi).
 
 ```yaml
 - name: Paigalda paketid koos target-versioonidega
@@ -140,7 +168,10 @@ Sõnastikke on mugav tsükliks vormida Jinja2 filtriga **`dict2items`** (teeb `{
 
 ---
 
-## Tsüklid failide üle
+## Tsüklite kasutamine failide puhul
+
+Sageli on vaja teha sama tegevust mitme faili jaoks — näiteks kopeerida konfiguratsioonifaile või luua sümbollinke.
+Tsüklite abil saab selliseid korduvaid failitoiminguid automatiseerida, kasutades kas failide loendit või fileglob-päringut, mis leiab kõik sobivad failid kataloogist.
 
 **Failiglob koos `loop:`-iga** – asendus `with_fileglob`-ile:
 

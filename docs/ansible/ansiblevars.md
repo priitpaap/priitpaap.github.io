@@ -160,7 +160,7 @@ Ansible asendab `{{ web_root }}` playbooki käivitamisel vastava väärtusega.
 ### Loendite (list) kasutamine
 
 Sageli on vaja teha sama tegevust mitme väärtusega (nt paigaldada mitu paketti või luua mitu kataloogi).  
-Sellisel juhul on mugav määrata väärtused **loendina (list)** ja kasutada neid tsükliga `loop:`.
+Sellisel juhul on mugav määrata väärtused **loendina (list)** ja kasutada neid tsükliga `loop:`. Täpsemalt on küll tsüklitest räägitud  "Tsüklid" teemas, aga väike näide ei tee ka siin paha.
 
 Näide: 
 
