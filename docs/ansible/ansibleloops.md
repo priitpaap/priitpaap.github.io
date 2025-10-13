@@ -6,9 +6,8 @@
 
 Selles peatükis õpid:
 
-- Kuidas kasutada **`loop:`** korduvate tegevuste jaoks
-- Millal ja miks **`with_items:`** peetakse vanaks süntaksiks ning mida kasutada selle asemel
-- Kuidas tsüklida **loendite, sõnastike ja failide** üle
+- Kuidas kasutada **`loop:`**-i korduvate tegevuste jaoks
+- Kuidas korrata tegevusi loendite, sõnastike ja failide elementide puhul
 - Kuidas lahendada **keerukamaid juhtumeid** (nt mitme kasutaja või faili massiline loomine)
 - Kuidas kasutada tsükleid **koos mallidega** (Jinja2, `{{ item }}`)
 
@@ -20,16 +19,16 @@ Tsüklid võimaldavad sul **sama tegevust korrata** erinevate väärtustega – 
 
 ---
 
-## `loop:` – kaasaegne viis kordamiseks
+## `loop:` – kaasaegne viis korduva tegevuse sooritamiseks
 
-`loop:` on **eelistatud ja ühtne** viis tsüklite kirjutamiseks kõigi moodulite juures.
+`loop:` on **eelistatud ja ühtne** viis tsüklite kirjutamiseks kõigi moodulite juures. Ansible soovitab tänapäeval teostada kõiki korduvaid tegevusi just `loop` abil.
 
 **Lihtne näide – mitme paketi paigaldus:**
 
 ```yaml
 ---
 - name: Paigalda mitu paketti
-  hosts: all
+  hosts: webservers
   become: yes
   tasks:
     - name: Paigalda paketid
@@ -47,28 +46,33 @@ Tsüklid võimaldavad sul **sama tegevust korrata** erinevate väärtustega – 
 
 ---
 
-## `with_items:` – miks vana ja mida nüüd kasutada?
+## `with_items:` – vanem viis tsüklite kasutamiseks
 
 Varem kasutati eri mustrite jaoks **`with_*`** süntaksit: `with_items`, `with_dict`, `with_fileglob` jne.  
 Tänapäeval soovitab Ansible kasutada **`loop:`**-i, sest:
+
 - süntaks on **ühtne** (üks viis kõigi juhtumite jaoks);
 - koos **filtritega** (`dict2items`, `subelements`, `flatten`, `unique` jne) saab lahendada kõik endised `with_*` juhtumid;
 - kergem lugeda ja hooldada.
 
-> `with_items:` pole küll ametlikult eemaldatud, kuid **dokumentatsioon eelistab `loop:`**. Uutes projektides kasuta `loop:`-i.
+> `with_items:` pole küll ametlikult eemaldatud, kuid **dokumentatsioonis soovitatakse `loop:`-i**. Mõnedes vanemates näidetes võib siinai kohta `with_items` või mõnad muud ``with_*` loopi, seega on hea vähemalt sellest võimaluses teada, et näidetest aru saada.
 
-**Vana vs uus:**
+**Vana süntaksi näide:**
 
 ```yaml
-# Vana
-with_items:
-  - user1
-  - user2
-
-# Uus
-loop:
-  - user1
-  - user2
+---
+- name: Paigalda mitu paketti (vana süntaks)
+  hosts: webservers
+  become: yes
+  tasks:
+    - name: Paigalda paketid
+      apt:
+        name: "{{ item }}"
+        state: present
+      with_items:
+        - curl
+        - git
+        - htop
 ```
 
 ---
