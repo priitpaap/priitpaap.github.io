@@ -150,6 +150,47 @@ ansible-playbook seadista_nginx.yml --diff
 
 ---
 
+## Tulemuste salvestamine ja kuvamine
+
+Sageli on vaja näha, mida mõni moodul tegelikult tagastab, et oma playbooke paremini mõista ja testida.
+Selleks kasutatakse kaht kasulikku tööriista:
+
+- `register:` – salvestab mooduli väljundi muutujasse. Võimaldab kasutada mooduli väljundit hilisemates taskides.
+- `debug:` – kuvab muutuja väärtuse ekraanile. Aitab õppimise ja veaotsingu käigus näha, mida Ansible tegelikult teeb.
+
+```yaml
+- name: Kontrolli ühendust
+  hosts: webservers
+  tasks:
+    - name: Tee ping test
+      ping:
+      register: pingitulemus     # salvestame tulemuse muutujasse
+
+    - name: Kuvame tulemuse
+      debug:
+        var: pingitulemus        # näitame, mis väärtused tagastati
+```
+
+**Kasulikud nipid**
+
+Kui tahad kuvada ainult ühe väärtuse:
+
+```yaml
+    - name: Kuvame tulemuse
+      debug:
+        msg: "Server vastas: {{ pingitulemus.ping }}"
+```
+
+Kui tahad testida muutujate olemasolu: 
+
+```yaml
+    - name: Muutujate test
+      debug:
+        var: ansible_facts['os_family']
+```
+
+---
+
 ## Head tavad playbookide kirjutamisel
 
 - **Hoia lihtsana** – tee playbookid loetavaks, et ka teised (või sina ise hiljem) saaksid aru, mida need teevad.
