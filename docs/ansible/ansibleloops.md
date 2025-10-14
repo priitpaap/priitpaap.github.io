@@ -17,7 +17,7 @@ Tsüklid võimaldavad sul **sama tegevust korrata** erinevate väärtustega – 
 
 ---
 
-## `loop:` – kaasaegne viis korduva tegevuse sooritamiseks
+## Kaasaegne viis korduva tegevuse sooritamiseks ()
 
 `loop:` on **eelistatud ja ühtne** viis tsüklite kirjutamiseks kõigi moodulite juures. Ansible soovitab tänapäeval teostada kõiki korduvaid tegevusi just `loop` abil.
 
@@ -44,7 +44,7 @@ Tsüklid võimaldavad sul **sama tegevust korrata** erinevate väärtustega – 
 
 ---
 
-## `with_items:` – vanem viis tsüklite kasutamiseks
+## Vanem viis tsüklite kasutamiseks (`with_*:`)
 
 Varem kasutati eri mustrite jaoks **`with_*`** süntaksit: `with_items`, `with_dict`, `with_fileglob` jne.  
 Tänapäeval soovitab Ansible kasutada **`loop:`**-i, sest:
