@@ -77,7 +77,7 @@ Krüpteeritud faili saab avada või redigeerida ainult Vault-parooliga.
   ```
 
 !!! warning
-        *Dekrüpteerimine eemaldab kaitse – kasuta seda ainult vajadusel!*
+        Dekrüpteerimine eemaldab kaitse – kasuta seda ainult vajadusel!
 
 ---
 
