@@ -1,4 +1,4 @@
-# Handlers ja `notify`
+# Tegevuste käivitamine ainult vajadusel
 
 ## Eesmärk
 
@@ -13,7 +13,7 @@ Selles peatükis õpid:
 
 ## Mis on handler?
 
-**Handler** on Ansible’i eriline *ülesanne* (task), mis käivitatakse **ainult siis, kui seda teavitatakse (`notify`)**.  
+Tihti on vajadus käivitada peale ülesannet (task) mingi lisategevus, näiteks teenuse taaskäivitus. **Handler** on Ansible’i eriline ülesanne (task), mis käivitatakse **ainult siis, kui seda teavitatakse (`notify`) abil**.  
 Seda kasutatakse tavaliselt olukorras, kus mingi muudatus nõuab järgnevat tegevust — näiteks teenuse taaskäivitust pärast konfiguratsioonifaili muutmist.
 
 Handlerid asuvad **playbooki lõpus** ja näevad välja peaaegu nagu tavalised taskid, kuid need kuuluvad eraldi plokki nimega `handlers:`.
