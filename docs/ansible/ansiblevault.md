@@ -71,7 +71,6 @@ Krüpteeritud faili saab avada või redigeerida ainult Vault-parooliga.
   ```
 
 - **Dekrüpteerimine (tavalisse teksti):**
-
   ```bash
   ansible-vault decrypt secrets.yml
   ```
