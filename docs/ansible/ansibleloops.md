@@ -304,7 +304,7 @@ Kui on loend objekte, millest igal on **alamloend**, kasuta filtrit **`subelemen
 
 ---
 
-## Tsüklid ja Jinja2 mallid ({{ item }})
+## Tsüklid ja Jinja2 mallid
 
 Tsükleid saab kombineerida **mallide paigaldamisega**, et luua **mitu konfiguratsioonifaili** erinevate väärtustega.
 
