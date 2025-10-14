@@ -17,7 +17,7 @@ Tsüklid võimaldavad sul **sama tegevust korrata** erinevate väärtustega – 
 
 ---
 
-## Kaasaegne viis korduva tegevuse sooritamiseks ()
+## Kaasaegne viis korduva tegevuse sooritamiseks (`loop:`)
 
 `loop:` on **eelistatud ja ühtne** viis tsüklite kirjutamiseks kõigi moodulite juures. Ansible soovitab tänapäeval teostada kõiki korduvaid tegevusi just `loop` abil.
 
