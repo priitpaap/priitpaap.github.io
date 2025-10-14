@@ -1,5 +1,3 @@
-# UNFINISHED!!!
-
 # Tsüklid
 
 ## Eesmärk
@@ -56,7 +54,7 @@ Tänapäeval soovitab Ansible kasutada **`loop:`**-i, sest:
 - kergem lugeda ja hooldada.
 
 !!! info
-     `with_items:` pole küll ametlikult eemaldatud, kuid **Ansible dokumentatsioonis soovitatakse kasutada `loop:`-i**. Mõnedes vanemates näidetes võib siinai kohta `with_items` või mõnda muud ``with_*` loopi, seega on hea vähemalt sellest võimaluses teada, et näidetest aru saada.
+     `with_items:` pole küll ametlikult eemaldatud, kuid **Ansible dokumentatsioonis soovitatakse kasutada `loop:`-i**. Mõnedes vanemates näidetes võib siiani kohta `with_items` või mõnda muud ``with_*` loopi, seega on hea vähemalt sellest võimaluses teada, et näidetest aru saada.
 
 **Vana süntaksi näide:**
 
