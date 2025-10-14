@@ -8,7 +8,6 @@ Selles peatükis õpid:
 - Kuidas töötab **`notify`** mehhanism  
 - Kuidas handler käivitub ainult siis, kui midagi muutus  
 - Kuidas kasutada **mitut handlerit** ühes playbookis  
-- Kuidas rakendada handlerit näiteks siis, kui **malli muutus nõuab teenuse taaskäivitust**
 
 ---
 
@@ -21,16 +20,15 @@ Handlerid asuvad **playbooki lõpus** ja näevad välja peaaegu nagu tavalised t
 
 ---
 
-## `notify:` mehhanism
+## Notify ja handleri tööpõhimõte
 
 Kui tavapärane task muudab midagi (nt paigaldab paketi, muudab faili, kirjutab malli jms), saab see anda märku handlerile, kasutades võtmesõna `notify:`.
 
 Handler käivitatakse **ainult siis, kui muutus tegelikult toimus** — mitte igal playbooki käivitamisel.  
-See on **idempotentsuse põhimõtte** oluline osa.
 
 ---
 
-## Näide: `template` muudab `nginx.conf` → `notify` käivitab restart
+**Näide: Muudame malli kaudu veebiserveri seadeid ja käivitame veebiserveri kui failis toimus muutus:**
 
 ```yaml
 ---
@@ -44,30 +42,30 @@ See on **idempotentsuse põhimõtte** oluline osa.
         src: templates/nginx.conf.j2
         dest: /etc/nginx/nginx.conf
         mode: "0644"
-      notify: Taaskäivita nginx   # Käivitab handleri, kui failis toimus muutus
+      notify: Taaskäivita nginx   # Anname handlerile märku, kui faili muudeti
 
   handlers:
-    - name: Taaskäivita nginx
+    - name: Taaskäivita nginx   # handleri käivitumine ainult muutuse korral
       service:
         name: nginx
         state: restarted
 ```
 
-💡 **Selgitus:**
+**Selgitus:**
+
 - `template` moodul kopeerib mallifaili sihtkohta ja võrdleb seda olemasolevaga.  
 - Kui sisu erineb, märgib Ansible taski *changed* olekusse ja käivitab `notify`.  
 - Handler **ei käivitu kohe**, vaid **playbooki lõpus** – pärast kõiki task’e.  
 - Kui midagi ei muutunud, handlerit **ei käivitata**.  
 
----
-
-## Handleri käivitumine ainult muutuse korral
 
 Handler käivitub ainult siis, kui:
+
 1. Seda on **teavitatud (`notify:`)**, **ja**
 2. Teavituse andnud task **muutus (changed)** olekusse.
 
 Näiteks:
+
 - Kui mallifail oli juba ajakohane → *no change* → handler ei tööta.  
 - Kui mallifail muutus → *changed* → handler käivitatakse playbooki lõpus.  
 
@@ -77,8 +75,8 @@ See tagab, et teenus taaskäivitatakse ainult siis, kui see on tõesti vajalik.
 
 ## Mitme handleri kasutamine
 
-Ühte taski saab siduda **mitme handleriga**.  
-Seda tehakse `notify:` all loendina.
+Ühte taski saab siduda **mitme handleriga** ehk üks *task* saab `notify:` kaudu teavitada mitut handlerit.
+Seda tehakse `notify:` all loendina:
 
 ```yaml
 tasks:
@@ -101,7 +99,8 @@ handlers:
       msg: "Rakenduse konfiguratsioon uuendati ja teenus taaskäivitati."
 ```
 
-💡 **Selgitus:**
+**Selgitus:**
+
 - Kui task muudab midagi, kutsutakse mõlemad handlerid.  
 - Kui midagi ei muutunud, ei teavitata ühtegi handlerit.  
 - Handlerid käivitatakse järjekorras, milles need on määratud.
@@ -135,7 +134,7 @@ handlers:
       state: restarted
 ```
 
-💡 **Ansible ei taaskäivita teenust kaks korda!**  
+**Ansible ei taaskäivita teenust kaks korda!**  
 Kui mitu taski teavitab sama handlerit, lisatakse see vaid ühte „järjekorda“ ja käivitatakse **üks kord playbooki lõpus**.  
 
 ---
@@ -165,16 +164,13 @@ tasks:
 
   - name: Kontrolli, kas nginx töötab
     shell: systemctl status nginx
+
+handlers:
+  - name: Taaskäivita nginx
+    service:
+      name: nginx
+      state: restarted
 ```
-
----
-
-## Harjutus
-
-1. Loo `template` mooduliga `nginx.conf.j2` fail, mis muudab näiteks `worker_processes` väärtust.  
-2. Lisa `notify:` käsk, mis käivitab handleri teenuse taaskäivitamiseks.  
-3. Lisa sama handler teise taski juurde (nt vhosti kopeerimine) ja veendu, et see käivituks vaid üks kord.  
-4. Testi, mis juhtub, kui käivitad playbooki teist korda – handlerit ei käivitata, sest midagi ei muutunud.
 
 ---
 
