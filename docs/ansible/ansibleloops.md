@@ -142,51 +142,59 @@ Tsüklite abil saab sama tegevust korrata iga loendi elemendi jaoks — näiteks
 Tsüklite abil saab töödelda ka sõnastikke, kus iga element koosneb võtme–väärtuse paarist — näiteks seadistused, kasutajanimed koos gruppidega või paketid koos versioonidega. Sõnastikke on mugav tsükliks vormida Jinja2 filtriga **`dict2items`** (teeb `{key:…, value:…}` loendi).
 
 ```yaml
-- name: Paigalda paketid koos target-versioonidega
-  apt:
-    name: "{{ item.key }}={{ item.value }}"
-    state: present
-  loop: "{{ packages | dict2items }}"
-  vars:
-    packages:
-      nginx: 1.24.0-1
-      git: 1:2.43.0-1
+- name: Paigalda paketid koos target-versioonidega   
+  apt:                                               # Kasutatakse 'apt' moodulit 
+    name: "{{ item.key }}={{ item.value }}"          # Iga tsükli käigus ühendatakse paketi nimi (key) ja versioon (value)
+    state: present                                   # Tagab, et määratud versioon on paigaldatud
+  loop: "{{ packages | dict2items }}"                # Teisendab sõnastiku loendiks (dict → [{key:…, value:…}, …])
+  vars:                                              
+    packages:                                        # Sõnastik, kus iga kirje koosneb paketi nimest (võti) ja versioonist (väärtus)
+      nginx: 1.24.0-1                                # Paigaldatakse konkreetne nginx versioon
+      git: 1:2.43.0-1                                # Paigaldatakse konkreetne git versioon
+
 ```
 
-**Lihtsam „võti-väärtus” kasutajate haldus:**
+**Lihtsam „võti-väärtus” kasutajate halduse näitel:**
 
 ```yaml
 - name: Loo kasutajad (dict)
-  user:
-    name: "{{ item.key }}"
-    state: present
-    groups: "{{ item.value.groups | default(omit) }}"
-  loop: "{{ users | dict2items }}"
+  user:                                   # Kasutajate haldamise moodul
+    name: "{{ item.key }}"                # Kasutajanimi tuleb sõnastiku võtme (key) väärtusest
+    state: present                        # Tagab, et kasutaja eksisteerib (luuakse, kui teda pole)
+    groups: "{{ item.value.groups | default(omit) }}"  
+      # Kui sõnastiku väärtuses on määratud grupp (groups), lisatakse kasutaja sellesse gruppi
+      # Kui gruppi pole määratud, jätab 'omit' selle välja, et vältida tühja väärtuse viga
+  loop: "{{ users | dict2items }}"        # Teisendab 'users' sõnastiku loendiks [{key:…, value:…}, …]
   vars:
-    users:
-      alice: { groups: "sudo" }
-      bob: {}
+    users:                                # Sõnastik kasutajatest ja nende omadustest
+      alice: { groups: "sudo" }           # Kasutaja 'alice' lisatakse gruppi 'sudo'
+      bob: {}                             # Kasutaja 'bob' luuakse ilma grupita
+
 ```
 
 ---
 
 ## Tsüklite kasutamine failide puhul
 
-Sageli on vaja teha sama tegevust mitme faili jaoks — näiteks kopeerida konfiguratsioonifaile või luua sümbollinke.
-Tsüklite abil saab selliseid korduvaid failitoiminguid automatiseerida, kasutades kas failide loendit või fileglob-päringut, mis leiab kõik sobivad failid kataloogist.
+Sageli on vaja teha sama tegevust mitme faili jaoks — näiteks kopeerida konfiguratsioonifaile või luua linke.
+Tsüklite abil saab selliseid korduvaid failitoiminguid automatiseerida, kasutades kas failide loendit või `fileglob` päringut, mis leiab kõik sobivad failid kataloogist.
 
-**Failiglob koos `loop:`-iga** – asendus `with_fileglob`-ile:
+**Failiglob koos `loop:`-iga**:
 
 ```yaml
 - name: Kopeeri kõik .conf failid kataloogist files/app/
-  copy:
-    src: "{{ item }}"
-    dest: "/etc/myapp/{{ item | basename }}"
-    mode: "0644"
-  loop: "{{ lookup('fileglob', 'files/app/*.conf', wantlist=True) }}"
+  copy:                                                    # Kasutatakse 'copy' moodulit failide kopeerimiseks
+    src: "{{ item }}"                                      # Allikas – iga tsükli käigus üks fail, mille tee tuleb loendist
+    dest: "/etc/myapp/{{ item | basename }}"               # Sihtkoht – fail kopeeritakse /etc/myapp/ kataloogi
+                                                           # 'basename' filter eemaldab failiteest kataloogiosa, jättes alles ainult failinime
+    mode: "0644"                                           # Seab failidele õigused (omanik kirjutab, teised loevad)
+  loop: "{{ lookup('fileglob', 'files/app/*.conf', wantlist=True) }}"  
+    # lookup('fileglob', 'muster', wantlist=True) leiab kõik failid, mis vastavad mustrile files/app/*.conf
+    # tulemuseks on loend failide täielikest radadest, mida tsüklis ükshaaval töödeldakse
+
 ```
 
-> `lookup('fileglob', pattern, wantlist=True)` tagastab sobivate failide loendi, mille üle saab `loop:`-iga tsüklida.
+- `lookup('fileglob', pattern, wantlist=True)` leiab kõik mustriga sobivad failid ja annab need loendina `loop:`-ile töötlemiseks.
 
 ---
 
