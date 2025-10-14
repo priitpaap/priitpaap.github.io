@@ -86,13 +86,13 @@ Tsüklite abil saab sama tegevust korrata iga loendi elemendi jaoks — näiteks
 
 ```yaml
 - name: Loo kasutajad  
-  user:  # Kasutajate haldamiseks mõeldud Ansible moodul
+  user:                      # Kasutajate haldamiseks mõeldud Ansible moodul
     name: "{{ item.name }}"  # Määrab kasutaja nime vastavalt loendis olevale väärtusele
-    state: present    # Loob kasutaja, kui teda pole (või jätab alles, kui juba olemas)
+    state: present           # Loob kasutaja, kui teda pole (või jätab alles, kui juba olemas)
     groups: "{{ item.groups | default(omit) }}"  
       # Lisab kasutaja gruppi, kui 'groups' on määratud
       # Kui 'groups' pole määratud (nt teisel kasutajal), siis 'omit' jätab selle välja
-  loop:                # Kordab seda task’i iga elemendi puhul allolevas loendis
+  loop:                      # Kordab seda task’i iga elemendi puhul allolevas loendis
     - { name: "alice", groups: "sudo" }  # Esimene kasutaja, lisatakse gruppi sudo
     - { name: "bob" }                    # Teine kasutaja, ilma grupita
 
