@@ -56,7 +56,7 @@ Tänapäeval soovitab Ansible kasutada **`loop:`**-i, sest:
 - kergem lugeda ja hooldada.
 
 !!! info
-   `with_items:` pole küll ametlikult eemaldatud, kuid **dokumentatsioonis soovitatakse `loop:`-i**. Mõnedes vanemates näidetes võib siinai kohta `with_items` või mõnad muud ``with_*` loopi, seega on hea vähemalt sellest võimaluses teada, et näidetest aru saada.
+   `with_items:` pole küll ametlikult eemaldatud, kuid **Ansible dokumentatsioonis soovitatakse kasutada `loop:`-i**. Mõnedes vanemates näidetes võib siinai kohta `with_items` või mõnda muud ``with_*` loopi, seega on hea vähemalt sellest võimaluses teada, et näidetest aru saada.
 
 **Vana süntaksi näide:**
 
@@ -117,7 +117,8 @@ Tsüklite abil saab sama tegevust korrata iga loendi elemendi jaoks — näiteks
 ```yaml
 ---
 - name: Paigalda mitmeid pakette 
-  hosts: webservers    become: yes                       # Käivitatakse sudo õigustes (vajalik pakettide paigaldamiseks)
+  hosts: webservers    
+  become: yes                       
 
   vars:                             
     packages:                       # Muutujana loend paketitest, mida soovime paigaldada
