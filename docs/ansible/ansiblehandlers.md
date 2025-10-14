@@ -139,7 +139,7 @@ Kui mitu taski teavitab sama handlerit, lisatakse see vaid ühte „järjekorda�
 
 ---
 
-## Handlerite käsitsi käivitamine (`meta: flush_handlers`)
+## Handlerite käsitsi käivitamine
 
 Vaikimisi käivitatakse kõik handlerid **playbooki lõpus**.  
 Kui on vaja käivitada need **kohe pärast teatud taski**, saab kasutada:
