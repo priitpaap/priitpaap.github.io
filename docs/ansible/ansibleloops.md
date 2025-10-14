@@ -194,7 +194,42 @@ Tsüklite abil saab selliseid korduvaid failitoiminguid automatiseerida, kasutad
 
 ---
 
-## Keerukamad näited
+## Tsüklite tulemused ja `register`
+
+Kui salvestad tsükliga ülesande tulemuse muutujasse register, siis Ansible ei salvesta **ainult ühte väärtust**, vaid loob **loendi kõigi tsükli käikude tulemustest**.
+See tähendab, et iga kord, kui tsükkel täidab ühe elemendi, lisatakse selle tulemus eraldi kirjena üldisesse tulemuste loendisse.
+
+```yaml
+- name: Kontrolli portide staatust
+  shell: "ss -lnt | grep -q ':{{ item }} '"   # Kontrollib, kas vastav port on kuulamisel
+  register: port_checks                       # Salvestab kõik tulemused muutujasse 'port_checks'
+  ignore_errors: yes                          # Jätkab ka siis, kui mõni kontroll ebaõnnestub
+  loop:                                       # Kontrollib kahte porti
+    - 80
+    - 443
+
+- name: Näita tulemused
+  debug:
+    var: port_checks.results                  # Kuvab kogu tsükli tulemuste loendi
+
+```
+
+Igal `results` elemendil on näiteks `item`, `rc`, `stdout`, `stderr` jne. `rc` – return code ehk käsu lõpetamise kood (0 = õnnestus, muu = viga).
+
+Kui soovid kuvada ainult ebaõnnestunud tulemused, saad kasutada filtrit:
+
+```yaml
+- name: Näita ainult ebaõnnestunud tulemused
+  debug:
+    msg: "Port {{ item.item }} ei ole avatud"
+  loop: "{{ port_checks.results }}"
+  when: item.rc != 0
+```
+See käib läbi tulemuste loendi ja näitab ainult neid, kus rc ei ole 0 — ehk käsu täitmine ebaõnnestus.
+
+---
+
+## Keerukamate tsüklite näited
 
 ### Alamstruktuurid (`subelements`)
 
@@ -227,59 +262,45 @@ Kui on loend objekte, millest igal on **alamloend**, kasuta filtrit **`subelemen
 
 - `item.0` viitab põhielemendile (kasutajale) ja `item.1` on selle elemendi alamloendis olev väärtus (üks SSH võti).
 
-### 2) Mitme mõõtmega tsükkel (tootekombinatsioonid)
+### Mitme mõõtmega tsükkel (tootekombinatsioonid)
 
 ```yaml
-- name: Loo kaustad keskkondade ja teenuste kombinatsioonidele
-  file:
-    path: "/srv/{{ item.env }}/{{ item.svc }}"
-    state: directory
-  loop: "{{ query('cartesian', envs, services) | map('combine') | list }}"
-  vars:
-    envs:
-      - { env: "dev" }
-      - { env: "prod" }
-    services:
-      - { svc: "api" }
-      - { svc: "worker" }
+- name: Loo kaustad keskkondade ja teenuste kombinatsioonidele   
+  file:                                                          # 'file' moodul loob või haldab faile ja katalooge
+    path: "/srv/{{ item.env }}/{{ item.svc }}"                   # Kausta tee – kombineerib keskkonna ja teenuse nime
+    state: directory                                             # Tagab, et see tee on kataloog (loob, kui puudub)
+  loop: "{{ query('cartesian', envs, services) | map('combine') | list }}"  
+    # 'query('cartesian', ...)' loob kõik võimalikud kombinatsioonid kahest loendist (envs ja services)
+    # Näiteks: dev+api, dev+worker, prod+api, prod+worker
+    # 'map('combine')' liidab kahe loendi objektid üheks sõnastikuks
+    # 'list' muudab tulemuse lõplikuks loendiks, mida saab tsüklis läbi käia
+  vars:                                                          
+    envs:                                                        # Loend keskkondadest
+      - { env: "dev" }                                           # Arenduskeskkond
+      - { env: "prod" }                                          # Tootmiskeskkond
+    services:                                                    # Loend teenustest
+      - { svc: "api" }                                           # API teenus
+      - { svc: "worker" }                                        # Taustateenus (worker)
+
 ```
 
-### 3) Iteratsiooni indeks ja silt
+### Iteratsiooni indeks ja silt
 
 `loop_control` annab ligipääsu indeksile ja inimloetavale märgisele:
 
 ```yaml
-- name: Loo kaustad koos indeksiga
-  file:
-    path: "/data/{{ index }}-{{ item }}"
-    state: directory
-  loop: ["a", "b", "c"]
-  loop_control:
-    index_var: index
-    label: "{{ index }} -> {{ item }}"
+- name: Loo kaustad koos indeksiga           
+  file:                                      # 'file' moodul – loob või haldab faile ja katalooge
+    path: "/data/{{ index }}-{{ item }}"     # Kataloogi tee: koosneb indeksist ja elemendi väärtusest (nt /data/0-a)
+    state: directory                         # Tagab, et tee on kataloog (loob selle, kui puudub)
+  loop: ["a", "b", "c"]                      # Lihtne loend, mille elemente töödeldakse tsüklis järjest
+  loop_control:                              # Täiendav tsüklite juhtimine
+    index_var: index                         # Loob eraldi muutuja 'index', mis sisaldab tsükli järjekorranumbrit (alates 0)
+    label: "{{ index }} -> {{ item }}"       # Määrab, kuidas tsükli element kuvatakse väljundis (nt 0 -> a)
+
 ```
 
----
-
-## Tsüklite tulemused ja `register`
-
-Tsükliga task salvestab **tulemustes loendi**. Iga elemendi puhul tekib alamkirje.
-
-```yaml
-- name: Kontrolli portide staatust
-  shell: "ss -lnt | grep -q ':{{ item }} '"
-  register: port_checks
-  ignore_errors: yes
-  loop:
-    - 80
-    - 443
-
-- name: Näita tulemused
-  debug:
-    var: port_checks.results
-```
-
-Igal `results` elemendil on näiteks `item`, `rc`, `stdout`, `stderr` jne.
+- on kasulik näiteks järjestatud objektide loomisel või silumiseks, kui soovid teada, mitmendal sammul tsükkel parasjagu on.
 
 ---
 
