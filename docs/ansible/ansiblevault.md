@@ -1,4 +1,4 @@
-# Tundlikud andmed ja `ansible-vault`
+# Turvalisus ja Ansible Vault
 
 ## Eesmärk
 

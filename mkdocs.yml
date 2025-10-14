@@ -95,7 +95,7 @@ nav:
       - 'Tegevuste käivitamine ainult vajadusel': ansible/ansiblehandlers.md     
 #      - 'Rollid ja struktuur': ansible/ansibleroles.md
 #      - 'Ansible Galaxy ja kogukonna rollid': ansible/ansiblerolesgalaxy.md
-#      - 'Turvalisus ja Ansible Vault': ansible/ansiblevault.md
+      - 'Turvalisus ja Ansible Vault': ansible/ansiblevault.md
 #      - 'Projektipõhine lõppharjutus': ansible/ansiblefinal.md
 #      - 'Ansible parimad praktikad': ansible/ansiblebestpractises.md
 
