@@ -42,7 +42,7 @@ Tsüklid võimaldavad sul **sama tegevust korrata** erinevate väärtustega – 
       when: ansible_facts['os_family'] == "Debian"
 ```
 
-> `{{ item }}` sisaldab hetkel töödeldava elemendi väärtust.
+- `{{ item }}` sisaldab hetkel töödeldava elemendi väärtust.
 
 ---
 
@@ -55,7 +55,8 @@ Tänapäeval soovitab Ansible kasutada **`loop:`**-i, sest:
 - koos **filtritega** (`dict2items`, `subelements`, `flatten`, `unique` jne) saab lahendada kõik endised `with_*` juhtumid;
 - kergem lugeda ja hooldada.
 
-> `with_items:` pole küll ametlikult eemaldatud, kuid **dokumentatsioonis soovitatakse `loop:`-i**. Mõnedes vanemates näidetes võib siinai kohta `with_items` või mõnad muud ``with_*` loopi, seega on hea vähemalt sellest võimaluses teada, et näidetest aru saada.
+!!! info
+   `with_items:` pole küll ametlikult eemaldatud, kuid **dokumentatsioonis soovitatakse `loop:`-i**. Mõnedes vanemates näidetes võib siinai kohta `with_items` või mõnad muud ``with_*` loopi, seega on hea vähemalt sellest võimaluses teada, et näidetest aru saada.
 
 **Vana süntaksi näide:**
 
