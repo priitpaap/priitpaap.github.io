@@ -13,10 +13,10 @@ Selles peatükis õpid:
 
 ## Mis on handler?
 
-Tihti on vajadus käivitada peale ülesannet (task) mingi lisategevus, näiteks teenuse taaskäivitus. **Handler** on Ansible’i eriline ülesanne (task), mis käivitatakse **ainult siis, kui seda teavitatakse (`notify`) abil**.  
+Sageli on vaja käivitada pärast mõne ülesande täitmist lisategevus (nt teenuse taaskäivitus). **Handler** on Ansible’i eriline ülesanne (task), mis käivitatakse **ainult siis, kui seda teavitatakse (`notify`) abil**.  
 Seda kasutatakse tavaliselt olukorras, kus mingi muudatus nõuab järgnevat tegevust — näiteks teenuse taaskäivitust pärast konfiguratsioonifaili muutmist.
 
-Handlerid asuvad **playbooki lõpus** ja näevad välja peaaegu nagu tavalised taskid, kuid need kuuluvad eraldi plokki nimega `handlers:`.
+Handlerid asuvad **playbooki lõpus** ja näevad välja peaaegu nagu tavalised ülesanded, kuid need kuuluvad eraldi plokki nimega `handlers:`.
 
 ---
 
@@ -55,7 +55,7 @@ Handler käivitatakse **ainult siis, kui muutus tegelikult toimus** — mitte ig
 
 - `template` moodul kopeerib mallifaili sihtkohta ja võrdleb seda olemasolevaga.  
 - Kui sisu erineb, märgib Ansible taski *changed* olekusse ja käivitab `notify`.  
-- Handler **ei käivitu kohe**, vaid **playbooki lõpus** – pärast kõiki task’e.  
+- Handler **ei käivitu kohe**, vaid **playbooki lõpus** – pärast kõigi taskide täitmist.  
 - Kui midagi ei muutunud, handlerit **ei käivitata**.  
 
 
@@ -75,7 +75,7 @@ See tagab, et teenus taaskäivitatakse ainult siis, kui see on tõesti vajalik.
 
 ## Mitme handleri kasutamine
 
-Ühte taski saab siduda **mitme handleriga** ehk üks *task* saab `notify:` kaudu teavitada mitut handlerit.
+Üks task saab `notify:` abil teavitada ka mitut handlerit korraga.
 Seda tehakse `notify:` all loendina:
 
 ```yaml
