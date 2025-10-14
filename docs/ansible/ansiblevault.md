@@ -128,7 +128,7 @@ Seejärel lisa käsureale:
 ansible-playbook db.yml --vault-password-file vault_pass.txt
 ```
 !!! warning  
-    Ära salvesta parooliga faili versioonihaldusesse
+    Ära salvesta parooliga faili versioonihaldusesse!
 
 ---
 
