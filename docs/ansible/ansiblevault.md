@@ -6,9 +6,9 @@ Selles peatükis õpid:
 
 - Mis on **Ansible Vault** ja milleks seda kasutatakse  
 - Kuidas **krüpteerida** tundlikke faile ja muutujaid  
-- Kuidas **avatud**, **redigeerida** ja **dekrüpteerida** Vault-faile  
+- Kuidas **vaadata**, **redigeerida** ja **dekrüpteerida** Vault-faile  
 - Kuidas kasutada **Vault-parooli** automaatselt  
-- Kuidas **integreerida Vault** playbookidesse ja varafailidesse
+- Kuidas **integreerida Vault** playbookidesse
 
 ---
 
@@ -17,6 +17,7 @@ Selles peatükis õpid:
 **Ansible Vault** võimaldab kaitsta tundlikku teavet – näiteks paroole, API võtmeid, sertifikaate ja muid konfidentsiaalseid andmeid – krüpteerides need.  
 
 Vaulti kasutamine on oluline, sest:
+
 - Playbookid ja muutujad jagatakse tihti meeskonnas või versioonihalduses (nt GitHub).  
 - Ilma krüpteerimiseta võivad paroolid ja võtmed sattuda avalikult kättesaadavaks.  
 
@@ -32,7 +33,7 @@ Vaultiga kaitstud faili saab luua käsuga:
 ansible-vault create secrets.yml
 ```
 
-See avab vaikimisi redaktori (nt `vim`), kuhu saad sisestada oma tundlikud andmed:
+See avab vaikimisi redaktori, kuhu saad sisestada oma tundlikud andmed:
 
 ```yaml
 db_user: admin
@@ -47,12 +48,11 @@ $ANSIBLE_VAULT;1.1;AES256
 643939313566366534653433396338663266633764336135393265...
 ```
 
-💡 **Näpunäide:**  
-Kui soovid krüpteerida olemasoleva faili, kasuta:
+**Kui soovid krüpteerida olemasoleva faili, kasuta:**
+
 ```bash
 ansible-vault encrypt secrets.yml
 ```
-
 ---
 
 ## Vault-faili avamine ja muutmine
@@ -60,21 +60,25 @@ ansible-vault encrypt secrets.yml
 Krüpteeritud faili saab avada või redigeerida ainult Vault-parooliga.
 
 - **Avamine (ilma muutmata):**
+
   ```bash
   ansible-vault view secrets.yml
   ```
 
 - **Muutmine:**
+
   ```bash
   ansible-vault edit secrets.yml
   ```
 
 - **Dekrüpteerimine (tavalisse teksti):**
+
   ```bash
   ansible-vault decrypt secrets.yml
   ```
 
-⚠️ *Dekrüpteerimine eemaldab kaitse – kasuta seda ainult vajadusel!*
+!!! warning
+        *Dekrüpteerimine eemaldab kaitse – kasuta seda ainult vajadusel!*
 
 ---
 
@@ -82,7 +86,7 @@ Krüpteeritud faili saab avada või redigeerida ainult Vault-parooliga.
 
 Vault-faile kasutatakse tavaliselt muutujaid sisaldavate failidena, mida Ansible loeb `vars_files:` kaudu.
 
-### Näide
+Näide:
 
 ```yaml
 ---
@@ -98,7 +102,7 @@ Vault-faile kasutatakse tavaliselt muutujaid sisaldavate failidena, mida Ansible
         msg: "DB kasutaja on {{ db_user }}"
 ```
 
-Playbooki käivitamisel küsitakse Vault-parooli:
+Playbooki käivitamisel tuleb Vaulti sisu kasutamiseks sisestada Vault-parool, vastasel juhul Ansible ei saa krüpteeritud andmeid avada.
 
 ```bash
 ansible-playbook db.yml --ask-vault-pass
@@ -110,19 +114,23 @@ ansible-playbook db.yml --ask-vault-pass
 
 Et vältida parooli käsitsi sisestamist iga kord, võib kasutada eraldi **Vault paroolifaili**.
 
-Näiteks loo fail `vault_pass.txt` (hoia see turvaliselt!):
+Vault-paroolifaili võib kasutada ainult isiklikus või turvalises keskkonnas.
+**Hoia see fail väljaspool versioonihaldust** (.gitignore), **sea sellele õigused** nt `chmod 600 vault_pass.txt` ja **ära jaga seda teiste kasutajatega**.
+
+Näiteks loo fail `vault_pass.txt`:
 
 ```
 MinuParool123
 ```
 
 Seejärel lisa käsureale:
+
 ```bash
 ansible-playbook db.yml --vault-password-file vault_pass.txt
 ```
 
-💡 **Hea tava:**  
-Ära salvesta `vault_pass.txt` versioonihaldusesse (nt `.gitignore` alla).
+!!! warning  
+        Ära salvesta parooliga faili versioonihaldusesse
 
 ---
 
@@ -135,6 +143,7 @@ ansible-vault encrypt_string 'SalajaneParool123' --name 'db_password'
 ```
 
 Väljund:
+
 ```yaml
 db_password: !vault |
           $ANSIBLE_VAULT;1.1;AES256
@@ -156,6 +165,7 @@ ansible-vault encrypt --vault-id prod@prompt secrets-prod.yml
 ```
 
 Käivitamisel:
+
 ```bash
 ansible-playbook site.yml --vault-id dev@prompt --vault-id prod@prompt
 ```
