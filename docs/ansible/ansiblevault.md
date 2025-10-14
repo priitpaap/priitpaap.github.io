@@ -49,7 +49,6 @@ $ANSIBLE_VAULT;1.1;AES256
 ```
 
 **Kui soovid krüpteerida olemasoleva faili, kasuta:**
-
 ```bash
 ansible-vault encrypt secrets.yml
 ```
