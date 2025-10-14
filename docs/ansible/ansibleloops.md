@@ -337,7 +337,7 @@ handlers:
       state: restarted
 ```
 
-> Mallis saab kasutada `{{ item.* }}` väärtusi, mis tulevad tsükli elemendist.
+Mallis saab kasutada `{{ item.* }}` väärtusi, mis tulevad tsükli elemendist.
 
 ---
 
@@ -361,21 +361,8 @@ handlers:
 - **Kasuta `loop:`** ja filtreid (`dict2items`, `subelements`, `flatten`) – väldi `with_*` süntaksit uues koodis.
 - Tee **elementide struktuur selgeks** (nt `{name:…, uid:…}`) – see teeb mallid ja taskid loetavaks.
 - Väldi shelli, kui leidub **spetsiaalne moodul** (idempotentsus).
-- Kui tsükkel muutub keerukaks, **jaga väiksemateks taskideks** või kasuta **rolle**.
-- Vajadusel kasuta `loop_control` **indeksi** ja **sildi** jaoks.
-
----
-
-## Harjutus
-
-1. Loo playbook, mis:
-   - loob kolm kataloogi `/srv/app/{api,worker,web}`;
-   - loob kaks kasutajat (`alice`, `bob`), kus `alice` kuulub gruppi `sudo`;
-   - kopeerib kõik failid `files/app/*.conf` kataloogi `/etc/myapp/` säilitades nimed.
-
-2. Loo mall `templates/vhost.conf.j2` (nagu ülal) ja genereeri sellest kaks vhosti `example.com` ja `demo.example.com` eraldi juurkataloogidega. Lisa `notify`, mis taaskäivitab nginx’i vaid muutuste korral.
-
-3. Kuva `debug` abil iga sammu juures, millist elementi parajasti töödeldakse.
+- Kui tsükkel muutub keerukaks, **jaga väiksemateks taskideks** või kasuta **rolle** (rollidest räägime hilisemas materjalis).
+- Vajadusel kasuta `loop_control`-it **indeksi** ja **sildi** jaoks.
 
 ---
 
