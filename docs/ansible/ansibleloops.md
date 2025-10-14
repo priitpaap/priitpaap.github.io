@@ -196,31 +196,36 @@ Tsüklite abil saab selliseid korduvaid failitoiminguid automatiseerida, kasutad
 
 ## Keerukamad näited
 
-### 1) Alamstruktuurid (`subelements`)
+### Alamstruktuurid (`subelements`)
 
 Kui on loend objekte, millest igal on **alamloend**, kasuta filtrit **`subelements`**:
 
 ```yaml
 - name: Loo kasutajatele SSH võtmed
-  copy:
-    dest: "/home/{{ item.0.name }}/.ssh/authorized_keys"
-    content: "{{ item.1 }}"
-    owner: "{{ item.0.name }}"
-    group: "{{ item.0.name }}"
-    mode: "0600"
-  loop: "{{ users | subelements('authorized_keys') }}"
+  copy:                                         # Kasutatakse 'copy' moodulit failide kirjutamiseks
+    dest: "/home/{{ item.0.name }}/.ssh/authorized_keys"  
+      # Sihtfail, kuhu võtmed kirjutatakse
+      # 'item.0' on kasutajaobjekt (põhielement tsüklis)
+    content: "{{ item.1 }}"                     # Faili sisu – üksiku võtme väärtus alamloendist
+    owner: "{{ item.0.name }}"                  # Faili omanik – vastav kasutaja
+    group: "{{ item.0.name }}"                  # Faili grupp – sama, mis kasutaja nimi
+    mode: "0600"                                # Faili õigused – ainult omanik võib lugeda/kirjutada
+  loop: "{{ users | subelements('authorized_keys') }}"  
+    # subelements('authorized_keys') tekitab alamtsükli:
+    # iga kasutaja (item.0) kombineeritakse tema iga võtmega (item.1)
   vars:
-    users:
-      - name: "alice"
-        authorized_keys:
+    users:                                      # Loend kasutajatest ja nende SSH võtmetest
+      - name: "alice"                           # Esimene kasutaja
+        authorized_keys:                        # Loend võtmetest, mis lisatakse Alicele
           - "ssh-ed25519 AAAAC... alice@laptop"
           - "ssh-ed25519 AAAAC... alice@work"
-      - name: "bob"
+      - name: "bob"                             # Teine kasutaja
         authorized_keys:
           - "ssh-ed25519 AAAAC... bob@home"
+
 ```
 
-> `item.0` on vanem objekt (kasutaja), `item.1` on alamloendi üks element (üks võti).
+- `item.0` viitab põhielemendile (kasutajale) ja `item.1` on selle elemendi alamloendis olev väärtus (üks SSH võti).
 
 ### 2) Mitme mõõtmega tsükkel (tootekombinatsioonid)
 
