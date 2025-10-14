@@ -76,6 +76,7 @@ Krüpteeritud faili saab avada või redigeerida ainult Vault-parooliga.
   ansible-vault decrypt secrets.yml
   ```
 
+
 !!! warning
         Dekrüpteerimine eemaldab kaitse – kasuta seda ainult vajadusel!
 
@@ -127,6 +128,7 @@ Seejärel lisa käsureale:
 ```bash
 ansible-playbook db.yml --vault-password-file vault_pass.txt
 ```
+
 
 !!! warning  
         Ära salvesta parooliga faili versioonihaldusesse
