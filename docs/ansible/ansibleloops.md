@@ -54,7 +54,7 @@ Tänapäeval soovitab Ansible kasutada **`loop:`**-i, sest:
 - kergem lugeda ja hooldada.
 
 !!! info
-     `with_items:` pole küll ametlikult eemaldatud, kuid **Ansible dokumentatsioonis soovitatakse kasutada `loop:`-i**. Mõnedes vanemates näidetes võib siiani kohta `with_items` või mõnda muud ``with_*` loopi, seega on hea vähemalt sellest võimaluses teada, et näidetest aru saada.
+     `with_items:` pole küll ametlikult eemaldatud, kuid **Ansible dokumentatsioonis soovitatakse kasutada `loop:`-i**. Mõnedes vanemates näidetes võib siiani kohata `with_items` või mõnda muud `with_*` tsüklit, seega on hea vähemalt sellest võimaluses teada, et näidetest aru saada.
 
 **Vana süntaksi näide:**
 
@@ -345,7 +345,7 @@ Mallis saab kasutada `{{ item.* }}` väärtusi, mis tulevad tsükli elemendist.
 
 - Kasuta **`--check`** ja **`--diff`**, et näha muudatusi enne rakendamist.
 - Lisa **`-v` / `-vvv`**, et näha, milliseid elemente töödeldi.
-- Kui tsükkel on keerukas, **väljastada vaheväärtusi** `debug:` abil.
+- Kui tsükkel on keerukas, **on kasulik väljastada vaheväärtusi** `debug:` abil.
 
 ```yaml
 - name: Kuvan töötlemisel kasutatava elemendi
