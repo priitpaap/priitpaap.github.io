@@ -76,7 +76,9 @@ Tänapäeval soovitab Ansible kasutada **`loop:`**-i, sest:
 
 ---
 
-## Tsüklite kasutamine loendite puhul
+## Tsüklite kasutamise erinevad viisid
+
+### Tsüklite kasutamine loendite puhul
 
 Tsüklite abil saab sama tegevust korrata iga loendi elemendi jaoks — näiteks paigaldada mitu paketti, luua mitu kasutajat või tekitada mitu kataloogi ühe playbooki sees.
 
@@ -133,9 +135,7 @@ Tsüklite abil saab sama tegevust korrata iga loendi elemendi jaoks — näiteks
 
 ```
 
----
-
-## Tsüklite kasutamine sõnastike (dict) puhul
+### Tsüklite kasutamine sõnastike (dict) puhul
 
 Tsüklite abil saab töödelda ka sõnastikke, kus iga element koosneb võtme–väärtuse paarist — näiteks seadistused, kasutajanimed koos gruppidega või paketid koos versioonidega. Sõnastikke on mugav tsükliks vormida Jinja2 filtriga **`dict2items`** (teeb `{key:…, value:…}` loendi).
 
@@ -170,9 +170,7 @@ Tsüklite abil saab töödelda ka sõnastikke, kus iga element koosneb võtme–
 
 ```
 
----
-
-## Tsüklite kasutamine failide puhul
+### Tsüklite kasutamine failide puhul
 
 Sageli on vaja teha sama tegevust mitme faili jaoks — näiteks kopeerida konfiguratsioonifaile või luua linke.
 Tsüklite abil saab selliseid korduvaid failitoiminguid automatiseerida, kasutades kas failide loendit või `fileglob` päringut, mis leiab kõik sobivad failid kataloogist.
