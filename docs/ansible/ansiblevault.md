@@ -61,18 +61,18 @@ Krüpteeritud faili saab avada või redigeerida ainult Vault-parooliga.
 - **Avamine (ilma muutmata):**
 
   ```bash
-  ansible-vault view secrets.yml
+    ansible-vault view secrets.yml
   ```
 
 - **Muutmine:**
 
   ```bash
-  ansible-vault edit secrets.yml
+    ansible-vault edit secrets.yml
   ```
 
 - **Dekrüpteerimine (tavalisse teksti):**
   ```bash
-  ansible-vault decrypt secrets.yml
+    ansible-vault decrypt secrets.yml
   ```
 
 
