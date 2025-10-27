@@ -73,7 +73,7 @@ myproject/
 `roles/ROLLINIMI/tasks/main.yml`
 
 Siit käivitab Ansible rolli töövoo. See fail sisaldab ülesandeid, mida roll täidab.
-Kui rolli kutsutakse roles: direktiiviga playbookis, siis Ansible alustab täitmist just sellest failist. Ehk **playbookis olevad ülesanded (tasks), mis muidu oleks otse playbooki sees, liiguvad rollide puhul tasks/main.yml faili**.
+Kui rolli kutsutakse roles: direktiiviga playbookis, siis Ansible alustab täitmist just sellest failist. Ehk **ülesanded (tasks), mis muidu oleks otse playbooki sees, liiguvad rollide puhul tasks/main.yml faili**.
 
 See fail võib sisaldada:
 
