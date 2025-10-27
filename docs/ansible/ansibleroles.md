@@ -1,4 +1,4 @@
-# Ansible rollid – koodi struktureerimine ja korduvkasutus
+# Ansible rollid ja struktuur
 
 ## Eesmärk
 
