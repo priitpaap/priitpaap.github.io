@@ -19,7 +19,7 @@ Kui projektikaust ja playbookid muutuvad suureks ja keeruliseks, on raskem:
 - analüüsida, mis kus toimub
 - taaskasutada sama loogikat
 - hoida koodi puhtana
-- teha muudatusi ilma riske ksvatamata
+- teha muudatusi ilma riske kasvatamata
 
 **Rollid** on viis Ansible kood jagada eraldi, **hästi organiseeritud komponentideks**.
 
