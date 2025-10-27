@@ -9,7 +9,6 @@ Selles peatükis õpid:
 - Kuidas **luua rolle** automaatselt `ansible-galaxy` käsuga
 - Kuidas **kasutada rolle** playbookides
 - Kuidas integreerida **muutujaid, malle, faile, handler'eid** rolli sees
-- Kuidas rollidega **projekti struktuuri** korrastada
 
 ---
 
@@ -141,7 +140,7 @@ myproject/
 
 ### Rolli kasutamine handleri puhul
 
-Järgnevalt näide rollist, kus kasutusel on notify koos handleriga:
+Järgnevalt näide rollist, kus kasutusel on `notify` koos `handler`-iga:
 
 Fail `tasks/main.yml`:
 
@@ -238,11 +237,14 @@ Ansible Galaxy on Ansible'i ametlik veebipõhine keskkond, kust saab otsida, jag
 
 **Otsimine:**
 
-Selle abil saab näiteks otsida võrgust rolli, mis paigaldab ja konfigureerib Nginx-i:
+Selle abil saab näiteks otsida võrgust rolli, mis paigaldab ja konfigureerib Nginx veebiserveri:
 
 `ansible-galaxy search nginx`
 
 See kuvab nimekirja rollidest, mis on seotud Nginx-iga – koos autorite, hinnangute ja kirjeldusega.
+
+!!! info
+    Galaxy rollid võivad olla erineva kvaliteediga – soovitatav on vaadata tähti, allalaadimiste arvu ja dokumentatsiooni enne kasutamist.
 
 **Installeerimine:**
 
@@ -254,11 +256,11 @@ See laeb rolli alla ja paigutab selle sinu projekti roles/ kausta (või määrat
 
 **Rollide loomine ja jagamine**
 
-Sa saad oma rolli registreerida Galaxy keskkonnas, et teised saaksid seda kasutada. Selleks tuleb rollile lisada meta/main.yml fail, kus on info rolli kohta (autor, sõltuvused jne).
+Sa saad soovi korral sinu enda loodud rolli registreerida Galaxy keskkonnas, et teised saaksid seda kasutada. Selleks tuleb rollile lisada meta/main.yml fail, kus on info rolli kohta (autor, sõltuvused jne).
 
 **Rollide halduse automatiseerimine**
 
-Kasutades `requirements.yml` faili, saad määrata kõik vajalikud rollid ja nende versioonid:
+Kasutades `requirements.yml` faili, saad määrata kõik vajalikud rollid ja nende versioonid. Näiteks:
 
 ```yaml
 - src: geerlingguy.nginx
@@ -275,10 +277,18 @@ Ja installida need kõik korraga:
 
 Ansible rollides on kindel kaustastruktuur, mis võimaldab viidata failidele lihtsalt nime järgi, ilma et peaks määrama täisteed. See teeb rollide kasutamise mugavamaks ja koodi loetavamaks.
 
-Näiteks mall:
+Näiteks mall asukohas:
 
 `roles/nginx/templates/nginx.conf.j2`
 
+Playbookis või rolli taskis viitamine:
+
+```yaml
+- name: Loo Nginx konfiguratsioon
+  ansible.builtin.template:
+    src: nginx.conf.j2
+    dest: /etc/nginx/nginx.conf
+```
 Ei pea andma täisteed – Ansible leiab rolli templates/ kataloogist automaatselt.
 
 
