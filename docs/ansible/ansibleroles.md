@@ -15,12 +15,12 @@ Selles peatükis õpid:
 
 ## Mis on rollid?
 
-Kui playbookid muutuvad suureks ja keeruliseks, on raskem:
+Kui projektikaust ja playbookid muutuvad suureks ja keeruliseks, on raskem:
 
 - analüüsida, mis kus toimub
 - taaskasutada sama loogikat
 - hoida koodi puhtana
-- teha muudatusi ilma riske kasvatamata
+- teha muudatusi ilma riske ksvatamata
 
 **Rollid** on viis Ansible kood jagada eraldi, **hästi organiseeritud komponentideks**.
 
@@ -46,8 +46,9 @@ Need muudavad koodi korduvkasutatavaks nii sinu kui ka teiste jaoks.
 
 ## Rolli kataloogistruktuur
 
-Tüüpiline rolli struktuur näeb välja nii:
+Ansible roll on nagu kapseldatud töövoog, mis sisaldab kõiki vajalikke komponente (ülesanded, muutujad, mallid, failid jne), et täita kindlat konfiguratsioonieesmärki. Tüüpiline rolli struktuur näeb välja selline:
 
+```yaml
 myproject/
 ├─ roles/
 │ └─ nginx/
@@ -65,25 +66,32 @@ myproject/
 │ └─ meta/
 │ └─ main.yml
 └─ site.yml
+```
 
-Rolli kõige olulisem fail on:
+**Rolli kõige olulisem fail on:**
 
-roles/ROLINIMI/tasks/main.yml
+`roles/ROLLINIMI/tasks/main.yml`
 
+Siit käivitab Ansible rolli töövoo. See fail sisaldab ülesandeid, mida roll täidab.
+Kui rolli kutsutakse roles: direktiiviga playbookis, siis Ansible alustab täitmist just sellest failist. Ehk **playbookis olevad ülesanded (tasks), mis muidu oleks otse playbooki sees, liiguvad rollide puhul tasks/main.yml faili**.
 
-Siit käivitab Ansible rolli töövoo.
+See fail võib sisaldada:
+
+- konkreetseid ülesandeid (name, module, args)
+- viiteid teistele failidele (include_tasks, import_tasks)
+- tingimuslikke käske (when, tags, notify jne)
 
 ---
 
 ## Rolli loomine `ansible-galaxy` käsuga
 
-Rolli ei pea käsitsi nullist tekitama, seda saab automaatselt teha `ansible-galaxy` käsuga. Nii on palju lihtsam:
+Rolli struktuuri ei pea käsitsi nullist tekitama, seda saab automaatselt teha `ansible-galaxy` käsuga. Nii on palju lihtsam:
 
 ```bash
 ansible-galaxy init nginx
 ```
 
-See loob automaatselt kataloogi ja õiged failid. Antud näite puhul luuakse uus Ansible roll nimega nginx.
+See loob automaatselt kataloogi ja õiged failid. Antud näite puhul luuakse uus Ansible roll nimega *nginx*.
 
 ## Rolli kasutamine playbook'is
 
