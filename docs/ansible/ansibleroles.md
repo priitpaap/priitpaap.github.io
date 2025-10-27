@@ -156,3 +156,98 @@ Rollides on kaks peamist muutujate kohta:
 
 - kõrgem prioriteet
 - tavaliselt kasutatakse rollisisesteks konstantideks
+
+## Rolli mall ja notify koos
+
+Fail tasks/main.yml:
+
+```yaml
+- name: Paigalda nginx konfiguratsioon
+  template:
+    src: nginx.conf.j2
+    dest: /etc/nginx/nginx.conf
+  notify: Taaskäivita nginx
+```
+
+Fail handlers/main.yml:
+
+```yaml
+- name: Taaskäivita nginx
+  service:
+    name: nginx
+    state: restarted
+```
+
+See käivitab restarti ainult siis, kui mall muutus.
+
+## Mitme rolli kasutamine
+
+```yaml
+roles:
+  - common
+  - firewall
+  - docker
+  - nginx
+```
+
+Ansible täidab rollid ülalt alla järjestuses.
+
+## Näidisprojekt rollidega
+
+myproject/
+├─ site.yml
+├─ inventory
+└─ roles/
+   ├─ common/
+   ├─ nginx/
+   └─ users/
+
+
+```yaml
+---
+- hosts: all
+  become: yes
+  roles:
+    - common
+    - users
+    - nginx
+```
+
+## Ansible Galaxy rollid (võrgust)
+
+Samuti saab otsida valmis rolle:
+
+`ansible-galaxy search nginx`
+
+Installeerimine:
+
+`ansible-galaxy install geerlingguy.nginx`
+
+Need rollid on kasutusvalmis ja hästi dokumenteeritud.
+
+## Rollide sees teiste failide viitamine
+
+Näiteks mall:
+
+`roles/nginx/templates/nginx.conf.j2`
+
+Ei pea andma täisteed – Ansible leiab rolli templates/ kataloogist automaatselt.
+
+
+## Rollide testimine
+
+Rolli saab testida eraldi lihtsa playbook'iga:
+
+```yaml
+---
+- hosts: webservers
+  become: yes
+  roles:
+    - nginx
+```
+
+## Rohkem infot
+
+- [Ansible Roles Documentation](https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_reuse_roles.html){:target="_blank"}
+
+- [Ansible Galaxy](https://galaxy.ansible.com/ui/){:target="_blank"}
