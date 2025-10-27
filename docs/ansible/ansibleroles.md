@@ -74,17 +74,17 @@ myproject/
 Siit käivitab Ansible rolli töövoo. See fail sisaldab ülesandeid, mida roll täidab.
 Kui rolli kutsutakse roles: direktiiviga playbookis, siis Ansible alustab täitmist just sellest failist. Ehk **ülesanded (tasks), mis muidu oleks otse playbooki sees, liiguvad rollide puhul tasks/main.yml faili**.
 
-See fail võib sisaldada:
+Failis võivad olla:
 
-- konkreetseid ülesandeid (name, module, args)
-- viiteid teistele failidele (include_tasks, import_tasks)
-- tingimuslikke käske (when, tags, notify jne)
+- konkreetseid ülesandeid
+- viiteid teistele failidele
+- tingimuslikud käsud
 
 ---
 
 ## Rolli loomine `ansible-galaxy` käsuga
 
-Rolli struktuuri ei pea käsitsi nullist tekitama, seda saab automaatselt teha `ansible-galaxy` käsuga. Nii on palju lihtsam:
+Rolli struktuuri ei pea käsitsi looma, seda saab automaatselt teha `ansible-galaxy` käsuga. Nii on palju lihtsam:
 
 ```bash
 ansible-galaxy init nginx
@@ -233,7 +233,7 @@ Näide faili sisust:
 
 ## Ansible Galaxy rollid (võrgust)
 
-Ansible Galaxy on Ansible'i ametlik veebipõhine keskkond, kust saab otsida, jagada ja installida valmis rolle. See on nagu "pakihaldur" Ansible rollide jaoks 
+Ansible Galaxy on Ansible'i ametlik veebipõhine keskkond, kust saab otsida, jagada ja installida valmis rolle. See toimib nagu pakihaldur Ansible rollide jaoks.
 
 **Otsimine:**
 
