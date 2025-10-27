@@ -93,9 +93,8 @@ nav:
       - 'Tingimuslikkus': ansible/ansibleconditionals.md
       - 'Tsüklid': ansible/ansibleloops.md    
       - 'Tegevuste käivitamine ainult vajadusel': ansible/ansiblehandlers.md     
-      - 'Rollid ja struktuur': ansible/ansibleroles.md
-#      - 'Ansible Galaxy ja kogukonna rollid': ansible/ansiblerolesgalaxy.md
       - 'Turvalisus ja Ansible Vault': ansible/ansiblevault.md
+      - 'Rollid ja struktuur': ansible/ansibleroles.md
 #      - 'Ansible parimad praktikad': ansible/ansiblebestpractises.md
 
 
