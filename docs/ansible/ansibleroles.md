@@ -95,13 +95,14 @@ See loob automaatselt kataloogi ja õiged failid. Antud näite puhul luuakse uus
 
 ## Rolli kasutamine playbook'is
 
-Playbook võib välja näha nii:
+Kui kasutatakse rolle, siis projektikausta playbookis viidatakse neile `roles:` parameetriga. Playbook võib välja näha näiteks nii:
 
 ```yaml
 ---
-- name: Webserverid
+- name: Veebiserverte seadistamine
   hosts: webservers
   become: yes
+
   roles:
     - nginx
 ```
@@ -110,9 +111,9 @@ Ansible otsib rolli kataloogist `roles/nginx/`.
 
 ## Rolli sees olevad põhikomponendid
 
-`tasks/main.yml`
+### `tasks/main.yml`
 
-Siia lähevad rolli põhitegevused:
+Siia lähevad rolli põhitegevused. Näiteks:
 
 ```yaml
 ---
@@ -126,12 +127,11 @@ Siia lähevad rolli põhitegevused:
     name: nginx
     state: started
     enabled: true
-    # notify pole siin alati vajalik
 ```
 
-`handlers/main.yml`
+### `handlers/main.yml`
 
-Handler'id rolli sees:
+Kui rollis on kasutusel *handlers*, siis pannakse need sellesse faili. Näiteks:
 
 ```yaml
 ---
@@ -141,14 +141,14 @@ Handler'id rolli sees:
     state: restarted
 ```
 
-`templates/`
+### `templates/`
 
-Siia pannakse mallifailid (Jinja2 .j2):
+Kui rollis kasutatakse malle, siis siia kasuta pannakse mallifailid (Jinja2 .j2). Näiteks:
 
 `nginx.conf.j2`
 
 
-## Rolli muutujad
+### Rolli muutujad
 
 Rollides on kaks peamist muutujate kohta:
 
