@@ -244,7 +244,7 @@ Selle abil saab näiteks otsida võrgust rolli, mis paigaldab ja konfigureerib N
 See kuvab nimekirja rollidest, mis on seotud Nginx-iga – koos autorite, hinnangute ja kirjeldusega.
 
 !!! info
-    Galaxy rollid võivad olla erineva kvaliteediga – soovitatav on vaadata tähti, allalaadimiste arvu ja dokumentatsiooni enne kasutamist.
+    Galaxy rollid võivad olla erineva kvaliteediga – soovitatav on vaadata reitingu, allalaadimiste arvu ja dokumentatsiooni enne kasutamist.
 
 **Installeerimine:**
 
