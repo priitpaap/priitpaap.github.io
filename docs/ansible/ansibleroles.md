@@ -111,7 +111,7 @@ Ansible otsib rolli kataloogist `roles/nginx/`.
 
 ## Rolli sees olevad põhikomponendid
 
-### `tasks/main.yml`
+### **`tasks/main.yml`**
 
 Siia lähevad rolli põhitegevused. Näiteks:
 
@@ -129,7 +129,7 @@ Siia lähevad rolli põhitegevused. Näiteks:
     enabled: true
 ```
 
-### `handlers/main.yml`
+### **`handlers/main.yml`**
 
 Kui rollis on kasutusel *handlers*, siis pannakse need sellesse faili. Näiteks:
 
@@ -141,7 +141,7 @@ Kui rollis on kasutusel *handlers*, siis pannakse need sellesse faili. Näiteks:
     state: restarted
 ```
 
-### `templates/`
+### **`templates/`**
 
 Kui rollis kasutatakse malle, siis siia kasuta pannakse mallifailid (Jinja2 .j2). Näiteks:
 
@@ -152,18 +152,30 @@ Kui rollis kasutatakse malle, siis siia kasuta pannakse mallifailid (Jinja2 .j2)
 
 Rollides on kaks peamist muutujate kohta:
 
-`defaults/main.yml`
+**`defaults/main.yml`**
 
 - madalaim prioriteet
 - saab hõlpsasti playbookis üle kirjutada
 
+Näide faili sisust:
+
 `nginx_port: 80`
 
 
-`vars/main.yml`
+**`vars/main.yml`**
 
 - kõrgem prioriteet
 - tavaliselt kasutatakse rollisisesteks konstantideks
+
+| Prioriteet | Allikas                         | Kirjeldus |
+|------------|----------------------------------|-----------|
+| 1 (kõrgeim) | `--extra-vars`                  | Kõige kõrgema prioriteediga – need kirjutavad üle kõik muud väärtused. |
+| 2           | Playbooki `vars:`               | `vars:` plokis määratud muutujad playbookis. |
+| 3           | Inventari muutujad              | Hostivarad (`host_vars`), grupivarad (`group_vars`), inventarifailis määratud muutujad. |
+| 4           | Rolli `vars/main.yml`           | Kõrgema prioriteediga kui `defaults`, kuid madalam kui playbooki `vars`. |
+| 5 (madalaim) | Rolli `defaults/main.yml`       | Rolli kõige madalama prioriteediga muutujad. Kasutatakse vaikimisi väärtustena, mida saab hiljem üle kirjutada. |
+
+
 
 ## Rolli mall ja notify koos
 
