@@ -99,7 +99,7 @@ Kui kasutatakse rolle, siis projektikausta playbookis viidatakse neile `roles:` 
 
 ```yaml
 ---
-- name: Veebiserverte seadistamine
+- name: Veebiserverite seadistamine
   hosts: webservers
   become: yes
 
@@ -107,6 +107,62 @@ Kui kasutatakse rolle, siis projektikausta playbookis viidatakse neile `roles:` 
     - nginx
 ```
 Ansible otsib rolli kataloogist `roles/nginx/`.
+
+### Mitme rolli kasutamine
+
+Näide playbookist kus kasutusel on 4 erinevat rolli:
+
+```yaml
+---
+- name: Serverite seadistamine
+  hosts: webservers
+  become: yes
+
+  roles:
+    - common
+    - firewall
+    - docker
+    - nginx
+```
+Ansible täidab rollid ülalt alla järjestuses.
+
+Kaustastruktuur näeks välja selline:
+
+```yaml
+myproject/
+├─ server.yml
+├─ inventory
+└─ roles/
+   ├─ common/
+   ├─ nginx/
+   ├─ docker/
+   ├─ firewall/
+```
+
+### Rolli kasutamine handleri puhul
+
+Järgnevalt näide rollist, kus kasutusel on notify koos handleriga:
+
+Fail `tasks/main.yml`:
+
+```yaml
+- name: Paigalda nginx konfiguratsioon
+  template:
+    src: nginx.conf.j2
+    dest: /etc/nginx/nginx.conf
+  notify: Taaskäivita nginx
+```
+
+Fail `handlers/main.yml`:
+
+```yaml
+- name: Taaskäivita nginx
+  service:
+    name: nginx
+    state: restarted
+```
+
+See käivitab teenuse ainult siis, kui mall muutus.
 
 
 ## Rolli sees olevad põhikomponendid
@@ -176,76 +232,48 @@ Näide faili sisust:
 | 5 (madalaim) | Rolli `defaults/main.yml`       | Rolli kõige madalama prioriteediga muutujad. Kasutatakse vaikimisi väärtustena, mida saab hiljem üle kirjutada. |
 
 
-
-## Rolli mall ja notify koos
-
-Fail tasks/main.yml:
-
-```yaml
-- name: Paigalda nginx konfiguratsioon
-  template:
-    src: nginx.conf.j2
-    dest: /etc/nginx/nginx.conf
-  notify: Taaskäivita nginx
-```
-
-Fail handlers/main.yml:
-
-```yaml
-- name: Taaskäivita nginx
-  service:
-    name: nginx
-    state: restarted
-```
-
-See käivitab restarti ainult siis, kui mall muutus.
-
-## Mitme rolli kasutamine
-
-```yaml
-roles:
-  - common
-  - firewall
-  - docker
-  - nginx
-```
-
-Ansible täidab rollid ülalt alla järjestuses.
-
-## Näidisprojekt rollidega
-
-myproject/
-├─ site.yml
-├─ inventory
-└─ roles/
-   ├─ common/
-   ├─ nginx/
-   └─ users/
-
-
-```yaml
----
-- hosts: all
-  become: yes
-  roles:
-    - common
-    - users
-    - nginx
-```
-
 ## Ansible Galaxy rollid (võrgust)
 
-Samuti saab otsida valmis rolle:
+Ansible Galaxy on Ansible'i ametlik veebipõhine keskkond, kust saab otsida, jagada ja installida valmis rolle. See on nagu "pakihaldur" Ansible rollide jaoks 
+
+**Otsimine:**
+
+Selle abil saab näiteks otsida võrgust rolli, mis paigaldab ja konfigureerib Nginx-i:
 
 `ansible-galaxy search nginx`
 
-Installeerimine:
+See kuvab nimekirja rollidest, mis on seotud Nginx-iga – koos autorite, hinnangute ja kirjeldusega.
+
+**Installeerimine:**
+
+Kui leiad sobiva rolli, saad selle lihtsalt installida:
 
 `ansible-galaxy install geerlingguy.nginx`
 
-Need rollid on kasutusvalmis ja hästi dokumenteeritud.
+See laeb rolli alla ja paigutab selle sinu projekti roles/ kausta (või määratud asukohta).
 
-## Rollide sees teiste failide viitamine
+**Rollide loomine ja jagamine**
+
+Sa saad oma rolli registreerida Galaxy keskkonnas, et teised saaksid seda kasutada. Selleks tuleb rollile lisada meta/main.yml fail, kus on info rolli kohta (autor, sõltuvused jne).
+
+**Rollide halduse automatiseerimine**
+
+Kasutades `requirements.yml` faili, saad määrata kõik vajalikud rollid ja nende versioonid:
+
+```yaml
+- src: geerlingguy.nginx
+  version: 3.1.0
+- src: git+https://github.com/sinuorg/rollid.git
+  name: minu_roll
+```
+Ja installida need kõik korraga:
+
+`ansible-galaxy install -r requirements.yml`
+
+
+## Rollide sees teiste failidele viitamine
+
+Ansible rollides on kindel kaustastruktuur, mis võimaldab viidata failidele lihtsalt nime järgi, ilma et peaks määrama täisteed. See teeb rollide kasutamise mugavamaks ja koodi loetavamaks.
 
 Näiteks mall:
 
@@ -253,18 +281,6 @@ Näiteks mall:
 
 Ei pea andma täisteed – Ansible leiab rolli templates/ kataloogist automaatselt.
 
-
-## Rollide testimine
-
-Rolli saab testida eraldi lihtsa playbook'iga:
-
-```yaml
----
-- hosts: webservers
-  become: yes
-  roles:
-    - nginx
-```
 
 ## Rohkem infot
 
