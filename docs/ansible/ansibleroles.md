@@ -248,11 +248,40 @@ See kuvab nimekirja rollidest, mis on seotud Nginx-iga – koos autorite, hinnan
 
 **Installeerimine:**
 
-Kui leiad sobiva rolli, saad selle lihtsalt installida:
+Kui leiad sobiva rolli, saad selle lihtsalt installida oma projekti `roles/`kausta. Näiteks:
 
-`ansible-galaxy install geerlingguy.nginx`
+`ansible-galaxy install geerlingguy.nginx -p roles/`
 
-See laeb rolli alla ja paigutab selle sinu projekti roles/ kausta (või määratud asukohta).
+See laeb rolli alla ja paigutab selle sinu projekti roles/ kausta (või teise määratud asukohta).
+
+Pärast seda tekib sinu projekti selline struktuur:
+
+```yaml
+ansible/
+├── playbook.yml
+└── roles/
+    └── geerlingguy.nginx/
+
+```
+
+Nüüd saad rolli kasutada playbook’is, näiteks:
+
+```yaml
+---
+- hosts: web
+  become: true
+  roles:
+    - geerlingguy.nginx
+```
+
+Kui kõik on valmis, käivita:
+
+`ansible-playbook playbook.yml`
+
+Roll teeb kõik vajaliku Nginxi paigaldamiseks ja seadistamiseks. 
+
+Vajadusel kohanda rolli oma soovide järgi. Enne kasutamist vaata rolliga kaasas olevat `README.md` faili, et näha muutujaid ja näiteid.
+
 
 **Rollide loomine ja jagamine**
 
