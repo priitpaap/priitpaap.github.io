@@ -1,0 +1,1814 @@
+
+<!doctype html>
+<html lang="et" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../ansibleconditionals/">
+      
+      
+        <link rel="next" href="../ansiblehandlers/">
+      
+      
+      <link rel="icon" href="../../images/computer.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
+    
+    
+      
+        <title>Tsüklid - IT alased õppematerjalid</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="deep-orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tsuklid" class="md-skip">
+          Keri sisuni
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Päis">
+    <a href="../.." title="IT alased õppematerjalid" class="md-header__button md-logo" aria-label="IT alased õppematerjalid" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M348.8 32C340.7 46.1 336 62.5 336 80v16H64v224h272v64H64c-35.3 0-64-28.7-64-64V96c0-35.3 28.7-64 64-64zM336 432c0 17.5 4.7 33.9 12.8 48H120c-13.3 0-24-10.7-24-24s10.7-24 24-24zm96-400h96c26.5 0 48 21.5 48 48v352c0 26.5-21.5 48-48 48h-96c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48m24 64c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24zm56 144a32 32 0 1 0-64 0 32 32 0 1 0 64 0"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            IT alased õppematerjalid
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Tsüklid
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="deep-orange"  aria-label="Lülitu heledale režiimile"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Lülitu heledale režiimile" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-blue" data-md-color-accent="deep-orange"  aria-label="Lülitu tumedale režiimile"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Lülitu tumedale režiimile" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Otsi" placeholder="Otsi" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Otsing">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Jaga" aria-label="Jaga" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Lähtesta" aria-label="Lähtesta" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Otsingu lähtestamine
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Vaheleht" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://priitpaap.github.io" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Avalehele
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../linux/debpaigaldus/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Operatsioonisüsteemid
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../ansibleintro/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Automatiseerimine
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigatsioon" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="IT alased õppematerjalid" class="md-nav__button md-logo" aria-label="IT alased õppematerjalid" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M348.8 32C340.7 46.1 336 62.5 336 80v16H64v224h272v64H64c-35.3 0-64-28.7-64-64V96c0-35.3 28.7-64 64-64zM336 432c0 17.5 4.7 33.9 12.8 48H120c-13.3 0-24-10.7-24-24s10.7-24 24-24zm96-400h96c26.5 0 48 21.5 48 48v352c0 26.5-21.5 48-48 48h-96c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48m24 64c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24zm56 144a32 32 0 1 0-64 0 32 32 0 1 0 64 0"/></svg>
+
+    </a>
+    IT alased õppematerjalid
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://priitpaap.github.io" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Avalehele
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Operatsioonisüsteemid
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Operatsioonisüsteemid
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Linux OS
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Linux OS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/debpaigaldus/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    Debian Linuxi paigaldamine virutaalmasinale
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Automatiseerimine
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Automatiseerimine
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Ansible
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Ansible
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ansibleintro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ansible ülevaade
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ansibleinstall/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ansible paigaldamine
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ansibleinventory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ansible inventory
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ansibleconf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ansible levinumad seadistused
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ansiblenodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Hallatavate hostide ühendamine
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ansiblemodules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Moodulid ja ad-hoc käsud
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ansibleplaybooks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Playbookid ja YAML
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ansiblevars/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Muutujad ja nende kasutamine
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ansiblejinja2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Jinja2 mallid
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ansibleconditionals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tingimuslikkus
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Tsüklid
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tsüklid
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Sisukord">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Sisukord
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#eesmark" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eesmärk
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mis-on-tsuklid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mis on tsüklid?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kaasaegne-viis-korduva-tegevuse-sooritamiseks-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kaasaegne viis korduva tegevuse sooritamiseks (loop:)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vanem-viis-tsuklite-kasutamiseks-with_" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vanem viis tsüklite kasutamiseks (with_*:)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tsuklite-kasutamise-erinevad-viisid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tsüklite kasutamise erinevad viisid
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tsüklite kasutamise erinevad viisid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tsuklite-kasutamine-loendite-puhul" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tsüklite kasutamine loendite puhul
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tsuklite-kasutamine-sonastike-dict-puhul" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tsüklite kasutamine sõnastike (dict) puhul
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tsuklite-kasutamine-failide-puhul" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tsüklite kasutamine failide puhul
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tsuklite-tulemused-ja-register" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tsüklite tulemused ja register
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keerukamate-tsuklite-naited" class="md-nav__link">
+    <span class="md-ellipsis">
+      Keerukamate tsüklite näited
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Keerukamate tsüklite näited">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alamstruktuurid-subelements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alamstruktuurid (subelements)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mitme-mootmega-tsukkel-tootekombinatsioonid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mitme mõõtmega tsükkel (tootekombinatsioonid)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iteratsiooni-indeks-ja-silt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iteratsiooni indeks ja silt
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tsuklid-ja-jinja2-mallid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tsüklid ja Jinja2 mallid
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testimine-ja-veaotsing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testimine ja veaotsing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#head-tavad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Head tavad
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rohkem-infot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rohkem infot
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ansiblehandlers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tegevuste käivitamine ainult vajadusel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ansiblevault/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Turvalisus ja Ansible Vault
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ansibleroles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Rollid ja struktuur
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ansiblegalaxy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ansible Galaxy Collections
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ansiblebestpractises/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ansible parimad praktikad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Sisukord">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Sisukord
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#eesmark" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eesmärk
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mis-on-tsuklid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mis on tsüklid?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kaasaegne-viis-korduva-tegevuse-sooritamiseks-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kaasaegne viis korduva tegevuse sooritamiseks (loop:)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vanem-viis-tsuklite-kasutamiseks-with_" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vanem viis tsüklite kasutamiseks (with_*:)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tsuklite-kasutamise-erinevad-viisid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tsüklite kasutamise erinevad viisid
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tsüklite kasutamise erinevad viisid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tsuklite-kasutamine-loendite-puhul" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tsüklite kasutamine loendite puhul
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tsuklite-kasutamine-sonastike-dict-puhul" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tsüklite kasutamine sõnastike (dict) puhul
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tsuklite-kasutamine-failide-puhul" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tsüklite kasutamine failide puhul
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tsuklite-tulemused-ja-register" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tsüklite tulemused ja register
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keerukamate-tsuklite-naited" class="md-nav__link">
+    <span class="md-ellipsis">
+      Keerukamate tsüklite näited
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Keerukamate tsüklite näited">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alamstruktuurid-subelements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alamstruktuurid (subelements)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mitme-mootmega-tsukkel-tootekombinatsioonid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mitme mõõtmega tsükkel (tootekombinatsioonid)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iteratsiooni-indeks-ja-silt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iteratsiooni indeks ja silt
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tsuklid-ja-jinja2-mallid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tsüklid ja Jinja2 mallid
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testimine-ja-veaotsing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testimine ja veaotsing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#head-tavad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Head tavad
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rohkem-infot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rohkem infot
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="tsuklid">Tsüklid<a class="headerlink" href="#tsuklid" title="Permanent link">&para;</a></h1>
+<h2 id="eesmark">Eesmärk<a class="headerlink" href="#eesmark" title="Permanent link">&para;</a></h2>
+<p>Selles peatükis õpid:</p>
+<ul>
+<li>Kuidas kasutada <strong><code>loop:</code></strong>-i korduvate tegevuste jaoks</li>
+<li>Kuidas korrata tegevusi loendite, sõnastike ja failide elementide puhul</li>
+<li>Kuidas lahendada <strong>keerukamaid juhtumeid</strong> (nt mitme kasutaja või faili massiline loomine)</li>
+<li>Kuidas kasutada tsükleid <strong>koos mallidega</strong> (Jinja2, <code>{{ item }}</code>)</li>
+</ul>
+<hr />
+<h2 id="mis-on-tsuklid">Mis on tsüklid?<a class="headerlink" href="#mis-on-tsuklid" title="Permanent link">&para;</a></h2>
+<p>Tsüklid võimaldavad sul <strong>sama tegevust korrata</strong> erinevate väärtustega – näiteks paigaldada mitu paketti, luua mitu kataloogi, tekitada mitu kasutajat või kirjutada mitu konfiguratsioonifaili.</p>
+<hr />
+<h2 id="kaasaegne-viis-korduva-tegevuse-sooritamiseks-loop">Kaasaegne viis korduva tegevuse sooritamiseks (<code>loop:</code>)<a class="headerlink" href="#kaasaegne-viis-korduva-tegevuse-sooritamiseks-loop" title="Permanent link">&para;</a></h2>
+<p><code>loop:</code> on <strong>eelistatud ja ühtne</strong> viis tsüklite kirjutamiseks kõigi moodulite juures. Ansible soovitab tänapäeval teostada kõiki korduvaid tegevusi just <code>loop</code> abil.</p>
+<p><strong>Lihtne näide – mitme paketi paigaldus:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nn">---</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Paigalda mitu paketti</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">webservers</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yes</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="nt">tasks</span><span class="p">:</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Paigalda paketid</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">      </span><span class="nt">apt</span><span class="p">:</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">item</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">      </span><span class="nt">loop</span><span class="p">:</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curl</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">htop</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">git</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">      </span><span class="nt">when</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ansible_facts[&#39;os_family&#39;] == &quot;Debian&quot;</span>
+</code></pre></div>
+<ul>
+<li><code>{{ item }}</code> sisaldab hetkel töödeldava elemendi väärtust.</li>
+</ul>
+<hr />
+<h2 id="vanem-viis-tsuklite-kasutamiseks-with_">Vanem viis tsüklite kasutamiseks (<code>with_*:</code>)<a class="headerlink" href="#vanem-viis-tsuklite-kasutamiseks-with_" title="Permanent link">&para;</a></h2>
+<p>Varem kasutati eri mustrite jaoks <strong><code>with_*</code></strong> süntaksit: <code>with_items</code>, <code>with_dict</code>, <code>with_fileglob</code> jne.<br />
+Tänapäeval soovitab Ansible kasutada <strong><code>loop:</code></strong>-i, sest:</p>
+<ul>
+<li>süntaks on <strong>ühtne</strong> (üks viis kõigi juhtumite jaoks);</li>
+<li>koos <strong>filtritega</strong> (<code>dict2items</code>, <code>subelements</code>, <code>flatten</code>, <code>unique</code> jne) saab lahendada kõik endised <code>with_*</code> juhtumid;</li>
+<li>kergem lugeda ja hooldada.</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p><code>with_items:</code> pole küll ametlikult eemaldatud, kuid <strong>Ansible dokumentatsioonis soovitatakse kasutada <code>loop:</code>-i</strong>. Mõnedes vanemates näidetes võib siiani kohata <code>with_items</code> või mõnda muud <code>with_*</code> tsüklit, seega on hea vähemalt sellest võimaluses teada, et näidetest aru saada.</p>
+</div>
+<p><strong>Vana süntaksi näide:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nn">---</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Paigalda mitu paketti (vana süntaks)</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">webservers</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yes</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="nt">tasks</span><span class="p">:</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Paigalda paketid</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">      </span><span class="nt">apt</span><span class="p">:</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">item</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">      </span><span class="nt">with_items</span><span class="p">:</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curl</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">git</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">htop</span>
+</code></pre></div>
+<hr />
+<h2 id="tsuklite-kasutamise-erinevad-viisid">Tsüklite kasutamise erinevad viisid<a class="headerlink" href="#tsuklite-kasutamise-erinevad-viisid" title="Permanent link">&para;</a></h2>
+<h3 id="tsuklite-kasutamine-loendite-puhul">Tsüklite kasutamine loendite puhul<a class="headerlink" href="#tsuklite-kasutamine-loendite-puhul" title="Permanent link">&para;</a></h3>
+<p>Tsüklite abil saab sama tegevust korrata iga loendi elemendi jaoks — näiteks paigaldada mitu paketti, luua mitu kasutajat või tekitada mitu kataloogi ühe playbooki sees.</p>
+<p><strong>Mitme kasutaja loomine:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Loo kasutajad</span><span class="w">  </span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">user</span><span class="p">:</span><span class="w">                      </span><span class="c1"># Kasutajate haldamiseks mõeldud Ansible moodul</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">item.name</span><span class="nv"> </span><span class="s">}}&quot;</span><span class="w">  </span><span class="c1"># Määrab kasutaja nime vastavalt loendis olevale väärtusele</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span><span class="w">           </span><span class="c1"># Loob kasutaja, kui teda pole (või jätab alles, kui juba olemas)</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="nt">groups</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">item.groups</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">default(omit)</span><span class="nv"> </span><span class="s">}}&quot;</span><span class="w">  </span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">      </span><span class="c1"># Lisab kasutaja gruppi, kui &#39;groups&#39; on määratud</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">      </span><span class="c1"># Kui &#39;groups&#39; pole määratud (nt teisel kasutajal), siis &#39;omit&#39; jätab selle välja</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">  </span><span class="nt">loop</span><span class="p">:</span><span class="w">                      </span><span class="c1"># Kordab seda task’i iga elemendi puhul allolevas loendis</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;alice&quot;</span><span class="p p-Indicator">,</span><span class="nt"> groups</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;sudo&quot;</span><span class="w"> </span><span class="p p-Indicator">}</span><span class="w">  </span><span class="c1"># Esimene kasutaja, lisatakse gruppi sudo</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;bob&quot;</span><span class="w"> </span><span class="p p-Indicator">}</span><span class="w">                    </span><span class="c1"># Teine kasutaja, ilma grupita</span>
+</code></pre></div>
+<p><strong>Mitme kataloogi loomine:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Loo kataloogid</span><span class="w">  </span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">file</span><span class="p">:</span><span class="w">                 </span><span class="c1"># Kasutatakse Ansible &#39;file&#39; moodulit failisüsteemi haldamiseks</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">item</span><span class="nv"> </span><span class="s">}}&quot;</span><span class="w">  </span><span class="c1"># Kataloogi tee, mille väärtus tuleb tsüklis loendist</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">directory</span><span class="w">    </span><span class="c1"># Määrab, et objekt peab olema kataloog (loob selle, kui puudub)</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;0755&quot;</span><span class="w">        </span><span class="c1"># Seab õigused: omaniku kirjutus/lugemisõigus, teistele lugemisõigus</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span><span class="nt">loop</span><span class="p">:</span><span class="w">                 </span><span class="c1"># Käivitab task’i iga alloleva loendi elemendi jaoks kordamööda</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/opt/app/logs</span><span class="w">     </span><span class="c1"># Esimene kataloog, mis luuakse</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/opt/app/data</span><span class="w">     </span><span class="c1"># Teine kataloog, mis luuakse</span>
+</code></pre></div>
+<p><strong>Muutuja kasutamine tsüklina</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nn">---</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Paigalda mitmeid pakette</span><span class="w"> </span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">webservers</span><span class="w">    </span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yes</span><span class="w">                       </span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">  </span><span class="nt">vars</span><span class="p">:</span><span class="w">                             </span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="nt">packages</span><span class="p">:</span><span class="w">                       </span><span class="c1"># Muutujana loend paketitest, mida soovime paigaldada</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curl</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vim</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">  </span><span class="nt">tasks</span><span class="p">:</span><span class="w">                            </span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Paigalda vajalikud paketid</span><span class="w">       </span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">      </span><span class="nt">apt</span><span class="p">:</span><span class="w">                                   </span><span class="c1"># Kasutame &#39;apt&#39; moodulit (Debiani/Ubuntu süsteemides)</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">item</span><span class="nv"> </span><span class="s">}}&quot;</span><span class="w">                   </span><span class="c1"># Paigaldatav paketi nimi tuleb tsükli elemendist</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span><span class="w">                       </span><span class="c1"># Tagab, et pakett on olemas (paigaldatud)</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w">      </span><span class="nt">loop</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">packages</span><span class="nv"> </span><span class="s">}}&quot;</span><span class="w">                 </span><span class="c1"># Tsükkel – kordab ülesannet iga loendis oleva paketi jaoks</span>
+</code></pre></div>
+<h3 id="tsuklite-kasutamine-sonastike-dict-puhul">Tsüklite kasutamine sõnastike (dict) puhul<a class="headerlink" href="#tsuklite-kasutamine-sonastike-dict-puhul" title="Permanent link">&para;</a></h3>
+<p>Tsüklite abil saab töödelda ka sõnastikke, kus iga element koosneb võtme–väärtuse paarist — näiteks seadistused, kasutajanimed koos gruppidega või paketid koos versioonidega. Sõnastikke on mugav tsükliks vormida Jinja2 filtriga <strong><code>dict2items</code></strong> (teeb <code>{key:…, value:…}</code> loendi).</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Paigalda paketid koos target-versioonidega</span><span class="w">   </span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nt">apt</span><span class="p">:</span><span class="w">                                               </span><span class="c1"># Kasutatakse &#39;apt&#39; moodulit </span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">item.key</span><span class="nv"> </span><span class="s">}}={{</span><span class="nv"> </span><span class="s">item.value</span><span class="nv"> </span><span class="s">}}&quot;</span><span class="w">          </span><span class="c1"># Iga tsükli käigus ühendatakse paketi nimi (key) ja versioon (value)</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span><span class="w">                                   </span><span class="c1"># Tagab, et määratud versioon on paigaldatud</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">  </span><span class="nt">loop</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">packages</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">dict2items</span><span class="nv"> </span><span class="s">}}&quot;</span><span class="w">                </span><span class="c1"># Teisendab sõnastiku loendiks (dict → [{key:…, value:…}, …])</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">  </span><span class="nt">vars</span><span class="p">:</span><span class="w">                                              </span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span><span class="nt">packages</span><span class="p">:</span><span class="w">                                        </span><span class="c1"># Sõnastik, kus iga kirje koosneb paketi nimest (võti) ja versioonist (väärtus)</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">      </span><span class="nt">nginx</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.24.0-1</span><span class="w">                                </span><span class="c1"># Paigaldatakse konkreetne nginx versioon</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">      </span><span class="nt">git</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1:2.43.0-1</span><span class="w">                                </span><span class="c1"># Paigaldatakse konkreetne git versioon</span>
+</code></pre></div>
+<p><strong>Lihtsam „võti-väärtus” kasutajate halduse näitel:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Loo kasutajad (dict)</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="nt">user</span><span class="p">:</span><span class="w">                                   </span><span class="c1"># Kasutajate haldamise moodul</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">item.key</span><span class="nv"> </span><span class="s">}}&quot;</span><span class="w">                </span><span class="c1"># Kasutajanimi tuleb sõnastiku võtme (key) väärtusest</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span><span class="w">                        </span><span class="c1"># Tagab, et kasutaja eksisteerib (luuakse, kui teda pole)</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="nt">groups</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">item.value.groups</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">default(omit)</span><span class="nv"> </span><span class="s">}}&quot;</span><span class="w">  </span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">      </span><span class="c1"># Kui sõnastiku väärtuses on määratud grupp (groups), lisatakse kasutaja sellesse gruppi</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">      </span><span class="c1"># Kui gruppi pole määratud, jätab &#39;omit&#39; selle välja, et vältida tühja väärtuse viga</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">  </span><span class="nt">loop</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">users</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">dict2items</span><span class="nv"> </span><span class="s">}}&quot;</span><span class="w">        </span><span class="c1"># Teisendab &#39;users&#39; sõnastiku loendiks [{key:…, value:…}, …]</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">  </span><span class="nt">vars</span><span class="p">:</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">    </span><span class="nt">users</span><span class="p">:</span><span class="w">                                </span><span class="c1"># Sõnastik kasutajatest ja nende omadustest</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">      </span><span class="nt">alice</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> groups</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;sudo&quot;</span><span class="w"> </span><span class="p p-Indicator">}</span><span class="w">           </span><span class="c1"># Kasutaja &#39;alice&#39; lisatakse gruppi &#39;sudo&#39;</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">      </span><span class="nt">bob</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span><span class="w">                             </span><span class="c1"># Kasutaja &#39;bob&#39; luuakse ilma grupita</span>
+</code></pre></div>
+<h3 id="tsuklite-kasutamine-failide-puhul">Tsüklite kasutamine failide puhul<a class="headerlink" href="#tsuklite-kasutamine-failide-puhul" title="Permanent link">&para;</a></h3>
+<p>Sageli on vaja teha sama tegevust mitme faili jaoks — näiteks kopeerida konfiguratsioonifaile või luua linke.
+Tsüklite abil saab selliseid korduvaid failitoiminguid automatiseerida, kasutades kas failide loendit või <code>fileglob</code> päringut, mis leiab kõik sobivad failid kataloogist.</p>
+<p><strong>Failiglob koos <code>loop:</code>-iga</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kopeeri kõik .conf failid kataloogist files/app/</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="nt">copy</span><span class="p">:</span><span class="w">                                                    </span><span class="c1"># Kasutatakse &#39;copy&#39; moodulit failide kopeerimiseks</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">item</span><span class="nv"> </span><span class="s">}}&quot;</span><span class="w">                                      </span><span class="c1"># Allikas – iga tsükli käigus üks fail, mille tee tuleb loendist</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;/etc/myapp/{{</span><span class="nv"> </span><span class="s">item</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">basename</span><span class="nv"> </span><span class="s">}}&quot;</span><span class="w">               </span><span class="c1"># Sihtkoht – fail kopeeritakse /etc/myapp/ kataloogi</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">                                                           </span><span class="c1"># &#39;basename&#39; filter eemaldab failiteest kataloogiosa, jättes alles ainult failinime</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">    </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;0644&quot;</span><span class="w">                                           </span><span class="c1"># Seab failidele õigused (omanik kirjutab, teised loevad)</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">  </span><span class="nt">loop</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">lookup(&#39;fileglob&#39;,</span><span class="nv"> </span><span class="s">&#39;files/app/*.conf&#39;,</span><span class="nv"> </span><span class="s">wantlist=True)</span><span class="nv"> </span><span class="s">}}&quot;</span><span class="w">  </span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">    </span><span class="c1"># lookup(&#39;fileglob&#39;, &#39;muster&#39;, wantlist=True) leiab kõik failid, mis vastavad mustrile files/app/*.conf</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">    </span><span class="c1"># tulemuseks on loend failide täielikest radadest, mida tsüklis ükshaaval töödeldakse</span>
+</code></pre></div>
+<ul>
+<li><code>lookup('fileglob', pattern, wantlist=True)</code> leiab kõik mustriga sobivad failid ja annab need loendina <code>loop:</code>-ile töötlemiseks.</li>
+</ul>
+<hr />
+<h2 id="tsuklite-tulemused-ja-register">Tsüklite tulemused ja <code>register</code><a class="headerlink" href="#tsuklite-tulemused-ja-register" title="Permanent link">&para;</a></h2>
+<p>Kui salvestad tsükliga ülesande tulemuse muutujasse register, siis Ansible ei salvesta <strong>ainult ühte väärtust</strong>, vaid loob <strong>loendi kõigi tsükli käikude tulemustest</strong>.
+See tähendab, et iga kord, kui tsükkel täidab ühe elemendi, lisatakse selle tulemus eraldi kirjena üldisesse tulemuste loendisse.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kontrolli portide staatust</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="nt">shell</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;ss</span><span class="nv"> </span><span class="s">-lnt</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">grep</span><span class="nv"> </span><span class="s">-q</span><span class="nv"> </span><span class="s">&#39;:{{</span><span class="nv"> </span><span class="s">item</span><span class="nv"> </span><span class="s">}}</span><span class="nv"> </span><span class="s">&#39;&quot;</span><span class="w">   </span><span class="c1"># Kontrollib, kas vastav port on kuulamisel</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">  </span><span class="nt">register</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">port_checks</span><span class="w">                       </span><span class="c1"># Salvestab kõik tulemused muutujasse &#39;port_checks&#39;</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">  </span><span class="nt">ignore_errors</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yes</span><span class="w">                          </span><span class="c1"># Jätkab ka siis, kui mõni kontroll ebaõnnestub</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">  </span><span class="nt">loop</span><span class="p">:</span><span class="w">                                       </span><span class="c1"># Kontrollib kahte porti</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">443</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Näita tulemused</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">  </span><span class="nt">debug</span><span class="p">:</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="w">    </span><span class="nt">var</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">port_checks.results</span><span class="w">                  </span><span class="c1"># Kuvab kogu tsükli tulemuste loendi</span>
+</code></pre></div>
+<p>Igal <code>results</code> elemendil on näiteks <code>item</code>, <code>rc</code>, <code>stdout</code>, <code>stderr</code> jne. <code>rc</code> – return code ehk käsu lõpetamise kood (0 = õnnestus, muu = viga).</p>
+<p>Kui soovid kuvada ainult ebaõnnestunud tulemused, saad kasutada filtrit:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Näita ainult ebaõnnestunud tulemused</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span><span class="nt">debug</span><span class="p">:</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="nt">msg</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Port</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">item.item</span><span class="nv"> </span><span class="s">}}</span><span class="nv"> </span><span class="s">ei</span><span class="nv"> </span><span class="s">ole</span><span class="nv"> </span><span class="s">avatud&quot;</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">  </span><span class="nt">loop</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">port_checks.results</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">  </span><span class="nt">when</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">item.rc != 0</span>
+</code></pre></div>
+See käib läbi tulemuste loendi ja näitab ainult neid, kus rc ei ole 0 — ehk käsu täitmine ebaõnnestus.</p>
+<hr />
+<h2 id="keerukamate-tsuklite-naited">Keerukamate tsüklite näited<a class="headerlink" href="#keerukamate-tsuklite-naited" title="Permanent link">&para;</a></h2>
+<h3 id="alamstruktuurid-subelements">Alamstruktuurid (<code>subelements</code>)<a class="headerlink" href="#alamstruktuurid-subelements" title="Permanent link">&para;</a></h3>
+<p>Kui on loend objekte, millest igal on <strong>alamloend</strong>, kasuta filtrit <strong><code>subelements</code></strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Loo kasutajatele SSH võtmed</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">  </span><span class="nt">copy</span><span class="p">:</span><span class="w">                                         </span><span class="c1"># Kasutatakse &#39;copy&#39; moodulit failide kirjutamiseks</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">    </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;/home/{{</span><span class="nv"> </span><span class="s">item.0.name</span><span class="nv"> </span><span class="s">}}/.ssh/authorized_keys&quot;</span><span class="w">  </span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">      </span><span class="c1"># Sihtfail, kuhu võtmed kirjutatakse</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">      </span><span class="c1"># &#39;item.0&#39; on kasutajaobjekt (põhielement tsüklis)</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">    </span><span class="nt">content</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">item.1</span><span class="nv"> </span><span class="s">}}&quot;</span><span class="w">                     </span><span class="c1"># Faili sisu – üksiku võtme väärtus alamloendist</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">item.0.name</span><span class="nv"> </span><span class="s">}}&quot;</span><span class="w">                  </span><span class="c1"># Faili omanik – vastav kasutaja</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="w">    </span><span class="nt">group</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">item.0.name</span><span class="nv"> </span><span class="s">}}&quot;</span><span class="w">                  </span><span class="c1"># Faili grupp – sama, mis kasutaja nimi</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="w">    </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;0600&quot;</span><span class="w">                                </span><span class="c1"># Faili õigused – ainult omanik võib lugeda/kirjutada</span>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="w">  </span><span class="nt">loop</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">users</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">subelements(&#39;authorized_keys&#39;)</span><span class="nv"> </span><span class="s">}}&quot;</span><span class="w">  </span>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="w">    </span><span class="c1"># subelements(&#39;authorized_keys&#39;) tekitab alamtsükli:</span>
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="w">    </span><span class="c1"># iga kasutaja (item.0) kombineeritakse tema iga võtmega (item.1)</span>
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="w">  </span><span class="nt">vars</span><span class="p">:</span>
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="w">    </span><span class="nt">users</span><span class="p">:</span><span class="w">                                      </span><span class="c1"># Loend kasutajatest ja nende SSH võtmetest</span>
+<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;alice&quot;</span><span class="w">                           </span><span class="c1"># Esimene kasutaja</span>
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a><span class="w">        </span><span class="nt">authorized_keys</span><span class="p">:</span><span class="w">                        </span><span class="c1"># Loend võtmetest, mis lisatakse Alicele</span>
+<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a><span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;ssh-ed25519</span><span class="nv"> </span><span class="s">AAAAC...</span><span class="nv"> </span><span class="s">alice@laptop&quot;</span>
+<a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a><span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;ssh-ed25519</span><span class="nv"> </span><span class="s">AAAAC...</span><span class="nv"> </span><span class="s">alice@work&quot;</span>
+<a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;bob&quot;</span><span class="w">                             </span><span class="c1"># Teine kasutaja</span>
+<a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a><span class="w">        </span><span class="nt">authorized_keys</span><span class="p">:</span>
+<a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a><span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;ssh-ed25519</span><span class="nv"> </span><span class="s">AAAAC...</span><span class="nv"> </span><span class="s">bob@home&quot;</span>
+</code></pre></div>
+<ul>
+<li><code>item.0</code> viitab põhielemendile (kasutajale) ja <code>item.1</code> on selle elemendi alamloendis olev väärtus (üks SSH võti).</li>
+</ul>
+<h3 id="mitme-mootmega-tsukkel-tootekombinatsioonid">Mitme mõõtmega tsükkel (tootekombinatsioonid)<a class="headerlink" href="#mitme-mootmega-tsukkel-tootekombinatsioonid" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Loo kaustad keskkondade ja teenuste kombinatsioonidele</span><span class="w">   </span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">  </span><span class="nt">file</span><span class="p">:</span><span class="w">                                                          </span><span class="c1"># &#39;file&#39; moodul loob või haldab faile ja katalooge</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">    </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;/srv/{{</span><span class="nv"> </span><span class="s">item.env</span><span class="nv"> </span><span class="s">}}/{{</span><span class="nv"> </span><span class="s">item.svc</span><span class="nv"> </span><span class="s">}}&quot;</span><span class="w">                   </span><span class="c1"># Kausta tee – kombineerib keskkonna ja teenuse nime</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">directory</span><span class="w">                                             </span><span class="c1"># Tagab, et see tee on kataloog (loob, kui puudub)</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">  </span><span class="nt">loop</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">query(&#39;cartesian&#39;,</span><span class="nv"> </span><span class="s">envs,</span><span class="nv"> </span><span class="s">services)</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">map(&#39;combine&#39;)</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">list</span><span class="nv"> </span><span class="s">}}&quot;</span><span class="w">  </span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">    </span><span class="c1"># &#39;query(&#39;cartesian&#39;, ...)&#39; loob kõik võimalikud kombinatsioonid kahest loendist (envs ja services)</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">    </span><span class="c1"># Näiteks: dev+api, dev+worker, prod+api, prod+worker</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">    </span><span class="c1"># &#39;map(&#39;combine&#39;)&#39; liidab kahe loendi objektid üheks sõnastikuks</span>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="w">    </span><span class="c1"># &#39;list&#39; muudab tulemuse lõplikuks loendiks, mida saab tsüklis läbi käia</span>
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="w">  </span><span class="nt">vars</span><span class="p">:</span><span class="w">                                                          </span>
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="w">    </span><span class="nt">envs</span><span class="p">:</span><span class="w">                                                        </span><span class="c1"># Loend keskkondadest</span>
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> env</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;dev&quot;</span><span class="w"> </span><span class="p p-Indicator">}</span><span class="w">                                           </span><span class="c1"># Arenduskeskkond</span>
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> env</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;prod&quot;</span><span class="w"> </span><span class="p p-Indicator">}</span><span class="w">                                          </span><span class="c1"># Tootmiskeskkond</span>
+<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a><span class="w">    </span><span class="nt">services</span><span class="p">:</span><span class="w">                                                    </span><span class="c1"># Loend teenustest</span>
+<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> svc</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;api&quot;</span><span class="w"> </span><span class="p p-Indicator">}</span><span class="w">                                           </span><span class="c1"># API teenus</span>
+<a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> svc</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;worker&quot;</span><span class="w"> </span><span class="p p-Indicator">}</span><span class="w">                                        </span><span class="c1"># Taustateenus (worker)</span>
+</code></pre></div>
+<h3 id="iteratsiooni-indeks-ja-silt">Iteratsiooni indeks ja silt<a class="headerlink" href="#iteratsiooni-indeks-ja-silt" title="Permanent link">&para;</a></h3>
+<p><code>loop_control</code> annab ligipääsu indeksile ja inimloetavale märgisele:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Loo kaustad koos indeksiga</span><span class="w">           </span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">  </span><span class="nt">file</span><span class="p">:</span><span class="w">                                      </span><span class="c1"># &#39;file&#39; moodul – loob või haldab faile ja katalooge</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;/data/{{</span><span class="nv"> </span><span class="s">index</span><span class="nv"> </span><span class="s">}}-{{</span><span class="nv"> </span><span class="s">item</span><span class="nv"> </span><span class="s">}}&quot;</span><span class="w">     </span><span class="c1"># Kataloogi tee: koosneb indeksist ja elemendi väärtusest (nt /data/0-a)</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">directory</span><span class="w">                         </span><span class="c1"># Tagab, et tee on kataloog (loob selle, kui puudub)</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">  </span><span class="nt">loop</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;a&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;b&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;c&quot;</span><span class="p p-Indicator">]</span><span class="w">                      </span><span class="c1"># Lihtne loend, mille elemente töödeldakse tsüklis järjest</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">  </span><span class="nt">loop_control</span><span class="p">:</span><span class="w">                              </span><span class="c1"># Täiendav tsüklite juhtimine</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w">    </span><span class="nt">index_var</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">index</span><span class="w">                         </span><span class="c1"># Loob eraldi muutuja &#39;index&#39;, mis sisaldab tsükli järjekorranumbrit (alates 0)</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="w">    </span><span class="nt">label</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">index</span><span class="nv"> </span><span class="s">}}</span><span class="nv"> </span><span class="s">-&gt;</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">item</span><span class="nv"> </span><span class="s">}}&quot;</span><span class="w">       </span><span class="c1"># Määrab, kuidas tsükli element kuvatakse väljundis (nt 0 -&gt; a)</span>
+</code></pre></div>
+<ul>
+<li>on kasulik näiteks järjestatud objektide loomisel või silumiseks, kui soovid teada, mitmendal sammul tsükkel parasjagu on.</li>
+</ul>
+<hr />
+<h2 id="tsuklid-ja-jinja2-mallid">Tsüklid ja Jinja2 mallid<a class="headerlink" href="#tsuklid-ja-jinja2-mallid" title="Permanent link">&para;</a></h2>
+<p>Tsükleid saab kombineerida <strong>mallide paigaldamisega</strong>, et luua <strong>mitu konfiguratsioonifaili</strong> erinevate väärtustega.</p>
+<p><strong>Mallifail <code>templates/vhost.conf.j2</code>:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>server {
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>    listen 80;
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>    server_name {{ item.server_name }};
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>    root {{ item.web_root }};
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>}
+</code></pre></div>
+<p><strong>Playbooki väljavõte:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Loo vhostid mallist</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">  </span><span class="nt">template</span><span class="p">:</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">    </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vhost.conf.j2</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">    </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;/etc/nginx/sites-available/{{</span><span class="nv"> </span><span class="s">item.server_name</span><span class="nv"> </span><span class="s">}}.conf&quot;</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">  </span><span class="nt">loop</span><span class="p">:</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> server_name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;example.com&quot;</span><span class="p p-Indicator">,</span><span class="nt"> web_root</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;/var/www/example&quot;</span><span class="w"> </span><span class="p p-Indicator">}</span>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> server_name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;demo.example.com&quot;</span><span class="p p-Indicator">,</span><span class="nt"> web_root</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;/var/www/demo&quot;</span><span class="w"> </span><span class="p p-Indicator">}</span>
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="w">  </span><span class="nt">notify</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Taaskäivita nginx</span>
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>
+<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="nt">handlers</span><span class="p">:</span>
+<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Taaskäivita nginx</span>
+<a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a><span class="w">    </span><span class="nt">service</span><span class="p">:</span>
+<a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a><span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx</span>
+<a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a><span class="w">      </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">restarted</span>
+</code></pre></div>
+<p>Mallis saab kasutada <code>{{ item.* }}</code> väärtusi, mis tulevad tsükli elemendist.</p>
+<hr />
+<h2 id="testimine-ja-veaotsing">Testimine ja veaotsing<a class="headerlink" href="#testimine-ja-veaotsing" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Kasuta <strong><code>--check</code></strong> ja <strong><code>--diff</code></strong>, et näha muudatusi enne rakendamist.</li>
+<li>Lisa <strong><code>-v</code> / <code>-vvv</code></strong>, et näha, milliseid elemente töödeldi.</li>
+<li>Kui tsükkel on keerukas, <strong>on kasulik väljastada vaheväärtusi</strong> <code>debug:</code> abil.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kuvan töötlemisel kasutatava elemendi</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">  </span><span class="nt">debug</span><span class="p">:</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">    </span><span class="nt">msg</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Töötlen:</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">item</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">  </span><span class="nt">loop</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">my_list</span><span class="nv"> </span><span class="s">}}&quot;</span>
+</code></pre></div>
+<hr />
+<h2 id="head-tavad">Head tavad<a class="headerlink" href="#head-tavad" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Kasuta <code>loop:</code></strong> ja filtreid (<code>dict2items</code>, <code>subelements</code>, <code>flatten</code>) – väldi <code>with_*</code> süntaksit uues koodis.</li>
+<li>Tee <strong>elementide struktuur selgeks</strong> (nt <code>{name:…, uid:…}</code>) – see teeb mallid ja taskid loetavaks.</li>
+<li>Väldi shelli, kui leidub <strong>spetsiaalne moodul</strong> (idempotentsus).</li>
+<li>Kui tsükkel muutub keerukaks, <strong>jaga väiksemateks taskideks</strong> või kasuta <strong>rolle</strong> (rollidest räägime hilisemas materjalis).</li>
+<li>Vajadusel kasuta <code>loop_control</code>-it <strong>indeksi</strong> ja <strong>sildi</strong> jaoks.</li>
+</ul>
+<hr />
+<h2 id="rohkem-infot">Rohkem infot<a class="headerlink" href="#rohkem-infot" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_loops.html" target="_blank">Ansible loops (playbook guide)</a></li>
+<li><a href="https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_filters.html" target="_blank">Jinja2 filters</a></li>
+<li><a href="https://docs.ansible.com/ansible/latest/collections/ansible/builtin/index.html#lookups" target="_blank">Lookups: fileglob, cartesian, subelements</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Üles
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Jalus" >
+        
+          
+          <a href="../ansibleconditionals/" class="md-footer__link md-footer__link--prev" aria-label="Eelmine: Tingimuslikkus">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Eelmine
+              </span>
+              <div class="md-ellipsis">
+                Tingimuslikkus
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../ansiblehandlers/" class="md-footer__link md-footer__link--next" aria-label="Järgmine: Tegevuste käivitamine ainult vajadusel">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Järgmine
+              </span>
+              <div class="md-ellipsis">
+                Tegevuste käivitamine ainult vajadusel
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M247.1 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L179.2 256 41.9 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Priit Paap
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "content.code.copy", "content.tabs.link", "header.autohide", "announce.dismiss", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Kopeeritud", "clipboard.copy": "Kopeeri l\u00f5ikelauale", "search.result.more.one": "1 veel sellel lehel", "search.result.more.other": "# veel sellel lehel", "search.result.none": "Otsingule ei leitud \u00fchtegi vastet", "search.result.one": "Leiti \u00fcks tulemus", "search.result.other": "Leiti # tulemust", "search.result.placeholder": "Otsimiseks kirjuta siia", "search.result.term.missing": "Puudub", "select.version": "Vali versioon"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

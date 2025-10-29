@@ -1,0 +1,1805 @@
+
+<!doctype html>
+<html lang="et" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../ansibleplaybooks/">
+      
+      
+        <link rel="next" href="../ansiblejinja2/">
+      
+      
+      <link rel="icon" href="../../images/computer.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
+    
+    
+      
+        <title>Muutujad ja nende kasutamine - IT alased õppematerjalid</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="deep-orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#muutujad-ja-nende-kasutamine" class="md-skip">
+          Keri sisuni
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Päis">
+    <a href="../.." title="IT alased õppematerjalid" class="md-header__button md-logo" aria-label="IT alased õppematerjalid" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M348.8 32C340.7 46.1 336 62.5 336 80v16H64v224h272v64H64c-35.3 0-64-28.7-64-64V96c0-35.3 28.7-64 64-64zM336 432c0 17.5 4.7 33.9 12.8 48H120c-13.3 0-24-10.7-24-24s10.7-24 24-24zm96-400h96c26.5 0 48 21.5 48 48v352c0 26.5-21.5 48-48 48h-96c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48m24 64c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24zm56 144a32 32 0 1 0-64 0 32 32 0 1 0 64 0"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            IT alased õppematerjalid
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Muutujad ja nende kasutamine
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="deep-orange"  aria-label="Lülitu heledale režiimile"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Lülitu heledale režiimile" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-blue" data-md-color-accent="deep-orange"  aria-label="Lülitu tumedale režiimile"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Lülitu tumedale režiimile" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Otsi" placeholder="Otsi" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Otsing">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Jaga" aria-label="Jaga" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Lähtesta" aria-label="Lähtesta" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Otsingu lähtestamine
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Vaheleht" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://priitpaap.github.io" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Avalehele
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../linux/debpaigaldus/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Operatsioonisüsteemid
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../ansibleintro/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Automatiseerimine
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigatsioon" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="IT alased õppematerjalid" class="md-nav__button md-logo" aria-label="IT alased õppematerjalid" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M348.8 32C340.7 46.1 336 62.5 336 80v16H64v224h272v64H64c-35.3 0-64-28.7-64-64V96c0-35.3 28.7-64 64-64zM336 432c0 17.5 4.7 33.9 12.8 48H120c-13.3 0-24-10.7-24-24s10.7-24 24-24zm96-400h96c26.5 0 48 21.5 48 48v352c0 26.5-21.5 48-48 48h-96c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48m24 64c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24zm56 144a32 32 0 1 0-64 0 32 32 0 1 0 64 0"/></svg>
+
+    </a>
+    IT alased õppematerjalid
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://priitpaap.github.io" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Avalehele
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Operatsioonisüsteemid
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Operatsioonisüsteemid
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Linux OS
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Linux OS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/debpaigaldus/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    Debian Linuxi paigaldamine virutaalmasinale
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Automatiseerimine
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Automatiseerimine
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Ansible
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Ansible
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ansibleintro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ansible ülevaade
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ansibleinstall/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ansible paigaldamine
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ansibleinventory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ansible inventory
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ansibleconf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ansible levinumad seadistused
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ansiblenodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Hallatavate hostide ühendamine
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ansiblemodules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Moodulid ja ad-hoc käsud
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ansibleplaybooks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Playbookid ja YAML
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Muutujad ja nende kasutamine
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Muutujad ja nende kasutamine
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Sisukord">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Sisukord
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#eesmark" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eesmärk
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mis-on-muutujad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mis on muutujad?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#olulisemad-muutujate-maaramise-viisid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Olulisemad muutujate määramise viisid
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Olulisemad muutujate määramise viisid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#muutujate-maaramine-playbooki-sees" class="md-nav__link">
+    <span class="md-ellipsis">
+      Muutujate määramine Playbooki sees
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#muutujad-eraldi-failis-group_vars-voi-host_vars" class="md-nav__link">
+    <span class="md-ellipsis">
+      Muutujad eraldi failis (group_vars või host_vars)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#muutujate-maaramine-kasurealt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Muutujate määramine käsurealt
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#muutujate-maaramine-inventory-failis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Muutujate määramine inventory failis
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#muutujate-kasutamine-ulesannetes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Muutujate kasutamine ülesannetes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Muutujate kasutamine ülesannetes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#loendite-list-kasutamine" class="md-nav__link">
+    <span class="md-ellipsis">
+      Loendite (list) kasutamine
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#muutujate-andmetuubid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Muutujate andmetüübid
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Muutujate andmetüübid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#naited-andmetuupide-kasutamisest" class="md-nav__link">
+    <span class="md-ellipsis">
+      Näited andmetüüpide kasutamisest
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faktide-facts-kasutamine" class="md-nav__link">
+    <span class="md-ellipsis">
+      Faktide (facts) kasutamine
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#head-tavad-muutujate-kasutamisel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Head tavad muutujate kasutamisel
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#harjutus" class="md-nav__link">
+    <span class="md-ellipsis">
+      Harjutus
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rohkem-infot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rohkem infot
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ansiblejinja2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Jinja2 mallid
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ansibleconditionals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tingimuslikkus
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ansibleloops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tsüklid
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ansiblehandlers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tegevuste käivitamine ainult vajadusel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ansiblevault/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Turvalisus ja Ansible Vault
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ansibleroles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Rollid ja struktuur
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ansiblegalaxy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ansible Galaxy Collections
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ansiblebestpractises/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ansible parimad praktikad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Sisukord">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Sisukord
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#eesmark" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eesmärk
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mis-on-muutujad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mis on muutujad?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#olulisemad-muutujate-maaramise-viisid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Olulisemad muutujate määramise viisid
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Olulisemad muutujate määramise viisid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#muutujate-maaramine-playbooki-sees" class="md-nav__link">
+    <span class="md-ellipsis">
+      Muutujate määramine Playbooki sees
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#muutujad-eraldi-failis-group_vars-voi-host_vars" class="md-nav__link">
+    <span class="md-ellipsis">
+      Muutujad eraldi failis (group_vars või host_vars)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#muutujate-maaramine-kasurealt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Muutujate määramine käsurealt
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#muutujate-maaramine-inventory-failis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Muutujate määramine inventory failis
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#muutujate-kasutamine-ulesannetes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Muutujate kasutamine ülesannetes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Muutujate kasutamine ülesannetes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#loendite-list-kasutamine" class="md-nav__link">
+    <span class="md-ellipsis">
+      Loendite (list) kasutamine
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#muutujate-andmetuubid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Muutujate andmetüübid
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Muutujate andmetüübid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#naited-andmetuupide-kasutamisest" class="md-nav__link">
+    <span class="md-ellipsis">
+      Näited andmetüüpide kasutamisest
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faktide-facts-kasutamine" class="md-nav__link">
+    <span class="md-ellipsis">
+      Faktide (facts) kasutamine
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#head-tavad-muutujate-kasutamisel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Head tavad muutujate kasutamisel
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#harjutus" class="md-nav__link">
+    <span class="md-ellipsis">
+      Harjutus
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rohkem-infot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rohkem infot
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="muutujad-ja-nende-kasutamine">Muutujad ja nende kasutamine<a class="headerlink" href="#muutujad-ja-nende-kasutamine" title="Permanent link">&para;</a></h1>
+<h2 id="eesmark">Eesmärk<a class="headerlink" href="#eesmark" title="Permanent link">&para;</a></h2>
+<p>Selles peatükis õpid:</p>
+<ul>
+<li>Mis on Ansible muutujad ja miks neid kasutada</li>
+<li>Kuidas ja kus määrata muutujate väärtusi</li>
+<li>Kus muutujad asuvad (vars, group_vars, host_vars, käsurealt jne)</li>
+<li>Muutujate loomise head tavad</li>
+</ul>
+<hr />
+<h2 id="mis-on-muutujad">Mis on muutujad?<a class="headerlink" href="#mis-on-muutujad" title="Permanent link">&para;</a></h2>
+<p><strong>Muutujad</strong> võimaldavad hoida korduvaid väärtusi ühes kohas. See muudab playbookid lihtsamaks, loetavamaks ja hooldatavamaks. Sageli on mugav hoida korduvaid väärtusi (nt kataloogiteed, paketid või pordid) muutujates. See teeb playbooki lühemaks ja hõlpsamini hallatavaks.</p>
+<p>Muutujaid saab määrata mitmel tasemel. Kui sama muutuja on määratud mitmes kohas, peab Ansible otsustama, millist väärtust kasutada. Ansible kasutab <strong>prioriteetide hierarhiat</strong>, kus kõrgema taseme väärtus asendab madalama oma.  </p>
+<p>Allpool on levinumad tasemed (madalaimast kõrgeimani):</p>
+<table>
+<thead>
+<tr>
+<th>Tasand</th>
+<th>Näide / Asukoht</th>
+<th>Prioriteet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Role defaults</td>
+<td><code>defaults/main.yml</code></td>
+<td>🔽 madalaim</td>
+</tr>
+<tr>
+<td>Inventory grupimuutujad</td>
+<td><code>group_vars/webservers.yml</code></td>
+<td>↑</td>
+</tr>
+<tr>
+<td>Inventory hostimuutujad</td>
+<td><code>host_vars/web1.yml</code></td>
+<td>↑</td>
+</tr>
+<tr>
+<td>Playbooki <code>vars:</code></td>
+<td>Playbooki sees määratud <code>vars:</code></td>
+<td>↑</td>
+</tr>
+<tr>
+<td>Playbooki <code>vars_files:</code></td>
+<td>Playbooki sees viidatud eraldi failid</td>
+<td>↑</td>
+</tr>
+<tr>
+<td><code>set_fact</code> ülesanded</td>
+<td>Määratud käivitamise ajal</td>
+<td>↑</td>
+</tr>
+<tr>
+<td>Käsurea muutujad</td>
+<td><code>-e "var=value"</code></td>
+<td>🔼 kõrgeim</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="olulisemad-muutujate-maaramise-viisid">Olulisemad muutujate määramise viisid<a class="headerlink" href="#olulisemad-muutujate-maaramise-viisid" title="Permanent link">&para;</a></h2>
+<h3 id="muutujate-maaramine-playbooki-sees">Muutujate määramine Playbooki sees<a class="headerlink" href="#muutujate-maaramine-playbooki-sees" title="Permanent link">&para;</a></h3>
+<p>Muutujad saab defineerida playbooki sees võtme <code>vars:</code> all.</p>
+<p>Näide:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nn">---</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Muutujate näide</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">webservers</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yes</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="nt">vars</span><span class="p">:</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="nt">web_package</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="nt">web_root</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/var/www/html</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">  </span><span class="nt">tasks</span><span class="p">:</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Paigalda veebiserver</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">      </span><span class="nt">apt</span><span class="p">:</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">web_package</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Loo veebikataloog</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">      </span><span class="nt">file</span><span class="p">:</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">        </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">web_root</span><span class="nv"> </span><span class="s">}}/demo&quot;</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">directory</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">        </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">www-data</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">        </span><span class="nt">group</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">www-data</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">        </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;0755&#39;</span>
+</code></pre></div>
+<p>Selgitus:</p>
+<ul>
+<li><code>vars:</code> all defineeritakse muutujad web_package ja web_root.</li>
+<li>Muutujaid kasutatakse topeltlainelistes sulgudes {{ }}.</li>
+<li>Kui muutuja väärtust hiljem muuta, ei pea seda igal pool käsitsi asendama.</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Kui muutujad on pikemad või peavad kehtima mitmes playbookis, tasub need hoida eraldi failides (nt <strong>group_vars/</strong> või <strong>host_vars/</strong> kataloogides).</p>
+</div>
+<h3 id="muutujad-eraldi-failis-group_vars-voi-host_vars">Muutujad eraldi failis (group_vars või host_vars)<a class="headerlink" href="#muutujad-eraldi-failis-group_vars-voi-host_vars" title="Permanent link">&para;</a></h3>
+<p>Näide:</p>
+<p>Kataloogistruktuur:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>inventory/
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>├─ hosts.yaml
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>├─ group_vars/
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>│  └─ webservers.yml
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>├─ host_vars/
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>│  └─ web1.yml
+</code></pre></div></p>
+<p>Kui vajad, et <strong>erinevad grupid kasutaksid eri väärtusi</strong>, on mugav kasutada <code>group_vars/</code> kataloogi.</p>
+<p>Fail <code>group_vars/webservers.yml</code> sisu:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">web_package</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nt">web_root</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/var/www/html</span>
+</code></pre></div>
+Playbook kasutab neid muutujad automaatselt, kui <code>hosts:</code> määratud grupp on <code>webservers</code>.</p>
+<p>Kui vajad, et <strong>erinevad hostid kasutaksid eri väärtusi</strong>, on mugav kasutada <code>host_vars/</code> kataloogi.</p>
+<p>Fail <code>host_vars/web1.yml</code> sisu:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">web_package</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nt">web_root</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/var/www/html</span>
+</code></pre></div>
+Playbook kasutab neid muutujad automaatselt, kui <code>hosts:</code> määratud on <code>web1</code>.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>host_vars/ kataloogis olev fail peab kandma sama nime kui inventory’s määratud host.    </p>
+</div>
+<h3 id="muutujate-maaramine-kasurealt">Muutujate määramine käsurealt<a class="headerlink" href="#muutujate-maaramine-kasurealt" title="Permanent link">&para;</a></h3>
+<p>Näide:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>ansible-playbook<span class="w"> </span>site.yml<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;web_package=nginx&quot;</span>
+</code></pre></div>
+<h3 id="muutujate-maaramine-inventory-failis">Muutujate määramine inventory failis<a class="headerlink" href="#muutujate-maaramine-inventory-failis" title="Permanent link">&para;</a></h3>
+<p>Seda võimalust vaatasime ka juba inventory materjalis. YAML-formaadis inventory on eelistatud, kuna see toetab keerukamaid andmestruktuure (nt loendid ja sõnastikud) ning on paremini loetav ja hallatav.</p>
+<p>Näide: </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">[webservers]</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="na">web1 web_package</span><span class="o">=</span><span class="s">nginx web_root=/var/www/html</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">all</span><span class="p">:</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="nt">children</span><span class="p">:</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="nt">webservers</span><span class="p">:</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">      </span><span class="nt">hosts</span><span class="p">:</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">        </span><span class="nt">web1</span><span class="p">:</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">          </span><span class="nt">ansible_host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">192.168.56.11</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">          </span><span class="nt">web_package</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">          </span><span class="nt">web_root</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/var/www/html</span>
+</code></pre></div>
+<hr />
+<h2 id="muutujate-kasutamine-ulesannetes">Muutujate kasutamine ülesannetes<a class="headerlink" href="#muutujate-kasutamine-ulesannetes" title="Permanent link">&para;</a></h2>
+<p>Muutujaid kasutatakse Ansible playbookis <strong>topeltlainelistes sulgudes</strong> <code>{{ }}</code>.</p>
+<p>Näide:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Loo kataloog</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="nt">file</span><span class="p">:</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">web_root</span><span class="nv"> </span><span class="s">}}/demo&quot;</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">directory</span>
+</code></pre></div>
+<p>Ansible asendab <code>{{ web_root }}</code> playbooki käivitamisel vastava väärtusega.</p>
+<hr />
+<h3 id="loendite-list-kasutamine">Loendite (list) kasutamine<a class="headerlink" href="#loendite-list-kasutamine" title="Permanent link">&para;</a></h3>
+<p>Sageli on vaja teha sama tegevust mitme väärtusega (nt paigaldada mitu paketti või luua mitu kataloogi).<br />
+Sellisel juhul on mugav määrata väärtused <strong>loendina (list)</strong> ja kasutada neid tsükliga <code>loop:</code>. Täpsemalt on küll tsüklitest räägitud  "Tsüklid" teemas, aga väike näide ei tee ka siin paha.</p>
+<p>Näide: </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nn">---</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Paigalda mitmeid pakette</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">webservers</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">  </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yes</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">  </span><span class="nt">vars</span><span class="p">:</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">    </span><span class="nt">packages</span><span class="p">:</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curl</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vim</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="w">  </span><span class="nt">tasks</span><span class="p">:</span>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Paigalda vajalikud paketid</span>
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="w">      </span><span class="nt">apt</span><span class="p">:</span>
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">item</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span>
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="w">      </span><span class="nt">loop</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">packages</span><span class="nv"> </span><span class="s">}}&quot;</span>
+</code></pre></div>
+<hr />
+<h2 id="muutujate-andmetuubid">Muutujate andmetüübid<a class="headerlink" href="#muutujate-andmetuubid" title="Permanent link">&para;</a></h2>
+<p>Ansible kasutab YAML-andmetüüpe. Muutujad ei ole ainult tekst (string), vaid võivad olla ka numbrid, tõeväärtused, loendid ja sõnastikud.<br />
+Õige andmetüübi valik muudab playbookid paindlikumaks ja lihtsamaks.</p>
+<table>
+<thead>
+<tr>
+<th>Tüüp</th>
+<th>Näide</th>
+<th>Selgitus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>String</td>
+<td><code>web_package: "nginx"</code></td>
+<td>Tekstiväärtus. Soovitatav panna jutumärkidesse, eriti kui sisaldab tühikuid või erimärke.</td>
+</tr>
+<tr>
+<td>Täisarv (int)</td>
+<td><code>max_clients: 200</code></td>
+<td>Kasutatakse arvulistes seadistustes.</td>
+</tr>
+<tr>
+<td>Tõeväärtus (bool)</td>
+<td><code>debug_mode: true</code></td>
+<td>Saab väärtusteks <code>true</code> või <code>false</code>.</td>
+</tr>
+<tr>
+<td>Loend (list)</td>
+<td><code>packages: [nginx, curl, vim]</code></td>
+<td>Mitme elemendi kogum, mida saab tsüklis läbi käia.</td>
+</tr>
+<tr>
+<td>Sõnastik (dict)</td>
+<td><code>app: { name: demo, port: 8080 }</code></td>
+<td>Võtme-väärtuse paaride kogum. Kasulik keerukamate seadistuste jaoks.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="naited-andmetuupide-kasutamisest">Näited andmetüüpide kasutamisest<a class="headerlink" href="#naited-andmetuupide-kasutamisest" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nt">vars</span><span class="p">:</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span><span class="nt">web_package</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;nginx&quot;</span><span class="w">           </span><span class="c1"># string</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">  </span><span class="nt">max_clients</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">200</span><span class="w">               </span><span class="c1"># int</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">  </span><span class="nt">debug_mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w">               </span><span class="c1"># bool</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">  </span><span class="nt">packages</span><span class="p">:</span><span class="w">                      </span><span class="c1"># list</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curl</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vim</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">  </span><span class="nt">app</span><span class="p">:</span><span class="w">                            </span><span class="c1"># dict</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">demo</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="w">    </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8080</span>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="nt">tasks</span><span class="p">:</span>
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Paigalda vajalikud paketid</span>
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="w">    </span><span class="nt">apt</span><span class="p">:</span>
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">item</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a><span class="w">      </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span>
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a><span class="w">    </span><span class="nt">loop</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">packages</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>
+<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kuva rakenduse nime ja pordi info</span>
+<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a><span class="w">    </span><span class="nt">debug</span><span class="p">:</span>
+<a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a><span class="w">      </span><span class="nt">msg</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Rakendus</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">app.name</span><span class="nv"> </span><span class="s">}}</span><span class="nv"> </span><span class="s">töötab</span><span class="nv"> </span><span class="s">pordis</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">app.port</span><span class="nv"> </span><span class="s">}}&quot;</span>
+</code></pre></div>
+<hr />
+<h2 id="faktide-facts-kasutamine">Faktide (facts) kasutamine<a class="headerlink" href="#faktide-facts-kasutamine" title="Permanent link">&para;</a></h2>
+<p>Lisaks enda loodud muutujatele kogub Ansible <strong>automaatselt iga hosti kohta süsteemiteavet</strong>, mida nimetatakse <em>facts</em>.<br />
+Need sisaldavad näiteks:</p>
+<ul>
+<li>operatsioonisüsteemi nime ja versiooni,</li>
+<li>tuuma (kernel) infot,</li>
+<li>IP-aadresse ja võrguliideseid,</li>
+<li>mälu ja protsessorite infot,</li>
+<li>ajavööndi jpm.</li>
+</ul>
+<p>See info on kättesaadav playbookides spetsiaalse muutuja <code>ansible_facts</code> kaudu.</p>
+<p>Näide:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kuva hosti operatsioonisüsteem</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">all</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">  </span><span class="nt">tasks</span><span class="p">:</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kuva OS info</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">      </span><span class="nt">debug</span><span class="p">:</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">        </span><span class="nt">msg</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Hosti</span><span class="nv"> </span><span class="s">OS</span><span class="nv"> </span><span class="s">on</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">ansible_facts[&#39;distribution&#39;]</span><span class="nv"> </span><span class="s">}}&quot;</span>
+</code></pre></div>
+<p>Faktide kogumine toimub automaatselt enne playbooki ülesannete täitmist (välja arvatud juhul, kui <code>gather_facts: false</code> on määratud).
+Saad vaadata kõiki kättesaadavaid fakte käsuga:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>ansible<span class="w"> </span>all<span class="w"> </span>-m<span class="w"> </span>setup
+</code></pre></div>
+<p><code>setup</code> kuvab kõik saadaval olevad faktid JSON-formaadis.</p>
+<p>Kui soovid kiirendada testimist või kui facts pole vajalikud, lisa playbooki alguses <code>gather_facts: false</code>.</p>
+<hr />
+<h2 id="head-tavad-muutujate-kasutamisel">Head tavad muutujate kasutamisel<a class="headerlink" href="#head-tavad-muutujate-kasutamisel" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Hoia korduvaid muutujad eraldi failides (group_vars, host_vars) selguse huvides.</li>
+<li>Kasuta selgeid ja ühtseid muutujate nimesid.</li>
+<li>Pane vaikimisi väärtused madala prioriteediga kohta (nt group_vars/)</li>
+<li>Ära pane salasõnu või tundlikke andmeid otse playbooki – kasuta Ansible Vault’i.</li>
+</ul>
+<hr />
+<h2 id="harjutus">Harjutus<a class="headerlink" href="#harjutus" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>Loo <code>group_vars/webservers.yml</code> fail ja määra seal:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>web_package:<span class="w"> </span>nginx
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>web_root:<span class="w"> </span>/var/www/web
+</code></pre></div>
+</li>
+<li>
+<p>Loo host_vars/web1.yml fail, kus määrad teise väärtuse web_root muutujale.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>web_root:<span class="w"> </span>/srv/web1_site
+</code></pre></div>
+</li>
+<li>
+<p>Loo lihtne playbook, mis:</p>
+<p>paigaldab {{ web_package }}
+loob kataloogi {{ web_root }}</p>
+</li>
+<li>
+<p>Käivita playbook ja testi, kas eri hostidel kasutati erinevaid väärtusi.</p>
+</li>
+<li>Katseta muutujat käsurealt, nt:
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>ansible-playbook<span class="w"> </span>site.yml<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;web_root=/tmp/test_site&quot;</span>
+</code></pre></div>
+    Peakid märkama, et käsurealt määratud väärtus kirjutab üle nii grupi- kui ka hostimuutujad.</li>
+</ol>
+<hr />
+<h2 id="rohkem-infot">Rohkem infot<a class="headerlink" href="#rohkem-infot" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_variables.html">Using Variables in Ansible</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Üles
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Jalus" >
+        
+          
+          <a href="../ansibleplaybooks/" class="md-footer__link md-footer__link--prev" aria-label="Eelmine: Playbookid ja YAML">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Eelmine
+              </span>
+              <div class="md-ellipsis">
+                Playbookid ja YAML
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../ansiblejinja2/" class="md-footer__link md-footer__link--next" aria-label="Järgmine: Jinja2 mallid">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Järgmine
+              </span>
+              <div class="md-ellipsis">
+                Jinja2 mallid
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M247.1 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L179.2 256 41.9 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Priit Paap
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "content.code.copy", "content.tabs.link", "header.autohide", "announce.dismiss", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Kopeeritud", "clipboard.copy": "Kopeeri l\u00f5ikelauale", "search.result.more.one": "1 veel sellel lehel", "search.result.more.other": "# veel sellel lehel", "search.result.none": "Otsingule ei leitud \u00fchtegi vastet", "search.result.one": "Leiti \u00fcks tulemus", "search.result.other": "Leiti # tulemust", "search.result.placeholder": "Otsimiseks kirjuta siia", "search.result.term.missing": "Puudub", "select.version": "Vali versioon"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

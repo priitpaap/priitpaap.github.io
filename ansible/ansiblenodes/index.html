@@ -1,0 +1,1849 @@
+
+<!doctype html>
+<html lang="et" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../ansibleconf/">
+      
+      
+        <link rel="next" href="../ansiblemodules/">
+      
+      
+      <link rel="icon" href="../../images/computer.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
+    
+    
+      
+        <title>Hallatavate hostide ühendamine - IT alased õppematerjalid</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="deep-orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#hallatavate-hostide-uhendamine" class="md-skip">
+          Keri sisuni
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Päis">
+    <a href="../.." title="IT alased õppematerjalid" class="md-header__button md-logo" aria-label="IT alased õppematerjalid" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M348.8 32C340.7 46.1 336 62.5 336 80v16H64v224h272v64H64c-35.3 0-64-28.7-64-64V96c0-35.3 28.7-64 64-64zM336 432c0 17.5 4.7 33.9 12.8 48H120c-13.3 0-24-10.7-24-24s10.7-24 24-24zm96-400h96c26.5 0 48 21.5 48 48v352c0 26.5-21.5 48-48 48h-96c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48m24 64c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24zm56 144a32 32 0 1 0-64 0 32 32 0 1 0 64 0"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            IT alased õppematerjalid
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Hallatavate hostide ühendamine
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="deep-orange"  aria-label="Lülitu heledale režiimile"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Lülitu heledale režiimile" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-blue" data-md-color-accent="deep-orange"  aria-label="Lülitu tumedale režiimile"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Lülitu tumedale režiimile" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Otsi" placeholder="Otsi" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Otsing">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Jaga" aria-label="Jaga" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Lähtesta" aria-label="Lähtesta" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Otsingu lähtestamine
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Vaheleht" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://priitpaap.github.io" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Avalehele
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../linux/debpaigaldus/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Operatsioonisüsteemid
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../ansibleintro/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Automatiseerimine
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigatsioon" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="IT alased õppematerjalid" class="md-nav__button md-logo" aria-label="IT alased õppematerjalid" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M348.8 32C340.7 46.1 336 62.5 336 80v16H64v224h272v64H64c-35.3 0-64-28.7-64-64V96c0-35.3 28.7-64 64-64zM336 432c0 17.5 4.7 33.9 12.8 48H120c-13.3 0-24-10.7-24-24s10.7-24 24-24zm96-400h96c26.5 0 48 21.5 48 48v352c0 26.5-21.5 48-48 48h-96c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48m24 64c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24zm56 144a32 32 0 1 0-64 0 32 32 0 1 0 64 0"/></svg>
+
+    </a>
+    IT alased õppematerjalid
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://priitpaap.github.io" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Avalehele
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Operatsioonisüsteemid
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Operatsioonisüsteemid
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Linux OS
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Linux OS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/debpaigaldus/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    Debian Linuxi paigaldamine virutaalmasinale
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Automatiseerimine
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Automatiseerimine
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Ansible
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Ansible
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ansibleintro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ansible ülevaade
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ansibleinstall/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ansible paigaldamine
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ansibleinventory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ansible inventory
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ansibleconf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ansible levinumad seadistused
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Hallatavate hostide ühendamine
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Hallatavate hostide ühendamine
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Sisukord">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Sisukord
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#eesmark" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eesmärk
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kuidas-ansible-uhendub-hostidega" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kuidas Ansible ühendub hostidega?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eeldused" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eeldused
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Eeldused">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linuxi-host" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linuxi host
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windowsi-host" class="md-nav__link">
+    <span class="md-ellipsis">
+      Windowsi host
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linux-hosti-uhendamine-ansibleiga" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linux hosti ühendamine Ansible'iga
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windows-hosti-uhendamine-ansibleiga" class="md-nav__link">
+    <span class="md-ellipsis">
+      Windows hosti ühendamine Ansible'iga
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Windows hosti ühendamine Ansible&#39;iga">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windowsi-uhendusmeetodite-vordlus" class="md-nav__link">
+    <span class="md-ellipsis">
+      Windowsi ühendusmeetodite võrdlus
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows-hosti-uhendamine-ansibleiga-openssh-abil" class="md-nav__link">
+    <span class="md-ellipsis">
+      Windows hosti ühendamine Ansible'iga OpenSSH abil
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows-hosti-uhendamine-ansibleiga-winrm-abil" class="md-nav__link">
+    <span class="md-ellipsis">
+      Windows hosti ühendamine Ansible'iga WinRM abil
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hostide-lisamise-head-tavad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hostide lisamise head tavad
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rohkem-infot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rohkem infot
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ansiblemodules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Moodulid ja ad-hoc käsud
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ansibleplaybooks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Playbookid ja YAML
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ansiblevars/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Muutujad ja nende kasutamine
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ansiblejinja2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Jinja2 mallid
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ansibleconditionals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tingimuslikkus
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ansibleloops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tsüklid
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ansiblehandlers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tegevuste käivitamine ainult vajadusel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ansiblevault/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Turvalisus ja Ansible Vault
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ansibleroles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Rollid ja struktuur
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ansiblegalaxy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ansible Galaxy Collections
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ansiblebestpractises/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ansible parimad praktikad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Sisukord">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Sisukord
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#eesmark" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eesmärk
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kuidas-ansible-uhendub-hostidega" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kuidas Ansible ühendub hostidega?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eeldused" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eeldused
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Eeldused">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linuxi-host" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linuxi host
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windowsi-host" class="md-nav__link">
+    <span class="md-ellipsis">
+      Windowsi host
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linux-hosti-uhendamine-ansibleiga" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linux hosti ühendamine Ansible'iga
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windows-hosti-uhendamine-ansibleiga" class="md-nav__link">
+    <span class="md-ellipsis">
+      Windows hosti ühendamine Ansible'iga
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Windows hosti ühendamine Ansible&#39;iga">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windowsi-uhendusmeetodite-vordlus" class="md-nav__link">
+    <span class="md-ellipsis">
+      Windowsi ühendusmeetodite võrdlus
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows-hosti-uhendamine-ansibleiga-openssh-abil" class="md-nav__link">
+    <span class="md-ellipsis">
+      Windows hosti ühendamine Ansible'iga OpenSSH abil
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows-hosti-uhendamine-ansibleiga-winrm-abil" class="md-nav__link">
+    <span class="md-ellipsis">
+      Windows hosti ühendamine Ansible'iga WinRM abil
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hostide-lisamise-head-tavad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hostide lisamise head tavad
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rohkem-infot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rohkem infot
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="hallatavate-hostide-uhendamine">Hallatavate hostide ühendamine<a class="headerlink" href="#hallatavate-hostide-uhendamine" title="Permanent link">&para;</a></h1>
+<h2 id="eesmark">Eesmärk<a class="headerlink" href="#eesmark" title="Permanent link">&para;</a></h2>
+<p>Selles peatükis õpid:</p>
+<ul>
+<li>Kuidas Ansible <em>control node</em> ühendub hallatavate masinatega (Linux ja Windows)  </li>
+<li>Millised eeldused peavad olema täidetud  </li>
+<li>Kuidas seadistada SSH ühendus Linux hostidega  </li>
+<li>Kuidas seadistada SSH ja WinRM ühendus Windows hostidega  </li>
+<li>Kuidas kontrollida, et ühendus toimib  </li>
+</ul>
+<hr />
+<h2 id="kuidas-ansible-uhendub-hostidega">Kuidas Ansible ühendub hostidega?<a class="headerlink" href="#kuidas-ansible-uhendub-hostidega" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Linux hostid</strong> – Ansible kasutab <strong>SSH</strong>-ühendust, mis põhineb tavaliselt OpenSSH-l.  </li>
+<li><strong>Windows hostid</strong> – Ansible kasutab <strong>SSH</strong> (OpenSSH) või <strong>WinRM</strong>-ühendust (Windows Remote Management).  </li>
+</ul>
+<p>Control node ei vaja agenttarkvara. Piisab, kui hallatavatel masinatel on avatud ja õigesti seadistatud <strong>SSH</strong> või <strong>WinRM</strong> teenus.  </p>
+<hr />
+<h2 id="eeldused">Eeldused<a class="headerlink" href="#eeldused" title="Permanent link">&para;</a></h2>
+<h3 id="linuxi-host">Linuxi host<a class="headerlink" href="#linuxi-host" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>SSH server</strong> peab olema paigaldatud ja töötama.  </li>
+<li>Ansible control node peab omama ligipääsu kas <strong>parooliga</strong> või <strong>SSH võtmega</strong>.  </li>
+<li>Lisaks peab Linuxi masinas olema <strong>Python</strong> (vaikimisi olemas enamikes distributsioonides)</li>
+</ul>
+<h3 id="windowsi-host">Windowsi host<a class="headerlink" href="#windowsi-host" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Windowsi masin peab olema seadistatud kasutama <strong>OpenSSH-serverit</strong> või lubama <strong>WinRM-i</strong>.</li>
+<li><strong>Kui kasutatakse OpenSSH-d</strong>:<ul>
+<li>OpenSSH-server peab olema paigaldatud ja töötav.</li>
+<li>Tulemüür peab lubama SSH liikluse (port 22).</li>
+</ul>
+</li>
+<li><strong>Kui kasutatakse WinRM-i</strong>:<ul>
+<li>WinRM peab olema lubatud ja konfigureeritud (pole vaikimisi sees).</li>
+<li>Windowsi tulemüür peab lubama vajalikud pordid (vaikimisi 5985 HTTP, 5986 HTTPS).</li>
+</ul>
+</li>
+<li>Ansible peab teadma, et tegemist on Windows hostiga - vajalikud <em>inventory</em> muutujad (nt ansible_connection, ansible_winrm_transport, ansible_shell_type jne).  </li>
+</ul>
+<hr />
+<h2 id="linux-hosti-uhendamine-ansibleiga">Linux hosti ühendamine Ansible'iga<a class="headerlink" href="#linux-hosti-uhendamine-ansibleiga" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>Loo SSH võti (kui seda veel pole loodud)
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>ed25519
+</code></pre></div>
+    Kui jätkad lihtsalt Enteriga, siis vaikimisi salvestatakse privaatvõti <code>~/.ssh/id_ed25519</code> ja avalik võti <code>~/.ssh/id_ed25519.pub</code>.</p>
+</li>
+<li>
+<p>Kopeeri võti hallatavasse masinasse
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ssh-copy-id<span class="w"> </span>kasutaja@host
+</code></pre></div>
+    Näiteks:
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ssh-copy-id<span class="w"> </span>student@192.168.1.50
+</code></pre></div></p>
+</li>
+<li>
+<p>Testi SSH ühendust
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ssh<span class="w"> </span>student@192.168.1.50
+</code></pre></div>
+    Kui saad ilma parooli küsimata sisse, on kõik korras.</p>
+</li>
+<li>
+<p>Lisa host <em>inventory</em> faili</p>
+<p>Näited:</p>
+<p><code>ini</code>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">[webservers]</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="na">web1 ansible_host</span><span class="o">=</span><span class="s">192.168.1.10 ansible_user=student</span>
+</code></pre></div></p>
+<p><code>yaml</code>:  <br />
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">all</span><span class="p">:</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nt">children</span><span class="p">:</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="nt">webservers</span><span class="p">:</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">      </span><span class="nt">hosts</span><span class="p">:</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">        </span><span class="nt">web1</span><span class="p">:</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">          </span><span class="nt">ansible_host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">192.168.1.10</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">          </span><span class="nt">ansible_user</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">student</span>
+</code></pre></div></p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Kasutajanime peab määrama ainult siis kui see erineb control node’i kasutajanimest.</p>
+</div>
+</li>
+<li>
+<p>Kontrolli ühendust Ansible’iga</p>
+<p>Proovime kontrolliks Ansible abil käivitada ping moodulit:</p>
+<p>Näide: 
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>ansible<span class="w"> </span>-i<span class="w"> </span>inventory/hosts.yml<span class="w"> </span>web1<span class="w"> </span>-m<span class="w"> </span>ping
+</code></pre></div>
+või (kui inventory failile pole eraldi vaja viidata)
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>ansible<span class="w"> </span>-i<span class="w"> </span>web1<span class="w"> </span>-m<span class="w"> </span>ping
+</code></pre></div></p>
+<p>Kui kõik töötab, saad tulemuseks midagi sellist ehk "ping"-ile tuleb vastuseks "pong":<br />
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="err">web</span><span class="mi">1</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="err">SUCCESS</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="nt">&quot;changed&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">  </span><span class="nt">&quot;ping&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pong&quot;</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="p">}</span>
+</code></pre></div></p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Ansible ping moodul ei tee ICMP ping’i, vaid testib reaalselt mooduli täitmist Pythoniga.</p>
+</div>
+</li>
+</ol>
+<hr />
+<h2 id="windows-hosti-uhendamine-ansibleiga">Windows hosti ühendamine Ansible'iga<a class="headerlink" href="#windows-hosti-uhendamine-ansibleiga" title="Permanent link">&para;</a></h2>
+<p>Nagu eelnevalt mainitud, on Windowsi hosti võimalik tänapäeval ühendada Ansible'iga kas OpenSSH või WinRM kaudu. Viimastel aastatel on selgelt näha trendi, kus SSH muutub üha populaarsemaks alternatiiviks WinRM-ile.</p>
+<h3 id="windowsi-uhendusmeetodite-vordlus">Windowsi ühendusmeetodite võrdlus<a class="headerlink" href="#windowsi-uhendusmeetodite-vordlus" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Omadus / Protokoll</th>
+<th><strong>WinRM</strong></th>
+<th><strong>OpenSSH</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Toetus</strong></td>
+<td>Windowsi ametlik vaikimisi haldusprotokoll</td>
+<td>Alates Windows 10 / Server 2019 ametlikult toetatud</td>
+</tr>
+<tr>
+<td><strong>Ühendusviis</strong></td>
+<td>HTTP(S) portidel 5985 / 5986</td>
+<td>SSH (tavaliselt port 22)</td>
+</tr>
+<tr>
+<td><strong>Turvalisus</strong></td>
+<td>Vajab täiendavat seadistust krüpteeritud ühenduse jaoks</td>
+<td>Kasutab kohe turvalist SSH protokolli</td>
+</tr>
+<tr>
+<td><strong>Kasutus Ansible'is</strong></td>
+<td><code>ansible_connection=winrm</code></td>
+<td><code>ansible_connection=ssh</code></td>
+</tr>
+<tr>
+<td><strong>Shell</strong></td>
+<td>PowerShell</td>
+<td>CMD või PowerShell (määratav <code>ansible_shell_type</code>)</td>
+</tr>
+<tr>
+<td><strong>Plussid</strong></td>
+<td>Sügav Windowsi integratsioon, lai haldusvõimekus</td>
+<td>Lihtne, Linuxiga ühtne töövoog, vähem seadistust</td>
+</tr>
+<tr>
+<td><strong>Miinused</strong></td>
+<td>Võib olla keeruline seadistada (eriti krüpteering ja tulemüürid)</td>
+<td>Kõik Windowsi käsud ei tööta OpenSSH shellis samamoodi kui PowerShellis</td>
+</tr>
+</tbody>
+</table>
+<h3 id="windows-hosti-uhendamine-ansibleiga-openssh-abil">Windows hosti ühendamine Ansible'iga OpenSSH abil<a class="headerlink" href="#windows-hosti-uhendamine-ansibleiga-openssh-abil" title="Permanent link">&para;</a></h3>
+<p>Windowsi masinatele saab Ansible'iga ligi ka OpenSSH-serveri kaudu, mis on tänapäeval paljudes Windowsi versioonides (nt Windows 10, 11 ja Server 2019+) juba sisseehitatud või hõlpsasti paigaldatav. Järgnevalt vaatame samm-sammult selle seadistamist.</p>
+<ol>
+<li>Ava Windowsi hostis PowerShell/Terminal administraatorina.</li>
+<li>Kontrolli, kas OpenSSH Server on juba paigaldatud:
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nb">Get-WindowsCapability</span> <span class="n">-Online</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="n">Name</span> <span class="o">-like</span> <span class="s1">&#39;OpenSSH.Server*&#39;</span>
+</code></pre></div></li>
+<li>Kui ei ole paigaldatud, paigalda:
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nb">Add-WindowsCapability</span> <span class="n">-Online</span> <span class="n">-Name</span> <span class="n">OpenSSH</span><span class="p">.</span><span class="n">Server</span>
+</code></pre></div></li>
+<li>Käivita ja luba teenus automaatselt:
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nb">Set-Service</span> <span class="n">-Name</span> <span class="n">sshd</span> <span class="n">-StartupType</span> <span class="s1">&#39;Automatic&#39;</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="nb">Start-Service</span> <span class="n">sshd</span>
+</code></pre></div></li>
+<li>Ava port 22 (SSH) Windowsi tulemüüris:
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nb">New-NetFirewallRule</span> <span class="n">-Name</span> <span class="n">sshd</span> <span class="n">-DisplayName</span> <span class="s1">&#39;OpenSSH Server (sshd)&#39;</span> <span class="n">-Enabled</span> <span class="n">True</span> <span class="n">-Direction</span> <span class="n">Inbound</span> <span class="n">-Protocol</span> <span class="n">TCP</span> <span class="n">-Action</span> <span class="n">Allow</span> <span class="n">-LocalPort</span> <span class="n">22</span>
+</code></pre></div></li>
+<li>Võtmetega autenimise jaoks luba ja käivita <code>ssh-agent</code> teenus:
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nb">Set-Service</span> <span class="n">-Name</span> <span class="n">ssh-agent</span> <span class="n">-StartupType</span> <span class="s1">&#39;Automatic&#39;</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="nb">Start-Service</span> <span class="n">ssh-agent</span>
+</code></pre></div></li>
+<li>
+<p>Windowsis on võtmega autentimine natuke teistsugune kui Linuxis. Administrator konto puhul soovitab Microsoft kasutada <code>authorized_keys</code> jaoks spetsiaalset faili: <code>C:\ProgramData\ssh\administrators_authorized_keys</code>, mille sisse tuleb lisada Ansible CN masina avalik võti. 
+    Selleks leia Ansible CN masinast üles eelnevalt avalik võti, mida soovid kasutada.</p>
+<p>Näiteks:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>cat<span class="w"> </span>~/.ssh/id_ed25519.pub
+</code></pre></div>
+Kopeeri võti täielikult, et saaksid seda kasutada.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Tavakasutaja jaoks on ka võtmeid võimalik luua kui selleks on vajadust. Siis on Windowsil kasutusel teekond <code>C:\Users\kasutaja\.ssh\authorized_keys</code>.</p>
+</div>
+</li>
+<li>
+<p>Loo parooliga ühendus Ansible CN masinast Windows Serverisse (eeldame, et Windows Serveril kasutatakse kontot Administrator):
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>ssh<span class="w"> </span>Administrator@windows_host
+</code></pre></div>
+    Sisse logides käivita käsureal poweshell:
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">powershell</span>
+</code></pre></div>
+    Nüüd lisa Ansible CN võti õigesse kohta, käsus asenda <code>&lt;avalik_ssh_võti&gt;</code> kopeeritud avaliku SSH võtmega: 
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="nb">Add-Content</span> <span class="n">-Path</span> <span class="n">C</span><span class="p">:\</span><span class="n">ProgramData</span><span class="p">\</span><span class="n">ssh</span><span class="p">\</span><span class="n">administrators_authorized_keys</span> <span class="n">-Value</span> <span class="s2">&quot;&lt;avalik_ssh_võti&gt;&quot;</span>
+</code></pre></div></p>
+</li>
+<li><code>administrators_authorized_keys</code>fail peab olema ainult <strong>Administrators</strong> ja <strong>SYSTEM</strong> kontrolli all, vastasel juhul OpenSSH keeldub seda kasutamast. Seega sea nüüd ka vajalikud õigused:
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="n">icacls</span><span class="p">.</span><span class="n">exe</span> <span class="s2">&quot;C:\ProgramData\ssh\administrators_authorized_keys&quot;</span> <span class="p">/</span><span class="n">inheritance</span><span class="p">:</span><span class="nb">r </span><span class="p">/</span><span class="n">grant</span> <span class="s2">&quot;Administrators:F&quot;</span> <span class="p">/</span><span class="n">grant</span> <span class="s2">&quot;SYSTEM:F&quot;</span>
+</code></pre></div></li>
+<li>Taaskäivita SSH teenus:
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nb">Restart-Service</span> <span class="n">sshd</span>
+</code></pre></div></li>
+<li>
+<p>Katkesta SSH ühenduse ja proovi uuesti ühenduda:
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>ssh<span class="w"> </span>Administrator@windows_host
+</code></pre></div>
+    Kui eelnevad tegevused said korrektselt teostatud, siis toimub ühendus nüüd ilma parooli küsimata.</p>
+</li>
+<li>
+<p>Ansible peab teadma, kuidas Windowsi hostiga ühendust võtta.</p>
+<p>Inventory failis tuleb kirjeldada:</p>
+<ul>
+<li><code>ansible_host</code> - Windowsi hosti IP</li>
+<li><code>ansible_user</code> - kasutaja, millega ühendutakse</li>
+<li><code>ansible_connection=ssh</code> - käsib Ansible’il kasutada OpenSSH-d (mitte WinRM-i)</li>
+<li><code>ansible_ssh_private_key_file</code> - ütleb, millist võtit kasutada (siin vaikimisi ~/.ssh/id_ed25519)</li>
+<li><code>ansible_shell_type: powershell</code> – ütleb Ansible'ile, et käsud tuleb käivitada PowerShellis. On vajalik, muidu Ansible eeldab CMD-d.</li>
+<li><code>ansible_shell_executable: powershell.exe</code> – määrab täpse shelli käivitusfaili, mis on vajalik mõnes Windowsi versioonis, et vältida vigu nagu command not found.</li>
+</ul>
+<p>Inventrory näited:</p>
+<p><code>ini</code>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="k">[winservers]</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="na">win1 ansible_host</span><span class="o">=</span><span class="s">192.168.56.101 ansible_user=Administrator ansible_connection=ssh ansible_ssh_private_key_file=~/.ssh/id_ed25519 ansible_shell_type=powershell ansible_shell_executable=powershell.exe</span>
+</code></pre></div></p>
+<p><code>yaml</code>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="nt">all</span><span class="p">:</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="w">  </span><span class="nt">children</span><span class="p">:</span>
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="w">    </span><span class="nt">winservers</span><span class="p">:</span>
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="w">      </span><span class="nt">hosts</span><span class="p">:</span>
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="w">        </span><span class="nt">win1</span><span class="p">:</span>
+<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="w">          </span><span class="nt">ansible_host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">192.168.56.101</span>
+<a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="w">          </span><span class="nt">ansible_user</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Administrator</span>
+<a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a><span class="w">          </span><span class="nt">ansible_connection</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ssh</span>
+<a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a><span class="w">          </span><span class="nt">ansible_ssh_private_key_file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~/.ssh/id_ed25519</span>
+<a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a><span class="w">          </span><span class="nt">ansible_shell_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">powershell</span>
+<a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a><span class="w">          </span><span class="nt">ansible_shell_executable</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">powershell.exe</span>
+</code></pre></div></p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Ansible'i <em>inventory</em> muutujad soovitatakse paigutada eraldi failidesse nagu group_vars ja host_vars, et hoida konfiguratsioon puhtana, korduvkasutatavana ja skaleeritavana. Seda vaatame täpsemalt aga hiljem.</p>
+</div>
+</li>
+<li>
+<p>Kontrolli ühendust Ansible’iga</p>
+<p>Proovime kontrolliks Ansible abil käivitada <strong>ping</strong> moodulit (pane tähele, et moodul, mida kasutame on teine kui Linuxil):</p>
+<p>Näide: 
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>ansible<span class="w"> </span>-i<span class="w"> </span>inventory/hosts.yml<span class="w"> </span>win1<span class="w"> </span>-m<span class="w"> </span>win_ping
+</code></pre></div>
+või (kui inventory failile pole eraldi vaja viidata)
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>ansible<span class="w"> </span>win1<span class="w"> </span>-m<span class="w"> </span>win_ping
+</code></pre></div></p>
+<p>Kui kõik töötab, saad "ping"-ile vastuseks "pong":<br />
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="err">wi</span><span class="kc">n</span><span class="mi">1</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="err">SUCCESS</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="w">  </span><span class="nt">&quot;changed&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="w">  </span><span class="nt">&quot;ping&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pong&quot;</span>
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="p">}</span>
+</code></pre></div></p>
+</li>
+</ol>
+<h3 id="windows-hosti-uhendamine-ansibleiga-winrm-abil">Windows hosti ühendamine Ansible'iga WinRM abil<a class="headerlink" href="#windows-hosti-uhendamine-ansibleiga-winrm-abil" title="Permanent link">&para;</a></h3>
+<p>Ansible toetab Windowsi haldamist <strong>WinRM (Windows Remote Management)</strong> kaudu, mis on PowerShell Remotingu alusprotokoll. See on Ansible’i ametlikult soovitatud meetod Windowsi masinate haldamiseks. Vaikimisi töötab WinRM krüpteerimata HTTP kaudu üle pordi 5985 – seda ei tohiks kasutada production-keskkonnas. Turvaliseks kasutamiseks tuleb seadistada HTTPS listener (port 5986) koos sertifikaadiga. Vaatamegi nüüd turvalist ühendust:</p>
+<ol>
+<li>
+<p>Luba PowerShell Remoting Windowsi hostis</p>
+<p>Ava PowerShell administraatorina ja käivitage:  </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="nb">Enable-PSRemoting</span> <span class="n">-Force</span>
+</code></pre></div>
+<p>See loob vajalikud WinRM-i listenerid ja lubab tulemüüri reeglid. </p>
+</li>
+<li>
+<p>Kontrolli WinRM-i olekut</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="n">winrm</span> <span class="n">quickconfig</span>
+</code></pre></div>
+<p><code>Do you want to Configure LocalAccountTokenFilterPolicy to grant administrative rights remotely to local users</code> - See küsimus ilmub, sest winrm quickconfig soovib lubada kohalikul administraatorikontol säilitada täisõigused ka kaugühenduse korral. Windowsi UAC (User Account Control) rakendab vaikimisi token filtering-it, mis eemaldab osa administraatori õigusi, kui ühendus tuleb võrgu kaudu. </p>
+<ul>
+<li><strong>Nõustu muutusega, kui sul domeeni pole veel loodud.</strong></li>
+<li>See muudatus ei ole vajalik, kui kasutad domeenikontot (nt Active Directory), sest UAC token filtering ei mõjuta domeenikontosid.</li>
+</ul>
+</li>
+<li>
+<p>Loo sertifikaat (self-signed)</p>
+<p>Production keskkonnas soovitatakse kasutada CA poolt väljastatud sertifikaati. Õppimiseks sobib self-signed sertifikaat.</p>
+<p>Näide sertifikaadi loomisest:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="nv">$cert</span> <span class="p">=</span> <span class="nb">New-SelfSignedCertificate</span> <span class="n">-DnsName</span> <span class="s2">&quot;win1.local&quot;</span> <span class="n">-CertStoreLocation</span> <span class="s2">&quot;Cert:\LocalMachine\My&quot;</span>
+</code></pre></div>
+<ul>
+<li><code>DnsName</code> väärtuseks pane oma serveri hostname või IP (nt 192.168.56.101).</li>
+<li><code>Cert:\LocalMachine\My</code>: Sertifikaat salvestatakse masinasse sertifikaadihoidlasse (LocalMachine\My). <code>LocalMachine</code> - sertifikaat paigaldatakse arvuti tasemel (mitte ainult konkreetsele kasutajale). <code>My</code> - see on sertifikaadihoidla nimi ("Personal" store). Seal hoitakse arvuti/teenuse jaoks vajalikke isiklikke sertifikaate, mida saab kasutada nt krüpteeritud ühenduste loomiseks.</li>
+</ul>
+</li>
+<li>
+<p>HTTPS listeneri loomine WinRM-ile</p>
+<p>Leia sertifikaadi thumbprint:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="nv">$cert</span><span class="p">.</span><span class="n">Thumbprint</span>
+</code></pre></div></p>
+<p>Seejärel loo uus HTTPS listener (muuda hostname selliseks nagu kasutasid sertifikaadi loomisel):
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="n">winrm</span> <span class="n">create</span> <span class="n">winrm</span><span class="p">/</span><span class="n">config</span><span class="p">/</span><span class="n">Listener</span><span class="k">?</span><span class="n">Address</span><span class="p">=*+</span><span class="n">Transport</span><span class="p">=</span><span class="n">HTTPS</span> <span class="s2">&quot;@{Hostname=</span><span class="se">`&quot;</span><span class="s2">win1.local</span><span class="se">`&quot;</span><span class="s2">; CertificateThumbprint=</span><span class="se">`&quot;</span><span class="p">$(</span><span class="nv">$cert</span><span class="p">.</span><span class="n">Thumbprint</span><span class="p">)</span><span class="se">`&quot;</span><span class="s2">}&quot;</span>
+</code></pre></div></p>
+<p>Kontrolli, et listener lisandus:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="n">winrm</span> <span class="n">enumerate</span> <span class="n">winrm</span><span class="p">/</span><span class="n">config</span><span class="p">/</span><span class="n">Listener</span>
+</code></pre></div></p>
+<p>Nüüd kuulab WinRM porti 5986 (HTTPS).</p>
+</li>
+<li>
+<p>Tulemüüri seadistus</p>
+<p>Lisa reegel, mis lubab WinRM HTTPS liikluse (port 5986):
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="nb">New-NetFirewallRule</span> <span class="n">-Name</span> <span class="s2">&quot;WinRM-HTTPS&quot;</span> <span class="n">-DisplayName</span> <span class="s2">&quot;WinRM over HTTPS&quot;</span> <span class="n">-Protocol</span> <span class="n">TCP</span> <span class="n">-LocalPort</span> <span class="n">5986</span> <span class="n">-Action</span> <span class="n">Allow</span> <span class="n">-Direction</span> <span class="n">Inbound</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Self-signed sertifikaadi lisamine Trusted Root Certification Authorities hoidlasse</p>
+<p>Otsi loodud sertifikaat My store'ist:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="nv">$cert</span> <span class="p">=</span> <span class="nb">Get-ChildItem</span> <span class="n">-Path</span> <span class="n">Cert</span><span class="p">:\</span><span class="n">LocalMachine</span><span class="p">\</span><span class="n">My</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="n">DnsNameList</span> <span class="o">-match</span> <span class="s2">&quot;win1.local&quot;</span> <span class="p">}</span>
+</code></pre></div>
+Ekspordi see failiks:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="nb">Export-Certificate</span> <span class="n">-Cert</span> <span class="nv">$cert</span> <span class="n">-FilePath</span> <span class="n">C</span><span class="p">:\</span><span class="n">winrm-cert</span><span class="p">.</span><span class="n">cer</span>
+</code></pre></div>
+Impordi see Trusted Root Certification Authorities alla:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="nb">Import-Certificate</span> <span class="n">-FilePath</span> <span class="n">C</span><span class="p">:\</span><span class="n">winrm-cert</span><span class="p">.</span><span class="n">cer</span> <span class="n">-CertStoreLocation</span> <span class="s2">&quot;Cert:\LocalMachine\Root&quot;</span>
+</code></pre></div>
+Testi ühendust iseendaga (localhost), et kontrollida kas listener vastab:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="nb">Test-WSMan</span> <span class="n">-ComputerName</span> <span class="s2">&quot;win1.local&quot;</span> <span class="n">-Port</span> <span class="n">5986</span> <span class="n">-UseSSL</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Ansible inventory seadistamine</p>
+<p>Kui WinRM on seadistatud, tuleb Ansible’is määrata õiged muutujad: </p>
+<ul>
+<li><code>ansible_connection=winrm</code> – määrab, et kasutatakse WinRM-i.</li>
+<li><code>ansible_winrm_transport</code> – autentimisprotokolli, tavaliselt ntlm, kuid võib olla ka credssp või kerberos (vt. tabelit).</li>
+<li><code>ansible_winrm_server_cert_validation=ignore</code> – õppetöös mugav, sest self-signed sert ei ole CA poolt usaldatud. Production’is tuleks see panna validate ja kasutada CA sertifikaate.</li>
+<li><code>ansible_port=5986</code> – HTTPS port.</li>
+</ul>
+<p>Näiteks:</p>
+<p><code>ini</code>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="k">[winservers]</span>
+<a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a><span class="na">win1 ansible_host</span><span class="o">=</span><span class="s">192.168.56.101 ansible_user=Administrator ansible_password=SalajaneParool ansible_connection=winrm ansible_winrm_transport=ntlm ansible_winrm_server_cert_validation=ignore ansible_port=5986</span>
+</code></pre></div></p>
+<p><code>yaml</code>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>all:
+<a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a>  children:
+<a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a>    winservers:
+<a id="__codelineno-38-4" name="__codelineno-38-4" href="#__codelineno-38-4"></a>      hosts:
+<a id="__codelineno-38-5" name="__codelineno-38-5" href="#__codelineno-38-5"></a>        win1:
+<a id="__codelineno-38-6" name="__codelineno-38-6" href="#__codelineno-38-6"></a>          ansible_host: 192.168.56.101
+<a id="__codelineno-38-7" name="__codelineno-38-7" href="#__codelineno-38-7"></a>          ansible_user: Administrator
+<a id="__codelineno-38-8" name="__codelineno-38-8" href="#__codelineno-38-8"></a>          ansible_password: &quot;SalajaneParool&quot;
+<a id="__codelineno-38-9" name="__codelineno-38-9" href="#__codelineno-38-9"></a>          ansible_connection: winrm
+<a id="__codelineno-38-10" name="__codelineno-38-10" href="#__codelineno-38-10"></a>          ansible_winrm_transport: ntlm
+<a id="__codelineno-38-11" name="__codelineno-38-11" href="#__codelineno-38-11"></a>          ansible_winrm_server_cert_validation: ignore
+<a id="__codelineno-38-12" name="__codelineno-38-12" href="#__codelineno-38-12"></a>          ansible_port: 5986
+</code></pre></div></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Turvalisuse mõttes tuleks paroolid hoida <strong>Ansible Vault</strong> abil, mitte otse <em>inventory</em> failis. Seda käsitleme hiljem turvalisuse materjalis.  </p>
+</div>
+<p>Autentimiprotokolli valik sõltub keskkonnast:</p>
+<table>
+<thead>
+<tr>
+<th>Protokoll</th>
+<th>Kus kasutatakse</th>
+<th>Kirjeldus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ntlm</strong></td>
+<td>Tavaline kohalik või domeenikonto</td>
+<td>Kõige levinum meetod. Lihtne seadistada, sobib enamasti labori jaoks.</td>
+</tr>
+<tr>
+<td><strong>credssp</strong></td>
+<td>Kui vaja volitada mandaate edasi</td>
+<td>Võimaldab edastada mandaadid ka <em>teistele masinatele</em>. Vajab lisaseadistust.</td>
+</tr>
+<tr>
+<td><strong>kerberos</strong></td>
+<td>Active Directory domeenikeskkond</td>
+<td>Kõige turvalisem lahendus. Kasutab domeeni SSO-d, ei pea parooli käsitsi sisestama.</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Kontrolli ühendust Ansible’iga</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a>ansible<span class="w"> </span>win1<span class="w"> </span>-m<span class="w"> </span>win_ping
+</code></pre></div>
+<p>Kui kõik on korras, näed väljundit:<br />
+<div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="err">wi</span><span class="kc">n</span><span class="mi">1</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="err">SUCCESS</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a><span class="nt">&quot;changed&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a><span class="nt">&quot;ping&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pong&quot;</span>
+<a id="__codelineno-40-4" name="__codelineno-40-4" href="#__codelineno-40-4"></a><span class="p">}</span>
+</code></pre></div></p>
+</li>
+</ol>
+<hr />
+<h2 id="hostide-lisamise-head-tavad">Hostide lisamise head tavad<a class="headerlink" href="#hostide-lisamise-head-tavad" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Kasuta <strong>SSH võtmeid</strong> SSH ühenduste puhul hostidega – ära kasuta paroole inventuuri failides.  </li>
+<li>Kasuta <strong>Ansible Vault</strong>’i paroolide turvaliseks hoidmiseks.  </li>
+<li>Kontrolli alati ühendust <code>ping</code> mooduliga enne, kui jooksutad keerukamaid playbooke.  </li>
+<li>Hoia Linuxi ja Windowsi hostid eraldi gruppides.  </li>
+<li>Grupeeri hostid loogiliselt (nt webservers, dbservers, test, prod) – see lihtsustab playbookide haldamist.</li>
+<li>Kasuta alias-nimesid hostide jaoks, et vältida IP-aadresside kasutamist otse playbookides. See muudab konfiguratsiooni loetavamaks ja paremini hallatavaks.</li>
+</ul>
+<hr />
+<h2 id="rohkem-infot">Rohkem infot<a class="headerlink" href="#rohkem-infot" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://docs.ansible.com/ansible/latest/inventory_guide/intro_inventory.html#connecting-to-hosts" target="_blank">Connecting to Linux Hosts</a>   </li>
+<li><a href="https://docs.ansible.com/ansible/latest/user_guide/windows.html" target="_blank">Connecting to Windows Hosts</a>   </li>
+<li><a href="https://docs.ansible.com/ansible/latest/user_guide/windows_winrm.html" target="_blank">WinRM Setup Guide</a>   </li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Üles
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Jalus" >
+        
+          
+          <a href="../ansibleconf/" class="md-footer__link md-footer__link--prev" aria-label="Eelmine: Ansible levinumad seadistused">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Eelmine
+              </span>
+              <div class="md-ellipsis">
+                Ansible levinumad seadistused
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../ansiblemodules/" class="md-footer__link md-footer__link--next" aria-label="Järgmine: Moodulid ja ad-hoc käsud">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Järgmine
+              </span>
+              <div class="md-ellipsis">
+                Moodulid ja ad-hoc käsud
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M247.1 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L179.2 256 41.9 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Priit Paap
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "content.code.copy", "content.tabs.link", "header.autohide", "announce.dismiss", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Kopeeritud", "clipboard.copy": "Kopeeri l\u00f5ikelauale", "search.result.more.one": "1 veel sellel lehel", "search.result.more.other": "# veel sellel lehel", "search.result.none": "Otsingule ei leitud \u00fchtegi vastet", "search.result.one": "Leiti \u00fcks tulemus", "search.result.other": "Leiti # tulemust", "search.result.placeholder": "Otsimiseks kirjuta siia", "search.result.term.missing": "Puudub", "select.version": "Vali versioon"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>
