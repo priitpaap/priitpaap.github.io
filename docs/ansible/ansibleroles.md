@@ -289,6 +289,8 @@ Sa saad soovi korral sinu enda loodud rolli registreerida Galaxy keskkonnas, et 
 
 **Rollide halduse automatiseerimine**
 
+Kui projektis on vaja mitut rolli või soovid, et saaksid need lihtsalt ühe käsuga alla laadida, kasuta faili nimega `requirements.yml`.
+
 Kasutades `requirements.yml` faili, saad määrata kõik vajalikud rollid ja nende versioonid. Näiteks:
 
 ```yaml
@@ -299,7 +301,13 @@ Kasutades `requirements.yml` faili, saad määrata kõik vajalikud rollid ja nen
 ```
 Ja installida need kõik korraga:
 
-`ansible-galaxy install -r requirements.yml`
+`ansible-galaxy install -r requirements.yml -p roles/`
+
+*`version:` on valikuline – kui jätad välja, paigaldatakse viimane saadaval versioon.*
+
+Kui soovid kõik rollid uuesti (või uuemad versioonid) alla laadida:
+
+`ansible-galaxy install -r requirements.yml -p roles/ --force`
 
 
 ## Rollide sees teiste failidele viitamine
