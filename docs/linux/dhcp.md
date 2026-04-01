@@ -1,3 +1,5 @@
+icon:material/debian
+
 # isc-dhcp-server DHCP serveri seadistamine
 
 ## Eesmärk
