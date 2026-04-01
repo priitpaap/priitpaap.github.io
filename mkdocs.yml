@@ -79,6 +79,7 @@ nav:
   - Operatsioonisüsteemid:
     - 'Linux OS':
       - 'Debian Linuxi paigaldamine virutaalmasinale': linux/debpaigaldus.md 
+      - 'DHCP serveri seadistamine': linux/dhcp.md
   - Automatiseerimine:
     - 'Ansible':
       - 'Ansible ülevaade': ansible/ansibleintro.md
