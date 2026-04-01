@@ -1,3 +1,5 @@
+icon:material/debian
+
 # bind9 DNS serveri seadistamine
 
 ## Eesmärk
