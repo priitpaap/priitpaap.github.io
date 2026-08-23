@@ -154,7 +154,7 @@ Seda saab otse lisada playbooki või `group_vars` failidesse.
 
 ## Mitme Vaulti kasutamine
 
-Suuremates projektides võib kasutada mitut Vaulti (nt eraldi dev, test, prod keskkondade jaoks).  
+Suuremates projektides võib  kasutada mitut Vaulti (nt eraldi dev, test, prod keskkondade jaoks).  
 Sellisel juhul saab kasutada **Vault ID-sid**:
 
 ```bash
