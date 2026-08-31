@@ -79,9 +79,10 @@ nav:
   - Operatsioonisüsteemid:
     - 'Linux OS':
       - 'Debian Linuxi paigaldamine virutaalmasinale': linux/debpaigaldus.md 
-      - 'DHCP serveri seadistamine': linux/dhcp.md
-      - 'DNS serveri seadistamine': linux/dns.md
       - 'Linuxi baaskäsud - spikker': linux/linuxi-baaskasud-spikker.md
+    - 'Linuxi teenused':
+      - 'DHCP serveri seadistamine': linux/dhcp.md
+      - 'DNS serveri seadistamine': linux/dns.md      
   - Automatiseerimine:
     - 'Ansible':
       - 'Ansible ülevaade': ansible/ansibleintro.md
