@@ -145,9 +145,9 @@ Manuaalis otsimiseks vajuta `/`, kirjuta otsingusõna ja vajuta Enter.
 
 ---
 
-# Liikumine kataloogipuus
+## Liikumine kataloogipuus
 
-## Hetkeasukoht – `pwd`
+### Hetkeasukoht – `pwd`
 
 Käsk `pwd` (*print working directory*) näitab, millises kataloogis parajasti asud.
 
@@ -163,7 +163,7 @@ Näiteks:
 
 ---
 
-## Kodukataloog
+### Kodukataloog
 
 Tavakasutajate kodukataloogid asuvad tavaliselt `/home` all.
 
@@ -195,7 +195,7 @@ viitavad samale asukohale.
 
 ---
 
-## Kataloogi vahetamine – `cd`
+### Kataloogi vahetamine – `cd`
 
 `cd` (*change directory*) muudab aktiivset kataloogi.
 
@@ -227,7 +227,7 @@ Eelmisesse asukohta:
 cd -
 ```
 
-### Suhteline tee
+#### Suhteline tee
 
 Kui asud kataloogis `/home/student`, siis:
 
@@ -241,7 +241,7 @@ viib kataloogi:
 /home/student/ajutine
 ```
 
-### Absoluutne tee
+#### Absoluutne tee
 
 Absoluutne tee algab juurkataloogist `/`:
 
@@ -254,9 +254,9 @@ cd /var/log
 
 ---
 
-# Kataloogide sisu vaatamine
+## Kataloogide sisu vaatamine
 
-## `ls`
+### `ls`
 
 Käsk `ls` kuvab kataloogi sisu.
 
@@ -300,9 +300,9 @@ See on käsureal väga oluline töövõte – paljude toimingute jaoks ei ole va
 
 ---
 
-# Failide ja kataloogide loomine
+## Failide ja kataloogide loomine
 
-## Kataloogi loomine – `mkdir`
+### Kataloogi loomine – `mkdir`
 
 Ühe kataloogi loomine:
 
@@ -322,7 +322,7 @@ Alamkataloogi saab luua teed kasutades:
 mkdir ajutine/failid1
 ```
 
-### Puuduvate ülemkataloogide loomine
+#### Puuduvate ülemkataloogide loomine
 
 Võti `-p` loob vajadusel ka puuduvad ülemkataloogid:
 
@@ -334,7 +334,7 @@ Kui `projekt` või `docs` veel ei eksisteeri, luuakse ka need.
 
 ---
 
-## Brace expansion – mitme nime kiire loomine
+### Brace expansion – mitme nime kiire loomine
 
 Bash võimaldab looksulgudega genereerida mitu nime.
 
@@ -380,7 +380,7 @@ gruppd
 
 ---
 
-## Tühikuga nimed
+### Tühikuga nimed
 
 Shell kasutab tühikut käskude osade eraldamiseks. Seetõttu tuleb tühikut sisaldav nimi kirjutada jutumärkidesse:
 
@@ -413,7 +413,7 @@ olulised_failid
 
 ---
 
-## Tühja faili loomine – `touch`
+### Tühja faili loomine – `touch`
 
 Tühja faili saab luua käsuga:
 
@@ -431,9 +431,9 @@ Kui fail on juba olemas, ei kustuta `touch` selle sisu. Tavaliselt uuendatakse f
 
 ---
 
-# Failide kopeerimine
+## Failide kopeerimine
 
-## `cp`
+### `cp`
 
 Faili kopeerimine:
 
@@ -453,7 +453,7 @@ Faili saab kopeerimisel anda sellele uue nime:
 cp andmed.txt andmed-varukoopia.txt
 ```
 
-### Kataloogi kopeerimine
+#### Kataloogi kopeerimine
 
 Kataloogi koos sisuga kopeerimiseks kasutatakse rekursiivset võtit `-r`:
 
@@ -470,9 +470,9 @@ cp -r skriptid ~/ajutine/
 
 ---
 
-# Failide teisaldamine ja ümbernimetamine
+## Failide teisaldamine ja ümbernimetamine
 
-## `mv`
+### `mv`
 
 `mv` (*move*) teisaldab faili või kataloogi.
 
@@ -488,7 +488,7 @@ mv projekt ~/ajutine/
 
 Erinevalt `cp` käsust ei ole kataloogi teisaldamiseks tavaliselt `-r` võtit vaja.
 
-### Faili ümbernimetamine
+#### Faili ümbernimetamine
 
 Linuxis kasutatakse sama käsku ka ümbernimetamiseks:
 
@@ -496,7 +496,7 @@ Linuxis kasutatakse sama käsku ka ümbernimetamiseks:
 mv data1.txt ajutised_andmed
 ```
 
-### Teisaldamine ja ümbernimetamine korraga
+#### Teisaldamine ja ümbernimetamine korraga
 
 ```bash
 mv /srv/ohoo ~/ajutine/failid4
@@ -509,9 +509,9 @@ Sel juhul viiakse objekt uude asukohta ja sellele antakse uus nimi.
 
 ---
 
-# Failide kustutamine
+## Failide kustutamine
 
-## `rm`
+### `rm`
 
 Faili kustutamine:
 
@@ -528,7 +528,7 @@ rm fail1 fail2 fail3
 !!! danger "Linuxis ei ole käsurea `rm`-il tavaliselt prügikasti"
     Käsuga `rm` kustutatud faili ei saa tavaliselt graafilise töölaua prügikastist taastada. Kontrolli enne Enteri vajutamist hoolikalt faili nime ja asukohta.
 
-### Kataloogi kustutamine
+#### Kataloogi kustutamine
 
 Kataloogi ja selle sisu kustutamiseks kasutatakse:
 
@@ -548,7 +548,7 @@ Tühja kataloogi saab eemaldada ka käsuga:
 rmdir kataloog
 ```
 
-### Kinnituse küsimine
+#### Kinnituse küsimine
 
 ```bash
 rm -i fail.txt
@@ -565,11 +565,11 @@ rm -ri kataloog
 
 ---
 
-# Metamärgid
+## Metamärgid
 
 Shell võimaldab failinimede valimiseks kasutada metamärke (*wildcards*).
 
-## `*` – suvaline märkide jada
+### `*` – suvaline märkide jada
 
 ```bash
 ls *.txt
@@ -598,7 +598,7 @@ kustutab aktiivsest kataloogist kõik `.txt` lõpuga failid.
     rm *.txt
     ```
 
-## `?` – üks suvaline märk
+### `?` – üks suvaline märk
 
 ```bash
 ls fail?.txt
@@ -620,9 +620,9 @@ fail10.txt
 
 ---
 
-# Tekstifailide sisu vaatamine
+## Tekstifailide sisu vaatamine
 
-## `cat`
+### `cat`
 
 Lühikese tekstifaili sisu kuvamiseks:
 
@@ -640,7 +640,7 @@ cat fail1.txt fail2.txt
 
 ---
 
-## `less`
+### `less`
 
 Pikema faili vaatamiseks:
 
@@ -662,7 +662,7 @@ Olulisemad klahvid:
 
 ---
 
-## `head`
+### `head`
 
 Faili alguse kuvamiseks:
 
@@ -692,7 +692,7 @@ head -n 5 /etc/passwd
 
 ---
 
-## `tail`
+### `tail`
 
 Faili lõpu kuvamiseks:
 
@@ -716,7 +716,7 @@ tail -f /var/log/fail.log
 
 ---
 
-# Tekstifailide muutmine
+## Tekstifailide muutmine
 
 Linuxis on palju tekstiredaktoreid. Alustamiseks sobib hästi **nano**.
 
@@ -746,11 +746,11 @@ nano ajutised_andmed
 
 ---
 
-# Väljundi suunamine faili
+## Väljundi suunamine faili
 
 Linuxis saab programmi väljundi terminali asemel faili suunata.
 
-## `>` – kirjuta väljund faili
+### `>` – kirjuta väljund faili
 
 ```bash
 hostnamectl > ajalugu.txt
@@ -771,7 +771,7 @@ head -n 5 /etc/passwd > esimesed.txt
 
 ---
 
-## `>>` – lisa väljund faili lõppu
+### `>>` – lisa väljund faili lõppu
 
 ```bash
 uptime >> ajalugu.txt
@@ -794,7 +794,7 @@ Erinevus:
 
 ---
 
-# Toru `|`
+## Toru `|`
 
 Toru (*pipe*) saadab ühe käsu väljundi teise käsu sisendiks.
 
@@ -818,11 +818,11 @@ Torusid kasutatakse Linuxi käsureal väga palju, sest väikseid programme saab 
 
 ---
 
-# Käskude ajalugu
+## Käskude ajalugu
 
 Bash säilitab varem sisestatud käske.
 
-## `history`
+### `history`
 
 ```bash
 history
@@ -839,7 +839,7 @@ history -c
 !!! warning
     `history -c` kustutab aktiivse shelli käsuajaloo. Seda ei ole tavapärases töös põhjust sageli kasutada.
 
-### Varasema käsu leidmine
+#### Varasema käsu leidmine
 
 Vajuta:
 
@@ -853,7 +853,7 @@ Nooleklahvidega `↑` ja `↓` saab samuti varasemate käskude vahel liikuda.
 
 ---
 
-# TAB-automaattäitmine
+## TAB-automaattäitmine
 
 `Tab` on Linuxi käsureal üks olulisemaid klahve.
 
@@ -878,9 +878,9 @@ TAB-i kasutamine:
 
 ---
 
-# Failide allalaadimine käsurealt
+## Failide allalaadimine käsurealt
 
-## `wget`
+### `wget`
 
 `wget` võimaldab faili veebist alla laadida.
 
@@ -904,7 +904,7 @@ wget -O uusnimi.txt https://example.com/fail.txt
 
 ---
 
-# Skripti käivitamine
+## Skripti käivitamine
 
 Shelliskript on tekstifail, mis sisaldab käske.
 
@@ -914,7 +914,7 @@ Näiteks fail:
 setup.sh
 ```
 
-## Käivitamine Bashiga
+### Käivitamine Bashiga
 
 Skripti saab käivitada Bashile argumendina:
 
@@ -924,7 +924,7 @@ bash setup.sh
 
 Sel juhul ei pea skriptil endal olema käivitusõigust.
 
-## Käivitamine failina
+### Käivitamine failina
 
 Kui skriptil on sobiv *shebang* ja käivitusõigus, saab seda käivitada:
 
@@ -951,7 +951,7 @@ chmod a+x setup.sh
 
 ---
 
-# `sudo`
+## `sudo`
 
 Mõned süsteemi muutvad käsud vajavad administraatori õigusi.
 
@@ -970,11 +970,11 @@ Failitoiminguid oma kodukataloogis peaks tavakasutaja üldjuhul saama teha ilma 
 
 ---
 
-# Mõned kasulikud süsteemikäsud
+## Mõned kasulikud süsteemikäsud
 
 Kuigi need ei ole otseselt failihalduskäsud, kasutatakse neid sageli koos failitoimingutega.
 
-## `whoami`
+### `whoami`
 
 Näitab aktiivse kasutaja nime:
 
@@ -982,7 +982,7 @@ Näitab aktiivse kasutaja nime:
 whoami
 ```
 
-## `hostnamectl`
+### `hostnamectl`
 
 Kuvab süsteemi ja arvuti nime kohta infot:
 
@@ -990,7 +990,7 @@ Kuvab süsteemi ja arvuti nime kohta infot:
 hostnamectl
 ```
 
-## `uptime`
+### `uptime`
 
 Näitab muu hulgas, kui kaua süsteem on töötanud:
 
@@ -1007,9 +1007,9 @@ uptime >> info.txt
 
 ---
 
-# Mitme käsu ühendamine
+## Mitme käsu ühendamine
 
-## `;`
+### `;`
 
 Käsud täidetakse järjest sõltumata sellest, kas eelmine õnnestus:
 
@@ -1017,7 +1017,7 @@ Käsud täidetakse järjest sõltumata sellest, kas eelmine õnnestus:
 pwd ; ls
 ```
 
-## `&&`
+### `&&`
 
 Järgmine käsk täidetakse ainult siis, kui eelmine õnnestus:
 
@@ -1027,7 +1027,7 @@ mkdir test && cd test
 
 See on kasulik juhul, kui teisel käsul on mõtet ainult esimese õnnestumise korral.
 
-## `||`
+### `||`
 
 Järgmine käsk täidetakse ainult siis, kui eelmine ebaõnnestus:
 
@@ -1037,7 +1037,7 @@ cd projekt || echo "Kataloogi ei leitud"
 
 ---
 
-# Olulisemad klahvikombinatsioonid
+## Olulisemad klahvikombinatsioonid
 
 | Klahv | Tegevus |
 |---|---|
@@ -1058,7 +1058,7 @@ cd projekt || echo "Kataloogi ei leitud"
 
 ---
 
-# Praktiline näide
+## Praktiline näide
 
 Oletame, et asud kasutaja `student` kodukataloogis.
 
@@ -1119,7 +1119,7 @@ cat info.txt
 
 ---
 
-# Enne kustutamist kontrolli
+## Enne kustutamist kontrolli
 
 Linuxi administraatori üks kasulikumaid harjumusi on enne muutvat või kustutavat käsku kontrollida, mida käsk mõjutab.
 
@@ -1154,7 +1154,7 @@ rm -r vana-kataloog
 
 ---
 
-# Kokkuvõte
+## Kokkuvõte
 
 Linuxi failihalduses kasutatakse kõige sagedamini järgmisi käske:
 
@@ -1190,7 +1190,7 @@ Kõige olulisem ei ole käskude päheõppimine. Oluline on osata:
 
 ---
 
-## Kontrollküsimused
+### Kontrollküsimused
 
 1. Mis vahe on terminalil ja shellil?
 2. Mida näitab `pwd`?
