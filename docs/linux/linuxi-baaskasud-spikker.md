@@ -1,3 +1,5 @@
+icon:material/debian
+
 # Linuxi baaskäskude spikker
 
 See spikker koondab Linuxi käsurea põhilised käsud tegevuste kaupa. Näited sobivad eelkõige **Debiani ja Ubuntu** laadsetele süsteemidele, kuid enamik käske töötab ka teistes Linuxi distributsioonides.
