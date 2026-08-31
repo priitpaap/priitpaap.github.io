@@ -76,11 +76,11 @@ copyright: Copyright &copy; 2025 Priit Paap
 
 nav:
   - Avalehele: https://priitpaap.github.io
-  - Operatsioonisüsteemid:
-    - 'Linux OS':
+  - Linux:
+    - 'Linuxi baasteadmised':
       - 'Debian Linuxi paigaldamine virutaalmasinale': linux/debpaigaldus.md 
       - 'Linuxi baaskäsud - spikker': linux/linuxi-baaskasud-spikker.md
-    - 'Linuxi teenused':
+    - 'Linuxi serverid ja teenused':
       - 'DHCP serveri seadistamine': linux/dhcp.md
       - 'DNS serveri seadistamine': linux/dns.md      
   - Automatiseerimine:
