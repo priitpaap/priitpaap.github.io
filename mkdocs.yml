@@ -25,10 +25,6 @@ theme:
     - search.suggest
 #    - toc.integrate
 
-  plugins:
-    - typeset
-    - search
-
   palette:
     # Palette toggle for dark mode
     - scheme: slate
@@ -46,6 +42,10 @@ theme:
         icon: material/weather-sunny
         name: Lülitu tumedale režiimile
 
+plugins:
+  - typeset
+  - search
+
 markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
@@ -57,10 +57,10 @@ markdown_extensions:
   - footnotes
   - pymdownx.details
   - pymdownx.superfences:
-    custom_fences:
-      - name: mermaid
-        class: mermaid
-        format: !!python/name:pymdownx.superfences.fence_code_format
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.mark
