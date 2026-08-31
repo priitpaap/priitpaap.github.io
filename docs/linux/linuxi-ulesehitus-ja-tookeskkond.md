@@ -1,3 +1,5 @@
+icon:material/debian
+
 # Linuxi ülesehitus ja töökeskkond
 
 Linux on tänapäeval kasutusel väga erinevates seadmetes: serverites, lauaarvutites, pilvekeskkondades, võrguseadmetes, nutiseadmetes, superarvutites ja paljudes manussüsteemides. Linuxi õppimisel on oluline eristada **Linuxi kernelit**, terviklikku **Linuxi distributsiooni** ning kasutajale nähtavat **töökeskkonda**.
