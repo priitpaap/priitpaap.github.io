@@ -1,6 +1,6 @@
 icon:material/debian
 
-# Linuxi käsurida ja failihalduse baaskäsud
+# Linuxi failihaldus ja baaskäsud
 
 Linuxi süsteemi haldamisel kasutatakse väga palju käsurida. Graafiline kasutajaliides võib olla mugav, kuid käsurida võimaldab tegevusi teha kiiresti, täpselt ja korratavalt. Serverites ei pruugi graafilist kasutajaliidest üldse olla.
 
