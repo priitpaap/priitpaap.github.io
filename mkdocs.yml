@@ -87,6 +87,7 @@ nav:
       - 'Linuxi ülesehitus ja töökeskkond': linux/linuxi-ulesehitus-ja-tookeskkond.md
       - 'Linuxi failhaldus ja baaskäsud': linux/failihalduse-baaskasud.md
       - 'Linuxi katalogipuu ja failisusteemi alused': linux/kataloogipuu-ja-failisusteemi-alused.md
+      - 'Linuxi kasutajate haldus': linux/linuxi-kasutajate-haldus.md
     - 'Linuxi serverid ja teenused':
       - 'DHCP serveri seadistamine': linux/dhcp.md
       - 'DNS serveri seadistamine': linux/dns.md      
