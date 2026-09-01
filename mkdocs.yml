@@ -83,6 +83,7 @@ nav:
   - Linux:
     - 'Ajalugu':
       - 'Unixi ja BSD ajalugu': linux/unixi-ja-bsd-ajalugu.md 
+      - 'Linuxi ajalugu': linux/linuxi-ajalugu.md
     - 'Linuxi baasteadmised':
       - 'Debian Linuxi paigaldamine virutaalmasinale': linux/debpaigaldus.md 
       - 'Linuxi käskude spikker': linux/linuxi-baaskasud-spikker.md

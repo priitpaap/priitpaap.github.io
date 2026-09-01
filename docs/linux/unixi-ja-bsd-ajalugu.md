@@ -497,4 +497,4 @@ flowchart TD
 4. The Open Group / IEEE – POSIX and Single UNIX Specification documentation  
    https://pubs.opengroup.org/
 
-5. Vana õppematerjal **„UNIX-i ja BSD ajalugu“ (2020)** – kasutatud teema ajaloolise struktuuri lähtepunktina; uuendatud õppematerjalis on parandatud ebatäpseid või liiga üldistavaid väiteid.
+   
