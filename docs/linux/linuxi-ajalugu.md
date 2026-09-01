@@ -1,4 +1,4 @@
-icon:material/linux
+icon:material/history
 
 # Linuxi ajalugu
 
