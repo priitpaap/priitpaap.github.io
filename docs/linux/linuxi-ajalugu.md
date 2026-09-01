@@ -114,19 +114,19 @@ Programmi võib müüa raha eest ja see võib siiski olla vaba tarkvara, kui kas
 
 Free Software Foundation kirjeldab nelja põhivabadust.
 
-### Vabadus 0
+**Vabadus 0**
 
 Kasutada programmi mis tahes eesmärgil.
 
-### Vabadus 1
+**Vabadus 1**
 
 Uurida, kuidas programm töötab, ning muuta seda vastavalt vajadusele.
 
-### Vabadus 2
+**Vabadus 2**
 
 Jagada programmi koopiaid teistega.
 
-### Vabadus 3
+**Vabadus 3**
 
 Jagada enda muudetud versioone teistega.
 
