@@ -86,14 +86,6 @@ Tüüpiline distributsioon sisaldab:
 - soovi korral graafilist töökeskkonda;
 - paigaldus- ja uuendustööriistu.
 
-```mermaid
-flowchart TB
-    A["Kasutaja"] --> B["Rakendused"]
-    B --> C["Shell / graafiline töökeskkond"]
-    C --> D["Süsteemiteegid ja userland"]
-    D --> E["Linuxi kernel"]
-    E --> F["Riistvara"]
-```
 
 ### Kernel
 
