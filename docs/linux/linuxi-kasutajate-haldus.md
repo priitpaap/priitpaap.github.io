@@ -1,4 +1,4 @@
-icon:material/account-cog
+icon:material/debian
 
 # Kasutajate haldus Linuxis
 
