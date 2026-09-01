@@ -86,6 +86,7 @@ nav:
       - 'Linuxi käskude spikker': linux/linuxi-baaskasud-spikker.md
       - 'Linuxi ülesehitus ja töökeskkond': linux/linuxi-ulesehitus-ja-tookeskkond.md
       - 'Linuxi failhaldus ja baaskäsud': linux/failihalduse-baaskasud.md
+      - 'Linuxi katalogipuu ja failisusteemi alused': linux/kataloogipuu-ja-failisusteemi-alused.md
     - 'Linuxi serverid ja teenused':
       - 'DHCP serveri seadistamine': linux/dhcp.md
       - 'DNS serveri seadistamine': linux/dns.md      
