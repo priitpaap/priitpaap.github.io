@@ -165,11 +165,11 @@ Näiteks:
 
 Kataloogi puhul on `rwx` tähendus mõnevõrra teistsugune.
 
-### `r` – read
+**`r` – read**
 
 Lubab lugeda kataloogikirjete ehk objektide nimede loendit.
 
-### `w` – write
+**`w` – write**
 
 Lubab kataloogikirjeid muuta, näiteks:
 
@@ -178,7 +178,7 @@ Lubab kataloogikirjeid muuta, näiteks:
 - luua alamkatalooge;
 - nimetada objekte ümber.
 
-### `x` – execute
+**`x` – execute**
 
 Kataloogi puhul tähendab `x` õigust kataloogi **läbida** (*traverse/search*). See võimaldab kataloogi siseneda, kasutada teadaoleva nimega objekti ja liikuda läbi kataloogi alamkataloogidesse.
 
