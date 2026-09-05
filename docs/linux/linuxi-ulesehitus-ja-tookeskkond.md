@@ -390,10 +390,10 @@ Järgmises õppematerjalis keskendume Linuxi käsurea kasutamisele ja baaskäsku
 
 ## Allikad ja lisalugemine
 
-- Linux Kernel Archives – *About Linux Kernel*: https://www.kernel.org/linux.html
-- GNU Project – *Bash Reference Manual*: https://www.gnu.org/software/bash/manual/
-- Debian – *About Debian*: https://www.debian.org/intro/about
-- Debian – *Packages*: https://www.debian.org/distrib/packages
-- Fedora Project – *Fedora Release Life Cycle*: https://fedoraproject.org/wiki/Fedora_Release_Life_Cycle
-- CentOS Project – *CentOS Stream*: https://www.centos.org/centos-stream/
+- Linux Kernel Archives – *About Linux Kernel*: [https://www.kernel.org/linux.html](https://www.kernel.org/){ target="_blank" rel="noopener" }
+- GNU Project – *Bash Reference Manual*: [https://www.gnu.org/software/bash/manual/](https://www.gnu.org/software/bash/manual/){ target="_blank" rel="noopener" }
+- Debian – *About Debian*: [https://www.debian.org/intro/about](https://www.debian.org/intro/about){ target="_blank" rel="noopener" }
+- Debian – *Packages*: [https://www.debian.org/distrib/packages](https://www.debian.org/distrib/packages){ target="_blank" rel="noopener" }
+- Fedora Project – *Fedora Release Life Cycle*: [https://fedoraproject.org/wiki/Fedora_Release_Life_Cycle](https://fedoraproject.org/wiki/Fedora_Release_Life_Cycle){ target="_blank" rel="noopener" }
+- CentOS Project – *CentOS Stream*: [https://www.centos.org/centos-stream/](https://www.centos.org/centos-stream/){ target="_blank" rel="noopener" }
 
