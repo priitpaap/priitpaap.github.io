@@ -214,12 +214,12 @@ chmod õigused objekt
 
 Õiguseid saab määrata kahel põhilisel viisil:
 
-1. sümboolselt;
+1. sümbolitega (tähtedega);
 2. numbriliselt.
 
 ---
 
-## Sümboolne `chmod`
+## Sümbolitega `chmod`
 
 ### Kelle õigusi muudetakse?
 
@@ -256,7 +256,7 @@ Viimase käsu tulemuseks on:
 ```
 
 !!! tip
-    Sümboolne meetod on hea siis, kui soovid muuta ainult ühte konkreetset õigust ja jätta ülejäänud puutumata.
+    Sümbolitega meetod on hea siis, kui soovid muuta ainult ühte konkreetset õigust ja jätta ülejäänud puutumata.
 
 ---
 
@@ -823,22 +823,11 @@ Setuid, setgid ja sticky bit võimaldavad lahendada erijuhtumeid ning ACL-id lai
 
 Kõige olulisem põhimõte on sama mis kasutajate halduses:
 
-> **anna ainult need õigused, mida kasutajal või teenusel tegelikult vaja on.**
+> **Anna ainult need õigused, mida kasutajal või teenusel tegelikult vaja on.**
 
 ---
 
 ## Allikad ja lisalugemine
 
-Algmaterjali põhiteemad põhinevad varasemal õppematerjalil **„Linuxi failiõigused“ (2020)**.
-
-Täiendavaks lugemiseks:
-
-- `man chmod`
-- `man chown`
-- `man chgrp`
-- `man umask`
-- `man stat`
-- `man acl`
-- `man getfacl`
-- `man setfacl`
+Linux man pages online: [https://man7.org/linux/man-pages/](https://man7.org/linux/man-pages/){ target="_blank" rel="noopener" }
 
