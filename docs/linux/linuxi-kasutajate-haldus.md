@@ -1018,12 +1018,4 @@ Järgmises teemas vaatleme, kuidas kasutajate ja gruppide identiteeti kasutataks
 
 ## Allikad ja lisalugemine
 
-- `man adduser`
-- `man useradd`
-- `man usermod`
-- `man deluser`
-- `man passwd`
-- `man getent`
-- `man passwd`
-- `man group`
-- `man shadow`
+Linux man pages online: [https://man7.org/linux/man-pages/](https://man7.org/linux/man-pages/){ target="_blank" rel="noopener" }
