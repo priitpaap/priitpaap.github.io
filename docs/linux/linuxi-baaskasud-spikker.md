@@ -1607,3 +1607,7 @@ tar -tzvf arhiiv.tar.gz
 6. **Absoluutne tee algab `/` märgiga.** Suhteline tee lähtestatakse aktiivsest kataloogist.
 7. **Ära lahenda failiõiguste probleeme automaatselt `chmod 777` abil.** Leia esmalt, millist õigust ja kellele tegelikult vaja on.
 
+## Allikad ja lisalugemine
+
+Linux man pages online: [https://man7.org/linux/man-pages/](https://man7.org/linux/man-pages/){ target="_blank" rel="noopener" }
+
