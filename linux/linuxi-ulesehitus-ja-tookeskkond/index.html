@@ -1,0 +1,3098 @@
+
+<!doctype html>
+<html lang="et" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../linuxi-baaskasud-spikker/">
+      
+      
+        <link rel="next" href="../failihalduse-baaskasud/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../images/computer.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Linuxi ülesehitus ja töökeskkond - IT alased õppematerjalid</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="deep-orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#linuxi-ulesehitus-ja-tookeskkond" class="md-skip">
+          Keri sisuni
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Päis">
+    <a href="../.." title="IT alased õppematerjalid" class="md-header__button md-logo" aria-label="IT alased õppematerjalid" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M348.8 32C340.7 46.1 336 62.5 336 80v16H64v224h272v64H64c-35.3 0-64-28.7-64-64V96c0-35.3 28.7-64 64-64zM336 432c0 17.5 4.7 33.9 12.8 48H120c-13.3 0-24-10.7-24-24s10.7-24 24-24zm96-400h96c26.5 0 48 21.5 48 48v352c0 26.5-21.5 48-48 48h-96c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48m24 64c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24zm56 144a32 32 0 1 0-64 0 32 32 0 1 0 64 0"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            IT alased õppematerjalid
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Linuxi ülesehitus ja töökeskkond
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="deep-orange"  aria-label="Lülitu heledale režiimile"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Lülitu heledale režiimile" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-blue" data-md-color-accent="deep-orange"  aria-label="Lülitu tumedale režiimile"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Lülitu tumedale režiimile" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Otsi" placeholder="Otsi" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Otsing">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Jaga" aria-label="Jaga" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Lähtesta" aria-label="Lähtesta" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Otsingu lähtestamine
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Vaheleht" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://priitpaap.github.io" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Avalehele
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../unixi-ja-bsd-ajalugu/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Linux
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ansible/ansibleintro/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Automatiseerimine
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigatsioon" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="IT alased õppematerjalid" class="md-nav__button md-logo" aria-label="IT alased õppematerjalid" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M348.8 32C340.7 46.1 336 62.5 336 80v16H64v224h272v64H64c-35.3 0-64-28.7-64-64V96c0-35.3 28.7-64 64-64zM336 432c0 17.5 4.7 33.9 12.8 48H120c-13.3 0-24-10.7-24-24s10.7-24 24-24zm96-400h96c26.5 0 48 21.5 48 48v352c0 26.5-21.5 48-48 48h-96c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48m24 64c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24zm56 144a32 32 0 1 0-64 0 32 32 0 1 0 64 0"/></svg>
+
+    </a>
+    IT alased õppematerjalid
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://priitpaap.github.io" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Avalehele
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Linux
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ajalugu
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Ajalugu
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unixi-ja-bsd-ajalugu/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.5 8H12v5l4.28 2.54.72-1.21-3.5-2.08zM13 3a9 9 0 0 0-9 9H1l3.96 4.03L9 12H6a7 7 0 0 1 7-7 7 7 0 0 1 7 7 7 7 0 0 1-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42A8.9 8.9 0 0 0 13 21a9 9 0 0 0 9-9 9 9 0 0 0-9-9"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Unixi ja BSD ajalugu
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linuxi-ajalugu/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.5 8H12v5l4.28 2.54.72-1.21-3.5-2.08zM13 3a9 9 0 0 0-9 9H1l3.96 4.03L9 12H6a7 7 0 0 1 7-7 7 7 0 0 1 7 7 7 7 0 0 1-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42A8.9 8.9 0 0 0 13 21a9 9 0 0 0 9-9 9 9 0 0 0-9-9"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Linuxi ajalugu
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linuxi baasteadmised
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Linuxi baasteadmised
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../debpaigaldus/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Debian Linuxi paigaldamine virutaalmasinale
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linuxi-baaskasud-spikker/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Linuxi käskude spikker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Linuxi ülesehitus ja töökeskkond
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Linuxi ülesehitus ja töökeskkond
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Sisukord">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Sisukord
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#opieesmargid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Õpieesmärgid
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mis-on-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Mis on Linux?
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#avatud-lahtekood" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Avatud lähtekood
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kus-linuxit-kasutatakse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Kus Linuxit kasutatakse?
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kernel-ja-distributsioon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Kernel ja distributsioon
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Kernel ja distributsioon">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kernel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Kernel
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#userland" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Userland
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linuxi-distributsioonid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Linuxi distributsioonid
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Linuxi distributsioonid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#olulisemad-distributsioonipered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Olulisemad distributsioonipered
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distributsioonide-sugulus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Distributsioonide sugulus
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debian-ja-vaba-tarkvara" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Debian ja vaba tarkvara
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cli-terminal-ja-shell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          CLI, terminal ja shell
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CLI, terminal ja shell">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          CLI
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terminal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Terminal
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Shell
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graafiline-tookeskkond" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Graafiline töökeskkond
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Graafiline töökeskkond">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#levinumad-toolauakeskkonnad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Levinumad töölauakeskkonnad
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Levinumad töölauakeskkonnad">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gnome" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          GNOME
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kde-plasma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          KDE Plasma
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xfce" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Xfce
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cinnamon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Cinnamon
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linuxi-kaivitumise-uldpilt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Linuxi käivitumise üldpilt
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Linuxi käivitumise üldpilt">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-firmware" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          1. Firmware
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-alglaadur" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          2. Alglaadur
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-kernel-ja-initramfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          3. Kernel ja initramfs
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-init-susteem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          4. init-süsteem
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-sisselogimine-ja-tookeskkond" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          5. Sisselogimine ja töökeskkond
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linuxi-susteemi-kihid-tervikuna" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Linuxi süsteemi kihid tervikuna
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pohimoisted" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Põhimõisted
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kontrollkusimused" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Kontrollküsimused
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kokkuvote" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Kokkuvõte
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#allikad-ja-lisalugemine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Allikad ja lisalugemine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../failihalduse-baaskasud/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Linuxi failhaldus ja baaskäsud
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kataloogipuu-ja-failisusteemi-alused/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Linuxi katalogipuu ja failisusteemi alused
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linuxi-kasutajate-haldus/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Linuxi kasutajate haldus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linuxi-failioigused/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Linuxi failiõigused
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linuxi serverid ja teenused
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Linuxi serverid ja teenused
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dhcp/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    DHCP serveri seadistamine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dns/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    DNS serveri seadistamine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Automatiseerimine
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Automatiseerimine
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ansible
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Ansible
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansibleintro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ansible ülevaade
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansibleinstall/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ansible paigaldamine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansibleinventory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ansible inventory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansibleconf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ansible levinumad seadistused
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansiblenodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hallatavate hostide ühendamine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansiblemodules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Moodulid ja ad-hoc käsud
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansibleplaybooks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Playbookid ja YAML
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansiblevars/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Muutujad ja nende kasutamine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansiblejinja2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Jinja2 mallid
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansibleconditionals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tingimuslikkus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansibleloops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tsüklid
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansiblehandlers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tegevuste käivitamine ainult vajadusel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansiblevault/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Turvalisus ja Ansible Vault
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansibleroles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rollid ja struktuur
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansiblegalaxy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ansible Galaxy Collections
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansiblebestpractises/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ansible parimad praktikad
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Sisukord">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Sisukord
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#opieesmargid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Õpieesmärgid
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mis-on-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Mis on Linux?
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#avatud-lahtekood" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Avatud lähtekood
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kus-linuxit-kasutatakse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Kus Linuxit kasutatakse?
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kernel-ja-distributsioon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Kernel ja distributsioon
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Kernel ja distributsioon">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kernel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Kernel
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#userland" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Userland
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linuxi-distributsioonid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Linuxi distributsioonid
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Linuxi distributsioonid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#olulisemad-distributsioonipered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Olulisemad distributsioonipered
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distributsioonide-sugulus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Distributsioonide sugulus
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debian-ja-vaba-tarkvara" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Debian ja vaba tarkvara
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cli-terminal-ja-shell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          CLI, terminal ja shell
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CLI, terminal ja shell">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          CLI
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terminal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Terminal
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Shell
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graafiline-tookeskkond" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Graafiline töökeskkond
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Graafiline töökeskkond">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#levinumad-toolauakeskkonnad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Levinumad töölauakeskkonnad
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Levinumad töölauakeskkonnad">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gnome" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          GNOME
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kde-plasma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          KDE Plasma
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xfce" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Xfce
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cinnamon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Cinnamon
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linuxi-kaivitumise-uldpilt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Linuxi käivitumise üldpilt
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Linuxi käivitumise üldpilt">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-firmware" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          1. Firmware
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-alglaadur" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          2. Alglaadur
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-kernel-ja-initramfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          3. Kernel ja initramfs
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-init-susteem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          4. init-süsteem
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-sisselogimine-ja-tookeskkond" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          5. Sisselogimine ja töökeskkond
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linuxi-susteemi-kihid-tervikuna" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Linuxi süsteemi kihid tervikuna
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pohimoisted" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Põhimõisted
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kontrollkusimused" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Kontrollküsimused
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kokkuvote" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Kokkuvõte
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#allikad-ja-lisalugemine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Allikad ja lisalugemine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="linuxi-ulesehitus-ja-tookeskkond">Linuxi ülesehitus ja töökeskkond<a class="headerlink" href="#linuxi-ulesehitus-ja-tookeskkond" title="Permanent link">&para;</a></h1>
+<p>Linux on tänapäeval kasutusel väga erinevates seadmetes: serverites, lauaarvutites, pilvekeskkondades, võrguseadmetes, nutiseadmetes, superarvutites ja paljudes manussüsteemides. Linuxi õppimisel on oluline eristada <strong>Linuxi kernelit</strong>, terviklikku <strong>Linuxi distributsiooni</strong> ning kasutajale nähtavat <strong>töökeskkonda</strong>.</p>
+<p>Selles materjalis vaatleme Linuxi süsteemi üldist ülesehitust. Käsurea süntaksit ja baaskäske käsitletakse järgmises õppematerjalis.</p>
+<h2 id="opieesmargid">Õpieesmärgid<a class="headerlink" href="#opieesmargid" title="Permanent link">&para;</a></h2>
+<p>Pärast materjali läbimist oskad:</p>
+<ul>
+<li>selgitada, mis on Linux ja mis on Linuxi kernel;</li>
+<li>kirjeldada Linuxi distributsiooni põhikomponente;</li>
+<li>tuua näiteid Linuxi kasutusvaldkondadest;</li>
+<li>eristada levinumaid Linuxi distributsiooniperesid;</li>
+<li>selgitada CLI, terminali ja shelli erinevust;</li>
+<li>kirjeldada graafilise Linuxi töökeskkonna põhiosi;</li>
+<li>kirjeldada Linuxi käivitumise üldist loogikat.</li>
+</ul>
+<hr />
+<h2 id="mis-on-linux">Mis on Linux?<a class="headerlink" href="#mis-on-linux" title="Permanent link">&para;</a></h2>
+<p>Linux on <strong>Unix-laadne operatsioonisüsteemi kernel</strong>, mille arendamist alustas Linus Torvalds 1991. aastal. Kernel on operatsioonisüsteemi keskne osa, mis vahendab suhtlust riistvara ja programmide vahel.</p>
+<p>Igapäevases kõnes kasutatakse sõna <em>Linux</em> sageli kogu operatsioonisüsteemi kohta. Täpsemalt koosneb kasutatav Linuxi süsteem Linuxi kernelist ja suurest hulgast muudest komponentidest.</p>
+<div class="admonition note">
+<p class="admonition-title">Linux ei tähenda ainult kernelit igapäevases kasutuses</p>
+<p>Tehniliselt on <strong>Linux kernel</strong>. Kui räägitakse näiteks Debianist, Ubuntust või Fedorast kui „Linuxist“, mõeldakse tavaliselt terviklikku Linuxi distributsiooni.</p>
+</div>
+<p>Linuxi olulisemad omadused on näiteks:</p>
+<ul>
+<li>avatud lähtekood;</li>
+<li>mitme kasutaja tugi;</li>
+<li>multitasking ehk mitme protsessi samaaegne töö;</li>
+<li>tugev võrguvõimekus;</li>
+<li>mitme protsessoriarhitektuuri tugi;</li>
+<li>paindlikkus alates väikestest manussüsteemidest kuni suurte serverite ja superarvutiteni.</li>
+</ul>
+<h2 id="avatud-lahtekood">Avatud lähtekood<a class="headerlink" href="#avatud-lahtekood" title="Permanent link">&para;</a></h2>
+<p>Linuxi kernel on avatud lähtekoodiga. See tähendab, et lähtekood on kättesaadav ning vastavalt kasutatava litsentsi tingimustele saab seda uurida, muuta ja edasi levitada.</p>
+<p>Avatud lähtekood võimaldab Linuxi arendamises osaleda väga suurel hulgal üksikisikutel, organisatsioonidel ja ettevõtetel. Linuxi ökosüsteemis teevad koostööd nii vabatahtlikud arendajad kui ka suured tehnoloogiaettevõtted.</p>
+<div class="admonition info">
+<p class="admonition-title">Vaba tarkvara ei tähenda tingimata tasuta tarkvara</p>
+<p>Ingliskeelne <em>free software</em> viitab eelkõige kasutaja vabadustele, mitte hinnale. Avatud lähtekoodiga tarkvara võib olla tasuta kasutatav, kuid selle ümber võib pakkuda ka tasulisi teenuseid, tuge ja terviklahendusi.</p>
+</div>
+<hr />
+<h2 id="kus-linuxit-kasutatakse">Kus Linuxit kasutatakse?<a class="headerlink" href="#kus-linuxit-kasutatakse" title="Permanent link">&para;</a></h2>
+<p>Linuxit leidub märksa rohkemates seadmetes kui ainult Linuxi töölauaarvutites.</p>
+<p>Tüüpilised kasutusvaldkonnad on:</p>
+<table>
+<thead>
+<tr>
+<th>Valdkond</th>
+<th>Näited</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Serverid</td>
+<td>veebiserverid, andmebaasiserverid, failiserverid</td>
+</tr>
+<tr>
+<td>Pilvandmetöötlus</td>
+<td>virtuaalmasinad, pilveserverid, konteineriplatvormid</td>
+</tr>
+<tr>
+<td>Võrguseadmed</td>
+<td>ruuterid, tulemüürid, võrguseadmed</td>
+</tr>
+<tr>
+<td>Nutiseadmed</td>
+<td>Androidi seadmed kasutavad Linuxi kernelit</td>
+</tr>
+<tr>
+<td>Manussüsteemid</td>
+<td>telerid, digiboksid, tööstusseadmed, IoT-seadmed</td>
+</tr>
+<tr>
+<td>Lauaarvutid</td>
+<td>tööjaamad ja personaalarvutid</td>
+</tr>
+<tr>
+<td>Teadusarvutus</td>
+<td>superarvutid ja arvutusklastrid</td>
+</tr>
+</tbody>
+</table>
+<p>Linuxi tugevuseks on võimalus kohandada süsteem väga erineva riistvara ja kasutusotstarbe jaoks.</p>
+<hr />
+<h2 id="kernel-ja-distributsioon">Kernel ja distributsioon<a class="headerlink" href="#kernel-ja-distributsioon" title="Permanent link">&para;</a></h2>
+<p>Üksi Linuxi kernelist ei piisa tavapärase arvuti või serveri kasutamiseks. Kasutaja vajab lisaks programme, teeke, süsteemiteenuseid, paketihaldust ja muid tööriistu.</p>
+<p>Sellist terviklikku süsteemi nimetatakse <strong>Linuxi distributsiooniks</strong> ehk lühidalt <em>distroks</em>.</p>
+<p>Tüüpiline distributsioon sisaldab:</p>
+<ul>
+<li>Linuxi kernelit;</li>
+<li>süsteemiteeke ja kasutajaruumi programme (<em>userland</em>);</li>
+<li>shelli ja käsureatööriistu;</li>
+<li>paketihaldurit ja tarkvarahoidlaid;</li>
+<li>süsteemiteenuseid;</li>
+<li>konfiguratsioonivahendeid;</li>
+<li>soovi korral graafilist töökeskkonda;</li>
+<li>paigaldus- ja uuendustööriistu.</li>
+</ul>
+<h3 id="kernel">Kernel<a class="headerlink" href="#kernel" title="Permanent link">&para;</a></h3>
+<p>Kernel tegeleb muu hulgas:</p>
+<ul>
+<li>protsesside käivitamise ja ajastamisega;</li>
+<li>mälu haldamisega;</li>
+<li>seadmete ja draiveritega;</li>
+<li>failisüsteemidega;</li>
+<li>võrguliiklusega;</li>
+<li>kasutaja- ja protsessiõiguste jõustamisega;</li>
+<li>riistvararessursside jagamisega programmide vahel.</li>
+</ul>
+<p>Rakendused ei suhtle tavaliselt riistvaraga otse, vaid kasutavad kerneli pakutavaid võimalusi.</p>
+<h3 id="userland">Userland<a class="headerlink" href="#userland" title="Permanent link">&para;</a></h3>
+<p><strong>Userland</strong> ehk kasutajaruum tähendab programme ja teeke, mis töötavad väljaspool kernelit.</p>
+<p>Userlandi kuuluvad näiteks:</p>
+<ul>
+<li>shellid;</li>
+<li>süsteemsed käsureaprogrammid;</li>
+<li>süsteemiteegid;</li>
+<li>paketihaldusvahendid;</li>
+<li>süsteemiteenused;</li>
+<li>graafilise keskkonna komponendid;</li>
+<li>kasutajarakendused.</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Näide</p>
+<p><code>bash</code>, tekstiredaktor <code>nano</code>, veebiserver Apache ja graafiline töölauakeskkond GNOME töötavad kasutajaruumis. Linuxi kernel ise on neist eraldi süsteemi keskne komponent.</p>
+</div>
+<hr />
+<h2 id="linuxi-distributsioonid">Linuxi distributsioonid<a class="headerlink" href="#linuxi-distributsioonid" title="Permanent link">&para;</a></h2>
+<p>Linuxil ei ole ühte ainsat ametlikku tervikversiooni. Erinevad projektid ja ettevõtted kombineerivad Linuxi kerneli, kasutajaruumi tarkvara, paketihalduse ja muud komponendid distributsioonideks.</p>
+<p>Distributsioonid võivad erineda näiteks järgmiste omaduste poolest:</p>
+<ul>
+<li>paketihaldus;</li>
+<li>tarkvaraversioonide värskus;</li>
+<li>väljalasketsükkel;</li>
+<li>vaikimisi seadistus;</li>
+<li>toetatud töölauakeskkond;</li>
+<li>sihtrühm;</li>
+<li>tehnilise toe mudel.</li>
+</ul>
+<h3 id="olulisemad-distributsioonipered">Olulisemad distributsioonipered<a class="headerlink" href="#olulisemad-distributsioonipered" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Distributsioon / perekond</th>
+<th>Iseloomustus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Debian</strong></td>
+<td>kogukonnapõhine distributsioon, tuntud stabiilsuse ja suure paketivaliku poolest</td>
+</tr>
+<tr>
+<td><strong>Ubuntu</strong></td>
+<td>Debianil põhinev distributsioon, mida arendab ja toetab Canonical; levinud nii serverites kui töölaual</td>
+</tr>
+<tr>
+<td><strong>Linux Mint</strong></td>
+<td>peamiselt Ubuntul põhinev töölauale suunatud distributsioon; olemas on ka Debianil põhinev LMDE</td>
+</tr>
+<tr>
+<td><strong>Fedora Linux</strong></td>
+<td>kogukonnapõhine ja kiiresti arenev distributsioon, mis on tihedalt seotud Red Hati ökosüsteemiga</td>
+</tr>
+<tr>
+<td><strong>Red Hat Enterprise Linux (RHEL)</strong></td>
+<td>ettevõtetele suunatud kommertsdistributsioon pika toe ja ametliku tootjatoega</td>
+</tr>
+<tr>
+<td><strong>CentOS Stream</strong></td>
+<td>Fedora ja RHEL-i vahel paiknev pidevalt arenev distributsioon, mis näitab RHEL-i järgmise arendusastme suunda</td>
+</tr>
+<tr>
+<td><strong>openSUSE</strong></td>
+<td>kogukonnapõhine SUSE ökosüsteemi distributsioon; saadaval nii stabiilse Leap kui jooksva Tumbleweed variandina</td>
+</tr>
+<tr>
+<td><strong>Arch Linux</strong></td>
+<td>minimalistlik ja jooksva väljalaskega distributsioon, kus kasutaja paneb suure osa süsteemist ise kokku</td>
+</tr>
+<tr>
+<td><strong>Kali Linux</strong></td>
+<td>Debianil põhinev spetsialiseeritud distributsioon küberturbe testimiseks ja digitaalseks forensikaks</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Distributsiooni populaarsus ei tähenda, et see sobib igaks ülesandeks</p>
+<p>Näiteks Kali Linux sisaldab palju turbetestimise tööriistu, kuid see ei tee Kalist tavakasutaja jaoks paremat üldotstarbelist töölaua- või serveridistributsiooni.</p>
+</div>
+<h3 id="distributsioonide-sugulus">Distributsioonide sugulus<a class="headerlink" href="#distributsioonide-sugulus" title="Permanent link">&para;</a></h3>
+<p>Linuxi distributsioonid moodustavad sageli perekondi. Näiteks:</p>
+<pre class="mermaid"><code>flowchart LR
+    D["Debian"] --&gt; U["Ubuntu"]
+    U --&gt; M["Linux Mint"]
+    D --&gt; K["Kali Linux"]
+
+    F["Fedora Linux"] --&gt; C["CentOS Stream"]
+    C --&gt; R["Red Hat Enterprise Linux"]</code></pre>
+<p>Skeem on lihtsustatud: distributsioonide arendusmudelid ja nendevahelised suhted on tegelikkuses keerukamad kui lihtsalt ühe süsteemi „kopeerimine“ teisest.</p>
+<h3 id="debian-ja-vaba-tarkvara">Debian ja vaba tarkvara<a class="headerlink" href="#debian-ja-vaba-tarkvara" title="Permanent link">&para;</a></h3>
+<p>Debiani põhiosa <code>main</code> koosneb Debian Free Software Guidelines nõuetele vastavast vabast tarkvarast. Debian pakub eraldi ka <code>contrib</code>, <code>non-free</code> ja <code>non-free-firmware</code> alasid. Alates Debian 12-st võib ametlik paigaldusmeedia sisaldada ka riistvara toimimiseks vajalikku mittevaba püsivara (<em>firmware</em>).</p>
+<p>See on oluline erinevus võrreldes vanema lihtsustusega, et „Debian sisaldab ainult vaba tarkvara“.</p>
+<hr />
+<h2 id="cli-terminal-ja-shell">CLI, terminal ja shell<a class="headerlink" href="#cli-terminal-ja-shell" title="Permanent link">&para;</a></h2>
+<p>Linuxi saab kasutada nii graafilise kasutajaliidese kui ka käsurea kaudu. Serverite haldamisel kasutatakse käsurida väga palju, sest see on kiire, täpne, automatiseeritav ja töötab hästi ka kaugühenduse kaudu.</p>
+<p>Kolm mõistet tuleb omavahel eristada.</p>
+<h3 id="cli">CLI<a class="headerlink" href="#cli" title="Permanent link">&para;</a></h3>
+<p><strong>CLI</strong> (<em>Command Line Interface</em>) tähendab käsureapõhist kasutajaliidest. Kasutaja annab süsteemile tekstilisi käske ja saab vastuse tekstina.</p>
+<h3 id="terminal">Terminal<a class="headerlink" href="#terminal" title="Permanent link">&para;</a></h3>
+<p><strong>Terminal</strong> on keskkond, milles käsureaga suheldakse.</p>
+<p>Tänapäevases graafilises Linuxis kasutatakse tavaliselt <strong>terminaliemulaatorit</strong>, näiteks GNOME Terminali, Konsole'i või mõnda muud terminaliprogrammi.</p>
+<p>Serveriga SSH kaudu ühendudes on samuti kasutusel terminalipõhine sessioon.</p>
+<h3 id="shell">Shell<a class="headerlink" href="#shell" title="Permanent link">&para;</a></h3>
+<p><strong>Shell</strong> ehk kest on programm, mis tõlgendab kasutaja sisestatud käske ja käivitab vajalikud tegevused.</p>
+<p>Linuxis kasutatakse mitut erinevat shelli, näiteks:</p>
+<ul>
+<li>Bash;</li>
+<li>Zsh;</li>
+<li>Fish;</li>
+<li>Dash.</li>
+</ul>
+<p>Selles kursuses keskendume eelkõige <strong>Bashile</strong> (<em>Bourne Again Shell</em>), sest see on Linuxi maailmas väga levinud ja sobib hästi nii interaktiivseks käsureatööks kui skriptimiseks.</p>
+<pre class="mermaid"><code>flowchart LR
+    A["Kasutaja"] --&gt; B["Terminal"]
+    B --&gt; C["Shell, nt Bash"]
+    C --&gt; D["Käsud ja programmid"]
+    D --&gt; E["Kernel"]</code></pre>
+<div class="admonition note">
+<p class="admonition-title">Terminal ja shell ei ole sama asi</p>
+<p>Terminal kuvab käsureakeskkonna ja vahendab sisendit-väljundit. Shell tõlgendab seal sisestatud käske. Ühes terminalis saab põhimõtteliselt käivitada erinevaid shelle.</p>
+</div>
+<hr />
+<h2 id="graafiline-tookeskkond">Graafiline töökeskkond<a class="headerlink" href="#graafiline-tookeskkond" title="Permanent link">&para;</a></h2>
+<p>Linux ei nõua graafilise kasutajaliidese olemasolu. Paljud serverid töötavadki ilma graafilise töölauata.</p>
+<p>Lauaarvuti Linuxis moodustavad graafilise keskkonna mitu komponenti. Lihtsustatud kujul võib eristada:</p>
+<ul>
+<li><strong>kuvasüsteemi</strong> – tänapäeval kasutatakse sageli Waylandi, vanemates või teatud keskkondades ka X11/X.Org-i;</li>
+<li><strong>aknahaldurit või komposiitorit</strong> – juhib akende paigutust ja ekraanile kuvamist;</li>
+<li><strong>töölauakeskkonda</strong> – pakub paneele, menüüsid, seadistusrakendusi, failihaldurit ja muud kasutajaliidest;</li>
+<li><strong>graafilisi rakendusi</strong>.</li>
+</ul>
+<h3 id="levinumad-toolauakeskkonnad">Levinumad töölauakeskkonnad<a class="headerlink" href="#levinumad-toolauakeskkonnad" title="Permanent link">&para;</a></h3>
+<h4 id="gnome">GNOME<a class="headerlink" href="#gnome" title="Permanent link">&para;</a></h4>
+<p>GNOME on üks levinumaid Linuxi töölauakeskkondi. Seda kasutatakse vaikimisi näiteks Fedora Workstationis ja Ubuntu põhiväljaandes.</p>
+<h4 id="kde-plasma">KDE Plasma<a class="headerlink" href="#kde-plasma" title="Permanent link">&para;</a></h4>
+<p>KDE Plasma on väga seadistatav ja funktsioonirohke töölauakeskkond. Selle rakenduste hulka kuulub näiteks failihaldur Dolphin ja terminal Konsole.</p>
+<h4 id="xfce">Xfce<a class="headerlink" href="#xfce" title="Permanent link">&para;</a></h4>
+<p>Xfce on traditsioonilisema ülesehitusega ning üldiselt suhteliselt ressursisäästlik töölauakeskkond.</p>
+<h4 id="cinnamon">Cinnamon<a class="headerlink" href="#cinnamon" title="Permanent link">&para;</a></h4>
+<p>Cinnamon on Linux Minti peamine töölauakeskkond ja selle kasutajaliides on paljudele Windowsist tulnud kasutajatele tuttava ülesehitusega.</p>
+<div class="admonition info">
+<p class="admonition-title">Töölauakeskkond ei ole distributsioon</p>
+<p>Sama Linuxi distributsiooni saab sageli kasutada erinevate töölauakeskkondadega. Näiteks Debianile saab paigaldada GNOME'i, KDE Plasma, Xfce või muid keskkondi.</p>
+</div>
+<hr />
+<h2 id="linuxi-kaivitumise-uldpilt">Linuxi käivitumise üldpilt<a class="headerlink" href="#linuxi-kaivitumise-uldpilt" title="Permanent link">&para;</a></h2>
+<p>Linuxi käivitumine koosneb mitmest etapist. Täpne protsess sõltub arvuti riistvarast, distributsioonist ja seadistusest, kuid tänapäevase Linuxi puhul võib seda lihtsustatult kujutada järgmiselt.</p>
+<pre class="mermaid"><code>flowchart TD
+    A["UEFI / firmware"] --&gt; B["Alglaadur, nt GRUB"]
+    B --&gt; C["Linuxi kernel + initramfs"]
+    C --&gt; D["Juurfailisüsteem"]
+    D --&gt; E["init-süsteem, tavaliselt systemd"]
+    E --&gt; F["Süsteemiteenused"]
+    F --&gt; G["Tekstipõhine sisselogimine või graafiline töökeskkond"]</code></pre>
+<h3 id="1-firmware">1. Firmware<a class="headerlink" href="#1-firmware" title="Permanent link">&para;</a></h3>
+<p>Arvuti käivitamisel alustab tööd emaplaadi püsivara. Tänapäevastes arvutites on selleks tavaliselt <strong>UEFI</strong>. Firmware tuvastab vajalikud seadmed ja leiab käivitatava alglaaduri.</p>
+<h3 id="2-alglaadur">2. Alglaadur<a class="headerlink" href="#2-alglaadur" title="Permanent link">&para;</a></h3>
+<p>Alglaadur (<em>bootloader</em>) laadib Linuxi kerneli. Levinud alglaadur on <strong>GRUB</strong>, kuid võimalikud on ka teised lahendused, näiteks systemd-boot.</p>
+<p>Alglaadur võib lubada valida:</p>
+<ul>
+<li>erinevate operatsioonisüsteemide vahel;</li>
+<li>erinevate Linuxi kernelite vahel;</li>
+<li>täiendavate käivitusvalikute vahel.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Vanemates Linuxi materjalides kirjeldatakse GRUB-i sageli BIOS-i ja ketta alglaadesektori kaudu. Tänapäeval kasutatakse arvutites valdavalt UEFI-d ning alglaadimisfailid paiknevad tavaliselt EFI System Partition'il (ESP).</p>
+</div>
+<h3 id="3-kernel-ja-initramfs">3. Kernel ja initramfs<a class="headerlink" href="#3-kernel-ja-initramfs" title="Permanent link">&para;</a></h3>
+<p>Alglaadur laadib Linuxi kerneli mällu. Koos kerneliga kasutatakse tavaliselt ajutist algfailisüsteemi <strong>initramfs</strong>, mis sisaldab käivitumise varases faasis vajalikke draivereid ja tööriistu.</p>
+<p>Kernel:</p>
+<ol>
+<li>käivitub;</li>
+<li>tuvastab ja seadistab riistvara;</li>
+<li>valmistab ette süsteemi põhifunktsioonid;</li>
+<li>ühendab vajaliku juurfailisüsteemi;</li>
+<li>käivitab esimese kasutajaruumi protsessi.</li>
+</ol>
+<h3 id="4-init-susteem">4. init-süsteem<a class="headerlink" href="#4-init-susteem" title="Permanent link">&para;</a></h3>
+<p>Esimese kasutajaruumi protsessina käivitatakse init-süsteem. Enamikus tänapäevastes üldotstarbelistes Linuxi distributsioonides kasutatakse selleks <strong>systemd</strong>-d.</p>
+<p>Systemd käivitab ja haldab süsteemiteenuseid ning viib süsteemi soovitud tööolekusse.</p>
+<h3 id="5-sisselogimine-ja-tookeskkond">5. Sisselogimine ja töökeskkond<a class="headerlink" href="#5-sisselogimine-ja-tookeskkond" title="Permanent link">&para;</a></h3>
+<p>Süsteem võib jõuda:</p>
+<ul>
+<li>tekstipõhise sisselogimiseni;</li>
+<li>graafilise sisselogimiskuvani;</li>
+<li>serveris otse taustal töötavate teenusteni.</li>
+</ul>
+<p>Tekstikonsoolis kasutatakse terminaliliini ettevalmistamiseks tavaliselt <code>getty</code>-tüüpi teenust. Kasutaja autentimisega tegelevad eraldi sisselogimis- ja autentimiskomponendid.</p>
+<div class="admonition warning">
+<p class="admonition-title">Vana getty käsitlus võib olla eksitav</p>
+<p><code>getty</code> ei ole ise kogu autentimissüsteem. Selle põhiülesanne on terminaliseansi ettevalmistamine ja kasutajanime küsimine; kasutaja autentimine toimub sisselogimisprotsessi ja PAM-i kaudu.</p>
+</div>
+<hr />
+<h2 id="linuxi-susteemi-kihid-tervikuna">Linuxi süsteemi kihid tervikuna<a class="headerlink" href="#linuxi-susteemi-kihid-tervikuna" title="Permanent link">&para;</a></h2>
+<p>Õppimise seisukohast võib Linuxi süsteemi vaadelda järgmiste kihtidena:</p>
+<pre class="mermaid"><code>flowchart TB
+    A["Kasutaja"]
+    B["Rakendused"]
+    C["CLI / graafiline töökeskkond"]
+    D["Shell, süsteemiteegid ja teenused"]
+    E["Linuxi kernel"]
+    F["Riistvara"]
+
+    A --&gt; B
+    B --&gt; C
+    C --&gt; D
+    D --&gt; E
+    E --&gt; F</code></pre>
+<p>Oluline on mõista, et need kihid ei ole täiesti iseseisvad. Rakendused kasutavad süsteemiteeke ja kerneli pakutavaid süsteemikutseid ning kernel suhtleb omakorda riistvaraga draiverite kaudu.</p>
+<hr />
+<h2 id="pohimoisted">Põhimõisted<a class="headerlink" href="#pohimoisted" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Mõiste</th>
+<th>Selgitus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Linux</strong></td>
+<td>operatsioonisüsteemi kernel; kõnekeeles ka Linuxi-põhine terviksüsteem</td>
+</tr>
+<tr>
+<td><strong>kernel</strong></td>
+<td>operatsioonisüsteemi keskne osa, mis haldab riistvara ja süsteemiressursse</td>
+</tr>
+<tr>
+<td><strong>distributsioon</strong></td>
+<td>kernelist ja kasutajaruumi tarkvarast koostatud terviklik Linuxi süsteem</td>
+</tr>
+<tr>
+<td><strong>userland</strong></td>
+<td>väljaspool kernelit töötavad programmid, teegid ja teenused</td>
+</tr>
+<tr>
+<td><strong>CLI</strong></td>
+<td>tekstipõhine käsureakasutajaliides</td>
+</tr>
+<tr>
+<td><strong>terminal</strong></td>
+<td>keskkond, milles toimub tekstipõhine sisend ja väljund</td>
+</tr>
+<tr>
+<td><strong>shell</strong></td>
+<td>käske tõlgendav programm, näiteks Bash</td>
+</tr>
+<tr>
+<td><strong>GUI</strong></td>
+<td>graafiline kasutajaliides</td>
+</tr>
+<tr>
+<td><strong>töölauakeskkond</strong></td>
+<td>terviklik graafiline töökeskkond, näiteks GNOME või KDE Plasma</td>
+</tr>
+<tr>
+<td><strong>bootloader</strong></td>
+<td>programm, mis käivitab operatsioonisüsteemi kerneli</td>
+</tr>
+<tr>
+<td><strong>systemd</strong></td>
+<td>paljudes Linuxi distributsioonides kasutatav init- ja teenusehaldussüsteem</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="kontrollkusimused">Kontrollküsimused<a class="headerlink" href="#kontrollkusimused" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Mis vahe on Linuxi kernelil ja Linuxi distributsioonil?</li>
+<li>Milliseid ülesandeid täidab kernel?</li>
+<li>Mida tähendab <em>userland</em>?</li>
+<li>Nimeta vähemalt kolm valdkonda, kus Linuxit kasutatakse.</li>
+<li>Mille poolest võivad Linuxi distributsioonid üksteisest erineda?</li>
+<li>Mis vahe on CLI-l, terminalil ja shellil?</li>
+<li>Mis on Bash?</li>
+<li>Kas Linuxi server vajab töötamiseks graafilist töölauakeskkonda? Põhjenda.</li>
+<li>Nimeta vähemalt kolm Linuxi töölauakeskkonda.</li>
+<li>Millised on Linuxi käivitumise peamised etapid?</li>
+<li>Mis on alglaaduri ülesanne?</li>
+<li>Mis roll on systemd-l?</li>
+</ol>
+<hr />
+<h2 id="kokkuvote">Kokkuvõte<a class="headerlink" href="#kokkuvote" title="Permanent link">&para;</a></h2>
+<p>Linuxi süsteemi keskmes on <strong>Linuxi kernel</strong>, mis haldab riistvara ja süsteemiressursse. Kernel koos kasutajaruumi programmide, süsteemiteekide, paketihalduse ja muude komponentidega moodustab <strong>Linuxi distributsiooni</strong>.</p>
+<p>Kasutaja saab Linuxiga suhelda nii graafilise kasutajaliidese kui ka käsurea kaudu. Käsureal kasutatakse terminali sees shelli, näiteks Bashi. Graafilises süsteemis lisanduvad kuvasüsteem, aknahaldus ja töölauakeskkond.</p>
+<p>Linuxi käivitamisel liigub süsteem üldjoontes firmware'ist alglaadurini, sealt kerneli ja initramfs-i kaudu init-süsteemini ning lõpuks teenuste ja kasutaja töökeskkonnani.</p>
+<p>Järgmises õppematerjalis keskendume Linuxi käsurea kasutamisele ja baaskäskudele.</p>
+<hr />
+<h2 id="allikad-ja-lisalugemine">Allikad ja lisalugemine<a class="headerlink" href="#allikad-ja-lisalugemine" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Linux Kernel Archives – <em>About Linux Kernel</em>: <a href="https://www.kernel.org/" rel="noopener" target="_blank">https://www.kernel.org/linux.html</a></li>
+<li>GNU Project – <em>Bash Reference Manual</em>: <a href="https://www.gnu.org/software/bash/manual/" rel="noopener" target="_blank">https://www.gnu.org/software/bash/manual/</a></li>
+<li>Debian – <em>About Debian</em>: <a href="https://www.debian.org/intro/about" rel="noopener" target="_blank">https://www.debian.org/intro/about</a></li>
+<li>Debian – <em>Packages</em>: <a href="https://www.debian.org/distrib/packages" rel="noopener" target="_blank">https://www.debian.org/distrib/packages</a></li>
+<li>Fedora Project – <em>Fedora Release Life Cycle</em>: <a href="https://fedoraproject.org/wiki/Fedora_Release_Life_Cycle" rel="noopener" target="_blank">https://fedoraproject.org/wiki/Fedora_Release_Life_Cycle</a></li>
+<li>CentOS Project – <em>CentOS Stream</em>: <a href="https://www.centos.org/centos-stream/" rel="noopener" target="_blank">https://www.centos.org/centos-stream/</a></li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Üles
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Jalus" >
+        
+          
+          <a href="../linuxi-baaskasud-spikker/" class="md-footer__link md-footer__link--prev" aria-label="Eelmine: Linuxi käskude spikker">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Eelmine
+              </span>
+              <div class="md-ellipsis">
+                Linuxi käskude spikker
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../failihalduse-baaskasud/" class="md-footer__link md-footer__link--next" aria-label="Järgmine: Linuxi failhaldus ja baaskäsud">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Järgmine
+              </span>
+              <div class="md-ellipsis">
+                Linuxi failhaldus ja baaskäsud
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M247.1 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L179.2 256 41.9 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Priit Paap
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.annotate", "content.code.copy", "content.tabs.link", "header.autohide", "announce.dismiss", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Kopeeritud", "clipboard.copy": "Kopeeri l\u00f5ikelauale", "search.result.more.one": "1 veel sellel lehel", "search.result.more.other": "# veel sellel lehel", "search.result.none": "Otsingule ei leitud \u00fchtegi vastet", "search.result.one": "Leiti \u00fcks tulemus", "search.result.other": "Leiti # tulemust", "search.result.placeholder": "Otsimiseks kirjuta siia", "search.result.term.missing": "Puudub", "select.version": "Vali versioon"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

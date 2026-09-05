@@ -1,0 +1,4701 @@
+
+<!doctype html>
+<html lang="et" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../linuxi-ulesehitus-ja-tookeskkond/">
+      
+      
+        <link rel="next" href="../kataloogipuu-ja-failisusteemi-alused/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../images/computer.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Linuxi failhaldus ja baaskäsud - IT alased õppematerjalid</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="deep-orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#linuxi-failihaldus-ja-baaskasud" class="md-skip">
+          Keri sisuni
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Päis">
+    <a href="../.." title="IT alased õppematerjalid" class="md-header__button md-logo" aria-label="IT alased õppematerjalid" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M348.8 32C340.7 46.1 336 62.5 336 80v16H64v224h272v64H64c-35.3 0-64-28.7-64-64V96c0-35.3 28.7-64 64-64zM336 432c0 17.5 4.7 33.9 12.8 48H120c-13.3 0-24-10.7-24-24s10.7-24 24-24zm96-400h96c26.5 0 48 21.5 48 48v352c0 26.5-21.5 48-48 48h-96c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48m24 64c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24zm56 144a32 32 0 1 0-64 0 32 32 0 1 0 64 0"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            IT alased õppematerjalid
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Linuxi failhaldus ja baaskäsud
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="deep-orange"  aria-label="Lülitu heledale režiimile"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Lülitu heledale režiimile" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-blue" data-md-color-accent="deep-orange"  aria-label="Lülitu tumedale režiimile"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Lülitu tumedale režiimile" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Otsi" placeholder="Otsi" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Otsing">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Jaga" aria-label="Jaga" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Lähtesta" aria-label="Lähtesta" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Otsingu lähtestamine
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Vaheleht" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://priitpaap.github.io" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Avalehele
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../unixi-ja-bsd-ajalugu/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Linux
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ansible/ansibleintro/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Automatiseerimine
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigatsioon" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="IT alased õppematerjalid" class="md-nav__button md-logo" aria-label="IT alased õppematerjalid" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M348.8 32C340.7 46.1 336 62.5 336 80v16H64v224h272v64H64c-35.3 0-64-28.7-64-64V96c0-35.3 28.7-64 64-64zM336 432c0 17.5 4.7 33.9 12.8 48H120c-13.3 0-24-10.7-24-24s10.7-24 24-24zm96-400h96c26.5 0 48 21.5 48 48v352c0 26.5-21.5 48-48 48h-96c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48m24 64c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24zm56 144a32 32 0 1 0-64 0 32 32 0 1 0 64 0"/></svg>
+
+    </a>
+    IT alased õppematerjalid
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://priitpaap.github.io" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Avalehele
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Linux
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ajalugu
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Ajalugu
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unixi-ja-bsd-ajalugu/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.5 8H12v5l4.28 2.54.72-1.21-3.5-2.08zM13 3a9 9 0 0 0-9 9H1l3.96 4.03L9 12H6a7 7 0 0 1 7-7 7 7 0 0 1 7 7 7 7 0 0 1-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42A8.9 8.9 0 0 0 13 21a9 9 0 0 0 9-9 9 9 0 0 0-9-9"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Unixi ja BSD ajalugu
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linuxi-ajalugu/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.5 8H12v5l4.28 2.54.72-1.21-3.5-2.08zM13 3a9 9 0 0 0-9 9H1l3.96 4.03L9 12H6a7 7 0 0 1 7-7 7 7 0 0 1 7 7 7 7 0 0 1-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42A8.9 8.9 0 0 0 13 21a9 9 0 0 0 9-9 9 9 0 0 0-9-9"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Linuxi ajalugu
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linuxi baasteadmised
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Linuxi baasteadmised
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../debpaigaldus/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Debian Linuxi paigaldamine virutaalmasinale
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linuxi-baaskasud-spikker/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Linuxi käskude spikker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linuxi-ulesehitus-ja-tookeskkond/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Linuxi ülesehitus ja töökeskkond
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Linuxi failhaldus ja baaskäsud
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Linuxi failhaldus ja baaskäsud
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Sisukord">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Sisukord
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#opieesmargid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Õpieesmärgid
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#terminal-ja-shell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Terminal ja shell
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kasu-ulesehitus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Käsu ülesehitus
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#abi-leidmine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Abi leidmine
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Abi leidmine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>--help</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#man" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>man</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#liikumine-kataloogipuus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Liikumine kataloogipuus
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Liikumine kataloogipuus">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hetkeasukoht-pwd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Hetkeasukoht – <code>pwd</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kodukataloog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Kodukataloog
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kataloogi-vahetamine-cd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Kataloogi vahetamine – <code>cd</code>
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Kataloogi vahetamine – cd">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#suhteline-tee" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Suhteline tee
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#absoluutne-tee" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Absoluutne tee
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kataloogide-sisu-vaatamine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Kataloogide sisu vaatamine
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Kataloogide sisu vaatamine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>ls</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#failide-ja-kataloogide-loomine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Failide ja kataloogide loomine
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Failide ja kataloogide loomine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kataloogi-loomine-mkdir" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Kataloogi loomine – <code>mkdir</code>
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Kataloogi loomine – mkdir">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#puuduvate-ulemkataloogide-loomine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Puuduvate ülemkataloogide loomine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#brace-expansion-mitme-nime-kiire-loomine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Brace expansion – mitme nime kiire loomine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tuhikuga-nimed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Tühikuga nimed
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tuhja-faili-loomine-touch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Tühja faili loomine – <code>touch</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#failide-kopeerimine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Failide kopeerimine
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Failide kopeerimine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>cp</code>
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="cp">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kataloogi-kopeerimine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Kataloogi kopeerimine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#failide-teisaldamine-ja-umbernimetamine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Failide teisaldamine ja ümbernimetamine
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Failide teisaldamine ja ümbernimetamine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>mv</code>
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="mv">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#faili-umbernimetamine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Faili ümbernimetamine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#teisaldamine-ja-umbernimetamine-korraga" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Teisaldamine ja ümbernimetamine korraga
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#failide-kustutamine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Failide kustutamine
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Failide kustutamine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>rm</code>
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="rm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kataloogi-kustutamine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Kataloogi kustutamine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kinnituse-kusimine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Kinnituse küsimine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metamargid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Metamärgid
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Metamärgid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#suvaline-markide-jada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>*</code> – suvaline märkide jada
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uks-suvaline-mark" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>?</code> – üks suvaline märk
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tekstifailide-sisu-vaatamine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Tekstifailide sisu vaatamine
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tekstifailide sisu vaatamine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>cat</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#less" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>less</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#head" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>head</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>tail</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tekstifailide-muutmine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Tekstifailide muutmine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#valjundi-suunamine-faili" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Väljundi suunamine faili
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Väljundi suunamine faili">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kirjuta-valjund-faili" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>&gt;</code> – kirjuta väljund faili
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lisa-valjund-faili-loppu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>&gt;&gt;</code> – lisa väljund faili lõppu
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#toru" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Toru <code>|</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kaskude-ajalugu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Käskude ajalugu
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Käskude ajalugu">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>history</code>
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="history">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#varasema-kasu-leidmine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Varasema käsu leidmine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tab-automaattaitmine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          TAB-automaattäitmine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#failide-allalaadimine-kasurealt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Failide allalaadimine käsurealt
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Failide allalaadimine käsurealt">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wget" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>wget</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#skripti-kaivitamine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Skripti käivitamine
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Skripti käivitamine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kaivitamine-bashiga" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Käivitamine Bashiga
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kaivitamine-failina" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Käivitamine failina
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sudo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>sudo</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#moned-kasulikud-susteemikasud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Mõned kasulikud süsteemikäsud
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mõned kasulikud süsteemikäsud">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#whoami" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>whoami</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hostnamectl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>hostnamectl</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uptime" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>uptime</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mitme-kasu-uhendamine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Mitme käsu ühendamine
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mitme käsu ühendamine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>;</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>&amp;&amp;</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>||</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#olulisemad-klahvikombinatsioonid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Olulisemad klahvikombinatsioonid
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#praktiline-naide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Praktiline näide
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enne-kustutamist-kontrolli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Enne kustutamist kontrolli
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kokkuvote" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Kokkuvõte
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Kokkuvõte">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kontrollkusimused" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Kontrollküsimused
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#allikad-ja-lisalugemine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Allikad ja lisalugemine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kataloogipuu-ja-failisusteemi-alused/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Linuxi katalogipuu ja failisusteemi alused
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linuxi-kasutajate-haldus/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Linuxi kasutajate haldus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linuxi-failioigused/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Linuxi failiõigused
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linuxi serverid ja teenused
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Linuxi serverid ja teenused
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dhcp/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    DHCP serveri seadistamine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dns/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    DNS serveri seadistamine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Automatiseerimine
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Automatiseerimine
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ansible
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Ansible
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansibleintro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ansible ülevaade
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansibleinstall/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ansible paigaldamine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansibleinventory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ansible inventory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansibleconf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ansible levinumad seadistused
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansiblenodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hallatavate hostide ühendamine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansiblemodules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Moodulid ja ad-hoc käsud
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansibleplaybooks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Playbookid ja YAML
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansiblevars/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Muutujad ja nende kasutamine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansiblejinja2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Jinja2 mallid
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansibleconditionals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tingimuslikkus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansibleloops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tsüklid
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansiblehandlers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tegevuste käivitamine ainult vajadusel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansiblevault/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Turvalisus ja Ansible Vault
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansibleroles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rollid ja struktuur
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansiblegalaxy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ansible Galaxy Collections
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansiblebestpractises/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ansible parimad praktikad
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Sisukord">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Sisukord
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#opieesmargid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Õpieesmärgid
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#terminal-ja-shell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Terminal ja shell
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kasu-ulesehitus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Käsu ülesehitus
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#abi-leidmine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Abi leidmine
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Abi leidmine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>--help</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#man" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>man</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#liikumine-kataloogipuus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Liikumine kataloogipuus
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Liikumine kataloogipuus">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hetkeasukoht-pwd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Hetkeasukoht – <code>pwd</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kodukataloog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Kodukataloog
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kataloogi-vahetamine-cd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Kataloogi vahetamine – <code>cd</code>
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Kataloogi vahetamine – cd">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#suhteline-tee" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Suhteline tee
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#absoluutne-tee" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Absoluutne tee
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kataloogide-sisu-vaatamine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Kataloogide sisu vaatamine
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Kataloogide sisu vaatamine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>ls</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#failide-ja-kataloogide-loomine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Failide ja kataloogide loomine
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Failide ja kataloogide loomine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kataloogi-loomine-mkdir" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Kataloogi loomine – <code>mkdir</code>
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Kataloogi loomine – mkdir">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#puuduvate-ulemkataloogide-loomine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Puuduvate ülemkataloogide loomine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#brace-expansion-mitme-nime-kiire-loomine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Brace expansion – mitme nime kiire loomine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tuhikuga-nimed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Tühikuga nimed
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tuhja-faili-loomine-touch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Tühja faili loomine – <code>touch</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#failide-kopeerimine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Failide kopeerimine
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Failide kopeerimine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>cp</code>
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="cp">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kataloogi-kopeerimine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Kataloogi kopeerimine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#failide-teisaldamine-ja-umbernimetamine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Failide teisaldamine ja ümbernimetamine
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Failide teisaldamine ja ümbernimetamine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>mv</code>
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="mv">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#faili-umbernimetamine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Faili ümbernimetamine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#teisaldamine-ja-umbernimetamine-korraga" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Teisaldamine ja ümbernimetamine korraga
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#failide-kustutamine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Failide kustutamine
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Failide kustutamine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>rm</code>
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="rm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kataloogi-kustutamine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Kataloogi kustutamine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kinnituse-kusimine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Kinnituse küsimine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metamargid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Metamärgid
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Metamärgid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#suvaline-markide-jada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>*</code> – suvaline märkide jada
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uks-suvaline-mark" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>?</code> – üks suvaline märk
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tekstifailide-sisu-vaatamine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Tekstifailide sisu vaatamine
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tekstifailide sisu vaatamine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>cat</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#less" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>less</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#head" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>head</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>tail</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tekstifailide-muutmine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Tekstifailide muutmine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#valjundi-suunamine-faili" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Väljundi suunamine faili
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Väljundi suunamine faili">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kirjuta-valjund-faili" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>&gt;</code> – kirjuta väljund faili
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lisa-valjund-faili-loppu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>&gt;&gt;</code> – lisa väljund faili lõppu
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#toru" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Toru <code>|</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kaskude-ajalugu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Käskude ajalugu
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Käskude ajalugu">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>history</code>
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="history">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#varasema-kasu-leidmine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Varasema käsu leidmine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tab-automaattaitmine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          TAB-automaattäitmine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#failide-allalaadimine-kasurealt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Failide allalaadimine käsurealt
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Failide allalaadimine käsurealt">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wget" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>wget</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#skripti-kaivitamine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Skripti käivitamine
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Skripti käivitamine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kaivitamine-bashiga" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Käivitamine Bashiga
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kaivitamine-failina" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Käivitamine failina
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sudo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>sudo</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#moned-kasulikud-susteemikasud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Mõned kasulikud süsteemikäsud
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mõned kasulikud süsteemikäsud">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#whoami" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>whoami</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hostnamectl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>hostnamectl</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uptime" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>uptime</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mitme-kasu-uhendamine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Mitme käsu ühendamine
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mitme käsu ühendamine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>;</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>&amp;&amp;</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>||</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#olulisemad-klahvikombinatsioonid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Olulisemad klahvikombinatsioonid
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#praktiline-naide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Praktiline näide
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enne-kustutamist-kontrolli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Enne kustutamist kontrolli
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kokkuvote" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Kokkuvõte
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Kokkuvõte">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kontrollkusimused" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Kontrollküsimused
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#allikad-ja-lisalugemine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Allikad ja lisalugemine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="linuxi-failihaldus-ja-baaskasud">Linuxi failihaldus ja baaskäsud<a class="headerlink" href="#linuxi-failihaldus-ja-baaskasud" title="Permanent link">&para;</a></h1>
+<p>Linuxi süsteemi haldamisel kasutatakse väga palju käsurida. Graafiline kasutajaliides võib olla mugav, kuid käsurida võimaldab tegevusi teha kiiresti, täpselt ja korratavalt. Serverites ei pruugi graafilist kasutajaliidest üldse olla.</p>
+<p>Selles õppematerjalis tutvume Linuxi käsurea kasutamise põhimõtete ja kõige olulisemate failihalduse käskudega.</p>
+<h2 id="opieesmargid">Õpieesmärgid<a class="headerlink" href="#opieesmargid" title="Permanent link">&para;</a></h2>
+<p>Pärast materjali läbimist oskad:</p>
+<ul>
+<li>liikuda Linuxi kataloogipuus;</li>
+<li>kasutada absoluutseid ja suhtelisi failiteid;</li>
+<li>vaadata kataloogide sisu;</li>
+<li>luua faile ja katalooge;</li>
+<li>kopeerida, teisaldada, ümber nimetada ja kustutada faile ning katalooge;</li>
+<li>vaadata ja muuta tekstifailide sisu;</li>
+<li>kasutada metamärke failide valimiseks;</li>
+<li>kasutada käsurea laiendusi mitme faili või kataloogi loomiseks;</li>
+<li>suunata käsu väljundit faili;</li>
+<li>kasutada käskude ajalugu ja käsurea automaattäitmist;</li>
+<li>leida käsu kohta abi.</li>
+</ul>
+<hr />
+<h2 id="terminal-ja-shell">Terminal ja shell<a class="headerlink" href="#terminal-ja-shell" title="Permanent link">&para;</a></h2>
+<p><strong>Terminal</strong> on programm või keskkond, mille kaudu kasutaja sisestab käske.</p>
+<p><strong>Shell ehk kest</strong> on programm, mis tõlgendab kasutaja sisestatud käske ja käivitab vajalikud programmid.</p>
+<p>Debianis ja paljudes teistes Linuxi distributsioonides kasutatakse sageli <strong>Bash</strong>-i (<em>Bourne Again Shell</em>).</p>
+<p>Käsureal näed tavaliselt viipa, näiteks:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="gp">student@debian:~$</span>
+</code></pre></div>
+<p>Viip võib anda infot kasutaja, arvuti ja asukoha kohta:</p>
+<ul>
+<li><code>student</code> – kasutajanimi;</li>
+<li><code>debian</code> – arvuti nimi;</li>
+<li><code>~</code> – kasutaja kodukataloog;</li>
+<li><code>$</code> – tavakasutaja viip.</li>
+</ul>
+<p>Juurkasutaja (<em>root</em>) viiba lõpus kasutatakse tavaliselt märki <code>#</code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Viip ei ole käsu osa</p>
+<p>Õppematerjalides võib näidetes olla käsu ees <code>$</code> või <code>#</code>. Neid märke ei kirjutata käsu sisestamisel kaasa.</p>
+</div>
+<hr />
+<h2 id="kasu-ulesehitus">Käsu ülesehitus<a class="headerlink" href="#kasu-ulesehitus" title="Permanent link">&para;</a></h2>
+<p>Linuxi käsk koosneb tavaliselt käsu nimest ning vajadusel võtmetest ja argumentidest.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>käsk [võtmed] [argumendid]
+</code></pre></div>
+<p>Näiteks:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ls<span class="w"> </span>-l<span class="w"> </span>/etc
+</code></pre></div>
+<p>Siin on:</p>
+<table>
+<thead>
+<tr>
+<th>Osa</th>
+<th>Tähendus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ls</code></td>
+<td>käsk</td>
+</tr>
+<tr>
+<td><code>-l</code></td>
+<td>võti ehk suvand (<em>option</em>)</td>
+</tr>
+<tr>
+<td><code>/etc</code></td>
+<td>argument</td>
+</tr>
+</tbody>
+</table>
+<p>Võtmed muudavad käsu käitumist. Levinud on:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>-h
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>-l
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>-a
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>-r
+</code></pre></div>
+<p>Paljudel käskudel on ka pikad võtmed:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>--help
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>--version
+</code></pre></div>
+<p>Mitmeid lühikesi võtmeid saab sageli ühendada. Näiteks:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>ls<span class="w"> </span>-l<span class="w"> </span>-a<span class="w"> </span>-h
+</code></pre></div>
+<p>on tavaliselt sama mis:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>ls<span class="w"> </span>-lah
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Kõik käsud ei kasuta võtmeid täpselt ühtemoodi. Konkreetse käsu süntaksit kontrolli käsu abiinfost.</p>
+</div>
+<hr />
+<h2 id="abi-leidmine">Abi leidmine<a class="headerlink" href="#abi-leidmine" title="Permanent link">&para;</a></h2>
+<p>Kõiki käsu võtmeid ei ole vaja pähe õppida.</p>
+<h3 id="-help"><code>--help</code><a class="headerlink" href="#-help" title="Permanent link">&para;</a></h3>
+<p>Paljud programmid kuvavad lühikese abi võtmega <code>--help</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>ls<span class="w"> </span>--help
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>cp<span class="w"> </span>--help
+</code></pre></div>
+<h3 id="man"><code>man</code><a class="headerlink" href="#man" title="Permanent link">&para;</a></h3>
+<p>Põhjalikuma dokumentatsiooni jaoks kasutatakse manuaalilehti:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>man<span class="w"> </span>ls
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>man<span class="w"> </span>cp
+</code></pre></div>
+<p>Manuaalist väljumiseks vajuta:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>q
+</code></pre></div>
+<p>Manuaalis otsimiseks vajuta <code>/</code>, kirjuta otsingusõna ja vajuta Enter.</p>
+<hr />
+<h2 id="liikumine-kataloogipuus">Liikumine kataloogipuus<a class="headerlink" href="#liikumine-kataloogipuus" title="Permanent link">&para;</a></h2>
+<h3 id="hetkeasukoht-pwd">Hetkeasukoht – <code>pwd</code><a class="headerlink" href="#hetkeasukoht-pwd" title="Permanent link">&para;</a></h3>
+<p>Käsk <code>pwd</code> (<em>print working directory</em>) näitab, millises kataloogis parajasti asud.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nb">pwd</span>
+</code></pre></div>
+<p>Näiteks:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>/home/student
+</code></pre></div>
+<hr />
+<h3 id="kodukataloog">Kodukataloog<a class="headerlink" href="#kodukataloog" title="Permanent link">&para;</a></h3>
+<p>Tavakasutajate kodukataloogid asuvad tavaliselt <code>/home</code> all.</p>
+<p>Kasutaja <code>student</code> kodukataloog on näiteks:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>/home/student
+</code></pre></div>
+<p>Kodukataloogi tähistab shellis ka märk:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>~
+</code></pre></div>
+<p>Seega:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>/home/student
+</code></pre></div>
+<p>ja kasutaja <code>student</code> jaoks:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>~
+</code></pre></div>
+<p>viitavad samale asukohale.</p>
+<hr />
+<h3 id="kataloogi-vahetamine-cd">Kataloogi vahetamine – <code>cd</code><a class="headerlink" href="#kataloogi-vahetamine-cd" title="Permanent link">&para;</a></h3>
+<p><code>cd</code> (<em>change directory</em>) muudab aktiivset kataloogi.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="nb">cd</span><span class="w"> </span>/etc
+</code></pre></div>
+<p>Kodukataloogi saab minna lihtsalt:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nb">cd</span>
+</code></pre></div>
+<p>või:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="nb">cd</span><span class="w"> </span>~
+</code></pre></div>
+<p>Ühe taseme võrra kõrgemale:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="nb">cd</span><span class="w"> </span>..
+</code></pre></div>
+<p>Eelmisesse asukohta:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="nb">cd</span><span class="w"> </span>-
+</code></pre></div>
+<h4 id="suhteline-tee">Suhteline tee<a class="headerlink" href="#suhteline-tee" title="Permanent link">&para;</a></h4>
+<p>Kui asud kataloogis <code>/home/student</code>, siis:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="nb">cd</span><span class="w"> </span>ajutine
+</code></pre></div>
+<p>viib kataloogi:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>/home/student/ajutine
+</code></pre></div>
+<h4 id="absoluutne-tee">Absoluutne tee<a class="headerlink" href="#absoluutne-tee" title="Permanent link">&para;</a></h4>
+<p>Absoluutne tee algab juurkataloogist <code>/</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="nb">cd</span><span class="w"> </span>/var/log
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Kontrolli asukohta</p>
+<p>Kui pole kindel, kus parajasti asud, kasuta <code>pwd</code>.</p>
+</div>
+<hr />
+<h2 id="kataloogide-sisu-vaatamine">Kataloogide sisu vaatamine<a class="headerlink" href="#kataloogide-sisu-vaatamine" title="Permanent link">&para;</a></h2>
+<h3 id="ls"><code>ls</code><a class="headerlink" href="#ls" title="Permanent link">&para;</a></h3>
+<p>Käsk <code>ls</code> kuvab kataloogi sisu.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>ls
+</code></pre></div>
+<p>Mõned kasulikud võtmed:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>ls<span class="w"> </span>-l
+</code></pre></div>
+<p>kuvab detailse nimekirja.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>ls<span class="w"> </span>-a
+</code></pre></div>
+<p>kuvab ka peidetud failid.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>ls<span class="w"> </span>-h
+</code></pre></div>
+<p>kasutab koos sobivate võtmetega inimesele lihtsamini loetavaid failisuurusi.</p>
+<p>Neid saab ühendada:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>ls<span class="w"> </span>-lah
+</code></pre></div>
+<p>Teise kataloogi sisu saab vaadata sinna liikumata:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>ls<span class="w"> </span>-l<span class="w"> </span>/var/log
+</code></pre></div>
+<p>See on käsureal väga oluline töövõte – paljude toimingute jaoks ei ole vaja aktiivset kataloogi vahetada.</p>
+<hr />
+<h2 id="failide-ja-kataloogide-loomine">Failide ja kataloogide loomine<a class="headerlink" href="#failide-ja-kataloogide-loomine" title="Permanent link">&para;</a></h2>
+<h3 id="kataloogi-loomine-mkdir">Kataloogi loomine – <code>mkdir</code><a class="headerlink" href="#kataloogi-loomine-mkdir" title="Permanent link">&para;</a></h3>
+<p>Ühe kataloogi loomine:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>mkdir<span class="w"> </span>ajutine
+</code></pre></div>
+<p>Mitme kataloogi loomine:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>mkdir<span class="w"> </span>failid1<span class="w"> </span>failid2<span class="w"> </span>failid3
+</code></pre></div>
+<p>Alamkataloogi saab luua teed kasutades:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>mkdir<span class="w"> </span>ajutine/failid1
+</code></pre></div>
+<h4 id="puuduvate-ulemkataloogide-loomine">Puuduvate ülemkataloogide loomine<a class="headerlink" href="#puuduvate-ulemkataloogide-loomine" title="Permanent link">&para;</a></h4>
+<p>Võti <code>-p</code> loob vajadusel ka puuduvad ülemkataloogid:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>projekt/docs/images
+</code></pre></div>
+<p>Kui <code>projekt</code> või <code>docs</code> veel ei eksisteeri, luuakse ka need.</p>
+<hr />
+<h3 id="brace-expansion-mitme-nime-kiire-loomine">Brace expansion – mitme nime kiire loomine<a class="headerlink" href="#brace-expansion-mitme-nime-kiire-loomine" title="Permanent link">&para;</a></h3>
+<p>Bash võimaldab looksulgudega genereerida mitu nime.</p>
+<p>Näiteks:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>mkdir<span class="w"> </span>failid<span class="o">{</span><span class="m">1</span>..3<span class="o">}</span>
+</code></pre></div>
+<p>loob:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>failid1
+<a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a>failid2
+<a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a>failid3
+</code></pre></div>
+<p>Samamoodi:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>mkdir<span class="w"> </span>sept<span class="o">{</span><span class="m">1</span>..30<span class="o">}</span>
+</code></pre></div>
+<p>loob kataloogid <code>sept1</code> kuni <code>sept30</code>.</p>
+<p>Tähti saab kasutada samal viisil:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a>mkdir<span class="w"> </span>grupp<span class="o">{</span>a..d<span class="o">}</span>
+</code></pre></div>
+<p>Tulemuseks:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>gruppa
+<a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a>gruppb
+<a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a>gruppc
+<a id="__codelineno-40-4" name="__codelineno-40-4" href="#__codelineno-40-4"></a>gruppd
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Brace expansion on <strong>Bashi omadus</strong>, mitte <code>mkdir</code> käsu funktsioon. Shell tekitab esmalt nimede loendi ja annab selle seejärel <code>mkdir</code> käsule.</p>
+</div>
+<hr />
+<h3 id="tuhikuga-nimed">Tühikuga nimed<a class="headerlink" href="#tuhikuga-nimed" title="Permanent link">&para;</a></h3>
+<p>Shell kasutab tühikut käskude osade eraldamiseks. Seetõttu tuleb tühikut sisaldav nimi kirjutada jutumärkidesse:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a>mkdir<span class="w"> </span><span class="s2">"olulised failid"</span>
+</code></pre></div>
+<p>või varjestada tühik kaldkriipsuga:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a>mkdir<span class="w"> </span>olulised<span class="se">\ </span>failid
+</code></pre></div>
+<p>Sama põhimõte kehtib teiste käskudega:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a><span class="nb">cd</span><span class="w"> </span><span class="s2">"olulised failid"</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a>cp<span class="w"> </span><span class="s2">"minu fail.txt"</span><span class="w"> </span>/tmp/
+</code></pre></div>
+<p>Failinimedes on tühikud lubatud, kuid administraatori töös kasutatakse sageli mugavuse huvides sidekriipse või alakriipse:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a>olulised-failid
+<a id="__codelineno-45-2" name="__codelineno-45-2" href="#__codelineno-45-2"></a>olulised_failid
+</code></pre></div>
+<hr />
+<h3 id="tuhja-faili-loomine-touch">Tühja faili loomine – <code>touch</code><a class="headerlink" href="#tuhja-faili-loomine-touch" title="Permanent link">&para;</a></h3>
+<p>Tühja faili saab luua käsuga:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a>touch<span class="w"> </span>andmed1
+</code></pre></div>
+<p>Mitme faili loomine:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a>touch<span class="w"> </span>andmed1<span class="w"> </span>andmed2
+</code></pre></div>
+<p>Kui fail on juba olemas, ei kustuta <code>touch</code> selle sisu. Tavaliselt uuendatakse faili ajatemplite väärtusi.</p>
+<hr />
+<h2 id="failide-kopeerimine">Failide kopeerimine<a class="headerlink" href="#failide-kopeerimine" title="Permanent link">&para;</a></h2>
+<h3 id="cp"><code>cp</code><a class="headerlink" href="#cp" title="Permanent link">&para;</a></h3>
+<p>Faili kopeerimine:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a>cp<span class="w"> </span>lähtefail<span class="w"> </span>sihtkoht
+</code></pre></div>
+<p>Näiteks:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a>cp<span class="w"> </span>/etc/group<span class="w"> </span>~/ajutine/
+</code></pre></div>
+<p>Faili saab kopeerimisel anda sellele uue nime:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a>cp<span class="w"> </span>andmed.txt<span class="w"> </span>andmed-varukoopia.txt
+</code></pre></div>
+<h4 id="kataloogi-kopeerimine">Kataloogi kopeerimine<a class="headerlink" href="#kataloogi-kopeerimine" title="Permanent link">&para;</a></h4>
+<p>Kataloogi koos sisuga kopeerimiseks kasutatakse rekursiivset võtit <code>-r</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a>cp<span class="w"> </span>-r<span class="w"> </span>skriptid<span class="w"> </span>~/ajutine/
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Kasulik ohutusvõti</p>
+<p>Õppimise ajal võib kasutada võtit <code>-i</code>, mis küsib kinnitust enne olemasoleva faili ülekirjutamist:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a>cp<span class="w"> </span>-i<span class="w"> </span>fail.txt<span class="w"> </span>sihtkoht/
+</code></pre></div>
+</div>
+<hr />
+<h2 id="failide-teisaldamine-ja-umbernimetamine">Failide teisaldamine ja ümbernimetamine<a class="headerlink" href="#failide-teisaldamine-ja-umbernimetamine" title="Permanent link">&para;</a></h2>
+<h3 id="mv"><code>mv</code><a class="headerlink" href="#mv" title="Permanent link">&para;</a></h3>
+<p><code>mv</code> (<em>move</em>) teisaldab faili või kataloogi.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a>mv<span class="w"> </span>fail.txt<span class="w"> </span>~/ajutine/
+</code></pre></div>
+<p>Kataloogi teisaldamine:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a>mv<span class="w"> </span>projekt<span class="w"> </span>~/ajutine/
+</code></pre></div>
+<p>Erinevalt <code>cp</code> käsust ei ole kataloogi teisaldamiseks tavaliselt <code>-r</code> võtit vaja.</p>
+<h4 id="faili-umbernimetamine">Faili ümbernimetamine<a class="headerlink" href="#faili-umbernimetamine" title="Permanent link">&para;</a></h4>
+<p>Linuxis kasutatakse sama käsku ka ümbernimetamiseks:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a>mv<span class="w"> </span>data1.txt<span class="w"> </span>ajutised_andmed
+</code></pre></div>
+<h4 id="teisaldamine-ja-umbernimetamine-korraga">Teisaldamine ja ümbernimetamine korraga<a class="headerlink" href="#teisaldamine-ja-umbernimetamine-korraga" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-56-1" name="__codelineno-56-1" href="#__codelineno-56-1"></a>mv<span class="w"> </span>/srv/ohoo<span class="w"> </span>~/ajutine/failid4
+</code></pre></div>
+<p>Sel juhul viiakse objekt uude asukohta ja sellele antakse uus nimi.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Ka <code>mv</code> toetab võtit <code>-i</code>, et enne olemasoleva sihtfaili ülekirjutamist kinnitust küsida.</p>
+</div>
+<hr />
+<h2 id="failide-kustutamine">Failide kustutamine<a class="headerlink" href="#failide-kustutamine" title="Permanent link">&para;</a></h2>
+<h3 id="rm"><code>rm</code><a class="headerlink" href="#rm" title="Permanent link">&para;</a></h3>
+<p>Faili kustutamine:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a>rm<span class="w"> </span>junk
+</code></pre></div>
+<p>Mitme faili kustutamine:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a>rm<span class="w"> </span>fail1<span class="w"> </span>fail2<span class="w"> </span>fail3
+</code></pre></div>
+<div class="admonition danger">
+<p class="admonition-title">Linuxis ei ole käsurea <code>rm</code>-il tavaliselt prügikasti</p>
+<p>Käsuga <code>rm</code> kustutatud faili ei saa tavaliselt graafilise töölaua prügikastist taastada. Kontrolli enne Enteri vajutamist hoolikalt faili nime ja asukohta.</p>
+</div>
+<h4 id="kataloogi-kustutamine">Kataloogi kustutamine<a class="headerlink" href="#kataloogi-kustutamine" title="Permanent link">&para;</a></h4>
+<p>Kataloogi ja selle sisu kustutamiseks kasutatakse:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-59-1" name="__codelineno-59-1" href="#__codelineno-59-1"></a>rm<span class="w"> </span>-r<span class="w"> </span>kataloog
+</code></pre></div>
+<p>Näiteks:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-60-1" name="__codelineno-60-1" href="#__codelineno-60-1"></a>rm<span class="w"> </span>-r<span class="w"> </span>vana-projekt
+</code></pre></div>
+<p>Tühja kataloogi saab eemaldada ka käsuga:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-61-1" name="__codelineno-61-1" href="#__codelineno-61-1"></a>rmdir<span class="w"> </span>kataloog
+</code></pre></div>
+<h4 id="kinnituse-kusimine">Kinnituse küsimine<a class="headerlink" href="#kinnituse-kusimine" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-62-1" name="__codelineno-62-1" href="#__codelineno-62-1"></a>rm<span class="w"> </span>-i<span class="w"> </span>fail.txt
+</code></pre></div>
+<p>Kataloogipuuga töötamisel:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-63-1" name="__codelineno-63-1" href="#__codelineno-63-1"></a>rm<span class="w"> </span>-ri<span class="w"> </span>kataloog
+</code></pre></div>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Ära kasuta <code>rm -rf</code> käsku harjumusest. Võtmed <code>-r</code> ja <code>-f</code> koos võivad suure hulga andmeid ilma kinnitust küsimata pöördumatult kustutada.</p>
+</div>
+<hr />
+<h2 id="metamargid">Metamärgid<a class="headerlink" href="#metamargid" title="Permanent link">&para;</a></h2>
+<p>Shell võimaldab failinimede valimiseks kasutada metamärke (<em>wildcards</em>).</p>
+<h3 id="suvaline-markide-jada"><code>*</code> – suvaline märkide jada<a class="headerlink" href="#suvaline-markide-jada" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-64-1" name="__codelineno-64-1" href="#__codelineno-64-1"></a>ls<span class="w"> </span>*.txt
+</code></pre></div>
+<p>valib kõik <code>.txt</code> lõpuga failid.</p>
+<p>Näiteks:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-65-1" name="__codelineno-65-1" href="#__codelineno-65-1"></a>rm<span class="w"> </span>*.txt
+</code></pre></div>
+<p>kustutab aktiivsest kataloogist kõik <code>.txt</code> lõpuga failid.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Enne metamärgiga kustutamist vaata võimalusel kõigepealt <code>ls</code> abil, millised failid valitakse:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-66-1" name="__codelineno-66-1" href="#__codelineno-66-1"></a>ls<span class="w"> </span>*.txt
+</code></pre></div>
+<p>Alles siis:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-67-1" name="__codelineno-67-1" href="#__codelineno-67-1"></a>rm<span class="w"> </span>*.txt
+</code></pre></div>
+</div>
+<h3 id="uks-suvaline-mark"><code>?</code> – üks suvaline märk<a class="headerlink" href="#uks-suvaline-mark" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-68-1" name="__codelineno-68-1" href="#__codelineno-68-1"></a>ls<span class="w"> </span>fail?.txt
+</code></pre></div>
+<p>võib sobitada näiteks:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-69-1" name="__codelineno-69-1" href="#__codelineno-69-1"></a>fail1.txt
+<a id="__codelineno-69-2" name="__codelineno-69-2" href="#__codelineno-69-2"></a>failA.txt
+<a id="__codelineno-69-3" name="__codelineno-69-3" href="#__codelineno-69-3"></a>failx.txt
+</code></pre></div>
+<p>aga mitte:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-70-1" name="__codelineno-70-1" href="#__codelineno-70-1"></a>fail10.txt
+</code></pre></div>
+<hr />
+<h2 id="tekstifailide-sisu-vaatamine">Tekstifailide sisu vaatamine<a class="headerlink" href="#tekstifailide-sisu-vaatamine" title="Permanent link">&para;</a></h2>
+<h3 id="cat"><code>cat</code><a class="headerlink" href="#cat" title="Permanent link">&para;</a></h3>
+<p>Lühikese tekstifaili sisu kuvamiseks:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-71-1" name="__codelineno-71-1" href="#__codelineno-71-1"></a>cat<span class="w"> </span>fail.txt
+</code></pre></div>
+<p>Mitme faili sisu saab kuvada järjest:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-72-1" name="__codelineno-72-1" href="#__codelineno-72-1"></a>cat<span class="w"> </span>fail1.txt<span class="w"> </span>fail2.txt
+</code></pre></div>
+<p><code>cat</code> sobib eelkõige väikeste failide jaoks.</p>
+<hr />
+<h3 id="less"><code>less</code><a class="headerlink" href="#less" title="Permanent link">&para;</a></h3>
+<p>Pikema faili vaatamiseks:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-73-1" name="__codelineno-73-1" href="#__codelineno-73-1"></a>less<span class="w"> </span>/etc/passwd
+</code></pre></div>
+<p>Olulisemad klahvid:</p>
+<table>
+<thead>
+<tr>
+<th>Klahv</th>
+<th>Tegevus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>↑</code>, <code>↓</code></td>
+<td>liikumine</td>
+</tr>
+<tr>
+<td><code>Page Up</code>, <code>Page Down</code></td>
+<td>lehekülgede vahel liikumine</td>
+</tr>
+<tr>
+<td><code>/tekst</code></td>
+<td>otsimine</td>
+</tr>
+<tr>
+<td><code>n</code></td>
+<td>järgmine otsingutulemus</td>
+</tr>
+<tr>
+<td><code>g</code></td>
+<td>faili algusesse</td>
+</tr>
+<tr>
+<td><code>G</code></td>
+<td>faili lõppu</td>
+</tr>
+<tr>
+<td><code>q</code></td>
+<td>väljumine</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="head"><code>head</code><a class="headerlink" href="#head" title="Permanent link">&para;</a></h3>
+<p>Faili alguse kuvamiseks:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-74-1" name="__codelineno-74-1" href="#__codelineno-74-1"></a>head<span class="w"> </span>/etc/passwd
+</code></pre></div>
+<p>Vaikimisi kuvatakse 10 rida.</p>
+<p>Esimese viie rea kuvamiseks:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-75-1" name="__codelineno-75-1" href="#__codelineno-75-1"></a>head<span class="w"> </span>-n<span class="w"> </span><span class="m">5</span><span class="w"> </span>/etc/passwd
+</code></pre></div>
+<p>Lühivormina töötab GNU tööriistades ka:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-76-1" name="__codelineno-76-1" href="#__codelineno-76-1"></a>head<span class="w"> </span>-5<span class="w"> </span>/etc/passwd
+</code></pre></div>
+<p>Õppematerjalides eelistame selgemat kuju:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-77-1" name="__codelineno-77-1" href="#__codelineno-77-1"></a>head<span class="w"> </span>-n<span class="w"> </span><span class="m">5</span><span class="w"> </span>/etc/passwd
+</code></pre></div>
+<hr />
+<h3 id="tail"><code>tail</code><a class="headerlink" href="#tail" title="Permanent link">&para;</a></h3>
+<p>Faili lõpu kuvamiseks:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-78-1" name="__codelineno-78-1" href="#__codelineno-78-1"></a>tail<span class="w"> </span>/etc/passwd
+</code></pre></div>
+<p>Viimase viie rea kuvamiseks:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-79-1" name="__codelineno-79-1" href="#__codelineno-79-1"></a>tail<span class="w"> </span>-n<span class="w"> </span><span class="m">5</span><span class="w"> </span>/etc/passwd
+</code></pre></div>
+<p>Logifaili uute ridade jälgimiseks kasutatakse sageli:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-80-1" name="__codelineno-80-1" href="#__codelineno-80-1"></a>tail<span class="w"> </span>-f<span class="w"> </span>/var/log/fail.log
+</code></pre></div>
+<p><code>Ctrl+C</code> lõpetab jälgimise.</p>
+<hr />
+<h2 id="tekstifailide-muutmine">Tekstifailide muutmine<a class="headerlink" href="#tekstifailide-muutmine" title="Permanent link">&para;</a></h2>
+<p>Linuxis on palju tekstiredaktoreid. Alustamiseks sobib hästi <strong>nano</strong>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-81-1" name="__codelineno-81-1" href="#__codelineno-81-1"></a>nano<span class="w"> </span>fail.txt
+</code></pre></div>
+<p>Nano põhilised käsud kuvatakse ekraani allosas. Märk <code>^</code> tähendab <code>Ctrl</code> klahvi.</p>
+<p>Olulisemad:</p>
+<table>
+<thead>
+<tr>
+<th>Klahvikombinatsioon</th>
+<th>Tegevus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Ctrl+O</code></td>
+<td>salvesta</td>
+</tr>
+<tr>
+<td><code>Enter</code></td>
+<td>kinnita failinimi</td>
+</tr>
+<tr>
+<td><code>Ctrl+X</code></td>
+<td>välju</td>
+</tr>
+<tr>
+<td><code>Ctrl+W</code></td>
+<td>otsi</td>
+</tr>
+</tbody>
+</table>
+<p>Näiteks:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-82-1" name="__codelineno-82-1" href="#__codelineno-82-1"></a>nano<span class="w"> </span>ajutised_andmed
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Tekstiredaktori kasutamine on teistsugune kui faili sisu vaatamine käsuga <code>cat</code> või <code>less</code>: redaktoriga saab faili sisu muuta.</p>
+</div>
+<hr />
+<h2 id="valjundi-suunamine-faili">Väljundi suunamine faili<a class="headerlink" href="#valjundi-suunamine-faili" title="Permanent link">&para;</a></h2>
+<p>Linuxis saab programmi väljundi terminali asemel faili suunata.</p>
+<h3 id="kirjuta-valjund-faili"><code>&gt;</code> – kirjuta väljund faili<a class="headerlink" href="#kirjuta-valjund-faili" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-83-1" name="__codelineno-83-1" href="#__codelineno-83-1"></a>hostnamectl<span class="w"> </span>&gt;<span class="w"> </span>ajalugu.txt
+</code></pre></div>
+<p>Kui faili ei ole olemas, luuakse see.</p>
+<p>Kui fail <strong>on juba olemas</strong>, asendatakse selle senine sisu uue väljundiga.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><code>&gt;</code> võib olemasoleva faili sisu üle kirjutada.</p>
+</div>
+<p>Näiteks:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-84-1" name="__codelineno-84-1" href="#__codelineno-84-1"></a>head<span class="w"> </span>-n<span class="w"> </span><span class="m">5</span><span class="w"> </span>/etc/passwd<span class="w"> </span>&gt;<span class="w"> </span>esimesed.txt
+</code></pre></div>
+<hr />
+<h3 id="lisa-valjund-faili-loppu"><code>&gt;&gt;</code> – lisa väljund faili lõppu<a class="headerlink" href="#lisa-valjund-faili-loppu" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-85-1" name="__codelineno-85-1" href="#__codelineno-85-1"></a>uptime<span class="w"> </span>&gt;&gt;<span class="w"> </span>ajalugu.txt
+</code></pre></div>
+<p>Kui fail on olemas, säilib vana sisu ja uus väljund lisatakse lõppu.</p>
+<p>Näiteks:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-86-1" name="__codelineno-86-1" href="#__codelineno-86-1"></a><span class="nb">history</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>ajalugu.txt
+</code></pre></div>
+<p>Erinevus:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-87-1" name="__codelineno-87-1" href="#__codelineno-87-1"></a>&gt;   kirjuta fail üle
+<a id="__codelineno-87-2" name="__codelineno-87-2" href="#__codelineno-87-2"></a>&gt;&gt;  lisa faili lõppu
+</code></pre></div>
+<hr />
+<h2 id="toru">Toru <code>|</code><a class="headerlink" href="#toru" title="Permanent link">&para;</a></h2>
+<p>Toru (<em>pipe</em>) saadab ühe käsu väljundi teise käsu sisendiks.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-88-1" name="__codelineno-88-1" href="#__codelineno-88-1"></a>käsk1<span class="w"> </span><span class="p">|</span><span class="w"> </span>käsk2
+</code></pre></div>
+<p>Näiteks pika kataloogiloendi saatmine <code>less</code> programmi:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-89-1" name="__codelineno-89-1" href="#__codelineno-89-1"></a>ls<span class="w"> </span>-la<span class="w"> </span>/etc<span class="w"> </span><span class="p">|</span><span class="w"> </span>less
+</code></pre></div>
+<p>Või käsuabi vaatamine lehekülgede kaupa:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-90-1" name="__codelineno-90-1" href="#__codelineno-90-1"></a>ls<span class="w"> </span>--help<span class="w"> </span><span class="p">|</span><span class="w"> </span>less
+</code></pre></div>
+<p>Torusid kasutatakse Linuxi käsureal väga palju, sest väikseid programme saab nende abil omavahel kombineerida.</p>
+<hr />
+<h2 id="kaskude-ajalugu">Käskude ajalugu<a class="headerlink" href="#kaskude-ajalugu" title="Permanent link">&para;</a></h2>
+<p>Bash säilitab varem sisestatud käske.</p>
+<h3 id="history"><code>history</code><a class="headerlink" href="#history" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-91-1" name="__codelineno-91-1" href="#__codelineno-91-1"></a><span class="nb">history</span>
+</code></pre></div>
+<p>kuvab varasemad käsud.</p>
+<p>Ajaloo kustutamiseks aktiivses shellis:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-92-1" name="__codelineno-92-1" href="#__codelineno-92-1"></a><span class="nb">history</span><span class="w"> </span>-c
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><code>history -c</code> kustutab aktiivse shelli käsuajaloo. Seda ei ole tavapärases töös põhjust sageli kasutada.</p>
+</div>
+<h4 id="varasema-kasu-leidmine">Varasema käsu leidmine<a class="headerlink" href="#varasema-kasu-leidmine" title="Permanent link">&para;</a></h4>
+<p>Vajuta:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-93-1" name="__codelineno-93-1" href="#__codelineno-93-1"></a>Ctrl+R
+</code></pre></div>
+<p>ja hakka kirjutama osa varem kasutatud käsust.</p>
+<p>Nooleklahvidega <code>↑</code> ja <code>↓</code> saab samuti varasemate käskude vahel liikuda.</p>
+<hr />
+<h2 id="tab-automaattaitmine">TAB-automaattäitmine<a class="headerlink" href="#tab-automaattaitmine" title="Permanent link">&para;</a></h2>
+<p><code>Tab</code> on Linuxi käsureal üks olulisemaid klahve.</p>
+<p>Kui kirjutad näiteks:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-94-1" name="__codelineno-94-1" href="#__codelineno-94-1"></a>cd /etc/net
+</code></pre></div>
+<p>ja vajutad <code>Tab</code>, võib shell nime automaatselt lõpuni täiendada.</p>
+<p>Kui võimalikke vasteid on mitu, aitab teistkordne <code>Tab</code> nende nimekirja kuvada.</p>
+<p>TAB-i kasutamine:</p>
+<ul>
+<li>kiirendab töötamist;</li>
+<li>vähendab trükivigu;</li>
+<li>aitab leida olemasolevaid failinimesid ja katalooge.</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Pikki failiteid ei ole mõistlik alati käsitsi lõpuni kirjutada. Kasuta TAB-automaattäitmist.</p>
+</div>
+<hr />
+<h2 id="failide-allalaadimine-kasurealt">Failide allalaadimine käsurealt<a class="headerlink" href="#failide-allalaadimine-kasurealt" title="Permanent link">&para;</a></h2>
+<h3 id="wget"><code>wget</code><a class="headerlink" href="#wget" title="Permanent link">&para;</a></h3>
+<p><code>wget</code> võimaldab faili veebist alla laadida.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-95-1" name="__codelineno-95-1" href="#__codelineno-95-1"></a>wget<span class="w"> </span>URL
+</code></pre></div>
+<p>Näiteks:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-96-1" name="__codelineno-96-1" href="#__codelineno-96-1"></a>wget<span class="w"> </span>https://example.com/fail.txt
+</code></pre></div>
+<p>Vaikimisi salvestatakse fail aktiivsesse kataloogi.</p>
+<p>Failile saab anda ka teise nime:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-97-1" name="__codelineno-97-1" href="#__codelineno-97-1"></a>wget<span class="w"> </span>-O<span class="w"> </span>uusnimi.txt<span class="w"> </span>https://example.com/fail.txt
+</code></pre></div>
+<hr />
+<h2 id="skripti-kaivitamine">Skripti käivitamine<a class="headerlink" href="#skripti-kaivitamine" title="Permanent link">&para;</a></h2>
+<p>Shelliskript on tekstifail, mis sisaldab käske.</p>
+<p>Näiteks fail:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-98-1" name="__codelineno-98-1" href="#__codelineno-98-1"></a>setup.sh
+</code></pre></div>
+<h3 id="kaivitamine-bashiga">Käivitamine Bashiga<a class="headerlink" href="#kaivitamine-bashiga" title="Permanent link">&para;</a></h3>
+<p>Skripti saab käivitada Bashile argumendina:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-99-1" name="__codelineno-99-1" href="#__codelineno-99-1"></a>bash<span class="w"> </span>setup.sh
+</code></pre></div>
+<p>Sel juhul ei pea skriptil endal olema käivitusõigust.</p>
+<h3 id="kaivitamine-failina">Käivitamine failina<a class="headerlink" href="#kaivitamine-failina" title="Permanent link">&para;</a></h3>
+<p>Kui skriptil on sobiv <em>shebang</em> ja käivitusõigus, saab seda käivitada:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-100-1" name="__codelineno-100-1" href="#__codelineno-100-1"></a>./setup.sh
+</code></pre></div>
+<p><code>./</code> tähendab, et käivitatav fail asub aktiivses kataloogis.</p>
+<p>Käivitusõiguse saab lisada näiteks:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-101-1" name="__codelineno-101-1" href="#__codelineno-101-1"></a>chmod<span class="w"> </span>+x<span class="w"> </span>setup.sh
+</code></pre></div>
+<p>või kõigile kasutajaklassidele:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-102-1" name="__codelineno-102-1" href="#__codelineno-102-1"></a>chmod<span class="w"> </span>a+x<span class="w"> </span>setup.sh
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Failiõigused tulevad eraldi teemana</p>
+<p><code>chmod</code> muudab faili pääsuõigusi. Siin on vaja teada ainult skripti käivitamise põhimõtet. Omaniku, grupi, <code>rwx</code> õiguste ja numbrilise kirjaviisi juurde tuleme failiõiguste teemas.</p>
+</div>
+<hr />
+<h2 id="sudo"><code>sudo</code><a class="headerlink" href="#sudo" title="Permanent link">&para;</a></h2>
+<p>Mõned süsteemi muutvad käsud vajavad administraatori õigusi.</p>
+<p>Näiteks:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-103-1" name="__codelineno-103-1" href="#__codelineno-103-1"></a>sudo<span class="w"> </span>käsk
+</code></pre></div>
+<p><code>sudo</code> käivitab lubatud käsu kõrgendatud õigustega.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><code>sudo</code> ei ole lihtsalt viis veateatest mööda pääseda. Enne selle kasutamist peab olema selge, miks käsk administraatori õigusi vajab.</p>
+</div>
+<p>Failitoiminguid oma kodukataloogis peaks tavakasutaja üldjuhul saama teha ilma <code>sudo</code> käsuta.</p>
+<hr />
+<h2 id="moned-kasulikud-susteemikasud">Mõned kasulikud süsteemikäsud<a class="headerlink" href="#moned-kasulikud-susteemikasud" title="Permanent link">&para;</a></h2>
+<p>Kuigi need ei ole otseselt failihalduskäsud, kasutatakse neid sageli koos failitoimingutega.</p>
+<h3 id="whoami"><code>whoami</code><a class="headerlink" href="#whoami" title="Permanent link">&para;</a></h3>
+<p>Näitab aktiivse kasutaja nime:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-104-1" name="__codelineno-104-1" href="#__codelineno-104-1"></a>whoami
+</code></pre></div>
+<h3 id="hostnamectl"><code>hostnamectl</code><a class="headerlink" href="#hostnamectl" title="Permanent link">&para;</a></h3>
+<p>Kuvab süsteemi ja arvuti nime kohta infot:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-105-1" name="__codelineno-105-1" href="#__codelineno-105-1"></a>hostnamectl
+</code></pre></div>
+<h3 id="uptime"><code>uptime</code><a class="headerlink" href="#uptime" title="Permanent link">&para;</a></h3>
+<p>Näitab muu hulgas, kui kaua süsteem on töötanud:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-106-1" name="__codelineno-106-1" href="#__codelineno-106-1"></a>uptime
+</code></pre></div>
+<p>Nende käskude väljundit saab samuti faili suunata:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-107-1" name="__codelineno-107-1" href="#__codelineno-107-1"></a>hostnamectl<span class="w"> </span>&gt;<span class="w"> </span>info.txt
+<a id="__codelineno-107-2" name="__codelineno-107-2" href="#__codelineno-107-2"></a>uptime<span class="w"> </span>&gt;&gt;<span class="w"> </span>info.txt
+</code></pre></div>
+<hr />
+<h2 id="mitme-kasu-uhendamine">Mitme käsu ühendamine<a class="headerlink" href="#mitme-kasu-uhendamine" title="Permanent link">&para;</a></h2>
+<h3 id="_1"><code>;</code><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>Käsud täidetakse järjest sõltumata sellest, kas eelmine õnnestus:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-108-1" name="__codelineno-108-1" href="#__codelineno-108-1"></a><span class="nb">pwd</span><span class="w"> </span><span class="p">;</span><span class="w"> </span>ls
+</code></pre></div>
+<h3 id="_2"><code>&amp;&amp;</code><a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>Järgmine käsk täidetakse ainult siis, kui eelmine õnnestus:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-109-1" name="__codelineno-109-1" href="#__codelineno-109-1"></a>mkdir<span class="w"> </span><span class="nb">test</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span><span class="nb">test</span>
+</code></pre></div>
+<p>See on kasulik juhul, kui teisel käsul on mõtet ainult esimese õnnestumise korral.</p>
+<h3 id="_3"><code>||</code><a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>Järgmine käsk täidetakse ainult siis, kui eelmine ebaõnnestus:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-110-1" name="__codelineno-110-1" href="#__codelineno-110-1"></a><span class="nb">cd</span><span class="w"> </span>projekt<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Kataloogi ei leitud"</span>
+</code></pre></div>
+<hr />
+<h2 id="olulisemad-klahvikombinatsioonid">Olulisemad klahvikombinatsioonid<a class="headerlink" href="#olulisemad-klahvikombinatsioonid" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Klahv</th>
+<th>Tegevus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Tab</code></td>
+<td>automaattäitmine</td>
+</tr>
+<tr>
+<td><code>↑</code> / <code>↓</code></td>
+<td>käskude ajaloos liikumine</td>
+</tr>
+<tr>
+<td><code>Ctrl+R</code></td>
+<td>varasemast ajaloost otsimine</td>
+</tr>
+<tr>
+<td><code>Ctrl+C</code></td>
+<td>aktiivse käsu katkestamine</td>
+</tr>
+<tr>
+<td><code>Ctrl+L</code></td>
+<td>terminali kuva puhastamine</td>
+</tr>
+<tr>
+<td><code>Ctrl+A</code></td>
+<td>kursori viimine rea algusesse</td>
+</tr>
+<tr>
+<td><code>Ctrl+E</code></td>
+<td>kursori viimine rea lõppu</td>
+</tr>
+<tr>
+<td><code>Ctrl+U</code></td>
+<td>kustuta kursorist vasakule</td>
+</tr>
+<tr>
+<td><code>Ctrl+K</code></td>
+<td>kustuta kursorist paremale</td>
+</tr>
+<tr>
+<td><code>Ctrl+W</code></td>
+<td>kustuta eelmine sõna</td>
+</tr>
+<tr>
+<td><code>Ctrl+D</code></td>
+<td>EOF; tühjal käsureal tavaliselt shellist väljumine</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code>Ctrl+C</code> saadab töötavale protsessile tavaliselt katkestussignaali. See ei tähenda Linuxi terminalis „kopeeri“.</p>
+</div>
+<hr />
+<h2 id="praktiline-naide">Praktiline näide<a class="headerlink" href="#praktiline-naide" title="Permanent link">&para;</a></h2>
+<p>Oletame, et asud kasutaja <code>student</code> kodukataloogis.</p>
+<p>Kontrolli asukohta:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-111-1" name="__codelineno-111-1" href="#__codelineno-111-1"></a><span class="nb">pwd</span>
+</code></pre></div>
+<p>Loo töökaust ja kolm alamkataloogi:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-112-1" name="__codelineno-112-1" href="#__codelineno-112-1"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>harjutus/failid<span class="o">{</span><span class="m">1</span>..3<span class="o">}</span>
+</code></pre></div>
+<p>Loo kaks tühja faili:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-113-1" name="__codelineno-113-1" href="#__codelineno-113-1"></a>touch<span class="w"> </span>andmed1<span class="w"> </span>andmed2
+</code></pre></div>
+<p>Kopeeri üks neist alamkataloogi:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-114-1" name="__codelineno-114-1" href="#__codelineno-114-1"></a>cp<span class="w"> </span>andmed1<span class="w"> </span>harjutus/failid1/
+</code></pre></div>
+<p>Nimeta teine ümber:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-115-1" name="__codelineno-115-1" href="#__codelineno-115-1"></a>mv<span class="w"> </span>andmed2<span class="w"> </span>andmed-varu
+</code></pre></div>
+<p>Vaata tulemust:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-116-1" name="__codelineno-116-1" href="#__codelineno-116-1"></a>ls<span class="w"> </span>-l
+<a id="__codelineno-116-2" name="__codelineno-116-2" href="#__codelineno-116-2"></a>ls<span class="w"> </span>-l<span class="w"> </span>harjutus/failid1
+</code></pre></div>
+<p>Salvesta süsteemi info faili:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-117-1" name="__codelineno-117-1" href="#__codelineno-117-1"></a>hostnamectl<span class="w"> </span>&gt;<span class="w"> </span>info.txt
+</code></pre></div>
+<p>Lisa faili süsteemi tööaeg:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-118-1" name="__codelineno-118-1" href="#__codelineno-118-1"></a>uptime<span class="w"> </span>&gt;&gt;<span class="w"> </span>info.txt
+</code></pre></div>
+<p>Vaata faili:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-119-1" name="__codelineno-119-1" href="#__codelineno-119-1"></a>cat<span class="w"> </span>info.txt
+</code></pre></div>
+<hr />
+<h2 id="enne-kustutamist-kontrolli">Enne kustutamist kontrolli<a class="headerlink" href="#enne-kustutamist-kontrolli" title="Permanent link">&para;</a></h2>
+<p>Linuxi administraatori üks kasulikumaid harjumusi on enne muutvat või kustutavat käsku kontrollida, mida käsk mõjutab.</p>
+<p>Näiteks enne:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-120-1" name="__codelineno-120-1" href="#__codelineno-120-1"></a>rm<span class="w"> </span>*.txt
+</code></pre></div>
+<p>kontrolli:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-121-1" name="__codelineno-121-1" href="#__codelineno-121-1"></a>ls<span class="w"> </span>*.txt
+</code></pre></div>
+<p>Enne kataloogi kustutamist:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-122-1" name="__codelineno-122-1" href="#__codelineno-122-1"></a>ls<span class="w"> </span>-la<span class="w"> </span>vana-kataloog
+</code></pre></div>
+<p>Alles siis:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-123-1" name="__codelineno-123-1" href="#__codelineno-123-1"></a>rm<span class="w"> </span>-r<span class="w"> </span>vana-kataloog
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Hea töövõte</p>
+<p><strong>Vaata → kontrolli → muuda.</strong></p>
+<p>See vähendab eriti <code>rm</code>, <code>mv</code>, metamärkide ja <code>sudo</code> kasutamisel tehtavaid vigu.</p>
+</div>
+<hr />
+<h2 id="kokkuvote">Kokkuvõte<a class="headerlink" href="#kokkuvote" title="Permanent link">&para;</a></h2>
+<p>Linuxi failihalduses kasutatakse kõige sagedamini järgmisi käske:</p>
+<table>
+<thead>
+<tr>
+<th>Tegevus</th>
+<th>Käsk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hetkeasukoht</td>
+<td><code>pwd</code></td>
+</tr>
+<tr>
+<td>Kataloogi vahetamine</td>
+<td><code>cd</code></td>
+</tr>
+<tr>
+<td>Kataloogi sisu</td>
+<td><code>ls</code></td>
+</tr>
+<tr>
+<td>Kataloogi loomine</td>
+<td><code>mkdir</code></td>
+</tr>
+<tr>
+<td>Tühja faili loomine</td>
+<td><code>touch</code></td>
+</tr>
+<tr>
+<td>Faili/kataloogi kopeerimine</td>
+<td><code>cp</code></td>
+</tr>
+<tr>
+<td>Teisaldamine või ümbernimetamine</td>
+<td><code>mv</code></td>
+</tr>
+<tr>
+<td>Kustutamine</td>
+<td><code>rm</code>, <code>rmdir</code></td>
+</tr>
+<tr>
+<td>Faili sisu kuvamine</td>
+<td><code>cat</code></td>
+</tr>
+<tr>
+<td>Pikema faili vaatamine</td>
+<td><code>less</code></td>
+</tr>
+<tr>
+<td>Faili algus</td>
+<td><code>head</code></td>
+</tr>
+<tr>
+<td>Faili lõpp</td>
+<td><code>tail</code></td>
+</tr>
+<tr>
+<td>Tekstifaili muutmine</td>
+<td><code>nano</code></td>
+</tr>
+<tr>
+<td>Käsu väljund faili</td>
+<td><code>&gt;</code></td>
+</tr>
+<tr>
+<td>Väljundi lisamine faili</td>
+<td><code>&gt;&gt;</code></td>
+</tr>
+<tr>
+<td>Käskude ühendamine</td>
+<td><code>\|</code>, <code>&amp;&amp;</code>, <code>;</code>, <code>\|\|</code></td>
+</tr>
+<tr>
+<td>Käsuajalugu</td>
+<td><code>history</code></td>
+</tr>
+<tr>
+<td>Faili allalaadimine</td>
+<td><code>wget</code></td>
+</tr>
+<tr>
+<td>Abi</td>
+<td><code>--help</code>, <code>man</code></td>
+</tr>
+</tbody>
+</table>
+<p>Kõige olulisem ei ole käskude päheõppimine. Oluline on osata:</p>
+<ol>
+<li>aru saada, <strong>kus sa failisüsteemis asud</strong>;</li>
+<li>kasutada õiget <strong>failiteed</strong>;</li>
+<li>mõista käsu <strong>võtmeid ja argumente</strong>;</li>
+<li>kontrollida tegevuse tulemust;</li>
+<li>kasutada abiinfot, kui käsu süntaks ei ole meeles.</li>
+</ol>
+<hr />
+<h3 id="kontrollkusimused">Kontrollküsimused<a class="headerlink" href="#kontrollkusimused" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Mis vahe on terminalil ja shellil?</li>
+<li>Mida näitab <code>pwd</code>?</li>
+<li>Mis vahe on absoluutsel ja suhtelisel failiteel?</li>
+<li>Mida tähistab <code>~</code>?</li>
+<li>Mis vahe on käskudel <code>cp</code> ja <code>mv</code>?</li>
+<li>Millal vajab <code>cp</code> võtit <code>-r</code>?</li>
+<li>Kuidas luua ühe käsuga kataloogid <code>test1</code> kuni <code>test10</code>?</li>
+<li>Miks tuleb tühikut sisaldav failinimi panna jutumärkidesse või tühik varjestada?</li>
+<li>Mis vahe on <code>&gt;</code> ja <code>&gt;&gt;</code> operaatoritel?</li>
+<li>Mida tähendab metamärk <code>*</code>?</li>
+<li>Miks tasub enne <code>rm *.txt</code> kasutamist käivitada <code>ls *.txt</code>?</li>
+<li>Millal kasutada <code>cat</code> ja millal <code>less</code>?</li>
+<li>Kuidas kuvada faili esimesed viis rida?</li>
+<li>Kuidas kuvada faili viimased viis rida?</li>
+<li>Milleks kasutatakse TAB-klahvi?</li>
+<li>Kuidas leida varem kasutatud käsku ilma kogu <code>history</code> väljundit läbi vaatamata?</li>
+<li>Mis vahe on <code>bash script.sh</code> ja <code>./script.sh</code> käivitamisel?</li>
+<li>Miks ei tohiks <code>sudo</code> kasutada lihtsalt sellepärast, et tavakasutajana saadi veateade?</li>
+</ol>
+<h2 id="allikad-ja-lisalugemine">Allikad ja lisalugemine<a class="headerlink" href="#allikad-ja-lisalugemine" title="Permanent link">&para;</a></h2>
+<p>Linux man pages online: <a href="https://man7.org/linux/man-pages/" rel="noopener" target="_blank">https://man7.org/linux/man-pages/</a></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Üles
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Jalus" >
+        
+          
+          <a href="../linuxi-ulesehitus-ja-tookeskkond/" class="md-footer__link md-footer__link--prev" aria-label="Eelmine: Linuxi ülesehitus ja töökeskkond">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Eelmine
+              </span>
+              <div class="md-ellipsis">
+                Linuxi ülesehitus ja töökeskkond
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../kataloogipuu-ja-failisusteemi-alused/" class="md-footer__link md-footer__link--next" aria-label="Järgmine: Linuxi katalogipuu ja failisusteemi alused">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Järgmine
+              </span>
+              <div class="md-ellipsis">
+                Linuxi katalogipuu ja failisusteemi alused
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M247.1 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L179.2 256 41.9 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Priit Paap
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.annotate", "content.code.copy", "content.tabs.link", "header.autohide", "announce.dismiss", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Kopeeritud", "clipboard.copy": "Kopeeri l\u00f5ikelauale", "search.result.more.one": "1 veel sellel lehel", "search.result.more.other": "# veel sellel lehel", "search.result.none": "Otsingule ei leitud \u00fchtegi vastet", "search.result.one": "Leiti \u00fcks tulemus", "search.result.other": "Leiti # tulemust", "search.result.placeholder": "Otsimiseks kirjuta siia", "search.result.term.missing": "Puudub", "select.version": "Vali versioon"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

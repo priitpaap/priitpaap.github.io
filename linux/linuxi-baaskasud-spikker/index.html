@@ -1,0 +1,5204 @@
+
+<!doctype html>
+<html lang="et" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../debpaigaldus/">
+      
+      
+        <link rel="next" href="../linuxi-ulesehitus-ja-tookeskkond/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../images/computer.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Linuxi käskude spikker - IT alased õppematerjalid</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="deep-orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#linuxi-spikker" class="md-skip">
+          Keri sisuni
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Päis">
+    <a href="../.." title="IT alased õppematerjalid" class="md-header__button md-logo" aria-label="IT alased õppematerjalid" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M348.8 32C340.7 46.1 336 62.5 336 80v16H64v224h272v64H64c-35.3 0-64-28.7-64-64V96c0-35.3 28.7-64 64-64zM336 432c0 17.5 4.7 33.9 12.8 48H120c-13.3 0-24-10.7-24-24s10.7-24 24-24zm96-400h96c26.5 0 48 21.5 48 48v352c0 26.5-21.5 48-48 48h-96c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48m24 64c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24zm56 144a32 32 0 1 0-64 0 32 32 0 1 0 64 0"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            IT alased õppematerjalid
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Linuxi käskude spikker
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="deep-orange"  aria-label="Lülitu heledale režiimile"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Lülitu heledale režiimile" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-blue" data-md-color-accent="deep-orange"  aria-label="Lülitu tumedale režiimile"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Lülitu tumedale režiimile" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Otsi" placeholder="Otsi" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Otsing">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Jaga" aria-label="Jaga" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Lähtesta" aria-label="Lähtesta" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Otsingu lähtestamine
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Vaheleht" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://priitpaap.github.io" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Avalehele
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../unixi-ja-bsd-ajalugu/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Linux
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ansible/ansibleintro/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Automatiseerimine
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigatsioon" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="IT alased õppematerjalid" class="md-nav__button md-logo" aria-label="IT alased õppematerjalid" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M348.8 32C340.7 46.1 336 62.5 336 80v16H64v224h272v64H64c-35.3 0-64-28.7-64-64V96c0-35.3 28.7-64 64-64zM336 432c0 17.5 4.7 33.9 12.8 48H120c-13.3 0-24-10.7-24-24s10.7-24 24-24zm96-400h96c26.5 0 48 21.5 48 48v352c0 26.5-21.5 48-48 48h-96c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48m24 64c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24zm56 144a32 32 0 1 0-64 0 32 32 0 1 0 64 0"/></svg>
+
+    </a>
+    IT alased õppematerjalid
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://priitpaap.github.io" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Avalehele
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Linux
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ajalugu
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Ajalugu
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unixi-ja-bsd-ajalugu/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.5 8H12v5l4.28 2.54.72-1.21-3.5-2.08zM13 3a9 9 0 0 0-9 9H1l3.96 4.03L9 12H6a7 7 0 0 1 7-7 7 7 0 0 1 7 7 7 7 0 0 1-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42A8.9 8.9 0 0 0 13 21a9 9 0 0 0 9-9 9 9 0 0 0-9-9"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Unixi ja BSD ajalugu
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linuxi-ajalugu/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.5 8H12v5l4.28 2.54.72-1.21-3.5-2.08zM13 3a9 9 0 0 0-9 9H1l3.96 4.03L9 12H6a7 7 0 0 1 7-7 7 7 0 0 1 7 7 7 7 0 0 1-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42A8.9 8.9 0 0 0 13 21a9 9 0 0 0 9-9 9 9 0 0 0-9-9"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Linuxi ajalugu
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linuxi baasteadmised
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Linuxi baasteadmised
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../debpaigaldus/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Debian Linuxi paigaldamine virutaalmasinale
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Linuxi käskude spikker
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Linuxi käskude spikker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Sisukord">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Sisukord
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-kasutaja-ja-administraatori-oigused" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          1. Kasutaja ja administraatori õigused
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Kasutaja ja administraatori õigused">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kes-ma-olen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Kes ma olen?
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sudo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>sudo</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#su" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>su</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-liikumine-failisusteemis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          2. Liikumine failisüsteemis
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Liikumine failisüsteemis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hetkeasukoht" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Hetkeasukoht
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kataloogi-vahetamine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Kataloogi vahetamine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-kataloogide-sisu-vaatamine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          3. Kataloogide sisu vaatamine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-failide-ja-kataloogide-loomine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          4. Failide ja kataloogide loomine
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Failide ja kataloogide loomine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tuhja-faili-loomine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Tühja faili loomine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kataloogi-loomine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Kataloogi loomine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-failide-kopeerimine-liigutamine-ja-kustutamine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          5. Failide kopeerimine, liigutamine ja kustutamine
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Failide kopeerimine, liigutamine ja kustutamine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kopeerimine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Kopeerimine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liigutamine-ja-umbernimetamine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Liigutamine ja ümbernimetamine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kustutamine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Kustutamine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-failide-sisu-vaatamine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          6. Failide sisu vaatamine
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Failide sisu vaatamine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#luhike-tekstifail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Lühike tekstifail
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pikem-tekst-voi-logifail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Pikem tekst või logifail
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#faili-algus-ja-lopp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Faili algus ja lõpp
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-tekstiredaktorid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          7. Tekstiredaktorid
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-kasurea-valjund-torud-ja-umbersuunamine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          8. Käsurea väljund, torud ja ümbersuunamine
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Käsurea väljund, torud ja ümbersuunamine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#teksti-valjastamine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Teksti väljastamine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#valjundi-suunamine-faili" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Väljundi suunamine faili
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toru-ehk-pipe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Toru ehk pipe
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kaskude-tingimuslik-uhendamine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Käskude tingimuslik ühendamine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-kasuajalugu-ja-terminali-juhtimine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          9. Käsuajalugu ja terminali juhtimine
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Käsuajalugu ja terminali juhtimine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#olulised-klahvikombinatsioonid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Olulised klahvikombinatsioonid
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-kasu-onnestumise-kontrollimine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          10. Käsu õnnestumise kontrollimine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-failide-ja-teksti-otsimine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          11. Failide ja teksti otsimine
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Failide ja teksti otsimine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#grep-sisu-otsimine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>grep</code> – sisu otsimine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#find-failide-otsimine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>find</code> – failide otsimine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-kasutajate-ja-gruppide-haldus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          12. Kasutajate ja gruppide haldus
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12. Kasutajate ja gruppide haldus">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#olulised-failid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Olulised failid
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uid-ja-gid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          UID ja GID
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kasutaja-loomine-debianis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Kasutaja loomine Debianis
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kasutaja-muutmine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Kasutaja muutmine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parool" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Parool
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kasutaja-kustutamine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Kasutaja kustutamine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gruppide-haldus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Gruppide haldus
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-failioigused-ja-omanikud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          13. Failiõigused ja omanikud
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13. Failiõigused ja omanikud">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chmod" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>chmod</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#omaniku-ja-grupi-muutmine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Omaniku ja grupi muutmine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eribittide-pohimote" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Eribittide põhimõte
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#failiatribuudid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Failiatribuudid
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-protsessid-ja-toode-haldus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          14. Protsessid ja tööde haldus
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-systemd-teenuste-haldus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          15. systemd teenuste haldus
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-logid-ja-journalctl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          16. Logid ja <code>journalctl</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17-vorguinfo-ja-diagnostika" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          17. Võrguinfo ja diagnostika
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="17. Võrguinfo ja diagnostika">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vorguliidesed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Võrguliidesed
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vorguuhenduse-kontroll" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Võrguühenduse kontroll
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kuulavad-pordid-ja-uhendused" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Kuulavad pordid ja ühendused
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vorgukonfiguratsiooni-asukoht" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Võrgukonfiguratsiooni asukoht
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18-tarkvarahaldus-debianis-ja-ubuntus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          18. Tarkvarahaldus Debianis ja Ubuntus
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="18. Tarkvarahaldus Debianis ja Ubuntus">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paketiloendi-varskendamine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Paketiloendi värskendamine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paigaldatud-pakettide-uuendamine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Paigaldatud pakettide uuendamine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paketi-paigaldamine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Paketi paigaldamine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paketi-otsimine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Paketi otsimine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paketi-info" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Paketi info
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eemaldamine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Eemaldamine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apt-repositooriumid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          APT repositooriumid
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deb-paketi-paigaldamine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>.deb</code> paketi paigaldamine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#19-kettaruum-failisusteemid-ja-plokiseadmed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          19. Kettaruum, failisüsteemid ja plokiseadmed
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="19. Kettaruum, failisüsteemid ja plokiseadmed">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#failisusteemide-vaba-ruum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Failisüsteemide vaba ruum
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kataloogi-kettakasutus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Kataloogi kettakasutus
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kettad-ja-partitsioonid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Kettad ja partitsioonid
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#failisusteemi-loomine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Failisüsteemi loomine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#20-failisusteemi-mountimine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          20. Failisüsteemi mountimine
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="20. Failisüsteemi mountimine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#etcfstab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>/etc/fstab</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#21-saaleala-ehk-swap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          21. Saaleala ehk swap
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="21. Saaleala ehk swap">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#swap-partitsioon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Swap-partitsioon
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#swap-fail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Swap-fail
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-sumboolsed-ja-hard-linkid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          22. Sümboolsed ja hard link'id
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="22. Sümboolsed ja hard link&#39;id">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sumboolne-link" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Sümboolne link
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hard-link" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Hard link
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-skriptide-kaivitamine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          23. Skriptide käivitamine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-susteemiinfo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          24. Süsteemiinfo
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#25-arhiivid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          25. Arhiivid
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="25. Arhiivid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>tar</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#26-kaskude-kiire-meelespea" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          26. Käskude kiire meelespea
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#27-moned-olulised-pohimotted" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          27. Mõned olulised põhimõtted
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#allikad-ja-lisalugemine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Allikad ja lisalugemine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linuxi-ulesehitus-ja-tookeskkond/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Linuxi ülesehitus ja töökeskkond
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../failihalduse-baaskasud/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Linuxi failhaldus ja baaskäsud
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kataloogipuu-ja-failisusteemi-alused/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Linuxi katalogipuu ja failisusteemi alused
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linuxi-kasutajate-haldus/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Linuxi kasutajate haldus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linuxi-failioigused/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Linuxi failiõigused
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linuxi serverid ja teenused
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Linuxi serverid ja teenused
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dhcp/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    DHCP serveri seadistamine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dns/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    DNS serveri seadistamine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Automatiseerimine
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Automatiseerimine
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ansible
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Ansible
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansibleintro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ansible ülevaade
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansibleinstall/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ansible paigaldamine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansibleinventory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ansible inventory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansibleconf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ansible levinumad seadistused
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansiblenodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hallatavate hostide ühendamine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansiblemodules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Moodulid ja ad-hoc käsud
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansibleplaybooks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Playbookid ja YAML
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansiblevars/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Muutujad ja nende kasutamine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansiblejinja2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Jinja2 mallid
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansibleconditionals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tingimuslikkus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansibleloops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tsüklid
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansiblehandlers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tegevuste käivitamine ainult vajadusel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansiblevault/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Turvalisus ja Ansible Vault
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansibleroles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rollid ja struktuur
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansiblegalaxy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ansible Galaxy Collections
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansiblebestpractises/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ansible parimad praktikad
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Sisukord">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Sisukord
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-kasutaja-ja-administraatori-oigused" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          1. Kasutaja ja administraatori õigused
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Kasutaja ja administraatori õigused">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kes-ma-olen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Kes ma olen?
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sudo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>sudo</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#su" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>su</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-liikumine-failisusteemis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          2. Liikumine failisüsteemis
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Liikumine failisüsteemis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hetkeasukoht" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Hetkeasukoht
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kataloogi-vahetamine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Kataloogi vahetamine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-kataloogide-sisu-vaatamine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          3. Kataloogide sisu vaatamine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-failide-ja-kataloogide-loomine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          4. Failide ja kataloogide loomine
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Failide ja kataloogide loomine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tuhja-faili-loomine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Tühja faili loomine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kataloogi-loomine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Kataloogi loomine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-failide-kopeerimine-liigutamine-ja-kustutamine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          5. Failide kopeerimine, liigutamine ja kustutamine
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Failide kopeerimine, liigutamine ja kustutamine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kopeerimine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Kopeerimine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liigutamine-ja-umbernimetamine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Liigutamine ja ümbernimetamine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kustutamine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Kustutamine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-failide-sisu-vaatamine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          6. Failide sisu vaatamine
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Failide sisu vaatamine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#luhike-tekstifail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Lühike tekstifail
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pikem-tekst-voi-logifail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Pikem tekst või logifail
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#faili-algus-ja-lopp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Faili algus ja lõpp
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-tekstiredaktorid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          7. Tekstiredaktorid
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-kasurea-valjund-torud-ja-umbersuunamine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          8. Käsurea väljund, torud ja ümbersuunamine
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Käsurea väljund, torud ja ümbersuunamine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#teksti-valjastamine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Teksti väljastamine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#valjundi-suunamine-faili" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Väljundi suunamine faili
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toru-ehk-pipe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Toru ehk pipe
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kaskude-tingimuslik-uhendamine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Käskude tingimuslik ühendamine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-kasuajalugu-ja-terminali-juhtimine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          9. Käsuajalugu ja terminali juhtimine
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Käsuajalugu ja terminali juhtimine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#olulised-klahvikombinatsioonid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Olulised klahvikombinatsioonid
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-kasu-onnestumise-kontrollimine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          10. Käsu õnnestumise kontrollimine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-failide-ja-teksti-otsimine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          11. Failide ja teksti otsimine
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Failide ja teksti otsimine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#grep-sisu-otsimine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>grep</code> – sisu otsimine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#find-failide-otsimine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>find</code> – failide otsimine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-kasutajate-ja-gruppide-haldus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          12. Kasutajate ja gruppide haldus
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12. Kasutajate ja gruppide haldus">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#olulised-failid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Olulised failid
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uid-ja-gid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          UID ja GID
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kasutaja-loomine-debianis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Kasutaja loomine Debianis
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kasutaja-muutmine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Kasutaja muutmine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parool" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Parool
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kasutaja-kustutamine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Kasutaja kustutamine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gruppide-haldus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Gruppide haldus
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-failioigused-ja-omanikud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          13. Failiõigused ja omanikud
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13. Failiõigused ja omanikud">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chmod" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>chmod</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#omaniku-ja-grupi-muutmine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Omaniku ja grupi muutmine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eribittide-pohimote" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Eribittide põhimõte
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#failiatribuudid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Failiatribuudid
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-protsessid-ja-toode-haldus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          14. Protsessid ja tööde haldus
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-systemd-teenuste-haldus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          15. systemd teenuste haldus
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-logid-ja-journalctl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          16. Logid ja <code>journalctl</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17-vorguinfo-ja-diagnostika" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          17. Võrguinfo ja diagnostika
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="17. Võrguinfo ja diagnostika">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vorguliidesed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Võrguliidesed
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vorguuhenduse-kontroll" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Võrguühenduse kontroll
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kuulavad-pordid-ja-uhendused" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Kuulavad pordid ja ühendused
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vorgukonfiguratsiooni-asukoht" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Võrgukonfiguratsiooni asukoht
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18-tarkvarahaldus-debianis-ja-ubuntus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          18. Tarkvarahaldus Debianis ja Ubuntus
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="18. Tarkvarahaldus Debianis ja Ubuntus">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paketiloendi-varskendamine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Paketiloendi värskendamine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paigaldatud-pakettide-uuendamine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Paigaldatud pakettide uuendamine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paketi-paigaldamine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Paketi paigaldamine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paketi-otsimine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Paketi otsimine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paketi-info" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Paketi info
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eemaldamine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Eemaldamine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apt-repositooriumid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          APT repositooriumid
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deb-paketi-paigaldamine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>.deb</code> paketi paigaldamine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#19-kettaruum-failisusteemid-ja-plokiseadmed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          19. Kettaruum, failisüsteemid ja plokiseadmed
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="19. Kettaruum, failisüsteemid ja plokiseadmed">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#failisusteemide-vaba-ruum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Failisüsteemide vaba ruum
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kataloogi-kettakasutus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Kataloogi kettakasutus
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kettad-ja-partitsioonid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Kettad ja partitsioonid
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#failisusteemi-loomine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Failisüsteemi loomine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#20-failisusteemi-mountimine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          20. Failisüsteemi mountimine
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="20. Failisüsteemi mountimine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#etcfstab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>/etc/fstab</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#21-saaleala-ehk-swap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          21. Saaleala ehk swap
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="21. Saaleala ehk swap">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#swap-partitsioon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Swap-partitsioon
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#swap-fail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Swap-fail
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-sumboolsed-ja-hard-linkid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          22. Sümboolsed ja hard link'id
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="22. Sümboolsed ja hard link&#39;id">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sumboolne-link" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Sümboolne link
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hard-link" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Hard link
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-skriptide-kaivitamine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          23. Skriptide käivitamine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-susteemiinfo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          24. Süsteemiinfo
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#25-arhiivid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          25. Arhiivid
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="25. Arhiivid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>tar</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#26-kaskude-kiire-meelespea" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          26. Käskude kiire meelespea
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#27-moned-olulised-pohimotted" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          27. Mõned olulised põhimõtted
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#allikad-ja-lisalugemine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Allikad ja lisalugemine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="linuxi-spikker">Linuxi spikker<a class="headerlink" href="#linuxi-spikker" title="Permanent link">&para;</a></h1>
+<p>See spikker koondab Linuxi käsurea põhilised käsud tegevuste kaupa. Näited sobivad eelkõige <strong>Debiani ja Ubuntu</strong> laadsetele süsteemidele, kuid enamik käske töötab ka teistes Linuxi distributsioonides.</p>
+<div class="admonition info">
+<p class="admonition-title">Käsu abi</p>
+<p>Kui käsu süntaks või võtmed ei ole meeles, kasuta:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>käsk<span class="w"> </span>--help
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>man<span class="w"> </span>käsk
+</code></pre></div>
+<p>Näiteks <code>man ls</code> avab käsu <code>ls</code> manuaalilehe. Manuaalist väljumiseks vajuta <code>q</code>.</p>
+</div>
+<hr />
+<h2 id="1-kasutaja-ja-administraatori-oigused">1. Kasutaja ja administraatori õigused<a class="headerlink" href="#1-kasutaja-ja-administraatori-oigused" title="Permanent link">&para;</a></h2>
+<h3 id="kes-ma-olen">Kes ma olen?<a class="headerlink" href="#kes-ma-olen" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>whoami
+</code></pre></div>
+<p>Kuvab aktiivse kasutaja kasutajanime.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>id
+</code></pre></div>
+<p>Kuvab kasutaja UID, primaarse GID ja grupid.</p>
+<p>Teise kasutaja info:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>id<span class="w"> </span>student
+</code></pre></div>
+<h3 id="sudo"><code>sudo</code><a class="headerlink" href="#sudo" title="Permanent link">&para;</a></h3>
+<p><code>sudo</code> käivitab käsu teise kasutaja õigustes, vaikimisi <strong>root</strong>-kasutajana.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code>sudo</code> ei tähenda sõna-sõnalt <em>super user do</em>. Nimi pärineb ajalooliselt sellest kasutusest, kuid tänapäeval võib <code>sudo</code> käivitada käsu ka muu kasutajana.</p>
+</div>
+<p>Root-keskkonna avamine:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>sudo<span class="w"> </span>-i
+</code></pre></div>
+<p>Väljumine:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">exit</span>
+</code></pre></div>
+<h3 id="su"><code>su</code><a class="headerlink" href="#su" title="Permanent link">&para;</a></h3>
+<p><code>su</code> vahetab kasutajat.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>su<span class="w"> </span>-<span class="w"> </span>kasutajanimi
+</code></pre></div>
+<p><code>-</code> laadib sihtkasutaja sisselogimiskeskkonna.</p>
+<hr />
+<h2 id="2-liikumine-failisusteemis">2. Liikumine failisüsteemis<a class="headerlink" href="#2-liikumine-failisusteemis" title="Permanent link">&para;</a></h2>
+<h3 id="hetkeasukoht">Hetkeasukoht<a class="headerlink" href="#hetkeasukoht" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nb">pwd</span>
+</code></pre></div>
+<p><code>pwd</code> (<em>print working directory</em>) näitab aktiivse kataloogi täielikku teed.</p>
+<h3 id="kataloogi-vahetamine">Kataloogi vahetamine<a class="headerlink" href="#kataloogi-vahetamine" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nb">cd</span><span class="w"> </span>/var/log
+</code></pre></div>
+<p>Kodukataloogi liikumiseks:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nb">cd</span>
+</code></pre></div>
+<p>või</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nb">cd</span><span class="w"> </span>~
+</code></pre></div>
+<p>Eelmisesse kataloogi:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nb">cd</span><span class="w"> </span>-
+</code></pre></div>
+<p>Ühe taseme võrra üles:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nb">cd</span><span class="w"> </span>..
+</code></pre></div>
+<p>Kahe taseme võrra üles:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nb">cd</span><span class="w"> </span>../..
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Tab-klahv</p>
+<p>Faili- ja katalooginimede sisestamisel kasuta <strong>Tab</strong>-klahvi automaatseks lõpetamiseks. See vähendab kirjavigu ja muudab pikkade nimedega töötamise kiiremaks.</p>
+</div>
+<hr />
+<h2 id="3-kataloogide-sisu-vaatamine">3. Kataloogide sisu vaatamine<a class="headerlink" href="#3-kataloogide-sisu-vaatamine" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>ls
+</code></pre></div>
+<p>Pikem nimekiri koos õiguste, omaniku, suuruse ja muutmisajaga:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>ls<span class="w"> </span>-l
+</code></pre></div>
+<p>Koos peidetud failidega:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>ls<span class="w"> </span>-la
+</code></pre></div>
+<p>Inimloetavate failisuurustega:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>ls<span class="w"> </span>-lh
+</code></pre></div>
+<p>Aja järgi, vanemad ees:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>ls<span class="w"> </span>-ltr
+</code></pre></div>
+<p>Kataloogi enda, mitte selle sisu info:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>ls<span class="w"> </span>-ld<span class="w"> </span>kataloog
+</code></pre></div>
+<hr />
+<h2 id="4-failide-ja-kataloogide-loomine">4. Failide ja kataloogide loomine<a class="headerlink" href="#4-failide-ja-kataloogide-loomine" title="Permanent link">&para;</a></h2>
+<h3 id="tuhja-faili-loomine">Tühja faili loomine<a class="headerlink" href="#tuhja-faili-loomine" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>touch<span class="w"> </span>fail.txt
+</code></pre></div>
+<p>Olemasoleva faili puhul muudab <code>touch</code> vaikimisi faili ajatemplid praegusele ajale, kuid ei kustuta faili sisu.</p>
+<h3 id="kataloogi-loomine">Kataloogi loomine<a class="headerlink" href="#kataloogi-loomine" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>mkdir<span class="w"> </span>projekt
+</code></pre></div>
+<p>Mitmetasandiline kataloogistruktuur:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>projekt/docs/images
+</code></pre></div>
+<p>Bash brace expansion võimaldab luua mitu kataloogi korraga:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>mkdir<span class="w"> </span>kaust<span class="o">{</span><span class="m">1</span>..5<span class="o">}</span>
+</code></pre></div>
+<p>Tulemuseks on <code>kaust1</code> kuni <code>kaust5</code>.</p>
+<p>Tühikut sisaldava nime korral kasuta jutumärke:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>mkdir<span class="w"> </span><span class="s2">"Minu kataloog"</span>
+</code></pre></div>
+<p>või escape'i:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>mkdir<span class="w"> </span>Minu<span class="se">\ </span>kataloog
+</code></pre></div>
+<hr />
+<h2 id="5-failide-kopeerimine-liigutamine-ja-kustutamine">5. Failide kopeerimine, liigutamine ja kustutamine<a class="headerlink" href="#5-failide-kopeerimine-liigutamine-ja-kustutamine" title="Permanent link">&para;</a></h2>
+<h3 id="kopeerimine">Kopeerimine<a class="headerlink" href="#kopeerimine" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>cp<span class="w"> </span>fail1.txt<span class="w"> </span>fail2.txt
+</code></pre></div>
+<p>Kataloogi rekursiivseks kopeerimiseks:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>cp<span class="w"> </span>-r<span class="w"> </span>kataloog1<span class="w"> </span>kataloog2
+</code></pre></div>
+<p>Kasulik variant, mis säilitab võimalikult palju atribuute:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>cp<span class="w"> </span>-a<span class="w"> </span>kataloog1<span class="w"> </span>kataloog2
+</code></pre></div>
+<h3 id="liigutamine-ja-umbernimetamine">Liigutamine ja ümbernimetamine<a class="headerlink" href="#liigutamine-ja-umbernimetamine" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>mv<span class="w"> </span>fail.txt<span class="w"> </span>/tmp/
+</code></pre></div>
+<p><code>mv</code>-ga saab faili ka ümber nimetada:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>mv<span class="w"> </span>vana.txt<span class="w"> </span>uus.txt
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><code>mv vana.txt uus.txt</code> <strong>ei loo vana faili koopiat</strong>. Fail nimetatakse ümber või liigutatakse.</p>
+</div>
+<h3 id="kustutamine">Kustutamine<a class="headerlink" href="#kustutamine" title="Permanent link">&para;</a></h3>
+<p>Faili kustutamine:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>rm<span class="w"> </span>fail.txt
+</code></pre></div>
+<p>Kataloogi ja selle sisu rekursiivne kustutamine:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>rm<span class="w"> </span>-r<span class="w"> </span>kataloog
+</code></pre></div>
+<p>Tühja kataloogi kustutamine:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>rmdir<span class="w"> </span>kataloog
+</code></pre></div>
+<div class="admonition danger">
+<p class="admonition-title"><code>rm</code> ei kasuta prügikasti</p>
+<p>Käsureal <code>rm</code>-iga kustutatud fail ei lähe tavaliselt töölaua prügikasti. Eriti ettevaatlik tuleb olla käskudega <code>rm -r</code> ja <code>rm -rf</code>.</p>
+</div>
+<hr />
+<h2 id="6-failide-sisu-vaatamine">6. Failide sisu vaatamine<a class="headerlink" href="#6-failide-sisu-vaatamine" title="Permanent link">&para;</a></h2>
+<h3 id="luhike-tekstifail">Lühike tekstifail<a class="headerlink" href="#luhike-tekstifail" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>cat<span class="w"> </span>fail.txt
+</code></pre></div>
+<p>Failide ühendamine väljundisse:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>cat<span class="w"> </span>fail1.txt<span class="w"> </span>fail2.txt
+</code></pre></div>
+<h3 id="pikem-tekst-voi-logifail">Pikem tekst või logifail<a class="headerlink" href="#pikem-tekst-voi-logifail" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>less<span class="w"> </span>/var/log/syslog
+</code></pre></div>
+<p>Olulisemad <code>less</code> klahvid:</p>
+<table>
+<thead>
+<tr>
+<th>Klahv</th>
+<th>Tegevus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>q</code></td>
+<td>välju</td>
+</tr>
+<tr>
+<td><code>g</code></td>
+<td>faili algusesse</td>
+</tr>
+<tr>
+<td><code>G</code></td>
+<td>faili lõppu</td>
+</tr>
+<tr>
+<td><code>/tekst</code></td>
+<td>otsi edasi</td>
+</tr>
+<tr>
+<td><code>?tekst</code></td>
+<td>otsi tagasi</td>
+</tr>
+<tr>
+<td><code>n</code></td>
+<td>järgmine vaste</td>
+</tr>
+<tr>
+<td><code>N</code></td>
+<td>eelmine vaste</td>
+</tr>
+<tr>
+<td><code>F</code></td>
+<td>jälgi faili lisanduvaid ridu</td>
+</tr>
+</tbody>
+</table>
+<h3 id="faili-algus-ja-lopp">Faili algus ja lõpp<a class="headerlink" href="#faili-algus-ja-lopp" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>head<span class="w"> </span>fail.txt
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a>tail<span class="w"> </span>fail.txt
+</code></pre></div>
+<p>Viimased 50 rida:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>tail<span class="w"> </span>-n<span class="w"> </span><span class="m">50</span><span class="w"> </span>fail.txt
+</code></pre></div>
+<p>Logi reaalajas jälgimine:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a>tail<span class="w"> </span>-f<span class="w"> </span>/var/log/fail.log
+</code></pre></div>
+<hr />
+<h2 id="7-tekstiredaktorid">7. Tekstiredaktorid<a class="headerlink" href="#7-tekstiredaktorid" title="Permanent link">&para;</a></h2>
+<p>Algajale sobiv terminaliredaktor:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a>nano<span class="w"> </span>fail.txt
+</code></pre></div>
+<p>Teised levinud redaktorid:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a>vi<span class="w"> </span>fail.txt
+<a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a>vim<span class="w"> </span>fail.txt
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code>vi</code>/<code>vim</code> kasutavad erinevaid töörežiime ja vajavad eraldi õppimist. Lihtsateks muudatusteks on <code>nano</code> algajale tavaliselt mugavam.</p>
+</div>
+<hr />
+<h2 id="8-kasurea-valjund-torud-ja-umbersuunamine">8. Käsurea väljund, torud ja ümbersuunamine<a class="headerlink" href="#8-kasurea-valjund-torud-ja-umbersuunamine" title="Permanent link">&para;</a></h2>
+<h3 id="teksti-valjastamine">Teksti väljastamine<a class="headerlink" href="#teksti-valjastamine" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"Tere Linux"</span>
+</code></pre></div>
+<h3 id="valjundi-suunamine-faili">Väljundi suunamine faili<a class="headerlink" href="#valjundi-suunamine-faili" title="Permanent link">&para;</a></h3>
+<p>Fail kirjutatakse üle:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"Tere"</span><span class="w"> </span>&gt;<span class="w"> </span>fail.txt
+</code></pre></div>
+<p>Faili lõppu lisamine:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"Uus rida"</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>fail.txt
+</code></pre></div>
+<h3 id="toru-ehk-pipe">Toru ehk pipe<a class="headerlink" href="#toru-ehk-pipe" title="Permanent link">&para;</a></h3>
+<p>Ühe käsu väljund antakse järgmise käsu sisendiks:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a>apt<span class="w"> </span>search<span class="w"> </span>nginx<span class="w"> </span><span class="p">|</span><span class="w"> </span>less
+</code></pre></div>
+<p>Näiteks protsesside filtreerimine:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a>ps<span class="w"> </span>aux<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>nginx
+</code></pre></div>
+<h3 id="kaskude-tingimuslik-uhendamine">Käskude tingimuslik ühendamine<a class="headerlink" href="#kaskude-tingimuslik-uhendamine" title="Permanent link">&para;</a></h3>
+<p>Teine käsk käivitub ainult siis, kui esimene õnnestus:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>upgrade
+</code></pre></div>
+<p>Teine käsk käivitub ainult siis, kui esimene ebaõnnestus:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a>käsk1<span class="w"> </span><span class="o">||</span><span class="w"> </span>käsk2
+</code></pre></div>
+<hr />
+<h2 id="9-kasuajalugu-ja-terminali-juhtimine">9. Käsuajalugu ja terminali juhtimine<a class="headerlink" href="#9-kasuajalugu-ja-terminali-juhtimine" title="Permanent link">&para;</a></h2>
+<p>Käsuajalugu:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a><span class="nb">history</span>
+</code></pre></div>
+<p>Ajaloo kustutamine aktiivsest shellist:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a><span class="nb">history</span><span class="w"> </span>-c
+</code></pre></div>
+<p>Ekraani puhastamine:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a>clear
+</code></pre></div>
+<p>või klahvikombinatsioon:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a>Ctrl+L
+</code></pre></div>
+<h3 id="olulised-klahvikombinatsioonid">Olulised klahvikombinatsioonid<a class="headerlink" href="#olulised-klahvikombinatsioonid" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Klahv</th>
+<th>Tähendus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Ctrl+C</code></td>
+<td>katkesta aktiivne protsess (<code>SIGINT</code>)</td>
+</tr>
+<tr>
+<td><code>Ctrl+D</code></td>
+<td>sisendi lõpp ehk EOF; tühjal shellireal tavaliselt väljub shellist</td>
+</tr>
+<tr>
+<td><code>Ctrl+Z</code></td>
+<td>peata protsess ja vii see job control'i alla</td>
+</tr>
+<tr>
+<td><code>Ctrl+L</code></td>
+<td>puhasta terminalivaade</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><code>Ctrl+X</code> ei ole Linuxi shellis üldine „katkesta” klahvikombinatsioon. Näiteks <code>nano</code> redaktoris tähendab see väljumist.</p>
+</div>
+<p>Taustal/peatatud tööde vaatamine:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a><span class="nb">jobs</span>
+</code></pre></div>
+<p>Viimase peatatud töö esiplaanile toomine:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-56-1" name="__codelineno-56-1" href="#__codelineno-56-1"></a><span class="nb">fg</span>
+</code></pre></div>
+<p>Konkreetne töö:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a><span class="nb">fg</span><span class="w"> </span>%3
+</code></pre></div>
+<hr />
+<h2 id="10-kasu-onnestumise-kontrollimine">10. Käsu õnnestumise kontrollimine<a class="headerlink" href="#10-kasu-onnestumise-kontrollimine" title="Permanent link">&para;</a></h2>
+<p>Viimase käsu exit status:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a><span class="nb">echo</span><span class="w"> </span><span class="nv">$?</span>
+</code></pre></div>
+<p>Üldreegel:</p>
+<ul>
+<li><code>0</code> – käsk õnnestus;</li>
+<li>muu väärtus – tekkis viga või eritingimus.</li>
+</ul>
+<p>Näide:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-59-1" name="__codelineno-59-1" href="#__codelineno-59-1"></a>ls<span class="w"> </span>/etc
+<a id="__codelineno-59-2" name="__codelineno-59-2" href="#__codelineno-59-2"></a><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$?</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Erinevate programmide veakoodide tähendus võib olla erinev. Täpse tähenduse leiab vastava programmi dokumentatsioonist.</p>
+</div>
+<hr />
+<h2 id="11-failide-ja-teksti-otsimine">11. Failide ja teksti otsimine<a class="headerlink" href="#11-failide-ja-teksti-otsimine" title="Permanent link">&para;</a></h2>
+<h3 id="grep-sisu-otsimine"><code>grep</code> – sisu otsimine<a class="headerlink" href="#grep-sisu-otsimine" title="Permanent link">&para;</a></h3>
+<p>Failist:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-60-1" name="__codelineno-60-1" href="#__codelineno-60-1"></a>grep<span class="w"> </span><span class="s2">"student"</span><span class="w"> </span>/var/log/auth.log
+</code></pre></div>
+<p>Tõstutundetu otsing:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-61-1" name="__codelineno-61-1" href="#__codelineno-61-1"></a>grep<span class="w"> </span>-i<span class="w"> </span><span class="s2">"student"</span><span class="w"> </span>fail.txt
+</code></pre></div>
+<p>Rekursiivselt kataloogist:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-62-1" name="__codelineno-62-1" href="#__codelineno-62-1"></a>grep<span class="w"> </span>-R<span class="w"> </span><span class="s2">"student"</span><span class="w"> </span>/etc/
+</code></pre></div>
+<p>Ainult sobivate failide nimed:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-63-1" name="__codelineno-63-1" href="#__codelineno-63-1"></a>grep<span class="w"> </span>-Rl<span class="w"> </span><span class="s2">"student"</span><span class="w"> </span>/etc/
+</code></pre></div>
+<p>Reanumbrid:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-64-1" name="__codelineno-64-1" href="#__codelineno-64-1"></a>grep<span class="w"> </span>-n<span class="w"> </span><span class="s2">"student"</span><span class="w"> </span>fail.txt
+</code></pre></div>
+<h3 id="find-failide-otsimine"><code>find</code> – failide otsimine<a class="headerlink" href="#find-failide-otsimine" title="Permanent link">&para;</a></h3>
+<p>Kõik <code>.log</code> failid:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-65-1" name="__codelineno-65-1" href="#__codelineno-65-1"></a>find<span class="w"> </span>/var/log<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span>-name<span class="w"> </span><span class="s2">"*.log"</span>
+</code></pre></div>
+<p>Tõstutundetu nimeotsing:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-66-1" name="__codelineno-66-1" href="#__codelineno-66-1"></a>find<span class="w"> </span>/var/log<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span>-iname<span class="w"> </span><span class="s2">"*.LOG"</span>
+</code></pre></div>
+<p>Alla 1 MiB failid:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-67-1" name="__codelineno-67-1" href="#__codelineno-67-1"></a>find<span class="w"> </span>/var/log<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span>-size<span class="w"> </span>-1M
+</code></pre></div>
+<p>Root-kasutajale kuuluvad failid:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-68-1" name="__codelineno-68-1" href="#__codelineno-68-1"></a>find<span class="w"> </span>/var/log<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span>-user<span class="w"> </span>root
+</code></pre></div>
+<p>Katkised sümboolsed lingid:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-69-1" name="__codelineno-69-1" href="#__codelineno-69-1"></a>find<span class="w"> </span>-L<span class="w"> </span>.<span class="w"> </span>-type<span class="w"> </span>l
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code>find -size 1M</code> ei tähenda intuitiivselt „täpselt 1 000 000 baiti”; <code>find</code> kasutab suurusühikute ja plokkide ümardamise reegleid. Vahemike puhul on sageli selgem kasutada <code>-size -1M</code>, <code>-size +10M</code> jne.</p>
+</div>
+<hr />
+<h2 id="12-kasutajate-ja-gruppide-haldus">12. Kasutajate ja gruppide haldus<a class="headerlink" href="#12-kasutajate-ja-gruppide-haldus" title="Permanent link">&para;</a></h2>
+<h3 id="olulised-failid">Olulised failid<a class="headerlink" href="#olulised-failid" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Fail</th>
+<th>Sisu</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/etc/passwd</code></td>
+<td>kasutajakontode põhiandmed</td>
+</tr>
+<tr>
+<td><code>/etc/shadow</code></td>
+<td>parooliräsid ja parooli aegumise info</td>
+</tr>
+<tr>
+<td><code>/etc/group</code></td>
+<td>gruppide andmed</td>
+</tr>
+<tr>
+<td><code>/etc/gshadow</code></td>
+<td>gruppide turbeandmed</td>
+</tr>
+</tbody>
+</table>
+<p>Kasutaja kirje vaatamine süsteemi kasutajaandmebaasist:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-70-1" name="__codelineno-70-1" href="#__codelineno-70-1"></a>getent<span class="w"> </span>passwd<span class="w"> </span>student
+</code></pre></div>
+<p>Grupi info:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-71-1" name="__codelineno-71-1" href="#__codelineno-71-1"></a>getent<span class="w"> </span>group<span class="w"> </span>sudo
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code>getent</code> on sageli parem kui ainult <code>/etc/passwd</code> lugemine, sest süsteem võib saada kasutajaid ka LDAP-ist või muudest NSS allikatest.</p>
+</div>
+<h3 id="uid-ja-gid">UID ja GID<a class="headerlink" href="#uid-ja-gid" title="Permanent link">&para;</a></h3>
+<ul>
+<li>UID – <em>user ID</em>;</li>
+<li>GID – <em>group ID</em>;</li>
+<li>UID <code>0</code> kuulub root-kasutajale;</li>
+<li>süsteemi- ja tavakasutajate UID vahemikud sõltuvad distributsioonist ja konfiguratsioonist.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Reegel „UID 1–999 = süsteemikasutaja ja UID 1000+ = tavakasutaja” on levinud vaikeseadistus, kuid seda ei tasu käsitleda universaalse Linuxi reeglina.</p>
+</div>
+<h3 id="kasutaja-loomine-debianis">Kasutaja loomine Debianis<a class="headerlink" href="#kasutaja-loomine-debianis" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-72-1" name="__codelineno-72-1" href="#__codelineno-72-1"></a>sudo<span class="w"> </span>adduser<span class="w"> </span>student
+</code></pre></div>
+<p>Debianis on <code>adduser</code> kasutajasõbralikum kõrgema taseme tööriist. Madalama taseme tööriist on:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-73-1" name="__codelineno-73-1" href="#__codelineno-73-1"></a>sudo<span class="w"> </span>useradd<span class="w"> </span>student
+</code></pre></div>
+<h3 id="kasutaja-muutmine">Kasutaja muutmine<a class="headerlink" href="#kasutaja-muutmine" title="Permanent link">&para;</a></h3>
+<p>Sisselogimisnime muutmine:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-74-1" name="__codelineno-74-1" href="#__codelineno-74-1"></a>sudo<span class="w"> </span>usermod<span class="w"> </span>-l<span class="w"> </span>uusnimi<span class="w"> </span>vananimi
+</code></pre></div>
+<p>Kodukataloogi muutmine ja sisu teisaldamine:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-75-1" name="__codelineno-75-1" href="#__codelineno-75-1"></a>sudo<span class="w"> </span>usermod<span class="w"> </span>-d<span class="w"> </span>/home/uusnimi<span class="w"> </span>-m<span class="w"> </span>uusnimi
+</code></pre></div>
+<p>Login-shelli muutmine:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-76-1" name="__codelineno-76-1" href="#__codelineno-76-1"></a>sudo<span class="w"> </span>usermod<span class="w"> </span>-s<span class="w"> </span>/bin/bash<span class="w"> </span>student
+</code></pre></div>
+<p>Interaktiivse sisselogimise keelamiseks kasutatakse tänapäeval sageli:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-77-1" name="__codelineno-77-1" href="#__codelineno-77-1"></a>sudo<span class="w"> </span>usermod<span class="w"> </span>-s<span class="w"> </span>/usr/sbin/nologin<span class="w"> </span>student
+</code></pre></div>
+<p>Konto lukustamine:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-78-1" name="__codelineno-78-1" href="#__codelineno-78-1"></a>sudo<span class="w"> </span>usermod<span class="w"> </span>-L<span class="w"> </span>student
+</code></pre></div>
+<p>Konto lahtilukustamine:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-79-1" name="__codelineno-79-1" href="#__codelineno-79-1"></a>sudo<span class="w"> </span>usermod<span class="w"> </span>-U<span class="w"> </span>student
+</code></pre></div>
+<h3 id="parool">Parool<a class="headerlink" href="#parool" title="Permanent link">&para;</a></h3>
+<p>Enda parooli muutmine:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-80-1" name="__codelineno-80-1" href="#__codelineno-80-1"></a>passwd
+</code></pre></div>
+<p>Teise kasutaja parooli muutmine administraatorina:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-81-1" name="__codelineno-81-1" href="#__codelineno-81-1"></a>sudo<span class="w"> </span>passwd<span class="w"> </span>student
+</code></pre></div>
+<h3 id="kasutaja-kustutamine">Kasutaja kustutamine<a class="headerlink" href="#kasutaja-kustutamine" title="Permanent link">&para;</a></h3>
+<p>Debianis:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-82-1" name="__codelineno-82-1" href="#__codelineno-82-1"></a>sudo<span class="w"> </span>deluser<span class="w"> </span>student
+</code></pre></div>
+<p>Koos kodukataloogiga:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-83-1" name="__codelineno-83-1" href="#__codelineno-83-1"></a>sudo<span class="w"> </span>deluser<span class="w"> </span>--remove-home<span class="w"> </span>student
+</code></pre></div>
+<p>Madalama taseme alternatiiv:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-84-1" name="__codelineno-84-1" href="#__codelineno-84-1"></a>sudo<span class="w"> </span>userdel<span class="w"> </span>-r<span class="w"> </span>student
+</code></pre></div>
+<h3 id="gruppide-haldus">Gruppide haldus<a class="headerlink" href="#gruppide-haldus" title="Permanent link">&para;</a></h3>
+<p>Kasutaja grupid:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-85-1" name="__codelineno-85-1" href="#__codelineno-85-1"></a>groups
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-86-1" name="__codelineno-86-1" href="#__codelineno-86-1"></a>groups<span class="w"> </span>student
+</code></pre></div>
+<p>Uue grupi loomine:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-87-1" name="__codelineno-87-1" href="#__codelineno-87-1"></a>sudo<span class="w"> </span>addgroup<span class="w"> </span>projekt
+</code></pre></div>
+<p>Kasutaja lisamine gruppi Debianis:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-88-1" name="__codelineno-88-1" href="#__codelineno-88-1"></a>sudo<span class="w"> </span>adduser<span class="w"> </span>student<span class="w"> </span>projekt
+</code></pre></div>
+<p>Levinud distributsioonist sõltumatum variant:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-89-1" name="__codelineno-89-1" href="#__codelineno-89-1"></a>sudo<span class="w"> </span>usermod<span class="w"> </span>-aG<span class="w"> </span>projekt<span class="w"> </span>student
+</code></pre></div>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p><code>usermod -G</code> ilma <code>-a</code> võtmeta võib kasutaja olemasolevate lisagruppide nimekirja üle kirjutada.</p>
+</div>
+<p>Kasutaja eemaldamine grupist Debianis:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-90-1" name="__codelineno-90-1" href="#__codelineno-90-1"></a>sudo<span class="w"> </span>deluser<span class="w"> </span>student<span class="w"> </span>projekt
+</code></pre></div>
+<p>Grupi kustutamine:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-91-1" name="__codelineno-91-1" href="#__codelineno-91-1"></a>sudo<span class="w"> </span>delgroup<span class="w"> </span>projekt
+</code></pre></div>
+<hr />
+<h2 id="13-failioigused-ja-omanikud">13. Failiõigused ja omanikud<a class="headerlink" href="#13-failioigused-ja-omanikud" title="Permanent link">&para;</a></h2>
+<p>Näiteks:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-92-1" name="__codelineno-92-1" href="#__codelineno-92-1"></a>-rwxr-x--- 1 student projekt 1234 Aug 31 12:00 skript.sh
+</code></pre></div>
+<p>Esimene märk näitab objekti tüüpi:</p>
+<ul>
+<li><code>-</code> – tavaline fail;</li>
+<li><code>d</code> – kataloog;</li>
+<li><code>l</code> – sümboolne link.</li>
+</ul>
+<p>Järgmised üheksa märki jagunevad kolmeks:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-93-1" name="__codelineno-93-1" href="#__codelineno-93-1"></a>rwx | r-x | ---
+<a id="__codelineno-93-2" name="__codelineno-93-2" href="#__codelineno-93-2"></a> u      g      o
+</code></pre></div>
+<ul>
+<li><code>u</code> – omanik (<em>user</em>);</li>
+<li><code>g</code> – grupp;</li>
+<li><code>o</code> – teised (<em>others</em>);</li>
+<li><code>a</code> – kõik (<em>all</em>).</li>
+</ul>
+<p>Õigused:</p>
+<table>
+<thead>
+<tr>
+<th>Õigus</th>
+<th style="text-align: right;">Väärtus</th>
+<th>Faili puhul</th>
+<th>Kataloogi puhul</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>r</code></td>
+<td style="text-align: right;">4</td>
+<td>faili sisu lugemine</td>
+<td>nimede loendi lugemine</td>
+</tr>
+<tr>
+<td><code>w</code></td>
+<td style="text-align: right;">2</td>
+<td>faili muutmine</td>
+<td>kirjete loomine/kustutamine, kui muud õigused lubavad</td>
+</tr>
+<tr>
+<td><code>x</code></td>
+<td style="text-align: right;">1</td>
+<td>faili käivitamine</td>
+<td>kataloogi läbimine / sealsete objektide poole pöördumine</td>
+</tr>
+</tbody>
+</table>
+<h3 id="chmod"><code>chmod</code><a class="headerlink" href="#chmod" title="Permanent link">&para;</a></h3>
+<p>Sümboolselt:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-94-1" name="__codelineno-94-1" href="#__codelineno-94-1"></a>chmod<span class="w"> </span>u+rwx,g+rx,o-rwx<span class="w"> </span>fail
+</code></pre></div>
+<p>Numbriliselt:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-95-1" name="__codelineno-95-1" href="#__codelineno-95-1"></a>chmod<span class="w"> </span><span class="m">750</span><span class="w"> </span>fail
+</code></pre></div>
+<p>Levinud väärtused:</p>
+<ul>
+<li><code>644</code> – omanik saab kirjutada, kõik saavad lugeda;</li>
+<li><code>600</code> – ainult omanik saab lugeda ja kirjutada;</li>
+<li><code>755</code> – omanik <code>rwx</code>, teised <code>r-x</code>;</li>
+<li><code>700</code> – õigused ainult omanikule.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><code>chmod 777</code> annab kõigile lugemis-, kirjutamis- ja käivitusõiguse. Seda ei tohiks kasutada „õiguste probleemi kiire parandamise” tavalahendusena.</p>
+</div>
+<h3 id="omaniku-ja-grupi-muutmine">Omaniku ja grupi muutmine<a class="headerlink" href="#omaniku-ja-grupi-muutmine" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-96-1" name="__codelineno-96-1" href="#__codelineno-96-1"></a>sudo<span class="w"> </span>chown<span class="w"> </span>student<span class="w"> </span>fail.txt
+</code></pre></div>
+<p>Omanik ja grupp:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-97-1" name="__codelineno-97-1" href="#__codelineno-97-1"></a>sudo<span class="w"> </span>chown<span class="w"> </span>student:projekt<span class="w"> </span>fail.txt
+</code></pre></div>
+<p>Ainult grupp:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-98-1" name="__codelineno-98-1" href="#__codelineno-98-1"></a>sudo<span class="w"> </span>chown<span class="w"> </span>:projekt<span class="w"> </span>fail.txt
+</code></pre></div>
+<p>Rekursiivselt:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-99-1" name="__codelineno-99-1" href="#__codelineno-99-1"></a>sudo<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </span>student:projekt<span class="w"> </span>kataloog/
+</code></pre></div>
+<h3 id="eribittide-pohimote">Eribittide põhimõte<a class="headerlink" href="#eribittide-pohimote" title="Permanent link">&para;</a></h3>
+<p><strong>Sticky bit</strong> kataloogil:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-100-1" name="__codelineno-100-1" href="#__codelineno-100-1"></a>chmod<span class="w"> </span>+t<span class="w"> </span>jagatud_kataloog
+</code></pre></div>
+<p>Tüüpiline näide on <code>/tmp</code>: kasutajad võivad kataloogi kirjutada, kuid ei saa tavaliselt kustutada teiste kasutajate faile.</p>
+<p><strong>setgid</strong> kataloogil:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-101-1" name="__codelineno-101-1" href="#__codelineno-101-1"></a>chmod<span class="w"> </span>g+s<span class="w"> </span>projekt/
+</code></pre></div>
+<p>Uued failid ja alamkataloogid pärivad kataloogi grupi. See on kasulik jagatud töökataloogides.</p>
+<p><strong>setuid</strong> käivitataval failil tähendab, et programm käivitub faili omaniku efektiivse kasutaja-ID-ga. Seda kasutatakse turvakaalutlustel ettevaatlikult.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Root-kasutaja suudab klassikalisi UNIX-i DAC failiõigusi enamasti eirata, kuid väide „rootile õigused ei kehti” on liiga absoluutne. Rooti võivad endiselt piirata näiteks failisüsteemi omadused, immutable atribuut, read-only mount, Linux capabilities, SELinux/AppArmor jm.</p>
+</div>
+<h3 id="failiatribuudid">Failiatribuudid<a class="headerlink" href="#failiatribuudid" title="Permanent link">&para;</a></h3>
+<p>Atribuutide vaatamine:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-102-1" name="__codelineno-102-1" href="#__codelineno-102-1"></a>lsattr<span class="w"> </span>fail.txt
+</code></pre></div>
+<p>Faili immutable-atribuudi lisamine:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-103-1" name="__codelineno-103-1" href="#__codelineno-103-1"></a>sudo<span class="w"> </span>chattr<span class="w"> </span>+i<span class="w"> </span>fail.txt
+</code></pre></div>
+<p>Eemaldamine:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-104-1" name="__codelineno-104-1" href="#__codelineno-104-1"></a>sudo<span class="w"> </span>chattr<span class="w"> </span>-i<span class="w"> </span>fail.txt
+</code></pre></div>
+<hr />
+<h2 id="14-protsessid-ja-toode-haldus">14. Protsessid ja tööde haldus<a class="headerlink" href="#14-protsessid-ja-toode-haldus" title="Permanent link">&para;</a></h2>
+<p>Kõik protsessid:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-105-1" name="__codelineno-105-1" href="#__codelineno-105-1"></a>ps<span class="w"> </span>aux
+</code></pre></div>
+<p>Protsessipuu:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-106-1" name="__codelineno-106-1" href="#__codelineno-106-1"></a>ps<span class="w"> </span>-ef<span class="w"> </span>--forest
+</code></pre></div>
+<p>Interaktiivne ülevaade:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-107-1" name="__codelineno-107-1" href="#__codelineno-107-1"></a>top
+</code></pre></div>
+<p>Kui paigaldatud:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-108-1" name="__codelineno-108-1" href="#__codelineno-108-1"></a>htop
+</code></pre></div>
+<p>Protsessi lõpetamine PID järgi:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-109-1" name="__codelineno-109-1" href="#__codelineno-109-1"></a><span class="nb">kill</span><span class="w"> </span>PID
+</code></pre></div>
+<p>Vajadusel jõuline lõpetamine:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-110-1" name="__codelineno-110-1" href="#__codelineno-110-1"></a><span class="nb">kill</span><span class="w"> </span>-9<span class="w"> </span>PID
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><code>kill -9</code> saadab <code>SIGKILL</code> signaali ega anna protsessile võimalust korrektselt sulguda. Kasuta seda siis, kui tavalisest <code>kill</code> käsust ei piisa.</p>
+</div>
+<hr />
+<h2 id="15-systemd-teenuste-haldus">15. systemd teenuste haldus<a class="headerlink" href="#15-systemd-teenuste-haldus" title="Permanent link">&para;</a></h2>
+<p>Tänapäevases Debianis kasutatakse teenuste haldamiseks enamasti <code>systemctl</code> käsku.</p>
+<p>Teenuse olek:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-111-1" name="__codelineno-111-1" href="#__codelineno-111-1"></a>systemctl<span class="w"> </span>status<span class="w"> </span>ssh
+</code></pre></div>
+<p>Teenuse käivitamine:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-112-1" name="__codelineno-112-1" href="#__codelineno-112-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>ssh
+</code></pre></div>
+<p>Peatamine:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-113-1" name="__codelineno-113-1" href="#__codelineno-113-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>stop<span class="w"> </span>ssh
+</code></pre></div>
+<p>Taaskäivitamine:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-114-1" name="__codelineno-114-1" href="#__codelineno-114-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>ssh
+</code></pre></div>
+<p>Automaatne käivitamine bootimisel:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-115-1" name="__codelineno-115-1" href="#__codelineno-115-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>ssh
+</code></pre></div>
+<p>Kohe käivitamine ja ühtlasi enable:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-116-1" name="__codelineno-116-1" href="#__codelineno-116-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>--now<span class="w"> </span>ssh
+</code></pre></div>
+<p>Bootimisel käivitamise keelamine:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-117-1" name="__codelineno-117-1" href="#__codelineno-117-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>disable<span class="w"> </span>ssh
+</code></pre></div>
+<p>Ebaõnnestunud teenused:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-118-1" name="__codelineno-118-1" href="#__codelineno-118-1"></a>systemctl<span class="w"> </span>--failed
+</code></pre></div>
+<hr />
+<h2 id="16-logid-ja-journalctl">16. Logid ja <code>journalctl</code><a class="headerlink" href="#16-logid-ja-journalctl" title="Permanent link">&para;</a></h2>
+<p>Kogu systemd journal:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-119-1" name="__codelineno-119-1" href="#__codelineno-119-1"></a>journalctl
+</code></pre></div>
+<p>Praeguse boodi logid:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-120-1" name="__codelineno-120-1" href="#__codelineno-120-1"></a>journalctl<span class="w"> </span>-b
+</code></pre></div>
+<p>Teenuse logid:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-121-1" name="__codelineno-121-1" href="#__codelineno-121-1"></a>journalctl<span class="w"> </span>-u<span class="w"> </span>ssh
+</code></pre></div>
+<p>Logi reaalajas jälgimine:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-122-1" name="__codelineno-122-1" href="#__codelineno-122-1"></a>journalctl<span class="w"> </span>-u<span class="w"> </span>ssh<span class="w"> </span>-f
+</code></pre></div>
+<p>Viimased vead:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-123-1" name="__codelineno-123-1" href="#__codelineno-123-1"></a>journalctl<span class="w"> </span>-p<span class="w"> </span>err<span class="w"> </span>-b
+</code></pre></div>
+<p>Kernelilogid:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-124-1" name="__codelineno-124-1" href="#__codelineno-124-1"></a>journalctl<span class="w"> </span>-k
+</code></pre></div>
+<hr />
+<h2 id="17-vorguinfo-ja-diagnostika">17. Võrguinfo ja diagnostika<a class="headerlink" href="#17-vorguinfo-ja-diagnostika" title="Permanent link">&para;</a></h2>
+<h3 id="vorguliidesed">Võrguliidesed<a class="headerlink" href="#vorguliidesed" title="Permanent link">&para;</a></h3>
+<p>Tänapäevane põhikäsk:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-125-1" name="__codelineno-125-1" href="#__codelineno-125-1"></a>ip<span class="w"> </span>addr
+</code></pre></div>
+<p>Lühem variant:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-126-1" name="__codelineno-126-1" href="#__codelineno-126-1"></a>ip<span class="w"> </span>a
+</code></pre></div>
+<p>Liideste olek:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-127-1" name="__codelineno-127-1" href="#__codelineno-127-1"></a>ip<span class="w"> </span>link
+</code></pre></div>
+<p>Marsruudid:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-128-1" name="__codelineno-128-1" href="#__codelineno-128-1"></a>ip<span class="w"> </span>route
+</code></pre></div>
+<p>või</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-129-1" name="__codelineno-129-1" href="#__codelineno-129-1"></a>ip<span class="w"> </span>r
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title"><code>ifconfig</code></p>
+<p><code>ifconfig</code> on vana <code>net-tools</code> paketi tööriist. Seda võib vanades materjalides ja süsteemides endiselt kohata, kuid uues õppematerjalis tasub eelistada <code>iproute2</code> tööriistu (<code>ip addr</code>, <code>ip link</code>, <code>ip route</code>).</p>
+</div>
+<h3 id="vorguuhenduse-kontroll">Võrguühenduse kontroll<a class="headerlink" href="#vorguuhenduse-kontroll" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-130-1" name="__codelineno-130-1" href="#__codelineno-130-1"></a>ping<span class="w"> </span><span class="m">1</span>.1.1.1
+</code></pre></div>
+<p>DNS-i kontrollimiseks:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-131-1" name="__codelineno-131-1" href="#__codelineno-131-1"></a>ping<span class="w"> </span>debian.org
+</code></pre></div>
+<p>DNS-päringute jaoks on sobivamad tööriistad näiteks:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-132-1" name="__codelineno-132-1" href="#__codelineno-132-1"></a>getent<span class="w"> </span>hosts<span class="w"> </span>debian.org
+</code></pre></div>
+<p>või <code>dnsutils</code> paketi korral:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-133-1" name="__codelineno-133-1" href="#__codelineno-133-1"></a>dig<span class="w"> </span>debian.org
+</code></pre></div>
+<h3 id="kuulavad-pordid-ja-uhendused">Kuulavad pordid ja ühendused<a class="headerlink" href="#kuulavad-pordid-ja-uhendused" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-134-1" name="__codelineno-134-1" href="#__codelineno-134-1"></a>ss<span class="w"> </span>-tulpen
+</code></pre></div>
+<p>Levinud lihtsam variant:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-135-1" name="__codelineno-135-1" href="#__codelineno-135-1"></a>ss<span class="w"> </span>-tulpn
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Vanemates materjalides kasutatakse sageli <code>netstat</code> käsku. Tänapäevases Linuxis on selle asemel tavaliselt eelistatud <code>ss</code>.</p>
+</div>
+<h3 id="vorgukonfiguratsiooni-asukoht">Võrgukonfiguratsiooni asukoht<a class="headerlink" href="#vorgukonfiguratsiooni-asukoht" title="Permanent link">&para;</a></h3>
+<p>Fail</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-136-1" name="__codelineno-136-1" href="#__codelineno-136-1"></a>/etc/network/interfaces
+</code></pre></div>
+<p>on kasutusel eelkõige siis, kui süsteem haldab võrku <strong>ifupdown</strong> abil. See ei ole universaalne kõigi Linuxi süsteemide võrgukonfiguratsiooni asukoht. Töölauasüsteemides kasutatakse sageli NetworkManagerit ning serverites võib kasutusel olla ka <code>systemd-networkd</code> või muu lahendus.</p>
+<p>Kui <code>ifupdown</code> on kasutusel:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-137-1" name="__codelineno-137-1" href="#__codelineno-137-1"></a>sudo<span class="w"> </span>ifup<span class="w"> </span>enp1s0
+<a id="__codelineno-137-2" name="__codelineno-137-2" href="#__codelineno-137-2"></a>sudo<span class="w"> </span>ifdown<span class="w"> </span>enp1s0
+</code></pre></div>
+<hr />
+<h2 id="18-tarkvarahaldus-debianis-ja-ubuntus">18. Tarkvarahaldus Debianis ja Ubuntus<a class="headerlink" href="#18-tarkvarahaldus-debianis-ja-ubuntus" title="Permanent link">&para;</a></h2>
+<h3 id="paketiloendi-varskendamine">Paketiloendi värskendamine<a class="headerlink" href="#paketiloendi-varskendamine" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-138-1" name="__codelineno-138-1" href="#__codelineno-138-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update
+</code></pre></div>
+<h3 id="paigaldatud-pakettide-uuendamine">Paigaldatud pakettide uuendamine<a class="headerlink" href="#paigaldatud-pakettide-uuendamine" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-139-1" name="__codelineno-139-1" href="#__codelineno-139-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>upgrade
+</code></pre></div>
+<p>Täielik sõltuvuste lahendamine, vajadusel pakette lisades või eemaldades:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-140-1" name="__codelineno-140-1" href="#__codelineno-140-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>full-upgrade
+</code></pre></div>
+<h3 id="paketi-paigaldamine">Paketi paigaldamine<a class="headerlink" href="#paketi-paigaldamine" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-141-1" name="__codelineno-141-1" href="#__codelineno-141-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>nginx
+</code></pre></div>
+<h3 id="paketi-otsimine">Paketi otsimine<a class="headerlink" href="#paketi-otsimine" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-142-1" name="__codelineno-142-1" href="#__codelineno-142-1"></a>apt<span class="w"> </span>search<span class="w"> </span>nginx
+</code></pre></div>
+<h3 id="paketi-info">Paketi info<a class="headerlink" href="#paketi-info" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-143-1" name="__codelineno-143-1" href="#__codelineno-143-1"></a>apt<span class="w"> </span>show<span class="w"> </span>nginx
+</code></pre></div>
+<p>Installitud ja saadaoleva versiooni kontroll:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-144-1" name="__codelineno-144-1" href="#__codelineno-144-1"></a>apt<span class="w"> </span>policy<span class="w"> </span>nginx
+</code></pre></div>
+<h3 id="eemaldamine">Eemaldamine<a class="headerlink" href="#eemaldamine" title="Permanent link">&para;</a></h3>
+<p>Pakett eemaldatakse, kuid süsteemsed konfiguratsioonifailid võivad alles jääda:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-145-1" name="__codelineno-145-1" href="#__codelineno-145-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>remove<span class="w"> </span>nginx
+</code></pre></div>
+<p>Pakett koos selle paketihalduri hallatavate konfiguratsioonifailidega:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-146-1" name="__codelineno-146-1" href="#__codelineno-146-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>purge<span class="w"> </span>nginx
+</code></pre></div>
+<p>Enam mittevajalike automaatselt paigaldatud sõltuvuste eemaldamine:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-147-1" name="__codelineno-147-1" href="#__codelineno-147-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>autoremove
+</code></pre></div>
+<p>APT allalaaditud paketifailide puhvri tühjendamine:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-148-1" name="__codelineno-148-1" href="#__codelineno-148-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>clean
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title"><code>apt</code> või <code>apt-get</code>?</p>
+<p>Interaktiivses terminalitöös on tänapäeval mugav kasutada <code>apt</code> käsku. Skriptides soovitab Debian kasutada stabiilsema käsurealiidesega <code>apt-get</code> käsku.</p>
+</div>
+<h3 id="apt-repositooriumid">APT repositooriumid<a class="headerlink" href="#apt-repositooriumid" title="Permanent link">&para;</a></h3>
+<p>Vanemates süsteemides paiknes põhiline nimekiri sageli failis:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-149-1" name="__codelineno-149-1" href="#__codelineno-149-1"></a>/etc/apt/sources.list
+</code></pre></div>
+<p>Tänapäeval võivad repositooriumid paikneda ka kataloogis:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-150-1" name="__codelineno-150-1" href="#__codelineno-150-1"></a>/etc/apt/sources.list.d/
+</code></pre></div>
+<p>ning kasutada <code>.sources</code> ehk deb822 vormingut.</p>
+<h3 id="deb-paketi-paigaldamine"><code>.deb</code> paketi paigaldamine<a class="headerlink" href="#deb-paketi-paigaldamine" title="Permanent link">&para;</a></h3>
+<p>Tänapäeval on mugav kasutada:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-151-1" name="__codelineno-151-1" href="#__codelineno-151-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>./pakett.deb
+</code></pre></div>
+<p>Madalama taseme tööriist:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-152-1" name="__codelineno-152-1" href="#__codelineno-152-1"></a>sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>pakett.deb
+</code></pre></div>
+<p>Kui <code>dpkg</code> paigalduse järel on sõltuvused katki:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-153-1" name="__codelineno-153-1" href="#__codelineno-153-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>--fix-broken<span class="w"> </span>install
+</code></pre></div>
+<p>Kasulikud <code>dpkg</code> käsud:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-154-1" name="__codelineno-154-1" href="#__codelineno-154-1"></a>dpkg<span class="w"> </span>-l
+<a id="__codelineno-154-2" name="__codelineno-154-2" href="#__codelineno-154-2"></a>dpkg<span class="w"> </span>-s<span class="w"> </span>nano
+<a id="__codelineno-154-3" name="__codelineno-154-3" href="#__codelineno-154-3"></a>dpkg<span class="w"> </span>-L<span class="w"> </span>nano
+<a id="__codelineno-154-4" name="__codelineno-154-4" href="#__codelineno-154-4"></a>dpkg<span class="w"> </span>-S<span class="w"> </span>/bin/mkdir
+</code></pre></div>
+<p><code>.deb</code> faili sisu enne paigaldamist:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-155-1" name="__codelineno-155-1" href="#__codelineno-155-1"></a>dpkg-deb<span class="w"> </span>-c<span class="w"> </span>pakett.deb
+</code></pre></div>
+<hr />
+<h2 id="19-kettaruum-failisusteemid-ja-plokiseadmed">19. Kettaruum, failisüsteemid ja plokiseadmed<a class="headerlink" href="#19-kettaruum-failisusteemid-ja-plokiseadmed" title="Permanent link">&para;</a></h2>
+<h3 id="failisusteemide-vaba-ruum">Failisüsteemide vaba ruum<a class="headerlink" href="#failisusteemide-vaba-ruum" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-156-1" name="__codelineno-156-1" href="#__codelineno-156-1"></a>df<span class="w"> </span>-h
+</code></pre></div>
+<h3 id="kataloogi-kettakasutus">Kataloogi kettakasutus<a class="headerlink" href="#kataloogi-kettakasutus" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-157-1" name="__codelineno-157-1" href="#__codelineno-157-1"></a>du<span class="w"> </span>-sh<span class="w"> </span>/var/cache/apt/
+</code></pre></div>
+<p>Alamkataloogid:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-158-1" name="__codelineno-158-1" href="#__codelineno-158-1"></a>du<span class="w"> </span>-h<span class="w"> </span>--max-depth<span class="o">=</span><span class="m">1</span><span class="w"> </span>/var
+</code></pre></div>
+<h3 id="kettad-ja-partitsioonid">Kettad ja partitsioonid<a class="headerlink" href="#kettad-ja-partitsioonid" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-159-1" name="__codelineno-159-1" href="#__codelineno-159-1"></a>lsblk
+</code></pre></div>
+<p>Koos failisüsteemide infoga:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-160-1" name="__codelineno-160-1" href="#__codelineno-160-1"></a>lsblk<span class="w"> </span>-f
+</code></pre></div>
+<p>UUID ja failisüsteemi tüüp:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-161-1" name="__codelineno-161-1" href="#__codelineno-161-1"></a>blkid
+</code></pre></div>
+<p>Partitsioonitabelid:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-162-1" name="__codelineno-162-1" href="#__codelineno-162-1"></a>sudo<span class="w"> </span>fdisk<span class="w"> </span>-l
+</code></pre></div>
+<p>Ketta muutmine:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-163-1" name="__codelineno-163-1" href="#__codelineno-163-1"></a>sudo<span class="w"> </span>fdisk<span class="w"> </span>/dev/sdb
+</code></pre></div>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Partitsioonitabeli muutmine võib andmeid hävitada. Enne muudatusi kontrolli alati seadme nime (<code>lsblk</code>) ja varunda vajalikud andmed.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">MBR vs GPT</p>
+<p>Vana MBR/DOS partitsioonitabeli puhul kehtivad primary/extended/logical partitsioonide piirangud. Tänapäevastes süsteemides kasutatakse enamasti <strong>GPT-d</strong>, kus sellist jaotust ei ole.</p>
+</div>
+<h3 id="failisusteemi-loomine">Failisüsteemi loomine<a class="headerlink" href="#failisusteemi-loomine" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-164-1" name="__codelineno-164-1" href="#__codelineno-164-1"></a>sudo<span class="w"> </span>mkfs.ext4<span class="w"> </span>/dev/sdb1
+</code></pre></div>
+<p>või üldkujul:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-165-1" name="__codelineno-165-1" href="#__codelineno-165-1"></a>sudo<span class="w"> </span>mkfs<span class="w"> </span>-t<span class="w"> </span>ext4<span class="w"> </span>/dev/sdb1
+</code></pre></div>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p><code>mkfs</code> loob failisüsteemi ja hävitab valitud partitsioonil oleva varasema failisüsteemi sisu.</p>
+</div>
+<hr />
+<h2 id="20-failisusteemi-mountimine">20. Failisüsteemi mountimine<a class="headerlink" href="#20-failisusteemi-mountimine" title="Permanent link">&para;</a></h2>
+<p>Mount-point'i loomine:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-166-1" name="__codelineno-166-1" href="#__codelineno-166-1"></a>sudo<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>/mnt/andmed
+</code></pre></div>
+<p>Mountimine:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-167-1" name="__codelineno-167-1" href="#__codelineno-167-1"></a>sudo<span class="w"> </span>mount<span class="w"> </span>/dev/sdb1<span class="w"> </span>/mnt/andmed
+</code></pre></div>
+<p>Kontrollimiseks:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-168-1" name="__codelineno-168-1" href="#__codelineno-168-1"></a>findmnt
+</code></pre></div>
+<p>Konkreetse tee kontroll:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-169-1" name="__codelineno-169-1" href="#__codelineno-169-1"></a>findmnt<span class="w"> </span>/mnt/andmed
+</code></pre></div>
+<p>Lahtiühendamine:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-170-1" name="__codelineno-170-1" href="#__codelineno-170-1"></a>sudo<span class="w"> </span>umount<span class="w"> </span>/mnt/andmed
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Kui failisüsteem mountida kataloogi peale, mille sees on juba faile, muutuvad need mountimise ajaks peidetuks. Need ilmuvad uuesti pärast <code>umount</code> käsku.</p>
+</div>
+<h3 id="etcfstab"><code>/etc/fstab</code><a class="headerlink" href="#etcfstab" title="Permanent link">&para;</a></h3>
+<p>Püsivad mountimised kirjeldatakse failis:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-171-1" name="__codelineno-171-1" href="#__codelineno-171-1"></a>/etc/fstab
+</code></pre></div>
+<p>Soovitatav on seadmenime <code>/dev/sdb1</code> asemel kasutada <strong>UUID-d</strong>, sest kettaseadme nimi võib muutuda.</p>
+<p>UUID leidmine:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-172-1" name="__codelineno-172-1" href="#__codelineno-172-1"></a>blkid<span class="w"> </span>/dev/sdb1
+</code></pre></div>
+<p>Näide:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-173-1" name="__codelineno-173-1" href="#__codelineno-173-1"></a>UUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx /mnt/andmed ext4 defaults 0 2
+</code></pre></div>
+<p>Konfiguratsiooni testimine:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-174-1" name="__codelineno-174-1" href="#__codelineno-174-1"></a>sudo<span class="w"> </span>mount<span class="w"> </span>-a
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Enne taaskäivitamist kontrolli <code>fstab</code> muudatused <code>mount -a</code> abil. Vigane kirje võib põhjustada bootimisel probleeme.</p>
+</div>
+<hr />
+<h2 id="21-saaleala-ehk-swap">21. Saaleala ehk swap<a class="headerlink" href="#21-saaleala-ehk-swap" title="Permanent link">&para;</a></h2>
+<p>Aktiivse swapi vaatamine:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-175-1" name="__codelineno-175-1" href="#__codelineno-175-1"></a>swapon<span class="w"> </span>--show
+</code></pre></div>
+<p>Mälu ülevaade:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-176-1" name="__codelineno-176-1" href="#__codelineno-176-1"></a>free<span class="w"> </span>-h
+</code></pre></div>
+<h3 id="swap-partitsioon">Swap-partitsioon<a class="headerlink" href="#swap-partitsioon" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-177-1" name="__codelineno-177-1" href="#__codelineno-177-1"></a>sudo<span class="w"> </span>mkswap<span class="w"> </span>/dev/sdb2
+<a id="__codelineno-177-2" name="__codelineno-177-2" href="#__codelineno-177-2"></a>sudo<span class="w"> </span>swapon<span class="w"> </span>/dev/sdb2
+</code></pre></div>
+<p>Väljalülitamine:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-178-1" name="__codelineno-178-1" href="#__codelineno-178-1"></a>sudo<span class="w"> </span>swapoff<span class="w"> </span>/dev/sdb2
+</code></pre></div>
+<p>Kõigi <code>/etc/fstab</code> swap-kirjete aktiveerimine:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-179-1" name="__codelineno-179-1" href="#__codelineno-179-1"></a>sudo<span class="w"> </span>swapon<span class="w"> </span>-a
+</code></pre></div>
+<p>Kõigi aktiivsete swap-alade väljalülitamine:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-180-1" name="__codelineno-180-1" href="#__codelineno-180-1"></a>sudo<span class="w"> </span>swapoff<span class="w"> </span>-a
+</code></pre></div>
+<h3 id="swap-fail">Swap-fail<a class="headerlink" href="#swap-fail" title="Permanent link">&para;</a></h3>
+<p>Näiteks 1 GiB swap-fail:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-181-1" name="__codelineno-181-1" href="#__codelineno-181-1"></a>sudo<span class="w"> </span>fallocate<span class="w"> </span>-l<span class="w"> </span>1G<span class="w"> </span>/swapfile
+<a id="__codelineno-181-2" name="__codelineno-181-2" href="#__codelineno-181-2"></a>sudo<span class="w"> </span>chmod<span class="w"> </span><span class="m">600</span><span class="w"> </span>/swapfile
+<a id="__codelineno-181-3" name="__codelineno-181-3" href="#__codelineno-181-3"></a>sudo<span class="w"> </span>mkswap<span class="w"> </span>/swapfile
+<a id="__codelineno-181-4" name="__codelineno-181-4" href="#__codelineno-181-4"></a>sudo<span class="w"> </span>swapon<span class="w"> </span>/swapfile
+</code></pre></div>
+<p>Kui <code>fallocate</code> ei sobi kasutatava failisüsteemiga, saab faili luua näiteks <code>dd</code> abil:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-182-1" name="__codelineno-182-1" href="#__codelineno-182-1"></a>sudo<span class="w"> </span>dd<span class="w"> </span><span class="k">if</span><span class="o">=</span>/dev/zero<span class="w"> </span><span class="nv">of</span><span class="o">=</span>/swapfile<span class="w"> </span><span class="nv">bs</span><span class="o">=</span>1M<span class="w"> </span><span class="nv">count</span><span class="o">=</span><span class="m">1024</span><span class="w"> </span><span class="nv">status</span><span class="o">=</span>progress
+</code></pre></div>
+<p><code>/etc/fstab</code> kirje:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-183-1" name="__codelineno-183-1" href="#__codelineno-183-1"></a>/swapfile none swap sw 0 0
+</code></pre></div>
+<hr />
+<h2 id="22-sumboolsed-ja-hard-linkid">22. Sümboolsed ja hard link'id<a class="headerlink" href="#22-sumboolsed-ja-hard-linkid" title="Permanent link">&para;</a></h2>
+<h3 id="sumboolne-link">Sümboolne link<a class="headerlink" href="#sumboolne-link" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-184-1" name="__codelineno-184-1" href="#__codelineno-184-1"></a>ln<span class="w"> </span>-s<span class="w"> </span>/tegelik/fail<span class="w"> </span>link
+</code></pre></div>
+<p>Sümboolne link:</p>
+<ul>
+<li>viitab failinimele/teele;</li>
+<li>võib viidata failile või kataloogile;</li>
+<li>võib ületada failisüsteemi piire;</li>
+<li>võib muutuda katkiseks, kui sihtmärk eemaldatakse või teisaldatakse.</li>
+</ul>
+<h3 id="hard-link">Hard link<a class="headerlink" href="#hard-link" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-185-1" name="__codelineno-185-1" href="#__codelineno-185-1"></a>ln<span class="w"> </span>fail.txt<span class="w"> </span>teine_nimi.txt
+</code></pre></div>
+<p>Hard link:</p>
+<ul>
+<li>viitab samale inode'ile ja failiandmetele;</li>
+<li>tavaliselt ei saa teha kataloogidele;</li>
+<li>ei saa tavakasutuses ületada failisüsteemi piire;</li>
+<li>faili sisu jääb alles seni, kuni vähemalt üks hard link sellele inode'ile eksisteerib.</li>
+</ul>
+<p>Katkiste sümboolsete linkide otsimine:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-186-1" name="__codelineno-186-1" href="#__codelineno-186-1"></a>find<span class="w"> </span>-L<span class="w"> </span>.<span class="w"> </span>-type<span class="w"> </span>l
+</code></pre></div>
+<hr />
+<h2 id="23-skriptide-kaivitamine">23. Skriptide käivitamine<a class="headerlink" href="#23-skriptide-kaivitamine" title="Permanent link">&para;</a></h2>
+<p>Skript:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-187-1" name="__codelineno-187-1" href="#__codelineno-187-1"></a><span class="ch">#!/bin/bash</span>
+<a id="__codelineno-187-2" name="__codelineno-187-2" href="#__codelineno-187-2"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"Tere"</span>
+</code></pre></div>
+<p>Käivitusõiguse lisamine:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-188-1" name="__codelineno-188-1" href="#__codelineno-188-1"></a>chmod<span class="w"> </span>+x<span class="w"> </span>skript.sh
+</code></pre></div>
+<p>Käivitamine aktiivsest kataloogist:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-189-1" name="__codelineno-189-1" href="#__codelineno-189-1"></a>./skript.sh
+</code></pre></div>
+<p>Täieliku teega:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-190-1" name="__codelineno-190-1" href="#__codelineno-190-1"></a>/home/student/skript.sh
+</code></pre></div>
+<p>Bashi kaudu:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-191-1" name="__codelineno-191-1" href="#__codelineno-191-1"></a>bash<span class="w"> </span>skript.sh
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code>./skript.sh</code> kasutab skripti shebang-rida (<code>#!...</code>) ja nõuab käivitusõigust. <code>bash skript.sh</code> annab faili otse Bashile ning faili <code>x</code> õigus ei ole selleks vajalik.</p>
+</div>
+<hr />
+<h2 id="24-susteemiinfo">24. Süsteemiinfo<a class="headerlink" href="#24-susteemiinfo" title="Permanent link">&para;</a></h2>
+<p>Kernel ja süsteem:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-192-1" name="__codelineno-192-1" href="#__codelineno-192-1"></a>uname<span class="w"> </span>-a
+</code></pre></div>
+<p>Operatsioonisüsteemi info:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-193-1" name="__codelineno-193-1" href="#__codelineno-193-1"></a>cat<span class="w"> </span>/etc/os-release
+</code></pre></div>
+<p>Hostname:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-194-1" name="__codelineno-194-1" href="#__codelineno-194-1"></a>hostname
+</code></pre></div>
+<p>Detailsem hostname/systemd info:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-195-1" name="__codelineno-195-1" href="#__codelineno-195-1"></a>hostnamectl
+</code></pre></div>
+<p>Tööaeg ja koormus:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-196-1" name="__codelineno-196-1" href="#__codelineno-196-1"></a>uptime
+</code></pre></div>
+<p>Mälu:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-197-1" name="__codelineno-197-1" href="#__codelineno-197-1"></a>free<span class="w"> </span>-h
+</code></pre></div>
+<p>CPU info:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-198-1" name="__codelineno-198-1" href="#__codelineno-198-1"></a>lscpu
+</code></pre></div>
+<p>Plokiseadmed:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-199-1" name="__codelineno-199-1" href="#__codelineno-199-1"></a>lsblk
+</code></pre></div>
+<hr />
+<h2 id="25-arhiivid">25. Arhiivid<a class="headerlink" href="#25-arhiivid" title="Permanent link">&para;</a></h2>
+<h3 id="tar"><code>tar</code><a class="headerlink" href="#tar" title="Permanent link">&para;</a></h3>
+<p><code>.tar</code> arhiivi loomine:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-200-1" name="__codelineno-200-1" href="#__codelineno-200-1"></a>tar<span class="w"> </span>-cvf<span class="w"> </span>arhiiv.tar<span class="w"> </span>kataloog/
+</code></pre></div>
+<p><code>.tar.gz</code> loomine:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-201-1" name="__codelineno-201-1" href="#__codelineno-201-1"></a>tar<span class="w"> </span>-czvf<span class="w"> </span>arhiiv.tar.gz<span class="w"> </span>kataloog/
+</code></pre></div>
+<p>Lahtipakkimine:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-202-1" name="__codelineno-202-1" href="#__codelineno-202-1"></a>tar<span class="w"> </span>-xzvf<span class="w"> </span>arhiiv.tar.gz
+</code></pre></div>
+<p>Sisu vaatamine ilma lahti pakkimata:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-203-1" name="__codelineno-203-1" href="#__codelineno-203-1"></a>tar<span class="w"> </span>-tzvf<span class="w"> </span>arhiiv.tar.gz
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><code>tar</code> võtmetes tähendab tavaliselt <code>c</code> create, <code>x</code> extract, <code>t</code> list, <code>v</code> verbose, <code>f</code> file ja <code>z</code> gzip.</p>
+</div>
+<hr />
+<h2 id="26-kaskude-kiire-meelespea">26. Käskude kiire meelespea<a class="headerlink" href="#26-kaskude-kiire-meelespea" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Eesmärk</th>
+<th>Käsk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>asukoht</td>
+<td><code>pwd</code></td>
+</tr>
+<tr>
+<td>kataloogi vahetamine</td>
+<td><code>cd</code></td>
+</tr>
+<tr>
+<td>failide nimekiri</td>
+<td><code>ls -lah</code></td>
+</tr>
+<tr>
+<td>faili loomine</td>
+<td><code>touch</code></td>
+</tr>
+<tr>
+<td>kataloogi loomine</td>
+<td><code>mkdir -p</code></td>
+</tr>
+<tr>
+<td>kopeerimine</td>
+<td><code>cp</code>, <code>cp -r</code>, <code>cp -a</code></td>
+</tr>
+<tr>
+<td>liigutamine / ümbernimetamine</td>
+<td><code>mv</code></td>
+</tr>
+<tr>
+<td>kustutamine</td>
+<td><code>rm</code>, <code>rm -r</code></td>
+</tr>
+<tr>
+<td>faili lugemine</td>
+<td><code>less</code>, <code>cat</code></td>
+</tr>
+<tr>
+<td>faili lõpp</td>
+<td><code>tail</code></td>
+</tr>
+<tr>
+<td>teksti otsimine</td>
+<td><code>grep</code></td>
+</tr>
+<tr>
+<td>failide otsimine</td>
+<td><code>find</code></td>
+</tr>
+<tr>
+<td>kasutaja info</td>
+<td><code>id</code>, <code>getent passwd</code></td>
+</tr>
+<tr>
+<td>õiguste muutmine</td>
+<td><code>chmod</code></td>
+</tr>
+<tr>
+<td>omaniku muutmine</td>
+<td><code>chown</code></td>
+</tr>
+<tr>
+<td>protsessid</td>
+<td><code>ps</code>, <code>top</code>, <code>htop</code></td>
+</tr>
+<tr>
+<td>teenused</td>
+<td><code>systemctl</code></td>
+</tr>
+<tr>
+<td>logid</td>
+<td><code>journalctl</code></td>
+</tr>
+<tr>
+<td>võrk</td>
+<td><code>ip</code>, <code>ss</code>, <code>ping</code></td>
+</tr>
+<tr>
+<td>paketid</td>
+<td><code>apt</code></td>
+</tr>
+<tr>
+<td>kettaruum</td>
+<td><code>df -h</code>, <code>du -sh</code></td>
+</tr>
+<tr>
+<td>kettad/partitsioonid</td>
+<td><code>lsblk</code>, <code>blkid</code>, <code>fdisk</code></td>
+</tr>
+<tr>
+<td>mountimine</td>
+<td><code>mount</code>, <code>umount</code>, <code>findmnt</code></td>
+</tr>
+<tr>
+<td>mälu</td>
+<td><code>free -h</code></td>
+</tr>
+<tr>
+<td>käsu abi</td>
+<td><code>man</code>, <code>--help</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="27-moned-olulised-pohimotted">27. Mõned olulised põhimõtted<a class="headerlink" href="#27-moned-olulised-pohimotted" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Loe veateadet.</strong> Linuxi käsurea veateated annavad sageli üsna täpselt teada, mis valesti läks.</li>
+<li><strong>Kasuta <code>man</code> ja <code>--help</code> abi.</strong> Kõiki käsuvõtmeid ei ole vaja pähe õppida.</li>
+<li><strong>Kasuta Tab-klahvi.</strong> See vähendab kirjavigu failiteedes ja käsunimedes.</li>
+<li><strong>Kontrolli enne administraatoriõigustes käivitamist.</strong> Eriti <code>rm</code>, <code>chmod</code>, <code>chown</code>, <code>dd</code>, <code>mkfs</code>, <code>fdisk</code> ja paketihalduse käsud võivad süsteemi oluliselt muuta.</li>
+<li><strong>Linux on tõstutundlik.</strong> <code>Fail.txt</code> ja <code>fail.txt</code> on erinevad nimed.</li>
+<li><strong>Absoluutne tee algab <code>/</code> märgiga.</strong> Suhteline tee lähtestatakse aktiivsest kataloogist.</li>
+<li><strong>Ära lahenda failiõiguste probleeme automaatselt <code>chmod 777</code> abil.</strong> Leia esmalt, millist õigust ja kellele tegelikult vaja on.</li>
+</ol>
+<h2 id="allikad-ja-lisalugemine">Allikad ja lisalugemine<a class="headerlink" href="#allikad-ja-lisalugemine" title="Permanent link">&para;</a></h2>
+<p>Linux man pages online: <a href="https://man7.org/linux/man-pages/" rel="noopener" target="_blank">https://man7.org/linux/man-pages/</a></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Üles
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Jalus" >
+        
+          
+          <a href="../debpaigaldus/" class="md-footer__link md-footer__link--prev" aria-label="Eelmine: Debian Linuxi paigaldamine virutaalmasinale">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Eelmine
+              </span>
+              <div class="md-ellipsis">
+                Debian Linuxi paigaldamine virutaalmasinale
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../linuxi-ulesehitus-ja-tookeskkond/" class="md-footer__link md-footer__link--next" aria-label="Järgmine: Linuxi ülesehitus ja töökeskkond">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Järgmine
+              </span>
+              <div class="md-ellipsis">
+                Linuxi ülesehitus ja töökeskkond
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M247.1 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L179.2 256 41.9 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Priit Paap
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.annotate", "content.code.copy", "content.tabs.link", "header.autohide", "announce.dismiss", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Kopeeritud", "clipboard.copy": "Kopeeri l\u00f5ikelauale", "search.result.more.one": "1 veel sellel lehel", "search.result.more.other": "# veel sellel lehel", "search.result.none": "Otsingule ei leitud \u00fchtegi vastet", "search.result.one": "Leiti \u00fcks tulemus", "search.result.other": "Leiti # tulemust", "search.result.placeholder": "Otsimiseks kirjuta siia", "search.result.term.missing": "Puudub", "select.version": "Vali versioon"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

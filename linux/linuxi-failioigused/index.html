@@ -1,0 +1,4028 @@
+
+<!doctype html>
+<html lang="et" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../linuxi-kasutajate-haldus/">
+      
+      
+        <link rel="next" href="../dhcp/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../images/computer.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Linuxi failiõigused - IT alased õppematerjalid</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="deep-orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#linuxi-failioigused" class="md-skip">
+          Keri sisuni
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Päis">
+    <a href="../.." title="IT alased õppematerjalid" class="md-header__button md-logo" aria-label="IT alased õppematerjalid" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M348.8 32C340.7 46.1 336 62.5 336 80v16H64v224h272v64H64c-35.3 0-64-28.7-64-64V96c0-35.3 28.7-64 64-64zM336 432c0 17.5 4.7 33.9 12.8 48H120c-13.3 0-24-10.7-24-24s10.7-24 24-24zm96-400h96c26.5 0 48 21.5 48 48v352c0 26.5-21.5 48-48 48h-96c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48m24 64c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24zm56 144a32 32 0 1 0-64 0 32 32 0 1 0 64 0"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            IT alased õppematerjalid
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Linuxi failiõigused
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="deep-orange"  aria-label="Lülitu heledale režiimile"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Lülitu heledale režiimile" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-blue" data-md-color-accent="deep-orange"  aria-label="Lülitu tumedale režiimile"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Lülitu tumedale režiimile" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Otsi" placeholder="Otsi" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Otsing">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Jaga" aria-label="Jaga" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Lähtesta" aria-label="Lähtesta" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Otsingu lähtestamine
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Vaheleht" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://priitpaap.github.io" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Avalehele
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../unixi-ja-bsd-ajalugu/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Linux
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ansible/ansibleintro/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Automatiseerimine
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigatsioon" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="IT alased õppematerjalid" class="md-nav__button md-logo" aria-label="IT alased õppematerjalid" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M348.8 32C340.7 46.1 336 62.5 336 80v16H64v224h272v64H64c-35.3 0-64-28.7-64-64V96c0-35.3 28.7-64 64-64zM336 432c0 17.5 4.7 33.9 12.8 48H120c-13.3 0-24-10.7-24-24s10.7-24 24-24zm96-400h96c26.5 0 48 21.5 48 48v352c0 26.5-21.5 48-48 48h-96c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48m24 64c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24zm56 144a32 32 0 1 0-64 0 32 32 0 1 0 64 0"/></svg>
+
+    </a>
+    IT alased õppematerjalid
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://priitpaap.github.io" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Avalehele
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Linux
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ajalugu
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Ajalugu
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unixi-ja-bsd-ajalugu/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.5 8H12v5l4.28 2.54.72-1.21-3.5-2.08zM13 3a9 9 0 0 0-9 9H1l3.96 4.03L9 12H6a7 7 0 0 1 7-7 7 7 0 0 1 7 7 7 7 0 0 1-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42A8.9 8.9 0 0 0 13 21a9 9 0 0 0 9-9 9 9 0 0 0-9-9"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Unixi ja BSD ajalugu
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linuxi-ajalugu/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.5 8H12v5l4.28 2.54.72-1.21-3.5-2.08zM13 3a9 9 0 0 0-9 9H1l3.96 4.03L9 12H6a7 7 0 0 1 7-7 7 7 0 0 1 7 7 7 7 0 0 1-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42A8.9 8.9 0 0 0 13 21a9 9 0 0 0 9-9 9 9 0 0 0-9-9"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Linuxi ajalugu
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linuxi baasteadmised
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Linuxi baasteadmised
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../debpaigaldus/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Debian Linuxi paigaldamine virutaalmasinale
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linuxi-baaskasud-spikker/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Linuxi käskude spikker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linuxi-ulesehitus-ja-tookeskkond/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Linuxi ülesehitus ja töökeskkond
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../failihalduse-baaskasud/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Linuxi failhaldus ja baaskäsud
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kataloogipuu-ja-failisusteemi-alused/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Linuxi katalogipuu ja failisusteemi alused
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linuxi-kasutajate-haldus/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Linuxi kasutajate haldus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Linuxi failiõigused
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Linuxi failiõigused
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Sisukord">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Sisukord
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#opieesmargid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Õpieesmärgid
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#miks-failioigusi-vaja-on" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Miks failiõigusi vaja on?
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#omanik-grupp-ja-teised" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Omanik, grupp ja teised
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#failioiguste-vaatamine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Failiõiguste vaatamine
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Failiõiguste vaatamine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#esimene-mark-objekti-tuup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Esimene märk – objekti tüüp
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jargmised-uheksa-marki-oigused" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Järgmised üheksa märki – õigused
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#r-w-ja-x-faili-puhul" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>r</code>, <code>w</code> ja <code>x</code> faili puhul
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#r-w-ja-x-kataloogi-puhul" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>r</code>, <code>w</code> ja <code>x</code> kataloogi puhul
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#oiguste-muutmine-kasuga-chmod" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Õiguste muutmine käsuga <code>chmod</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sumbolitega-chmod" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Sümbolitega <code>chmod</code>
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sümbolitega chmod">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kelle-oigusi-muudetakse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Kelle õigusi muudetakse?
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kuidas-oigusi-muudetakse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Kuidas õigusi muudetakse?
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#naited" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Näited
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#numbriline-chmod" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Numbriline <code>chmod</code>
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Numbriline chmod">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#naide-640" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Näide: <code>640</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#naide-660" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Näide: <code>660</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#naide-750" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Näide: <code>750</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#levinud-oiguste-kombinatsioonid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Levinud õiguste kombinatsioonid
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#omaniku-ja-grupi-vaatamine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Omaniku ja grupi vaatamine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#omaniku-muutmine-kasuga-chown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Omaniku muutmine käsuga <code>chown</code>
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Omaniku muutmine käsuga chown">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ainult-omaniku-muutmine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Ainult omaniku muutmine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#omaniku-ja-grupi-muutmine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Omaniku ja grupi muutmine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ainult-grupi-muutmine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Ainult grupi muutmine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grupi-muutmine-kasuga-chgrp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Grupi muutmine käsuga <code>chgrp</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rekursiivne-omaniku-muutmine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Rekursiivne omaniku muutmine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rekursiivne-chmod" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Rekursiivne <code>chmod</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vaikimisi-oigused-ja-umask" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Vaikimisi õigused ja <code>umask</code>
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vaikimisi õigused ja umask">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lihtsustatud-pohimote" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Lihtsustatud põhimõte
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#miks-fail-ei-saa-vaikimisi-x-oigust" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Miks fail ei saa vaikimisi <code>x</code> õigust?
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#erioigused" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Eriõigused
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setuid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          setuid
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setgid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          setgid
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="setgid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setgid-kataloogil" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          setgid kataloogil
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sticky-bit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Sticky bit
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#erioigused-numbriliselt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Eriõigused numbriliselt
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#root-ja-failioigused" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Root ja failiõigused
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acl-kui-ownergroupothers-ei-ole-piisav" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          ACL – kui <code>owner/group/others</code> ei ole piisav
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#praktiline-oiguste-lugemine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Praktiline õiguste lugemine
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Praktiline õiguste lugemine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#naide-1-fail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Näide 1 – fail
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#naide-2-skript" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Näide 2 – skript
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#naide-3-jagatud-kataloog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Näide 3 – jagatud kataloog
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hea-toovote-vaata-motle-muuda-kontrolli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Hea töövõte: vaata → mõtle → muuda → kontrolli
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kaskude-kokkuvote" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Käskude kokkuvõte
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Käskude kokkuvõte">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#oiguste-numbrid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Õiguste numbrid
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#olulised-moisted" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Olulised mõisted
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kontrollkusimused" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Kontrollküsimused
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kokkuvote" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Kokkuvõte
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#allikad-ja-lisalugemine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Allikad ja lisalugemine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linuxi serverid ja teenused
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Linuxi serverid ja teenused
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dhcp/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    DHCP serveri seadistamine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dns/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    DNS serveri seadistamine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Automatiseerimine
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Automatiseerimine
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ansible
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Ansible
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansibleintro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ansible ülevaade
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansibleinstall/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ansible paigaldamine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansibleinventory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ansible inventory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansibleconf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ansible levinumad seadistused
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansiblenodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hallatavate hostide ühendamine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansiblemodules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Moodulid ja ad-hoc käsud
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansibleplaybooks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Playbookid ja YAML
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansiblevars/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Muutujad ja nende kasutamine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansiblejinja2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Jinja2 mallid
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansibleconditionals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tingimuslikkus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansibleloops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tsüklid
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansiblehandlers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tegevuste käivitamine ainult vajadusel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansiblevault/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Turvalisus ja Ansible Vault
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansibleroles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rollid ja struktuur
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansiblegalaxy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ansible Galaxy Collections
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansiblebestpractises/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ansible parimad praktikad
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Sisukord">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Sisukord
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#opieesmargid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Õpieesmärgid
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#miks-failioigusi-vaja-on" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Miks failiõigusi vaja on?
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#omanik-grupp-ja-teised" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Omanik, grupp ja teised
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#failioiguste-vaatamine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Failiõiguste vaatamine
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Failiõiguste vaatamine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#esimene-mark-objekti-tuup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Esimene märk – objekti tüüp
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jargmised-uheksa-marki-oigused" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Järgmised üheksa märki – õigused
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#r-w-ja-x-faili-puhul" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>r</code>, <code>w</code> ja <code>x</code> faili puhul
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#r-w-ja-x-kataloogi-puhul" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          <code>r</code>, <code>w</code> ja <code>x</code> kataloogi puhul
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#oiguste-muutmine-kasuga-chmod" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Õiguste muutmine käsuga <code>chmod</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sumbolitega-chmod" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Sümbolitega <code>chmod</code>
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sümbolitega chmod">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kelle-oigusi-muudetakse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Kelle õigusi muudetakse?
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kuidas-oigusi-muudetakse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Kuidas õigusi muudetakse?
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#naited" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Näited
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#numbriline-chmod" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Numbriline <code>chmod</code>
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Numbriline chmod">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#naide-640" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Näide: <code>640</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#naide-660" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Näide: <code>660</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#naide-750" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Näide: <code>750</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#levinud-oiguste-kombinatsioonid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Levinud õiguste kombinatsioonid
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#omaniku-ja-grupi-vaatamine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Omaniku ja grupi vaatamine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#omaniku-muutmine-kasuga-chown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Omaniku muutmine käsuga <code>chown</code>
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Omaniku muutmine käsuga chown">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ainult-omaniku-muutmine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Ainult omaniku muutmine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#omaniku-ja-grupi-muutmine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Omaniku ja grupi muutmine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ainult-grupi-muutmine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Ainult grupi muutmine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grupi-muutmine-kasuga-chgrp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Grupi muutmine käsuga <code>chgrp</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rekursiivne-omaniku-muutmine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Rekursiivne omaniku muutmine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rekursiivne-chmod" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Rekursiivne <code>chmod</code>
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vaikimisi-oigused-ja-umask" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Vaikimisi õigused ja <code>umask</code>
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vaikimisi õigused ja umask">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lihtsustatud-pohimote" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Lihtsustatud põhimõte
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#miks-fail-ei-saa-vaikimisi-x-oigust" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Miks fail ei saa vaikimisi <code>x</code> õigust?
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#erioigused" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Eriõigused
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setuid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          setuid
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setgid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          setgid
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="setgid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setgid-kataloogil" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          setgid kataloogil
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sticky-bit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Sticky bit
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#erioigused-numbriliselt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Eriõigused numbriliselt
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#root-ja-failioigused" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Root ja failiõigused
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acl-kui-ownergroupothers-ei-ole-piisav" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          ACL – kui <code>owner/group/others</code> ei ole piisav
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#praktiline-oiguste-lugemine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Praktiline õiguste lugemine
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Praktiline õiguste lugemine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#naide-1-fail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Näide 1 – fail
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#naide-2-skript" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Näide 2 – skript
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#naide-3-jagatud-kataloog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Näide 3 – jagatud kataloog
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hea-toovote-vaata-motle-muuda-kontrolli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Hea töövõte: vaata → mõtle → muuda → kontrolli
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kaskude-kokkuvote" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Käskude kokkuvõte
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Käskude kokkuvõte">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#oiguste-numbrid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Õiguste numbrid
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#olulised-moisted" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Olulised mõisted
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kontrollkusimused" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Kontrollküsimused
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kokkuvote" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Kokkuvõte
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#allikad-ja-lisalugemine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Allikad ja lisalugemine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="linuxi-failioigused">Linuxi failiõigused<a class="headerlink" href="#linuxi-failioigused" title="Permanent link">&para;</a></h1>
+<p>Linux on mitme kasutajaga operatsioonisüsteem. Selleks, et kasutajad ja programmid ei pääseks ligi andmetele, millele neil õigust ei ole, kasutab Linux failide ja kataloogide juures omanikku, gruppi ning pääsuõigusi.</p>
+<p>Failiõigused moodustavad ühe osa Linuxi turvamudelist. Need määravad, kes võib faili või kataloogi lugeda, muuta või kasutada.</p>
+<div class="admonition info">
+<p class="admonition-title">Seos eelmise teemaga</p>
+<p>Kasutajate halduse teemas õppisid, et Linux identifitseerib kasutajaid UID ja gruppe GID abil.</p>
+<p>Failiõigused seovad need identiteedid failide ja kataloogidega:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>kasutaja → UID
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>grupp    → GID
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>fail     → omanik + grupp + õigused
+</code></pre></div>
+</div>
+<h2 id="opieesmargid">Õpieesmärgid<a class="headerlink" href="#opieesmargid" title="Permanent link">&para;</a></h2>
+<p>Pärast materjali läbimist oskad:</p>
+<ul>
+<li>selgitada Linuxi failiõiguste eesmärki;</li>
+<li>lugeda <code>ls -l</code> väljundist faili tüüpi, omanikku, gruppi ja õigusi;</li>
+<li>eristada omaniku, grupi ja teiste kasutajate õigusi;</li>
+<li>selgitada <code>r</code>, <code>w</code> ja <code>x</code> tähendust faili ning kataloogi puhul;</li>
+<li>muuta õigusi käsuga <code>chmod</code>;</li>
+<li>kasutada nii sümboolset kui numbrilist õiguste määramist;</li>
+<li>muuta faili omanikku ja gruppi käskudega <code>chown</code> ja <code>chgrp</code>;</li>
+<li>selgitada <code>umask</code> põhimõtet;</li>
+<li>kirjeldada setuid, setgid ja sticky bit eriõiguste eesmärki;</li>
+<li>mõista, millal võib vaja minna ACL-e.</li>
+</ul>
+<hr />
+<h2 id="miks-failioigusi-vaja-on">Miks failiõigusi vaja on?<a class="headerlink" href="#miks-failioigusi-vaja-on" title="Permanent link">&para;</a></h2>
+<p>Linuxi failiõigused kontrollivad, kas kasutajal või protsessil on lubatud konkreetsele failisüsteemi objektile ligi pääseda. Kontrolli teeb operatsioonisüsteemi kernel.</p>
+<pre class="mermaid"><code>flowchart LR
+    A["Kasutaja või protsess"] --&gt; B["UID ja GID"]
+    B --&gt; C["Faili omanik ja grupp"]
+    C --&gt; D["rwx õiguste kontroll"]
+    D --&gt; E{"Lubatud?"}
+    E --&gt;|jah| F["Ligipääs"]
+    E --&gt;|ei| G["Permission denied"]</code></pre>
+<p>Failiõigused aitavad:</p>
+<ul>
+<li>eraldada erinevate kasutajate andmeid;</li>
+<li>piirata süsteemifailide muutmist;</li>
+<li>anda grupile ühiseid ligipääsuõigusi;</li>
+<li>piirata teenuste ja protsesside õigusi;</li>
+<li>vähendada juhuslike või pahatahtlike muudatuste mõju.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Failiõigused ei ole krüpteerimine</p>
+<p>Tavalised Linuxi failiõigused toimivad siis, kui failisüsteemi kasutab Linuxi kernel. Kui krüpteerimata ketas või andmekandja eemaldatakse arvutist ja loetakse teise süsteemi kaudu, ei pruugi tavalised Unix-tüüpi failiõigused andmete sisu kaitsta.</p>
+</div>
+<hr />
+<h2 id="omanik-grupp-ja-teised">Omanik, grupp ja teised<a class="headerlink" href="#omanik-grupp-ja-teised" title="Permanent link">&para;</a></h2>
+<p>Iga Unix-tüüpi failiõigustega failisüsteemi objekti juures on kolm peamist õiguste sihtrühma.</p>
+<table>
+<thead>
+<tr>
+<th>Tähis</th>
+<th>Inglise keeles</th>
+<th>Tähendus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>u</code></td>
+<td>user</td>
+<td>faili või kataloogi omanik</td>
+</tr>
+<tr>
+<td><code>g</code></td>
+<td>group</td>
+<td>faili või kataloogi grupp</td>
+</tr>
+<tr>
+<td><code>o</code></td>
+<td>others</td>
+<td>kõik ülejäänud kasutajad</td>
+</tr>
+<tr>
+<td><code>a</code></td>
+<td>all</td>
+<td>kõik kolm eelmist korraga</td>
+</tr>
+</tbody>
+</table>
+<p>Näiteks:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>-rw-r----- student praktikandid raport.txt
+</code></pre></div>
+<p>Siin:</p>
+<ul>
+<li>omanik on <code>student</code>;</li>
+<li>grupp on <code>praktikandid</code>;</li>
+<li>omanikul on <code>rw-</code>;</li>
+<li>grupil on <code>r--</code>;</li>
+<li>teistel õigused puuduvad.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Õiguseid ei liideta lihtsalt kokku</p>
+<p>Linux valib kasutaja jaoks sobiva õiguste kategooria. Kui kasutaja on faili omanik, rakendatakse omaniku õigusi. Kui ta ei ole omanik, kuid kuulub faili gruppi, rakendatakse grupi õigusi. Muul juhul rakendatakse <code>others</code> õigusi.</p>
+</div>
+<hr />
+<h2 id="failioiguste-vaatamine">Failiõiguste vaatamine<a class="headerlink" href="#failioiguste-vaatamine" title="Permanent link">&para;</a></h2>
+<p>Failide ja kataloogide õigusi saab vaadata käsuga:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ls<span class="w"> </span>-l
+</code></pre></div>
+<p>Näiteks:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>-rwxr-x--- 1 student praktikandid 1250 Sep 5 10:30 skript.sh
+</code></pre></div>
+<p>Esimese välja saab jagada neljaks osaks:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>- rwx r-x ---
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>│ │   │   │
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>│ │   │   └── teised
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>│ │   └────── grupp
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>│ └────────── omanik
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>└──────────── objekti tüüp
+</code></pre></div>
+<h3 id="esimene-mark-objekti-tuup">Esimene märk – objekti tüüp<a class="headerlink" href="#esimene-mark-objekti-tuup" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Märk</th>
+<th>Tähendus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-</code></td>
+<td>tavaline fail</td>
+</tr>
+<tr>
+<td><code>d</code></td>
+<td>kataloog</td>
+</tr>
+<tr>
+<td><code>l</code></td>
+<td>symbolic link</td>
+</tr>
+</tbody>
+</table>
+<h3 id="jargmised-uheksa-marki-oigused">Järgmised üheksa märki – õigused<a class="headerlink" href="#jargmised-uheksa-marki-oigused" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>rwx rwx rwx
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>│   │   │
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>│   │   └── teised
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>│   └────── grupp
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>└────────── omanik
+</code></pre></div>
+<p>Miinusmärk <code>-</code> tähendab vastava õiguse puudumist.</p>
+<hr />
+<h2 id="r-w-ja-x-faili-puhul"><code>r</code>, <code>w</code> ja <code>x</code> faili puhul<a class="headerlink" href="#r-w-ja-x-faili-puhul" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Õigus</th>
+<th>Nimi</th>
+<th>Tähendus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>r</code></td>
+<td>read</td>
+<td>faili sisu saab lugeda</td>
+</tr>
+<tr>
+<td><code>w</code></td>
+<td>write</td>
+<td>faili sisu saab muuta</td>
+</tr>
+<tr>
+<td><code>x</code></td>
+<td>execute</td>
+<td>faili saab käivitada programmina või skriptina</td>
+</tr>
+</tbody>
+</table>
+<p>Näiteks:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>-rwxr-x--- student praktikandid skript.sh
+</code></pre></div>
+<ul>
+<li>omanik saab faili lugeda, muuta ja käivitada;</li>
+<li>grupp saab faili lugeda ja käivitada;</li>
+<li>teistel kasutajatel õigused puuduvad.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Faili kustutamine</p>
+<p>Faili enda <code>w</code> õigus ei määra otseselt seda, kas faili saab kustutada. Faili kustutamine muudab faili sisaldava kataloogi kirjet, mistõttu sõltub kustutamisõigus peamiselt kataloogi <code>w</code> ja <code>x</code> õigustest.</p>
+</div>
+<hr />
+<h2 id="r-w-ja-x-kataloogi-puhul"><code>r</code>, <code>w</code> ja <code>x</code> kataloogi puhul<a class="headerlink" href="#r-w-ja-x-kataloogi-puhul" title="Permanent link">&para;</a></h2>
+<p>Kataloogi puhul on <code>rwx</code> tähendus mõnevõrra teistsugune.</p>
+<p><strong><code>r</code> – read</strong></p>
+<p>Lubab lugeda kataloogikirjete ehk objektide nimede loendit.</p>
+<p><strong><code>w</code> – write</strong></p>
+<p>Lubab kataloogikirjeid muuta, näiteks:</p>
+<ul>
+<li>luua uusi faile;</li>
+<li>kustutada faile;</li>
+<li>luua alamkatalooge;</li>
+<li>nimetada objekte ümber.</li>
+</ul>
+<p><strong><code>x</code> – execute</strong></p>
+<p>Kataloogi puhul tähendab <code>x</code> õigust kataloogi <strong>läbida</strong> (<em>traverse/search</em>). See võimaldab kataloogi siseneda, kasutada teadaoleva nimega objekti ja liikuda läbi kataloogi alamkataloogidesse.</p>
+<div class="admonition tip">
+<p class="admonition-title">Kataloogi <code>x</code> õigus on eriti oluline</p>
+<p>Kataloogi puhul ei tähenda <code>x</code> programmi käivitamist. See tähendab õigust kataloogi läbida ja seal olevaid objekte nime järgi kasutada.</p>
+</div>
+<table>
+<thead>
+<tr>
+<th>Õigused</th>
+<th>Üldine tulemus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>r--</code></td>
+<td>nimesid võib näha, kuid objekte ei saa tavaliselt kasutada</td>
+</tr>
+<tr>
+<td><code>--x</code></td>
+<td>teadaoleva nimega objektile võib ligi pääseda, kuid kataloogi sisu ei saa loetleda</td>
+</tr>
+<tr>
+<td><code>r-x</code></td>
+<td>kataloogi saab sirvida ja objekte kasutada</td>
+</tr>
+<tr>
+<td><code>-wx</code></td>
+<td>saab objekte luua, kustutada ja ümber nimetada, kui nimed on teada</td>
+</tr>
+<tr>
+<td><code>rwx</code></td>
+<td>täielik tavapärane ligipääs</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Kataloogi <code>w</code> õigus ilma <code>x</code> õiguseta on praktiliselt väga piiratud. Failide tavapäraseks loomiseks, kustutamiseks ja ümbernimetamiseks on üldjuhul vaja mõlemat.</p>
+</div>
+<hr />
+<h2 id="oiguste-muutmine-kasuga-chmod">Õiguste muutmine käsuga <code>chmod</code><a class="headerlink" href="#oiguste-muutmine-kasuga-chmod" title="Permanent link">&para;</a></h2>
+<p>Faili või kataloogi õiguste muutmiseks kasutatakse käsku:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>chmod
+</code></pre></div>
+<p>Üldkuju:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>chmod<span class="w"> </span>õigused<span class="w"> </span>objekt
+</code></pre></div>
+<p>Õiguseid saab määrata kahel põhilisel viisil:</p>
+<ol>
+<li>sümbolitega (tähtedega);</li>
+<li>numbriliselt.</li>
+</ol>
+<hr />
+<h2 id="sumbolitega-chmod">Sümbolitega <code>chmod</code><a class="headerlink" href="#sumbolitega-chmod" title="Permanent link">&para;</a></h2>
+<h3 id="kelle-oigusi-muudetakse">Kelle õigusi muudetakse?<a class="headerlink" href="#kelle-oigusi-muudetakse" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>u = owner / user
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>g = group
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>o = others
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>a = all
+</code></pre></div>
+<h3 id="kuidas-oigusi-muudetakse">Kuidas õigusi muudetakse?<a class="headerlink" href="#kuidas-oigusi-muudetakse" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>+ = lisa õigus
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>- = eemalda õigus
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>= = määra täpselt
+</code></pre></div>
+<h3 id="naited">Näited<a class="headerlink" href="#naited" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>chmod<span class="w"> </span>u+x<span class="w"> </span>skript.sh
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>chmod<span class="w"> </span>g+w<span class="w"> </span>raport.txt
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>chmod<span class="w"> </span>o-r<span class="w"> </span>fail.txt
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>chmod<span class="w"> </span>ug+rw<span class="w"> </span>fail.txt
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>chmod<span class="w"> </span>a-x<span class="w"> </span>fail.txt
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>chmod<span class="w"> </span><span class="nv">u</span><span class="o">=</span>rw,g<span class="o">=</span>r,o<span class="o">=</span><span class="w"> </span>fail.txt
+</code></pre></div>
+<p>Viimase käsu tulemuseks on:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>-rw-r-----
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Sümbolitega meetod on hea siis, kui soovid muuta ainult ühte konkreetset õigust ja jätta ülejäänud puutumata.</p>
+</div>
+<hr />
+<h2 id="numbriline-chmod">Numbriline <code>chmod</code><a class="headerlink" href="#numbriline-chmod" title="Permanent link">&para;</a></h2>
+<p>Numbrilise meetodi puhul vastab igale õigusele arvuline väärtus.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>r = 4
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>w = 2
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>x = 1
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Number</th>
+<th>Õigused</th>
+<th>Arvutus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;"><code>0</code></td>
+<td><code>---</code></td>
+<td>0</td>
+</tr>
+<tr>
+<td style="text-align: right;"><code>1</code></td>
+<td><code>--x</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td style="text-align: right;"><code>2</code></td>
+<td><code>-w-</code></td>
+<td>2</td>
+</tr>
+<tr>
+<td style="text-align: right;"><code>3</code></td>
+<td><code>-wx</code></td>
+<td>2 + 1</td>
+</tr>
+<tr>
+<td style="text-align: right;"><code>4</code></td>
+<td><code>r--</code></td>
+<td>4</td>
+</tr>
+<tr>
+<td style="text-align: right;"><code>5</code></td>
+<td><code>r-x</code></td>
+<td>4 + 1</td>
+</tr>
+<tr>
+<td style="text-align: right;"><code>6</code></td>
+<td><code>rw-</code></td>
+<td>4 + 2</td>
+</tr>
+<tr>
+<td style="text-align: right;"><code>7</code></td>
+<td><code>rwx</code></td>
+<td>4 + 2 + 1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="naide-640">Näide: <code>640</code><a class="headerlink" href="#naide-640" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>chmod<span class="w"> </span><span class="m">640</span><span class="w"> </span>raport.txt
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>6 = rw-  omanik
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>4 = r--  grupp
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>0 = ---  teised
+</code></pre></div>
+<h3 id="naide-660">Näide: <code>660</code><a class="headerlink" href="#naide-660" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>chmod<span class="w"> </span><span class="m">660</span><span class="w"> </span>fail.txt
+</code></pre></div>
+<p>Tulemus:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>-rw-rw----
+</code></pre></div>
+<h3 id="naide-750">Näide: <code>750</code><a class="headerlink" href="#naide-750" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>chmod<span class="w"> </span><span class="m">750</span><span class="w"> </span>skript.sh
+</code></pre></div>
+<p>Tulemus:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>-rwxr-x---
+</code></pre></div>
+<hr />
+<h2 id="levinud-oiguste-kombinatsioonid">Levinud õiguste kombinatsioonid<a class="headerlink" href="#levinud-oiguste-kombinatsioonid" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Režiim</th>
+<th>Õigused</th>
+<th>Tüüpiline kasutus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;"><code>600</code></td>
+<td><code>rw-------</code></td>
+<td>privaatne fail</td>
+</tr>
+<tr>
+<td style="text-align: right;"><code>640</code></td>
+<td><code>rw-r-----</code></td>
+<td>fail, mida grupp võib lugeda</td>
+</tr>
+<tr>
+<td style="text-align: right;"><code>644</code></td>
+<td><code>rw-r--r--</code></td>
+<td>tavaline teistele loetav fail</td>
+</tr>
+<tr>
+<td style="text-align: right;"><code>660</code></td>
+<td><code>rw-rw----</code></td>
+<td>grupiga jagatav fail</td>
+</tr>
+<tr>
+<td style="text-align: right;"><code>700</code></td>
+<td><code>rwx------</code></td>
+<td>privaatne kataloog või programm</td>
+</tr>
+<tr>
+<td style="text-align: right;"><code>750</code></td>
+<td><code>rwxr-x---</code></td>
+<td>omanik + grupile lugemine/läbimine</td>
+</tr>
+<tr>
+<td style="text-align: right;"><code>755</code></td>
+<td><code>rwxr-xr-x</code></td>
+<td>avalikult läbitav kataloog või käivitatav programm</td>
+</tr>
+<tr>
+<td style="text-align: right;"><code>770</code></td>
+<td><code>rwxrwx---</code></td>
+<td>grupiga jagatav kataloog</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition danger">
+<p class="admonition-title"><code>777</code> ei ole universaalne lahendus</p>
+<p><code>chmod 777 objekt</code> annab kõigile lugemis-, kirjutamis- ja käivitusõiguse. Seda ei tohiks kasutada lihtsalt selleks, et „asi tööle saada“.</p>
+</div>
+<hr />
+<h2 id="omaniku-ja-grupi-vaatamine">Omaniku ja grupi vaatamine<a class="headerlink" href="#omaniku-ja-grupi-vaatamine" title="Permanent link">&para;</a></h2>
+<p><code>ls -l</code> näitab lisaks õigustele ka faili omanikku ja gruppi.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>-rw-r----- 1 student praktikandid 250 Sep 5 11:00 raport.txt
+</code></pre></div>
+<p>Detailsemat infot saab vaadata:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>stat<span class="w"> </span>raport.txt
+</code></pre></div>
+<hr />
+<h2 id="omaniku-muutmine-kasuga-chown">Omaniku muutmine käsuga <code>chown</code><a class="headerlink" href="#omaniku-muutmine-kasuga-chown" title="Permanent link">&para;</a></h2>
+<h3 id="ainult-omaniku-muutmine">Ainult omaniku muutmine<a class="headerlink" href="#ainult-omaniku-muutmine" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>sudo<span class="w"> </span>chown<span class="w"> </span>jyri<span class="w"> </span>raport.txt
+</code></pre></div>
+<h3 id="omaniku-ja-grupi-muutmine">Omaniku ja grupi muutmine<a class="headerlink" href="#omaniku-ja-grupi-muutmine" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>sudo<span class="w"> </span>chown<span class="w"> </span>jyri:praktikandid<span class="w"> </span>raport.txt
+</code></pre></div>
+<h3 id="ainult-grupi-muutmine">Ainult grupi muutmine<a class="headerlink" href="#ainult-grupi-muutmine" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>sudo<span class="w"> </span>chown<span class="w"> </span>:praktikandid<span class="w"> </span>raport.txt
+</code></pre></div>
+<p>Näiteks:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>sudo<span class="w"> </span>chown<span class="w"> </span>www-data:www-data<span class="w"> </span>index.php
+</code></pre></div>
+<hr />
+<h2 id="grupi-muutmine-kasuga-chgrp">Grupi muutmine käsuga <code>chgrp</code><a class="headerlink" href="#grupi-muutmine-kasuga-chgrp" title="Permanent link">&para;</a></h2>
+<p>Kui soovid muuta ainult objekti gruppi:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>sudo<span class="w"> </span>chgrp<span class="w"> </span>praktikandid<span class="w"> </span>raport.txt
+</code></pre></div>
+<hr />
+<h2 id="rekursiivne-omaniku-muutmine">Rekursiivne omaniku muutmine<a class="headerlink" href="#rekursiivne-omaniku-muutmine" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>sudo<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </span>student:student<span class="w"> </span>/var/koopia
+</code></pre></div>
+<p>See muudab kataloogi enda, alamkataloogid ja failid omanikuks ning grupiks <code>student</code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Rekursiivseid käske tuleb kasutada ettevaatlikult. Valesti määratud tee võib muuta suure hulga süsteemifailide omanikku.</p>
+</div>
+<hr />
+<h2 id="rekursiivne-chmod">Rekursiivne <code>chmod</code><a class="headerlink" href="#rekursiivne-chmod" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>chmod<span class="w"> </span>-R<span class="w"> </span>õigused<span class="w"> </span>kataloog
+</code></pre></div>
+<p>Näiteks:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>chmod<span class="w"> </span>-R<span class="w"> </span><span class="m">755</span><span class="w"> </span>projekt/
+</code></pre></div>
+<p>muudab ka kõik tavalised failid käivitatavaks, mis pole sageli soovitud.</p>
+<div class="admonition danger">
+<p class="admonition-title">Failid ja kataloogid vajavad sageli erinevaid õigusi</p>
+<p>Rekursiivset <code>chmod</code> käsku ei tohiks kasutada pimesi. Enne muutmist kontrolli, milliseid õigusi vajavad kataloogid, tavalised failid ja käivitatavad failid.</p>
+</div>
+<hr />
+<h2 id="vaikimisi-oigused-ja-umask">Vaikimisi õigused ja <code>umask</code><a class="headerlink" href="#vaikimisi-oigused-ja-umask" title="Permanent link">&para;</a></h2>
+<p>Uute objektide vaikimisi õigusi mõjutab:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="nb">umask</span>
+</code></pre></div>
+<p>Näiteks:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>0022
+</code></pre></div>
+<h3 id="lihtsustatud-pohimote">Lihtsustatud põhimõte<a class="headerlink" href="#lihtsustatud-pohimote" title="Permanent link">&para;</a></h3>
+<p>Tavalise faili maksimaalne tavapärane lähteõigus on:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>666 = rw-rw-rw-
+</code></pre></div>
+<p>Kataloogil:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>777 = rwxrwxrwx
+</code></pre></div>
+<p>Kui <code>umask</code> on <code>022</code>, saadakse tavaliselt:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>uus fail       → 644 → rw-r--r--
+<a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a>uus kataloog   → 755 → rwxr-xr-x
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code>umask</code> eemaldab vaikimisi õigustest bitte. See ei lisa õigusi, mida programmi poolt loodavale objektile algselt ei küsitud.</p>
+</div>
+<h3 id="miks-fail-ei-saa-vaikimisi-x-oigust">Miks fail ei saa vaikimisi <code>x</code> õigust?<a class="headerlink" href="#miks-fail-ei-saa-vaikimisi-x-oigust" title="Permanent link">&para;</a></h3>
+<p>Uue tavalise faili lähteõigustes kasutatakse tavaliselt <code>666</code>, mitte <code>777</code>. Seetõttu ei teki tavalisel failil automaatselt käivitusõigust.</p>
+<hr />
+<h2 id="erioigused">Eriõigused<a class="headerlink" href="#erioigused" title="Permanent link">&para;</a></h2>
+<p>Lisaks tavapärastele <code>rwx</code> õigustele on Unix-laadsetes süsteemides kolm tuntud eriõigust:</p>
+<ul>
+<li>setuid;</li>
+<li>setgid;</li>
+<li>sticky bit.</li>
+</ul>
+<p>Need võivad <code>ls -l</code> väljundis ilmuda tähtedena <code>s</code>, <code>S</code>, <code>t</code> või <code>T</code>.</p>
+<hr />
+<h2 id="setuid">setuid<a class="headerlink" href="#setuid" title="Permanent link">&para;</a></h2>
+<p><strong>setuid</strong> (<em>set user ID</em>) mõjutab käivitatavat faili. Kui sobiv binaarprogramm on setuid bitiga, saab protsess programmi käivitamisel efektiivse kasutajaidentiteedi faili omaniku järgi.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>chmod<span class="w"> </span>u+s<span class="w"> </span>programm
+</code></pre></div>
+<p>Tüüpiline näide on:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>/usr/bin/passwd
+</code></pre></div>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Setuid-programmid on turvatundlikud. Programmeerimisviga setuid-programmis võib põhjustada õiguste eskaleerimise.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Linux ei rakenda tavaliselt setuid/setgid mehhanismi interpreter-skriptidele samal viisil nagu natiivsetele binaarprogrammidele. Turvakaalutlustel ignoreeritakse neid bitte tavaliselt skriptidel.</p>
+</div>
+<hr />
+<h2 id="setgid">setgid<a class="headerlink" href="#setgid" title="Permanent link">&para;</a></h2>
+<p><strong>setgid</strong> (<em>set group ID</em>) käivitataval failil töötab sarnaselt setuid-le, kuid mõjutab efektiivset grupiidentiteeti.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>chmod<span class="w"> </span>g+s<span class="w"> </span>programm
+</code></pre></div>
+<h3 id="setgid-kataloogil">setgid kataloogil<a class="headerlink" href="#setgid-kataloogil" title="Permanent link">&para;</a></h3>
+<p>Kataloogi puhul on setgid eriti kasulik grupitööks.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>chmod<span class="w"> </span>g+s<span class="w"> </span>projekt/
+</code></pre></div>
+<p>Kui kataloogil on setgid, pärivad sinna loodavad failid ja alamkataloogid tavaliselt kataloogi grupi.</p>
+<p>Näiteks:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a>drwxrws--- student praktikandid projekt
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Hea kasutusjuht</p>
+<p>Kui mitu kasutajat kuuluvad gruppi <code>praktikandid</code> ja töötavad ühises kataloogis, aitab setgid hoida uute failide grupi õigena.</p>
+</div>
+<hr />
+<h2 id="sticky-bit">Sticky bit<a class="headerlink" href="#sticky-bit" title="Permanent link">&para;</a></h2>
+<p>Sticky bit on tänapäeva Linuxis praktiliselt oluline eelkõige jagatud kirjutatavates kataloogides.</p>
+<p>Tuntuim näide on:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>/tmp
+</code></pre></div>
+<p>Selle õigused on sageli:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a>drwxrwxrwt
+</code></pre></div>
+<p>Sticky bit aitab vältida olukorda, kus üks kasutaja kustutab või nimetab ümber teise kasutaja faili lihtsalt seetõttu, et kõigil on kataloogile kirjutusõigus.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a>chmod<span class="w"> </span>+t<span class="w"> </span>jagatud/
+</code></pre></div>
+<p>või:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a>chmod<span class="w"> </span>o+t<span class="w"> </span>jagatud/
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Sticky biti ajalooline tähendus tavalistel failidel ei ole tänapäevases Linuxis praktiliselt oluline. Seda kasutatakse peamiselt kataloogidel.</p>
+</div>
+<hr />
+<h2 id="erioigused-numbriliselt">Eriõigused numbriliselt<a class="headerlink" href="#erioigused-numbriliselt" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Väärtus</th>
+<th>Eriõigus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;"><code>4</code></td>
+<td>setuid</td>
+</tr>
+<tr>
+<td style="text-align: right;"><code>2</code></td>
+<td>setgid</td>
+</tr>
+<tr>
+<td style="text-align: right;"><code>1</code></td>
+<td>sticky bit</td>
+</tr>
+</tbody>
+</table>
+<p>Näiteks grupiga jagatav setgid-kataloog:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a>chmod<span class="w"> </span><span class="m">2770</span><span class="w"> </span>projekt/
+</code></pre></div>
+<p>Sticky bit'iga jagatud kataloog:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a>chmod<span class="w"> </span><span class="m">1777</span><span class="w"> </span>jagatud/
+</code></pre></div>
+<hr />
+<h2 id="root-ja-failioigused">Root ja failiõigused<a class="headerlink" href="#root-ja-failioigused" title="Permanent link">&para;</a></h2>
+<p>Root-kasutaja UID on <code>0</code>.</p>
+<p>Root saab tavapärastest Unix DAC (<em>Discretionary Access Control</em>) failiõigustest suurel määral mööda minna. See ei tähenda siiski, et root oleks kõigi võimalike süsteemikaitsete suhtes piiranguteta.</p>
+<p>Ligipääsu võivad mõjutada näiteks:</p>
+<ul>
+<li>read-only failisüsteem;</li>
+<li>failiatribuudid;</li>
+<li>SELinux või AppArmor;</li>
+<li>mount-valikud;</li>
+<li>krüpteerimine;</li>
+<li>kerneli turvamehhanismid.</li>
+</ul>
+<p>Selles teemas keskendume klassikalistele Unix <code>rwx</code> õigustele.</p>
+<hr />
+<h2 id="acl-kui-ownergroupothers-ei-ole-piisav">ACL – kui <code>owner/group/others</code> ei ole piisav<a class="headerlink" href="#acl-kui-ownergroupothers-ei-ole-piisav" title="Permanent link">&para;</a></h2>
+<p>Klassikaline Unix õigustemudel võimaldab määrata õigused:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a>owner
+<a id="__codelineno-46-2" name="__codelineno-46-2" href="#__codelineno-46-2"></a>group
+<a id="__codelineno-46-3" name="__codelineno-46-3" href="#__codelineno-46-3"></a>others
+</code></pre></div>
+<p>Vahel on vaja täpsemat lahendust. Näiteks faili omanik on <code>jyri</code>, grupp on <code>praktikandid</code>, kuid lisaks peab ainult kasutaja <code>mari</code> saama faili muuta.</p>
+<p>Sellistes olukordades saab kasutada <strong>ACL-e</strong> (<em>Access Control Lists</em>).</p>
+<p>ACL-i vaatamiseks kasutatakse sageli:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a>getfacl<span class="w"> </span>fail
+</code></pre></div>
+<p>ACL-i muutmiseks:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a>setfacl
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>ACL-i detailne seadistamine ei ole selle teema põhifookus. Oluline on teada, et klassikalise <code>owner/group/others</code> mudeli kõrval on Linuxis olemas ka täpsemad juurdepääsuloendid.</p>
+</div>
+<hr />
+<h2 id="praktiline-oiguste-lugemine">Praktiline õiguste lugemine<a class="headerlink" href="#praktiline-oiguste-lugemine" title="Permanent link">&para;</a></h2>
+<h3 id="naide-1-fail">Näide 1 – fail<a class="headerlink" href="#naide-1-fail" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a>-rw-r----- student praktikandid raport.txt
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Küsimus</th>
+<th>Vastus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Kas <code>student</code> saab lugeda?</td>
+<td>jah</td>
+</tr>
+<tr>
+<td>Kas <code>student</code> saab muuta?</td>
+<td>jah</td>
+</tr>
+<tr>
+<td>Kas grupi <code>praktikandid</code> liige saab lugeda?</td>
+<td>jah</td>
+</tr>
+<tr>
+<td>Kas grupi liige saab muuta?</td>
+<td>ei</td>
+</tr>
+<tr>
+<td>Kas ülejäänud kasutaja saab lugeda?</td>
+<td>ei</td>
+</tr>
+</tbody>
+</table>
+<h3 id="naide-2-skript">Näide 2 – skript<a class="headerlink" href="#naide-2-skript" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a>-rwxr-x--- student praktikandid backup.sh
+</code></pre></div>
+<ul>
+<li>omanik saab lugeda, muuta ja käivitada;</li>
+<li>grupp saab lugeda ja käivitada;</li>
+<li>teistel õigused puuduvad.</li>
+</ul>
+<h3 id="naide-3-jagatud-kataloog">Näide 3 – jagatud kataloog<a class="headerlink" href="#naide-3-jagatud-kataloog" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a>drwxrwx--- student praktikandid projekt
+</code></pre></div>
+<ul>
+<li>omanik saab kataloogi täielikult kasutada;</li>
+<li>grupi liikmed saavad kataloogi täielikult kasutada;</li>
+<li>teistel kasutajatel puudub ligipääs.</li>
+</ul>
+<p>Kui lisame setgid:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a>chmod<span class="w"> </span>g+s<span class="w"> </span>projekt
+</code></pre></div>
+<p>võib väljund muutuda:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a>drwxrws--- student praktikandid projekt
+</code></pre></div>
+<hr />
+<h2 id="hea-toovote-vaata-motle-muuda-kontrolli">Hea töövõte: vaata → mõtle → muuda → kontrolli<a class="headerlink" href="#hea-toovote-vaata-motle-muuda-kontrolli" title="Permanent link">&para;</a></h2>
+<p>Enne failiõiguste muutmist vaata olemasolevat olukorda:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a>ls<span class="w"> </span>-l<span class="w"> </span>fail
+</code></pre></div>
+<p>või:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a>stat<span class="w"> </span>fail
+</code></pre></div>
+<p>Seejärel otsusta:</p>
+<ol>
+<li>kes peab objektile ligi pääsema;</li>
+<li>milliseid tegevusi tal vaja teha on;</li>
+<li>kas sobib omanik, grupp või <code>others</code>;</li>
+<li>kas piisab <code>chmod</code>-ist või tuleb muuta ka omanikku/gruppi.</li>
+</ol>
+<p>Muuda õigusi ja kontrolli tulemust uuesti.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Süsteemiadministraatori eesmärk ei ole anda võimalikult palju õigusi, vaid anda <strong>täpselt vajalikud õigused</strong>.</p>
+</div>
+<hr />
+<h2 id="kaskude-kokkuvote">Käskude kokkuvõte<a class="headerlink" href="#kaskude-kokkuvote" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Käsk</th>
+<th>Eesmärk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ls -l</code></td>
+<td>õiguste, omaniku ja grupi vaatamine</td>
+</tr>
+<tr>
+<td><code>stat</code></td>
+<td>detailse failiinfo vaatamine</td>
+</tr>
+<tr>
+<td><code>chmod</code></td>
+<td>faili või kataloogi õiguste muutmine</td>
+</tr>
+<tr>
+<td><code>chown</code></td>
+<td>omaniku ja/või grupi muutmine</td>
+</tr>
+<tr>
+<td><code>chgrp</code></td>
+<td>grupi muutmine</td>
+</tr>
+<tr>
+<td><code>umask</code></td>
+<td>uute objektide vaikimisi õiguste mõjutamine</td>
+</tr>
+<tr>
+<td><code>getfacl</code></td>
+<td>ACL-i vaatamine</td>
+</tr>
+<tr>
+<td><code>setfacl</code></td>
+<td>ACL-i muutmine</td>
+</tr>
+</tbody>
+</table>
+<h3 id="oiguste-numbrid">Õiguste numbrid<a class="headerlink" href="#oiguste-numbrid" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-56-1" name="__codelineno-56-1" href="#__codelineno-56-1"></a>r = 4
+<a id="__codelineno-56-2" name="__codelineno-56-2" href="#__codelineno-56-2"></a>w = 2
+<a id="__codelineno-56-3" name="__codelineno-56-3" href="#__codelineno-56-3"></a>x = 1
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Number</th>
+<th>Õigused</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;"><code>0</code></td>
+<td><code>---</code></td>
+</tr>
+<tr>
+<td style="text-align: right;"><code>1</code></td>
+<td><code>--x</code></td>
+</tr>
+<tr>
+<td style="text-align: right;"><code>2</code></td>
+<td><code>-w-</code></td>
+</tr>
+<tr>
+<td style="text-align: right;"><code>3</code></td>
+<td><code>-wx</code></td>
+</tr>
+<tr>
+<td style="text-align: right;"><code>4</code></td>
+<td><code>r--</code></td>
+</tr>
+<tr>
+<td style="text-align: right;"><code>5</code></td>
+<td><code>r-x</code></td>
+</tr>
+<tr>
+<td style="text-align: right;"><code>6</code></td>
+<td><code>rw-</code></td>
+</tr>
+<tr>
+<td style="text-align: right;"><code>7</code></td>
+<td><code>rwx</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="olulised-moisted">Olulised mõisted<a class="headerlink" href="#olulised-moisted" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Mõiste</th>
+<th>Selgitus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>owner</strong></td>
+<td>faili või kataloogi omanik</td>
+</tr>
+<tr>
+<td><strong>group</strong></td>
+<td>failiga seotud grupp</td>
+</tr>
+<tr>
+<td><strong>others</strong></td>
+<td>kõik kasutajad, kes pole faili omanik ega sobiva grupi liikmed</td>
+</tr>
+<tr>
+<td><strong><code>r</code></strong></td>
+<td>lugemisõigus</td>
+</tr>
+<tr>
+<td><strong><code>w</code></strong></td>
+<td>kirjutamisõigus</td>
+</tr>
+<tr>
+<td><strong><code>x</code></strong></td>
+<td>faili käivitamis- või kataloogi läbimisõigus</td>
+</tr>
+<tr>
+<td><strong><code>chmod</code></strong></td>
+<td>õiguste muutmise käsk</td>
+</tr>
+<tr>
+<td><strong><code>chown</code></strong></td>
+<td>omaniku ja grupi muutmise käsk</td>
+</tr>
+<tr>
+<td><strong><code>chgrp</code></strong></td>
+<td>grupi muutmise käsk</td>
+</tr>
+<tr>
+<td><strong><code>umask</code></strong></td>
+<td>uute failide ja kataloogide vaikimisi õigusi piirav mask</td>
+</tr>
+<tr>
+<td><strong>setuid</strong></td>
+<td>käivitatava faili omaniku efektiivse UID kasutamine</td>
+</tr>
+<tr>
+<td><strong>setgid</strong></td>
+<td>faili efektiivse GID kasutamine või kataloogi grupi pärimine</td>
+</tr>
+<tr>
+<td><strong>sticky bit</strong></td>
+<td>piirab jagatud kataloogis teiste kasutajate objektide kustutamist/ümbernimetamist</td>
+</tr>
+<tr>
+<td><strong>ACL</strong></td>
+<td>täiendav juurdepääsuloend konkreetsete kasutajate ja gruppide õiguste määramiseks</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="kontrollkusimused">Kontrollküsimused<a class="headerlink" href="#kontrollkusimused" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Miks on Linuxis failiõigusi vaja?</li>
+<li>Millised kolm kasutajakategooriat on klassikalises Unix õigustemudelis?</li>
+<li>Mida tähistavad <code>u</code>, <code>g</code>, <code>o</code> ja <code>a</code>?</li>
+<li>Mida näitab <code>ls -l</code> väljundi esimene märk?</li>
+<li>Kuidas jagunevad üheksa <code>rwx</code> õiguse märki?</li>
+<li>Mida tähendab <code>r</code> tavalise faili puhul?</li>
+<li>Mida tähendab <code>w</code> tavalise faili puhul?</li>
+<li>Mida tähendab <code>x</code> tavalise faili puhul?</li>
+<li>Mida tähendab <code>r</code> kataloogi puhul?</li>
+<li>Mida tähendab <code>w</code> kataloogi puhul?</li>
+<li>Mida tähendab <code>x</code> kataloogi puhul?</li>
+<li>Miks ei sõltu faili kustutamine ainult faili enda <code>w</code> õigusest?</li>
+<li>Milleks kasutatakse käsku <code>chmod</code>?</li>
+<li>Mis vahe on <code>chmod u+x fail</code> ja <code>chmod u=x fail</code> käskudel?</li>
+<li>Millised õigused annab <code>chmod 640 fail</code>?</li>
+<li>Millised õigused annab <code>chmod 755 kataloog</code>?</li>
+<li>Miks ei ole <code>chmod 777</code> hea universaalne lahendus?</li>
+<li>Milleks kasutatakse <code>chown</code> käsku?</li>
+<li>Mis vahe on <code>chown</code> ja <code>chgrp</code> käskudel?</li>
+<li>Milline oht kaasneb <code>chmod -R 755 kataloog</code> käsuga?</li>
+<li>Milleks kasutatakse <code>umask</code> väärtust?</li>
+<li>Millised õigused tekivad tüüpiliselt <code>umask 022</code> korral uuele failile ja kataloogile?</li>
+<li>Mis on setuid?</li>
+<li>Milleks kasutatakse setgid õigust kataloogil?</li>
+<li>Milleks kasutatakse sticky bit'i?</li>
+<li>Milline tuntud Linuxi kataloog kasutab tavaliselt sticky bit'i?</li>
+<li>Mida tähistavad numbrilises <code>chmod</code> käsus eriõiguste väärtused <code>4</code>, <code>2</code> ja <code>1</code>?</li>
+<li>Milleks kasutatakse ACL-e?</li>
+<li>Miks ei ole root-kasutaja kirjeldamine kui „täiesti piiranguteta kasutaja“ päris täpne?</li>
+<li>Milline peaks olema hea tööjärjekord enne ja pärast failiõiguste muutmist?</li>
+</ol>
+<hr />
+<h2 id="kokkuvote">Kokkuvõte<a class="headerlink" href="#kokkuvote" title="Permanent link">&para;</a></h2>
+<p>Linuxi klassikaline failiõiguste süsteem kasutab kolme kasutajakategooriat:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a>owner
+<a id="__codelineno-57-2" name="__codelineno-57-2" href="#__codelineno-57-2"></a>group
+<a id="__codelineno-57-3" name="__codelineno-57-3" href="#__codelineno-57-3"></a>others
+</code></pre></div>
+<p>Iga kategooria jaoks saab määrata <code>r</code>, <code>w</code> ja <code>x</code> õigused.</p>
+<p>Faili ja kataloogi puhul ei ole nende tähendus täiesti sama. Eriti oluline on mõista kataloogi <code>x</code> õigust ning seda, et faili kustutamise võimalus sõltub suuresti faili sisaldava kataloogi õigustest.</p>
+<p>Õigusi muudetakse käsuga <code>chmod</code>, omanikku ja gruppi käskudega <code>chown</code> ning <code>chgrp</code>. Uute failide ja kataloogide vaikimisi õigusi mõjutab <code>umask</code>.</p>
+<p>Setuid, setgid ja sticky bit võimaldavad lahendada erijuhtumeid ning ACL-id laiendavad klassikalist <code>owner/group/others</code> mudelit.</p>
+<p>Kõige olulisem põhimõte on sama mis kasutajate halduses:</p>
+<blockquote>
+<p><strong>Anna ainult need õigused, mida kasutajal või teenusel tegelikult vaja on.</strong></p>
+</blockquote>
+<hr />
+<h2 id="allikad-ja-lisalugemine">Allikad ja lisalugemine<a class="headerlink" href="#allikad-ja-lisalugemine" title="Permanent link">&para;</a></h2>
+<p>Linux man pages online: <a href="https://man7.org/linux/man-pages/" rel="noopener" target="_blank">https://man7.org/linux/man-pages/</a></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Üles
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Jalus" >
+        
+          
+          <a href="../linuxi-kasutajate-haldus/" class="md-footer__link md-footer__link--prev" aria-label="Eelmine: Linuxi kasutajate haldus">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Eelmine
+              </span>
+              <div class="md-ellipsis">
+                Linuxi kasutajate haldus
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../dhcp/" class="md-footer__link md-footer__link--next" aria-label="Järgmine: DHCP serveri seadistamine">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Järgmine
+              </span>
+              <div class="md-ellipsis">
+                DHCP serveri seadistamine
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M247.1 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L179.2 256 41.9 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Priit Paap
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.annotate", "content.code.copy", "content.tabs.link", "header.autohide", "announce.dismiss", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Kopeeritud", "clipboard.copy": "Kopeeri l\u00f5ikelauale", "search.result.more.one": "1 veel sellel lehel", "search.result.more.other": "# veel sellel lehel", "search.result.none": "Otsingule ei leitud \u00fchtegi vastet", "search.result.one": "Leiti \u00fcks tulemus", "search.result.other": "Leiti # tulemust", "search.result.placeholder": "Otsimiseks kirjuta siia", "search.result.term.missing": "Puudub", "select.version": "Vali versioon"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
