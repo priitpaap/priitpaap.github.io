@@ -46,7 +46,7 @@ Käivitades VM-i saab kõigepealt valida paigaldusviisi vahel ehk millist paigal
 
 Antud juhend on loodud "Graphical install" näitel, kasutades legacy virtuaalmasinat (MBR). Vali paigaldusprotsessi alustamiseks "Graphical install".
 
-![Debiani Installer](images/deb1.png)
+![Debiani Installer](images/deb1.png){ width="75%" }
 
 Kõigepealt tuleb teha keele ja asukoha ning klaviatuuri valik. Järgnevalt on antud soovituslikud valikud, mida võid vastavalt oma soovile kohandada:
 
