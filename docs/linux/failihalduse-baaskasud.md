@@ -1210,3 +1210,8 @@ Kõige olulisem ei ole käskude päheõppimine. Oluline on osata:
 16. Kuidas leida varem kasutatud käsku ilma kogu `history` väljundit läbi vaatamata?
 17. Mis vahe on `bash script.sh` ja `./script.sh` käivitamisel?
 18. Miks ei tohiks `sudo` kasutada lihtsalt sellepärast, et tavakasutajana saadi veateade?
+
+## Allikad ja lisalugemine
+
+Linux man pages online: [https://man7.org/linux/man-pages/](https://man7.org/linux/man-pages/){ target="_blank" rel="noopener" }
+
