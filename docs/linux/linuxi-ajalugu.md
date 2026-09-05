@@ -89,6 +89,11 @@ GNU eesmärk oli luua täielik vaba operatsioonisüsteem, mis oleks UNIX-iga üh
 
 Tegelik arendustöö algas 1984. aasta alguses.
 
+![500px nicobzh richard stallman by sa 10](assets/linuxi-ajalugu/500px-nicobzh-richard-stallman-by-sa-10.jpg) 
+
+*Richard Stallman. Pilt: By NicoBZH from Saint Etienne - Loire, France - Richard Stallman - "Le logiciel libre et ta liberté" - Saint Etienne cité du design 27/11/2008, CC BY-SA 2.0, https://commons.wikimedia.org/w/index.php?curid=5381829*
+
+
 ### Mida tähendab GNU?
 
 GNU on rekursiivne akronüüm:
@@ -299,7 +304,12 @@ Internet võimaldas:
 - parandusi;
 - ideid
 
-kiiresti jagada.
+kiiresti jagada. 
+
+![linus torvalds](assets/linuxi-ajalugu/linus-torvalds.jpeg){ width="50%" }
+
+*Linus Torvalds. Pilt: By Unknown author - Linuxmag.com, December 2002, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=17991*
+
 
 ---
 
@@ -350,7 +360,7 @@ flowchart TD
     C["teegid ja muu kasutajaruum"] --> D
 ```
 
-1990. aastate alguses hakkasid tekkima ka esimesed Linuxi distributsioonid, mis koondasid kerneli, GNU tarkvara ja muud komponendid paigaldatavaks tervikuks.
+90ndate aastate alguses hakkasid tekkima ka esimesed Linuxi distributsioonid, mis koondasid kerneli, GNU tarkvara ja muud komponendid paigaldatavaks tervikuks.
 
 ---
 

@@ -61,6 +61,10 @@ Nendest kasvas välja UNIX.
 
 **Dennis Ritchie** ja teised Bell Labsi teadlased osalesid süsteemi edasises arendamises.
 
+![ken thompson and dennis ritchie 1973](assets/unixi-ja-bsd-ajalugu/ken-thompson-and-dennis-ritchie-1973.jpg)
+
+*Ken Thompson ja Dennis Ritchie, 1973. Pilt: By Unknown author - http://www.catb.org/~esr/jargon/html/U/Unix.html, Public Domain, https://commons.wikimedia.org/w/index.php?curid=31308*
+
 ### Nime kujunemine
 
 Nimi **UNIX** kujunes sõnamänguna Multicsi nimega.
