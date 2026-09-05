@@ -196,7 +196,7 @@ Tarkvara valiku aknas saame linnukestega valida millise tarkvara me oma Debianil
 !!! info
     Vastavalt siin tehtud valikule saamegi GUI või CLI Debiani.
 
- Graafilise kasutajaliidesega Debiani puhul tuleb valida meelepärane kasutajaliides. Ilma graafilise liidesega Debiani puhul tuleb eemaldada linnukesed kasutajaliideste eest.
+Graafilise kasutajaliidesega Debiani puhul tuleb valida meelepärane kasutajaliides. Ilma graafilise liidesega Debiani puhul tuleb eemaldada linnukesed kasutajaliideste eest.
 
 - GUI: valime Xfce töölaua, SSH serveri ja standard system utilities
 - CLI: SSH serveri ja standard system utilities
