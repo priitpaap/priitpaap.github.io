@@ -490,15 +490,12 @@ flowchart TD
 ## Allikad ja lisalugemine
 
 1. Dennis M. Ritchie – *The Evolution of the Unix Time-sharing System*, Bell Laboratories / Nokia Bell Labs  
-   https://www.nokia.com/bell-labs/about/dennis-m-ritchie/hist.html
+   [https://www.nokia.com/bell-labs/about/dennis-m-ritchie/hist.html](https://www.nokia.com/bell-labs/about/dennis-m-ritchie/hist.html){ target="_blank" rel="noopener" }
 
 2. Dennis M. Ritchie – *The Development of the C Language*, Bell Laboratories / Nokia Bell Labs  
-   https://www.nokia.com/bell-labs/about/dennis-m-ritchie/chist.html
+   [https://www.nokia.com/bell-labs/about/dennis-m-ritchie/chist.html](https://www.nokia.com/bell-labs/about/dennis-m-ritchie/chist.html){ target="_blank" rel="noopener" }
 
 3. The Open Group – *The UNIX Standard*  
-   https://www.opengroup.org/membership/forums/platform/unix
-
-4. The Open Group / IEEE – POSIX and Single UNIX Specification documentation  
-   https://pubs.opengroup.org/
+   [https://www.opengroup.org/membership/forums/platform/unix](https://www.opengroup.org/membership/forums/platform/unix){ target="_blank" rel="noopener" }
 
    
