@@ -607,24 +607,22 @@ Linuxi shell, paketihaldus, Git, SSH ja automatiseerimisvahendid on igapäevased
 ## Allikad ja lisalugemine
 
 1. GNU Project – *GNU History*  
-   https://www.gnu.org/gnu/gnu-history.html
+   [https://www.gnu.org/gnu/gnu-history.html](https://www.gnu.org/gnu/gnu-history.html){ target="_blank" rel="noopener" }
 
 2. Richard Stallman – *Initial Announcement of the GNU Project* (1983)  
-   https://www.gnu.org/gnu/initial-announcement.html
+   [https://www.gnu.org/gnu/initial-announcement.html](https://www.gnu.org/gnu/initial-announcement.html){ target="_blank" rel="noopener" }
 
 3. GNU Project – *What is Free Software?*  
-   https://www.gnu.org/philosophy/free-sw.html
+   [https://www.gnu.org/philosophy/free-sw.html](https://www.gnu.org/philosophy/free-sw.html){ target="_blank" rel="noopener" }
 
 4. GNU Project – *GNU licenses / GPL*  
-   https://www.gnu.org/licenses/
+   [https://www.gnu.org/licenses/](https://www.gnu.org/licenses/){ target="_blank" rel="noopener" }
 
 5. Linux Foundation – Linuxi kerneli ajalugu ja koostöine arendus  
-   https://www.linuxfoundation.org/
+   [https://www.linuxfoundation.org/](https://www.linuxfoundation.org/){ target="_blank" rel="noopener" }
 
 6. The Linux Kernel Archives  
-   https://www.kernel.org/
+   [https://www.kernel.org/](https://www.kernel.org/){ target="_blank" rel="noopener" }
 
-7. MINIX 3 dokumentatsioon  
-   https://www.minix3.org/
 
    
