@@ -503,14 +503,91 @@ sudo adduser kasutaja
 
 `useradd` on madalama taseme utiliit, mida kasutatakse sageli skriptides või juhul, kui konto omadused soovitakse täpselt võtmetega määrata.
 
-Näiteks:
+Tavakasutaja loomine koos kodukataloogi ja Bash-kestaga:
 
 ```bash
 sudo useradd -m -s /bin/bash kasutaja
 ```
 
+`useradd` ei määra kasutajale automaatselt parooli. Parool tuleb määrata eraldi:
+
+```bash
+sudo passwd kasutaja
+```
+
+#### Levinumad võtmed
+
+| Võti | Tähendus |
+|---|---|
+| `-m` | loob kasutajale kodukataloogi |
+| `-d` | määrab kodukataloogi asukoha |
+| `-s` | määrab kasutaja käsukesta |
+| `-c` | lisab konto kirjelduse, näiteks inimese täisnime |
+| `-g` | määrab kasutaja põhirühma |
+| `-G` | lisab kasutaja täiendavatesse gruppidesse |
+| `-u` | määrab kasutajale konkreetse UID |
+| `-e` | määrab konto aegumise kuupäeva |
+| `-r` | loob süsteemikonto |
+| `-M` | ei loo kodukataloogi |
+
+#### Kasutaja loomine koos täisnimega
+
+```bash
+sudo useradd -m -s /bin/bash -c "Mari Maasikas" mari
+sudo passwd mari
+```
+
+#### Kasutaja lisamine täiendavatesse gruppidesse
+
+```bash
+sudo useradd -m -s /bin/bash -G sudo,praktikandid mari
+```
+
+Grupid `sudo` ja `praktikandid` peavad olema juba olemas. Gruppide nimed eraldatakse komaga, kuid nende vahele ei kirjutata tühikut.
+
+Kasutaja gruppide kontrollimiseks:
+
+```bash
+id mari
+```
+
+#### Teise kodukataloogi määramine
+
+```bash
+sudo useradd -m -d /srv/kasutajad/mari -s /bin/bash mari
+```
+
+Valik `-d` määrab kodukataloogi tee ja `-m` loob selle kataloogi.
+
+#### Konto aegumise määramine
+
+```bash
+sudo useradd -m -s /bin/bash -e 2027-06-30 praktikant
+```
+
+Pärast määratud kuupäeva ei saa kontoga enam tavapäraselt sisse logida.
+
+#### Sisselogimiseta süsteemikonto
+
+Teenuse jaoks võib olla vaja kontot, millega ei saa interaktiivselt sisse logida:
+
+```bash
+sudo useradd -r -M -s /usr/sbin/nologin rakendusteenus
+```
+
+- `-r` loob süsteemikonto;
+- `-M` jätab kodukataloogi loomata;
+- `/usr/sbin/nologin` takistab tavapärase käsureaseansi avamist.
+
 !!! note
-    `useradd` vaikekäitumine sõltub süsteemi konfiguratsioonist. Seetõttu on Debiani tavakasutaja käsitsi loomisel `adduser` sageli lihtsam ja turvalisem valik.
+    `useradd`-i vaikekäitumine sõltub süsteemi konfiguratsioonist. Näiteks kodukataloogi või samanimelise grupi loomist ei tohiks ilma vastavate võtmeteta eeldada. Debiani tavakasutaja käsitsi loomisel on `adduser` sageli lihtsam valik.
+
+!!! warning
+    Konkreetse UID määramisel võtmega `-u` kontrolli enne, et sama UID ei oleks juba kasutusel:
+
+    ```bash
+    getent passwd 1200
+    ```
 
 ---
 
