@@ -281,7 +281,7 @@ x = 1
 | `6` | `rw-` | 4 + 2 |
 | `7` | `rwx` | 4 + 2 + 1 |
 
-### Näide: `640`
+**Näide: `640`**
 
 ```bash
 chmod 640 raport.txt
@@ -293,7 +293,7 @@ chmod 640 raport.txt
 0 = ---  teised
 ```
 
-### Näide: `660`
+**Näide: `660`**
 
 ```bash
 chmod 660 fail.txt
@@ -305,7 +305,7 @@ Tulemus:
 -rw-rw----
 ```
 
-### Näide: `750`
+**Näide: `750`**
 
 ```bash
 chmod 750 skript.sh
