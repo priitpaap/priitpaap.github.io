@@ -317,6 +317,38 @@ Tulemus:
 -rwxr-x---
 ```
 
+### Miks on õigused vahel kolme ja vahel nelja numbriga?
+
+Tavalised õigused kirjutatakse kolme numbriga. Iga number vastab ühele kasutajarühmale:
+
+```text
+6 4 0
+│ │ └── teised
+│ └──── grupp
+└────── omanik
+```
+
+Seega tähendab `640`: omanikul `rw-`, grupil `r--` ja teistel `---`.
+
+Neljakohalise väärtuse esimene number näitab eriõigusi:
+
+```text
+2 7 7 0
+│ │ │ └── teised
+│ │ └──── grupp
+│ └────── omanik
+└──────── eriõigused
+```
+
+| Esimene number | Eriõigus |
+|---:|---|
+| `0` | eriõigusi pole |
+| `1` | sticky bit |
+| `2` | setgid |
+| `4` | setuid |
+
+Näiteks `770` ja `0770` tähendavad samu tavalisi õigusi. Väärtuses `2770` lisab esimene number setgid-õiguse. Kolm viimast numbrit tähendavad alati omaniku, grupi ja teiste õigusi.
+
 ---
 
 ## Levinud õiguste kombinatsioonid
@@ -425,41 +457,69 @@ muudab ka kõik tavalised failid käivitatavaks, mis pole sageli soovitud.
 
 ## Vaikimisi õigused ja `umask`
 
-Uute objektide vaikimisi õigusi mõjutab:
+`umask` määrab, millised õigused jäetakse uue faili või kataloogi loomisel andmata. See ei määra õigusi otse, vaid **eemaldab** õigusi lähteõigustest.
+
+Kehtiva maski vaatamiseks kasuta:
 
 ```bash
 umask
 ```
 
-Näiteks:
+Tüüpiline tulemus on:
 
 ```text
 0022
 ```
 
-### Lihtsustatud põhimõte
-
-Tavalise faili maksimaalne tavapärane lähteõigus on:
+Seda võib lugeda kujul `022`. Kolm viimast numbrit vastavad omanikule, grupile ja teistele:
 
 ```text
-666 = rw-rw-rw-
+0 2 2
+│ │ └── teistelt eemaldatakse kirjutamisõigus
+│ └──── grupilt eemaldatakse kirjutamisõigus
+└────── omanikult ei eemaldata midagi
 ```
 
-Kataloogil:
+Seega tähendab `umask 022`, et omanikule jäävad lähteõigused alles, kuid grupilt ja teistelt eemaldatakse `w` ehk kirjutamisõigus.
+
+### Faili loomine
+
+Tavalise faili lähteõigused on üldjuhul `666`:
 
 ```text
-777 = rwxrwxrwx
+lähteõigused  666 → rw-rw-rw-
+umask         022 → ----w--w-  eemaldatavad õigused
+tulemus       644 → rw-r--r--
 ```
 
-Kui `umask` on `022`, saadakse tavaliselt:
+Faili omanik saab seda lugeda ja muuta. Grupp ning teised saavad faili ainult lugeda.
+
+### Kataloogi loomine
+
+Kataloogi lähteõigused on üldjuhul `777`:
 
 ```text
-uus fail       → 644 → rw-r--r--
-uus kataloog   → 755 → rwxr-xr-x
+lähteõigused  777 → rwxrwxrwx
+umask         022 → ----w--w-  eemaldatavad õigused
+tulemus       755 → rwxr-xr-x
 ```
 
-!!! note
-    `umask` eemaldab vaikimisi õigustest bitte. See ei lisa õigusi, mida programmi poolt loodavale objektile algselt ei küsitud.
+Omanik saab kataloogi täielikult kasutada. Grupp ja teised saavad seda sirvida ning läbida, kuid ei saa sinna vaikimisi objekte lisada ega neid kustutada.
+
+Tulemust saab ise kontrollida:
+
+```bash
+umask 022
+touch proov.txt
+mkdir proovikataloog
+ls -ld proov.txt proovikataloog
+```
+
+!!! note "`umask` ei ole tavaline lahutamine"
+    Näide `666 − 022 = 644` näib töötavat, kuid `umask` ei lahuta kümnendarve. Ta keelab maskis märgitud õigused ega lisa õigusi, mida programm algselt ei küsinud.
+
+!!! info "Mida `umask` mõjutab?"
+    `umask` mõjutab pärast selle määramist loodavaid objekte. See ei muuda juba olemasolevate failide ega kataloogide õigusi.
 
 ### Miks fail ei saa vaikimisi `x` õigust?
 
