@@ -1,4 +1,4 @@
-site_name: IT alased õppematerjalid 
+site_name: IT alased õppematerjalid
 theme:
   name: material
   custom_dir: overrides
@@ -9,114 +9,109 @@ theme:
     previous: fontawesome/solid/angle-left
     next: fontawesome/solid/angle-right
   features:
-    - content.code.annotate
-    - content.code.copy
-    - content.tabs.link
-    - header.autohide
-    - announce.dismiss
-    - navigation.footer
-    - navigation.indexes
-    - navigation.sections
-    - navigation.tabs
-    - navigation.top
-    - navigation.tracking
-    - search.highlight
-    - search.share
-    - search.suggest
+  - content.code.annotate
+  - content.code.copy
+  - content.tabs.link
+  - header.autohide
+  - announce.dismiss
+  - navigation.footer
+  - navigation.indexes
+  - navigation.sections
+  - navigation.tabs
+  - navigation.top
+  - navigation.tracking
+  - search.highlight
+  - search.share
+  - search.suggest
 #    - toc.integrate
 
   palette:
     # Palette toggle for dark mode
-    - scheme: slate
-      primary: black
-      accent: deep orange
-      toggle:
-        icon: material/weather-night
-        name: Lülitu heledale režiimile
+  - scheme: slate
+    primary: black
+    accent: deep orange
+    toggle:
+      icon: material/weather-night
+      name: Lülitu heledale režiimile
 
     # Palette toggle for light mode
-    - scheme: default
-      primary: deep blue
-      accent: deep orange
-      toggle:
-        icon: material/weather-sunny
-        name: Lülitu tumedale režiimile
+  - scheme: default
+    primary: deep blue
+    accent: deep orange
+    toggle:
+      icon: material/weather-sunny
+      name: Lülitu tumedale režiimile
 
 plugins:
-  - typeset
-  - search
+- typeset
+- search
 
 markdown_extensions:
-  - pymdownx.highlight:
-      anchor_linenums: true
-  - pymdownx.inlinehilite
-  - pymdownx.snippets
-  - admonition
-  - pymdownx.arithmatex:
-      generic: true
-  - footnotes
-  - pymdownx.details
-  - pymdownx.superfences:
-      custom_fences:
-        - name: mermaid
-          class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
-  - pymdownx.tabbed:
-      alternate_style: true
-  - pymdownx.mark
-  - attr_list
-  - md_in_html
-  - toc:
-      permalink: true
-  - pymdownx.emoji:
-      emoji_index: !!python/name:material.extensions.emoji.twemoji 
-      emoji_generator: !!python/name:material.extensions.emoji.to_svg
-  - def_list
-  - pymdownx.tasklist:
-      custom_checkbox: true
+- pymdownx.highlight:
+    anchor_linenums: true
+- pymdownx.inlinehilite
+- pymdownx.snippets
+- admonition
+- pymdownx.arithmatex:
+    generic: true
+- footnotes
+- pymdownx.details
+- pymdownx.superfences:
+    custom_fences:
+    - name: mermaid
+      class: mermaid
+      format: !!python/name:pymdownx.superfences.fence_code_format
+- pymdownx.tabbed:
+    alternate_style: true
+- pymdownx.mark
+- attr_list
+- md_in_html
+- toc:
+    permalink: true
+- pymdownx.emoji:
+    emoji_index: !!python/name:material.extensions.emoji.twemoji
+    emoji_generator: !!python/name:material.extensions.emoji.to_svg
+- def_list
+- pymdownx.tasklist:
+    custom_checkbox: true
 
 
 copyright: Copyright &copy; 2025 Priit Paap
 
 nav:
-  - Avalehele: https://priitpaap.github.io
-  - Linux:
-    - 'Ajalugu':
-      - 'Unixi ja BSD ajalugu': linux/unixi-ja-bsd-ajalugu.md 
-      - 'Linuxi ajalugu': linux/linuxi-ajalugu.md
-    - 'Linuxi baasteadmised':
-      - 'Debian Linuxi paigaldamine virutaalmasinale': linux/debpaigaldus.md 
-      - 'Linuxi käskude spikker': linux/linuxi-baaskasud-spikker.md
-      - 'Linuxi ülesehitus ja töökeskkond': linux/linuxi-ulesehitus-ja-tookeskkond.md
-      - 'Linuxi failhaldus ja baaskäsud': linux/failihalduse-baaskasud.md
-      - 'Linuxi katalogipuu ja failisusteemi alused': linux/kataloogipuu-ja-failisusteemi-alused.md
-      - 'Linuxi kasutajate haldus': linux/linuxi-kasutajate-haldus.md
-    - 'Linuxi serverid ja teenused':
-      - 'DHCP serveri seadistamine': linux/dhcp.md
-      - 'DNS serveri seadistamine': linux/dns.md      
-  - Automatiseerimine:
-    - 'Ansible':
-      - 'Ansible ülevaade': ansible/ansibleintro.md
-      - 'Ansible paigaldamine': ansible/ansibleinstall.md
-      - 'Ansible inventory': ansible/ansibleinventory.md
-      - 'Ansible levinumad seadistused': ansible/ansibleconf.md      
-      - 'Hallatavate hostide ühendamine': ansible/ansiblenodes.md
-      - 'Moodulid ja ad-hoc käsud': ansible/ansiblemodules.md
-      - 'Playbookid ja YAML': ansible/ansibleplaybooks.md
-      - 'Muutujad ja nende kasutamine': ansible/ansiblevars.md
-      - 'Jinja2 mallid': ansible/ansiblejinja2.md
-      - 'Tingimuslikkus': ansible/ansibleconditionals.md
-      - 'Tsüklid': ansible/ansibleloops.md    
-      - 'Tegevuste käivitamine ainult vajadusel': ansible/ansiblehandlers.md     
-      - 'Turvalisus ja Ansible Vault': ansible/ansiblevault.md
-      - 'Rollid ja struktuur': ansible/ansibleroles.md
-      - 'Ansible Galaxy Collections': ansible/ansiblegalaxy.md
-      - 'Ansible parimad praktikad': ansible/ansiblebestpractises.md
-
-
-
-
-
-
-
-  
+- Avalehele: https://priitpaap.github.io
+- Linux:
+  - Ajalugu:
+    - Unixi ja BSD ajalugu: linux/unixi-ja-bsd-ajalugu.md
+    - Linuxi ajalugu: linux/linuxi-ajalugu.md
+  - Linuxi baasteadmised:
+    - Debian Linuxi paigaldamine virutaalmasinale: linux/debpaigaldus.md
+    - Linuxi käskude spikker: linux/linuxi-baaskasud-spikker.md
+    - Linuxi ülesehitus ja töökeskkond: 
+        linux/linuxi-ulesehitus-ja-tookeskkond.md
+    - Linuxi failhaldus ja baaskäsud: linux/failihalduse-baaskasud.md
+    - Linuxi katalogipuu ja failisusteemi alused: 
+        linux/kataloogipuu-ja-failisusteemi-alused.md
+    - Linuxi kasutajate haldus: linux/linuxi-kasutajate-haldus.md
+    - Linuxi failiõigused: linux/linuxi-failioigused.md
+  - Linuxi serverid ja teenused:
+    - DHCP serveri seadistamine: linux/dhcp.md
+    - DNS serveri seadistamine: linux/dns.md
+- Automatiseerimine:
+  - Ansible:
+    - Ansible ülevaade: ansible/ansibleintro.md
+    - Ansible paigaldamine: ansible/ansibleinstall.md
+    - Ansible inventory: ansible/ansibleinventory.md
+    - Ansible levinumad seadistused: ansible/ansibleconf.md
+    - Hallatavate hostide ühendamine: ansible/ansiblenodes.md
+    - Moodulid ja ad-hoc käsud: ansible/ansiblemodules.md
+    - Playbookid ja YAML: ansible/ansibleplaybooks.md
+    - Muutujad ja nende kasutamine: ansible/ansiblevars.md
+    - Jinja2 mallid: ansible/ansiblejinja2.md
+    - Tingimuslikkus: ansible/ansibleconditionals.md
+    - Tsüklid: ansible/ansibleloops.md
+    - Tegevuste käivitamine ainult vajadusel: ansible/ansiblehandlers.md
+    - Turvalisus ja Ansible Vault: ansible/ansiblevault.md
+    - Rollid ja struktuur: ansible/ansibleroles.md
+    - Ansible Galaxy Collections: ansible/ansiblegalaxy.md
+    - Ansible parimad praktikad: ansible/ansiblebestpractises.md
