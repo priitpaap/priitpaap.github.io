@@ -95,6 +95,8 @@ nav:
     - Linuxi kasutajate haldus: linux/linuxi-kasutajate-haldus.md
     - Linuxi failiõigused: linux/linuxi-failioigused.md
     - Linuxi tarkvarahaldus: linux/linuxi-tarkvarahaldus.md
+    - Tarkvarahaldus Debiani laadsetes: 
+        linux/tarkvarahaldus-debiani-laadsetes.md
   - Linuxi serverid ja teenused:
     - DHCP serveri seadistamine: linux/dhcp.md
     - DNS serveri seadistamine: linux/dns.md
