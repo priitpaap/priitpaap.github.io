@@ -1,13 +1,13 @@
-icon:material/debian
+icon:material/package-variant-closed
 
 # Linuxi tarkvarahalduse ülevaade
 
 Linuxis paigaldatakse, uuendatakse ja eemaldatakse tarkvara tavaliselt **pakihalduri** abil. Pakihaldur peab arvestust paigaldatud tarkvara üle, laadib paketid hoidlatest ning aitab lahendada sõltuvusi.
 
-See fail selgitab ühist loogikat. Praktilised käsud on eraldi materjalides:
+See materjal selgitab ühist loogikat. Praktilised käsud on eraldi materjalides:
 
-- [Tarkvarahaldus Debianis](tarkvarahaldus_debian.md)
-- [Tarkvarahaldus AlmaLinuxis](tarkvarahaldus_almalinux.md)
+- [Tarkvarahaldus Debiani laadsetes distributsioonides](tarkvarahaldus-debiani-laadsetes.md)
+- [Tarkvarahaldus Red Hati laadsetes distributsioonides](tarkvarahaldus-red-hati-laadsetes.md)
 
 ## Õpieesmärgid
 
@@ -89,7 +89,7 @@ Süsteemi põhikomponente, teeke ja teenuseid halda üldjuhul distributsiooni pa
 | Distributsioonipere | Paketivorming | Madalama taseme vahend | Tavakasutaja pakihaldur |
 |---|---|---|---|
 | Debian, Ubuntu | `.deb` | `dpkg` | `apt` |
-| AlmaLinux, Fedora, RHEL | `.rpm` | `rpm` | `dnf` |
+| AlmaLinux, Rocky Linux, RHEL, Fedora | `.rpm` | `rpm` | `dnf` |
 | openSUSE | `.rpm` | `rpm` | `zypper` |
 | Arch Linux | `.pkg.tar.zst` | – | `pacman` |
 
@@ -113,7 +113,7 @@ command -v dnf
 
 ## APT-i ja DNF-i kiirvõrdlus
 
-| Tegevus | Debian: APT | AlmaLinux: DNF |
+| Tegevus | Debian: APT | Red Hati laadne süsteem: DNF |
 |---|---|---|
 | vaata hoidlaid | vaata APT-i lähtefaile | `dnf repolist` |
 | värskenda metaandmeid | `sudo apt update` | `sudo dnf makecache` |
@@ -141,6 +141,45 @@ Enne uue hoidla või veebist laaditud paketi kasutamist kontrolli:
 !!! danger
     Ära käivita tundmatult veebilehelt kopeeritud käsku kujul `curl ... | sudo bash`. See annab allalaaditud skriptile kohe administraatori õigused.
 
+### GPG-võtme sõrmejälg ja kontrollsumma
+
+**GPG-võtme sõrmejälg** (*GPG key fingerprint*) on avaliku võtme kordumatu tunnus. Pakihaldur kasutab GPG-võtit kontrollimaks, kas hoidla andmed või tarkvarapakett pärinevad väidetud avaldajalt ja neid pole vahepeal muudetud.
+
+Võtme sõrmejälje vaatamiseks:
+
+```bash
+gpg --show-keys --fingerprint hoidla-voti.gpg
+```
+
+Võrdle kuvatud sõrmejälge tarkvara tootja või distributsiooni **ametlikul veebilehel** avaldatud väärtusega. Kõik märgid peavad kattuma.
+
+**Kontrollsumma** (*checksum*) on faili sisust arvutatud väärtus. Kui failis muutub kasvõi üks bitt, muutub tavaliselt ka kontrollsumma.
+
+SHA-256 kontrollsumma arvutamiseks:
+
+```bash
+sha256sum programm.rpm
+```
+
+Sama käsk sobib ka teiste failide kontrollimiseks:
+
+```bash
+sha256sum programm.deb
+```
+
+Võrdle tulemust ametlikul veebilehel avaldatud SHA-256 väärtusega.
+
+
+!!! warning "Hoiatus"
+    Kui sõrmejälg või kontrollsumma ei kattu ametliku väärtusega, ära võtit ega faili kasuta. Laadi see uuesti alla usaldusväärsest allikast.
+
+
+
+!!! note "Märkus"
+    Kontrollsumma näitab, kas fail vastab avaldatud failile, kuid ei tõesta üksinda, et avaldaja on usaldusväärne. Seetõttu peab võrdlusväärtus pärinema tootja või distributsiooni ametlikust allikast. Ametlike hoidlate kasutamisel teeb pakihaldur allkirjade kontrolli tavaliselt automaatselt.
+
+
+
 ## Hea töövõte
 
 > **Vaata → mõtle → simuleeri → tee → kontrolli.**
@@ -153,8 +192,45 @@ Enne uue hoidla või veebist laaditud paketi kasutamist kontrolli:
 
 ## Muud levitusviisid lühidalt
 
-- **Flatpak** sobib eelkõige töölauarakendustele ja kasutab eraldatumat käituskeskkonda.
-- **Snap** on Canonicali hallatav universaalne paketivorming ja teenus.
+### Flatpak
+
+**Flatpak** on distributsioonist suuresti sõltumatu rakenduste levitamise viis. Flatpaki rakendus kasutab oma sõltuvusi ja jagatud käituskeskkonda (*runtime*), mistõttu saab sama rakenduse paigaldada eri Linuxi distributsioonidesse.
+
+Flatpaki kohtab peamiselt **graafiliste töölauarakenduste** puhul, näiteks Discordi, Spotify, GIMPi või mänguplatvormide paigaldamisel. Kõige levinum Flatpaki rakenduste hoidla on **Flathub**.
+
+Flatpaki rakendused töötavad osaliselt eraldatud keskkonnas ehk **liivakastis** (*sandbox*). Rakendusele saab piirata näiteks juurdepääsu kasutaja failidele, seadmetele ja teistele süsteemi osadele.
+
+Mõned käskude näited (kuigi graafilises keskkonnas pole neid alati vaja teada):
+
+```bash
+flatpak search gimp
+flatpak install flathub org.gimp.GIMP
+flatpak update
+flatpak uninstall org.gimp.GIMP
+```
+
+### Snap
+
+**Snap** on Canonicali loodud universaalne paketivorming ja tarkvara levitamise süsteem. Snap-pakett sisaldab rakendust ning suurt osa selle töötamiseks vajalikest sõltuvustest. Snap-rakendusi haldab taustal töötav teenus **`snapd`**.
+
+Snap-pakette kohtab kõige sagedamini **Ubuntu** süsteemides. Rakendusi hangitakse tavaliselt Canonicali hallatavast **Snap Store'ist**. Näiteks võib Ubuntu mõne töölauarakenduse, nagu Firefoxi, paigaldada vaikimisi Snap-paketina.
+
+Mõned käskude näited:
+
+```bash
+snap find gimp
+sudo snap install gimp
+sudo snap refresh
+sudo snap remove gimp
+```
+
+Snap-rakendused töötavad samuti tavapakettidest eraldatumalt ning nende uuendamine toimub tavaliselt automaatselt. Debianis ja AlmaLinuxis ei pruugi Snap vaikimisi paigaldatud olla.
+
+!!! note
+    Flatpak ja Snap ei asenda täielikult distributsiooni pakihaldurit. Süsteemi põhikomponente, teeke ja serveriteenuseid hallatakse tavaliselt endiselt APT-i või DNF-iga. Flatpaki ja Snapi kasutatakse peamiselt kasutajarakenduste paigaldamiseks.
+
+### Teised võimalused
+
 - **AppImage** on tavaliselt üks käivitatav fail; süsteemi pakihaldur seda enamasti ei uuenda.
 - **Lähtekoodist paigaldamine** annab rohkem kontrolli, kuid uuendamine ja eemaldamine jäävad sageli administraatori vastutuseks.
 - **`pip`, `npm` ja teised keele pakihaldurid** ei ole operatsioonisüsteemi pakihalduri asendajad. Väldi süsteemsete teekide juhuslikku ülekirjutamist.
@@ -170,8 +246,15 @@ Enne uue hoidla või veebist laaditud paketi kasutamist kontrolli:
 7. Miks ei tõesta faililaiend paketi turvalisust?
 8. Kirjelda head viieosalist tööjärjekorda.
 
-## Edasiõppimine
+## Allikad ja lisalugemine
 
-- Debiani praktilised käsud: [Tarkvarahaldus Debianis](tarkvarahaldus_debian.md)
-- AlmaLinuxi praktilised käsud: [Tarkvarahaldus AlmaLinuxis](tarkvarahaldus_almalinux.md)
+- [Debian Reference: Debiani pakihaldus](https://www.debian.org/doc/manuals/reference/ch02.en.html){ target="_blank" rel="noopener" }
+- [Debian Manpages: APT-i turvamehhanismid](https://manpages.debian.org/stable/apt/apt-secure.8.en.html){ target="_blank" rel="noopener" }
+- [Red Hat: tarkvara haldamine DNF-iga](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/htmlsingle/managing_software_with_the_dnf_tool/){ target="_blank" rel="noopener" }
 
+- [AppImage'i tutvustus](https://docs.appimage.org/introduction/index.html){ target="_blank" rel="noopener" }
+
+- [GnuPG: GPG-võtme sõrmejälg](https://wiki.gnupg.org/Fingerprint){ target="_blank" rel="noopener" }
+- [GNU Coreutils: SHA-256 kontrollsumma](https://www.gnu.org/software/coreutils/manual/html_node/sha2-utilities.html){ target="_blank" rel="noopener" }
+- [Flatpaki ametlik dokumentatsioon](https://docs.flatpak.org/en/latest/)
+- [Snapi ametlik dokumentatsioon](https://snapcraft.io/docs/)
