@@ -854,6 +854,4 @@ Kõige olulisem põhimõte on:
 - [Debian Manpages: plocate(1)](https://manpages.debian.org/stable/plocate/plocate.1.en.html){ target="_blank" rel="noopener" }
 - [Debian Manpages: updatedb(8)](https://manpages.debian.org/stable/plocate/updatedb.8.en.html){ target="_blank" rel="noopener" }
 - [Debian Manpages: journalctl(1)](https://manpages.debian.org/stable/systemd/journalctl.1.en.html){ target="_blank" rel="noopener" }
-- [GNU Findutils manual](https://www.gnu.org/software/findutils/manual/html_mono/find.html){ target="_blank" rel="noopener" }
-- [GNU grep manual](https://www.gnu.org/software/grep/manual/grep.html){ target="_blank" rel="noopener" }
 - [Red Hat Enterprise Linux documentation](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/){ target="_blank" rel="noopener" }
