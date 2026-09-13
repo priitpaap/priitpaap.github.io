@@ -84,8 +84,9 @@ nav:
   - Ajalugu:
     - Unixi ja BSD ajalugu: linux/unixi-ja-bsd-ajalugu.md
     - Linuxi ajalugu: linux/linuxi-ajalugu.md
-  - Linuxi baasteadmised:
+  - Paigaldamine:
     - Debian Linuxi paigaldamine virutaalmasinale: linux/debpaigaldus.md
+  - Linuxi baasteadmised:
     - Linuxi käskude spikker: linux/linuxi-baaskasud-spikker.md
     - Linuxi ülesehitus ja töökeskkond: 
         linux/linuxi-ulesehitus-ja-tookeskkond.md
