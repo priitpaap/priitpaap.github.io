@@ -423,12 +423,12 @@ find /home/student -type f -name "*.tmp" -delete
 
 ### `-exec`
 
-`find` saab iga leitud objekti jaoks käivitada ka teise käsu.
+`find` saab iga leitud objekti jaoks käivitada ka teise käsu. Selleks kasutatakse `-exec` valikut.
 
-Näiteks leitud failide detailse info vaatamiseks:
+Üldkuju:
 
 ```bash
-find /home/student -type f -name "*.txt" -exec ls -l {} \;
+find asukoht tingimused -exec käsk {} \;
 ```
 
 Siin:
@@ -438,9 +438,65 @@ Siin:
 \;  → lõpetab -exec käsu
 ```
 
-!!! warning "`-exec` võib faile ka muuta"
-    `-exec` abil saab käivitada ka muutvaid või kustutavaid käske. Enne sellise käsu kasutamist kontrolli otsingutulemusi ning veendu, et saad aru käivitatava käsu mõjust.
+Praktiline näide – WordPressi failiõigused:
 
+Veebiserveri kataloogis võivad failid ja kataloogid vajada erinevaid õigusi. Näiteks WordPressi failid asuvad kataloogis:
+
+```text
+/var/www/wordpress
+```
+
+Kõigi selle kataloogi ja selle all olevate **kataloogide** leidmiseks:
+
+```bash
+find /var/www/wordpress -type d
+```
+
+Kui oled tulemused üle kontrollinud, saad määrata kõigile leitud kataloogidele õigused `755`:
+
+```bash
+sudo find /var/www/wordpress -type d -exec chmod 755 {} \;
+```
+
+Kõigi **tavaliste failide** leidmiseks:
+
+```bash
+find /var/www/wordpress -type f
+```
+
+Pärast tulemuste kontrollimist saad määrata kõigile leitud failidele õigused `644`:
+
+```bash
+sudo find /var/www/wordpress -type f -exec chmod 644 {} \;
+```
+
+Tulemuseks on:
+
+```text
+kataloogid → 755 → rwxr-xr-x
+failid     → 644 → rw-r--r--
+```
+
+See on parem kui näiteks:
+
+```bash
+sudo chmod -R 755 /var/www/wordpress
+```
+
+sest rekursiivne `chmod -R 755` annaks `755` õigused ka tavalistele failidele ning muudaks need käivitatavaks.
+
+`find` võimaldab failid ja kataloogid eraldi valida:
+
+```text
+find ... -type d → ainult kataloogid → chmod 755
+find ... -type f → ainult failid     → chmod 644
+```
+
+!!! tip "Kõigepealt otsi, seejärel muuda"
+    Enne `-exec chmod` kasutamist käivita sama `find` käsk ilma `-exec` osata. Nii saad kontrollida, milliste objektide õigusi muudetakse.
+
+!!! warning "Õigused sõltuvad rakendusest"
+    `755` kataloogidele ja `644` failidele on levinud lähtekoht veebirakenduse failide puhul, kuid see ei ole universaalne reegel. Rakendus võib vajada mõnele failile või kataloogile teistsuguseid õigusi ning oluline on ka õige omanik ja grupp.
 ---
 
 ## `locate` - kiire otsing nime järgi
@@ -511,13 +567,13 @@ Väljund võib olla näiteks:
 `command -v` võib näidata ka seda, kui nimi viitab shelli sisseehitatud käsule, alias'ele või funktsioonile.
 
 !!! note "Aga `which`?"
-    Programmi asukoha leidmiseks kasutatakse sageli ka `which` käsku. Shelli sisseehitatud `command -v` on üldine viis kontrollida, kuidas shell antud käsunime lahendab. Administraatorina tasub mõlemad käsud ära tunda.
+    Programmi asukoha leidmiseks kasutatakse sageli ka `which` käsku. Shelli sisseehitatud `command -v` on üldine viis kontrollida, kuidas shell antud käsunime lahendab. Administraatorina tasub mõlemad käske tunda.
 
 ---
 
 ## `journalctl` - systemd logide otsimine
 
-Tänapäevased Debian ja RHEL kasutavad systemd-d ning süsteemi journali saab vaadata käsuga `journalctl`.
+Tänapäevased Debian ja RHEL kasutavad systemd-d ning süsteemi journali saab vaadata käsuga `journalctl`. Käsku kasutades võiks meeles pidada, et `sudo` õigustes näeb rohkem infot kui tavakasutajana.
 
 Kõigi kasutajale nähtavate journalikirjete vaatamine:
 
@@ -525,22 +581,41 @@ Kõigi kasutajale nähtavate journalikirjete vaatamine:
 journalctl
 ```
 
-Praeguse alglaadimise kirjed:
+### Uusimad kirjed esimesena
+
+Praktiliseks tõrkeotsinguks on väga kasulik võti `-r` (*reverse*), mis kuvab journalikirjed **uuemast vanemani**:
+
+```bash
+journalctl -r
+```
+
+Nii näed kohe kõige hiljutisemaid sündmusi. See on kasulik näiteks siis, kui teenus andis äsja veateate ja sa ei mäleta parasjagu ühtegi täpsemat `journalctl` filtrit.
+
+!!! tip "Kui muud meeles ei ole, proovi `journalctl -r`"
+    Tõrkeotsingu alustamiseks on `journalctl -r` mugav käsk, sest kõige värskemad logikirjed kuvatakse kohe esimesena. Kui oled probleemi kohta rohkem teada saanud, saad otsingut täpsustada näiteks teenuse, prioriteedi või aja järgi.
+
+### Praeguse alglaadimise kirjed
 
 ```bash
 journalctl -b
 ```
 
-Veatasemega kirjed:
+### Veatasemega kirjed
 
 ```bash
 journalctl -p err
 ```
 
-Tänased kirjed:
+### Tänased kirjed
 
 ```bash
 journalctl --since today
+```
+
+Võtmeid saab ka kombineerida. Näiteks praeguse alglaadimise veateated, uusimad ees:
+
+```bash
+journalctl -b -p err -r
 ```
 
 ### Teenuse logid
