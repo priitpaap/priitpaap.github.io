@@ -1,12 +1,10 @@
 icon:material/redhat
 
-# Tarkvarahaldus Red Hati laadsetes Linuxi distributsioonides
+# Tarkvarahaldus Red Hati laadsetes Linuxites
 
-Red Hati laadsete Linuxi distributsioonide hulka kuuluvad näiteks Red Hat Enterprise Linux (RHEL), AlmaLinux, Rocky Linux ja Fedora. Tarkvara tavaliseks haldamiseks kasutatakse **DNF-i** ning madalama taseme vahendina **`rpm`-i**.
+Red Hati laadsete Linuxi distributsioonide hulka kuuluvad näiteks Red Hat Enterprise Linux (RHEL), AlmaLinux, Rocky Linux, Fedora ja CentOS Stream. Tarkvara tavaliseks haldamiseks kasutatakse **DNF-i** ning madalama taseme vahendina **`rpm`-i**.
 
 Selles materjalis kasutatakse näidissüsteemina **AlmaLinuxit**. Põhikäsud töötavad üldjuhul ka teistes sama perekonna distributsioonides, kuid hoidlate nimed, pakettide valik ja süsteemi versioon võivad erineda.
-
-Enne alustamist loe [Linuxi tarkvarahalduse ülevaadet](tarkvarahaldus_ulevaade.md).
 
 ## Õpieesmärgid
 
@@ -95,16 +93,16 @@ sudo dnf upgrade --refresh
 ## Paketi otsimine ja uurimine
 
 ```bash
-dnf search httpd
-dnf search --all veebiserver
-dnf info httpd
-dnf repoquery --requires --resolve httpd
+dnf search pakinimi
+dnf search --all osingusõna
+dnf info pakinimi
+dnf repoquery --requires --resolve pakinimi
 ```
 
 | Käsk | Vastab küsimusele |
 |---|---|
 | `dnf search httpd` | millised paketid sobivad nime või kokkuvõttega? |
-| `dnf search --all sõna` | kas sõna leidub ka pikemas kirjelduses? |
+| `dnf search --all webserver` | kas "webserver" leidub ka pikemas kirjelduses? |
 | `dnf info httpd` | mis on paketi versioon, arhitektuur, kirjeldus ja hoidla? |
 | `dnf repoquery --requires --resolve httpd` | millised paketid pakuvad vajalikke sõltuvusi? |
 
@@ -316,18 +314,6 @@ journalctl -u teenus --no-pager -n 50
 ```
 
 Veateate põhjus võib olla puuduv seadistus, hõivatud port või vale failiõigus, mitte ebaõnnestunud pakipaigaldus.
-
-## Praktilise töö soovituslik järjekord
-
-1. Tuvasta süsteem käsuga `cat /etc/os-release`.
-2. Vaata hoidlaid ning värskenda metaandmete vahemälu.
-3. Kontrolli saadaolevaid uuendusi.
-4. Otsi paketti `httpd`, vaata selle infot ja sõltuvusi.
-5. Vaata paigaldus ette valikuga `--assumeno`, seejärel paigalda pakett.
-6. Käivita ja luba `httpd` teenus ning kontrolli selle olekut.
-7. Lisa õpetaja juhisel EPEL ja kontrolli hoidla olekut.
-8. Harjuta paketi otsimist, eemaldamist ning kohaliku `.rpm`-faili uurimist ja paigaldamist.
-9. Vaata tehtud toiminguid käsuga `dnf history`.
 
 ## Käskude spikker
 
