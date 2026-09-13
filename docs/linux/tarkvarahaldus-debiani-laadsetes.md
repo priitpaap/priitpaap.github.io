@@ -2,9 +2,7 @@ icon:material/debian
 
 # Tarkvarahaldus Debiani-laadsetes Linuxites
 
-Debianis ja teistes debiani baasil olevates distributsioonides kasutatakse tarkvara tavaliseks haldamiseks **APT-i**. Madalama taseme vahend **`dpkg`** haldab kohalikke `.deb`-pakette ja pakettide andmebaasi.
-
-Enne alustamist loe [Linuxi tarkvarahalduse ülevaadet](tarkvarahaldus_ulevaade.md).
+Debianis ja teistes Debiani baasil olevates distributsioonides kasutatakse tarkvara tavaliseks haldamiseks **APT-i**. Madalama taseme vahend **`dpkg`** haldab kohalikke `.deb`-pakette ja pakettide andmebaasi.
 
 ## Õpieesmärgid
 
@@ -45,13 +43,22 @@ sudo apt update
 
 `apt update` **ei paigalda uuendusi**. See värskendab kohalikku pakettide nimekirja, mille järgi APT teab saadaolevaid versioone.
 
+## Kolmanda osapoole hoidla lisamine
+
+Mõnda programmi Debiani põhihoidlates ei ole või on seal selle vanem versioon. Sellisel juhul võib tarkvara tootja pakkuda oma hoidlat.
+
+Kolmanda osapoole hoidla lisamine tähendab, et lubad APT-il laadida pakette ja uuendusi ka Debiani-välisest allikast.
+
+!!! warning
+    Lisa ainult usaldusväärseid hoidlaid. Kontrolli, et juhend pärineks tarkvara tootja ametlikult veebilehelt ning sobiks sinu Debiani versiooniga.
+
 ## Paketi otsimine ja uurimine
 
 ```bash
-apt search nginx
-apt show nginx
-apt policy nginx
-apt depends nginx
+apt search pakinimi
+apt show pakinimi
+apt policy pakinimi
+apt depends pakinimi
 ```
 
 | Käsk | Vastab küsimusele |
@@ -134,9 +141,13 @@ sudo apt upgrade
 
 | Käsk | Tähendus |
 |---|---|
-| `apt update` | värskendab pakettide nimekirja |
+| `apt update` | värskendab hoidlatest pakettide nimekirja, kuid ei paigalda uuendusi |
 | `apt upgrade` | uuendab paigaldatud pakette; võib lisada uusi sõltuvusi, kuid ei eemalda paigaldatud pakette |
-| `apt full-upgrade` | uuendab süsteemi ja võib sõltuvusprobleemi lahendamiseks pakette eemaldada |
+| `apt full-upgrade` | uuendab süsteemi ja võib sõltuvuste lahendamiseks pakette paigaldada või eemaldada |
+| `apt-get dist-upgrade` | teeb sisuliselt sama mis `apt full-upgrade`; seda kohtab vanemates juhendites ja skriptides |
+
+!!! note
+    Kuigi mõnes süsteemis töötab ka `apt dist-upgrade`, on APT-i dokumenteeritud tavakasutaja käsk `apt full-upgrade`. Nimetus `dist-upgrade` ei tähenda Debiani uuele põhiversioonile uuendamist.
 
 !!! warning
     Enne `full-upgrade` kinnitamist vaata eriti hoolikalt eemaldatavate pakettide nimekirja.
@@ -249,17 +260,6 @@ Käivita need ainult siis, kui veateade viitab katkisele või lõpetamata paketi
 less /var/log/apt/history.log
 less /var/log/dpkg.log
 ```
-
-## Praktilise töö soovituslik järjekord
-
-1. Tuvasta süsteem käsuga `cat /etc/os-release`.
-2. Käivita `sudo apt update` ja vaata uuendatavaid pakette.
-3. Otsi paketti, näiteks `nginx`, ning vaata selle infot ja sõltuvusi.
-4. Simuleeri paigaldust käsuga `apt install -s nginx`.
-5. Paigalda pakett ja kontrolli paketi ning teenuse olekut.
-6. Harjuta paketi eemaldamist, `purge`-käsku ja `autoremove`-eelvaadet.
-7. Paigalda õpetaja antud kohalik `.deb`-fail APT-iga ja uuri seda `dpkg` abil.
-8. Puhasta vajaduse korral APT-i vahemälu.
 
 ## Käskude spikker
 
