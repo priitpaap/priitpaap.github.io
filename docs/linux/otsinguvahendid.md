@@ -785,7 +785,7 @@ Näiteks failide kustutamise korral:
 | **otsingumuster** | tekst või muster, millele otsitav tulemus peab vastama |
 | **rekursiivne otsing** | otsing, mis läbib ka alamkatalooge |
 | **metamärk** | erilise tähendusega märk otsingumustris, näiteks `*` või `?` |
-| **toru `\|`** | suunab ühe käsu standardväljundi järgmise käsu standardsisendiks |
+| **toru `|`** | suunab ühe käsu standardväljundi järgmise käsu standardsisendiks |
 | **`grep`** | tekstiridade otsimise ja filtreerimise vahend |
 | **`find`** | failisüsteemi objektide otsimise vahend |
 | **`locate`** | failinimede andmebaasist otsimise vahend |
