@@ -46,7 +46,7 @@ Ansible koosneb mitmest osast, mis kõik aitavad automatiseerimist ellu viia. Va
 | **Variables**     | Muutujad hoiavad väärtusi nagu kasutajanimed, paroolid või muud seaded võimaldades konfiguratsioonidesse paindlikkust lisada.  Ansible võimaldab määrata muutujate väärtusi mitmetel eri tasanditel, näiteks globaalsed, rollipõhised või hostipõhised muutujad. |
 | **Templates**     | Mallid on failid, mis kohanduvad vastavalt muutujatele, võimaldades dünaamilisi konfiguratsioone. Need on tavaliselt kirjutatud Jinja2-süntaksis. |
 
-### Lihtne skeem:
+Lihtne skeem:
 
 ![Ansible ülesehitus](images/Ansible_skeem1.jpg)
 ---
