@@ -49,7 +49,7 @@ Erinevate ülesannete jaoks kasutatakse erinevaid vahendeid.
 | faili või kataloogi omaduste järgi | `find` |
 | faili kiiresti nime järgi | `locate` |
 | käsu või programmi asukohta | `command -v` |
-| systemd süsteemi- ja teenuseloge | `journalctl` |
+| systemd süsteemi- ja teenuslogisid | `journalctl` |
 
 !!! tip "Vali tööriist vastavalt sellele, mida otsid"
     Enne käsu kirjutamist mõtle, kas otsid **teksti**, **faili**, **programmi** või **logikirjet**. Õige tööriista valimine muudab otsingu lihtsamaks.
@@ -105,32 +105,52 @@ grep -rl "student" /home/
 
 ### `grep` ja toru
 
-Linuxi käsureal saab ühe käsu väljundi suunata teise käsu sisendiks. Selleks kasutatakse toru ehk märki `|`.
+Linuxi käsureal saab ühe käsu väljundi suunata teise käsu sisendiks. Selleks kasutatakse **toru** ehk märki `|`.
 
 ```text
 käsk 1 → | → käsk 2
 ```
 
-Näiteks töötavate protsesside hulgast SSH-ga seotud ridade otsimiseks:
+Näiteks kui kataloogis on palju faile ja soovid `ls -l` väljundist leida faili, mille nimes esineb `raport`:
 
 ```bash
-ps aux | grep ssh
+ls -l | grep "raport"
 ```
 
 Esimene käsk:
 
 ```bash
-ps aux
+ls -l
 ```
 
-kuvab protsessid. Toru suunab selle väljundi `grep`-ile, mis jätab alles ainult otsingumustrile vastavad read.
+kuvab kataloogi sisu. Toru `|` suunab selle väljundi `grep`-ile, mis jätab alles ainult read, kus esineb sõna `raport`.
+
+Näiteks võib tulemus olla:
+
+```text
+-rw-r--r-- 1 student student 2450 Sep 13 10:15 raport.txt
+-rw-r--r-- 1 student student 1830 Sep 12 14:20 raport_vana.txt
+```
+
+Samal viisil saab filtreerida ka teiste käskude väljundit. Näiteks töötavate protsesside hulgast SSH-ga seotud ridade otsimiseks:
 
 ```bash
-ps aux | grep ssh
+ps aux | grep "ssh"
+```
+
+Siin:
+
+```text
+ps aux → kuvab töötavad protsessid
+|      → suunab väljundi järgmisele käsule
+grep   → jätab alles otsingumustrile vastavad read
 ```
 
 !!! tip "Toru muudab käsud kombineeritavaks"
-    `grep` ei pea otsima ainult failist. Seda kasutatakse väga sageli mõne teise käsu väljundi filtreerimiseks.
+    `grep` ei pea otsima ainult faili sisust. Seda kasutatakse väga sageli mõne teise käsu väljundi filtreerimiseks. See on Linuxi käsureal üks olulisemaid töövõtteid.
+
+!!! note "`grep` filtreerib teksti"
+    Käsus `ls -l | grep "raport"` ei otsi `grep` otse failisüsteemist. `ls -l` loob tekstilise väljundi ja `grep` otsib sellest tekstist sobivaid ridu. Failide omaduste järgi otsimiseks sobib paremini `find`.
 
 ---
 
