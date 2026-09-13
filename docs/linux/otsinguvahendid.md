@@ -700,7 +700,7 @@ journalctl
 
 ### `locate` ja `plocate`
 
-Tänapäevastes Debianis ja RHEL-is on kasutusel `plocate`, kuid paketi olemasolu ja vaikimisi paigaldatus võivad erineda. Õppimise seisukohalt on tähtis mõista `locate` käsu põhimõtet: otsing toimub indekseeritud andmebaasist.
+Tänapäevastes Debianis ja RHEL-is on kasutusel `plocate`, kuid paketi olemasolu ja vaikimisi paigaldatus võivad erineda. Õppimise seisukohalt on tähtis mõista `locate` käsu põhimõtet: otsing toimub indekseeritud andmebaasist. Käsu kasutus on ikka sama. 
 
 ---
 
@@ -744,27 +744,6 @@ Näiteks failide kustutamise korral:
 
 !!! tip "Administraatori eesmärk ei ole otsida võimalikult laialt"
     Alusta võimalikult täpsest asukohast ja tingimustest. Näiteks `/home/student` on sageli parem otsingu alguskoht kui kogu failisüsteem `/`.
-
----
-
-## Praktilise töö soovituslik järjekord
-
-1. Loo oma kodukataloogi harjutuskataloog koos mõne faili ja alamkataloogiga.
-2. Leia `find` abil kõik `.txt` failid.
-3. Leia ainult kataloogid.
-4. Otsi faili täpse nime ja seejärel tõstutundetu nime järgi.
-5. Harjuta metamärke `*` ja `?`.
-6. Leia kindlale kasutajale kuuluvad failid.
-7. Leia suuruse järgi valitud failid.
-8. Leia viimase tunni või viimaste päevade jooksul muudetud failid.
-9. Piira `find` otsingut `-maxdepth` abil.
-10. Lisa mõnda harjutusfaili korduv tekst ja otsi seda `grep`-iga.
-11. Harjuta `grep` võtmeid `-i`, `-n`, `-v`, `-w` ja `-r`.
-12. Filtreeri mõne käsu väljundit toru `|` ja `grep` abil.
-13. Kui `locate` on süsteemis olemas, võrdle sama faili leidmist `find` ja `locate` abil.
-14. Leia `command -v` abil käskude `bash`, `ssh` ja `python3` asukohad.
-15. Vaata `journalctl` abil praeguse alglaadimise logisid ning filtreeri tulemusi aja, prioriteedi või teenuse järgi.
-16. Võrdle oma süsteemi traditsioonilisi logifaile materjalis kirjeldatud Debiani ja Red Hati erinevustega.
 
 ---
 
@@ -842,14 +821,9 @@ Näiteks failide kustutamise korral:
 20. Mis vahe on `find` ja `locate` tööpõhimõttel?
 21. Miks võib `locate` mitte leida äsja loodud faili?
 22. Milleks kasutatakse `updatedb` käsku?
-23. Mis on `plocate`?
-24. Milleks kasutatakse `command -v` käsku?
-25. Milleks kasutatakse `journalctl` käsku?
-26. Kuidas vaatad ainult praeguse alglaadimise journalikirjeid?
-27. Kuidas vaatad ühe systemd unit'i logisid?
-28. Kuidas saad `journalctl` väljundist `grep` abil kindlat teksti otsida?
-29. Milline traditsiooniline autentimislogi on levinud Debianis ja milline Red Hati laadsetes süsteemides?
-30. Milline peaks olema hea tööjärjekord enne otsingutulemuste põhjal failide muutmist või kustutamist?
+23. Milleks kasutatakse `journalctl` käsku?
+24. Kuidas saad `journalctl` väljundist `grep` abil kindlat teksti otsida?
+
 
 ---
 
