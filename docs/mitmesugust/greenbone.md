@@ -314,9 +314,9 @@ täielik ning skannimise tulemus ei pruugi olla usaldusväärne. Oota ära kuni 
 
 ------------------------------------------------------------------------
 
-# 9. Ühe kohtvõrgu masina skaneerimine
+## 9. Ühe kohtvõrgu masina skaneerimine
 
-Kui feedid onmm uuendatud, siis saame skannerimisega alustada. 
+Kui feedid on uuendatud, siis saame skannerimisega alustada. 
 
 Kõigepealt skannerid ühte kooli laborivõrgu virtuaalmasinat.
 
@@ -361,7 +361,7 @@ Tutvu leitud tulemustega ning vasta järgmistele küsimustele:
 
 ------------------------------------------------------------------------
 
-# 11. Alamvõrgu skaneerimine
+## 11. Alamvõrgu skaneerimine
 
 Järgmisena skaneerid ühe IP-aadressi asemel tervet kooli laborivõrgu
 alamvõrku.
@@ -407,7 +407,7 @@ Ava lõpetatud skanni raport ja vasta:
 
 ------------------------------------------------------------------------
 
-# 13. Mõtle ja võrdle
+## 13. Mõtle ja võrdle
 
 Vasta oma töö lõpus lühidalt järgmistele küsimustele.
 
