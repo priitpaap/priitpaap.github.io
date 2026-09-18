@@ -198,7 +198,7 @@ cd "$DOWNLOAD_DIR"
 Laadi konteinerid alla:
 
 ``` bash
-docker compose -f compose.yaml pull
+docker compose pull
 ```
 
 !!! info 
@@ -212,22 +212,37 @@ docker compose -f compose.yaml pull
 Käivita Greenbone:
 
 ``` bash
-docker compose -f compose.yaml up -d
+docker compose up -d
 ```
+
+!!! note "Esimesel käivitamisel võib mõni konteiner vajada rohkem aega"
+    Greenbone'i esmakordsel käivitamisel valmistatakse ette ja imporditakse
+    haavatavuste andmeid. Seetõttu võib juhtuda, et mõni andmekonteiner,
+    näiteks scap-data, kuvatakse alguses olekus unhealthy ja käivitamine
+    peatub teatega dependency failed to start.
+
+![container error](assets/greenbone/container-error.png){ width="75%" }
+
+Kui saad vea anna natuke aega ja käivita uuesti:
+
+``` bash
+docker compose up -d
+```
+
 
 Kontrolli konteinerite olekut:
 
 ``` bash
-docker compose -f compose.yaml ps
+docker ps
 ```
 
 Greenbone koosneb mitmest konteinerist, seega on normaalne, et
-nimekirjas kuvatakse palju teenuseid.
+nimekirjas kuvatakse palju teenuseid. Vaata et kõigi konteinerite staatus oleks "Up".
 
 Probleemide korral vaata logisid:
 
 ``` bash
-docker compose -f compose.yaml logs -f
+docker compose logs -f
 ```
 
 Logide jälgimise lõpetamiseks vajuta:
