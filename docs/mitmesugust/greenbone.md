@@ -36,7 +36,7 @@ Soovituslikud ressursid:
   --------------------- ----------------
   CPU                             4 vCPU
   Mälu                          8 GB RAM
-  Kõvaketas               vähemalt 80 GB
+  Kõvaketas                       150 GB
   Operatsioonisüsteem          Debian 13
 
 !!! info "Miks on vaja nii palju kettaruumi?"
@@ -290,6 +290,9 @@ Logi sisse:
 !!! warning "Sertifikaadihoiatus" 
     Laboris kasutab Greenbone ise allkirjastatud TLS-sertifikaati. Seetõttu võib brauser        kuvada sertifikaadihoiatuse. Ignoreeri seda praegu ja liigu edasi saidile.
 
+![openvas](assets/greenbone/openvas.png){ width="50%" }
+
+
 ------------------------------------------------------------------------
 
 ## 8. Greenbone'i feed'ide kontrollimine
@@ -374,7 +377,7 @@ Selles ülesandes kasutatav alamvõrk on:
 172.16.200.0/24
 ```
 
-### 11.1. Käivita skann
+Käivita skanneerimine:
 
 1.  Ava **Scans → Tasks**.
 
