@@ -28,7 +28,7 @@ Greenbone Community Edition käivitatakse selles töös Dockeri
 konteinerites.
 
 Kasuta kooli laborikeskkonda paigaldatud **Debian 13** virtuaalmasinat,
-millel on Interneti-ühendus.
+millel on võrgukaardiks "Internet".
 
 Soovituslikud ressursid:
 
@@ -39,9 +39,11 @@ Soovituslikud ressursid:
   Kõvaketas               vähemalt 80 GB
   Operatsioonisüsteem          Debian 13
 
-!!! info "Miks on vaja nii palju kettaruumi?" Greenbone'i konteinerid,
-haavatavuste andmebaasid ehk *feed'id* ja skannimise tulemused vajavad
-märkimisväärselt kettaruumi. Varasemast 16 GB kettast ei piisa.
+!!! info "Miks on vaja nii palju kettaruumi?"
+    Greenbone'i konteinerid,
+    haavatavuste andmebaasid ehk *feed'id* ja skannimise tulemused vajavad
+    märkimisväärselt kettaruumi. Varasemast 16 GB kettast ei piisa.
+
 
 ### 1.1. Uuenda Debian
 
@@ -182,11 +184,6 @@ Kataloogis peab olema fail:
 ``` text
 compose.yaml
 ```
-
-!!! warning "Kasuta värsket Compose-faili" Greenbone Community Editioni
-konteinerite ülesehitus võib aja jooksul muutuda. Ära kasuta eelmisest
-õppeaastast alles jäänud `compose.yaml` faili, vaid laadi ülesande
-tegemisel alla uusim versioon.
 
 ------------------------------------------------------------------------
 
