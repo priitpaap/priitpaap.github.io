@@ -187,43 +187,7 @@ compose.yaml
 
 ------------------------------------------------------------------------
 
-## 4. Veebiliidese ligipääsu seadistamine
-
-Greenbone'i vaikeseadistus lubab veebiliidesele ligipääsu ainult
-Greenbone'i masina enda kaudu. Laboris peab veebiliides olema
-kättesaadav ka sinu tööarvuti brauserist.
-
-Ava Compose-fail:
-
-``` bash
-nano "$DOWNLOAD_DIR/compose.yaml"
-```
-
-Leia failist teenused **`gvm-config`** ja **`nginx`**.
-
-Greenbone'i praeguses Compose-failis kasutatakse veebiliidese
-avaldamiseks nginx-i ning selle seadistamiseks keskkonnamuutujaid. Muuda
-konfiguratsiooni vastavalt õpetaja näidisele nii, et:
-
--   nginx kuulaks ka Greenbone'i virtuaalmasina võrguliidesel;
--   veebiliidese HTTPS-port oleks laborivõrgust ligipääsetav;
--   `NGINX_HOST` vastaks Greenbone'i virtuaalmasina IP-aadressile või
-    labori jaoks kasutatavale nimele.
-
-Salvesta fail:
-
--   `Ctrl+O`
--   `Enter`
--   `Ctrl+X`
-
-
-!!! note "Greenbone'i `compose.yaml` võib uute versioonidega muutuda."
-    Alati tasub kontrollida Greenbone'i ametliku dokumentatsiooni **Remote Access** juhist.
-
-
-------------------------------------------------------------------------
-
-## 5. Greenbone'i konteinerite allalaadimine
+## 4. Greenbone'i konteinerite allalaadimine
 
 Liigu Greenbone'i kataloogi:
 
@@ -243,7 +207,7 @@ docker compose -f compose.yaml pull
 
 ------------------------------------------------------------------------
 
-## 6. Greenbone'i käivitamine
+## 5. Greenbone'i käivitamine
 
 Käivita Greenbone:
 
@@ -287,7 +251,7 @@ Ctrl+C
 
 ------------------------------------------------------------------------
 
-## 7. Administraatori parooli muutmine
+## 6. Administraatori parooli muutmine
 
 Greenbone'i administraatori kasutajanimi on:
 
@@ -311,7 +275,7 @@ Asenda `SINU-TURVALINE-PAROOL` enda valitud parooliga.
 
 ------------------------------------------------------------------------
 
-## 8. Greenbone'i veebiliidese avamine
+## 7. Greenbone'i veebiliidese avamine
 
 Vaata Greenbone'i virtuaalmasina IP-aadressi:
 
@@ -338,7 +302,7 @@ Logi sisse:
 
 ------------------------------------------------------------------------
 
-## 9. Greenbone'i feed'ide kontrollimine
+## 8. Greenbone'i feed'ide kontrollimine
 
 Greenbone vajab haavatavuste tuvastamiseks ajakohaseid andmebaase ehk
 *feed'e*.
@@ -359,7 +323,7 @@ täielik ning skannimise tulemus ei pruugi olla usaldusväärne.
 
 ------------------------------------------------------------------------
 
-# 10. Ühe kohtvõrgu masina skaneerimine
+# 9. Ühe kohtvõrgu masina skaneerimine
 
 Nüüd skaneerid ühte kooli laborivõrgu virtuaalmasinat.
 
@@ -370,7 +334,7 @@ Sobivaks sihtmärgiks võib olla näiteks sinu enda Zabbixi või mõni muu
     Ära sisesta sihtmärgiks
     suvalist Internetist leitud IP-aadressi või domeeninime.
 
-### 10.1. Loo skann
+### 9.1. Loo skann
 
 1.  Ava Greenbone'i veebiliides.
 2.  Navigeeri **Scans → Tasks**.
@@ -383,7 +347,7 @@ Skannimine võib sõltuvalt sihtmärgist võtta mitu minutit.
 
 ------------------------------------------------------------------------
 
-## 11. Ühe masina skanni tulemuste analüüsimine
+## 10. Ühe masina skanni tulemuste analüüsimine
 
 Ava lõpetatud skanni raport.
 
@@ -407,7 +371,7 @@ Tutvu leitud tulemustega ning vasta järgmistele küsimustele:
 
 ------------------------------------------------------------------------
 
-# 12. Alamvõrgu skaneerimine
+# 11. Alamvõrgu skaneerimine
 
 Järgmisena skaneerid ühe IP-aadressi asemel tervet kooli laborivõrgu
 alamvõrku.
@@ -418,7 +382,7 @@ Selles ülesandes kasutatav alamvõrk on:
 172.16.200.0/24
 ```
 
-### 12.1. Käivita skann
+### 11.1. Käivita skann
 
 1.  Ava **Scans → Tasks**.
 
@@ -440,7 +404,7 @@ Selles ülesandes kasutatav alamvõrk on:
 
 ------------------------------------------------------------------------
 
-## 13. Alamvõrgu skanni tulemuste analüüsimine
+## 12. Alamvõrgu skanni tulemuste analüüsimine
 
 Ava lõpetatud skanni raport ja vasta:
 
@@ -453,7 +417,7 @@ Ava lõpetatud skanni raport ja vasta:
 
 ------------------------------------------------------------------------
 
-# 14. Mõtle ja võrdle
+# 13. Mõtle ja võrdle
 
 Vasta oma töö lõpus lühidalt järgmistele küsimustele.
 
