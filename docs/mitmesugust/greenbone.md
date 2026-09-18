@@ -60,20 +60,7 @@ sudo apt upgrade -y
 sudo apt install ca-certificates curl
 ```
 
-### 2.2. Eemalda võimalikud konfliktseid paketid
-
-Kui masinasse on varem paigaldatud mõni teine Dockeri versioon või
-sellega konfliktne pakett, eemalda need:
-
-``` bash
-sudo apt remove $(dpkg --get-selections \
-  docker.io docker-compose docker-doc docker-buildx \
-  podman-docker containerd runc | cut -f1)
-```
-
-Kui mõnda paketti pole paigaldatud, ei ole see probleem.
-
-### 2.3. Lisa Dockeri ametlik repositoorium
+### 2.2. Lisa Dockeri ametlik repositoorium
 
 Loo võtmete kataloog:
 
@@ -113,7 +100,7 @@ Uuenda pakettide nimekirja:
 sudo apt update
 ```
 
-### 2.4. Paigalda Docker
+### 2.3. Paigalda Docker
 
 ``` bash
 sudo apt install docker-ce docker-ce-cli containerd.io \
@@ -132,7 +119,7 @@ Kontrolli Docker Compose'i versiooni:
 docker compose version
 ```
 
-### 2.5. Lisa kasutaja gruppi `docker`
+### 2.4. Lisa kasutaja gruppi `docker`
 
 ``` bash
 sudo usermod -aG docker $USER
