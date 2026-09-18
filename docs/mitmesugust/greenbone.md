@@ -284,25 +284,15 @@ docker compose -f "$DOWNLOAD_DIR/compose.yaml" \
 
 Asenda `SINU-TURVALINE-PAROOL` enda valitud parooliga.
 
-!!! warning 
-    Ära kasuta näidisparooli `Passw0rd`. Vali labori jaoks
-    piisavalt tugev parool ja jäta see endale meelde.
 
 ------------------------------------------------------------------------
 
 ## 7. Greenbone'i veebiliidese avamine
 
-Vaata Greenbone'i virtuaalmasina IP-aadressi:
-
-``` bash
-ip addr
-```
-
-Ava oma tööarvuti veebibrauseris Greenbone'i HTTPS-aadress vastavalt
-laboris seadistatud pordile, näiteks:
+Ava oma Greenbone serveri veebibrauseris Greenbone'i HTTPS-aadress (kuna asub samas masinal saame kasutada aadressi 127.0.0.1)
 
 ``` text
-https://GREENBONE-IP
+https://127.0.0.1
 ```
 
 Logi sisse:
@@ -311,9 +301,7 @@ Logi sisse:
 -   **parool:** eelmises sammus määratud parool
 
 !!! warning "Sertifikaadihoiatus" 
-    Laboris võib Greenbone kasutada ise allkirjastatud TLS-sertifikaati. Seetõttu võib brauser kuvada
-    sertifikaadihoiatuse. Kontrolli enne jätkamist, et avasid kindlasti enda
-    Greenbone'i virtuaalmasina õige IP-aadressi.
+    Laboris kasutab Greenbone ise allkirjastatud TLS-sertifikaati. Seetõttu võib brauser        kuvada sertifikaadihoiatuse. Ignoreeri seda praegu ja liigu edasi saidile.
 
 ------------------------------------------------------------------------
 
@@ -329,27 +317,29 @@ Veebiliideses ava:
 Pärast Greenbone'i esmakordset käivitamist toimub andmete laadimine ja
 importimine automaatselt.
 
+![feed status](assets/greenbone/feed-status.png)
+
+
 !!! danger "Ära alusta skannimist liiga vara" 
     Enne esimese skanni tegemist oota, kuni vajalikud feed'id on alla laaditud ja töödeldud.
     Esmane sünkroniseerimine võib võtta kaua aega.
 
 Puuduliku feed'i korral ei ole Greenbone'i haavatavuste andmebaas
-täielik ning skannimise tulemus ei pruugi olla usaldusväärne.
+täielik ning skannimise tulemus ei pruugi olla usaldusväärne. Oota öra kuni feed sünkroniseerimise lõpetab.
 
 ------------------------------------------------------------------------
 
 # 9. Ühe kohtvõrgu masina skaneerimine
 
-Nüüd skaneerid ühte kooli laborivõrgu virtuaalmasinat.
+Kui feedid onmm uuendatud, siis saame skannerimisega alustada. 
+
+Kõigepealt skannerid ühte kooli laborivõrgu virtuaalmasinat.
 
 Sobivaks sihtmärgiks võib olla näiteks sinu enda Zabbixi või mõni muu
 õpetaja lubatud virtuaalmasin.
 
 !!! danger "Skaneeri ainult lubatud süsteeme" 
-    Ära sisesta sihtmärgiks
-    suvalist Internetist leitud IP-aadressi või domeeninime.
-
-### 9.1. Loo skann
+    Ära sisesta sihtmärgiks suvalist Internetist leitud IP-aadressi või domeeninime.
 
 1.  Ava Greenbone'i veebiliides.
 2.  Navigeeri **Scans → Tasks**.
