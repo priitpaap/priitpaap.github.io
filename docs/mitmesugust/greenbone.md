@@ -25,8 +25,10 @@ Töö käigus õpid:
 Greenbone Community Edition käivitatakse selles töös Dockeri
 konteinerites.
 
-Kasuta kooli laborikeskkonda paigaldatud **Debian 13** virtuaalmasinat,
+Paigalda kooli laborikeskkonda **Debian 13** virtuaalmasinat,
 millel on võrgukaardiks "Internet".
+
+Virtuaalmasina nimeks "greenbone-sinunimi"
 
 Soovituslikud ressursid:
 
@@ -341,7 +343,7 @@ Skannimine võib sõltuvalt sihtmärgist võtta mitu minutit.
 
 Ava lõpetatud skanni raport.
 
-Tutvu leitud tulemustega ning vasta järgmistele küsimustele:
+Tutvu leitud tulemustega ning vasta kirjalikul järgmistele küsimustele:
 
 1.  Millist IP-aadressi skaneerisid?
 2.  Mitu turvaleidu Greenbone tuvastas?
@@ -466,28 +468,15 @@ PDF peab sisaldama järgmisi kuvatõmmiseid:
 4.  Valitud turvaleiu detailvaade, kus on näha vähemalt leiu nimi,
     severity ja soovitatud lahendus.
 5.  Alamvõrgu `172.16.200.0/24` lõpetatud skanni tulemus.
+6.  terminalis `docker ps` käsu tulemus koos käsureal nähtava masina nimega.
 
-Lisaks peavad PDF-is olema vastused peatükkide:
+Lisaks peavad PDF-is olema vastused peatükkide küsimustele:
 
 -   **Ühe masina skanni tulemuste analüüsimine**;
 -   **Alamvõrgu skanni tulemuste analüüsimine**;
 -   **Mõtle ja võrdle**
 
-küsimustele.
-
 ------------------------------------------------------------------------
-
-## Kasulikud käsud
-
-  Tegevus                     Käsk
-  --------------------------- --------------------------
-  Konteinerite käivitamine    `docker compose up -d`
-  Konteinerite olek           `docker compose ps`
-  Logide vaatamine            `docker compose logs -f`
-  Konteinerite peatamine      `docker compose down`
-  Dockeri versioon            `docker --version`
-  Docker Compose'i versioon   `docker compose version`
-  IP-aadresside vaatamine     `ip addr`
 
 !!! success "Töö tulemus" 
     Kui oled ülesande lõpetanud, oskad paigaldada
