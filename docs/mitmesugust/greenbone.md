@@ -210,21 +210,16 @@ konfiguratsiooni vastavalt õpetaja näidisele nii, et:
 -   `NGINX_HOST` vastaks Greenbone'i virtuaalmasina IP-aadressile või
     labori jaoks kasutatavale nimele.
 
-!!! danger "Ära ava Greenbone'i Internetti" Veebiliides peab olema
-ligipääsetav ainult kooli laborivõrgust. Ära tee Greenbone'i
-haldusliidest avalikust Internetist ligipääsetavaks.
-
 Salvesta fail:
 
 -   `Ctrl+O`
 -   `Enter`
 -   `Ctrl+X`
 
-!!! note Greenbone'i `compose.yaml` võib uute versioonidega muutuda.
-Seetõttu kontrolli selle sammu juures õpetaja antud näidet või
-Greenbone'i ametliku dokumentatsiooni **Remote Access** juhist. Ära
-kopeeri vanast juhendist porti `9392:80`, sest uuem Greenbone kasutab
-veebiliidese ees nginx-i ja HTTPS-i.
+
+!!! note "Greenbone'i `compose.yaml` võib uute versioonidega muutuda."
+    Alati tasub kontrollida Greenbone'i ametliku dokumentatsiooni **Remote Access** juhist.
+
 
 ------------------------------------------------------------------------
 
@@ -242,8 +237,9 @@ Laadi konteinerid alla:
 docker compose -f compose.yaml pull
 ```
 
-!!! info Allalaadimine võib võtta mitu minutit ja vajada mitu gigabaiti
-kettaruumi.
+!!! info 
+    Allalaadimine võib võtta mitu minutit ja vajada mitu gigabaiti
+    kettaruumi.
 
 ------------------------------------------------------------------------
 
@@ -276,8 +272,8 @@ Logide jälgimise lõpetamiseks vajuta:
 Ctrl+C
 ```
 
-!!! tip "Kasulikud käsud" Greenbone'i saab hiljem käivitada käsuga:
-
+!!! tip "Kasulikud käsud" 
+    Greenbone'i saab hiljem käivitada käsuga:
     ```bash
     cd "$HOME/greenbone-community-edition"
     docker compose up -d
@@ -309,8 +305,9 @@ docker compose -f "$DOWNLOAD_DIR/compose.yaml" \
 
 Asenda `SINU-TURVALINE-PAROOL` enda valitud parooliga.
 
-!!! warning Ära kasuta näidisparooli `Passw0rd`. Vali labori jaoks
-piisavalt tugev parool ja jäta see endale meelde.
+!!! warning 
+    Ära kasuta näidisparooli `Passw0rd`. Vali labori jaoks
+    piisavalt tugev parool ja jäta see endale meelde.
 
 ------------------------------------------------------------------------
 
@@ -334,10 +331,10 @@ Logi sisse:
 -   **kasutaja:** `admin`
 -   **parool:** eelmises sammus määratud parool
 
-!!! warning "Sertifikaadihoiatus" Laboris võib Greenbone kasutada ise
-allkirjastatud TLS-sertifikaati. Seetõttu võib brauser kuvada
-sertifikaadihoiatuse. Kontrolli enne jätkamist, et avasid kindlasti enda
-Greenbone'i virtuaalmasina õige IP-aadressi.
+!!! warning "Sertifikaadihoiatus" 
+    Laboris võib Greenbone kasutada ise allkirjastatud TLS-sertifikaati. Seetõttu võib brauser kuvada
+    sertifikaadihoiatuse. Kontrolli enne jätkamist, et avasid kindlasti enda
+    Greenbone'i virtuaalmasina õige IP-aadressi.
 
 ------------------------------------------------------------------------
 
@@ -353,9 +350,9 @@ Veebiliideses ava:
 Pärast Greenbone'i esmakordset käivitamist toimub andmete laadimine ja
 importimine automaatselt.
 
-!!! danger "Ära alusta skannimist liiga vara" Enne esimese skanni
-tegemist oota, kuni vajalikud feed'id on alla laaditud ja töödeldud.
-Esmane sünkroniseerimine võib võtta kaua aega.
+!!! danger "Ära alusta skannimist liiga vara" 
+    Enne esimese skanni tegemist oota, kuni vajalikud feed'id on alla laaditud ja töödeldud.
+    Esmane sünkroniseerimine võib võtta kaua aega.
 
 Puuduliku feed'i korral ei ole Greenbone'i haavatavuste andmebaas
 täielik ning skannimise tulemus ei pruugi olla usaldusväärne.
@@ -369,8 +366,9 @@ Nüüd skaneerid ühte kooli laborivõrgu virtuaalmasinat.
 Sobivaks sihtmärgiks võib olla näiteks sinu enda Zabbixi või mõni muu
 õpetaja lubatud virtuaalmasin.
 
-!!! danger "Skaneeri ainult lubatud süsteeme" Ära sisesta sihtmärgiks
-suvalist Internetist leitud IP-aadressi või domeeninime.
+!!! danger "Skaneeri ainult lubatud süsteeme" 
+    Ära sisesta sihtmärgiks
+    suvalist Internetist leitud IP-aadressi või domeeninime.
 
 ### 10.1. Loo skann
 
@@ -400,11 +398,12 @@ Tutvu leitud tulemustega ning vasta järgmistele küsimustele:
 7.  Millist lahendust või parandusmeedet (**Solution**) Greenbone
     soovitab?
 
-!!! info "Severity ja CVSS" Greenbone kasutab leidude tõsiduse
-hindamisel CVSS-põhist skoori. Mida suurem skoor, seda tõsisemaks
-hinnatakse võimalikku turvariski. Kõrge skoor ei tähenda siiski
-automaatselt, et süsteemi saab kindlasti rünnata -- tulemusi tuleb alati
-analüüsida kontekstis.
+!!! info "Severity ja CVSS" 
+    Greenbone kasutab leidude tõsiduse
+    hindamisel CVSS-põhist skoori. Mida suurem skoor, seda tõsisemaks
+    hinnatakse võimalikku turvariski. Kõrge skoor ei tähenda siiski
+    automaatselt, et süsteemi saab kindlasti rünnata -- tulemusi tuleb alati
+    analüüsida kontekstis.
 
 ------------------------------------------------------------------------
 
@@ -435,8 +434,9 @@ Selles ülesandes kasutatav alamvõrk on:
 
 5.  Oota, kuni skann on lõpetanud.
 
-!!! info Terve `/24` alamvõrgu skaneerimine võtab märgatavalt rohkem
-aega kui ühe IP-aadressi skaneerimine.
+!!! info 
+    Terve `/24` alamvõrgu skaneerimine võtab märgatavalt rohkem
+    aega kui ühe IP-aadressi skaneerimine.
 
 ------------------------------------------------------------------------
 
@@ -478,8 +478,9 @@ alati, et süsteemi on võimalik kohe edukalt rünnata? Põhjenda lühidalt.
 Haavatavuste skaneerimine tekitab sihtsüsteemile aktiivset võrguliiklust
 ja võib olla käsitletav turvatestimisena.
 
-!!! danger "Ära skaneeri suvalisi Interneti-teenuseid" **Skaneeri ainult
-süsteeme ja võrke, mille skaneerimiseks on sul selge luba.**
+!!! danger "Ära skaneeri suvalisi Interneti-teenuseid" 
+    **Skaneeri ainult
+    süsteeme ja võrke, mille skaneerimiseks on sul selge luba.**
 
     Selles praktilises töös skaneerime ainult kooli selleks ette nähtud laborivõrgu virtuaalmasinaid.
 
@@ -534,6 +535,7 @@ küsimustele.
   Docker Compose'i versioon   `docker compose version`
   IP-aadresside vaatamine     `ip addr`
 
-!!! success "Töö tulemus" Kui oled ülesande lõpetanud, oskad paigaldada
-Greenbone Community Editioni, käivitada haavatavuste skanne ning teha
-skannimise tulemustest esmase turvaanalüüsi.
+!!! success "Töö tulemus" 
+    Kui oled ülesande lõpetanud, oskad paigaldada
+    Greenbone Community Editioni, käivitada haavatavuste skanne ning teha
+    skannimise tulemustest esmase turvaanalüüsi.
