@@ -122,3 +122,5 @@ nav:
     - Rollid ja struktuur: ansible/ansibleroles.md
     - Ansible Galaxy Collections: ansible/ansiblegalaxy.md
     - Ansible parimad praktikad: ansible/ansiblebestpractises.md
+- Mitmesugust:
+  - Greenbone: mitmesugust/greenbone.md
