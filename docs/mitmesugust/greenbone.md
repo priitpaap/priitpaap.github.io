@@ -8,8 +8,7 @@ võrguseadet ja alamvõrku ning analüüsima leitud turvanõrkusi.
 
 Töö käigus õpid:
 
--   paigaldama Docker Engine'i Debian Linuxile;
--   käivitama Greenbone Community Editioni konteinerites;
+-   paigaldama ja käivitama Greenbone Community Editioni konteinerites;
 -   kontrollima konteinerite ja Greenbone'i teenuste olekut;
 -   kasutama Greenbone Security Assistant veebiliidest;
 -   skaneerima üksikut IP-aadressi ja tervet alamvõrku;
@@ -17,8 +16,8 @@ Töö käigus õpid:
 -   leidma haavatavuse kirjelduse ja soovitatud parandusmeetmed.
 
 !!! warning "Oluline" Skaneeri ainult süsteeme ja võrke, mille
-skaneerimiseks on sul luba. Selles praktilises töös kasuta ainult kooli
-selleks ette nähtud laborivõrgu virtuaalmasinaid.
+    skaneerimiseks on sul luba. Selles praktilises töös kasuta ainult kooli
+    selleks ette nähtud laborivõrgu virtuaalmasinaid.
 
 ------------------------------------------------------------------------
 
