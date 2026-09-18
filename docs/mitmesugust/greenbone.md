@@ -15,9 +15,8 @@ Töö käigus õpid:
 -   hindama skannimise tulemusi ja haavatavuste tõsidust;
 -   leidma haavatavuse kirjelduse ja soovitatud parandusmeetmed.
 
-!!! warning "Oluline" Skaneeri ainult süsteeme ja võrke, mille
-    skaneerimiseks on sul luba. Selles praktilises töös kasuta ainult kooli
-    selleks ette nähtud laborivõrgu virtuaalmasinaid.
+!!! warning "Oluline" 
+    Skaneeri ainult süsteeme ja võrke, mille skaneerimiseks on sul luba. Selles praktilises     töös kasuta ainult selleks ette nähtud laborivõrgu virtuaalmasinaid.
 
 ------------------------------------------------------------------------
 
@@ -321,10 +320,10 @@ importimine automaatselt.
 
 !!! danger "Ära alusta skannimist liiga vara" 
     Enne esimese skanni tegemist oota, kuni vajalikud feed'id on alla laaditud ja töödeldud.
-    Esmane sünkroniseerimine võib võtta kaua aega.
+    Esmane sünkroniseerimine võib võtta kaua aega, isegi tunde. Lase maisnal töötada mõnda      aega ja tule siis labori juurde tagasi.
 
 Puuduliku feed'i korral ei ole Greenbone'i haavatavuste andmebaas
-täielik ning skannimise tulemus ei pruugi olla usaldusväärne. Oota öra kuni feed sünkroniseerimise lõpetab.
+täielik ning skannimise tulemus ei pruugi olla usaldusväärne. Oota ära kuni feed sünkroniseerimise lõpetab.
 
 ------------------------------------------------------------------------
 
