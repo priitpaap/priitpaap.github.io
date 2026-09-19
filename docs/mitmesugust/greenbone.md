@@ -321,9 +321,9 @@ täielik ning skannimise tulemus ei pruugi olla usaldusväärne. Oota ära kuni 
 
 ## 9. Ühe kohtvõrgu masina skaneerimine
 
-Kui feedid on uuendatud, siis saame skannerimisega alustada. 
+Kui feedid on uuendatud, siis saame skaneerimisega alustada. 
 
-Kõigepealt skannerid ühte kooli laborivõrgu virtuaalmasinat.
+Kõigepealt skaneerid ühte kooli laborivõrgu virtuaalmasinat.
 
 Sobivaks sihtmärgiks võib olla näiteks sinu enda Zabbixi või mõni muu
 õpetaja lubatud virtuaalmasin.
@@ -335,8 +335,11 @@ Sobivaks sihtmärgiks võib olla näiteks sinu enda Zabbixi või mõni muu
 2.  Navigeeri **Scans → Tasks**.
 3.  Ava **Task Wizard**.
 4.  Sisesta skaneeritava laborimasina IP-aadress.
-5.  Käivita skann.
+5.  Käivita skaneerimine.
 6.  Oota, kuni skann on lõpetanud.
+
+![task wizard](assets/greenbone/task-wizard.png)
+
 
 Skannimine võib sõltuvalt sihtmärgist võtta mitu minutit.
 
@@ -346,12 +349,12 @@ Skannimine võib sõltuvalt sihtmärgist võtta mitu minutit.
 
 Ava lõpetatud skanni raport.
 
-Tutvu leitud tulemustega ning vasta kirjalikul järgmistele küsimustele:
+Tutvu leitud tulemustega ning vasta kirjalikult järgmistele küsimustele:
 
 1.  Millist IP-aadressi skaneerisid?
 2.  Mitu turvaleidu Greenbone tuvastas?
 3.  Milliseid **Severity** tasemeid tulemustes esines?
-4.  Milline oli kõige kõrgema **CVSS/severity** väärtusega leid?
+4.  Milline oli kõige kõrgema **CVSS/severity** väärtusega leid (kui samal tasemel on mitu leidu, vali üks)?
 5.  Mis oli selle leiu nimi?
 6.  Kirjelda oma sõnadega, milles probleem seisneb.
 7.  Millist lahendust või parandusmeedet (**Solution**) Greenbone
@@ -376,8 +379,11 @@ Selles ülesandes kasutatav alamvõrk on:
 ``` text
 172.16.200.0/24
 ```
+!!! warning "Hoiatus"
+    Vaata, et sisestaksid alamvõrgu korrektselt, teisi võrke skannerrida ei tohi!
 
-Käivita skanneerimine:
+
+Käivita skaneerimine:
 
 1.  Ava **Scans → Tasks**.
 
@@ -389,7 +395,7 @@ Käivita skanneerimine:
     172.16.200.0/24
     ```
 
-4.  Käivita skann.
+4.  Käivita skaneerimine.
 
 5.  Oota, kuni skann on lõpetanud.
 
@@ -401,7 +407,7 @@ Käivita skanneerimine:
 
 ## 12. Alamvõrgu skanni tulemuste analüüsimine
 
-Ava lõpetatud skanni raport ja vasta:
+Ava lõpetatud skanni raport ja vasta kirjalikult:
 
 1.  Mitu aktiivset hosti Greenbone leidis?
 2.  Milliste hostide juures tuvastati turvaleide?
@@ -415,10 +421,6 @@ Ava lõpetatud skanni raport ja vasta:
 ## 13. Mõtle ja võrdle
 
 Vasta oma töö lõpus lühidalt järgmistele küsimustele.
-
-### Üks host vs alamvõrk
-
-Mis erinevus oli ühe IP-aadressi ja terve `/24` alamvõrgu skaneerimisel?
 
 ### Haavatavuse skanneri kasulikkus
 
@@ -440,8 +442,6 @@ ja võib olla käsitletav turvatestimisena.
 !!! danger "Ära skaneeri suvalisi Interneti-teenuseid" 
     **Skaneeri ainult
     süsteeme ja võrke, mille skaneerimiseks on sul selge luba.**
-
-    Selles praktilises töös skaneerime ainult kooli selleks ette nähtud laborivõrgu virtuaalmasinaid.
 
 Ära sisesta Greenbone'i proovimiseks suvalisi:
 
@@ -468,10 +468,8 @@ PDF peab sisaldama järgmisi kuvatõmmiseid:
 2.  **Administration → Feed Status** vaade, millest on näha feed'ide
     olek.
 3.  Ühe IP-aadressi lõpetatud skanni tulemus.
-4.  Valitud turvaleiu detailvaade, kus on näha vähemalt leiu nimi,
-    severity ja soovitatud lahendus.
-5.  Alamvõrgu `172.16.200.0/24` lõpetatud skanni tulemus.
-6.  terminalis `docker ps` käsu tulemus koos käsureal nähtava masina nimega.
+4.  Alamvõrgu `172.16.200.0/24` lõpetatud skanni tulemus.
+5.  terminalis `docker ps` käsu tulemus koos käsureal nähtava masina nimega.
 
 Lisaks peavad PDF-is olema vastused peatükkide küsimustele:
 
