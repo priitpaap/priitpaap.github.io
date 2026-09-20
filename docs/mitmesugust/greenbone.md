@@ -208,7 +208,7 @@ docker compose up -d
     näiteks scap-data, kuvatakse alguses olekus unhealthy ja käivitamine
     peatub teatega dependency failed to start.
 
-![container error](assets/greenbone/container-error.png){ width="75%" align=left }
+![container error](assets/greenbone/container-error.png){ width="75%" }
 
 Kui saad vea anna natuke aega ja käivita uuesti:
 
@@ -285,12 +285,12 @@ https://127.0.0.1
 Logi sisse:
 
 -   **kasutaja:** `admin`
--   **parool:** eelmises sammus määratud parool
+-   **parool:** eelmises sammus määratud parool 
 
 !!! warning "Sertifikaadihoiatus" 
     Laboris kasutab Greenbone ise allkirjastatud TLS-sertifikaati. Seetõttu võib brauser        kuvada sertifikaadihoiatuse. Ignoreeri seda praegu ja liigu edasi saidile.
 
-![openvas](assets/greenbone/openvas.png){ width="40%" align=left }
+![openvas](assets/greenbone/openvas.png){ width="50%" }
 
 
 ------------------------------------------------------------------------
@@ -307,7 +307,7 @@ Veebiliideses ava:
 Pärast Greenbone'i esmakordset käivitamist toimub andmete laadimine ja
 importimine automaatselt.
 
-![feed status](assets/greenbone/feed-status.png){ width="75%" align=left }
+![feed status](assets/greenbone/feed-status.png){ width="75%" }
 
 
 !!! danger "Ära alusta skannimist liiga vara" 
@@ -338,7 +338,7 @@ Sobivaks sihtmärgiks võib olla näiteks sinu enda Zabbixi või mõni muu
 5.  Käivita skaneerimine.
 6.  Oota, kuni skann on lõpetanud.
 
-![task wizard](assets/greenbone/task-wizard.png){ align=left }
+![task wizard](assets/greenbone/task-wizard.png)
 
 
 Skannimine võib sõltuvalt sihtmärgist võtta mitu minutit.
