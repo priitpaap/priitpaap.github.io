@@ -28,16 +28,21 @@ konteinerites.
 Paigalda kooli laborikeskkonda **Debian 13** virtuaalmasinat,
 millel on võrgukaardiks "Internet".
 
-Virtuaalmasina nimeks "greenbone-sinunimi"
+Virtuaalmasina nimeks "greenbone-sinunimi".
+
+**Kindlasti vali maisna loomisel "VIKK Thin Policy" salvestuspoliitika!**
 
 Soovituslikud ressursid:
 
-  Ressurss                      Soovitus
-  --------------------- ----------------
-  CPU                             4 vCPU
-  Mälu                          8 GB RAM
-  Kõvaketas                       150 GB
-  Operatsioonisüsteem          Debian 13
+| Ressurss | Soovitus |
+| --- | --- |
+|  CPU |  4 vCPU |
+|  RAM |  8 GB RAM |
+|  Ketas |  100 GB |
+|  OS |  Debian 13 |
+
+
+
 
 !!! info "Miks on vaja nii palju kettaruumi?"
     Greenbone'i konteinerid,
