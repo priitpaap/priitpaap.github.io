@@ -290,7 +290,7 @@ Logi sisse:
 !!! warning "Sertifikaadihoiatus" 
     Laboris kasutab Greenbone ise allkirjastatud TLS-sertifikaati. Seetõttu võib brauser        kuvada sertifikaadihoiatuse. Ignoreeri seda praegu ja liigu edasi saidile.
 
-![openvas](assets/greenbone/openvas.png){ width="50%" }
+![openvas](assets/greenbone/openvas.png){ width="40%" }
 
 
 ------------------------------------------------------------------------
@@ -307,7 +307,7 @@ Veebiliideses ava:
 Pärast Greenbone'i esmakordset käivitamist toimub andmete laadimine ja
 importimine automaatselt.
 
-![feed status](assets/greenbone/feed-status.png)
+![feed status](assets/greenbone/feed-status.png){ width="75%" }
 
 
 !!! danger "Ära alusta skannimist liiga vara" 

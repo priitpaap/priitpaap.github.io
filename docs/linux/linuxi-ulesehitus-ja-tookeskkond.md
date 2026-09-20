@@ -16,7 +16,7 @@ Pärast materjali läbimist oskad:
 - eristada levinumaid Linuxi distributsiooniperesid;
 - selgitada CLI, terminali ja shelli erinevust;
 - kirjeldada graafilise Linuxi töökeskkonna põhiosi;
-- kirjeldada Linuxi käivitumise üldist loogikat.
+- kirjeldada Linuxi käivitumise üldist loogikat. 
 
 ---
 
