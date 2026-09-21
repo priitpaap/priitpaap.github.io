@@ -41,14 +41,10 @@ Soovituslikud ressursid:
 |  Ketas |  100 GB |
 |  OS |  Debian 13 |
 
-
-
-
 !!! info "Miks on vaja nii palju kettaruumi?"
     Greenbone'i konteinerid,
     haavatavuste andmebaasid ehk *feed'id* ja skannimise tulemused vajavad
     märkimisväärselt kettaruumi. Varasemast 16 GB kettast ei piisa.
-
 
 ### 1.1. Uuenda Debian
 
@@ -330,7 +326,7 @@ Kui feedid on uuendatud, siis saame skaneerimisega alustada.
 
 Kõigepealt skaneerid ühte kooli laborivõrgu virtuaalmasinat.
 
-Sobivaks sihtmärgiks võib olla näiteks sinu enda Zabbixi või mõni muu
+Sobivaks sihtmärgiks võib olla näiteks sinu enda Zabbixi serveri masin või mõni muu
 õpetaja lubatud virtuaalmasin.
 
 !!! danger "Skaneeri ainult lubatud süsteeme" 
@@ -359,11 +355,13 @@ Tutvu leitud tulemustega ning vasta kirjalikult järgmistele küsimustele:
 1.  Millist IP-aadressi skaneerisid?
 2.  Mitu turvaleidu Greenbone tuvastas?
 3.  Milliseid **Severity** tasemeid tulemustes esines?
-4.  Milline oli kõige kõrgema **CVSS/severity** väärtusega leid (kui samal tasemel on mitu leidu, vali üks)?
-5.  Mis oli selle leiu nimi?
+4.  Milline oli kõige kõrgema **CVSS/severity** väärtusega leid?
+5.  Mis oli selle leiu nimi (kui samal tasemel on mitu leidu, vali üks)?
 6.  Kirjelda oma sõnadega, milles probleem seisneb.
 7.  Millist lahendust või parandusmeedet (**Solution**) Greenbone
     soovitab?
+
+Sind aitavad **Reports**, **Results** ja **Vulnerabilities** menüüpunktid **Scans** menüüs.
 
 !!! info "Severity ja CVSS" 
     Greenbone kasutab leidude tõsiduse
@@ -421,6 +419,8 @@ Ava lõpetatud skanni raport ja vasta kirjalikult:
     Too üks näide.
 5.  Milline oli kogu alamvõrgu kõige kõrgema severity-väärtusega leid?
 
+Sind aitavad taas **Reports**, **Results** ja **Vulnerabilities** menüüpunktid **Scans** menüüs.
+
 ------------------------------------------------------------------------
 
 ## 13. Mõtle ja võrdle
@@ -429,13 +429,13 @@ Vasta oma töö lõpus lühidalt järgmistele küsimustele.
 
 ### Haavatavuse skanneri kasulikkus
 
-Milleks võiks süsteemiadministraator Greenbone'i organisatsiooni võrgus
-kasutada?
+**Milleks võiks süsteemiadministraator Greenbone'i organisatsiooni võrgus
+kasutada?**
 
 ### Tulemuste tõlgendamine
 
-Kas Greenbone'i leitud kõrge severity-väärtusega probleem tähendab
-alati, et süsteemi on võimalik kohe edukalt rünnata? Põhjenda lühidalt.
+**Kas Greenbone'i leitud kõrge severity-väärtusega probleem tähendab
+alati, et süsteemi on võimalik kohe edukalt rünnata? Põhjenda lühidalt.**
 
 ------------------------------------------------------------------------
 
