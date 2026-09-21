@@ -92,7 +92,7 @@ Tegelik arendustöö algas 1984. aasta alguses.
 *Richard Stallman. Pilt: By NicoBZH from Saint Etienne - Loire, France - Richard Stallman - "Le logiciel libre et ta liberté" - Saint Etienne cité du design 27/11/2008, CC BY-SA 2.0, https://commons.wikimedia.org/w/index.php?curid=5381829*
 
 
-Mida tähendab GNU?
+**Mida tähendab GNU?**
 
 GNU on rekursiivne akronüüm:
 
