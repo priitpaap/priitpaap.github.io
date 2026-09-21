@@ -107,6 +107,10 @@ Nimi rõhutab, et süsteem kavandati UNIX-i sarnaseks ja ühilduvaks, kuid see e
 
     GNU eesmärk oli luua sarnase kasutuskeskkonnaga, kuid **vaba süsteem**.
 
+![official gnu](assets/linuxi-ajalugu/official-gnu.jpg){ width="35%" }
+
+*GNU projekti orginaallogo. Pilt: Victor Siame <vcopovi@wanadoo.fr>, FAL, via Wikimedia Commons*
+
 ---
 
 ## 4. Vaba tarkvara mõiste teke
@@ -480,37 +484,25 @@ Sama perekonna süsteemid jagavad sageli:
 
 ## 17. Linux tänapäeval
 
-Linux on tänapäeva IT-taristu üks põhitehnoloogiaid.
+Linux on tänapäeva IT-taristu üks põhitehnoloogiaid. Kuigi tavakasutaja võib Linuxit seostada eelkõige mõne töölaua-distributsiooniga, on selle suurim mõju tegelikult **serverites, pilveteenustes, mobiilseadmetes, võrguseadmetes ja arenduskeskkondades**.
 
-Selle tähtsus ei piirdu personaalarvuti töölauaga – kõige suurem mõju on serverites, pilves, seadmetes ja arenduskeskkondades.
+Linuxi eeliseks on avatud lähtekood, hea kohandatavus, stabiilsus ning võimalus kasutada seda väga erineva võimsusega seadmetes – alates pisikesest ruuterist kuni superarvutini.
 
-### Serverid ja veebiteenused
+**Kus Linuxit kasutatakse?**
 
-Suur osa internetiteenustest töötab Linuxil.
+- **Veebi- ja andmebaasiserverid** – Linuxi serverites töötavad näiteks veebiserverid Apache ja Nginx ning andmebaasisüsteemid MariaDB, PostgreSQL ja MySQL.
+- **Pilveteenused** – suur osa AWS-i, Microsoft Azure’i ja Google Cloudi virtuaalmasinatest kasutab mõnda Linuxi distributsiooni.
+- **Konteinerid** – Docker ja Kubernetes põhinevad suuresti Linuxi kerneli võimalustel. Konteinerite alusena kasutatakse sageli näiteks Ubuntu, Debian või Alpine Linuxi tõmmiseid.
+- **Mobiilseadmed** – Android kasutab Linuxi kernelit. Seetõttu töötab Linuxi tuum ka miljardites telefonides, tahvelarvutites ja muudes Androidi seadmetes.
+- **Võrgu- ja nutiseadmed** – Linuxit leidub ruuterites, tulemüürides, NAS-seadmetes, telerites, tööstusseadmetes ja autode infosüsteemides.
+- **Superarvutid** – maailma võimsaimad superarvutid kasutavad Linuxil põhinevaid süsteeme, näiteks Red Hat Enterprise Linuxit, Ubuntu Linuxit, Rocky Linuxit või spetsiaalselt superarvutitele kohandatud distributsioone.
+- **Tarkvaraarendus** – Linux on levinud veebirakenduste, pilveteenuste, tehisintellekti lahenduste ja manussüsteemide arendamisel. Seda kasutatakse nii arendaja põhioperatsioonisüsteemina kui ka virtuaalmasinate, konteinerite ja WSL-i kaudu.
 
-### Pilvandmetöötlus
+!!! info "Linux arvudes"
 
-Linux on AWS-i, Azure'i, Google Cloudi ja teiste pilveplatvormide keskne külalis- ja hostoperatsioonisüsteem.
+    W3Techsi 2026. aasta septembri andmetel kasutas Linuxit **62,5% veebilehtedest, mille serveri operatsioonisüsteem oli teada**. See näitaja puudutab veebiservereid, mitte personaalarvutite töölaudu.
 
-### Konteinerid
-
-Docker ja Kubernetes toetuvad suurel määral Linuxi kerneli funktsioonidele.
-
-### Android
-
-Android kasutab Linuxi kernelit.
-
-### Võrguseadmed ja sisseehitatud süsteemid
-
-Ruuterid, tulemüürid, telerid, IoT- ja tööstusseadmed kasutavad sageli Linuxit.
-
-### Superarvutid
-
-Linux on valdav operatsioonisüsteem maailma kiireimates superarvutites.
-
-### Arendus ja DevOps
-
-Linuxi shell, paketihaldus, Git, SSH ja automatiseerimisvahendid on igapäevased tööriistad.
+Seetõttu ei anna Linuxi tähtsusest täielikku pilti ainult töölauaarvutite turuosa. Linux töötab sageli taustal – seadmetes ja teenustes, mida inimesed iga päev kasutavad.
 
 !!! abstract "Kokkuvõttev mõte"
     Linuxi lugu ühendab kolm suurt arengusuunda:
@@ -546,45 +538,18 @@ Linuxi shell, paketihaldus, Git, SSH ja automatiseerimisvahendid on igapäevased
 2. Miks muutus tarkvara 1970.–1980. aastatel järjest rohkem kommertstooteks?
 3. Kes oli Richard Stallman?
 4. Mis oli GNU projekti eesmärk?
-5. Mida tähendab nimi GNU?
-6. Millised on vaba tarkvara neli põhivabadust?
-7. Miks ei tähenda *free software* tingimata tasuta tarkvara?
-8. Mis on copyleft?
-9. Mis on GNU GPL?
-10. Mis vahe on GNU projektil ja Free Software Foundationil?
-11. Milliseid olulisi programme ja komponente GNU projekt lõi?
-12. Mis oli GNU Hurd?
-13. Mis roll oli MINIX-il Linuxi kujunemisel?
-14. Kas Linux põhineb MINIX-i lähtekoodil?
-15. Mis juhtus 25. augustil 1991?
-16. Mis muutus Linuxi arengus 1992. aastal?
-17. Mis vahe on mõistetel Linux ja GNU/Linux?
-18. Mis on Linuxi distributsioon?
-19. Kuidas Linuxi kernelit tänapäeval arendatakse?
-20. Miks oli Git Linuxi ajaloo seisukohalt oluline?
-21. Nimeta vähemalt kolm Linuxi distributsiooniperekonda.
-22. Millistes tänapäeva IT-valdkondades Linuxit kasutatakse?
-23. Millised kolm arengusuunda ühendab Linuxi ajalugu?
-
----
-
-## Ajajoon
-
-| Aeg | Sündmus |
-|---|---|
-| **1960.–1970. aastad** | tarkvara jagamine on paljudes teadus- ja arenduskeskkondades tavaline |
-| **1970. aastate lõpp – 1980. aastad** | tarkvara kommertsialiseerumine ja rangemad litsentsid |
-| **1983** | Richard Stallman kuulutab välja GNU projekti |
-| **1984** | GNU tegelik arendustöö algab |
-| **1985** | asutatakse Free Software Foundation |
-| **1987** | ilmub MINIX |
-| **1989** | GNU GPL versioon 1 |
-| **1990** | GNU Hurdi arendus algab |
-| **1991** | Linus Torvalds alustab Linuxi kerneli arendamist |
-| **1992** | Linux läheb üle GNU GPLv2 litsentsile |
-| **1994** | Linux 1.0 |
-| **1996** | Tux |
-| **2005** | Linus Torvalds loob Giti |
+5. Millised on vaba tarkvara neli põhivabadust?
+6. Miks ei tähenda *free software* tingimata tasuta tarkvara?
+7. Mis on GNU GPL?
+8. Milliseid olulisi programme ja komponente GNU projekt lõi?
+9. Mis oli GNU Hurd?
+10. Mis juhtus 25. augustil 1991?
+11. Mis vahe on mõistetel Linux ja GNU/Linux?
+12. Mis on Linuxi distributsioon?
+13. Kuidas Linuxi kernelit tänapäeval arendatakse?
+14. Miks oli Git Linuxi ajaloo seisukohalt oluline?
+15. Nimeta vähemalt kolm Linuxi distributsiooniperekonda.
+16. Millistes tänapäeva IT-valdkondades Linuxit kasutatakse?
 
 ---
 
