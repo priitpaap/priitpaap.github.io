@@ -466,11 +466,15 @@ Sama perekonna süsteemid jagavad sageli:
 
 | Perekond | Näited | Iseloomustus |
 |---|---|---|
-| **Debian** | Debian, Ubuntu, Linux Mint | DEB paketid ja APT; väga suur tarkvaravalik; levinud serverites ja töölaual |
-| **Red Hat** | Fedora, RHEL, CentOS Stream | RPM paketid ja DNF; oluline ettevõtte- ja serverikeskkondades |
+| **Debian** | Debian, Ubuntu, Linux Mint, MX Linux, Pop! OS, Zorin  | DEB paketid ja APT; väga suur tarkvaravalik; levinud serverites ja töölaua os-ina |
+| **Red Hat** | Fedora, RHEL, CentOS Stream, Alma Linux, Rocky Linux, Bazzite | RPM paketid ja DNF; levinud ettevõtte- ja serverikeskkondades ja töölaua os-ina|
 | **SUSE** | openSUSE, SUSE Linux Enterprise | RPM-põhine perekond; tugev haldus- ja ettevõttefookus |
-| **Arch** | Arch Linux, EndeavourOS, CachyOS | Rolling release, Pacman; paindlik ja sageli tehnilisema kasutaja valik |
+| **Arch** | Arch Linux, EndeavourOS, CachyOS, Manjaro | Rolling release, Pacman; paindlik ja sageli tehnilisema kasutaja valik |
 | **Muud** | Alpine Linux jt | spetsiifiliste eesmärkidega süsteemid; Alpine on populaarne väikestes konteineripiltides |
+
+![distrod](assets/linuxi-ajalugu/distrod.png){ width="75%" }
+
+*Pilt tehisintellekti loodud.*
 
 ---
 
