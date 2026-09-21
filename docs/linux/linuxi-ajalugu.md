@@ -408,16 +408,23 @@ Arendus toimub hajutatult.
 
 Muudatused liiguvad tavaliselt läbi vastava alamsüsteemi hooldajate (*maintainers*) ning lõpuks põhiharusse.
 
+```mermaid
+flowchart TB
+    A["Arendaja"] --> B["Paik"]
+    B --> C["Meililist"]
+    C --> D["Ülevaatus ja testimine"]
+    D --> E["Alamsüsteemi maintainer"]
+    E --> F["Alamsüsteemi Git'i puu"]
+    F --> G["Linus Torvalds"]
+    G --> H["Kerneli põhiharu"]
+    H --> I["Väljalaske kandidaadid"]
+    I --> J["Stabiilne versioon"]
+    D -. "Vajab parandusi" .-> A
+```
+
 **Git**
 
 **2005. aastal** lõi Linus Torvalds Linuxi kerneli arenduse vajaduste jaoks versioonihaldussüsteemi **Git**. Git on Linuxi kerneli arenduses siiani peamine versioonihaldusvahend ning seda kasutatakse laialdaselt ka paljudes teistes tarkvaraprojektides. Gitist on praeguseks saanud üks maailma enim kasutatavaid versioonihaldussüsteeme.
-
-```mermaid
-flowchart LR
-    A["Arendaja"] --> B["Alamsüsteemi maintainer"]
-    B --> C["ülevaatus ja testimine"]
-    C --> D["kerneli põhiharu"]
-```
 
 !!! abstract "Põhisõnum"
     Linux on avatud lähtekoodiga kogukonnaprojekt, kuid suur osa arendusest toimub tänapäeval professionaalse tööna ettevõtetes.
