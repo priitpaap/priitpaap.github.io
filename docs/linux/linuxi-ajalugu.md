@@ -158,11 +158,11 @@ Kui autor lihtsalt avaldab lähtekoodi, ei pruugi see veel tagada, et hilisemad 
 
 Selle probleemi lahendamiseks kasutas GNU projekt **copyleft'i** põhimõtet.
 
-### Copyleft
+**Copyleft**
 
 Copyleft kasutab autoriõigust selleks, et säilitada tarkvara kasutajate vabadused ka programmi edasi levitamisel.
 
-### GNU GPL
+**GNU GPL**
 
 **GNU General Public License (GPL)** on üks tuntumaid copyleft-litsentse.
 
@@ -204,7 +204,7 @@ FSF-i eesmärk oli toetada:
 
 ## 7. GNU ehitab operatsioonisüsteemi
 
-GNU eesmärk oli terviklik operatsioonisüsteem.
+GNU projekti eesmärk oli terviklik operatsioonisüsteem.
 
 Selle loomiseks oli vaja palju komponente:
 
@@ -227,9 +227,7 @@ GNU projektist kujunesid või sellega on tihedalt seotud näiteks:
 | **Bash** | laialt kasutatav shell |
 | **GNU Coreutils** | põhikäsud, näiteks `ls`, `cp`, `mv`, `rm`, `cat` |
 
-1990. aastate alguseks oli suur osa GNU kasutajaruumi süsteemist valmis.
-
-Puudu oli praktiliselt kasutatav kernel, mis oleks kogu süsteemi tervikuks ühendanud.
+1990-ndate aastate alguseks oli suur osa GNU kasutajaruumi süsteemist valmis. **Puudu oli praktiliselt kasutatav kernel ehk operatsioonisüsteemi tuum**, mis oleks kogu süsteemi tervikuks ühendanud.
 
 ---
 
@@ -237,11 +235,7 @@ Puudu oli praktiliselt kasutatav kernel, mis oleks kogu süsteemi tervikuks ühe
 
 GNU projekti kerneliks kavandati **GNU Hurd**.
 
-Selle arendus algas 1990. aastal ning see kasutab Machi mikrokerneli arhitektuuri.
-
-Hurd oli tehniliselt ambitsioonikas, kuid arendus kujunes keeruliseks ja aeglaseks.
-
-GNU Hurd on endiselt olemas ja seda arendatakse, kuid sellest ei ole saanud laialt kasutatavat üldotstarbelist kernelit.
+Selle arendus algas 1990. aastal ning see kasutab mikrokerneli arhitektuuri. Hurd oli tehniliselt ambitsioonikas, kuid arendus kujunes keeruliseks ja aeglaseks. GNU Hurd on endiselt olemas ja seda arendatakse, kuid sellest ei ole saanud laialt kasutatavat üldotstarbelist kernelit. 
 
 Just sel ajal, kui GNU-l oli enamik kasutajaruumi komponente olemas, ilmus teine vaba kernel – **Linux**.
 
@@ -259,36 +253,22 @@ Just sel ajal, kui GNU-l oli enamik kasutajaruumi komponente olemas, ilmus teine
 
 ## 9. MINIX – süsteem õppimiseks
 
-1987. aastal avaldas arvutiteadlane **Andrew S. Tanenbaum** õppeotstarbelise UNIX-like operatsioonisüsteemi **MINIX**.
+Arvutiteadlane **Andrew S. Tanenbaum** avaldas 1987. aastal õppeotstarbelise UNIX-like operatsioonisüsteemi **MINIX**. MINIX-i kasutati koos operatsioonisüsteemide ehitust käsitleva õpikuga ning selle lähtekoodi sai uurida. Algse MINIX-i lähtekood oli küll õppimiseks kättesaadav, kuid selle litsents ei olnud tänapäevases mõttes täielikult avatud lähtekoodiga. Hilisemad MINIX-i versioonid on vabamate litsentsitingimustega.
 
-MINIX-i kasutati koos operatsioonisüsteemide ehitust käsitleva õpikuga ning selle lähtekoodi sai uurida.
-
-Algse MINIX-i lähtekood oli küll õppimiseks kättesaadav, kuid selle litsents ei olnud tänapäevases mõttes täielikult avatud lähtekoodiga.
-
-Hilisemad MINIX-i versioonid on vabamate litsentsitingimustega.
-
-Linus Torvalds kasutas MINIX-i 1991. aastal oma arvutis ning see oli tema jaoks oluline õppe- ja arenduskeskkond.
+Helsingi ülikooli tudeng **Linus Torvalds** kasutas MINIX-i 1991. aastal oma arvutis ning see oli tema jaoks oluline õppe- ja arenduskeskkond.
 
 !!! warning "Hea eristus"
     Linux **ei ole MINIX-i lähtekoodi edasiarendus**.
 
     Torvalds kirjutas oma kerneli iseseisvalt.
 
-Samuti:
-
-> „Lähtekood on nähtav“ ei tähenda automaatselt „avatud lähtekoodiga“.
-
-Open-source litsents peab andma ka selged õigused koodi kasutada, muuta ja levitada.
-
 ---
 
-## 10. 1991: Linus Torvalds alustab Linuxit
+## 10. 1991: Linus Torvalds alustab Linuxiga
 
-1991. aastal oli **Linus Torvalds** Helsingi Ülikooli üliõpilane.
+**Linus Torvalds** oli Helsingi Ülikooli üliõpilane, kes soovis oma Intel 386 arvutil paremini kasutada UNIX-laadset keskkonda ning hakkas hobi korras kirjutama uut kernelit.
 
-Ta soovis oma Intel 386 arvutil paremini kasutada UNIX-laadset keskkonda ning hakkas hobi korras kirjutama uut kernelit.
-
-25. augustil 1991 kirjutas Torvalds Useneti `comp.os.minix` uudisgruppi kuulsaks saanud sõnumi, milles teatas oma tasuta hobiprojektist.
+**25. augustil 1991** kirjutas Torvalds Useneti `comp.os.minix` uudisgruppi kuulsaks saanud sõnumi, milles teatas oma tasuta hobiprojektist.
 
 Üks kuulsamaid katkeid sellest sõnumist oli:
 
@@ -298,18 +278,15 @@ Esimene Linuxi kerneli versioon **0.01** avaldati septembris 1991 ning versioon 
 
 Esimesed versioonid olid väga piiratud, kuid projekt äratas kiiresti teiste arendajate huvi.
 
-Internet võimaldas:
+Internet võimaldas kiiresti jagada:
 
 - lähtekoodi;
 - parandusi;
 - ideid
 
-kiiresti jagada. 
-
 ![linus torvalds](assets/linuxi-ajalugu/linus-torvalds.jpeg){ width="50%" }
 
 *Linus Torvalds. Pilt: By Unknown author - Linuxmag.com, December 2002, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=17991*
-
 
 ---
 
@@ -321,18 +298,23 @@ kiiresti jagada.
 | **09.1991** | Linux 0.01 – esimene avaldatud lähtekood |
 | **05.10.1991** | Linux 0.02 – Torvalds kutsub teisi süsteemi proovima ja panustama |
 | **1992** | Linux läheb üle GNU GPLv2 litsentsile |
+| **1993** | Ilmuvad esimesed Linuxi distributsioonid - Slackware ja Debian |
 | **14.03.1994** | Linux 1.0 – esimene stabiilseks märgitud suurem versioon |
 | **1996** | Tuxist saab Linuxi tuntud maskott |
+
 
 ```mermaid
 timeline
     title Linuxi varajane areng
-    1991 : Torvalds teatab projektist
+    1991 : Torvalds teatab Linuxi projektist
          : Linux 0.01
          : Linux 0.02
-    1992 : GNU GPLv2
+    1992 : Linux läheb üle GNU GPLv2 litsentsile
+    1993 : Ilmuvad esimesed Linuxi distributsioonid
+         : Slackware ja Debian
     1994 : Linux 1.0
-    1996 : Tux
+    1996 : Linux 2.0
+         : Tux valitakse Linuxi maskotiks
 ```
 
 ---
