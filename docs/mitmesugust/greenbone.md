@@ -25,8 +25,7 @@ Töö käigus õpid:
 Greenbone Community Edition käivitatakse selles töös Dockeri
 konteinerites.
 
-Paigalda kooli laborikeskkonda **Debian 13** virtuaalmasinat,
-millel on võrgukaardiks "Internet".
+Paigalda kooli laborikeskkonda **Debian 13** virtuaalmasin, millel on võrgukaardiks "Internet".
 
 Virtuaalmasina nimeks "greenbone-sinunimi".
 
@@ -36,15 +35,15 @@ Soovituslikud ressursid:
 
 | Ressurss | Soovitus |
 | --- | --- |
-|  CPU |  2 vCPU |
+|  CPU |  4 vCPU |
 |  RAM |  8 GB RAM |
 |  Ketas |  100 GB |
 |  OS |  Debian 13 |
 
-!!! info "Miks on vaja nii palju kettaruumi?"
+!!! info "Miks on vaja nii palju kettaruumi ja ressursse?"
     Greenbone'i konteinerid,
     haavatavuste andmebaasid ehk *feed'id* ja skannimise tulemused vajavad
-    märkimisväärselt kettaruumi. Varasemast 16 GB kettast ei piisa.
+    märkimisväärselt kettaruumi, 16 GB kettast ei piisa. Samuti on feed'ide uuendamine CPU intesiivne.
 
 ### 1.1. Uuenda Debian
 
