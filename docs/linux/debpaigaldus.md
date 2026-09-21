@@ -2,7 +2,7 @@ icon:material/debian
 
 # Debian Linuxi paigaldamine
 
-Juhendis kasutatav tarkvara: Debian 12.10 kuid juhend toimib ka Debian 13 jaoks.
+Juhendis kasutatav tarkvara: Debian 12.10, kuid juhend toimib ka Debian 13 jaoks.
 
 ##  Riistvara nõuded
 
