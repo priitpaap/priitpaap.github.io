@@ -351,3 +351,6 @@ Veateate põhjus võib olla puuduv seadistus, hõivatud port või vale failiõig
 - [AlmaLinux Wiki: Extra Repositories ja EPEL](https://wiki.almalinux.org/repos/Extras.html)
 - [Red Hat Enterprise Linux 9: Managing software with the DNF tool](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/htmlsingle/managing_software_with_the_dnf_tool/)
 - [DNF Command Reference](https://dnf.readthedocs.io/en/latest/command_ref.html)
+
+---
+*Õppematerjali koostaja: Priit Paap, 2026*

@@ -297,3 +297,6 @@ less /var/log/dpkg.log
 - [Debian Manpages: sources.list(5)](https://manpages.debian.org/stable/apt/sources.list.5.en.html)
 - [Debian Administrator's Handbook: APT](https://www.debian.org/doc/manuals/debian-handbook/apt.en.html)
 
+---
+*Õppematerjali koostaja: Priit Paap, 2026*
+

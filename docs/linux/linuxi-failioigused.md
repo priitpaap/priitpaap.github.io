@@ -891,3 +891,6 @@ Kõige olulisem põhimõte on sama mis kasutajate halduses:
 
 Linux man pages online: [https://man7.org/linux/man-pages/](https://man7.org/linux/man-pages/){ target="_blank" rel="noopener" }
 
+---
+*Õppematerjali koostaja: Priit Paap, 2026*
+

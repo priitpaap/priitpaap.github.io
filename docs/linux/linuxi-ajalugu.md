@@ -574,4 +574,8 @@ Seetõttu ei anna Linuxi tähtsusest täielikku pilti ainult töölauaarvutite t
    [https://www.kernel.org/](https://www.kernel.org/){ target="_blank" rel="noopener" }
 
 
+---
+*Õppematerjali koostaja: Priit Paap, 2026*
+
+
    

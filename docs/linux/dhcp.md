@@ -202,3 +202,6 @@ systemctl restart isc-dhcp-server
 ## Rohkem infot
 
 `man dhcpd.conf` | `man isc-dhcp-server` | Konfiguratsioonifail: `/etc/dhcp/dhcpd.conf`
+
+---
+*Õppematerjali koostaja: Priit Paap, 2026*

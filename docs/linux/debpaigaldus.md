@@ -249,3 +249,5 @@ Seejärel on paigaldusprotsess lõppenud ja vajalik on taaskäivitus, mille jär
 
     ![Installer](images/login4.png)
 
+---
+*Õppematerjali koostaja: Priit Paap, 2026*

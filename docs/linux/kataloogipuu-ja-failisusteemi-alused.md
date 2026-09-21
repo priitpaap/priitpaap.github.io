@@ -833,3 +833,6 @@ Failisüsteem ja kataloogipuu ei ole üks ja sama. Linux võib ühendada mitu fa
 - Debian – *Release Notes*: [https://www.debian.org/releases/](https://www.debian.org/releases/)
 - freedesktop.org – *Filesystem Hierarchy Standard*: [https://specifications.freedesktop.org/fhs/](https://specifications.freedesktop.org/fhs/){ target="_blank" rel="noopener" }
 - Linux man pages online: [https://man7.org/linux/man-pages/](https://man7.org/linux/man-pages/){ target="_blank" rel="noopener" }
+
+---
+*Õppematerjali koostaja: Priit Paap, 2026*

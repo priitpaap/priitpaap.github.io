@@ -1611,3 +1611,6 @@ tar -tzvf arhiiv.tar.gz
 
 Linux man pages online: [https://man7.org/linux/man-pages/](https://man7.org/linux/man-pages/){ target="_blank" rel="noopener" }
 
+---
+
+*Õppematerjali koostaja: Priit Paap*

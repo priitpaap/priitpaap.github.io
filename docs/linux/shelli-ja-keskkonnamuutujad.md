@@ -624,3 +624,6 @@ Kõige olulisem põhimõte on:
 - [Debian Manpages: bash(1)](https://manpages.debian.org/stable/bash/bash.1.en.html){ target="_blank" rel="noopener" }
 - [Debian Wiki: Environment Variables](https://wiki.debian.org/EnvironmentVariables){ target="_blank" rel="noopener" }
 - [Red Hat Enterprise Linux documentation](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/){ target="_blank" rel="noopener" }
+
+---
+*Õppematerjali koostaja: Priit Paap, 2026*

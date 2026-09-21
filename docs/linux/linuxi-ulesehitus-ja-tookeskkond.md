@@ -397,3 +397,5 @@ Järgmises õppematerjalis keskendume Linuxi käsurea kasutamisele ja baaskäsku
 - Fedora Project – *Fedora Release Life Cycle*: [https://fedoraproject.org/wiki/Fedora_Release_Life_Cycle](https://fedoraproject.org/wiki/Fedora_Release_Life_Cycle){ target="_blank" rel="noopener" }
 - CentOS Project – *CentOS Stream*: [https://www.centos.org/centos-stream/](https://www.centos.org/centos-stream/){ target="_blank" rel="noopener" }
 
+---
+*Õppematerjali koostaja: Priit Paap, 2026*

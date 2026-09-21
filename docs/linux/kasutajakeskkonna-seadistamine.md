@@ -509,3 +509,6 @@ Kõige olulisem põhimõte on:
 - [GNU Bash manual: Bash History Facilities](https://www.gnu.org/software/bash/manual/html_node/Bash-History-Facilities.html){ target="_blank" rel="noopener" }
 - [Debian Manpages: bash(1)](https://manpages.debian.org/stable/bash/bash.1.en.html){ target="_blank" rel="noopener" }
 - [Red Hat Enterprise Linux documentation](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/){ target="_blank" rel="noopener" }
+
+---
+*Õppematerjali koostaja: Priit Paap, 2026*

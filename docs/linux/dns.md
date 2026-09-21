@@ -324,3 +324,6 @@ dig @10.100.0.1 ns.firma.lan +short
 ## Rohkem infot
 
 `man named.conf` | `man named-checkzone` | [bind9 dokumentatsioon](https://bind9.readthedocs.io){:target="_blank"}
+
+---
+*Õppematerjali koostaja: Priit Paap, 2026*

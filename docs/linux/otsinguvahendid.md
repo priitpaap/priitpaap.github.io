@@ -824,3 +824,6 @@ Kõige olulisem põhimõte on:
 - [Debian Manpages: plocate(1)](https://manpages.debian.org/stable/plocate/plocate.1.en.html){ target="_blank" rel="noopener" }
 - [Debian Manpages: updatedb(8)](https://manpages.debian.org/stable/plocate/updatedb.8.en.html){ target="_blank" rel="noopener" }
 - [Debian Manpages: journalctl(1)](https://manpages.debian.org/stable/systemd/journalctl.1.en.html){ target="_blank" rel="noopener" }
+
+---
+*Õppematerjali koostaja: Priit Paap, 2026*

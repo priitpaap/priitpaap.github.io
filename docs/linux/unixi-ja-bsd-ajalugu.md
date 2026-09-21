@@ -498,4 +498,6 @@ flowchart TD
 3. The Open Group – *The UNIX Standard*  
    [https://www.opengroup.org/membership/forums/platform/unix](https://www.opengroup.org/membership/forums/platform/unix){ target="_blank" rel="noopener" }
 
+---
+*Õppematerjali koostaja: Priit Paap, 2026*
    

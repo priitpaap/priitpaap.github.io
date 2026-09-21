@@ -258,3 +258,6 @@ Snap-rakendused töötavad samuti tavapakettidest eraldatumalt ning nende uuenda
 - [GNU Coreutils: SHA-256 kontrollsumma](https://www.gnu.org/software/coreutils/manual/html_node/sha2-utilities.html){ target="_blank" rel="noopener" }
 - [Flatpaki ametlik dokumentatsioon](https://docs.flatpak.org/en/latest/)
 - [Snapi ametlik dokumentatsioon](https://snapcraft.io/docs/)
+
+---
+*Õppematerjali koostaja: Priit Paap, 2026*
