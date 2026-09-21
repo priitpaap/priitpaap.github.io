@@ -36,7 +36,7 @@ Soovituslikud ressursid:
 
 | Ressurss | Soovitus |
 | --- | --- |
-|  CPU |  4 vCPU |
+|  CPU |  2 vCPU |
 |  RAM |  8 GB RAM |
 |  Ketas |  100 GB |
 |  OS |  Debian 13 |
@@ -439,7 +439,7 @@ alati, et süsteemi on võimalik kohe edukalt rünnata? Põhjenda lühidalt.
 
 ------------------------------------------------------------------------
 
-# Avalike teenuste skaneerimine
+## Avalike teenuste skaneerimine
 
 Haavatavuste skaneerimine tekitab sihtsüsteemile aktiivset võrguliiklust
 ja võib olla käsitletav turvatestimisena.
@@ -463,7 +463,7 @@ platvormi kasutustingimusi ja lubatud testimise piire.
 
 ------------------------------------------------------------------------
 
-# Töö esitamine
+## Töö esitamine
 
 Esita töö **ühe PDF-failina**.
 
