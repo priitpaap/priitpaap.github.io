@@ -2,7 +2,7 @@ icon:material/debian
 
 # Debian Linuxi paigaldamine
 
-Juhendis kasutatav tarkvara: Debian 12.10
+Juhendis kasutatav tarkvara: Debian 12.10 kuid juhend toimib ka Debian 13 jaoks.
 
 ##  Riistvara nõuded
 
@@ -211,8 +211,9 @@ Graafilise kasutajaliidesega Debiani puhul tuleb valida meelepärane kasutajalii
 
 Viimaseks valikuks on paigaldusprotsessis alglaaduri paigaldamine. Kui tegemist on ainukese operatsioonisüsteemiga arvutis tuleb GRUB alglaadur kindlasti paigaldada ja valida peamine ketas kuhu alglaadur lisatakse (N: sda).
 
-!!! warning
-    Kui sa alglaadurit ei paigalda, siis ei laeta ka Debian operatsioonisüsteemi ehk peale paigaldusprotsessi Debian linux ei käivitu.
+!!! warning "Hoiatus"
+    Kui sa alglaadurit ei paigalda, siis ei laeta ka Debian operatsioonisüsteemi ehk peale paigaldusprotsessi Debian Linux ei käivitu.
+
 
 === "Install GRUB"
 
