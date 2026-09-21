@@ -17,14 +17,10 @@ Pärast materjali läbimist oskad:
 
 - valida otsinguülesande jaoks sobiva Linuxi tööriista;
 - kasutada `grep`-i teksti otsimiseks ja tulemuste filtreerimiseks;
-- kasutada toru `|` ühe käsu väljundi suunamiseks teisele käsule;
 - kasutada `find`-i failide ja kataloogide otsimiseks nime, tüübi, omaniku, suuruse ja muutmisaja järgi;
-- kasutada metamärke otsingumustrites;
-- selgitada `find`-i ja `locate`-i erinevust;
 - kasutada `locate`-i kiireks failinime järgi otsimiseks;
 - leida käsu asukohta käsuga `command -v`;
-- kasutada `journalctl`-i systemd logide vaatamiseks ja otsimiseks;
-- arvestada olulisemate erinevustega Debiani ja Red Hati laadsete süsteemide logides.
+- kasutada `journalctl`-i systemd logide vaatamiseks ja otsimiseks.
 
 ---
 
@@ -78,7 +74,7 @@ Mitmest sõnast koosnev otsingumuster pannakse jutumärkidesse:
 grep "login failed" log.txt
 ```
 
-### Kasulikud `grep` võtmed
+Kasulikud `grep` võtmed:
 
 | Võti | Tähendus |
 |---|---|
@@ -184,7 +180,7 @@ Ilma täiendava tegevuseta kuvab `find` leitud objektide teed.
 
 ---
 
-## Nime järgi otsimine
+### Nime järgi otsimine
 
 Täpselt nime järgi otsimiseks kasutatakse `-name` tingimust:
 
@@ -210,7 +206,7 @@ KOLA.TXT
 
 ---
 
-## Metamärgid otsingus
+### Metamärgid otsingus
 
 Failinimede otsimisel kasutatakse sageli metamärke ehk *wildcard'e*.
 
@@ -244,7 +240,7 @@ testx.txt
 
 ---
 
-## Faili tüübi järgi otsimine
+### Faili tüübi järgi otsimine
 
 `-type` võimaldab määrata otsitava objekti tüübi.
 
@@ -274,7 +270,7 @@ find /home -type l
 
 ---
 
-## Omaniku järgi otsimine
+### Omaniku järgi otsimine
 
 Kasutajale `student` kuuluvate failide otsimiseks:
 
@@ -293,7 +289,7 @@ sudo find / -user student
 
 ---
 
-## Suuruse järgi otsimine
+### Suuruse järgi otsimine
 
 Faili suuruse järgi otsimiseks kasutatakse `-size` tingimust.
 
@@ -327,7 +323,7 @@ Siin tähendab:
 
 ---
 
-## Muutmisaja järgi otsimine
+### Muutmisaja järgi otsimine
 
 Faili sisu viimase muutmise aja järgi saab otsida `-mtime` abil.
 
@@ -356,7 +352,7 @@ find /home -type f -mmin -60
 
 ---
 
-## Otsingu sügavuse piiramine
+### Otsingu sügavuse piiramine
 
 Vaikimisi liigub `find` läbi kõigi otsingu alguskoha all olevate alamkataloogide.
 
@@ -378,7 +374,7 @@ See on kasulik, kui kogu kataloogipuu läbimine pole vajalik.
 
 ---
 
-## Mitme tingimuse kasutamine
+### Mitme tingimuse kasutamine
 
 `find` võimaldab tingimusi kombineerida.
 
@@ -398,7 +394,7 @@ Tingimuste kõrvuti kirjutamisel rakendatakse tavaliselt loogilist **JA** seost.
 
 ---
 
-## Otsingutulemusega tegutsemine
+### Otsingutulemusega tegutsemine
 
 Kõige turvalisem on kõigepealt otsing käivitada ja kontrollida, millised objektid leitakse:
 
@@ -420,8 +416,6 @@ find /home/student -type f -name "*.tmp" -delete
 
 !!! danger "Kontrolli enne kustutamist"
     Ära lisa `-delete` valikut enne, kui oled sama otsingu ilma kustutamiseta käivitanud ja tulemused üle kontrollinud. Valesti koostatud otsing võib mõjutada suurt hulka faile.
-
-### `-exec`
 
 `find` saab iga leitud objekti jaoks käivitada ka teise käsu. Selleks kasutatakse `-exec` valikut.
 
@@ -674,26 +668,19 @@ Erinevusi kohtab eelkõige distributsioonispetsiifilistes failides, teenusenimed
 
 ### Traditsioonilised autentimislogid
 
-Kui süsteemis kasutatakse traditsioonilisi tekstipõhiseid syslogi logifaile, erinevad nende nimed distributsiooniti.
+Kui süsteemis kasutatakse **traditsioonilisi tekstipõhiseid syslogi logifaile**, erinevad nende nimed distributsiooniti.
 
 | Süsteemiperekond | Levinud autentimislogi |
 |---|---|
 | Debian-laadne | `/var/log/auth.log` |
 | Red Hat-laadne | `/var/log/secure` |
 
-Seetõttu ei ole näiteks:
-
-```bash
-grep "student" /var/log/auth.log
-```
-
-universaalne Linuxi käsk.
+| Süsteemiperekond | Levinud süsteemilogi |
+|---|---|
+| Debian-laadne | `/var/log/syslog` |
+| Red Hat-laadne | `/var/log/messages` |
 
 Systemd journaliga saab paljusid logisid uurida distributsioonist sõltumatumalt:
-
-```bash
-journalctl
-```
 
 !!! note "Kõiki logisid ei pea leiduma `/var/log` tekstifailidena"
     Logimise seadistus sõltub distributsioonist ja süsteemi konfiguratsioonist. Mõnes süsteemis säilitatakse vajalik info journalis, mõnes kirjutab syslogi teenus lisaks traditsioonilisi tekstifaile.
@@ -730,17 +717,7 @@ Kui lai peab otsing olema?
 Käivita otsing
       ↓
 Kontrolli tulemusi
-      ↓
-Vajaduse korral tegutse
 ```
-
-Näiteks failide kustutamise korral:
-
-1. koosta `find` otsing;
-2. käivita see ilma kustutamiseta;
-3. kontrolli leitud objektide nimekirja;
-4. täpsusta vajaduse korral tingimusi;
-5. alles seejärel kasuta muutvat või kustutavat tegevust.
 
 !!! tip "Administraatori eesmärk ei ole otsida võimalikult laialt"
     Alusta võimalikult täpsest asukohast ja tingimustest. Näiteks `/home/student` on sageli parem otsingu alguskoht kui kogu failisüsteem `/`.
@@ -802,28 +779,21 @@ Näiteks failide kustutamise korral:
 1. Miks ei ole Linuxis kõigi otsinguülesannete jaoks ainult ühte otsingukäsku?
 2. Milleks kasutatakse `grep` käsku?
 3. Mida muudab `grep -i`?
-4. Milleks kasutatakse `grep -n` võtit?
-5. Mida teeb `grep -v`?
-6. Mis vahe on `grep -r` ja tavalisel ühe faili otsingul?
-7. Milleks kasutatakse Linuxi käsureal toru `|`?
-8. Mida teeb käsk `ps aux | grep ssh`?
-9. Milleks kasutatakse `find` käsku?
-10. Mida tähendavad käsus `find /home -name "*.txt"` osad `/home`, `-name` ja `"*.txt"`?
-11. Mis vahe on `-name` ja `-iname` tingimustel?
-12. Mida tähendavad metamärgid `*` ja `?`?
-13. Mida tähendavad `find` tingimused `-type f`, `-type d` ja `-type l`?
-14. Kuidas leiad kasutajale `student` kuuluvad failid?
-15. Mida tähendab `find` käsus `-size +50M`?
-16. Milleks kasutatakse `-mtime` ja `-mmin` tingimusi?
-17. Mis vahe on faili `mtime` ja `ctime` väärtustel?
-18. Milleks kasutatakse `-maxdepth` tingimust?
-19. Miks tuleb `find` otsingu tulemust enne `-delete` või muutva `-exec` käsu kasutamist kontrollida?
-20. Mis vahe on `find` ja `locate` tööpõhimõttel?
-21. Miks võib `locate` mitte leida äsja loodud faili?
-22. Milleks kasutatakse `updatedb` käsku?
-23. Milleks kasutatakse `journalctl` käsku?
-24. Kuidas saad `journalctl` väljundist `grep` abil kindlat teksti otsida?
-
+4. Mis vahe on `grep -r` ja tavalisel ühe faili otsingul?
+5. Milleks kasutatakse Linuxi käsureal toru `|`?
+6. Mida teeb käsk `ps aux | grep ssh`?
+7. Milleks kasutatakse `find` käsku?
+8. Mida tähendavad käsus `find /home -name "*.txt"` osad `/home`, `-name` ja `"*.txt"`?
+9. Mis vahe on `-name` ja `-iname` tingimustel?
+10. Mida tähendavad metamärgid `*` ja `?`?
+11. Mida tähendavad `find` tingimused `-type f`, `-type d` ja `-type l`?
+12. Mida tähendab `find` käsus `-size +50M`?
+13. Milleks kasutatakse `-mtime` ja `-mmin` tingimusi?
+14. Miks tuleb `find` otsingu tulemust enne `-delete` või muutva `-exec` käsu kasutamist kontrollida?
+15. Miks võib `locate` mitte leida äsja loodud faili?
+16. Milleks kasutatakse `updatedb` käsku?
+17. Milleks kasutatakse `journalctl` käsku?
+18. Kuidas saad `journalctl` väljundist `grep` abil kindlat teksti otsida?
 
 ---
 
