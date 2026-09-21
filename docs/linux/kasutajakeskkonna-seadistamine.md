@@ -19,11 +19,9 @@ Pärast materjali läbimist oskad:
 - eristada login shell'i ja interaktiivset non-login shell'i;
 - kirjeldada `~/.profile`, `~/.bash_profile` ja `~/.bashrc` üldist rolli;
 - kasutada käsuajalugu käsuga `history`;
-- luua ja vaadata käsualiaste;
-- eemaldada aliase käsuga `unalias`;
+- luua ja vaadata käsualiasi;
 - lisada püsiva aliase `~/.bashrc` faili;
-- rakendada muudetud `~/.bashrc` seadistusi käsuga `source`;
-- mõista, millal on aliase asemel mõistlik kasutada shellifunktsiooni või skripti.
+- rakendada muudetud `~/.bashrc` seadistusi käsuga `source`.
 
 ---
 
