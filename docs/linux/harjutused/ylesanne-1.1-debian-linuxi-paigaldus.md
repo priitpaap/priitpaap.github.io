@@ -98,3 +98,6 @@ Esita Moodlesse **üks PDF-fail**, mis sisaldab järgmisi kuvatõmmiseid:
 !!! note "Pärast edukat paigaldamist"
 
     Seda tööjaama kasutatakse edaspidi Linuxi käskude õppimiseks. Sulge masin ja tee pärast paigalduse ja seadistamise lõpetamist virtuaalmasinast **snapshot**, et harjutuste alustamisel oleks alati võimalik taastada puhas masin.
+
+---
+*Ülesande koostaja: Priit Paap, 2026*
