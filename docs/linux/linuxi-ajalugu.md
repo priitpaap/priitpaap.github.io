@@ -2,26 +2,24 @@ icon:material/history
 
 # Linuxi ajalugu
 
-Linuxi kujunemist ei saa mõista ainult ühe inimese või ühe kerneli loona. Selle taustal kohtuvad mitu arengusuunda: UNIX-i tehnilised ideed, vaba tarkvara liikumine, GNU projekt, MINIX kui õppekeskkond ning avatud ja hajutatud koostöö internetis.
+Linuxi kujunemist ei saa mõista ainult ühe inimese või ühe tarkvara loona. Selle taustal kohtuvad mitu arengusuunda: UNIX-i tehnilised ideed, vaba tarkvara liikumine, GNU projekt, MINIX kui õppekeskkond ning avatud ja hajutatud koostöö internetis.
 
 !!! info "Õppematerjali eesmärk"
     Selgitada, kuidas 1970.–1980. aastate tarkvarakultuurist kasvas välja vaba tarkvara liikumine, GNU projekt ja Linux ning kuidas neist kujunes tänapäeva IT üks olulisemaid tehnoloogilisi ökosüsteeme.
 
-    Fookus on **seostel ja põhimõistetel**, mitte aastaarvude päheõppimisel.
-
 ## Õpiväljundid
 
-Pärast teema läbimist õppija:
+Pärast teema läbimist oskad:
 
-- kirjeldab, kuidas tarkvara jagamise kultuur muutus 1970.–1980. aastatel;
-- selgitab Richard Stallmani, GNU projekti ja Free Software Foundationi rolli vaba tarkvara arengus;
-- nimetab vaba tarkvara neli põhivabadust ning selgitab, miks „vaba“ ei tähenda tingimata „tasuta“;
-- selgitab copyleft'i ja GNU GPL-i põhimõtet;
-- kirjeldab GNU süsteemi kujunemist ning kerneli rolli operatsioonisüsteemis;
-- selgitab MINIX-i mõju Linuxi sünnile;
-- kirjeldab Linuxi kerneli algust 1991. aastal ja selle edasist arengut;
-- eristab mõisteid Linux, GNU/Linux ja Linuxi distributsioon;
-- toob näiteid Linuxi peamistest distributsiooniperekondadest ja kasutusvaldkondadest.
+- kirjeldada, kuidas tarkvara jagamise kultuur muutus 1970.–1980. aastatel;
+- selgitada Richard Stallmani, GNU projekti ja Free Software Foundationi rolli vaba tarkvara arengus;
+- nimetada vaba tarkvara neli põhivabadust ning selgitada, miks „vaba“ ei tähenda tingimata „tasuta“;
+- selgitada copyleft'i ja GNU GPL-i põhimõtet;
+- kirjeldada GNU süsteemi kujunemist ning kerneli rolli operatsioonisüsteemis;
+- selgitada MINIX-i mõju Linuxi sünnile;
+- kirjeldada Linuxi kerneli algust 1991. aastal ja selle edasist arengut;
+- eristada mõisteid Linux, GNU/Linux ja Linuxi distributsioon;
+- tuua näiteid Linuxi peamistest distributsiooniperekondadest ja kasutusvaldkondadest.
 
 ---
 
@@ -53,7 +51,7 @@ Tarkvara ei käsitletud alati eraldiseisva tootena samal viisil nagu tänapäeva
 
 ## 2. Tarkvarast saab järjest enam kommertstoode
 
-1970. aastate lõpus ja 1980. aastatel muutus tarkvaratööstus kiiresti.
+1970-ndate aastate lõpus ja 1980. aastatel muutus tarkvaratööstus kiiresti.
 
 Tarkvara hakati üha enam:
 
@@ -76,14 +74,14 @@ Programmeerijad, kes olid harjunud tarkvara uurima ja parandusi jagama, puutusid
 
 **Richard Stallman** töötas MIT-i tehisintellekti laboris, kus ta oli harjunud programmeerijate koostöökultuuriga.
 
-Proprietaarse tarkvara levikuga muutus tema jaoks järjest raskemaks tarkvara:
+Kommertstarkvara levikuga muutus tema jaoks järjest raskemaks tarkvara:
 
 - vabalt uurida;
 - parandada;
 - muuta;
 - teistega jagada.
 
-27. septembril 1983 kuulutas Stallman välja **GNU projekti**.
+27.09.1983 kuulutas Stallman välja **GNU projekti**,sest soovis luua täiesti vaba operatsioonisüsteemi, mille kasutajad saaksid tarkvara vabalt kasutada, uurida, muuta ja jagada.
 
 GNU eesmärk oli luua täielik vaba operatsioonisüsteem, mis oleks UNIX-iga ühilduv, kuid mille kasutajad saaksid tarkvara vabalt kasutada, uurida, muuta ja levitada.
 
@@ -94,7 +92,7 @@ Tegelik arendustöö algas 1984. aasta alguses.
 *Richard Stallman. Pilt: By NicoBZH from Saint Etienne - Loire, France - Richard Stallman - "Le logiciel libre et ta liberté" - Saint Etienne cité du design 27/11/2008, CC BY-SA 2.0, https://commons.wikimedia.org/w/index.php?curid=5381829*
 
 
-### Mida tähendab GNU?
+Mida tähendab GNU?
 
 GNU on rekursiivne akronüüm:
 
@@ -111,13 +109,15 @@ Nimi rõhutab, et süsteem kavandati UNIX-i sarnaseks ja ühilduvaks, kuid see e
 
 ---
 
-## 4. Mis on vaba tarkvara?
+## 4. Vaba tarkvara mõiste teke
+
+Mõiste „vaba tarkvara“ kujunes 1980. aastatel Richard Stallmani ja GNU projekti algatusel vastukaaluks tarkvarale, mille kasutamist, uurimist ja muutmist tootjad piirasid.
 
 **Vaba tarkvara** (*free software*) ei tähenda eelkõige hinda, vaid kasutajale antud vabadusi.
 
 Programmi võib müüa raha eest ja see võib siiski olla vaba tarkvara, kui kasutajal säilivad vajalikud õigused.
 
-Free Software Foundation kirjeldab nelja põhivabadust.
+Kirjeldatake nelja põhivabadust.
 
 **Vabadus 0**
 
@@ -186,7 +186,7 @@ Kui GPL-i alla kuuluvat programmi või selle tuletatud versiooni edasi levitatak
 
 ## 6. Free Software Foundation
 
-1985. aastal asutati **Free Software Foundation (FSF)**.
+1985-ndal aastal asutas Richard Stallman organisatsiooni **Free Software Foundation (FSF)**, et toetada GNU projekti ja kaitsta tarkvarakasutajate õigust programme vabalt kasutada, uurida, muuta ja jagada. 
 
 FSF-i eesmärk oli toetada:
 
