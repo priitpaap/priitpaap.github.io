@@ -206,6 +206,8 @@ FSF-i eesmärk oli toetada:
 
 GNU projekti eesmärk oli terviklik operatsioonisüsteem.
 
+
+
 Selle loomiseks oli vaja palju komponente:
 
 - kompilaatorit;
@@ -290,7 +292,34 @@ Internet võimaldas kiiresti jagada:
 
 ---
 
-## 11. Linuxi varajane ajajoon
+## 11. GNU + Linux
+
+Linux ise oli **kernel**, mitte terviklik kasutajakeskkond.
+
+Samal ajal oli GNU projekt loonud suure osa UNIX-like operatsioonisüsteemi kasutajaruumi komponentidest.
+
+Linuxi kernelit hakati kasutama koos GNU komponentidega:
+
+- kompilaatori;
+- C-teegi;
+- shelli;
+- käsureatööriistade;
+- muude süsteemikomponentidega.
+
+Sellest kombinatsioonist kujunes kiiresti praktiliselt kasutatav vaba operatsioonisüsteem.
+
+```mermaid
+flowchart TD
+    A["Linuxi kernel"] --> D["Kasutatav süsteem"]
+    B["GNU tööriistad"] --> D
+    C["teegid ja muu kasutajaruum"] --> D
+```
+
+90ndate aastate alguses hakkasid tekkima ka esimesed Linuxi distributsioonid, mis koondasid kerneli, GNU tarkvara ja muud komponendid paigaldatavaks tervikuks.
+
+---
+
+## 12. Linuxi varajane ajajoon
 
 | Aeg | Sündmus |
 |---|---|
@@ -319,60 +348,24 @@ timeline
 
 ---
 
-## 12. GNU + Linux
-
-Linux ise oli **kernel**, mitte terviklik kasutajakeskkond.
-
-Samal ajal oli GNU projekt loonud suure osa UNIX-like operatsioonisüsteemi kasutajaruumi komponentidest.
-
-Linuxi kernelit hakati kasutama koos GNU:
-
-- kompilaatori;
-- C-teegi;
-- shelli;
-- käsureatööriistade;
-- muude süsteemikomponentidega.
-
-Sellest kombinatsioonist kujunes kiiresti praktiliselt kasutatav vaba operatsioonisüsteem.
-
-```mermaid
-flowchart TD
-    A["Linuxi kernel"] --> D["Kasutatav süsteem"]
-    B["GNU tööriistad"] --> D
-    C["teegid ja muu kasutajaruum"] --> D
-```
-
-90ndate aastate alguses hakkasid tekkima ka esimesed Linuxi distributsioonid, mis koondasid kerneli, GNU tarkvara ja muud komponendid paigaldatavaks tervikuks.
-
----
-
 ## 13. Linux või GNU/Linux?
 
 Mõiste **Linux** võib sõltuvalt kontekstist tähendada kahte asja.
 
-### Linux
+**Linux**
 
-Tehniliselt on Linux:
-
-```text
-kernel
-```
+Tehniliselt on Linux **kernel**.
 
 Igapäevases kasutuses nimetatakse Linuxiks sageli ka tervet Linuxi-põhist operatsioonisüsteemi.
 
-### GNU/Linux
+**GNU/Linux**
 
-Free Software Foundation eelistab GNU tööriistu kasutavate süsteemide kohta nimetust:
-
-```text
-GNU/Linux
-```
-
+Free Software Foundation eelistab GNU tööriistu kasutavate süsteemide kohta nimetust **GNU/Linux**.
 See rõhutab GNU projekti panust.
 
 Paljud distributsioonid kasutavad tõepoolest Linuxi kernelit koos GNU kasutajaruumi komponentidega.
 
-### Linuxi distributsioon
+**Linuxi distributsioon**
 
 Linuxi distributsioon on kasutusvalmis tervik:
 
@@ -415,11 +408,9 @@ Arendus toimub hajutatult.
 
 Muudatused liiguvad tavaliselt läbi vastava alamsüsteemi hooldajate (*maintainers*) ning lõpuks põhiharusse.
 
-### Git
+**Git**
 
-2005. aastal lõi Linus Torvalds Linuxi kerneli arenduse vajaduste jaoks versioonihaldussüsteemi **Git**.
-
-Gitist on hiljem saanud üks maailma enim kasutatavaid versioonihaldussüsteeme.
+**2005. aastal** lõi Linus Torvalds Linuxi kerneli arenduse vajaduste jaoks versioonihaldussüsteemi **Git**. Git on Linuxi kerneli arenduses siiani peamine versioonihaldusvahend ning seda kasutatakse laialdaselt ka paljudes teistes tarkvaraprojektides. Gitist on praeguseks saanud üks maailma enim kasutatavaid versioonihaldussüsteeme.
 
 ```mermaid
 flowchart LR
