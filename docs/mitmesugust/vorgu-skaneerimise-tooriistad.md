@@ -35,7 +35,7 @@ teenuseid.
 
 ## 1.1. Advanced Port Scanneri paigaldamine
 
-Kasuta ülesande sooritamiseks mõnda kooli laborikeskkonnas olevat Windowsi virtuaalmasinat, mis asub "Internet" võrgukaardiga võrgus (näiteks PRTG labori masin). Sobiva VM-i puudumisel tuleb see paigaldada.
+Kasuta ülesande sooritamiseks mõnda kooli laborikeskkonnas olevat **Windowsi virtuaalmasinat**, mis asub **"Internet"** võrgukaardiga võrgus (näiteks PRTG labori masin). Sobiva VM-i puudumisel tuleb see paigaldada.
 
 !!! warning "Microsoft Defender SmartScreeni hoiatus"
     
@@ -57,8 +57,8 @@ Kasuta ülesande sooritamiseks mõnda kooli laborikeskkonnas olevat Windowsi vir
 
 Selles osas skaneerid kahte enda laborikeskkonnas olevat seadet, mille lõid Zabbixi laboris:
 
--   MikroTik ruuterit (ükskõik millist enda varem loodud Mikrotik ruuterit);
--   Zabbix serverit.
+-   **MikroTik ruuterit** (ükskõik millist enda varem loodud Mikrotik ruuterit);
+-   **Zabbix serverit**.
 
 Tee nii:
 
@@ -102,8 +102,7 @@ Käivita skann. Kui skann on lõppenud, ava leitud hosti detailid (parempoolne t
 - **Operating system:** Näitab, mis operatsioonisüsteem masina peal jookseb.
 - **MAC:** Näitab skannitud masina MAC-aadressi.
 - **Manufacturer:** Näitab skannitud masina tootjat (pole alati täpne).
-- **Service:** siit näeb ära, mis pordid skannitud masinal lahti on ja mille jaoks neid kasutatakse.
-Antud masinal on näha, et avatud on pordid 22, 80, 443 ja 623. Pordi numbrite järgi on võimalik leida ka infot internetist, isegi kui kirjeldust pole.
+- **Service:** siit näeb ära, mis pordid skannitud masinal lahti on ja mille jaoks neid kasutatakse. Antud masinal on näha, et avatud on pordid 22, 80, 443 ja 623. Pordi numbrite järgi on võimalik leida ka infot internetist, isegi kui kirjeldust pole.
 
 
 !!! info "Operatsioonisüsteemi tuvastamine" 
@@ -252,11 +251,11 @@ Käivita skann.
 
 Kui skann on lõppenud:
 
-1.  vaata vasakul **Hosts** nimekirja;
-2.  vali erinevaid hoste;
-3.  ava **Ports/Hosts**;
-4.  võrdle avatud porte ja teenuseid;
-5.  vaata, kas Nmap suutis tuvastada seadmete operatsioonisüsteeme.
+1.  Vaata vasakul **Hosts** nimekirja;
+2.  Vali erinevaid hoste;
+3.  Ava **Ports/Hosts**;
+4.  Võrdle avatud porte ja teenuseid;
+5.  Vaata, kas Nmap suutis tuvastada seadmete operatsioonisüsteeme.
 
 ## 2.4. Võrgu topoloogia
 
@@ -298,10 +297,10 @@ Käivita skann.
 
 Kui skann on valmis:
 
-1.  ava **Ports/Hosts**;
-2.  vaata, millised TCP-pordid leiti;
-3.  vaata, milliseid teenuseid Nmap tuvastas;
-4.  ava **Topology** ja vaata, kuidas väline host seal paikneb.
+1.  Ava **Ports/Hosts**;
+2.  Vaata, millised TCP-pordid leiti;
+3.  Vaata, milliseid teenuseid Nmap tuvastas;
+4.  Ava **Topology** ja vaata, kuidas väline host seal paikneb.
 
 !!! question "Mõtle" 
 
@@ -309,10 +308,10 @@ Kui skann on valmis:
 
 !!! tip "Kuvatõmmis"
 
-    Tee topoloogia aknast kuvatõmmis 6 (Zenmap aken kus näha kõik skannitud hostid koos topoloogiaga)!
+    Tee topoloogia aknast kuvatõmmis 6 (Zenmap aken, kus on näha kõik skannitud hostid koos topoloogiaga)!
 
-1. Navigeeri üleval ribal olevale menüüle **Scan** > **Save scan**.
-2. Salvesta ühe skanni tulemus oma töölauale. Nii on võimalik tulemusi ka uuesti avada ja analüüsida. 
+1. Navigeeri üleval ribal olevale menüüle **Scan** → **Save scan**.
+2. Salvesta ühe skanni tulemus oma töölauale. Nii on võimalik tulemusi hiljem uuesti avada ja analüüsida. 
 
 # Töö esitamine
 
@@ -326,10 +325,10 @@ PDF peab sisaldama järgmisi kuvatõmmiseid:
 4.  Zenmapi **Topology** vaade, kus on näha laborivõrk ja
     `scanme.nmap.org` (6).
 
-Lisaks peavad töös olema:
+**Lisaks peavad töös olema**:
 
 -   Advanced Port Scanneriga skanneeritud ruuteri ja Zabbix serveri tulemuste analüüs ehk vastused küsimustele (ülesande punkt 1.4);
--   vähemalt kolme alamvõrgu hosti analüüsi tabel (ülesande punkt 1.6).
+-   Vähemalt kolme alamvõrgu hosti analüüsi tabel (ülesande punkt 1.6).
 
 !!! success "Töö tulemus" 
 
