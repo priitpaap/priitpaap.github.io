@@ -218,7 +218,7 @@ Kui skann on lõppenud:
 4.  Vaata tuvastatud teenuseid;
 5.  Vaata, kas Nmap suutis tuvastada teenuste versioone.
 
-![zenmap scan2](assets/vorgu-skaneerimise-tooriistad/zenmap-scan2.png){ width="75%" }
+![zenmap scan2](assets/vorgu-skaneerimise-tooriistad/zenmap-scan2.png){ width="60%" }
 
 
 !!! tip "Kuvatõmmis"
