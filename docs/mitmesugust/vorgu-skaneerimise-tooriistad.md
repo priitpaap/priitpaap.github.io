@@ -193,11 +193,11 @@ ka käsku, millega Nmap tegelikult käivitatakse.
 4.  Jäta paigaldatuks vähemalt **Nmap**, **Zenmap** ja **Npcap**.
 5.  Jäta Npcapi paigaldamisel vaikimisi valikud.
 6.  Lõpeta paigaldamine.
-7.  Kontrolli, et Windowsi Start-menüüs oleks olemas **Zenmap**.
+7.  Kontrolli, et Windowsi Start-menüüs oleks olemas **Nmap - Zenmap GUI**.
 
 ## 2.2. Ühe hosti skaneerimine Zenmapiga
 
-Käivita **Zenmap**.
+Käivita **Nmap - Zenmap GUI**.
 
 Sisesta **Target** väljale kõigepealt oma MikroTik ruuteri IP-aadress.
 
@@ -207,26 +207,35 @@ Vali profiil:
 Intense scan, all TCP ports
 ```
 
-## 2.3. Vaata Nmap käsku
-
-Enne skanni käivitamist vaata Zenmapi **Command** väljale ja kopeeri
-genereeritud käsk oma töö vastusesse.
-
 !!! info "Zenmap ja Nmap" 
 
-    Zenmap ei kasuta eraldi skannimismootorit. Graafiline kasutajaliides koostab valikute põhjal Nmap käsu ja käivitab selle.
+    Zenmap ei kasuta eraldi skannimismootorit. Graafiline kasutajaliides koostab valikute põhjal Nmap käsu ja käivitab selle. Käsk on nähtav command väljal.
+
+![zenmap scan1](assets/vorgu-skaneerimise-tooriistad/zenmap-scan1.png)
+
 
 Käivita skann.
 
 Kui skann on lõppenud:
 
-1.  vali vasakult skannitud host;
-2.  ava **Ports/Hosts**;
-3.  vaata avatud porte;
-4.  vaata tuvastatud teenuseid;
-5.  vaata, kas Nmap suutis tuvastada teenuste versioone.
+1.  Vali vasakult skannitud host. klõpsa IP aadressil;
+2.  Ava **Ports/Hosts** lehekülg;
+3.  Vaata avatud porte;
+4.  Vaata tuvastatud teenuseid;
+5.  Vaata, kas Nmap suutis tuvastada teenuste versioone.
 
-Korda skanni oma Zabbix serveriga.
+![zenmap scan2](assets/vorgu-skaneerimise-tooriistad/zenmap-scan2.png){ width="75%" }
+
+
+!!! tip "Kuvatõmmis"
+    
+    Tee skanni tulemusest kuvatõmmis 4 (Zenmap aken koos leitud portide ja hostidega)!
+
+Korda skanni oma** Zabbix serveriga**.
+
+!!! tip "Kuvatõmmis"
+
+    Tee skanni tulemusest kuvatõmmis 5 (Zenmap aken koos leitud portide ja hostidega)!
 
 ## 2.4 Nmap käsureavõtmete uurimine
 
