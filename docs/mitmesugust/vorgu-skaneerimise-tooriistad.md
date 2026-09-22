@@ -205,7 +205,7 @@ Intense scan, all TCP ports
 
     Zenmap ei kasuta eraldi skannimismootorit. Graafiline kasutajaliides koostab valikute põhjal Nmap käsu ja käivitab selle. Käsk on nähtav command väljal.
 
-![zenmap scan1](assets/vorgu-skaneerimise-tooriistad/zenmap-scan1.png)
+![zenmap scan1](assets/vorgu-skaneerimise-tooriistad/zenmap-scan1.png) 
 
 
 Käivita skann.
@@ -218,7 +218,7 @@ Kui skann on lõppenud:
 4.  Vaata tuvastatud teenuseid;
 5.  Vaata, kas Nmap suutis tuvastada teenuste versioone.
 
-![zenmap scan2](assets/vorgu-skaneerimise-tooriistad/zenmap-scan2.png){ width="60%" }
+![zenmap scan2](assets/vorgu-skaneerimise-tooriistad/zenmap-scan2.png){ width="75%" }
 
 
 !!! tip "Kuvatõmmis"
