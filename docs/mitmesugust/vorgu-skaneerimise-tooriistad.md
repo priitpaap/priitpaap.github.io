@@ -264,6 +264,12 @@ Pärast alamvõrgu skannimist ava **Topology** ja seejärel vajadusel **Fisheye*
 
 Tutvu leitud topoloogiaga.
 
+*Zenmapi joonistatud topoloogia näide:*
+
+![zenmap topology](assets/vorgu-skaneerimise-tooriistad/zenmap-topology.png)
+
+
+
 ## 2.5. Lubatud välise serveri skaneerimine
 
 Nmap projekt pakub õppimiseks serverit:
