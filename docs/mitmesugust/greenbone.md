@@ -25,11 +25,11 @@ Töö käigus õpid:
 Greenbone Community Edition käivitatakse selles töös Dockeri
 konteinerites.
 
-Paigalda kooli laborikeskkonda **Debian 13** virtuaalmasin, millel on võrgukaardiks "Internet".
+Paigalda kooli laborikeskkonda **Debian 13** virtuaalmasin, millel on võrgukaardiks "**Internet**".
 
-Virtuaalmasina nimeks "greenbone-sinunimi".
-
-**Kindlasti vali maisna loomisel "VIKK Thin Policy" salvestuspoliitika!**
+- Virtuaalmasina nimeks ja Debiani hostinimeks "**greenbone-sinunimi**".
+- Debian paigalda koos graafilise xfce töölauaga ehk tarkvara valiku osas ainult: **xfce, standard system utilities** ja **ssh server**.
+- **Kindlasti vali maisna loomisel "VIKK Thin Policy" salvestuspoliitika!**
 
 Soovituslikud ressursid:
 
