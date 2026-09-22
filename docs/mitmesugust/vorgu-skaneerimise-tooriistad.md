@@ -165,7 +165,6 @@ tabel, mis tuleb lisada ka töö esitusse.
 |host1   |   |   |   |
 |host2   |   |   |   |
 |host3   |   |   |   |
-                                      
 
 !!! question "Mõtle" 
 
