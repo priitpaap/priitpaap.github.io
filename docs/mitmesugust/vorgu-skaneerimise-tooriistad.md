@@ -15,13 +15,9 @@ Töö käigus kasutad:
 
 Töö lõpuks oskad:
 
--   skaneerida ühte hosti ja tervet alamvõrku;
+-   skaneerida ühte hosti ja tervet alamvõrku erinevate vahenditega;
 -   selgitada, mida tähendab avatud port;
--   seostada levinud porte nende taga töötavate teenustega;
--   kasutada Nmap teenuse ja versiooni tuvastamiseks;
--   kasutada Nmap operatsioonisüsteemi tuvastamiseks;
--   lugeda Zenmapi genereeritud Nmap käsku;
--   võrrelda Advanced Port Scanneri ja Nmap/Zenmapi tulemusi.
+-   seostada levinud porte nende taga töötavate teenustega.
 
 !!! warning "Skaneeri ainult lubatud süsteeme" 
 
@@ -61,7 +57,7 @@ Kasuta ülesande sooritamiseks mõnda kooli laborikeskkonnas olevat Windowsi vir
 
 Selles osas skaneerid kahte enda laborikeskkonnas olevat seadet, mille lõid Zabbixi laboris:
 
--   MikroTik ruuterit (ükskõik kumb);
+-   MikroTik ruuterit (ükskõik millist enda varem loodud Mikrotik ruuterit);
 -   Zabbix serverit.
 
 Tee nii:
@@ -121,7 +117,7 @@ Antud masinal on näha, et avatud on pordid 22, 80, 443 ja 623. Pordi numbrite j
 
 ## 1.4. Zabbix serveri skaneerimine
 
-Korda sama skanni oma Zabbix serveri IP-aadressiga.
+Korda sama skanni oma **Zabbix serveri** IP-aadressiga.
 
 !!! tip "Kuvatõmmis"
     
@@ -237,73 +233,8 @@ Korda skanni oma** Zabbix serveriga**.
 
     Tee skanni tulemusest kuvatõmmis 5 (Zenmap aken koos leitud portide ja hostidega)!
 
-## 2.4 Nmap käsureavõtmete uurimine
 
-Vaata Zenmapi **Command** väljale genereeritud käsku.
-
-Kirjuta üles vähemalt **kolm käsureavõtit** ja selgita, mida need
-teevad.
-
-Näiteks võivad Nmap käskudes esineda:
-
-``` text
--p
--sV
--O
--A
--T4
--v
-```
-
-Windowsi käsureal saab Nmap abi kuvada käsuga:
-
-``` powershell
-nmap -h
-```
-
-## 2.5 Teenuse ja versiooni tuvastamine
-
-Zenmapi **Command** väljale sisesta:
-
-``` bash
-nmap -sV SIHTMÄRGI-IP
-```
-
-Asenda `SIHTMÄRGI-IP` oma Zabbix serveri IP-aadressiga.
-
-`-sV` käsib Nmapil proovida tuvastada avatud portide taga töötavaid
-teenuseid ja nende versioone.
-
-Vasta:
-
-1.  Millised teenused Nmap tuvastas?
-2.  Milliste teenuste versiooni suutis Nmap tuvastada?
-3.  Kas Advanced Port Scanner näitas sama palju infot?
-
-## 2.6 Operatsioonisüsteemi tuvastamine
-
-Kasuta Zenmapi **Command** väljal:
-
-``` bash
-nmap -O SIHTMÄRGI-IP
-```
-
-!!! note "Administraatori õigused" 
-
-    Operatsioonisüsteemi tuvastamine võib vajada Zenmapi käivitamist administraatori õigustes.
-
-Vasta:
-
-1.  Millise operatsioonisüsteemi Nmap tuvastas või pakkus?
-2.  Kas tulemus vastab tegelikult masinasse paigaldatud
-    operatsioonisüsteemile?
-3.  Kui täpne oli Nmap hinnang?
-
-!!! info "OS fingerprinting" 
-
-    Nmap hindab operatsioonisüsteemi võrguprotokollide käitumise ja TCP/IP pinule iseloomulike tunnuste põhjal. Tulemus on hinnang ja ei pruugi alati olla täpne.
-
-## 2.7. Alamvõrgu skaneerimine Zenmapiga
+## 2.3. Alamvõrgu skaneerimine Zenmapiga
 
 Sisesta **Target** väljale:
 
@@ -327,27 +258,13 @@ Kui skann on lõppenud:
 4.  võrdle avatud porte ja teenuseid;
 5.  vaata, kas Nmap suutis tuvastada seadmete operatsioonisüsteeme.
 
-Vasta:
+## 2.4. Võrgu topoloogia
 
-1.  Kas Advanced Port Scanner ja Zenmap leidsid sama palju hoste?
-2.  Kas mõlemad leidsid samad avatud pordid?
-3.  Kumb tööriist andis teenuste kohta rohkem infot?
-4.  Millist lisainfot andis Nmap/Zenmap?
+Pärast alamvõrgu skannimist ava **Topology** ja seejärel vajadusel **Fisheye**.
 
-## 2.8. Võrgu topoloogia
+Tutvu leitud topoloogiaga.
 
-Pärast alamvõrgu skannimist ava **Topology** ja seejärel vajadusel
-**Fisheye**.
-
-!!! question "Mõtle" 
-
-    Kas Zenmapi topoloogia näitab kindlasti võrgu tegelikku füüsilist ülesehitust? Millise info põhjal saab Nmap võrgus olevate seadmete kaugust hinnata?
-
-Salvesta alamvõrgu skann:
-
-**Scan → Save Scan**
-
-## 2.9. Lubatud välise serveri skaneerimine
+## 2.5. Lubatud välise serveri skaneerimine
 
 Nmap projekt pakub õppimiseks serverit:
 
@@ -378,29 +295,18 @@ Kui skann on valmis:
 1.  ava **Ports/Hosts**;
 2.  vaata, millised TCP-pordid leiti;
 3.  vaata, milliseid teenuseid Nmap tuvastas;
-4.  võrdle tulemust mõne laborivõrgu hostiga;
-5.  ava **Topology** ja vaata, kuidas väline host seal paikneb.
+4.  ava **Topology** ja vaata, kuidas väline host seal paikneb.
 
+!!! question "Mõtle" 
 
-## 3. Advanced Port Scanneri ja Nmap/Zenmapi võrdlus
+    Kas Zenmapi topoloogia näitab kindlasti võrgu tegelikku füüsilist ülesehitust? Millise info põhjal saab Nmap võrgus olevate seadmete kaugust hinnata?
 
-Täida tabel enda katsete põhjal.
+!!! tip "Kuvatõmmis"
 
-  Omadus                             Advanced Port Scanner   Nmap / Zenmap
-  ---------------------------------- ----------------------- ---------------
-  Hostide avastamine                                         
-  Avatud portide leidmine                                    
-  Teenuste tuvastamine                                       
-  Teenuse versiooni tuvastamine                              
-  Operatsioonisüsteemi tuvastamine                           
-  Võrgu topoloogia                                           
-  Kasutamise lihtsus                                         
-  Tulemuste detailsus                                        
+    Tee topoloogia aknast kuvatõmmis 6 (Zenmap aken kus näha kõik skannitud hostid koos topoloogiaga)!
 
-Vasta:
-
-**Millises olukorras kasutaksid Advanced Port Scannerit ja millises
-Nmap/Zenmapi? Põhjenda.**
+1. Navigeeri üleval ribal olevale menüüle **Scan** > **Save scan**.
+2. Salvesta ühe skanni tulemus oma töölauale. Nii on võimalik tulemusi ka uuesti avada ja analüüsida. 
 
 # Töö esitamine
 
@@ -408,24 +314,16 @@ Esita töö **ühe PDF-failina**.
 
 PDF peab sisaldama järgmisi kuvatõmmiseid:
 
-1.  Advanced Port Scanneri Mikrotiki ja Zabbix serveri skanni tulemus (1 ja 2);
-2.  Advanced Port Scanneri alamvõrgu skanni tulemus (3).
-3.  Zenmapi ühe hosti **Ports/Hosts** tulemus.
-4.  Zenmapi alamvõrgu skanni tulemus.
-5.  Zenmapi **Topology** vaade, kus on näha laborivõrk ja
-    `scanme.nmap.org`.
+1.  Advanced Port Scanneri Mikrotiki ja Zabbix serveri skanni tulemus (kuvatõmmised 1 ja 2);
+2.  Advanced Port Scanneri alamvõrgu skanni tulemus (3);
+3.  Zenmapi hostide **Ports/Hosts** tulemus (4 ja 5).
+4.  Zenmapi **Topology** vaade, kus on näha laborivõrk ja
+    `scanme.nmap.org` (6).
 
 Lisaks peavad töös olema:
 
--   Advanced Port Scanneriga skannitud MikroTik ruuteri ja Zabbix
-    serveri võrdlus ehk vastused küsimustele;
--   vähemalt kolme alamvõrgu hosti analüüsi tabel;
--   Zenmapi genereeritud Nmap käsk;
--   vähemalt kolme Nmap käsureavõtme selgitus;
--   `-sV` skanni tulemuste analüüs;
--   `-O` skanni tulemuste analüüs;
--   Advanced Port Scanneri ja Nmap/Zenmapi võrdlustabel;
--   vastused ülesandes olevatele **Mõtle** küsimustele.
+-   Advanced Port Scanneriga skanneeritud ruuteri ja Zabbix serveri tulemuste analüüs ehk vastused küsimustele (ülesande punkt 1.4);
+-   vähemalt kolme alamvõrgu hosti analüüsi tabel (ülesande punkt 1.6).
 
 !!! success "Töö tulemus" 
 
