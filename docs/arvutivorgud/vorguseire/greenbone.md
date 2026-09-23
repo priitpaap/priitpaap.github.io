@@ -16,7 +16,7 @@ Töö käigus õpid:
 -   leidma haavatavuse kirjelduse ja soovitatud parandusmeetmed.
 
 !!! warning "Oluline" 
-    Skaneeri ainult süsteeme ja võrke, mille skaneerimiseks on sul luba. Selles praktilises     töös kasuta ainult selleks ette nähtud laborivõrgu virtuaalmasinaid.
+    Skaneeri ainult süsteeme ja võrke, mille skaneerimiseks on sul luba. Selles praktilises     töös kasuta ainult selleks ette nähtud laborivõrgu virtuaalmasinaid. 
 
 ------------------------------------------------------------------------
 
