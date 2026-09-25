@@ -411,25 +411,6 @@ type jerrors
 
 ---
 
-## Praktilise töö soovituslik järjekord
-
-1. Vaata oma kodukataloogis olevaid peidetud faile käsuga `ls -la ~`.
-2. Leia `~/.bashrc` ja `~/.profile` või `~/.bash_profile`.
-3. Vaata nende sisu `less` või tekstiredaktoriga.
-4. Vaata käsuga `history` oma käsuajalugu.
-5. Otsi ajaloost `grep` abil mõnda varem kasutatud käsku.
-6. Vaata olemasolevaid aliaseid käsuga `alias`.
-7. Kontrolli käsunime `ll` käsuga `type`.
-8. Loo ajutine alias `ll='ls -lah'`.
-9. Kontrolli aliast ja kasuta seda.
-10. Eemalda alias käsuga `unalias`.
-11. Loo alias `jerrors='journalctl -p err -b -r'`.
-12. Lisa `jerrors` oma `~/.bashrc` faili.
-13. Laadi seadistus käsuga `source ~/.bashrc`.
-14. Kontrolli käsuga `type jerrors`, et alias töötab.
-
----
-
 ## Käskude spikker
 
 | Käsk | Eesmärk |
