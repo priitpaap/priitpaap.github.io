@@ -27,7 +27,7 @@ Pärast materjali läbimist oskad:
 
 ## Mis on shelli kasutajakeskkond?
 
-Kui Bash käivitub, võib ta lugeda erinevaid seadistusfaile. Nende abil saab määrata näiteks:
+Kui Bash käivitub, võib see lugeda erinevaid seadistusfaile. Nende abil saab määrata näiteks:
 
 - aliaseid;
 - shelli käitumist;
