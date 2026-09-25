@@ -25,8 +25,7 @@ Pärast materjali läbimist oskad:
 - eemaldada muutuja käsuga `unset`;
 - selgitada levinud muutujate `HOME`, `USER`, `SHELL`, `PWD`, `LANG`, `EDITOR` ja `PATH` eesmärki;
 - selgitada `PATH` muutuja tööpõhimõtet;
-- lisada kataloogi ajutiselt ja püsivalt `PATH` muutujasse;
-- selgitada, kuidas keskkonnamuutujad alamprotsessidele päranduvad.
+- lisada kataloogi ajutiselt ja püsivalt `PATH` muutujasse.
 
 ---
 
@@ -84,7 +83,7 @@ Muutuja väärtusele viitamiseks kasutatakse `$` märki:
 echo "$HOME"
 ```
 
-Muutuja nime saab kirjutada ka looksulgudega:
+Muutuja nime saab kirjutada ka loogeliste sulgudega:
 
 ```bash
 echo "${HOME}"
@@ -105,7 +104,7 @@ Tulemus võib olla:
 /home/student/raport.txt
 ```
 
-### Miks kasutatakse jutumärke?
+**Miks kasutatakse jutumärke?**
 
 Hea üldine harjumus on kirjutada:
 
@@ -255,7 +254,7 @@ või:
 printenv PATH
 ```
 
-### `echo` ja `printenv` ei tee päris sama asja
+`echo` ja `printenv` ei tee päris sama asja
 
 ```bash
 echo "$HOME"
@@ -395,18 +394,8 @@ Nüüd saab shell otsida programme ka kataloogist:
 /home/student/bin
 ```
 
-### Kas lisada algusesse või lõppu?
-
-Kataloogi võib lisada ka `PATH` algusesse:
-
-```bash
-export PATH="$HOME/bin:$PATH"
-```
-
-Sellisel juhul otsitakse `$HOME/bin` kataloogist **enne** olemasolevaid `PATH` katalooge.
-
 !!! warning "Järjekord on oluline"
-    Kui sama nimega programm leidub mitmes `PATH` kataloogis, kasutatakse tavaliselt esimest sobivat. Ära lisa ebausaldusväärseid katalooge `PATH` algusesse.
+    Kui sama nimega programm leidub mitmes `PATH` kataloogis, kasutatakse tavaliselt esimest sobivat.
 
 ---
 
@@ -466,30 +455,6 @@ source ~/.bashrc
 
 ---
 
-## Kasutajapõhine ja süsteemiülene seadistamine
-
-Oluline on eristada kahte eri mõistet:
-
-1. **kas muutuja on eksporditud keskkonda**;
-2. **millise ulatusega konfiguratsioonifailis muutuja määratakse**.
-
-Näiteks:
-
-```bash
-export EDITOR=nano
-```
-
-ekspordib muutuja praegusest shellist käivitatud protsessidele.
-
-Kui sama rida on kasutaja Bashi seadistusfailis, mõjutab see selle kasutaja sobivaid tulevasi shelliseansse.
-
-Süsteemiüleseid keskkonnaseadistusi saab Linuxis teha mitmel viisil ning täpne koht sõltub distributsioonist ja sellest, millistele protsessidele seadistus peab rakenduma.
-
-!!! warning "Ära võrdsusta `export`-i süsteemiülese seadistusega"
-    `export` määrab muutuja pärimise protsesside vahel. See ei määra iseenesest, kas seadistus on kasutajapõhine või süsteemiülene.
-
----
-
 ## Hea töövõte: vaata → muuda → kontrolli
 
 Keskkonnamuutujatega töötades:
@@ -509,25 +474,6 @@ command -v minuprogramm
 ```
 
 Kui tulemus on õige, lisa seadistus sobivasse käivitusfaili.
-
----
-
-## Praktilise töö soovituslik järjekord
-
-1. Vaata keskkonda käsuga `env`.
-2. Vaata eraldi `HOME`, `USER`, `SHELL`, `PWD`, `LANG` ja `PATH` väärtusi.
-3. Võrdle `echo "$HOME"` ja `printenv HOME` tulemusi.
-4. Loo shellimuutuja `TESTVAR="Hello World"`.
-5. Kuva selle väärtus.
-6. Käivita alam-shell ja kontrolli, kas muutuja on seal olemas.
-7. Välju alam-shellist, ekspordi `TESTVAR` ning korda katset.
-8. Eemalda muutuja käsuga `unset`.
-9. Vaata `PATH` väärtust ja tuvasta selles olevad kataloogid.
-10. Loo oma kodukataloogi kataloog `bin`.
-11. Lisa `$HOME/bin` ajutiselt `PATH` lõppu.
-12. Kontrolli uut `PATH` väärtust.
-13. Lisa õpetaja juhisel `PATH` seadistus sobivasse Bashi käivitusfaili.
-14. Laadi seadistus uuesti ja kontrolli tulemust.
 
 ---
 
@@ -570,32 +516,22 @@ Kui tulemus on õige, lisa seadistus sobivasse käivitusfaili.
 
 1. Mis on muutuja?
 2. Kuidas luua Bashis shellimuutuja?
-3. Miks ei tohi omistamisel panna `=` ümber tühikuid?
-4. Milleks kasutatakse `$` märki muutuja nime ees?
-5. Mis vahe on `$HOME` ja `${HOME}` kujul?
-6. Miks on muutuja kasutamisel sageli hea kasutada jutumärke?
-7. Mis on shellimuutuja?
-8. Mis on keskkonnamuutuja?
-9. Milleks kasutatakse `export` käsku?
-10. Kas `export VAR` muudab muutuja süsteemiüleseks? Põhjenda.
-11. Kuidas kontrollida keskkonda käsuga `env`?
-12. Milleks kasutatakse `printenv` käsku?
-13. Mis vahe on `echo "$HOME"` ja `printenv HOME` tööpõhimõttel?
-14. Milleks kasutatakse `unset` käsku?
-15. Kuidas pärivad alamprotsessid keskkonnamuutujaid?
-16. Kas alamprotsess saab tavaliselt oma keskkonna muutmisega muuta vanem-shelli keskkonda?
-17. Mida kirjeldavad `HOME`, `USER`, `SHELL`, `PWD`, `LANG` ja `EDITOR`?
-18. Milleks kasutatakse `PATH` muutujat?
-19. Kuidas on `PATH` kataloogid üksteisest eraldatud?
-20. Miks on `PATH` kataloogide järjekord oluline?
-21. Kuidas lisada `$HOME/bin` praeguse `PATH` lõppu?
-22. Mis vahe on kataloogi lisamisel `PATH` algusesse ja lõppu?
-23. Miks ei ole `.` pimesi `PATH`-i lisamine hea turvapraktika?
-24. Kuidas käivitada teadlikult praeguses kataloogis olev programm?
-25. Miks kaob terminalis tehtud `PATH` muudatus tavaliselt uue shelliseansi alustamisel?
-26. Kuidas saab `PATH` muudatuse püsivaks teha?
-27. Miks ei ole `~/.bashrc` ainus võimalik koht keskkonnamuutuja püsivaks seadistamiseks?
-28. Mis vahe on muutuja eksportimisel ja seadistuse süsteemiüleseks tegemisel?
+3. Milleks kasutatakse `$` märki muutuja nime ees?
+4. Mis vahe on `$HOME` ja `${HOME}` kujul?
+5. Miks on muutuja kasutamisel sageli hea kasutada jutumärke?
+6. Mis on shellimuutuja?
+7. Mis on keskkonnamuutuja?
+8. Milleks kasutatakse `export` käsku?
+9. Kas `export VAR` muudab muutuja süsteemiüleseks? Põhjenda.
+10. Kuidas kontrollida keskkonda käsuga `env`?
+11. Milleks kasutatakse `printenv` käsku?
+12. Milleks kasutatakse `unset` käsku?
+13. Mida kirjeldavad `HOME`, `USER`, `SHELL`, `PWD`, `LANG` ja `EDITOR`?
+14. Milleks kasutatakse `PATH` muutujat?
+15. Kuidas lisada `$HOME/bin` praeguse `PATH` lõppu?
+16. Miks kaob terminalis tehtud `PATH` muudatus tavaliselt uue shelliseansi alustamisel?
+17. Kuidas saab `PATH` muudatuse püsivaks teha?
+18. Miks ei ole `~/.bashrc` ainus võimalik koht keskkonnamuutuja püsivaks seadistamiseks?
 
 ---
 
@@ -617,13 +553,10 @@ Kõige olulisem põhimõte on:
 
 ## Allikad ja lisalugemine
 
-- [GNU Bash manual: Shell Variables](https://www.gnu.org/software/bash/manual/html_node/Shell-Variables.html){ target="_blank" rel="noopener" }
 - [GNU Bash manual: Bourne Shell Variables](https://www.gnu.org/software/bash/manual/html_node/Bourne-Shell-Variables.html){ target="_blank" rel="noopener" }
 - [GNU Bash manual: Environment](https://www.gnu.org/software/bash/manual/html_node/Environment.html){ target="_blank" rel="noopener" }
 - [GNU Bash manual: Bash Startup Files](https://www.gnu.org/software/bash/manual/html_node/Bash-Startup-Files.html){ target="_blank" rel="noopener" }
-- [Debian Manpages: bash(1)](https://manpages.debian.org/stable/bash/bash.1.en.html){ target="_blank" rel="noopener" }
 - [Debian Wiki: Environment Variables](https://wiki.debian.org/EnvironmentVariables){ target="_blank" rel="noopener" }
-- [Red Hat Enterprise Linux documentation](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/){ target="_blank" rel="noopener" }
 
 ---
 *Õppematerjali koostaja: Priit Paap, 2026*
