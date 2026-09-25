@@ -6,8 +6,8 @@ Linuxis paigaldatakse, uuendatakse ja eemaldatakse tarkvara tavaliselt **pakihal
 
 See materjal selgitab ühist loogikat. Praktilised käsud on eraldi materjalides:
 
-- [Tarkvarahaldus Debiani laadsetes distributsioonides](tarkvarahaldus-debiani-laadsetes.md)
-- [Tarkvarahaldus Red Hati laadsetes distributsioonides](tarkvarahaldus-red-hati-laadsetes.md)
+- Tarkvarahaldus Debiani laadsetes
+- Tarkvarahaldus Red Hati laadsetes
 
 ## Õpieesmärgid
 
