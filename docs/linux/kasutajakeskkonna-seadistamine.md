@@ -314,7 +314,7 @@ Kui alias oli ainult praeguses shellis, on see nüüd eemaldatud.
 
 ## Aliase püsivaks muutmine
 
-Kui soovid, et alias oleks olemas ka uue terminali avamisel, lisa see `~/.bashrc` faili.
+Aliased on ajutise iseloomuga. Masina taaskäivitamisel, väljalogimisel või terminaliakna sulgemisel kaob ka alias.  Kui soovid, et alias oleks olemas ka uue terminali avamisel, lisa see `~/.bashrc` faili.
 
 Näiteks:
 
@@ -481,8 +481,7 @@ type jerrors
 16. Miks kaob terminalis loodud alias tavaliselt uue shelliseansi alustamisel?
 17. Kuhu võib kasutaja püsiva aliase lisada?
 18. Milleks kasutatakse `source ~/.bashrc` käsku?
-19. Miks tuleb tundmatust allikast saadud faili enne `source` kasutamist kontrollida?
-20. Millal oleks aliase asemel mõistlik kasutada shellifunktsiooni või skripti?
+19. Millal oleks aliase asemel mõistlik kasutada shellifunktsiooni või skripti?
 
 ---
 
@@ -506,7 +505,6 @@ Kõige olulisem põhimõte on:
 - [GNU Bash manual: Aliases](https://www.gnu.org/software/bash/manual/html_node/Aliases.html){ target="_blank" rel="noopener" }
 - [GNU Bash manual: Bash History Facilities](https://www.gnu.org/software/bash/manual/html_node/Bash-History-Facilities.html){ target="_blank" rel="noopener" }
 - [Debian Manpages: bash(1)](https://manpages.debian.org/stable/bash/bash.1.en.html){ target="_blank" rel="noopener" }
-- [Red Hat Enterprise Linux documentation](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/){ target="_blank" rel="noopener" }
 
 ---
 *Õppematerjali koostaja: Priit Paap, 2026*
