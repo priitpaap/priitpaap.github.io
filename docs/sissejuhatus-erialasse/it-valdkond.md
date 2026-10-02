@@ -131,7 +131,7 @@ Spetsialistide vajadus ei tähenda, et igal algajal on lihtne esimest töökohta
 
     Tehnoloogia muudab ülesandeid ja nõutavaid oskusi. Kõigi IT-ametite tulevikku ei saa kindlalt ennustada, kuid tugevad alused aitavad uute tööriistadega kohaneda.
 
-## Mõisted kursuse sõnastikku
+## Teema mõisted
 
 | Mõiste | Lühiselgitus |
 | --- | --- |
