@@ -11,7 +11,7 @@ Dokument, foto, veebileht ja programm on kõik failid. Õpi eristama faili nime,
 - selgitada, miks sama HTML-fail paistab tekstiredaktoris ja brauseris erinev;
 - tuua näite, kuidas standardid aitavad andmeid eri programmides kasutada.
 
-Põhisisu on peatükkides 1–8. Täiendavad teemad ja näited leiad lõpus avatavatest lisalugemise plokkidest.
+Täiendavad teemad ja näited leiad lõpus avatavatest lisalugemise plokkidest.
 
 ## Fail, nimi ja laiend
 
@@ -303,7 +303,6 @@ Milline uus teadmine failide kohta oli sulle kõige üllatavam? Too üks näide,
     | Kadudega pakkimine | Mahu vähendamine osa info eemaldamisega; algset infot ei saa täielikult taastada. |
     | Faili signatuur | Failiformaadile iseloomulik baitide jada, mis aitab formaati tuvastada. |
 
-Täiendavad näited
 
 ## Lisalugemine
 
