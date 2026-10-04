@@ -42,32 +42,50 @@ Operatsioonisüsteemi sobivus sõltub seadme ja kasutaja vajadustest. Selles mat
 
 **Manussüsteem** on arvutisüsteem, mis on osa suuremast seadmest ja täidab selles kindlat ülesannet. Kõik manussüsteemid ei kasuta Linuxit ega isegi terviklikku operatsioonisüsteemi. Mõne seadme juhtimiseks piisab väikesest püsivaraprogrammist.
 
-Need kategooriad võivad kattuda. Sama Linuxi distributsiooni saab kasutada nii tööjaamas kui ka serveris. Serveri määrab eelkõige tema ülesanne: ta pakub teenust.
+Need kategooriad võivad ka kattuda. Sama Linuxi distributsiooni saab kasutada nii tööjaamas kui ka serveris. Serveri määrab eelkõige tema ülesanne: ta pakub teenust.
 
-### Operatsioonisüsteemide liigid töökorralduse ja eesmärgi järgi
+## 3. Operatsioonisüsteemide liigid töökorralduse ja eesmärgi järgi
 
 Operatsioonisüsteeme saab liigitada ka nende **töökorralduse ja peamise eesmärgi** järgi. Järgnevad neli liiki kuuluvad selle teema põhimõistete hulka. Õpi tundma nii nende eestikeelseid kui ka ingliskeelseid nimetusi.
 
-### 2.1. Pakktöötluslik operatsioonisüsteem — Batch Operating System
+### 3.1. Pakktöötluslik operatsioonisüsteem — Batch Operating System
 
-**Pakktöötluslik operatsioonisüsteem** korraldab ettevalmistatud tööde ehk **pakktööde** (*batch jobs*) automaatset täitmist. Kasutaja annab ette programmi, vajalikud andmed ja tööjuhised. Süsteem võtab tööd vastu, hoiab neid järjekorras ja suunab täitmisele. Tavapärasel täitmisel ei küsita kasutajalt iga sammu juures uut sisendit. [9], [10]
+**Pakktöötluslik operatsioonisüsteem** korraldab ettevalmistatud tööde ehk **pakktööde** (*batch jobs*) automaatset täitmist. Kasutaja annab ette programmi, vajalikud andmed ja tööjuhised. Süsteem võtab tööd vastu, hoiab neid järjekorras ja suunab täitmisele. Tavapärasel täitmisel ei küsita kasutajalt iga sammu juures uut sisendit.
 
-Töökorralduse võib jagada neljaks sammuks:
+!!! info "Info"
+    
+    Varased operatsioonisüsteemid olid peamiselt pakktöötluslikud. Nende ülesanne oli käivitada ettevalmistatud töid automaatselt üksteise järel, vähendades tööde vahele jäävat arvuti jõudeaega. Kasutaja esitas programmi ja andmed ning sai tulemused pärast töö täitmist. Näiteks 1956. aastal kasutusele võetud GM-NAA I/O, üks esimesi operatsioonisüsteeme, töötles ettevalmistatud tööde jada pakina.
+
+Töökorralduse pakkjaotuslikus OS-is jagada neljaks sammuks:
 
 1. Kasutaja või teine süsteem valmistab töö ja sisendandmed ette.
 2. Töö antakse süsteemile täitmiseks.
 3. Süsteem täidab töö, kui selle käivitamise tingimused ja vajalikud ressursid on olemas.
 4. Tulemus salvestatakse või väljastatakse ning töö õnnestumine või viga registreeritakse.
 
-**Näide:** ettevõtte töötajate palgaandmed kogutakse kokku ja palgaarvestus käivitatakse ühe pakktööna. Kasutaja vaatab tulemusi pärast töötlemist.
+```mermaid
+flowchart TB
+    J["Ettevalmistatud pakktööd"] --> Q["Tööde järjekord"]
+    Q --> S["OS valib järgmise töö"]
+    S --> E["Töö täitmine"]
+    E --> R["Tulemuste salvestamine või väljastamine"]
+    R -->|"Järgmine töö"| S
+```
+
+**Näited:** 
+
+- Ettevõtte töötajate palgaandmed kogutakse kokku ja palgaarvestus käivitatakse ühe pakktööna. Kasutaja vaatab tulemusi pärast töötlemist;
+- Paljude digitaalsete piltide töötlemine (suuruse muutmine, vesimärgi lisamine jne). Programmi käivitades moodustab pilditöötlustarkvara paljudest väikestest ülesannetest ühe suure ülesande (paki), mis edastatakse protsessorile täitmiseks;
+- Andmete varundamine ja taastamine. Suured ettevõtted ja andmekeskused kasutavad pakktöötlust, et ajastada regulaarseid andmete varundamisi ja vajadusel taastamisi.
+- Teaduslikud arvutused. Suured teadusprojektid, nagu ilmastikumudelid või genoomi järjestamine, kasutavad pakktöötlust, et töödelda suuri andmekogumeid.
 
 Pakktöötlus sobib mahukate ja korduvate tööde jaoks. Kasutaja võib tulemuse saamiseks oodata ning sisendandmete viga võib selguda alles töö käigus. Pakktöötlus ei nõua, et kõik tööd täidetaks alati ükshaaval: süsteem võib võimaluse korral täita mitut tööd paralleelselt.
 
-**Süsteeminäide:** IBM z/OS-i pakktöötluskeskkond. z/OS toetab ka teisi töötlusviise. Pakktöötlust kasutatakse samuti tänapäevases Windowsis ja Linuxis, näiteks automatiseeritud aruannete või failitöötluse jaoks. Üks pakktöö ei muuda kogu OS-i ainult pakktöötluslikuks. [10]
+Pakktöötlust kasutatakse samuti tänapäevases Windowsis ja Linuxis, näiteks automatiseeritud aruannete või failitöötluse jaoks. Üks pakktöö ei muuda aga kogu OS-i ainult pakktöötluslikuks. 
 
-### 2.2. Ajajaotuslik operatsioonisüsteem — Time-Sharing Operating System
+### 3.2. Ajajaotuslik operatsioonisüsteem — Time-Sharing Operating System
 
-**Ajajaotuslik operatsioonisüsteem** jagab protsessori tööaega mitme töö ja kasutaja vahel, et võimaldada **interaktiivset kasutamist**. Interaktiivne tähendab, et kasutaja annab sisendi ja saab töö käigus vastuse. [11]
+**Ajajaotuslik operatsioonisüsteem** jagab protsessori tööaega mitme töö ja kasutaja vahel, et võimaldada **interaktiivset kasutamist**. Interaktiivne tähendab, et kasutaja annab sisendi ja saab töö käigus vastuse.
 
 Lihtsustatud mudelis saab üks töö protsessorit kasutada lühikese **ajaviilu** (*time slice*) jooksul, seejärel saab võimaluse teine töö. Kiire vahetamine jätab kasutajale mulje, et tööd liiguvad edasi korraga. Tegelik ajajaotus arvestab ka näiteks tööde prioriteete ja seda, kas töö ootab andmeid. Mitmetuumalises protsessoris saab osa töid ka päriselt paralleelselt täita.
 
@@ -77,7 +95,7 @@ Ajajaotus võimaldab jagada ühte arvutit paljude tööde vahel. Koormuse kasvad
 
 **Süsteeminäited:** Unix ja Linux. Protsessoriaja jagamist kasutavad ka tänapäevased Windows ja macOS.
 
-### 2.3. Reaalajaline operatsioonisüsteem — Real-Time Operating System
+### 3.3. Reaalajaline operatsioonisüsteem — Real-Time Operating System
 
 **Reaalajaline operatsioonisüsteem**, ka **reaalajaoperatsioonisüsteem** ehk **RTOS** (*real-time operating system*), on kavandatud ajakriitiliste ülesannete täitmiseks. Tulemus peab olema nii sisuliselt õige kui ka saabuma nõutud **tähtaja** (*deadline*) jooksul. Oluline on reageerimisaja ennustatavus. [3], [12]
 
@@ -96,7 +114,7 @@ RTOS aitab korraldada ülesannete ajastamist ja prioriteete. Kogu süsteemi suut
 
     Võrdle kaht süsteemi: esimene vastab tavaliselt kiiresti, kuid vahel väga suure viivitusega; teise vastamisaeg püsib nõutud piirides. Ajaliselt kriitilise juhtimise puhul on oluline teise süsteemi ennustatavus. Kiire mänguarvuti ei ole selle kiiruse tõttu automaatselt reaalajasüsteem.
 
-### 2.4. Võrguoperatsioonisüsteem — Network Operating System
+### 3.4. Võrguoperatsioonisüsteem — Network Operating System
 
 **Võrguoperatsioonisüsteem** ehk **NOS** (*network operating system*) on selles liigituses operatsioonisüsteem, mille oluline ülesanne on pakkuda ja hallata võrgus ühiseid ressursse ning teenuseid.
 
@@ -115,7 +133,7 @@ Serverikeskkonnas kuuluvad nende hulka näiteks:
 
 Mõistet *network operating system* kasutatakse ka võrguseadmete, näiteks ruuterite ja kommutaatorite OS-ide kohta. Nende põhiülesanne on võrguliikluse juhtimine. Seetõttu tuleb termini tähendus siduda kontekstiga: kas räägitakse serveri võrguteenustest või võrguseadme juhtimisest.
 
-### 2.5. Nelja liigi võrdlus
+### 3.5. Nelja liigi võrdlus
 
 | Liik ja ingliskeelne nimetus | Peamine eesmärk | Millal tulemust vajatakse? | Näidisülesanne |
 | --- | --- | --- | --- |
@@ -130,7 +148,7 @@ Mõistet *network operating system* kasutatakse ka võrguseadmete, näiteks ruut
 
     Näiteks Linuxi server võib pakkuda võrgu kaudu jagatud kaustu, jagada protsessoriaega mitme kasutaja vahel ja käivitada öiseid pakktöid. Süsteemi kirjeldamisel selgita, millist omadust parasjagu võrdled.
 
-## 3. Operatsioonisüsteemide turujaotus
+## 4. Operatsioonisüsteemide turujaotus
 
 **Turujaotus** näitab, kui suure osa vaadeldavast turust või kasutusest moodustab mingi operatsioonisüsteem. Tulemus sõltub sellest, milliseid seadmeid, piirkonda ja ajavahemikku uuritakse ning mida mõõdetakse.
 
