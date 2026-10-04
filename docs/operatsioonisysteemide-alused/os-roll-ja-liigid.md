@@ -274,8 +274,6 @@ Rakendus peab sobima nii OS-i kui ka protsessori arhitektuuriga. Näiteks x86-64
 
 ## 9. Lühike arengulugu
 
-Ajajoone eesmärk on mõista muutusi. Kõiki aastaarve ei ole vaja pähe õppida.
-
 | Aeg | Oluline areng | Miks see oluline oli? |
 | --- | --- | --- |
 | **1956** | GM-NAA I/O, üks varaseid operatsioonisüsteeme. | Aitas automatiseerida tööde järjestikust täitmist. |

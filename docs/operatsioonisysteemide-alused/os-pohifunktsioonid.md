@@ -1,0 +1,291 @@
+# Operatsioonisüsteemi põhifunktsioonid
+
+Operatsioonisüsteem korraldab protsessori, mälu, failide ja seadmete kasutamist. Selles materjalis vaatame, mis toimub rakenduse käivitamisel ning kuidas mitu programmi saavad ühes arvutis töötada.
+
+!!! info "Õpieesmärgid"
+
+    Pärast materjali läbimist oskad:
+
+    - eristada programmi, protsessi ja lõime;
+    - selgitada protsessoriaja jagamise ja paralleelse töö erinevust;
+    - eristada RAM-i, salvestusruumi, virtuaalmälu ja vahemälu;
+    - kirjeldada failisüsteemi ja draiveri ülesannet;
+    - selgitada kasutajaõiguste ning protsesside eraldamise vajadust;
+    - seostada arvuti aeglustumise võimalikke põhjuseid ressursside kasutamisega.
+
+## 1. Programmist saab protsess
+
+**Programm** on käskude ja muu vajaliku sisu kogum, mille abil arvuti täidab ülesandeid. Paigaldatud rakenduse failid asuvad tavaliselt salvestusseadmel. Nende olemasolu ei tähenda veel, et rakendus töötab.
+
+**Protsess** on töötava programmi eksemplar koos selle täitmiseks vajalike ressursside ja olekuga. Protsessil on näiteks identifikaator, mäluaadressiruum ja kasutatavate failide kohta käiv teave. **PID** (*process identifier*) on protsessi identifitseeriv number. [1]
+
+Sama programmi võib käivitada rohkem kui ühe korra. Üks rakendus võib ka ise luua mitu protsessi.
+
+!!! example "Näide: brauser"
+
+    Brauser võib kasutada eraldi protsesse eri veebisisu, laienduste või muude komponentide jaoks. Seetõttu ei tähenda mitu brauseri nimega protsessi automaatselt viga. Samuti ei ole kindlat reeglit, et igale vahekaardile vastab täpselt üks protsess: jaotus sõltub brauseri ülesehitusest.
+
+### Lõim kui protsessi sees töötav täitmisüksus
+
+**Lõim** ehk *thread* on protsessi sees olev täitmisüksus. Protsessil on vähemalt üks lõim. Mitme lõimega protsess võib korraldada näiteks kasutajaliidese tööd ja andmete töötlemist eraldi. Sama protsessi lõimed jagavad selle mäluaadressiruumi ja mitmeid ressursse. [1]
+
+| Mõiste | Lihtne seletus | Näide |
+| --- | --- | --- |
+| **Programm** | Salvestatud tarkvara, mida saab käivitada. | Tekstiredaktori failid SSD-l. |
+| **Protsess** | Programmi töötav eksemplar koos oma ressurssidega. | Käivitatud tekstiredaktor. |
+| **Lõim** | Protsessi sees toimuv käskude täitmine. | Üks lõim reageerib sisendile, teine teeb taustal arvutust. |
+
+!!! tip "Pea meeles"
+
+    Programm, protsess ja lõim on seotud, kuid erinevad mõisted. Üks rakendus võib kasutada mitut protsessi ning ühes protsessis võib olla mitu lõime. Mitme lõime olemasolu ei taga iseenesest, et kõik need parajasti paralleelselt töötavad.
+
+## 2. Kuidas mitu programmi korraga töötavad?
+
+**Protsessor** ehk **CPU** täidab programmide käske. Operatsioonisüsteemi **planeerija** otsustab, milline töötamiseks valmis lõim saab protsessoriaega. Valikut võivad mõjutada prioriteedid, ootel tööd ja muud süsteemi reeglid. [2]
+
+Ühel protsessori täitmisüksusel saavad eri tööd kiiresti vahelduda. Seda nimetatakse **ajajaotuseks**. Kasutajale võib jääda mulje, et kõik rakendused töötavad ühel ajal.
+
+Mitme tuumaga protsessor võimaldab ka tegelikku **paralleelset täitmist**: eri tööd saavad töötada samal ajal eri tuumadel. Mõnel protsessoril on ühe füüsilise tuuma kohta mitu loogilist protsessorit. Alguses piisab teadmisest, et ajajaotus ja paralleelne töö on erinevad nähtused.
+
+!!! example "Näide: muusika ja faili allalaadimine"
+
+    Muusikapleier vajab aeg-ajalt protsessoriaega heliandmete töötlemiseks. Brauser vajab seda saabunud andmete käsitlemiseks. Kui brauser ootab võrgust järgmisi andmeid, saab CPU teha muud tööd. Ootamine ei tähenda, et kogu arvuti peab peatuma.
+
+### Protsessi olekud
+
+Protsess ei kasuta kogu oma eluea jooksul pidevalt protsessorit. Lihtsustatud mudelis eristame järgmisi olekuid:
+
+| Olek | Tähendus |
+| --- | --- |
+| **Loodud** | Protsessi tööks valmistatakse ressursse ette. |
+| **Valmis** | Protsess on valmis töötama, kuid ootab protsessoriaega. |
+| **Töötav** | Protsessi lõim täidab parajasti käske. |
+| **Ootel** | Töö jätkamiseks on vaja näiteks faili lugemise lõppu või uusi andmeid. |
+| **Lõpetatud** | Protsessi töö on lõppenud ja ressursid vabastatakse. |
+
+```mermaid
+flowchart TB
+    N["Loodud"] --> R["Valmis"]
+    R -->|Saab protsessoriaega| E["Töötav"]
+    E -->|Annab protsessoriaja üle| R
+    E -->|Ootab andmeid või sündmust| W["Ootel"]
+    W -->|Ootamine lõpeb| R
+    E -->|Töö lõpeb| T["Lõpetatud"]
+```
+
+See on õppimiseks mõeldud mudel. Tegelikud olekunimed ja üksikasjad sõltuvad operatsioonisüsteemist. Mitmelõimelise protsessi eri lõimed võivad olla eri olekutes.
+
+**Ennetav planeerimine** võimaldab OS-il töötava lõime täitmise katkestada ja anda protsessoriaega teisele. Rakendus ei pea ise otsustama, millal teised rakendused töötada tohivad. See ei tähenda, et OS lõpetab automaatselt iga pikalt arvutava programmi.
+
+## 3. Mäluhaldus: tööruum programmidele
+
+**Muutmälu** ehk **RAM** on tööruum, kus hoitakse töötamiseks vajalikke käske ja andmeid. Tavapärane RAM kaotab sisu toite kadumisel.
+
+**Salvestusseade**, näiteks SSD või kõvaketas, hoiab programme ja faile ka siis, kui arvuti on välja lülitatud. Andmete lugemine salvestusseadmelt on üldjuhul aeglasem kui nende kasutamine RAM-ist.
+
+| Võrdlus | RAM | SSD või kõvaketas |
+| --- | --- | --- |
+| Peamine ülesanne | Töötavate programmide ja kasutatavate andmete hoidmine. | Programmide ja failide püsiv salvestamine. |
+| Sisu toite kadumisel | Tavaliselt kaob. | Säilib. |
+| Näide | Avatud dokumendi töötlemiseks kasutatav mälu. | Salvestatud dokumendifail. |
+
+!!! warning "Salvestamine on vajalik"
+
+    See, et dokument on ekraanil avatud, ei tähenda, et kõik viimased muudatused on juba püsivalt salvestatud. Automaatse salvestamise olemasolu ja töö sõltuvad rakendusest ning selle seadistustest.
+
+OS eraldab protsessidele mälu, peab kasutuse üle arvestust ning vabastab mälu, mida enam vaja ei ole. Mälu kaitsmine aitab vältida olukorda, kus üks protsess muudab kogemata teise protsessi või OS-i andmeid.
+
+### Virtuaalmälu ja saalimine
+
+**Virtuaalmälu** pakub protsessile oma mäluaadressiruumi. OS ja riistvara seostavad selles kasutatavad aadressid tegeliku füüsilise mäluga. Nii saab mälukasutust korraldada ja protsesse üksteisest eraldada. [3]
+
+Osa mälus olevatest andmetest võib vajaduse korral ajutiselt salvestusseadmele viia ja hiljem tagasi tuua. Seda nimetatakse **saalimiseks**. Windowsis kasutatakse selleks muu hulgas saalefaili (*pagefile*), Linuxis saaleala või saalefaili (*swap*).
+
+Virtuaalmälu ei ole ainult saalefaili teine nimi. Protsesside virtuaalsed aadressiruumid on kasutusel ka siis, kui parajasti andmeid kettale ei saalita.
+
+!!! example "Näide: liiga palju avatud rakendusi"
+
+    Kui rakenduste aktiivsed andmed ei mahu RAM-i ja neid tuleb sageli salvestusseadmelt tagasi tuua, võib arvuti muutuda aeglaseks. Kettal oleva vaba ruumi suurendamine ei muuda seda sama kiireks kui piisava RAM-iga töötamine.
+
+### Vahemälu
+
+**Vahemälu** ehk *cache* hoiab ajutiselt andmeid, mille korduv kasutamine võiks muidu olla aeglasem. Näiteks saab OS hoida hiljuti loetud faili andmeid RAM-is, et neid ei peaks iga kord SSD-lt uuesti lugema. Protsessoril on lisaks oma kiired vahemälud.
+
+Kõigil neil mõistetel on eri tähendus: **RAM** on muutmälu, **virtuaalmälu** on mälukasutuse korraldamise mehhanism ja **vahemälu** kirjeldab andmete hoidmist kiirema korduskasutuse jaoks.
+
+??? info "Lisalugemine: leheküljed, raamid ja MMU"
+
+    Virtuaalne aadressiruum jagatakse mälulehekülgedeks ning füüsiline mälu vastava suurusega raamidesse. Leheküljetabelid kirjeldavad nende vastavusi. Lehekülje suurus sõltub süsteemist; üks levinud suurus on 4 KiB.
+
+    **MMU** (*memory management unit*) on riistvaraline mäluhaldusüksus, mis osaleb virtuaalsete aadresside teisendamisel füüsilisteks. OS korraldab selleks vajalikke tabeleid ja käsitleb olukordi, kus vajalik lehekülg ei ole kättesaadav. [4]
+
+    Põhiteema mõistmiseks ei ole vaja õppida aadressiteisenduse arvutusi. Oluline on aru saada, et programmi nähtav mäluaadress ei pea olema sama mis füüsiline aadress RAM-is.
+
+## 4. Failid, kaustad ja failisüsteem
+
+**Fail** on nimega käsitletav andmekogum. **Kaust** ehk **kataloog** aitab faile ja teisi kaustu korraldada. **Failitee** kirjeldab faili või kausta asukohta kataloogistruktuuris.
+
+**Failisüsteem** korraldab, kuidas failide sisu ja nende kohta käiv teave salvestusruumis paiknevad ning kuidas neid leitakse. Selline lisateave ehk **metaandmed** võib sisaldada näiteks faili nime, suurust, ajatemplite väärtusi ja ligipääsuõigusi.
+
+| Failisüsteem | Tüüpiline kasutuskoht | Põhiteadmine |
+| --- | --- | --- |
+| **NTFS** | Windowsi süsteemi- ja andmeköited. | Toetab näiteks kasutajaõigusi ja päevikut. |
+| **ext4** | Paljud Linuxi süsteemid. | Levinud Linuxi failisüsteem, mis toetab õigusi ja päevikut. |
+| **APFS** | Tänapäevased Mac-arvutid. | Apple'i failisüsteem, mis toetab näiteks krüpteerimist ja hetktõmmiseid. |
+| **exFAT** | Eemaldatavad andmekandjad. | Sobib suurte failide jaoks; toetatud paljudes arvutisüsteemides, kuid seadmete sobivust tuleb kontrollida. |
+| **FAT32** | Mitmesugused eemaldatavad andmekandjad ja eriseadmed. | Ühe faili suurus peab jääma alla 4 GiB. |
+
+Failisüsteemide omaduste kohta vaata allikaid [5]–[7]. **Päevik** aitab pärast ootamatut katkestust failisüsteemi muudatusi taastada; see ei asenda kasutaja failide varukoopiat.
+
+!!! example "Näide: fail ei mahu, kuigi vaba ruumi on"
+
+    FAT32-ga USB-mälupulgal võib olla 20 GiB vaba ruumi, kuid sinna ei saa kirjutada üht 6 GiB suurust faili. Piirang puudutab ühe faili suurust, mitte üksnes vaba ruumi hulka. Seda probleemi ei lahenda sama faili kopeerimise korduv proovimine.
+
+### Salvestusseade, partitsioon ja failisüsteem
+
+Need mõisted kirjeldavad eri asju:
+
+- **Salvestusseade** on näiteks terve SSD.
+- **Partitsioon** on salvestusseadmele määratud piirkond.
+- **Failisüsteem** korraldab failide hoidmist näiteks selle piirkonna sees.
+
+Ühel seadmel võib olla mitu partitsiooni. Failisüsteemi saab luua ka muudele salvestusruumi üksustele, kuid tavalisel paigaldatud arvutil on partitsioon hea lähtekoht nende mõistete eristamiseks.
+
+## 5. Seadmed, sisend ja väljund
+
+**Sisend** on andmete jõudmine süsteemi, näiteks klaviatuurilt, mikrofonist või võrgust. **Väljund** on andmete saatmine süsteemist välja, näiteks ekraanile, kõlarisse või printerisse. Ingliskeelne lühend **I/O** tähendab *input/output*.
+
+**Draiver** on tarkvarakomponent, mis võimaldab operatsioonisüsteemil konkreetse seadme või seadmeklassiga suhelda. Rakendus ei pea seetõttu tundma iga printeri või võrguadapteri kõiki tehnilisi üksikasju.
+
+!!! example "Näide: dokumendi printimine"
+
+    Tekstiredaktor annab printimistöö süsteemi prinditeenusele. Teenus korraldab töö järjekorda ja sobivad draiverid aitavad printeriga suhelda. Kui printer ei ole kättesaadav, võib töö jääda järjekorda, kuigi tekstiredaktor ise jätkab töötamist.
+
+### Katkestused ja süsteemikutsed
+
+Riistvara saab protsessorile teatada tähelepanu vajavast sündmusest **katkestuse** abil. Näiteks võib võrguadapter teatada andmete saabumisest. Süsteem käsitleb sündmust ja jätkab seejärel sobiva tööga. Katkestus ei tähenda tingimata rakenduse sulgemist.
+
+Kui rakendus vajab tuuma teenust, näiteks faili avamiseks, jõuab ta tavaliselt selleni programmeerimisliideste kaudu tehtava **süsteemikutsega**. Süsteemikutse on rakenduse teadlik teenusepäring; riistvarakatkestus on seadme teavitus. Nende täpne teostus sõltub protsessorist ja OS-ist.
+
+Tavalisi arvutuskäske täidab protsessor ka rakenduse kasutajarežiimis. Kõik rakenduse käsud ei läbi eraldi operatsioonisüsteemi. OS vahendab muu hulgas kaitstud toiminguid ja korraldab ressursside kasutamist. [8]
+
+## 6. Kasutajad, õigused ja protsesside kaitse
+
+Mitme kasutaja või rakendusega arvutis ei saa kõigile anda piiramatut ligipääsu kõigele.
+
+**Autentimine** kontrollib, kes kasutaja on. **Õiguste kontroll** määrab, mida tuvastatud kasutaja või protsess teha tohib.
+
+Näiteks saab OS lubada kasutajal lugeda mõnda faili, kuid keelata selle muutmise. Programm töötab talle antud õigustega ega tohi tavaliselt teiste protsesside mälu vabalt muuta.
+
+| Õigus | Mida see võimaldab? |
+| --- | --- |
+| **Lugemine** | Faili sisu vaadata või töödelda. |
+| **Kirjutamine** | Faili sisu muuta. |
+| **Käivitamine** | Sobivat faili programmina käivitada. |
+
+Täpne õiguste mudel sõltub OS-ist ja failisüsteemist. Ka faili kustutamise võimalus võib sõltuda kausta õigustest.
+
+**Tavakasutaja** ja **administraatori** õigused erinevad. Administraator saab muuta seadistusi, mille mõju ulatub kogu süsteemile. Tavakasutus ei vaja iga tegevuse jaoks selliseid õigusi.
+
+!!! warning "Õiguste küsimine on otsustuskoht"
+
+    Kui rakendus küsib suuremaid õigusi, tuleb mõista, miks neid vaja on. Näiteks kogu süsteemi mõjutav paigaldus võib õigusi vajada. Õiguste andmine ei muuda programmi automaatselt usaldusväärseks.
+
+Protsesside eraldamine aitab piirata vigade mõju. Ühe kasutajarakenduse kokkujooksmine ei pea kogu OS-i peatama. Kaitse ei ole siiski absoluutne: õigustega lubatud suhtlus, vigased süsteemikomponendid ja haavatavused võivad olukorda muuta.
+
+## 7. Protsesside suhtlus, teenused ja vead
+
+Eraldatud protsessidel on mõnikord vaja koostööd teha. OS pakub selleks kontrollitud suhtlusvõimalusi. Näiteks võib rakendus saata prinditeenusele töö või küsida teiselt protsessilt andmeid.
+
+**Teenus** on taustal vajalikku ülesannet täitev tarkvarakomponent. Linuxis kasutatakse paljude taustaprotsesside kohta ka sõna *daemon*. Teenus ei vaja oma tööks tingimata nähtavat rakendusakent.
+
+OS ja rakendused saavad registreerida sündmusi **logidesse**. Logi võib aidata selgitada, miks programm ei käivitunud või miks seadme kasutamine ebaõnnestus. Iga logikirje ei tähenda viga ning iga tõrge ei ole OS-i viga.
+
+## 8. Miks võib arvuti aeglaseks muutuda?
+
+| Tähelepanek | Üks võimalik seletus | Mida sellest järeldada? |
+| --- | --- | --- |
+| CPU kasutus on suur. | Rakendus teeb palju arvutusi. | See võib olla normaalne töö, mitte tingimata rike. |
+| RAM on tugevalt koormatud ja salvestusseade töötab palju. | Toimub sage saalimine või muu mahukas andmetöötlus. | Põhjust tuleb hinnata mitme näitaja abil. |
+| Salvestusruum on peaaegu täis. | Ajutiste failide ja uuenduste jaoks jääb vähe ruumi. | Vaba salvestusruum ja vaba RAM on erinevad asjad. |
+| Veebileht avaneb aeglaselt. | Võrk või kaugserver on aeglane. | Kohaliku arvuti CPU ei pruugi olla probleemi põhjus. |
+| Üks rakendus ei reageeri, teised töötavad. | Rakendus ootab midagi või on tõrkesse sattunud. | Kogu arvuti ei pruugi vajada taaskäivitamist. |
+
+**Pudelikael** on piirav tegur, mis takistab tegevuse kiiremat täitmist. Rohkem RAM-i ei paranda automaatselt aeglast võrku ning kiirem protsessor ei lahenda kõiki salvestusseadme probleeme.
+
+Ressursikasutust näitavad näiteks Windowsi tegumihaldur ja Linuxi süsteemimonitorid. Nende näidud kirjeldavad mõõtmise hetke, mitte üksinda kogu probleemi põhjust.
+
+## 9. Enesekontroll
+
+### 1. Tekstiredaktor on arvutisse paigaldatud, kuid suletud. Kas selle olemasolu tähendab, et redaktori protsess töötab?
+
+??? success "Vaata vastust"
+
+    Ei. Paigaldatud programmifailid ja töötav protsess on eri asjad. Rakenduse taustakomponent võib eraldi töötada, kuid paigaldus üksi ei tõenda redaktori protsessi töötamist.
+
+### 2. Miks võib tegumihalduris näha ühe rakenduse jaoks mitut protsessi?
+
+??? success "Vaata vastust"
+
+    Rakendus võib jagada oma töö eri protsesside vahel. See võimaldab näiteks komponente eraldada ja eri ülesandeid korraldada. Mitme protsessi olemasolu ei tõenda automaatselt riket.
+
+### 3. Mis erinevus on ajajaotusel ja paralleelsel täitmisel?
+
+??? success "Vaata vastust"
+
+    Ajajaotuse korral eri tööd vahelduvad ühe täitmisüksuse protsessoriajas. Paralleelse täitmise korral tehakse eri töid tegelikult samal ajal eri täitmisüksustel. Arvuti võib kasutada mõlemat.
+
+### 4. Kas kettal olev 100 GiB vaba ruumi tähendab, et arvutil ei saa olla RAM-i puudust?
+
+??? success "Vaata vastust"
+
+    Ei. Salvestusruum ja RAM täidavad eri ülesandeid. Saalimine võib võimaldada osa andmeid ajutiselt kettal hoida, kuid sage andmete liigutamine ei anna sama jõudlust kui piisav RAM.
+
+### 5. Kas virtuaalmälu on saalefaili sünonüüm?
+
+??? success "Vaata vastust"
+
+    Ei. Virtuaalmälu korraldab protsesside aadressiruume ja nende seostamist füüsilise mäluga. Saalefail on üks võimalik vahend osa andmete ajutiseks hoidmiseks salvestusseadmel.
+
+### 6. Miks ei mahu 6 GiB fail FAT32-mälupulgale, millel on 20 GiB vaba ruumi?
+
+??? success "Vaata vastust"
+
+    FAT32 ühe faili suuruse piirang jääb alla 4 GiB. Vaba ruumi on piisavalt, kuid fail on selle failisüsteemi jaoks liiga suur.
+
+### 7. Miks võib tekstiredaktor edasi töötada, kui printer ei vasta?
+
+??? success "Vaata vastust"
+
+    Printimist saab korraldada taustal prinditeenuse ja järjekorra kaudu. Printeri ootamine ei pea peatama redaktori ega teiste rakenduste kogu tööd.
+
+### 8. Kas CPU suur kasutus tähendab alati, et programm tuleb lõpetada?
+
+??? success "Vaata vastust"
+
+    Ei. Näiteks video töötlemine või mahukas arvutus võib CPU-d õiguspäraselt palju kasutada. Tuleb arvestada tegevuse eesmärki, kestust ja mõju muudele töödele.
+
+### 9. Mille poolest erinevad autentimine ja õiguste kontroll?
+
+??? success "Vaata vastust"
+
+    Autentimine kontrollib kasutaja identiteeti. Õiguste kontroll otsustab, mida see kasutaja teha tohib. Edukas sisselogimine ei anna automaatselt õigust lugeda kõiki teiste kasutajate faile.
+
+## Allikad ja lisalugemine
+
+Kontrollitud 03.10.2026.
+
+1. [Microsoft Learn: About Processes and Threads](https://learn.microsoft.com/en-us/windows/win32/procthread/about-processes-and-threads) — protsessid, lõimed ja nende ressursid.
+2. [Microsoft Learn: Scheduling](https://learn.microsoft.com/en-us/windows/win32/procthread/scheduling) — protsessoriaja jagamine ja prioriteedid.
+3. [Microsoft Learn: Virtual Address Spaces](https://learn.microsoft.com/en-us/windows-hardware/drivers/gettingstarted/virtual-address-spaces) — virtuaalne ja füüsiline mälu.
+4. [Linux Kernel Documentation: Page Tables](https://docs.kernel.org/mm/page_tables.html) — mäluleheküljed, leheküljetabelid ja MMU.
+5. [Microsoft Learn: File System Functionality Comparison](https://learn.microsoft.com/en-us/windows/win32/fileio/filesystem-functionality-comparison) — NTFS-i, exFAT-i ja FAT32 omadused.
+6. [Apple Support: File system formats available in Disk Utility on Mac](https://support.apple.com/guide/disk-utility/file-system-formats-dsku19ed921c/mac) — APFS ja muud failisüsteemid.
+7. [Linux Kernel Documentation: ext4](https://docs.kernel.org/filesystems/ext4/index.html) — ext4 failisüsteem.
+8. [Microsoft Learn: User Mode and Kernel Mode](https://learn.microsoft.com/en-us/windows-hardware/drivers/gettingstarted/user-mode-and-kernel-mode) — rakenduse ja tuuma töö eristamine.
+
+---
+
+Eelmine materjal: [Operatsioonisüsteemi roll ja liigid](operatsioonisusteemi_roll_ja_liigid.md).
+
+Järgmine materjal: [Alglaadimine ja operatsioonisüsteemi hooldus](alglaadimine_ja_os_hooldus.md).
