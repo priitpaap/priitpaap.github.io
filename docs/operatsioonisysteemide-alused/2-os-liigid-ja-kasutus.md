@@ -56,7 +56,7 @@ Operatsioonisüsteeme saab liigitada ka nende **töökorralduse ja peamise eesm�
     
     Varased operatsioonisüsteemid olid peamiselt pakktöötluslikud. Nende ülesanne oli käivitada ettevalmistatud töid automaatselt üksteise järel, vähendades tööde vahele jäävat arvuti jõudeaega. Kasutaja esitas programmi ja andmed ning sai tulemused pärast töö täitmist. Näiteks 1956. aastal kasutusele võetud GM-NAA I/O, üks esimesi operatsioonisüsteeme, töötles ettevalmistatud tööde jada pakina.
 
-Töökorralduse pakkjaotuslikus OS-is jagada neljaks sammuks:
+Pakktöötlusliku OS-i töökorralduse võib jagada neljaks sammuks:
 
 1. Kasutaja või teine süsteem valmistab töö ja sisendandmed ette.
 2. Töö antakse süsteemile täitmiseks.
@@ -75,7 +75,7 @@ flowchart TB
 **Näited:** 
 
 - Ettevõtte töötajate palgaandmed kogutakse kokku ja palgaarvestus käivitatakse ühe pakktööna. Kasutaja vaatab tulemusi pärast töötlemist;
-- Paljude digitaalsete piltide töötlemine (suuruse muutmine, vesimärgi lisamine jne). Programmi käivitades moodustab pilditöötlustarkvara paljudest väikestest ülesannetest ühe suure ülesande (paki), mis edastatakse protsessorile täitmiseks;
+- Piltide töötlemine. Kasutaja määrab pildikogumi ja vajalikud toimingud, näiteks mõõtmete muutmise või vesimärgi lisamise. Programm töötleb pilte automaatselt, ilma et kasutaja peaks iga pildi juures toimingut kordama;
 - Andmete varundamine ja taastamine. Suured ettevõtted ja andmekeskused kasutavad pakktöötlust, et ajastada regulaarseid andmete varundamisi ja vajadusel taastamisi.
 - Teaduslikud arvutused. Suured teadusprojektid, nagu ilmastikumudelid või genoomi järjestamine, kasutavad pakktöötlust, et töödelda suuri andmekogumeid.
 
@@ -87,19 +87,79 @@ Pakktöötlust kasutatakse samuti tänapäevases Windowsis ja Linuxis, näiteks 
 
 **Ajajaotuslik operatsioonisüsteem** jagab protsessori tööaega mitme töö ja kasutaja vahel, et võimaldada **interaktiivset kasutamist**. Interaktiivne tähendab, et kasutaja annab sisendi ja saab töö käigus vastuse.
 
-Lihtsustatud mudelis saab üks töö protsessorit kasutada lühikese **ajaviilu** (*time slice*) jooksul, seejärel saab võimaluse teine töö. Kiire vahetamine jätab kasutajale mulje, et tööd liiguvad edasi korraga. Tegelik ajajaotus arvestab ka näiteks tööde prioriteete ja seda, kas töö ootab andmeid. Mitmetuumalises protsessoris saab osa töid ka päriselt paralleelselt täita.
+**Multitegumtöö** (*multitasking*) tähendab, et operatsioonisüsteem võimaldab mitmel ülesandel edeneda samal ajavahemikul. Näiteks saab kasutaja kirjutada teksti, kuulata muusikat ja laadida alla faili. Ajajaotus aitab sellist töökorraldust võimaldada ning toetab ka mitme kasutaja samaaegset tööd.
+
+Lihtsustatud ajajaotuse mudelis saab üks töö protsessorit kasutada lühikese **ajaviilu ehk ajakvantumi** (*time slice*, *time quantum*) jooksul. Kvantum on sellele tööle eraldatud protsessoriaja lõik.
+
+Kui kvantum lõpeb ja teised tööd ootavad, võib OS poolelioleva töö peatada ning anda protsessori järgmisele tööle. Poolelioleva töö jätkamiseks vajalik olek salvestatakse ja järgmise töö olek taastatakse. Seda nimetatakse **kontekstivahetuseks** (*context switch*).
+
+Töö võib protsessori vabastada ka enne kvantumi lõppu, näiteks siis, kui peab ootama andmete saabumist kettalt või võrgust. Nii saab protsessor vahepeal täita mõnda teist tööd.
+
+```mermaid
+flowchart TB
+    S["OS-i ajastaja"] --> A["Töö A kasutab protsessorit"]
+    A -->|"Kvantum lõpeb"| K1["Kontekstivahetus"]
+    K1 --> B["Töö B kasutab protsessorit"]
+    B -->|"Kvantum lõpeb"| K2["Kontekstivahetus"]
+    K2 --> C["Töö C kasutab protsessorit"]
+    C -->|"Kvantum lõpeb: kontekstivahetus"| S
+```
+
+!!! example "Lihtsustatud näide"
+
+    Oletame, et kolm tööd saavad igaüks kuni 10 millisekundit protsessoriaega. Esmalt töötab esimene, seejärel teine ja siis kolmas. Seejärel võib järg taas esimese tööni jõuda.
+
+    10 millisekundit on siin näitlik väärtus. Tegelik ajastus sõltub OS-ist ja kasutatavast ajastusalgoritmist; kõigi tööde kvantumid ei pea olema võrdsed ega muutumatud.
+
+Kiire vahetamine jätab kasutajale mulje, et programmid töötavad korraga. Ühel protsessorituumal jagatakse täitmisaega tööde vahel; mitmetuumalises protsessoris saab osa töid ka päriselt paralleelselt täita. Täpsemalt ajastab OS tavaliselt protsesside **täitmislõimi** (*threads*), kuid siin kasutame lihtsustamiseks sõna „töö”.
+
+Ajajaotusliku süsteemi iseloomulikud omadused:
+
+- **Interaktiivsus:** kasutaja saab töö käigus käske anda ja vastuseid saada.
+- **Multitegumtöö:** mitu programmi või ülesannet saavad edeneda samal ajavahemikul.
+- **Mitme kasutaja tugi:** sama süsteemi ressursse saavad kasutada mitu kasutajat.
+- **Ressursside jagamine:** OS korraldab protsessoriaja, mälu ja seadmete kasutamist.
+- **Tööde kaitse:** kasutajate õigused ja protsesside mälu kaitse aitavad vältida teiste töö häirimist.
+- **Ajastamine:** järgmise töö valikul arvestatakse ajastusreegleid, prioriteete ja töö valmisolekut.
+- **Koormusest sõltuv reageerimine:** paljude aktiivsete tööde korral võib vastuse saamine aeglustuda.
 
 **Näide:** mitu õppijat kasutab samal ajal sama Linuxi serverit käsurea kaudu. Üks kirjutab teksti, teine käivitab programmi ja kolmas uurib faile. OS jagab ressursse ning kaitseb kasutajate tööd üksteise eest.
 
-Ajajaotus võimaldab jagada ühte arvutit paljude tööde vahel. Koormuse kasvades võib reageerimine aeglustuda. Protsessoriaja jagamist käsitleme lähemalt materjalis „Operatsioonisüsteemi põhifunktsioonid”.
+!!! tip "Multitegumtöö ja mitme kasutaja töö"
 
-**Süsteeminäited:** Unix ja Linux. Protsessoriaja jagamist kasutavad ka tänapäevased Windows ja macOS.
+    Multitegumtöö võib toimuda ka ühe kasutaja arvutis. Ajajaotusliku süsteemi oluline kasutusviis on võimaldada mitmel kasutajal jagada sama arvutit interaktiivselt.
+
+Multitegumtööd ning **protsessoriaja jagamist kasutavad kõik tänapäevased arvutite operatsioonisüsteemid** nagu Windows, Linux ja macOS.
+
+Protsessoriaja jagamist käsitleme lähemalt materjalis „Operatsioonisüsteemi põhifunktsioonid”.
 
 ### 3.3. Reaalajaline operatsioonisüsteem — Real-Time Operating System
 
-**Reaalajaline operatsioonisüsteem**, ka **reaalajaoperatsioonisüsteem** ehk **RTOS** (*real-time operating system*), on kavandatud ajakriitiliste ülesannete täitmiseks. Tulemus peab olema nii sisuliselt õige kui ka saabuma nõutud **tähtaja** (*deadline*) jooksul. Oluline on reageerimisaja ennustatavus. [3], [12]
+**Reaalajaline operatsioonisüsteem**, ka **reaalajaoperatsioonisüsteem** ehk **RTOS** (*real-time operating system*), on kavandatud ajakriitiliste ülesannete täitmiseks. Tulemus peab olema nii sisuliselt õige kui ka saabuma nõutud **tähtaja** (*deadline*) jooksul. Oluline on reageerimisaja ennustatavus.
 
-**Näide:** tööstusroboti juhtsüsteem peab anduri signaali põhjal mootori juhtkäsku muutma ettenähtud aja jooksul. Hilinenud õige käsk võib saabuda liiga hilja, et vältida seadme kahjustamist.
+Reaalajasüsteeme kasutatakse seal, kus õige tulemus peab saabuma **ettenähtud aja jooksul**. Hilinemine võib halvendada teenuse kvaliteeti, põhjustada seadme rikke või ohustada inimesi.
+
+```mermaid
+flowchart TB
+    A["Anduri signaal"] --> B["RTOS ajastab ajakriitilise töö"]
+    B --> C["Töö täitmine"]
+    C --> D{"Kas juhtkäsk valmis tähtajaks?"}
+    D -->|"Jah"| E["Õigeaegne reageerimine"]
+    D -->|"Ei"| F["Tähtaeg ületatud"]
+```
+
+**Näited:**
+
+- **Tööstusautomaatika:** tööstusroboti juhtsüsteem peab anduri signaali põhjal mootori juhtkäsku muutma ettenähtud aja jooksul. Hilinenud õige käsk võib saabuda liiga hilja, et vältida kokkupõrget või seadme kahjustamist.
+- **Autode juhtsüsteemid:** pidurite blokeerumisvastane süsteem ehk **ABS** jälgib rataste pöörlemist ja reguleerib pidurdamisel pidurisurvet. Juhtsüsteem peab reageerima piisavalt kiiresti ja ennustatavalt, et vältida rataste blokeerumist. Reaalajanõuded esinevad ka mootori ja teiste sõidukisüsteemide juhtimisel.
+- **Meditsiiniseadmed:** patsiendi jälgimisseade peab töötlema mõõteandmeid ja andma vajaduse korral häire nõutud aja jooksul. Kirurgilise roboti juhtimisel peab liikumine vastama juhtkäskudele täpselt ja ennustatavalt.
+- **Kosmosetehnika:** satelliidi või kosmosesondi juhtarvuti peab töötlema andurite andmeid ning juhtima näiteks seadme asendit ja side toimimist vastavalt ajalistele nõuetele.
+
+!!! info "RTOS on üks osa tervikust"
+
+    Neid ülesandeid saab teostada RTOS-i abil, kuid iga reaalajanõuetega seade ei kasuta tingimata operatsioonisüsteemi. Lihtsam juhtseade võib töötada ka otse riistvaral käivitatava programmiga.
+
+    RTOS üksi ei taga kogu süsteemi ohutust ega tähtaegade täitmist. Selleks peavad sobima ka riistvara, rakendustarkvara ja süsteemi ülesehitus.
 
 Reaalajanõuded võivad olla erineva rangusega:
 
@@ -108,45 +168,48 @@ Reaalajanõuded võivad olla erineva rangusega:
 
 RTOS aitab korraldada ülesannete ajastamist ja prioriteete. Kogu süsteemi suutlikkus tähtaegu täita sõltub ka riistvarast ning rakenduse ülesehitusest.
 
-**Süsteeminäited:** FreeRTOS ja QNX. Need sobivad näiteks juhtseadmete ja muude manussüsteemide tarkvara aluseks.
-
-!!! tip "Reaalajaline ei tähenda lihtsalt väga kiiret"
-
-    Võrdle kaht süsteemi: esimene vastab tavaliselt kiiresti, kuid vahel väga suure viivitusega; teise vastamisaeg püsib nõutud piirides. Ajaliselt kriitilise juhtimise puhul on oluline teise süsteemi ennustatavus. Kiire mänguarvuti ei ole selle kiiruse tõttu automaatselt reaalajasüsteem.
 
 ### 3.4. Võrguoperatsioonisüsteem — Network Operating System
 
-**Võrguoperatsioonisüsteem** ehk **NOS** (*network operating system*) on selles liigituses operatsioonisüsteem, mille oluline ülesanne on pakkuda ja hallata võrgus ühiseid ressursse ning teenuseid.
+**Võrguoperatsioonisüsteem** ehk **NOS** (*network operating system*) juhib võrguseadme, näiteks **ruuteri, kommutaatori või tulemüüri** tööd. See võimaldab seadistada võrguliikluse edastamist, turvareegleid ja seadme haldamist.
 
-Serverikeskkonnas kuuluvad nende hulka näiteks:
+Sõltuvalt seadmest ja selle võimalustest korraldab võrguoperatsioonisüsteem näiteks:
 
-- failide ja printerite jagamine;
-- kasutajakontode ning ligipääsuõiguste haldamine;
-- kasutajate sisselogimise kontrollimine;
-- võrguteenuste ja nende töö jälgimine.
+- **võrguliikluse edastamist:** kommutaatori töö ja ruutimise seadistamine;
+- **võrguliideste haldamist:** portide, IP-aadresside ja ühenduste seadistamine;
+- **võrgu jagamist:** virtuaalsete kohtvõrkude ehk **VLAN-ide** loomine;
+- **turvalisust:** lubatud liikluse ja haldajate ligipääsu kontrollimine;
+- **töö jälgimist:** ühenduste oleku, liiklusstatistika ja logide kuvamine;
+- **seadme haldamist:** seadistuste salvestamine ja tarkvara uuendamine.
 
-**Näide:** õppija logib kooli arvutisse oma kontoga ja avab serveris asuva isikliku kausta. Server kontrollib tema õigusi ning lubab kasutada talle määratud faile.
+**Näide:** kooli kommutaatoris (*switchis*) eraldatakse õppijate ja õpetajate seadmed eri VLAN-idesse. Ruuteris määratakse nende võrkude vaheline lubatud liiklus. Võrguoperatsioonisüsteem võimaldab haldajal need seadistused teha ja nende toimimist jälgida.
 
-**Süsteeminäited:** Windows Server või võrguteenuste jaoks seadistatud Linuxi server. Vajalikud teenused tuleb paigaldada ja seadistada. Näiteks Samba võimaldab Linuxis pakkuda võrgus failide ja printerite jagamist. [13], [14]
+**Võrguoperatsioonisüsteemide näited:**
 
-Ühine haldus lihtsustab ressursside jagamist, kuid teenuse katkestus või valesti määratud õigused võivad mõjutada paljusid kasutajaid.
+| Operatsioonisüsteem | Tootja | Kasutusnäited |
+| --- | --- | --- |
+| **Cisco IOS ja IOS XE** | Cisco | Ruuterid ja kommutaatorid; konkreetne OS sõltub seadmemudelist. |
+| **Junos OS** | Juniper | Ruuterid, kommutaatorid ja tulemüüriseadmed. |
+| **RouterOS** | MikroTik | Ruuterid ja muud toetatud võrguseadmed. |
+| **SwOS** | MikroTik | Toetatud MikroTiki kommutaatorite haldamine. |
+| **EOS** (*Extensible Operating System*) | Arista | Kommutaatorid, näiteks andmekeskuste võrkudes. |
 
-Mõistet *network operating system* kasutatakse ka võrguseadmete, näiteks ruuterite ja kommutaatorite OS-ide kohta. Nende põhiülesanne on võrguliikluse juhtimine. Seetõttu tuleb termini tähendus siduda kontekstiga: kas räägitakse serveri võrguteenustest või võrguseadme juhtimisest.
+Võrguseadet saab hallata näiteks **käsurea**, **veebiliidese** või **programmeerimisliidese ehk API** kaudu. Võimalused sõltuvad operatsioonisüsteemist ja seadmemudelist.
 
-### 3.5. Nelja liigi võrdlus
+!!! tip "Sarnased ülesanded, erinevad käsud"
+
+    Eri tootjate võrguseadmed võivad täita sarnaseid ülesandeid, kuid nende käsud ja seadistamise viisid erinevad. Seetõttu on oluline mõista nii võrgu tööpõhimõtteid kui ka konkreetse seadme operatsioonisüsteemi.
+
+Valesti määratud seadistus võib katkestada ühenduse või lubada soovimatut liiklust. Seetõttu on oluline kontrollida muudatusi, säilitada seadistuste varukoopiad ja paigaldada sobivad turvauuendused.
+
+### 3.5. Nelja liigi lühikokkuvõte
 
 | Liik ja ingliskeelne nimetus | Peamine eesmärk | Millal tulemust vajatakse? | Näidisülesanne |
 | --- | --- | --- | --- |
-| **Pakktöötluslik** — *Batch Operating System* | Ettevalmistatud tööde automaatne täitmine. | Pärast töö valmimist; kasutaja ei pea iga sammu juhtima. | Kuu palgaarvestus. |
+| **Pakktöötluslik** — *Batch Operating System* | Ettevalmistatud tööde automaatne täitmine. | Pärast töö valmimist; kasutaja ei pea iga sammu juhtima. | Suurele hulgale piltidele vesimärgi lisamine. |
 | **Ajajaotuslik** — *Time-Sharing Operating System* | Ressursside jagamine ja interaktiivse töö võimaldamine. | Kasutaja ootab töö käigus piisavalt kiiret vastust. | Mitu kasutajat töötab samas serveris. |
 | **Reaalajaline** — *Real-Time Operating System*, **RTOS** | Ajaliselt kriitiliste ülesannete ennustatav täitmine. | Määratud tähtaja jooksul. | Tööstusroboti juhtimine. |
-| **Võrguoperatsioonisüsteem** — *Network Operating System*, **NOS** | Ühiste võrguressursside ja teenuste pakkumine ning haldamine. | Vastavalt pakutava teenuse vajadustele. | Koolis kontode ja jagatud kaustade haldamine. |
-
-!!! info "Liigid võivad kattuda"
-
-    Need nimetused kirjeldavad eri rõhuasetusi. Pakktöötlus ja ajajaotus kirjeldavad töökorraldust, reaalajalisus ajalisi nõudeid ning võrguoperatsioonisüsteem teenuste pakkumise rolli.
-
-    Näiteks Linuxi server võib pakkuda võrgu kaudu jagatud kaustu, jagada protsessoriaega mitme kasutaja vahel ja käivitada öiseid pakktöid. Süsteemi kirjeldamisel selgita, millist omadust parasjagu võrdled.
+| **Võrguoperatsioonisüsteem** — *Network Operating System*, **NOS** | Võrguseadme töö, liikluse edastamise ja turvareeglite haldamine. | Võrguliiklust töödeldakse pidevalt, vastavalt seadme ülesannetele. | Kooli kommutaatoris VLAN-ide seadistamine ja ruuteris võrkudevahelise liikluse juhtimine. |
 
 ## 4. Operatsioonisüsteemide turujaotus
 
@@ -156,15 +219,9 @@ Mõistet *network operating system* kasutatakse ka võrguseadmete, näiteks ruut
 
     Arvutite, telefonide ja tahvelarvutite andmed pärinevad **Statcounter Global Statsist** ning kirjeldavad **2026. aasta septembri ülemaailmset veebikasutust**. Veebisaitide serverite andmed pärinevad **W3Techsist seisuga 4. oktoober 2026**.
 
-    Need on eri meetoditega koostatud ülevaated. Maailma jaotus võib erineda Eesti, sinu kooli või konkreetse ettevõtte jaotusest.
-
 Statcounter hindab operatsioonisüsteemide osakaalu oma mõõtmises osalevate veebisaitide **lehevaatamiste** põhjal. See tähendab, et aktiivselt veebis surfav seade võib anda rohkem lehevaatamisi kui harva kasutatav seade.
 
-Näiteks Windowsi 76,36% osakaal arvutite tabelis tähendab, et ligikaudu 76 lehevaatamist sajast tehti Windowsiga arvutist. See ei tähenda, et täpselt 76 arvutit sajast kasutaks Windowsi.
-
-**Veebikasutuse osakaal, seadmete arv ja uute seadmete müük on erinevad näitajad.** Allpool olevad tabelid ei mõõda müüki ega loenda kõiki maailma seadmeid.
-
-### Laua- ja sülearvutid
+### 4.1. Laua- ja sülearvutid
 
 Statcounteri arvutite ehk *desktop*-kategoorias on Windows suurima osakaaluga operatsioonisüsteem.
 
@@ -183,7 +240,7 @@ pie showData
     "ChromeOS" : 2.31
 ```
 
-### Nutitelefonid
+### 4.2. Nutitelefonid
 
 Telefonide veebikasutuses on kaks peamist operatsioonisüsteemi: Android ja iOS.
 
@@ -200,7 +257,7 @@ pie showData
     "Muud" : 0.02
 ```
 
-### Tahvelarvutid
+### 4.3. Tahvelarvutid
 
 Tahvelarvutite jaotus erineb telefonide jaotusest: Apple'i ja Androidi osakaalud on selles ülevaates peaaegu võrdsed.
 
@@ -210,7 +267,7 @@ Tahvelarvutite jaotus erineb telefonide jaotusest: Apple'i ja Androidi osakaalud
 | Android | 49,57% |
 | Muud kokku | 0,08% |
 
-### Seadmerühmad koos
+### 4.4. Seadmerühmad koos
 
 Kui vaadata Statcounteri mõõdetud veebikasutust eri seadmerühmade peale kokku, on esikohal Android.
 
@@ -223,27 +280,23 @@ Kui vaadata Statcounteri mõõdetud veebikasutust eri seadmerühmade peale kokku
 | Linux | 1,73% |
 | Ülejäänud kategooriad kokku, arvutatud | 0,93% |
 
-Apple'i arvutite rühm on arvutatud **4,05% + 2,32% = 6,37%**. Ülejäänud kategooriate osakaal on saadud tabeli teiste rühmade summa lahutamisel 100%-st.
-
 See tabel arvestab seadmerühmade lehevaatamisi koos. See ei ole eelnevate tabelite protsentide lihtne keskmine ega hõlma kõiki maailma servereid ja nutiseadmeid.
 
-### Veebisaitide serverite operatsioonisüsteemid
+### 4.5. Serverite operatsioonisüsteemid
 
-**Server** pakub teistele seadmetele teenuseid. Näiteks veebiserver saadab sinu brauserile veebilehe sisu. Serverite operatsioonisüsteemide jaotus võib kasutajate arvutite jaotusest tugevalt erineda.
+**Server** pakub teistele seadmetele teenuseid. Näiteks veebiserver saadab sinu brauserile veebilehe sisu. Serverite operatsioonisüsteemide jaotus võib kasutajate arvutite jaotusest tugevalt erineda. Kohtvõrgus kasutatavate serverite kohta on statistikat keeruline teha, aga saame vaadata veebiservereid.
 
 W3Techs uurib veebisaitide kasutatavaid tehnoloogiaid. Järgnev tabel näitab osakaalu **veebisaitide hulgas, mille serveri operatsioonisüsteem on W3Techsile teada**.
 
 | Operatsioonisüsteemide rühm | Seda rühma kasutavate veebisaitide osakaal |
 | --- | ---: |
-| Unix ja Unixi-laadsed süsteemid | 92,1% |
+| Unix ja Unixi-laadsed süsteemid (sh Linux ja BSD) | 92,1% |
 | Windows | 8,1% |
 
-W3Techsi **Unix**-rühm hõlmab ka Linuxit ja BSD-süsteeme. **92,1% ei ole Linuxi eraldi turuosa.**
-
-Üks veebisait võib kasutada mitut operatsioonisüsteemi, mistõttu osakaalude summa võib ületada 100%. See ülevaade ei loenda kõiki füüsilisi ega virtuaalseid servereid ning ei kirjelda eraldi näiteks kooli failiservereid või ettevõtte sisevõrku.
+Üks veebisait võib kasutada mitut operatsioonisüsteemi, mistõttu osakaalude summa võib ületada 100%. 
 
 
-### Mida sellest järeldada?
+### 4.6. Mida sellest järeldada?
 
 - **Täpsusta alati keskkonda.** Küsimusele „Milline OS on kõige levinum?” vastamiseks peab teadma, kas räägitakse arvutitest, telefonidest või serveritest.
 - **Väiksem osakaal ühes keskkonnas ei tähenda vähest tähtsust kõikjal.** Näiteks Linuxi väike osakaal arvutite veebikasutuses ei kirjelda selle rolli serverites.
@@ -251,7 +304,7 @@ W3Techsi **Unix**-rühm hõlmab ka Linuxit ja BSD-süsteeme. **92,1% ei ole Linu
 - **Populaarsus ei määra sobivust.** OS-i valikul loevad ka vajalike rakenduste tugi, riistvara, turvauuendused, hind ja kasutusotstarve.
 - **Vaata andmete kuupäeva ja allikat.** Osakaalud muutuvad ning eri mõõtmismeetodid võivad anda erineva tulemuse.
 
-## 4. Kuidas operatsioonisüsteemi valida?
+## 5. Kuidas operatsioonisüsteemi valida?
 
 Sobiv süsteem peab vastama kasutaja ja seadme vajadustele. Valiku tegemisel tuleb arvestada järgmisega:
 
@@ -264,9 +317,9 @@ Sobiv süsteem peab vastama kasutaja ja seadme vajadustele. Valiku tegemisel tul
 
 **Avatud lähtekood** tähendab, et lähtekood on kättesaadav ja litsents lubab seda kindlatel tingimustel kasutada, muuta ning levitada. See ei tähenda automaatselt tasuta tugiteenust. **Omandusliku tarkvara** muutmise ja levitamise võimalusi piirab tavaliselt tootja litsents ning lähtekood ei ole üldjuhul avalik.
 
-Rakendus peab sobima nii OS-i kui ka protsessori arhitektuuriga. Näiteks x86-64 ja ARM64 on erinevad arhitektuurid. Failivormingu toetamine ja rakenduse käivitamine on samuti eri asjad: foto võib avaneda mitmes OS-is, kuid ühe OS-i jaoks tehtud programm ei pruugi teises otse töötada.
+**Rakendus peab sobima nii OS-i kui ka protsessori arhitektuuriga.** Näiteks x86-64 ja ARM64 on erinevad arhitektuurid. Failivormingu toetamine ja rakenduse käivitamine on samuti eri asjad: foto võib avaneda mitmes OS-is, kuid ühe OS-i jaoks tehtud programm ei pruugi teises otse töötada.
 
-## 5. Enesekontroll
+## 6. Enesekontroll
 
 Vasta kõigepealt ise. Seejärel ava vastus ja võrdle oma põhjendust.
 
@@ -314,22 +367,17 @@ Vasta kõigepealt ise. Seejärel ava vastus ja võrdle oma põhjendust.
 - A. Öösel töödeldakse automaatselt päeva jooksul kogutud arveid.
 - B. Mitu kasutajat sisestab samas serveris käske ja ootab töö käigus vastuseid.
 - C. Juhtseade peab anduri signaalile reageerima määratud tähtaja jooksul.
-- D. Kool haldab serveris kasutajakontosid ja jagatud kaustu.
+- D. Koolis luuakse õpetajate ja õpilaste võrgule eraldi VLAN-id.
 
 ??? success "Vaata vastust"
 
     - **A: pakktöötluslik** — ettevalmistatud andmeid töödeldakse automaatselt.
     - **B: ajajaotuslik** — süsteem jagab ressursse mitme kasutaja interaktiivseks tööks.
     - **C: reaalajaline** — vastus peab valmima määratud tähtajaks.
-    - **D: võrguoperatsioonisüsteem** — süsteem pakub ja haldab võrgus ühiseid ressursse.
+    - **D: võrguoperatsioonisüsteem** — võrguseadme OS võimaldab seadistada VLAN-e ja korraldada võrguliikluse edastamist.
 
     Tegelik süsteem võib toetada korraga mitut neist omadustest. Siin määrab vastuse kirjeldatud ülesande põhirõhk.
 
-### 8. Kas võrguoperatsioonisüsteem võib olla ka ajajaotuslik ja täita pakktöid?
-
-??? success "Vaata vastust"
-
-    Jah. Näiteks Linuxi server võib pakkuda võrgu kaudu faile, jagada protsessoriaega mitme kasutaja tööde vahel ning teha öösel automaatset aruandetöötlust. Liigid kirjeldavad süsteemi erinevaid omadusi ega pea üksteist välistama.
 
 ## Kokkuvõte
 
@@ -337,8 +385,8 @@ Vasta kõigepealt ise. Seejärel ava vastus ja võrdle oma põhjendust.
 - Pakktöötluslik OS (*Batch Operating System*) korraldab ettevalmistatud tööde automaatset täitmist.
 - Ajajaotuslik OS (*Time-Sharing Operating System*) jagab protsessoriaega mitme töö ja kasutaja interaktiivseks tööks.
 - Reaalajaline OS (*Real-Time Operating System*, RTOS) toetab ajakriitiliste ülesannete ennustatavat täitmist nõutud tähtaegade järgi.
-- Võrguoperatsioonisüsteem (*Network Operating System*, NOS) pakub ja haldab ühiseid võrguressursse ning teenuseid.
-- Liigid võivad kattuda: sama server võib pakkuda võrguteenuseid, jagada protsessoriaega ja täita pakktöid.
+- Võrguoperatsioonisüsteem (*Network Operating System*, NOS) juhib võrguseadme, näiteks **ruuteri, kommutaatori või tulemüüri** tööd.
+- Liigid võivad kattuda: sama server võib jagada protsessoriaega ja täita pakktöid.
 - OS-ide levik sõltub seadmerühmast ja mõõtmismeetodist. Veebikasutuse osakaal ei võrdu seadmete arvu ega müügiosakaaluga.
 - OS-i valikul loevad rakendused, riistvara, kasutusotstarve, turvauuendused, litsents ja kasutajate ning haldajate oskused.
 
@@ -358,38 +406,38 @@ Vasta kõigepealt ise. Seejärel ava vastus ja võrdle oma põhjendust.
 | Pakktöö (*batch job*) | Ettevalmistatud töö, mida täidetakse automaatselt ilma iga sammu juures kasutajalt sisendit küsimata. |
 | Pakktöötluslik operatsioonisüsteem (*Batch Operating System*) | OS, mille töökorraldus keskendub ettevalmistatud pakktööde vastuvõtmisele ja automaatsele täitmisele. |
 | Ajajaotuslik operatsioonisüsteem (*Time-Sharing Operating System*) | OS, mis jagab protsessoriaega mitme töö ja kasutaja interaktiivseks tööks. |
-| Ajaviil (*time slice*) | Lühike ajavahemik, mille jooksul saab töö ajajaotuse korral protsessorit kasutada. |
+| Ajaviil ehk ajakvantum (*time slice*, *time quantum*) | Tööle eraldatud protsessoriaja lõik, mille järel võib OS anda protsessori teisele tööle. |
 | Reaalajaline operatsioonisüsteem; RTOS (*Real-Time Operating System*) | OS, mis on kavandatud ajakriitiliste ülesannete ennustatavaks täitmiseks nõutud ajaliste piirangute järgi. |
 | Tähtaeg (*deadline*) | Ajaline piir, milleks ülesanne või vajalik vastus peab olema valmis. |
-| Võrguoperatsioonisüsteem; NOS (*Network Operating System*) | OS, mis pakub ja haldab ühiseid võrguressursse ja teenuseid; võrguseadme kontekstis selle seadme OS. |
+| Võrguoperatsioonisüsteem; NOS (*Network Operating System*) | OS, mis juhib võrguseadme tööd ning võimaldab seadistada liikluse edastamist, turvareegleid ja seadme haldamist. |
 | Server (*server*) | Seade või tarkvara, mis pakub teistele seadmetele või kasutajatele teenust. |
 | Manussüsteem (*embedded system*) | Arvutisüsteem, mis on osa suuremast seadmest ja täidab selles kindlat ülesannet. |
 | Linuxi distributsioon (*Linux distribution*) | Terviklik tarkvarakomplekt, mis ühendab Linuxi tuuma süsteemitööriistade ja muu tarkvaraga, näiteks Debian. |
-| Turujaotus (*market share*) | Vaadeldava süsteemi osakaal kindlas turus või kasutuses; selle tähendus sõltub mõõtmismeetodist. |
 | Avatud lähtekood (*open source*) | Lähtekood on kättesaadav ja litsents lubab seda kindlatel tingimustel kasutada, muuta ning levitada. |
 | Omanduslik tarkvara (*proprietary software*) | Tarkvara, mille muutmist ja levitamist piirab tootja litsents ning mille lähtekood ei ole üldjuhul avalik. |
 | Litsents (*license*) | Tingimused, mis määravad tarkvara kasutamise, muutmise ja levitamise õigused. |
 | Protsessori arhitektuur (*processor architecture*) | Protsessori töö ja toetatud masinkäskude ülesehitus, näiteks x86-64 või ARM64. |
 | Tööjaam (*workstation*) | Arvuti, mida inimene kasutab oma tööks ja rakenduste käitamiseks. |
+| Multitegumtöö (*multitasking*) | Mitme programmi või ülesande edenemine samal ajavahemikul OS-i korraldatud ressursijaotuse abil. |
+| Kontekstivahetus (*context switch*) | Ühe töö täitmisoleku salvestamine ja teise töö oleku taastamine, et vahetada protsessoril täidetavat tööd. |
+| Ajastaja (*scheduler*) | OS-i komponent, mis valib, milline täitmiseks valmis töö saab järgmisena protsessorit kasutada. |
+| Täitmislõim (*thread*) | Programmi täitmise üksus protsessi sees. Ühes protsessis võib olla mitu lõime. |
+| Prioriteet (*priority*) | Töö suhteline tähtsus, mida ajastaja võib protsessoriaja jagamisel arvestada. |
+| Virtuaalne kohtvõrk; VLAN (*Virtual Local Area Network*) | Loogiliselt eraldatud kohtvõrk, mis võimaldab jagada sama füüsilise kommutaatorivõrgu eraldi võrkudeks. |
+| Programmeerimisliides; API (*Application Programming Interface*) | Määratletud viis, mille kaudu programmid saavad kasutada teise tarkvara või seadme pakutavaid toiminguid. |
 
 ## Allikad ja lisalugemine
 
 1. [Debian: Definitions and overview](https://www.debian.org/doc/manuals/debian-faq/basic-defs.en.html){ target="_blank" rel="noopener" }.
 2. [Android Developers: Platform architecture](https://developer.android.com/guide/platform){ target="_blank" rel="noopener" }.
-3. [FreeRTOS: What is FreeRTOS?](https://freertos.org/Why-FreeRTOS/What-is-FreeRTOS){ target="_blank" rel="noopener" }.
-4. [Statcounter – arvutid, september 2026](https://gs.statcounter.com/os-market-share/desktop/worldwide/#monthly-202609-202609-bar){ target="_blank" rel="noopener" }.
-5. [Statcounter – telefonid, september 2026](https://gs.statcounter.com/os-market-share/mobile/worldwide/#monthly-202609-202609-bar){ target="_blank" rel="noopener" }.
-6. [Statcounter – tahvelarvutid, september 2026](https://gs.statcounter.com/os-market-share/tablet/worldwide/#monthly-202609-202609-bar){ target="_blank" rel="noopener" }.
-7. [Statcounter – kõik platvormid, september 2026](https://gs.statcounter.com/os-market-share/worldwide/#monthly-202609-202609-bar){ target="_blank" rel="noopener" }.
-8. [W3Techs – veebisaitide operatsioonisüsteemid](https://w3techs.com/technologies/overview/operating_system){ target="_blank" rel="noopener" }.
-9. [IBM: What are batch jobs?](https://www.ibm.com/think/topics/batch-jobs){ target="_blank" rel="noopener" } — pakktööde olemus ja kasutamine.
-10. [IBM: Processing work on z/OS](https://www.ibm.com/docs/en/zos-basic-skills?topic=zc-processing-work-zos-how-system-starts-manages-batch-jobs){ target="_blank" rel="noopener" } — pakktööde vastuvõtmine, ajastamine ja täitmine z/OS-is.
-11. [IBM: Time-sharing](https://www.ibm.com/history/time-sharing){ target="_blank" rel="noopener" } — ajajaotuse põhimõte ja mitme kasutaja töö.
-12. [QNX: What is Real Time and Why Do I Need It?](https://www.qnx.com/developers/docs/8.0/com.qnx.doc.neutrino.sys_arch/topic/what_is_realtime.html){ target="_blank" rel="noopener" } — reaalajanõuded ja ennustatav reageerimine.
-13. [Microsoft Learn: What is Windows Server?](https://learn.microsoft.com/en-us/windows-server/get-started/overview){ target="_blank" rel="noopener" } — serveriteenused ja keskne haldus.
-14. [Samba: What is Samba?](https://www.samba.org/samba/what_is_samba.html){ target="_blank" rel="noopener" } — failide ja printerite jagamine Linuxi ja Unixi-laadsetes süsteemides.
-
-Eelmine materjal: [Operatsioonisüsteemi olemus ja kasutamine](operatsioonisusteemi_olemus_ja_kasutamine.md).
+3. [Statcounter – arvutid, september 2026](https://gs.statcounter.com/os-market-share/desktop/worldwide/#monthly-202609-202609-bar){ target="_blank" rel="noopener" }.
+4. [Statcounter – telefonid, september 2026](https://gs.statcounter.com/os-market-share/mobile/worldwide/#monthly-202609-202609-bar){ target="_blank" rel="noopener" }.
+5. [Statcounter – tahvelarvutid, september 2026](https://gs.statcounter.com/os-market-share/tablet/worldwide/#monthly-202609-202609-bar){ target="_blank" rel="noopener" }.
+6. [Statcounter – kõik platvormid, september 2026](https://gs.statcounter.com/os-market-share/worldwide/#monthly-202609-202609-bar){ target="_blank" rel="noopener" }.
+7. [W3Techs – veebisaitide operatsioonisüsteemid](https://w3techs.com/technologies/overview/operating_system){ target="_blank" rel="noopener" }.
+8. [IBM: What are batch jobs?](https://www.ibm.com/think/topics/batch-jobs){ target="_blank" rel="noopener" } — pakktööde olemus ja kasutamine.
+9. [IBM: Time-sharing](https://www.ibm.com/history/time-sharing){ target="_blank" rel="noopener" } — ajajaotuse põhimõte ja mitme kasutaja töö.
+10. [QNX: What is Real Time and Why Do I Need It?](https://www.qnx.com/developers/docs/8.0/com.qnx.doc.neutrino.sys_arch/topic/what_is_realtime.html){ target="_blank" rel="noopener" } — reaalajanõuded ja ennustatav reageerimine.
 
 ---
 *Õppematerjali koostaja: Priit Paap, 2026*
