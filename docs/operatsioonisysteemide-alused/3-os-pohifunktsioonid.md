@@ -171,7 +171,7 @@ Need mõisted kirjeldavad eri asju:
 
 ## 5. Seadmed, sisend ja väljund
 
-**Sisend** on andmete jõudmine süsteemi, näiteks klaviatuurilt, mikrofonist või võrgust. **Väljund** on andmete saatmine süsteemist välja, näiteks ekraanile, kõlarisse või printerisse. Ingliskeelne lühend **I/O** tähendab *input/output*.
+**Sisend** on andmete jõudmine süsteemi, näiteks klaviatuurilt, mikrofonist või võrgust. **Väljund** on andmete saatmine süsteemist välja, näiteks ekraanile, kõlarisse või printerisse. Ingliskeelne lühend **I/O** tähendab *input/output*. Ka sisend- ja väljundseadmete haldus on osa os-i tööst. 
 
 **Draiver** on tarkvarakomponent, mis võimaldab operatsioonisüsteemil konkreetse seadme või seadmeklassiga suhelda. Rakendus ei pea seetõttu tundma iga printeri või võrguadapteri kõiki tehnilisi üksikasju.
 
@@ -185,7 +185,7 @@ Riistvara saab protsessorile teatada tähelepanu vajavast sündmusest **katkestu
 
 Kui rakendus vajab tuuma teenust, näiteks faili avamiseks, jõuab ta tavaliselt selleni programmeerimisliideste kaudu tehtava **süsteemikutsega**. Süsteemikutse on rakenduse teadlik teenusepäring; riistvarakatkestus on seadme teavitus. Nende täpne teostus sõltub protsessorist ja OS-ist.
 
-Tavalisi arvutuskäske täidab protsessor ka rakenduse kasutajarežiimis. Kõik rakenduse käsud ei läbi eraldi operatsioonisüsteemi. OS vahendab muu hulgas kaitstud toiminguid ja korraldab ressursside kasutamist. [8]
+Tavalisi arvutuskäske täidab protsessor ka rakenduse kasutajarežiimis. Kõik rakenduse käsud ei läbi eraldi operatsioonisüsteemi. OS vahendab muu hulgas kaitstud toiminguid ja korraldab ressursside kasutamist.
 
 ## 6. Kasutajad, õigused ja protsesside kaitse
 
@@ -354,14 +354,14 @@ Vasta kõigepealt ise. Seejärel ava vastus ja võrdle oma põhjendust.
 
 ## Allikad ja lisalugemine
 
-1. [Microsoft Learn: About Processes and Threads](https://learn.microsoft.com/en-us/windows/win32/procthread/about-processes-and-threads) — protsessid, lõimed ja nende ressursid.
-2. [Microsoft Learn: Scheduling](https://learn.microsoft.com/en-us/windows/win32/procthread/scheduling) — protsessoriaja jagamine ja prioriteedid.
-3. [Microsoft Learn: Virtual Address Spaces](https://learn.microsoft.com/en-us/windows-hardware/drivers/gettingstarted/virtual-address-spaces) — virtuaalne ja füüsiline mälu.
-4. [Linux Kernel Documentation: Page Tables](https://docs.kernel.org/mm/page_tables.html) — mäluleheküljed, leheküljetabelid ja MMU.
-5. [Microsoft Learn: File System Functionality Comparison](https://learn.microsoft.com/en-us/windows/win32/fileio/filesystem-functionality-comparison) — NTFS-i, exFAT-i ja FAT32 omadused.
-6. [Apple Support: File system formats available in Disk Utility on Mac](https://support.apple.com/guide/disk-utility/file-system-formats-dsku19ed921c/mac) — APFS ja muud failisüsteemid.
-7. [Linux Kernel Documentation: ext4](https://docs.kernel.org/filesystems/ext4/index.html) — ext4 failisüsteem.
-8. [Microsoft Learn: User Mode and Kernel Mode](https://learn.microsoft.com/en-us/windows-hardware/drivers/gettingstarted/user-mode-and-kernel-mode) — rakenduse ja tuuma töö eristamine.
+1. [Microsoft Learn: About Processes and Threads](https://learn.microsoft.com/en-us/windows/win32/procthread/about-processes-and-threads){ target="_blank" rel="noopener" }.
+2. [Microsoft Learn: Scheduling](https://learn.microsoft.com/en-us/windows/win32/procthread/scheduling){ target="_blank" rel="noopener" }.
+3. [Microsoft Learn: Virtual Address Spaces](https://learn.microsoft.com/en-us/windows-hardware/drivers/gettingstarted/virtual-address-spaces){ target="_blank" rel="noopener" }.
+4. [Linux Kernel Documentation: Page Tables](https://docs.kernel.org/mm/page_tables.html){ target="_blank" rel="noopener" }.
+5. [Microsoft Learn: File System Functionality Comparison](https://learn.microsoft.com/en-us/windows/win32/fileio/filesystem-functionality-comparison){ target="_blank" rel="noopener" }.
+6. [Apple Support: File system formats available in Disk Utility on Mac](https://support.apple.com/guide/disk-utility/file-system-formats-dsku19ed921c/mac){ target="_blank" rel="noopener" }.
+7. [Linux Kernel Documentation: ext4](https://docs.kernel.org/filesystems/ext4/index.html){ target="_blank" rel="noopener" }.
+8. [Microsoft Learn: User Mode and Kernel Mode](https://learn.microsoft.com/en-us/windows-hardware/drivers/gettingstarted/user-mode-and-kernel-mode){ target="_blank" rel="noopener" }.
 
 ---
 
