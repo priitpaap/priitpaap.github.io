@@ -17,7 +17,10 @@ Operatsioonisüsteem korraldab protsessori, mälu, failide ja seadmete kasutamis
 
 **Programm** on käskude ja muu vajaliku sisu kogum, mille abil arvuti täidab ülesandeid. Paigaldatud rakenduse failid asuvad tavaliselt salvestusseadmel. Nende olemasolu ei tähenda veel, et rakendus töötab.
 
-Kui programm pannakse käima, siis saab sellest protsess. **Protsess** on töötava programmi eksemplar koos selle täitmiseks vajalike ressursside ja olekuga. Protsessil on näiteks identifikaator, mäluaadressiruum ja kasutatavate failide kohta käiv teave. **PID** (*process identifier*) on protsessi identifitseeriv number. Protsesse võivad käivitada kasutaja, operatsioonisüsteem või teised juba töötavad protsessid.
+Kui programm pannakse käima, siis saab sellest protsess. **Protsess** on töötava programmi eksemplar koos selle täitmiseks vajalike ressursside ja olekuga. Protsessil on näiteks identifikaator, mäluaadressiruum ja kasutatavate failide kohta käiv teave. **PID** (*process identifier*) on protsessi identifitseeriv number. Protsesse võivad käivitada kasutaja, operatsioonisüsteem või teised juba töötavad protsessid. Vanemprotsessid (parent) võivad luua lapsprotsesse (children). Iga lapsprotsess võib olla teistele protsessidele omakorda vanemaks. Nii tekib protsesside puu:
+
+![process tree](assets/3-os-pohifunktsioonid/process-tree.png){ width="50%" }
+
 
 Sama programmi võib käivitada rohkem kui ühe korra. Üks rakendus võib ka ise luua mitu protsessi.
 
@@ -28,6 +31,9 @@ Sama programmi võib käivitada rohkem kui ühe korra. Üks rakendus võib ka is
 ### Lõim kui protsessi sees töötav täitmisüksus
 
 **Lõim** ehk *thread* on protsessi sees olev täitmisüksus. Protsessil on vähemalt üks lõim. Mitme lõimega protsess võib korraldada näiteks kasutajaliidese tööd ja andmete töötlemist eraldi. Sama protsessi lõimed jagavad selle mäluaadressiruumi ja mitmeid ressursse.
+
+![threds](assets/3-os-pohifunktsioonid/threds.png){ width="75%" }
+
 
 | Mõiste | Lihtne seletus | Näide |
 | --- | --- | --- |
@@ -41,7 +47,7 @@ Sama programmi võib käivitada rohkem kui ühe korra. Üks rakendus võib ka is
 
 ## 2. Kuidas mitu programmi korraga töötavad?
 
-**Protsessor** ehk **CPU** täidab programmide käske. Operatsioonisüsteemi **planeerija** otsustab, milline töötamiseks valmis lõim saab protsessoriaega. Valikut võivad mõjutada prioriteedid, ootel tööd ja muud süsteemi reeglid.
+**Protsessor** ehk **CPU** täidab programmide käske. Operatsioonisüsteemi **planeerija** (*scheduler*) otsustab, milline töötamiseks valmis lõim saab protsessoriaega. Planeerimine on üks op. süsteemi põhitegevustest. Valikut võivad mõjutada prioriteedid, ootel tööd ja muud süsteemi reeglid.
 
 Ühel protsessori täitmisüksusel saavad eri tööd kiiresti vahelduda. Seda nimetatakse **ajajaotuseks**. Kasutajale võib jääda mulje, et kõik rakendused töötavad ühel ajal.
 
@@ -75,7 +81,8 @@ flowchart TB
 
 See on õppimiseks mõeldud mudel. Tegelikud olekunimed ja üksikasjad sõltuvad operatsioonisüsteemist. Mitmelõimelise protsessi eri lõimed võivad olla eri olekutes.
 
-**Ennetav planeerimine** võimaldab OS-il töötava lõime täitmise katkestada ja anda protsessoriaega teisele. Rakendus ei pea ise otsustama, millal teised rakendused töötada tohivad. See ei tähenda, et OS lõpetab automaatselt iga pikalt arvutava programmi.
+**Ennetav planeerimine** (*preemtive*) võimaldab OS-il töötava lõime täitmise katkestada ja anda protsessoriaega teisele. Rakendus ei pea ise otsustama, millal teised rakendused töötada tohivad. See ei tähenda, et OS lõpetab automaatselt iga pikalt arvutava programmi.
+**Mitte-ennetava **(*non-preemtive)* planeerija puhul peab iga protsess ise hoolitsema, et ta liiga kaua süsteemi aega ei raiskaks. Aktiivse protsesse tööd ei katkestata.
 
 ## 3. Mäluhaldus: tööruum programmidele
 
@@ -97,7 +104,7 @@ OS eraldab protsessidele mälu, peab kasutuse üle arvestust ning vabastab mälu
 
 ### Virtuaalmälu ja saalimine
 
-**Virtuaalmälu** pakub protsessile oma mäluaadressiruumi. OS ja riistvara seostavad selles kasutatavad aadressid tegeliku füüsilise mäluga. Nii saab mälukasutust korraldada ja protsesse üksteisest eraldada. [3]
+**Virtuaalmälu** pakub protsessile oma mäluaadressiruumi. OS ja riistvara seostavad selles kasutatavad aadressid tegeliku füüsilise mäluga. Nii saab mälukasutust korraldada ja protsesse üksteisest eraldada.
 
 Osa mälus olevatest andmetest võib vajaduse korral ajutiselt salvestusseadmele viia ja hiljem tagasi tuua. Seda nimetatakse **saalimiseks**. Windowsis kasutatakse selleks muu hulgas saalefaili (*pagefile*), Linuxis saaleala või saalefaili (*swap*).
 
@@ -117,9 +124,20 @@ Kõigil neil mõistetel on eri tähendus: **RAM** on muutmälu, **virtuaalmälu*
 
     Virtuaalne aadressiruum jagatakse mälulehekülgedeks ning füüsiline mälu vastava suurusega raamidesse. Leheküljetabelid kirjeldavad nende vastavusi. Lehekülje suurus sõltub süsteemist; üks levinud suurus on 4 KiB.
 
-    **MMU** (*memory management unit*) on riistvaraline mäluhaldusüksus, mis osaleb virtuaalsete aadresside teisendamisel füüsilisteks. OS korraldab selleks vajalikke tabeleid ja käsitleb olukordi, kus vajalik lehekülg ei ole kättesaadav. [4]
+    **MMU** (*memory management unit*) on riistvaraline mäluhaldusüksus, mis osaleb virtuaalsete aadresside teisendamisel füüsilisteks. OS korraldab selleks vajalikke tabeleid ja käsitleb olukordi, kus vajalik lehekülg ei ole kättesaadav. 
 
-    Põhiteema mõistmiseks ei ole vaja õppida aadressiteisenduse arvutusi. Oluline on aru saada, et programmi nähtav mäluaadress ei pea olema sama mis füüsiline aadress RAM-is.
+    ![mmu](assets/3-os-pohifunktsioonid/mmu.png){ width="75%" }
+
+
+    Oluline on aru saada, et programmi nähtav mäluaadress ei pea olema sama mis füüsiline aadress RAM-is.
+
+    **Mälu leheküljed**: Kujuta ette, et mälu on suur raamat, mis on jagatud lehekülgedeks. Iga lehekülg on kindla suurusega plokk mälu, näiteks 4 KB.
+    
+    **Raamid:** Raamid on füüsilise mälu osad, kuhu need leheküljed paigutatakse. Mõtle raamidest kui riiulikohtadest, kuhu leheküljed asetatakse.
+    
+    **Virtuaalmälu** võimaldab programmidel kasutada rohkem mälu, kui füüsiliselt saadaval on. Kui mälu saab täis, saab osa andmeid ajutiselt kõvakettale salvestada ja vajadusel tagasi laadida. Näide: Kujuta ette, et sul on rohkem raamatuid, kui riiulile mahub. Sa võid osa raamatuid ajutiselt kasti panna ja vajadusel tagasi riiulile tõsta.
+    
+    Lehekülgede ja raamide süsteem aitab vältida mälu raiskamist, kuna mälu saab jaotada väiksemateks osadeks ja kasutada vastavalt vajadusele. Näide: Kui sul on suur raamat, mida sa ei loe tervikuna, vaid ainult mõned leheküljed korraga, siis on mõistlik hoida ainult neid lehekülgi käepärast, mida sa hetkel vajad.
 
 ## 4. Failid, kaustad ja failisüsteem
 
@@ -135,7 +153,7 @@ Kõigil neil mõistetel on eri tähendus: **RAM** on muutmälu, **virtuaalmälu*
 | **exFAT** | Eemaldatavad andmekandjad. | Sobib suurte failide jaoks; toetatud paljudes arvutisüsteemides, kuid seadmete sobivust tuleb kontrollida. |
 | **FAT32** | Mitmesugused eemaldatavad andmekandjad ja eriseadmed. | Ühe faili suurus peab jääma alla 4 GiB. |
 
-Failisüsteemide omaduste kohta vaata allikaid [5]–[7]. **Päevik** aitab pärast ootamatut katkestust failisüsteemi muudatusi taastada; see ei asenda kasutaja failide varukoopiat.
+Failisüsteemide omaduste kohta on kursusel ka põhjalikum materjal. 
 
 !!! example "Näide: fail ei mahu, kuigi vaba ruumi on"
 
@@ -336,8 +354,6 @@ Vasta kõigepealt ise. Seejärel ava vastus ja võrdle oma põhjendust.
 
 ## Allikad ja lisalugemine
 
-Kontrollitud 03.10.2026.
-
 1. [Microsoft Learn: About Processes and Threads](https://learn.microsoft.com/en-us/windows/win32/procthread/about-processes-and-threads) — protsessid, lõimed ja nende ressursid.
 2. [Microsoft Learn: Scheduling](https://learn.microsoft.com/en-us/windows/win32/procthread/scheduling) — protsessoriaja jagamine ja prioriteedid.
 3. [Microsoft Learn: Virtual Address Spaces](https://learn.microsoft.com/en-us/windows-hardware/drivers/gettingstarted/virtual-address-spaces) — virtuaalne ja füüsiline mälu.
@@ -348,9 +364,5 @@ Kontrollitud 03.10.2026.
 8. [Microsoft Learn: User Mode and Kernel Mode](https://learn.microsoft.com/en-us/windows-hardware/drivers/gettingstarted/user-mode-and-kernel-mode) — rakenduse ja tuuma töö eristamine.
 
 ---
-
-Eelmine materjal: [Operatsioonisüsteemide liigid ja kasutus](operatsioonisusteemide_liigid_ja_valik.md).
-
-Järgmine materjal: [Alglaadimine ja operatsioonisüsteemi hooldus](alglaadimine_ja_os_hooldus.md).
 
 *Õppematerjali koostaja: Priit Paap, 2026*
