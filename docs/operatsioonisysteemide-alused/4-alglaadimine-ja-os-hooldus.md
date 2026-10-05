@@ -21,7 +21,7 @@ Toitenupu vajutamise ja kasutajale töölaua ilmumise vahel toimub mitu erinevat
 
 Püsivara ei ole sama mis muutmälu ehk RAM. Püsivaraprogramm säilib ka siis, kui arvuti ei saa toidet. Vajaduse korral saab seda tootja ettenähtud viisil uuendada.
 
-**UEFI** (*Unified Extensible Firmware Interface*) määratleb tänapäevase liidese arvuti püsivara ja operatsioonisüsteemi vahel. Igapäevases kõnes nimetatakse „UEFI-ks“ ka sellel põhinevat püsivara ja seadistusmenüüd. [1]
+**UEFI** (*Unified Extensible Firmware Interface*) määratleb tänapäevase liidese arvuti püsivara ja operatsioonisüsteemi vahel. Igapäevases kõnes nimetatakse „UEFI-ks“ ka sellel põhinevat püsivara ja seadistusmenüüd.
 
 **BIOS** (*Basic Input/Output System*) tähistab varasemat PC püsivara lahendust. UEFI on selle tänapäevane asendaja. Seadistusmenüüd nimetatakse kõnekeeles mõnikord BIOS-iks ka UEFI-ga arvutil.
 
@@ -32,7 +32,7 @@ Püsivara ei ole sama mis muutmälu ehk RAM. Püsivaraprogramm säilib ka siis, 
 | **Alglaadur** | OS-i tuuma laadimise ja käivitamise korraldamine. |
 | **OS-i tuum** | Ressursside ja kaitstud toimingute haldamine pärast selle käivitumist. |
 
-Kui OS juba töötab, korraldavad tavalist seadmete kasutamist eelkõige OS-i komponendid ja draiverid. Seda ei ole õige kirjeldada nii, nagu kogu OS-i ja riistvara andmevahetus käiks pidevalt vana BIOS-i kaudu.
+Kui OS juba töötab, korraldavad tavalist seadmete kasutamist eelkõige OS-i komponendid ja draiverid. 
 
 ## 2. Alglaadimise põhietapid
 
@@ -47,23 +47,10 @@ Tavalise UEFI-ga arvuti käivitumist saab lihtsustada järgmiselt:
 5. **Käivitatakse vajalikud draiverid ja teenused.** Süsteem valmistab ette näiteks failide, võrgu ja kasutajate haldamise.
 6. **Kasutaja saab süsteemi kasutada.** Tööjaamas ilmub tavaliselt sisselogimisvaade või töölaud. Server võib olla kasutatav käsurea või võrgu kaudu ilma graafilise töölauata.
 
-```mermaid
-flowchart TB
-    F["Püsivara käivitub"] --> B{"Sobiv alglaadimisprogramm leitakse?"}
-    B -->|Jah| L["Alglaadimisprogramm käivitub"]
-    B -->|Ei| X["Käivitamistõrge"]
-    L --> K["OS-i tuum käivitub"]
-    K --> D["Draiverid ja teenused käivituvad"]
-    D --> A{"Kasutajaliides või vajalik teenus töötab?"}
-    A -->|Jah| U["Süsteem on kasutatav"]
-    A -->|Ei| T["Tõrke põhjus vajab selgitamist"]
-```
+![bios uefi alglaadimine](assets/4-alglaadimine-ja-os-hooldus/bios-uefi-alglaadimine.png){ width="85%" }
+
 
 Skeem on lihtsustatud. Mõned draiverid laaditakse väga varakult ja mitu teenust võivad käivituda paralleelselt. Erinevad OS-id ning käivitamisviisid kasutavad erinevaid üksikasju. Näiteks unerežiimist naasmine ei ole sama tegevus mis täielik alglaadimine.
-
-!!! tip "RAM ja vahemälu"
-
-    OS-i käivitamisel laaditakse vajalik kood ja andmed muutmällu ehk RAM-i. Seda ei tule kirjeldada operatsioonisüsteemi laadimisena „kõvakettalt vahemällu“. RAM ja vahemälu ei ole sama mõiste.
 
 ## 3. GPT, MBR ja EFI süsteemipartitsioon
 
@@ -71,13 +58,13 @@ Arvuti peab teadma, kuidas salvestusseade on jaotatud ning kust leida käivitami
 
 **GPT** (*GUID Partition Table*) ja **MBR** (*Master Boot Record*) on erinevad viisid salvestusseadme partitsioonide kirjeldamiseks. Need ei ole failisüsteemid. NTFS ja ext4 kirjeldavad failide korraldamist; GPT ja MBR partitsioonide jaotust.
 
-UEFI-käivitusega tänapäevases Windowsi süsteemis kasutatakse GPT-d. Vanema BIOS-põhise käivituse puhul on levinud MBR. Need on tüüpilised seosed, mitte kõigi seadmete ja OS-ide kohta kehtiv universaalne reegel. [2]
+UEFI-käivitusega tänapäevases Windowsi süsteemis kasutatakse GPT-d. Vanema BIOS-põhise käivituse puhul on levinud MBR. Need on tavapärased seosed, mitte kõigi seadmete ja OS-ide kohta kehtiv universaalne reegel.
 
 UEFI-süsteemi salvestusseadmel võib olla **EFI süsteemipartitsioon** ehk **ESP** (*EFI System Partition*). Seal asuvad alglaadimisfailid, mille kaudu OS-i käivitamine algab. See partitsioon kasutab tavaliselt FAT32 failisüsteemi ning on eraldi OS-i põhilistest andmetest.
 
-!!! warning "Käivitamisfailid ei ole kasutaja dokumendid"
+!!! warning "Käivitamisfailid"
 
-    Väikese süsteemipartitsiooni sisu muutmine või kustutamine võib muuta arvuti mittekäivitatavaks, kuigi kasutaja failid on teisel partitsioonil alles. Samuti võib käivitusrežiimi muutmine muuta olemasoleva paigalduse käivitamise võimatuks. Muudatuse eesmärk ja tagajärjed peavad olema enne teada.
+    Süsteemipartitsiooni sisu muutmine või kustutamine võib muuta arvuti mittekäivitatavaks, kuigi kasutaja failid on teisel partitsioonil alles. Samuti võib käivitusrežiimi muutmine muuta olemasoleva paigalduse käivitamise võimatuks. Muudatuse eesmärk ja tagajärjed peavad olema enne teada.
 
 ??? info "Lisalugemine: vanem BIOS-põhine käivitus"
 
@@ -95,11 +82,11 @@ Need kolm mõistet kuuluvad turvalisuse juurde, kuid neil on erinevad ülesanded
 | **TPM** | Turvakomponent, mis aitab kaitsta võtmeid ja toetab süsteemi turvatoiminguid. | Ei ole tavalise viirusetõrje asendaja ega iseseisev täielik krüpteerimislahendus. |
 | **Kettakrüpteerimine** | Muudab salvestatud andmete lugemise ilma vajalike võtmeteta raskeks. | Ei tõenda, et kõik käivituvad programmid on usaldusväärsed. |
 
-**Secure Boot** on UEFI-põhine turvafunktsioon. Selle eesmärk on takistada keelatud või ebausaldusväärse alglaadimistarkvara käivitamist. See ei tähenda, et süsteemis saavad töötada ainult ühe tootja operatsioonisüsteemid: toetatud Linuxi alglaadimislahendused saavad samuti Secure Booti kasutada. [3]
+**Secure Boot** on UEFI-põhine turvafunktsioon. Selle eesmärk on takistada keelatud või ebausaldusväärse alglaadimistarkvara käivitamist. See ei tähenda, et süsteemis saavad töötada ainult ühe tootja operatsioonisüsteemid: toetatud Linuxi alglaadimislahendused saavad samuti Secure Booti kasutada.
 
-**TPM** tähendab *Trusted Platform Module*. TPM võib olla eraldi kiip või muu vastav turvalahendus. Näiteks saab kettakrüpteerimise lahendus seda võtmete kaitsmisel kasutada. TPM-i olemasolu ei tähenda automaatselt, et ketas on krüpteeritud. [10]
+**TPM** tähendab *Trusted Platform Module*. TPM võib olla eraldi kiip või muu vastav turvalahendus. Näiteks saab kettakrüpteerimise lahendus seda võtmete kaitsmisel kasutada. TPM-i olemasolu ei tähenda automaatselt, et ketas on krüpteeritud.
 
-Kettakrüpteerimise näited on Windowsi **BitLocker**, macOS-i **FileVault** ja Linuxis **LUKS**-põhised lahendused. Kui kasutaja on süsteemi sisse loginud ja andmed on talle ligipääsetavad, saavad vastavate õigustega rakendused neid tavaliselt kasutada. Seega ei asenda krüpteerimine rakenduste usaldusväärsuse kontrolli ega varukoopiat. FileVaulti kohta vaata allikat [11].
+Kettakrüpteerimise näited on Windowsi **BitLocker**, macOS-i **FileVault** ja Linuxis **LUKS**-põhised lahendused. Kui kasutaja on süsteemi sisse loginud ja andmed on talle ligipääsetavad, saavad vastavate õigustega rakendused neid tavaliselt kasutada. Seega ei asenda krüpteerimine rakenduste usaldusväärsuse kontrolli ega varukoopiat.
 
 !!! example "Näide: kaotatud sülearvuti"
 
@@ -107,7 +94,7 @@ Kettakrüpteerimise näited on Windowsi **BitLocker**, macOS-i **FileVault** ja 
 
 ### Windows 11 kui süsteeminõuete näide
 
-Windows 11 ametlike nõuete hulka kuuluvad muu hulgas sobiv protsessor, **UEFI**, **Secure Booti võimekus** ja **TPM 2.0**. Secure Booti võimekus ja selle parajasti sisselülitatud olek on erinevad asjad. Kõik nõuded tuleb vaadata ametlikust loetelust; ainult RAM-i ja vaba kettaruumi kontrollimisest ei piisa. [4]
+Windows 11 ametlike nõuete hulka kuuluvad muu hulgas sobiv protsessor, **UEFI**, **Secure Booti võimekus** ja **TPM 2.0**. Secure Booti võimekus ja selle parajasti sisselülitatud olek on erinevad asjad. Kõik nõuded tuleb vaadata ametlikust loetelust; ainult RAM-i ja vaba kettaruumi kontrollimisest ei piisa.
 
 Miinimumnõuetele vastamine tähendab sobivust süsteemi nõuete järgi. See ei tõenda, et kõik kasutaja rakendused töötavad soovitud kiirusega.
 
@@ -137,7 +124,7 @@ Kui graafiline töölaud ei käivitu, võib osa süsteemist endiselt töötada. 
 | **Windows** | Paigaldusprogrammid, Microsoft Store ja WinGet. |
 | **macOS** | App Store ja tootja pakutavad paigalduslahendused. |
 
-**Paketihoidla** ehk *repository* on tarkvarapakettide ja nende teabe allikas. Paketihalduri kasutamine ei muuda suvalist hoidlat automaatselt usaldusväärseks: tähtis on ka see, kust tarkvara pärineb. APT ja WinGeti kohta vaata allikaid [5] ja [6].
+**Paketihoidla** ehk *repository* on tarkvarapakettide ja nende teabe allikas. Paketihalduri kasutamine ei muuda suvalist hoidlat automaatselt usaldusväärseks: tähtis on ka see, kust tarkvara pärineb. 
 
 !!! tip "Usaldusväärne paigaldusallikas"
 
@@ -154,11 +141,11 @@ Operatsioonisüsteemi, rakenduste ja püsivara uuendused võivad parandada turva
 | **Funktsiooni- või versiooniuuendus** | Lisada võimalusi või viia süsteem järgmisele versioonile. |
 | **Draiveri või püsivara uuendus** | Parandada seadme tuge, turvalisust või töökindlust. |
 
-**Tootetugi** kirjeldab muu hulgas seda, kui kaua tootja või projekt süsteemile parandusi pakub. **LTS** (*long-term support*) tähendab pikema toega väljaannet, kuid toe kestus ja ulatus sõltuvad konkreetsest tootest. LTS ei tähenda piiramatut tuge. [7]
+**Tootetugi** kirjeldab muu hulgas seda, kui kaua tootja või projekt süsteemile parandusi pakub. **LTS** (*long-term support*) tähendab pikema toega väljaannet, kuid toe kestus ja ulatus sõltuvad konkreetsest tootest. LTS ei tähenda piiramatut tuge. 
 
 !!! example "Näide: Windows 10 toe lõpp"
 
-    Windows 10 Home'i ja Pro tavapärane tugi lõppes 14.10.2025. Arvuti ei lõpetanud selle tõttu automaatselt töötamist. Muutus uuenduste ja toe kättesaadavus. ESU on eraldi turvauuenduste programm, mille tingimusi tuleb kontrollida. Mõne eriväljaande tugiaeg võib erineda. [8]
+    Windows 10 Home'i ja Pro tavapärane tugi lõppes 14.10.2025. Arvuti ei lõpetanud selle tõttu automaatselt töötamist. Muutus uuenduste ja toe kättesaadavus. ESU on eraldi turvauuenduste programm, mille tingimusi tuleb kontrollida. Mõne eriväljaande tugiaeg võib erineda.
 
     Õppimisel on oluline eristada kahte väidet: „süsteem käivitub“ ja „süsteem saab vajalikku turvatuge“.
 
@@ -219,7 +206,7 @@ Virtuaalmasinale määratakse näiteks virtuaalsed protsessorid, RAM, virtuaalke
 
     Sama VMware vSphere'i keskkond võib käitada ühele õppijale Windowsi virtuaalmasinat ja teisele Linuxi virtuaalmasinat. Mõlemal on oma külalis-OS, virtuaalketas ning seadistused. Seetõttu saab OS-e õppida ilma füüsilise õppearvuti põhiseadistust iga kord vahetamata.
 
-Virtuaalmasin on tervikliku külalis-OS-iga keskkond. **Konteiner** on teistsugune eraldamise viis: tavaliselt kasutavad konteinerid neid käitava süsteemi sama tuuma. Näiteks tööjaama konteinerilahendus võib ise kasutada taustal virtuaalmasinat. Neid mõisteid käsitleme edasistes teemades täpsemalt. [12]
+Virtuaalmasin on tervikliku külalis-OS-iga keskkond. **Konteiner** on teistsugune eraldamise viis: tavaliselt kasutavad konteinerid neid käitava süsteemi sama tuuma. Näiteks tööjaama konteinerilahendus võib ise kasutada taustal virtuaalmasinat. Neid mõisteid käsitleme edasistes teemades täpsemalt. 
 
 ## 11. Enesekontroll
 
@@ -339,23 +326,17 @@ Vasta kõigepealt ise. Seejärel ava vastus ja võrdle oma põhjendust.
 
 ## Allikad ja lisalugemine
 
-Kontrollitud 03.10.2026. Tootetoe ja süsteeminõuete puhul tuleb edaspidi vaadata konkreetse väljaande ajakohaseid tingimusi.
-
-1. [UEFI Forum: Frequently Asked Questions](https://uefi.org/faq) — UEFI, BIOS ja käivitamine.
-2. [Microsoft Learn: UEFI/GPT-based hard drive partitions](https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/configure-uefigpt-based-hard-drive-partitions) — GPT, UEFI ja EFI süsteemipartitsioon.
-3. [Microsoft Learn: Secure Boot](https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/oem-secure-boot) — alglaadimistarkvara kontrollimine.
-4. [Microsoft Learn: Windows 11 requirements](https://learn.microsoft.com/en-us/windows/whats-new/windows-11-requirements) — Windows 11 nõuded.
-5. [Debian Reference: Debian package management](https://www.debian.org/doc/manuals/debian-reference/ch02.en.html) — paketid, sõltuvused ja APT.
-6. [Microsoft Learn: Windows Package Manager](https://learn.microsoft.com/en-us/windows/package-manager/winget/) — WinGet ja rakenduste haldamine.
-7. [Ubuntu: Release cycle](https://ubuntu.com/about/release-cycle) — näide väljaannete ning toe kestuse korraldamisest.
-8. [Microsoft Lifecycle: Windows 10 reaching end of support](https://learn.microsoft.com/en-us/lifecycle/announcements/windows-10-end-of-support) ja [Windows 10 Extended Security Updates](https://www.microsoft.com/en-us/windows/extended-security-updates) — tavatoe lõpp ja eraldi turvauuenduste võimalus.
-9. [Broadcom: Best practices for using VMware snapshots in the vSphere environment](https://knowledge.broadcom.com/external/article/318825/best-practices-for-using-vmware-snapshot.html) — hetktõmmiste piirangud.
-10. [Microsoft Learn: TPM overview](https://learn.microsoft.com/en-us/windows/security/hardware-security/tpm/trusted-platform-module-overview) — TPM-i ülesanded.
-11. [Apple Support: Protect data on your Mac with FileVault](https://support.apple.com/guide/mac-help/protect-data-on-your-mac-with-filevault-mh11785/mac) — kettakrüpteerimise näide.
-12. [Docker Docs: What is a container?](https://docs.docker.com/get-started/docker-concepts/the-basics/what-is-a-container/) — konteineri ja virtuaalmasina erinevus.
+1. [UEFI Forum: Frequently Asked Questions](https://uefi.org/faq){ target="_blank" rel="noopener" }.
+2. [Microsoft Learn: UEFI/GPT-based hard drive partitions](https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/configure-uefigpt-based-hard-drive-partitions){ target="_blank" rel="noopener" }.
+3. [Microsoft Learn: Secure Boot](https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/oem-secure-boot){ target="_blank" rel="noopener" }.
+4. [Microsoft Learn: Windows 11 requirements](https://learn.microsoft.com/en-us/windows/whats-new/windows-11-requirements){ target="_blank" rel="noopener" }.
+5. [Debian Reference: Debian package management](https://www.debian.org/doc/manuals/debian-reference/ch02.en.html){ target="_blank" rel="noopener" }.
+6. [Microsoft Learn: Windows Package Manager](https://learn.microsoft.com/en-us/windows/package-manager/winget/){ target="_blank" rel="noopener" }.
+7. [Ubuntu: Release cycle](https://ubuntu.com/about/release-cycle){ target="_blank" rel="noopener" }.
+8. [Windows 10 Extended Security Updates](https://www.microsoft.com/en-us/windows/extended-security-updates){ target="_blank" rel="noopener" }.
+9. [Microsoft Learn: TPM overview](https://learn.microsoft.com/en-us/windows/security/hardware-security/tpm/trusted-platform-module-overview){ target="_blank" rel="noopener" }.
+10. [Docker Docs: What is a container?](https://docs.docker.com/get-started/docker-concepts/the-basics/what-is-a-container/){ target="_blank" rel="noopener" }.
 
 ---
-
-Eelmine materjal: [Operatsioonisüsteemi põhifunktsioonid](operatsioonisusteemi_pohifunktsioonid.md).
 
 *Õppematerjali koostaja: Priit Paap, 2026*
