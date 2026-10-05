@@ -17,7 +17,7 @@ Operatsioonisüsteem korraldab protsessori, mälu, failide ja seadmete kasutamis
 
 **Programm** on käskude ja muu vajaliku sisu kogum, mille abil arvuti täidab ülesandeid. Paigaldatud rakenduse failid asuvad tavaliselt salvestusseadmel. Nende olemasolu ei tähenda veel, et rakendus töötab.
 
-**Protsess** on töötava programmi eksemplar koos selle täitmiseks vajalike ressursside ja olekuga. Protsessil on näiteks identifikaator, mäluaadressiruum ja kasutatavate failide kohta käiv teave. **PID** (*process identifier*) on protsessi identifitseeriv number. [1]
+Kui programm pannakse käima, siis saab sellest protsess. **Protsess** on töötava programmi eksemplar koos selle täitmiseks vajalike ressursside ja olekuga. Protsessil on näiteks identifikaator, mäluaadressiruum ja kasutatavate failide kohta käiv teave. **PID** (*process identifier*) on protsessi identifitseeriv number. Protsesse võivad käivitada kasutaja, operatsioonisüsteem või teised juba töötavad protsessid.
 
 Sama programmi võib käivitada rohkem kui ühe korra. Üks rakendus võib ka ise luua mitu protsessi.
 
@@ -27,7 +27,7 @@ Sama programmi võib käivitada rohkem kui ühe korra. Üks rakendus võib ka is
 
 ### Lõim kui protsessi sees töötav täitmisüksus
 
-**Lõim** ehk *thread* on protsessi sees olev täitmisüksus. Protsessil on vähemalt üks lõim. Mitme lõimega protsess võib korraldada näiteks kasutajaliidese tööd ja andmete töötlemist eraldi. Sama protsessi lõimed jagavad selle mäluaadressiruumi ja mitmeid ressursse. [1]
+**Lõim** ehk *thread* on protsessi sees olev täitmisüksus. Protsessil on vähemalt üks lõim. Mitme lõimega protsess võib korraldada näiteks kasutajaliidese tööd ja andmete töötlemist eraldi. Sama protsessi lõimed jagavad selle mäluaadressiruumi ja mitmeid ressursse.
 
 | Mõiste | Lihtne seletus | Näide |
 | --- | --- | --- |
@@ -41,7 +41,7 @@ Sama programmi võib käivitada rohkem kui ühe korra. Üks rakendus võib ka is
 
 ## 2. Kuidas mitu programmi korraga töötavad?
 
-**Protsessor** ehk **CPU** täidab programmide käske. Operatsioonisüsteemi **planeerija** otsustab, milline töötamiseks valmis lõim saab protsessoriaega. Valikut võivad mõjutada prioriteedid, ootel tööd ja muud süsteemi reeglid. [2]
+**Protsessor** ehk **CPU** täidab programmide käske. Operatsioonisüsteemi **planeerija** otsustab, milline töötamiseks valmis lõim saab protsessoriaega. Valikut võivad mõjutada prioriteedid, ootel tööd ja muud süsteemi reeglid.
 
 Ühel protsessori täitmisüksusel saavad eri tööd kiiresti vahelduda. Seda nimetatakse **ajajaotuseks**. Kasutajale võib jääda mulje, et kõik rakendused töötavad ühel ajal.
 
@@ -57,11 +57,11 @@ Protsess ei kasuta kogu oma eluea jooksul pidevalt protsessorit. Lihtsustatud mu
 
 | Olek | Tähendus |
 | --- | --- |
-| **Loodud** | Protsessi tööks valmistatakse ressursse ette. |
-| **Valmis** | Protsess on valmis töötama, kuid ootab protsessoriaega. |
-| **Töötav** | Protsessi lõim täidab parajasti käske. |
-| **Ootel** | Töö jätkamiseks on vaja näiteks faili lugemise lõppu või uusi andmeid. |
-| **Lõpetatud** | Protsessi töö on lõppenud ja ressursid vabastatakse. |
+| **Loodud** (*New*) | Protsessi tööks valmistatakse ressursse ette. |
+| **Valmis** (*Ready*) | Protsess on valmis töötama, kuid ootab protsessoriaega. |
+| **Töötav** (*Running*) | Protsessi lõim täidab parajasti käske. |
+| **Ootel** (*Waiting / Blocked*) | Töö jätkamiseks on vaja näiteks faili lugemise lõppu või uusi andmeid. |
+| **Lõpetatud** (*Terminated*) | Protsessi töö on lõppenud ja ressursid vabastatakse. |
 
 ```mermaid
 flowchart TB
@@ -217,6 +217,8 @@ Ressursikasutust näitavad näiteks Windowsi tegumihaldur ja Linuxi süsteemimon
 
 ## 9. Enesekontroll
 
+Vasta kõigepealt ise. Seejärel ava vastus ja võrdle oma põhjendust.
+
 ### 1. Tekstiredaktor on arvutisse paigaldatud, kuid suletud. Kas selle olemasolu tähendab, et redaktori protsess töötab?
 
 ??? success "Vaata vastust"
@@ -271,6 +273,67 @@ Ressursikasutust näitavad näiteks Windowsi tegumihaldur ja Linuxi süsteemimon
 
     Autentimine kontrollib kasutaja identiteeti. Õiguste kontroll otsustab, mida see kasutaja teha tohib. Edukas sisselogimine ei anna automaatselt õigust lugeda kõiki teiste kasutajate faile.
 
+## Kokkuvõte
+
+- Programm on salvestatud tarkvara, protsess selle töötav eksemplar ja lõim protsessi sees olev täitmisüksus.
+- OS-i ajastaja ehk planeerija jagab protsessoriaega. Ajajaotus tähendab tööde vaheldumist; paralleelne täitmine tähendab tegelikku samaaegset tööd eri täitmisüksustel.
+- RAM on programmide töömälu, salvestusseade hoiab programme ja faile püsivalt. Vaba kettaruum ei asenda piisavat RAM-i.
+- Virtuaalmälu korraldab protsesside aadressiruume. Saalimine võimaldab osa andmeid ajutiselt salvestusseadmel hoida; vahemälu kiirendab andmete korduskasutust.
+- Failisüsteem korraldab failide ja metaandmete hoidmist. Salvestusseade, partitsioon ja failisüsteem on erinevad mõisted.
+- Sisend ja väljund ehk I/O hõlmavad andmete liikumist süsteemi ning sellest välja. Draiverid võimaldavad OS-il seadmetega suhelda.
+- Riistvarakatkestus teatab sündmusest; süsteemikutse kaudu küsib rakendus tuuma teenust.
+- Autentimine kontrollib identiteeti, õiguste kontroll lubatud tegevusi. Protsesside eraldamine aitab piirata vigade mõju.
+- Teenused töötavad sageli taustal ja logid aitavad sündmusi uurida. Arvuti aeglustumise põhjust tuleb hinnata mitme näitaja põhjal.
+
+### Mõtle õpitule
+
+1. Milliseid mälu mõisteid oli kõige raskem eristada: RAM, virtuaalmälu, saalimine või vahemälu? Selgita nende erinevust oma sõnadega ja too üks kasutusnäide.
+2. Kujutle, et brauser muutub aeglaseks, aga muusika mängib edasi. Millist teavet koguksid enne põhjuse kohta järelduse tegemist? Põhjenda, miks üks ressursikasutuse näit ei pruugi vastust anda.
+3. Vali igapäevane tegevus, näiteks faili salvestamine või printimine. Milliseid OS-i põhifunktsioone see vajab? Milline osa sellest tegevusest on sulle veel ebaselge?
+
+## Teema sõnastik
+
+| Mõiste | Selgitus |
+| --- | --- |
+| Programm (*program*) | Käskude ja muu vajaliku sisu kogum, mille abil arvuti täidab ülesandeid. |
+| Protsess (*process*) | Töötava programmi eksemplar koos täitmiseks vajalike ressursside ja olekuga. |
+| PID (*process identifier*) | Number, millega OS protsessi identifitseerib. |
+| Lõim (*thread*) | Protsessi sees olev täitmisüksus; sama protsessi lõimed jagavad selle mälu ja mitmeid ressursse. |
+| Protsessor; CPU (*Central Processing Unit*) | Riistvarakomponent, mis täidab programmide käske. |
+| Protsessorituum (*processor core*) | Protsessori osa, mis saab käske täita; mitu tuuma võimaldavad eri töid paralleelselt täita. |
+| Ajastaja ehk planeerija (*scheduler*) | OS-i komponent, mis valib, milline töötamiseks valmis lõim saab protsessoriaega. |
+| Prioriteet (*priority*) | Töö suhteline tähtsus, mida ajastaja võib protsessoriaja jagamisel arvestada. |
+| Ajajaotus (*time-sharing*) | Protsessoriaja jagamine tööde vahel nii, et need saavad vaheldumisi edeneda. |
+| Paralleelne täitmine (*parallel execution*) | Eri tööde tegelik samaaegne täitmine eri täitmisüksustel. |
+| Ennetav planeerimine (*preemptive scheduling*) | Töökorraldus, kus OS saab töötava lõime täitmise katkestada ja anda protsessoriaega teisele. |
+| Muutmälu; RAM (*Random Access Memory*) | Töötamiseks vajalike käskude ja andmete töömälu; tavapärane RAM kaotab sisu toite kadumisel. |
+| Salvestusseade (*storage device*) | Seade, näiteks SSD või kõvaketas, mis hoiab programme ja andmeid püsivalt. |
+| Virtuaalmälu (*virtual memory*) | Mälukasutuse korraldamise mehhanism, mis pakub protsessidele virtuaalseid aadressiruume. |
+| Mäluaadressiruum (*memory address space*) | Mäluaadresside kogum, mille kaudu protsess oma käske ja andmeid kasutab. |
+| Saalimine (*swapping*) | Osa mälus olevate andmete ajutine viimine salvestusseadmele ja vajaduse korral tagasi toomine. |
+| Saalefail või saaleala (*pagefile*, *swap*) | Salvestusruum, mida süsteem saab kasutada saalitavate andmete hoidmiseks. |
+| Vahemälu (*cache*) | Ajutine andmete hoidmise koht nende kiiremaks korduskasutuseks. |
+| Mäluhaldusüksus; MMU (*Memory Management Unit*) | Riistvarakomponent, mis osaleb virtuaalsete mäluaadresside teisendamisel füüsilisteks. |
+| Fail (*file*) | Nimega käsitletav andmekogum. |
+| Kaust ehk kataloog (*directory*) | Struktuur, mis aitab faile ja teisi kaustu korraldada. |
+| Failitee (*path*) | Faili või kausta asukohta kirjeldav tee kataloogistruktuuris. |
+| Failisüsteem (*file system*) | Korraldus, mille järgi failide sisu ja metaandmeid salvestatakse ning leitakse. |
+| Metaandmed (*metadata*) | Andmed faili või muu andmekogumi kohta, näiteks suurus, ajatemplid ja õigused. |
+| Partitsioon (*partition*) | Salvestusseadmele määratud piirkond. |
+| Failisüsteemi päevik (*journal*) | Failisüsteemi muudatuste arvestus, mis aitab pärast katkestust taastamist korraldada. |
+| Sisend ja väljund; I/O (*input/output*) | Andmete jõudmine süsteemi ja nende saatmine süsteemist välja. |
+| Draiver (*driver*) | Tarkvarakomponent, mis võimaldab OS-il seadme või seadmeklassiga suhelda. |
+| Riistvarakatkestus (*hardware interrupt*) | Riistvara teavitus protsessorile tähelepanu vajavast sündmusest. |
+| Süsteemikutse (*system call*) | Rakenduse teenusepäring OS-i tuumale, näiteks faili avamiseks. |
+| Autentimine (*authentication*) | Kasutaja identiteedi kontrollimine. |
+| Õiguste kontroll (*authorization*) | Kontroll, mis määrab, milliseid tegevusi kasutaja või protsess teha tohib. |
+| Administraator (*administrator*) | Kasutaja, kelle õigused võimaldavad teha kogu süsteemi mõjutavaid muudatusi. |
+| Protsesside eraldamine (*process isolation*) | Protsesside töö ja ligipääsu piiramine nii, et need ei saaks teiste andmeid vabalt muuta. |
+| Teenus (*service*); *daemon* | Taustal vajalikku ülesannet täitev tarkvarakomponent; Linuxis nimetatakse paljusid taustaprotsesse deemoniteks. |
+| Logi (*log*) | Registreeritud sündmuste kogum, mis aitab süsteemi tööd ja tõrkeid uurida. |
+| Pudelikael (*bottleneck*) | Piirav tegur, mis takistab tegevuse kiiremat täitmist. |
+
+
 ## Allikad ja lisalugemine
 
 Kontrollitud 03.10.2026.
@@ -286,6 +349,8 @@ Kontrollitud 03.10.2026.
 
 ---
 
-Eelmine materjal: [Operatsioonisüsteemi roll ja liigid](operatsioonisusteemi_roll_ja_liigid.md).
+Eelmine materjal: [Operatsioonisüsteemide liigid ja kasutus](operatsioonisusteemide_liigid_ja_valik.md).
 
 Järgmine materjal: [Alglaadimine ja operatsioonisüsteemi hooldus](alglaadimine_ja_os_hooldus.md).
+
+*Õppematerjali koostaja: Priit Paap, 2026*

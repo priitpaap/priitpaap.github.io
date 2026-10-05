@@ -10,6 +10,7 @@ Toitenupu vajutamise ja kasutajale töölaua ilmumise vahel toimub mitu erinevat
     - kirjeldada arvuti alglaadimise põhietappe;
     - eristada Secure Booti, TPM-i ja kettakrüpteerimist;
     - selgitada draiverite ja teenuste osa süsteemi käivitumisel;
+    - selgitada tarkvarapaketi, paketihalduri ja paketihoidla rolli;
     - põhjendada uuenduste ja tootetoe tähtsust;
     - eristada varukoopiat, hetktõmmist ja taastamisvõimalust;
     - kirjeldada lihtsa tõrkeotsingu põhimõtet ning virtuaalmasina rolli õppimisel.
@@ -222,6 +223,8 @@ Virtuaalmasin on tervikliku külalis-OS-iga keskkond. **Konteiner** on teistsugu
 
 ## 11. Enesekontroll
 
+Vasta kõigepealt ise. Seejärel ava vastus ja võrdle oma põhjendust.
+
 ### 1. Mis tarkvara saab töötada enne, kui SSD-l asuv operatsioonisüsteem on käivitatud?
 
 ??? success "Vaata vastust"
@@ -276,6 +279,64 @@ Virtuaalmasin on tervikliku külalis-OS-iga keskkond. **Konteiner** on teistsugu
 
     Ei. Debian on selles VM-is külalisoperatsioonisüsteem. Hosti ja hüperviisori keskkond jäävad eraldi ning saavad samal ajal käitada teisi külalis-OS-e.
 
+## Kokkuvõte
+
+- Arvuti käivitamisel töötab esmalt püsivara. UEFI või BIOS korraldab alglaadimise alustamist; alglaadur aitab käivitada OS-i tuuma.
+- Tuuma järel või koos selle käivitumisega valmistatakse ette vajalikud draiverid ja teenused. Graafiline töölaud ei ole kõigi süsteemide kasutamiseks vajalik.
+- GPT ja MBR kirjeldavad partitsioonide jaotust, mitte failisüsteemi. EFI süsteemipartitsioonis ehk ESP-s asuvad UEFI-alglaadimiseks vajalikud failid.
+- Secure Boot kontrollib alglaadimistarkvara lubatavust. TPM aitab kaitsta võtmeid; kettakrüpteerimine kaitseb salvestatud andmeid. Need täidavad erinevaid ülesandeid.
+- Paketihaldur aitab tarkvara paigaldada, uuendada ja eemaldada. Kontrollida tuleb ka tarkvara päritolu ning sõltuvusi.
+- Süsteemi töötamine ja turvatoe olemasolu on eri asjad. Uuenduste ning tootetoe kavandamine kuulub OS-i hooldamise juurde.
+- Varukoopia peab võimaldama taastamist. Hetktõmmis ja failide sünkroonimine ei asenda automaatselt sõltumatut varukoopiat.
+- Tõrkeotsing algab täpsest sümptomist, veateatest ja OS-i versioonist. Üks muudatus korraga aitab hinnata selle mõju.
+- Virtuaalmasinas töötab oma külalis-OS; hüperviisor korraldab hosti ressursside kasutamist. Konteiner kasutab tavaliselt seda käitava süsteemi tuuma.
+
+### Mõtle õpitule
+
+1. Milline alglaadimise etapp oli sinu jaoks kõige raskem mõista? Kirjelda käivitusahelat oma sõnadega ja selgita, millal hakkab OS-i tuum töötama.
+2. Mõtle olukorrale, kus enne uuendust on vaja oma andmeid kaitsta. Mille järgi otsustaksid, kas kasutada varukoopiat, hetktõmmist või mõlemat? Millist taastamisvõimalust peaksid kontrollima?
+3. Kui arvuti ei jõua töölauani, millised kolm asja uuriksid enne OS-i uuesti paigaldamist? Põhjenda, kuidas kogutud teave aitaks probleemi täpsustada.
+
+## Teema sõnastik
+
+| Mõiste | Selgitus |
+| --- | --- |
+| Püsivara (*firmware*) | Seadme tööks vajalik tarkvara, mida hoitakse tavaliselt seadme püsimälus. |
+| UEFI (*Unified Extensible Firmware Interface*) | Tänapäevane liides arvuti püsivara ja OS-i vahel; kõnekeeles ka sellel põhinev püsivara ja seadistusmenüü. |
+| BIOS (*Basic Input/Output System*) | Varasem PC püsivara lahendus, mis valmistab riistvara käivitamiseks ette ja alustab alglaadimist. |
+| Alglaadimine (*boot*, *booting*) | Tegevuste jada, mille käigus süsteem valmistatakse tööks ette ja OS käivitatakse. |
+| POST (*Power-On Self-Test*) | Käivitamisel tehtavad riistvara kontrollid. |
+| Alglaadur (*bootloader*) | Tarkvara, mis korraldab OS-i tuuma laadimise ja käivitamise; võib olla osa pikemast alglaadimisahelast. |
+| Tuum (*kernel*) | OS-i keskne osa, mis haldab muu hulgas protsessori ja mälu kasutamist ning kaitstud toiminguid. |
+| Partitsioon (*partition*) | Salvestusseadmele määratud piirkond. |
+| GPT (*GUID Partition Table*) | Salvestusseadme partitsioonide kirjeldamise viis, mida kasutatakse näiteks tänapäevastes UEFI-põhistes Windowsi paigaldustes. |
+| MBR (*Master Boot Record*) | Vanem partitsioonide kirjeldamise ja alglaadimisteabega seotud lahendus. |
+| EFI süsteemipartitsioon; ESP (*EFI System Partition*) | Partitsioon, milles asuvad UEFI-alglaadimiseks vajalikud failid. |
+| Secure Boot | UEFI turvafunktsioon, mis kontrollib alglaadimistarkvara lubatavust digitaalallkirjade ja usaldusreeglite abil. |
+| TPM (*Trusted Platform Module*) | Turvakomponent, mis aitab kaitsta võtmeid ja toetab süsteemi turvatoiminguid. |
+| Kettakrüpteerimine (*disk encryption*) | Salvestatud andmete krüpteerimine, et neid ei saaks ilma vajalike võtmeteta hõlpsasti lugeda. |
+| Draiver (*driver*) | Tarkvarakomponent, mis võimaldab OS-il seadmega suhelda. |
+| Teenus (*service*) | Taustal süsteemi või rakenduse jaoks vajalikku ülesannet täitev tarkvara. |
+| Tarkvarapakett (*software package*) | Tarkvara paigaldamiseks vajalik sisu koos seda kirjeldava teabega. |
+| Sõltuvus (*dependency*) | Teine tarkvarakomponent, mida programm oma tööks vajab. |
+| Paketihaldur (*package manager*) | Tööriist pakettide paigaldamiseks, uuendamiseks ja eemaldamiseks ning sõltuvuste korraldamiseks. |
+| Paketihoidla (*repository*) | Tarkvarapakettide ja nende kohta käiva teabe allikas. |
+| Turvauuendus (*security update*) | Uuendus, mis parandab ründamiseks kasutatavaid nõrkusi. |
+| Tootetugi (*product support*) | Tootja või projekti pakutavad parandused ja abi; nende kestus ning ulatus sõltuvad tootest ja väljaandest. |
+| LTS (*Long-Term Support*) | Pikema toega väljaanne; konkreetne tugiaeg ja toe ulatus sõltuvad tootest. |
+| ESU (*Extended Security Updates*) | Eraldi programm turvauuenduste pakkumiseks pärast tavatoe lõppu, näiteks Windows 10 puhul. |
+| Varukoopia (*backup*) | Andmete või süsteemi koopia, mille abil saab neid taastada. |
+| Hetktõmmis (*snapshot*) | Süsteemi või andmete seisund kindlal hetkel; selle sõltuvused ja taastamisvõimalused sõltuvad lahendusest. |
+| Taastamine (*recovery*, *restore*) | Andmete, seadistuste või süsteemi töö taastamine sobiva taastamisvahendi abil. |
+| Failide sünkroonimine (*file synchronization*) | Failide hoidmine eri asukohtades kooskõlas; ka kustutused ja vigased muudatused võivad levida. |
+| Tõrkeotsing (*troubleshooting*) | Probleemi põhjuse süstemaatiline uurimine sümptomite, seadistuste, veateadete ja logide abil. |
+| Virtuaalmasin; VM (*Virtual Machine*) | Virtuaalse riistvaraga arvutikeskkond, milles saab töötada oma OS. |
+| Host | Füüsiline arvuti või keskkond, mille ressursse virtuaalmasinate tööks kasutatakse. |
+| Külalisoperatsioonisüsteem (*guest OS*) | Virtuaalmasinas töötav operatsioonisüsteem. |
+| Hüperviisor (*hypervisor*) | Tarkvara, mis korraldab virtuaalmasinate töö ja ligipääsu hosti ressurssidele. |
+| Konteiner (*container*) | Eraldatud rakenduskeskkond, mis kasutab tavaliselt seda käitava süsteemi sama tuuma. |
+
+
 ## Allikad ja lisalugemine
 
 Kontrollitud 03.10.2026. Tootetoe ja süsteeminõuete puhul tuleb edaspidi vaadata konkreetse väljaande ajakohaseid tingimusi.
@@ -296,3 +357,5 @@ Kontrollitud 03.10.2026. Tootetoe ja süsteeminõuete puhul tuleb edaspidi vaada
 ---
 
 Eelmine materjal: [Operatsioonisüsteemi põhifunktsioonid](operatsioonisusteemi_pohifunktsioonid.md).
+
+*Õppematerjali koostaja: Priit Paap, 2026*
