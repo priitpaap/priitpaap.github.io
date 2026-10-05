@@ -1,6 +1,9 @@
 # Operatsioonisüsteemi põhifunktsioonid
 
-Operatsioonisüsteem korraldab protsessori, mälu, failide ja seadmete kasutamist. Selles materjalis vaatame, mis toimub rakenduse käivitamisel ning kuidas mitu programmi saavad ühes arvutis töötada.
+Operatsioonisüsteem korraldab protsessori, mälu, failide ja seadmete kasutamist ning süsteemi kaitset. Selles materjalis vaatame, millised on operatsioonisüsteemi põhilised ülesanded. 
+
+![operatsioonisusteemi pohifunktsioonid](assets/3-os-pohifunktsioonid/operatsioonisusteemi-pohifunktsioonid.png){ width="75%" }
+
 
 !!! info "Õpieesmärgid"
 
@@ -13,7 +16,7 @@ Operatsioonisüsteem korraldab protsessori, mälu, failide ja seadmete kasutamis
     - selgitada kasutajaõiguste ning protsesside eraldamise vajadust;
     - seostada arvuti aeglustumise võimalikke põhjuseid ressursside kasutamisega.
 
-## 1. Programmist saab protsess
+## 1. Protsessihaldus
 
 **Programm** on käskude ja muu vajaliku sisu kogum, mille abil arvuti täidab ülesandeid. Paigaldatud rakenduse failid asuvad tavaliselt salvestusseadmel. Nende olemasolu ei tähenda veel, et rakendus töötab.
 
