@@ -78,7 +78,7 @@ Enne esitamist ava PDF ja kontrolli, et sisu oleks loetav.
 
 ## Hindamiskirteeriumid
 
-Ülesanne on **"arvestatud"**, kui:
+Ülesanne on **"arvestatud"**, kui: 
 
 - nõutud Windowsi ja nutiseadme andmed on esitatud selgelt ning puuduvate näitajate kohta on lisatud selgitus;
 - küsimuse vastuses on välja toodud üks praktiline olukord ja selgitatud, miks on selles vaja teada operatsioonisüsteemi täpset versiooni või arhitektuuri;
