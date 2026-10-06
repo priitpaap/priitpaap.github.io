@@ -9,14 +9,14 @@ Fail võib olla olemas, kuid arvuti peab teadma ka selle nime, asukohta ja suuru
     - selgitada failisüsteemi rolli andmete talletamisel;
     - eristada salvestusseadet, partitsiooni, köidet, failisüsteemi ja failivormingut;
     - kirjeldada kataloogipuu, failitee ja metaandmete tähendust;
-    - võrrelda FAT32, exFAT-i, NTFS-i, ext4 ja APFS-i kasutusotstarvet;
-    - tuua näiteid XFS-i, Btrfs-i, ZFS-i ja ReFS-i kasutamisest;
+    - võrrelda erinevate failisüsteemide kasutusotstarvet;
+    - tuua näiteid failisüsteemide kasutamisest;
     - eristada päeviku, kontrollsumma, krüpteerimise, hetktõmmise ja varukoopia ülesandeid;
     - valida olukorrale sobiva failisüsteemi ning põhjendada oma valikut.
 
 ## 1. Mis on failisüsteem?
 
-**Failisüsteem** (*file system*) on andmete talletamise ja korraldamise viis ning seda toetav tarkvara. See võimaldab operatsioonisüsteemil käsitleda andmeid failide ja kataloogidena. Kasutaja ei pea teadma, millisesse salvestusseadme füüsilisse kohta iga failiosa kirjutatakse. [1]
+**Failisüsteem** (*file system*) on andmete talletamise ja korraldamise viis ning seda toetav tarkvara. See võimaldab operatsioonisüsteemil käsitleda andmeid failide ja kataloogidena. Kasutaja ei pea teadma, millisesse salvestusseadme füüsilisse kohta iga failiosa kirjutatakse.
 
 Failisüsteemi ülesanded on näiteks:
 
@@ -26,7 +26,7 @@ Failisüsteemi ülesanded on näiteks:
 - talletada teavet failide kohta;
 - toetada ligipääsuõigusi ja töökindluse mehhanisme, kui failisüsteem neid pakub.
 
-Failisüsteem võib paikneda näiteks SSD-l, kõvakettal või mälupulgal. Kõik failisüsteemid ei asu siiski otse kohalikul kettal: andmetele võib ligi pääseda ka võrgu kaudu ning mõned failisüsteemid esitavad mälus olevat või operatsioonisüsteemi loodud teavet. [1, 6]
+Failisüsteem võib paikneda näiteks SSD-l, kõvakettal või mälupulgal. Kõik failisüsteemid ei asu siiski otse kohalikul kettal: andmetele võib ligi pääseda ka võrgu kaudu ning mõned failisüsteemid esitavad mälus olevat või operatsioonisüsteemi loodud teavet.
 
 ### 1.1. Seade, partitsioon, köide ja failisüsteem
 
@@ -46,13 +46,13 @@ Failisüsteem võib paikneda näiteks SSD-l, kõvakettal või mälupulgal. Kõik
 
 ### 2.1. Hierarhiline ülesehitus
 
-Tavaliselt korraldatakse failid **hierarhiliselt**, kataloogide ja alamkataloogide puuna. **Kataloog** ehk kaust võib sisaldada faile ja teisi katalooge. Puu lähtekoht on **juurkataloog**. [1]
+Tavaliselt korraldatakse failid **hierarhiliselt**, kataloogide ja alamkataloogide puuna. **Kataloog** ehk kaust võib sisaldada faile ja teisi katalooge. Puu lähtekoht on **juurkataloog**.
 
 ```mermaid
 flowchart TD
     R["Juurkataloog /"] --> H["home"]
     R --> E["etc"]
-    H --> U["oppija"]
+    H --> U["kasutaja"]
     U --> D["Dokumendid"]
     U --> P["Pildid"]
     D --> F["aruanne.pdf"]
@@ -63,14 +63,14 @@ See on lihtsustatud Linuxi kataloogipuu. Kaust `Dokumendid` asub kasutaja kausta
 
 **Failitee** (*path*) kirjeldab faili või kataloogi asukohta:
 
-- Windowsi näide: `C:\Users\oppija\Documents\aruanne.pdf`;
-- Linuxi näide: `/home/oppija/Dokumendid/aruanne.pdf`.
+- Windowsi näide: `C:\Users\kasutaja\Documents\aruanne.pdf`;
+- Linuxi näide: `/home/kasutaja/Dokumendid/aruanne.pdf`.
 
-Windowsis kasutatakse sageli draivitähti, Linuxis ühendatakse eri failisüsteemid ühe kataloogipuu külge. **Haakimine** (*mounting*) tähendab failisüsteemi kasutamiseks ühendamist; **haakepunkt** (*mount point*) on koht kataloogipuus, mille kaudu selle sisule ligi pääseb. Näiteks võib mälupulga sisu olla kättesaadav kataloogis `/media/oppija/USB`. [1]
+Windowsis kasutatakse sageli draivitähti, Linuxis ühendatakse eri failisüsteemid ühe kataloogipuu külge. **Haakimine** (*mounting*) tähendab failisüsteemi kasutamiseks ühendamist; **haakepunkt** (*mount point*) on koht kataloogipuus, mille kaudu selle sisule ligi pääseb. Näiteks võib mälupulga sisu olla kättesaadav kataloogis `/media/kasutaja/USB`.
 
 ### 2.2. Metaandmed ja salvestusruum
 
-**Metaandmed** (*metadata*) on andmed faili kohta: näiteks faili suurus, ajatemplid, omanik ja õigused. Toetatavad metaandmed sõltuvad failisüsteemist. Faili nimi ja kataloogiseosed on samuti osa failisüsteemi hallatavast teabest. [1, 2]
+**Metaandmed** (*metadata*) on andmed faili kohta: näiteks faili suurus, ajatemplid, omanik ja õigused. Toetatavad metaandmed sõltuvad failisüsteemist. Faili nimi ja kataloogiseosed on samuti osa failisüsteemi hallatavast teabest.
 
 Faili sisu talletatakse ruumi jaotamise üksustes, mida nimetatakse sageli **plokkideks** või **klastriteks**. Üks fail võib hõivata mitu üksust ning need ei pea asuma järjest.
 
@@ -84,13 +84,13 @@ Erinevad mehhanismid lahendavad erinevaid probleeme. Ükski neist ei asenda kõi
 
 ### 3.1. Ligipääsuõigused ja krüpteerimine
 
-**Ligipääsuõigused** määravad, kes tohib faili näiteks lugeda või muuta. **ACL** (*access control list*) ehk juurdepääsu kontrollnimekiri võimaldab määrata õigusi kasutajatele ja rühmadele. NTFS toetab ACL-e; FAT32 ja exFAT samaväärseid failipõhiseid õigusi ei talleta. [2, 3]
+**Ligipääsuõigused** määravad, kes tohib faili näiteks lugeda või muuta. **ACL** (*access control list*) ehk juurdepääsu kontrollnimekiri võimaldab määrata õigusi kasutajatele ja rühmadele. NTFS toetab ACL-e; FAT32 ja exFAT samaväärseid failipõhiseid õigusi ei talleta.
 
 **Krüpteerimine** muudab andmed võtmeta loetamatuks. Seda võib pakkuda failisüsteem ise või eraldi ketta krüpteerimise lahendus. Krüpteerimine kaitseb andmete konfidentsiaalsust, kuid ei taasta kogemata kustutatud faili ega paranda iseenesest rikkis salvestusseadet.
 
 ### 3.2. Päevik ehk journaling
 
-**Päeviku pidamine** (*journaling*) tähendab, et failisüsteem talletab oluliste muudatuste kohta taastamiseks vajaliku teabe. Katkestuse järel saab selle abil taastada failisüsteemi kooskõlalise oleku. Näiteks ext4 tavapärases töörežiimis päevikutatakse metaandmeid; iga faili kogu sisu ei salvestata päevikusse. [4]
+**Päevikupidamine** (*journaling*) tähendab, et failisüsteem talletab oluliste muudatuste kohta taastamiseks vajaliku teabe. Katkestuse järel saab selle abil taastada failisüsteemi kooskõlalise oleku. Näiteks ext4 tavapärases töörežiimis tehaks nii metaandmetega; iga faili kogu sisu ei salvestata päevikusse.
 
 **Näide:** vool katkeb faili loomise ajal. Päevik aitab vältida olukorda, kus kataloogikirjed ja salvestusruumi arvestus jäävad omavahel vastuollu. See ei taga, et kõik vahetult enne katkestust sisestatud andmed säilivad.
 
@@ -98,13 +98,13 @@ Erinevad mehhanismid lahendavad erinevaid probleeme. Ükski neist ei asenda kõi
 
 **Kontrollsumma** (*checksum*) on andmete põhjal arvutatud väärtus, mille abil saab kontrollida, kas andmed on muutunud. Kui lugemisel arvutatud väärtus erineb talletatud väärtusest, võib see viidata andmete rikkumisele ehk *data corruption*'ile.
 
-**Vea avastamine ja parandamine on erinevad asjad.** Parandamiseks peab olema kättesaadav terve koopia või muu taastamiseks piisav liiane teave. Näiteks Btrfs ja ZFS saavad sobiva liiasusega salvestuslahenduses kasutada vigase ploki asemel tervet koopiat. [7, 9]
+**Vea avastamine ja parandamine on erinevad asjad.** Parandamiseks peab olema kättesaadav terve koopia või muu taastamiseks piisav liiane teave. Näiteks Btrfs ja ZFS saavad salvestuslahenduses kasutada vigase ploki asemel tervet koopiat (peab loomulikult ruumi olema).
 
 ### 3.4. Kopeerimine kirjutamisel ja hetktõmmised
 
-**Kopeerimine kirjutamisel** ehk **CoW** (*copy-on-write*) tähendab lihtsustatud mudelis, et muudetav plokk kirjutatakse uude kohta ja seejärel uuendatakse viiteid. Muutmata plokke ei pea uuesti kopeerima. See ei tähenda, et iga muudatuse korral tehakse kogu failist täiskoopia. [9]
+**Kopeerimine kirjutamisel** ehk **CoW** (*copy-on-write*) tähendab lihtsustatud mudelis, et muudetav plokk kirjutatakse uude kohta ja seejärel uuendatakse viiteid. Muutmata plokke ei pea uuesti kopeerima. See ei tähenda, et iga muudatuse korral tehakse kogu failist täiskoopia.
 
-Seda põhimõtet kasutavad näiteks Btrfs ja ZFS. **Hetktõmmis** (*snapshot*) säilitab viited kindla ajahetke andmetele ning aitab hiljem varasema oleku juurde tagasi pöörduda. Kui hetktõmmis hoiab vanu plokke kasutuses, kulub muudatuste lisandudes ka rohkem salvestusruumi. [7, 10]
+Seda põhimõtet kasutavad näiteks Btrfs ja ZFS. **Hetktõmmis** (*snapshot*) säilitab viited kindla ajahetke andmetele ning aitab hiljem varasema oleku juurde tagasi pöörduda. Kui hetktõmmis hoiab vanu plokke kasutuses, kulub muudatuste lisandudes ka rohkem salvestusruumi.
 
 !!! warning "Hetktõmmis ei asenda eraldi varukoopiat"
 
