@@ -1,67 +1,69 @@
-# ÜL 1: operatsioonisüsteemi andmete tuvastamine
+# ÜL 2: Linuxi distributsiooni ja Windows 11 võrdlus
 
 ## Eesmärk
 
-Ülesande eesmärk on leida Windowsi arvuti ja nutiseadme operatsioonisüsteemi andmed ning eristada operatsioonisüsteemi nime, väljaannet, versiooni, järku ja arhitektuuri.
+Ülesande eesmärk on võrrelda enda valitud Linuxi distributsiooni ja Windows 11, leida nende sarnasused ning erinevused.
 
 ## Vajalikud vahendid
 
-- Windows 10 või Windows 11 operatsioonisüsteemiga laua- või sülearvuti. Võid kasutada kodust arvutit või võimaluse puudumisel kooli klassiruumi arvutit.
-- Androidi, iOS-i või iPadOS-iga nutiseade. 
-- Tekstitöötlusprogramm, millega saad töö PDF-failina salvestada (N: Google Docs või MS Word).
+- Internetiühendusega arvuti.
+- Tekstitöötlusprogramm, millega saad töö PDF-failina salvestada.
 
-## 1. Windowsi arvuti andmed
+Operatsioonisüsteeme ei pea selle ülesande jaoks paigaldama. Kasutajaliidesega tutvumiseks võid kasutada internetiotisngut, ametlikke tutvustusi või videomaterjale.
 
-Ava **Sätted → Süsteem → Teave** (*Settings → System → About*). Otsi andmeid jaotistest **Seadme spetsifikatsioonid** (*Device specifications*) ja **Windowsi spetsifikatsioonid** (*Windows specifications*).
+## 1. Võrreldavate süsteemide valimine
 
-Koosta oma töös järgmine tabel ja täida see uuritava arvuti andmetega.
+Vali üks Linuxi distributsioon ja võrdle selle **töölauaväljaannet Windows 11-ga**.
 
-| Näitaja | Uuritava arvuti andmed |
+Linuxi distributsiooni leidmiseks võid kasutada [DistroWatchi](https://distrowatch.com/). Võrdluseks vajalikud andmed kontrolli distributsiooni ametlikust dokumentatsioonist. Abi leiab seekord ka Wikipediast.
+
+**Nimeta töö alguses täpselt võrreldavad süsteemid.**
+
+| Näitaja | Linuxi distributsioon | Windows 11 |
+| --- | --- | --- |
+| Distributsiooni või operatsioonisüsteemi nimi | | Windows 11 |
+| Võrreldav versioon | | |
+| Töölauakeskkond | | Windowsi töölaud |
+
+Linuxi puhul märgi töölauakeskkonna nimi, näiteks GNOME, KDE Plasma, Cinnamon või Xfce vms. 
+
+
+## 2. Operatsioonisüsteemide võrdlemine
+
+Esita võrdlus tabelina või selgelt pealkirjastatud tekstina. Iga punkti juures peavad olema mõlema süsteemi andmed ning vajaduse korral lühike selgitus nende sarnasuse või erinevuse kohta.
+
+### Võrdluspunktid
+
+| Võrdluspunkt | Mida tuleb välja tuua? |
 | --- | --- |
-| Seadme nimi (*hostname / device name*) | |
-| Operatsioonisüsteemi nimi, näiteks Windows 10 või Windows 11 | |
-| Windowsi väljaanne (*edition*), näiteks Home, Pro või Education | |
-| Windowsi versioon (*version*) | |
-| Operatsioonisüsteemi arhitektuur: 32-bitine või 64-bitine | |
-| Sätetes kuvatav installimise kuupäev (*installed on*) | |
-| Operatsioonisüsteemi järk (*OS build*) | |
+| **Väljalase ja uuendusmudel** | Võrreldava versiooni väljalaskekuupäev. Jooksva väljalaskemudeliga distributsiooni puhul kirjelda selle asemel lühidalt, kuidas süsteemi uuendatakse. |
+| **Ressursinõuded** | Protsessori, muutmälu (RAM) ja salvestusruumi nõuded ning olulised lisatingimused. Märgi, kas allikas esitab minimaalsed või soovitatavad nõuded. Kui soovitatavaid nõudeid ei ole avaldatud, kirjuta see välja. |
+| **Otstarve** | Millistele kasutajatele ja ülesannetele on võrreldav väljaanne suunatud? Näiteks igapäevane arvutikasutus, õppetöö, ärikasutus või sisuloome. |
+| **Toetatavad arhitektuurid** | Milliseid protsessoriarhitektuure toetab võrreldav väljaanne, näiteks x86-64 või ARM64? |
+| **Tuuma tüüp** | Nimeta tuuma tüüp, näiteks monoliitne, hübriidtuum või mikrotuum. Piisab lühikesest vastusest.|
+| **Lähtekood** | Kas süsteemi põhikomponentide lähtekood on avatud või suletud? Too vajaduse korral välja, et eri komponentidel võib olla erinev lähtekoodi kättesaadavus. |
+| **Kasutajaliides** | Võrdle rakenduste avamist ja otsimist, failide ning kaustade haldamist, seadistuste leidmist ja töölaua kohandamist. Too välja vähemalt üks sarnasus ja kaks erinevust. |
+| **Peamised võimalused** | Vali kummagi süsteemi kohta kolm olulist võimalust. Selgita lühidalt, mida need kasutajal teha võimaldavad. |
+| **Kaasasolevad rakendused** | Nimeta kummagi süsteemi puhul 3–5 olulist eelpaigaldatud rakendust ja nende otstarve. Erista neid rakendustest, mille kasutaja peab ise lisaks paigaldama. |
+| **Tarkvara paigaldamine ja uuendamine** | Kirjelda, kust rakendusi saadakse ja kuidas neid paigaldatakse. Selgita ka, kuidas uuendatakse operatsioonisüsteemi ning rakendusi. |
 
-!!! tip "Versioon ja järk on erinevad näitajad"
+!!! tip "Minimaalsed ja soovitatavad nõuded"
 
-    Windowsi versioon tähistab väljalaset, näiteks `25H2`. Järk on täpsem numbriline tähis, näiteks `26100.x`, kus `x` tähistab uuendustega muutuvat järguosa. Kirjuta tabelisse oma arvutis kuvatavad väärtused, mitte näited.
+    Ära esita minimaalseid nõudeid soovitatavate nõuetena. Kui ühele süsteemile on avaldatud minimaalsed ja teisele soovitatavad nõuded, märgi see võrdluses selgelt välja. Nende arvude põhjal ei saa üksi järeldada, kumb süsteem töötab konkreetses ülesandes kiiremini.
 
-    Süsteemi tüüp (*System type*) võib näidata nii operatsioonisüsteemi kui ka protsessori arhitektuuri. Selles ülesandes märgi, kas paigaldatud operatsioonisüsteem on 32-bitine või 64-bitine.
+### Töölaua pildid
 
-!!! info "Installimise kuupäev"
+Lisa **mõlema operatsioonisüsteemi töölauast üks pilt**.
 
-    Märgi kuupäev sellisena, nagu Windows seda kuvab. See ei pruugi olla arvuti ostmise või Windowsi kõige esimese paigaldamise kuupäev: kuvatav väärtus võib muutuda näiteks suurema versiooniuuenduse järel. Kui näitajat ei kuvata, märgi see tabelisse.
+- Pilt peab vastama võrreldavale süsteemile ja Linuxi puhul valitud töölauakeskkonnale.
+- Internetist leitud pildile lisa allika link. Enda tehtud kuvatõmmisele märgi „Autori kuvatõmmis“.
+- Pildid peavad olema piisavalt selged, et kirjeldatud kasutajaliidese elemente oleks võimalik näha.
 
-**Lisakontroll:** vajuta `Win + R`, sisesta `winver` ja vajuta Enter. Võrdle avanenud aknas kuvatavat versiooni ning järku oma tabeliga.
 
+## 3. Allikate kasutamine
 
-## 2. Nutiseadme andmed
-
-Leia nutiseadme seadistustest teave operatsioonisüsteemi kohta.
-
-- **Android:** ava **Seaded → Teave telefoni kohta → Androidi versioon**. Tootjast sõltuvalt võivad andmed olla jaotises **Tarkvara teave** või sarnase nimega menüüs.
-- **iPhone või iPad:** ava **Seaded → Üldine → Teave** (*Settings → General → About*) ja leia iOS-i või iPadOS-i versioon.
-
-Koosta ja täida järgmine tabel.
-
-| Näitaja | Uuritava nutiseadme andmed |
-| --- | --- |
-| Seadme tootja ja mudel | |
-| Operatsioonisüsteemi nimi | |
-| Operatsioonisüsteemi versioon | |
-
-Androidi seadmes võib olla kuvatud ka tootja kasutajaliidese nimi ja versioon, näiteks One UI. Ära märgi seda Androidi versiooni asemel. Soovi korral lisa tootja kasutajaliidese andmed eraldi reale.
-
-## 3. Mõtle ja vasta
-
-Vasta oma töös järgmisele küsimusele.
-
-1. Nimeta üks praktiline olukord, kus on vaja teada operatsioonisüsteemi täpset versiooni või arhitektuuri.
-
+- Lisa töö lõppu kasutatud allikate loend koos lehe pealkirja ja lingiga. 
+- Videot kasutades lisa selle pealkiri ja link.
 
 ## Esitamine
 
@@ -70,20 +72,22 @@ Esita töö **ühe PDF-failina Moodle'i kursuse vastava ülesande juurde**.
 **Töö peab sisaldama**:
 
 - sinu nime ja õpperühma;
-- täidetud Windowsi arvuti andmete tabelit;
-- täidetud nutiseadme andmete tabelit;
-- vastuseid kahele võrdlusküsimusele.
+- võrreldavate süsteemide täpseid nimetusi;
+- kõiki kümmet võrdluspunkti;
+- mõlema süsteemi töölauapilti koos allikaga;
+- kasutatud allikate loendit.
 
-Enne esitamist ava PDF ja kontrolli, et sisu oleks loetav. 
+Enne esitamist ava PDF ja kontrolli, et tekst, tabelid, pildid ja lingid oleksid loetavad ning tabelite sisu ei oleks lehe servast välja lõigatud.
 
-## Hindamiskirteeriumid
+## Hindamise alused
 
 Ülesanne on **"arvestatud"**, kui:
 
-- nõutud Windowsi ja nutiseadme andmed on esitatud selgelt ning puuduvate näitajate kohta on lisatud selgitus;
-- küsimuse vastuses on välja toodud üks praktiline olukord ja selgitatud, miks on selles vaja teada operatsioonisüsteemi täpset versiooni või arhitektuuri;
-- PDF-fail on loetav ja esitatud õigesse kohta.
-
----
-*Ülesande koostaja: Priit Paap, 2026*
-
+- võrreldava Linuxi distributsiooni nimi, versioon ja töölauakeskkond ning Windows 11 versioon on nimetatud; jooksva väljalaskemudeli korral on lisatud vastav selgitus ja andmete vaatamise kuupäev;
+- kõik kümme võrdluspunkti on käsitletud mõlema süsteemi kohta ning leidmata teave on selgelt märgitud;
+- ressursinõuete juures on eristatud minimaalsed ja soovitatavad nõuded;
+- kasutajaliidese kohta on kirjeldatud vähemalt üks sarnasus ja kaks erinevust;
+- kummagi süsteemi kohta on esitatud kolm olulist võimalust ja 3–5 kaasasolevat rakendust koos otstarbega;
+- mõlema süsteemi töölauapildid on lisatud, vastavad võrreldavatele süsteemidele ning on varustatud allikatega;
+- kasutatud allikad on esitatud;
+- töö on esitatud loetava PDF-failina.
