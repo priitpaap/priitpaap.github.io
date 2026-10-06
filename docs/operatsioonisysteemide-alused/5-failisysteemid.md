@@ -26,7 +26,7 @@ Failisüsteemi ülesanded on näiteks:
 - talletada teavet failide kohta;
 - toetada ligipääsuõigusi ja töökindluse mehhanisme, kui failisüsteem neid pakub.
 
-Failisüsteem võib paikneda näiteks SSD-l, kõvakettal või mälupulgal. Kõik failisüsteemid ei asu siiski otse kohalikul kettal: andmetele võib ligi pääseda ka võrgu kaudu ning mõned failisüsteemid esitavad mälus olevat või operatsioonisüsteemi loodud teavet.
+**Failisüsteem võib paikneda näiteks SSD-l, kõvakettal või mälupulgal**. Kõik failisüsteemid ei asu siiski otse kohalikul kettal: andmetele võib ligi pääseda ka võrgu kaudu ning mõned failisüsteemid esitavad mälus olevat või operatsioonisüsteemi loodud teavet.
 
 ### 1.1. Seade, partitsioon, köide ja failisüsteem
 
@@ -114,42 +114,42 @@ Seda põhimõtet kasutavad näiteks Btrfs ja ZFS. **Hetktõmmis** (*snapshot*) s
 
 ### 4.1. FAT32 — File Allocation Table 32
 
-**FAT32** on vanem, laialt toetatud failisüsteem. Seda kohtab näiteks mälupulkadel ja seadmetes, mis vajavad ühilduvust vanema tarkvara või riistvaraga.
+**FAT32** on vanem, laialt toetatud failisüsteem. Seda kohtab näiteks mälupulkadel ja seadmetes, mis vajavad ühilduvust vanema tarkvara või riistvaraga. Windows 95 ja 98 aegadel kasutati seda ka operatsioonisüsteemi falisüsteemina.
 
 Selle olulised piirangud on:
 
 - ühe faili suurus peab olema **alla 4 GiB**: täpne ülempiir on 4 294 967 295 baiti ehk 4 GiB miinus üks bait;
 - puuduvad NTFS-iga võrreldavad failipõhised ligipääsuõigused;
-- puudub failisüsteemi päevik. [2, 18]
+- puudub failisüsteemi päevik.
 
 **Näide:** 32 GB mälupulgal võib olla 20 GB vaba ruumi, kuid sellele ei saa FAT32 korral kopeerida ühte 6 GiB videofaili. Takistus on ühe faili suuruse piir.
 
 ### 4.2. exFAT — Extended File Allocation Table
 
-**exFAT** on mõeldud eelkõige eemaldatavatele salvestusseadmetele. See võimaldab talletada üle 4 GiB faile ning sobib sageli andmete vahetamiseks Windowsi ja macOS-i vahel. Ka tänapäevased Linuxi süsteemid võivad exFAT-i kasutada; konkreetse seadme ja tarkvara tuge tuleb siiski kontrollida. [2, 12, 17]
+**exFAT** on mõeldud eelkõige eemaldatavatele salvestusseadmetele, operatsioonisüsteemi failisüsteemina pole seda kungi kasutatud. See võimaldab talletada üle 4 GiB faile ning sobib sageli andmete vahetamiseks Windowsi ja macOS-i vahel. Ka tänapäevased Linuxi süsteemid võivad exFAT-i kasutada; konkreetse seadme ja tarkvara tuge tuleb siiski kontrollida.
 
-exFAT-il puuduvad tavapärased failipõhised ACL-õigused ja failisüsteemi päevik. See on andmevahetuse jaoks kasulik, kuid ei ole Windowsi tavapärase süsteemiköite failisüsteem. [2]
+exFAT-il puuduvad samuti tavapärased failipõhised ACL-õigused ja failisüsteemi päevik.
 
 ### 4.3. NTFS — New Technology File System
 
-**NTFS** on tänapäevase Windowsi tavapärane süsteemiköite failisüsteem. See toetab näiteks:
+**NTFS** on tavapärane Windows operatsioonsüteemi süsteemiketastel kasutatav failisüsteem, aastast 1993. Näiteks kautavad seda windows 10 ja 11. See toetab näiteks:
 
 - kasutajate ja rühmade ligipääsuõigusi;
 - metaandmete päevikut;
 - suuri faile;
-- failide pakkimist ning EFS-i abil failipõhist krüpteerimist, kui vastav Windowsi väljaanne ja seadistus seda võimaldavad. [2, 3]
+- failide pakkimist ning EFS-i abil failipõhist krüpteerimist, kui vastav Windowsi väljaanne ja seadistus seda võimaldavad.
 
 **Näide:** kooli Windowsi arvutis saab määrata, et õppija tohib oma faile muuta, kuid teiste kasutajate failidele ligi ei pääse.
 
-NTFS on sobiv valik Windowsi sisemise andmeköite jaoks. Teistes operatsioonisüsteemides ei pruugi lugemis- ja kirjutamistugi olla samasugune: näiteks macOS-is saab NTFS-kettalt üldjuhul lugeda, kuid kirjutamiseks on vaja lisalahendust. [12]
+NTFS on sobiv valik Windowsi operatsioonisüteemide jaoks. Teistes operatsioonisüsteemides ei pruugi lugemis- ja kirjutamistugi olla samasugune: näiteks macOS-is saab NTFS-kettalt üldjuhul lugeda, kuid kirjutamiseks on vaja lisalahendust.
 
 ### 4.4. ReFS — Resilient File System
 
-**ReFS** keskendub suurte andmekogumite ja töökindla salvestuse vajadustele. Seda kasutatakse Windows Serveri salvestuslahendustes ning Windows 11 arendustööks mõeldud **Dev Drive**'i köidetel. [5, 13]
+**ReFS** keskendub suurte andmekogumite ja töökindla salvestuse vajadustele. Seda kasutatakse Windows Serveri salvestuslahendustes ning Windows 11 arendustööks mõeldud Dev Drive'i köidetel.
 
-ReFS kasutab metaandmete kontrollsummasid ja võib kasutada ka failiandmete kontrollsummasid. Sobiva Storage Spacesi liiasuse korral saab see kahjustatud andmeid tervest koopiast parandada. Automaatne parandamine ei ole võimalik iga vea ja iga seadistuse korral. [5]
+ReFS kasutab metaandmete kontrollsummasid ja võib kasutada ka failiandmete kontrollsummasid. Sobiva Storage Spacesi liiasuse korral saab see kahjustatud andmeid tervest koopiast parandada. Automaatne parandamine ei ole võimalik iga vea ja iga seadistuse korral.
 
-**ReFS ei ole Windowsi alglaaditava süsteemiköite failisüsteem.** Seda ei saa valida NTFS-i asemel tavapärase Windowsi süsteemiköite jaoks. Võimalused sõltuvad Windowsi versioonist ja kasutusjuhtumist. [5]
+**ReFS-i ei saa kasutada Windowsi operatsioonsüsteemide alglaadimsketasel.** Seda ei saa valida NTFS-i asemel tavapärase Windowsi süsteemiköite jaoks. Võimalused sõltuvad Windowsi versioonist ja kasutusjuhtumist.
 
 ## 5. Linuxiga seotud failisüsteemid
 
@@ -157,64 +157,75 @@ Linux toetab mitut failisüsteemi. Kõigil distributsioonidel ja väljaannetel e
 
 ### 5.1. ext2, ext3 ja ext4
 
-**ext** tähendab *extended file system*. ext2, ext3 ja ext4 on sama failisüsteemiperekonna eri põlvkonnad. [4, 6, 14]
+**ext** tähendab *extended file system*. ext2, ext3 ja ext4 on sama failisüsteemiperekonna eri põlvkonnad.
 
-| Failisüsteem | Oluline erinevus | Mida algaja peaks teadma? |
-| --- | --- | --- |
-| **ext2** — *second extended file system* | Tavapärane ext2 ei pea failisüsteemi päevikut. | Vanem lahendus; uue üldotstarbelise süsteemi jaoks eelistatakse enamasti muud valikut. |
-| **ext3** — *third extended file system* | Lisab ext-perekonda päeviku. | Aitas pärast katkestust failisüsteemi olekut kiiremini taastada. |
-| **ext4** — *fourth extended file system* | Täiustab muu hulgas ruumi jaotamist ning suurte failide käsitlemist. | Levinud üldotstarbeline Linuxi failisüsteem, mis toetab õigusi ja päevikut. |
+| Failisüsteem | Oluline erinevus | Ühe faili suuruse ülempiir* | Mida peaks teadma? |
+| --- | --- | --- | --- |
+| **ext2** — *second extended file system* | Ei pea failisüsteemi päevikut. | Ligikaudu **2 TiB**. | Vanem lahendus; uue üldotstarbelise süsteemi jaoks eelistatakse enamasti muud valikut. |
+| **ext3** — *third extended file system* | Lisab ext-perekonda päeviku. | Ligikaudu **2 TiB**. | Päevik aitab pärast katkestust failisüsteemi kooskõla kiiremini taastada. |
+| **ext4** — *fourth extended file system* | Täiustab ruumi jaotamist ja suurte failide käsitlemist. | Ligikaudu **16 TiB**. | Levinud üldotstarbeline Linuxi failisüsteem, mis toetab õigusi ja päevikut. Hetkel ilmselt kõige levinum Linuxi failisüsteem.|
 
-ext4 on sobiv näide Linuxi süsteemi- ja andmeköite failisüsteemist. See ei tähenda, et iga Linuxi paigaldus kasutab ext4: näiteks Fedora töölauaväljaanded kasutavad tavapärases automaatses paigalduses Btrfs-i ning RHEL 10 vaikimisi failisüsteem on XFS. [6, 8]
+*Piirangud on esitatud tavapärase **4 KiB plokisuuruse** korral.
+
+See ei tähenda, et iga Linuxi paigaldus kasutab ext4: näiteks Fedora töölauaväljaanded kasutavad tavapärases automaatses paigalduses Btrfs-i ning RHEL 10 vaikimisi failisüsteem on XFS. 
 
 ### 5.2. XFS
 
-**XFS** on päevikuga failisüsteem, mis sobib suurtele salvestusmahtudele ja paljudele samaaegsetele sisend-väljundtoimingutele. Seda kasutatakse muu hulgas serverites ning see on RHEL 10 vaikimisi valik. [6]
+**XFS** on päevikuga failisüsteem, mis sobib suurtele salvestusmahtudele ja paljudele samaaegsetele sisend-väljundtoimingutele. Seda kasutatakse muu hulgas serverites ning see on RHEL 10 vaikimisi valik. 
 
 **Näide:** server töötleb mitme rakenduse suuri andmefaile korraga.
 
-XFS-i ei saa nimetada kõigi töökoormuste puhul ext4-st kiiremaks. Tulemus sõltub failide suurusest, toimingutest, salvestusseadmest ja seadistusest. Valikut hinnatakse konkreetse kasutuse järgi. [6]
+XFS-i ei saa nimetada kõigi töökoormuste puhul ext4-st kiiremaks, väikeste failide puhul võib olla aeglasem kui ext4. Tulemus sõltub failide suurusest, toimingutest, salvestusseadmest ja seadistusest. Valikut hinnatakse konkreetse kasutuse järgi.
 
 ### 5.3. Btrfs — B-tree File System
 
-**Btrfs** pakub muu hulgas CoW-d, hetktõmmiseid, alamköiteid, andmete pakkimist ning andmete ja metaandmete kontrollsummasid. **Alamköide** (*subvolume*) on eraldi hallatav osa Btrfs-failisüsteemist; see ei ole sama mis eraldi kettapartitsioon. [7]
+**Btrfs** pakub muu hulgas CoW-d, hetktõmmiseid, alamköiteid, andmete pakkimist ning andmete ja metaandmete kontrollsummasid. **Alamköide** (*subvolume*) on eraldi hallatav osa Btrfs-failisüsteemist; see ei ole sama mis eraldi kettapartitsioon.
 
 **Näide:** süsteemist tehakse enne tarkvarauuendust hetktõmmis, et probleemi korral saaks varasema oleku taastada.
 
-Btrfs on kasutusel näiteks Fedora töölauaväljaannetes. Selle võimaluste töökindlust tuleb hinnata kasutatava funktsiooni ja seadistuse järgi, mitte üldise väitega „uus ja ebastabiilne”. Näiteks Btrfs-i dokumentatsioon eristab tavapäraseid võimalusi eksperimentaalsetest RAID 5/6 lahendustest. [7, 8]
+Btrfs on kasutusel näiteks Fedora töölauaväljaannetes ja CachyOS-is. Tegemist on järjest populaarsemaks saava failisüsteemiga.
 
 ### 5.4. ZFS ja OpenZFS
 
-**ZFS** ühendab failisüsteemi ja salvestusruumi haldamise võimalusi. Linuxis kasutatakse seda muu hulgas **OpenZFS-i** kaudu. ZFS ei ole ainult Linuxi failisüsteem; see pärineb Solarise keskkonnast. [15]
+**ZFS** ühendab failisüsteemi ja salvestusruumi haldamise võimalusi. Linuxis kasutatakse seda muu hulgas **OpenZFS-i** kaudu. ZFS ei ole ainult Linuxi failisüsteem; see pärineb Solarise keskkonnast.
 
-Salvestusseadmeid koondatakse **salvestuskogumiks** (*storage pool*), millest luuakse failisüsteeme või muid salvestusüksusi. ZFS kasutab CoW-d, kontrollsummasid ja hetktõmmiseid. Sobiva liiasuse korral saab kahjustatud andmeid parandada. [9, 10, 15]
+Salvestusseadmeid koondatakse **salvestuskogumiks** (*storage pool*), millest luuakse failisüsteeme või muid salvestusüksusi. ZFS kasutab CoW-d, kontrollsummasid ja hetktõmmiseid. Sobiva liiasuse korral saab kahjustatud andmeid parandada.
 
 **Näide:** ettevõtte failide hoidmiseks kasutatakse mitme kettaga salvestusserverit. ZFS aitab hallata salvestusruumi ja kontrollida andmete terviklikkust.
 
-ZFS-i mälu- ja jõudlusvajadus sõltub töökoormusest ning valitud võimalustest. „Peaaegu piiramatu maht” ei ole praktiline valikukriteerium: alati tuleb arvestada tegeliku riistvara ja toetatud seadistusega.
+ZFS-i mälu- ja jõudlusvajadus sõltub töökoormusest ning valitud võimalustest. ZFS-i kasutatakse näiteks failiserverites ja virtualiseerimiskeskkondades. Proxmox VE toetab ZFS-i virtuaalmasinate ketaste ja konteinerite andmete salvestamiseks.
 
 ## 6. Apple'i failisüsteemid
 
 ### 6.1. HFS ja HFS+
 
-**HFS** (*Hierarchical File System*) ja **HFS+** (*Hierarchical File System Plus*, tuntud ka kui **Mac OS Extended**) on Apple'i vanemad failisüsteemid. HFS+ oli kasutusel enne APFS-i ning seda võib endiselt kohata vanematel ketastel ja vanemate süsteemidega ühilduvust vajavates lahendustes. HFS+ olemasolu ei tähenda iseenesest, et ketas on vigane. [11, 16]
+**HFS** (*Hierarchical File System*) ja **HFS+** (*Hierarchical File System Plus*, tuntud ka kui **Mac OS Extended**) on Apple’i vanemad failisüsteemid. HFS+ arendati HFS-i edasiarendusena, et kasutada kettaruumi tõhusamalt ning toetada suuremaid faile ja pikemaid failinimesid.
 
-Selles materjalis piisab nende nimetuste äratundmisest. Failisüsteemide üksikasjalikku arengulugu käsitleme eraldi.
+| HFS+-i täiendus | Mida see kasutajale tähendas? |
+| --- | --- |
+| **Tõhusam kettaruumi kasutamine** | HFS+ võimaldas suurel kettal kasutada väiksemaid ruumijaotusplokke. Seetõttu raiskasid väikesed failid vähem kettaruumi. |
+| **Pikemad failinimed** | HFS-i kuni 31 märgi pikkuste nimede asemel võimaldas HFS+ kuni 255 märgi pikkuseid nimesid. |
+| **Unicode’i tugi failinimedes** | Paranes eri keelte ja kirjasüsteemide märkide kasutamine failinimedes. |
+| **Suuremate failide tugi** | HFS+ võimaldas käsitleda palju suuremaid faile, näiteks mahukaid videoid ja kettatõmmiseid. |
+
+**Hiljem lisati HFS+-ile päeviku tugi** (*journaling*). Päevikuga variant kannab nime **Mac OS Extended (Journaled)**. Päevik salvestab failisüsteemi metaandmete muudatusi ning aitab pärast elektrikatkestust või süsteemi kokkujooksmist taastada failisüsteemi struktuuri järjepidevuse. 
+
+HFS+ oli Mac-arvutites kasutusel enne APFS-i ning seda võib endiselt kohata vanematel ketastel ja vanemate süsteemidega ühilduvust vajavates lahendustes.
+
 
 ### 6.2. APFS — Apple File System
 
-**APFS** on tänapäevase macOS-i peamine failisüsteem; seda kasutavad ka Apple'i mobiiliplatvormid. See on optimeeritud välkmälule ja SSD-dele, kuid seda saab kasutada ka kõvaketastel. [11, 16]
+**APFS** on tänapäevase macOS-i peamine failisüsteem; seda kasutavad ka Apple'i mobiiliplatvormid. See on optimeeritud välkmälule ja SSD-dele, kuid seda saab kasutada ka kõvaketastel.
 
 APFS toetab näiteks:
 
 - krüpteeritud köiteid;
 - hetktõmmiseid;
 - mitme köite ühist ruumikasutust APFS-konteineris;
-- nii suur- ja väiketähti eristavat kui ka neid mitteeristavat vormingut. [11]
+- nii suur- ja väiketähti eristavat kui ka neid mitteeristavat vormingut.
 
 **Näide:** suur- ja väiketähti eristava vormingu korral võivad `Töö.txt` ja `töö.txt` olla samas kaustas eri failid. Neid mitteeristava vormingu korral käsitletakse nimesid samana.
 
-APFS ei ole tavaliselt sobiv valik kettale, mida peab lisatarkvarata lugema ja muutma ka Windowsi arvutis. Selleks võib sobida exFAT. [11, 12]
 
 ## 7. Kuidas valida failisüsteemi?
 
@@ -232,36 +243,6 @@ Valik sõltub sellest, **kus**, **milleks** ja **milliste failidega** salvestuss
 | Tänapäevase Maci süsteemi- või ainult Macis kasutatav andmeköide | **APFS** | macOS-i tugi ning vajaduse korral krüpteeritud köited ja hetktõmmised. |
 | Windowsi spetsiaalne salvestus- või arendusköide | **ReFS** | Ainult sobiva Windowsi versiooni ja toetatud kasutusjuhtumi korral. |
 
-Tabel on õppimiseks mõeldud lähtekoht. Konkreetse seadme, operatsioonisüsteemi versiooni ja kasutusjuhtumi dokumentatsioon määrab lõpliku valiku. [2, 3, 5–8, 11–13, 15]
-
-### 7.1. Mahupiirid: faili suurus ei ole köite suurus
-
-Erista alati kolme küsimust:
-
-1. Kui suur võib olla **üks fail**?
-2. Kui suur võib olla **kogu köide**?
-3. Mida toetab **konkreetne operatsioonisüsteem ja tööriist**?
-
-Failisüsteemi kirjeldusest leitud teoreetiline ülempiir ei pruugi olla arvutis tegelikult kasutatav piir. Näiteks NTFS-i praktilised võimalused sõltuvad Windowsi versioonist ja klastrisuurusest. Ka failinime pikkus ja kogu failitee pikkus on erinevad näitajad. [2, 3, 5]
-
-!!! tip "Ühikud tuleb kirjutada õigesti"
-
-    **GB ja TB** on 1000-põhised, **GiB ja TiB** 1024-põhised ühikud. Seega 1000 GB = 1 TB, kuid 1024 GiB = 1 TiB. FAT32 ühe faili piir on alla **4 GiB**, mitte täpselt 4 GB.
-
-### 7.2. Vormindamine ja ühilduvus
-
-**Vormindamine** (*formatting*) loob köitele failisüsteemi. Tavapärane uuesti vormindamine muudab senised failid tavapärasel viisil kättesaamatuks. See ei ole sama mis failide kopeerimine ega garanteeri vana sisu turvalist kustutamist.
-
-Enne failisüsteemi valikut kontrolli:
-
-- kas kõik vajalikud seadmed ja operatsioonisüsteemid saavad seda lugeda **ja** sellele kirjutada;
-- kas ühe faili suuruse piir sobib;
-- kas vajad failipõhiseid õigusi, krüpteerimist või hetktõmmiseid;
-- kas alglaadimine ja vajalikud rakendused on selles seadistuses toetatud.
-
-!!! warning "Enne vormindamist"
-
-    Tee vajalikest andmetest varukoopia ja veendu, et valisid õige seadme ning köite. Failisüsteemi muutmine ei ole probleemse mälupulga puhul automaatselt esimene lahendus.
 
 ## 8. Enesekontroll
 
@@ -350,74 +331,48 @@ Vasta kõigepealt ise. Seejärel ava vastus ja võrdle oma põhjendust.
 
 | Mõiste | Selgitus |
 | --- | --- |
-| **Failisüsteem — file system** | Failide talletamise ja korraldamise viis ning seda toetav tarkvara. |
-| **Failivorming — file format** | Ühe faili sisu ülesehitus, näiteks PDF või JPEG. |
-| **Salvestusseade — storage device** | Füüsiline seade andmete talletamiseks, näiteks SSD või mälupulk. |
-| **Partitsioon — partition** | Partitsioonitabelis määratletud osa salvestusseadmest. |
-| **Köide — volume** | OS-i kasutatav loogiline salvestusüksus; see ei pea alati vastama ühele partitsioonile. |
-| **Partitsiooniskeem — partition scheme** | Kettajaotiste kirjeldamise korraldus, näiteks GPT või MBR. |
-| **Kataloog — directory** | Kaust, mis korraldab faile ja alamkatalooge. |
-| **Juurkataloog — root directory** | Kataloogipuu lähtekoht. |
-| **Failitee — path** | Faili või kataloogi asukoha kirjeldus kataloogipuus. |
-| **Metaandmed — metadata** | Andmed faili kohta, näiteks suurus, ajatemplid ja õigused. |
-| **Plokk; klaster — block; cluster** | Salvestusruumi jaotamise üksus; täpne tähendus sõltub süsteemist. |
-| **Haakimine — mounting** | Failisüsteemi ühendamine, et selle sisu saaks kasutada. |
-| **Haakepunkt — mount point** | Koht kataloogipuus, mille kaudu ühendatud failisüsteemile ligi pääseb. |
-| **Vormindamine — formatting** | Failisüsteemi loomine köitele. |
-| **Ligipääsuõigused — permissions** | Reeglid selle kohta, kes tohib faili või kataloogi kasutada ja muuta. |
-| **ACL — access control list** | Kasutajate ja rühmade juurdepääsuõiguste kontrollnimekiri. |
-| **Krüpteerimine — encryption** | Andmete muutmine võtmeta loetamatuks. |
-| **Päeviku pidamine — journaling** | Taastamiseks vajaliku teabe talletamine failisüsteemi muudatuste kohta. |
-| **Andmete terviklikkus — data integrity** | Andmete kooskõla ja rikkumata säilimine. |
-| **Andmete rikkumine — data corruption** | Andmete kahjustumine, näiteks salvestus- või edastusvea tõttu. |
-| **Kontrollsumma — checksum** | Andmetest arvutatud väärtus, mis aitab avastada muutusi ja vigu. |
-| **Liiasus — redundancy** | Täiendavad koopiad või teave, mida saab kasutada rikke korral taastamiseks. |
-| **CoW — copy-on-write** | Kopeerimine kirjutamisel: muutunud plokid kirjutatakse uude kohta ja uuendatakse viited. |
-| **Hetktõmmis — snapshot** | Andmete kindla ajahetke oleku säilitamine. |
-| **Varukoopia — backup** | Andmete taastamiseks mõeldud eraldi koopia. |
-| **Alamköide — subvolume** | Btrfs-failisüsteemi eraldi hallatav osa. |
-| **Salvestuskogum — storage pool** | Ühiselt hallatav salvestusruum, mida saab moodustada mitmest seadmest. |
-| **FAT32 — File Allocation Table 32** | Laia seadmetoega failisüsteem, mille ühe faili piir on alla 4 GiB. |
-| **exFAT — Extended File Allocation Table** | Eemaldatavate seadmete ja suurte failide andmevahetuse failisüsteem. |
-| **NTFS — New Technology File System** | Windowsi tavapärane failisüsteem õiguste ja päeviku toega. |
-| **EFS — Encrypting File System** | Windowsi failipõhise krüpteerimise võimalus NTFS-is. |
-| **ReFS — Resilient File System** | Microsofti failisüsteem spetsiaalseteks töökindla salvestuse kasutusjuhtudeks. |
-| **ext2, ext3, ext4 — extended file system** | Linuxi ext-failisüsteemiperekonna teine, kolmas ja neljas põlvkond. |
-| **XFS** | Päevikuga failisüsteem, mis sobib muu hulgas suurtele salvestusmahtudele ja samaaegsetele I/O-toimingutele. |
-| **Btrfs — B-tree File System** | Linuxi failisüsteem CoW, alamköidete, hetktõmmiste ja kontrollsummadega. |
-| **ZFS; OpenZFS** | Failisüsteemi ja salvestusruumi haldust ühendav tehnoloogia; OpenZFS on selle avatud lähtekoodiga arendus. |
-| **HFS; HFS+ — Hierarchical File System; Hierarchical File System Plus** | Apple'i vanemad failisüsteemid; HFS+ on tuntud ka kui Mac OS Extended. |
-| **APFS — Apple File System** | Tänapäevane Apple'i failisüsteem. |
-| **Suur- ja väiketähtede eristamine — case sensitivity** | Nime suur- ja väiketähtedega variante käsitletakse erinevate nimedena. |
-| **GB; GiB** | GB = 1 000 000 000 baiti; GiB = 1 073 741 824 baiti. |
-| **I/O — input/output** | Sisend-väljund; siin näiteks andmete lugemine ja kirjutamine. |
+| **Failisüsteem** (*file system*) | Failide talletamise ja korraldamise viis ning seda toetav tarkvara. |
+| **Failivorming** (*file format*) | Ühe faili sisu ülesehitus, näiteks PDF või JPEG. |
+| **Salvestusseade** (*storage device*) | Füüsiline seade andmete talletamiseks, näiteks SSD või mälupulk. |
+| **Partitsioon** (*partition*) | Partitsioonitabelis määratletud osa salvestusseadmest. |
+| **Köide** (*volume*) | OS-i kasutatav loogiline salvestusüksus; see ei pea alati vastama ühele partitsioonile. |
+| **Partitsiooniskeem** (*partition scheme*) | Kettajaotiste kirjeldamise korraldus, näiteks GPT või MBR. |
+| **Kataloog** (*directory*) | Kaust, mis korraldab faile ja alamkatalooge. |
+| **Juurkataloog** (*root directory*) | Kataloogipuu lähtekoht. |
+| **Failitee** (*path*) | Faili või kataloogi asukoha kirjeldus kataloogipuus. |
+| **Metaandmed** (*metadata*) | Andmed faili kohta, näiteks suurus, ajatemplid ja õigused. |
+| **Plokk; klaster** (*block; cluster*) | Salvestusruumi jaotamise üksus; täpne tähendus sõltub süsteemist. |
+| **Haakimine** (*mounting*) | Failisüsteemi ühendamine, et selle sisu saaks kasutada. |
+| **Haakepunkt** (*mount point*) | Koht kataloogipuus, mille kaudu ühendatud failisüsteemile ligi pääseb. |
+| **Vormindamine** (*formatting*) | Failisüsteemi loomine köitele. |
+| **Ligipääsuõigused** (*permissions*) | Reeglid selle kohta, kes tohib faili või kataloogi kasutada ja muuta. |
+| **ACL** (*access control list*) | Kasutajate ja rühmade juurdepääsuõiguste kontrollnimekiri. |
+| **Krüpteerimine** (*encryption*) | Andmete muutmine võtmeta loetamatuks. |
+| **Päevikupidamine** (*journaling*) | Taastamiseks vajaliku teabe talletamine failisüsteemi muudatuste kohta. |
+| **Andmete terviklikkus** (*data integrity*) | Andmete kooskõla ja rikkumata säilimine. |
+| **Andmete rikkumine** (*data corruption*) | Andmete kahjustumine, näiteks salvestus- või edastusvea tõttu. |
+| **Kontrollsumma** (*checksum*) | Andmetest arvutatud väärtus, mis aitab avastada muutusi ja vigu. |
+| **Liiasus** (*redundancy*) | Täiendavad koopiad või teave, mida saab kasutada rikke korral taastamiseks. |
+| **CoW** (*copy-on-write*) | Kopeerimine kirjutamisel: muutunud plokid kirjutatakse uude kohta ja uuendatakse viited. |
+| **Hetktõmmis** (*snapshot*) | Andmete kindla ajahetke oleku säilitamine. |
+| **Varukoopia** (*backup*) | Andmete taastamiseks mõeldud eraldi koopia. |
+| **Alamköide** (*subvolume*) | Btrfs-failisüsteemi eraldi hallatav osa. |
+| **Salvestuskogum** (*storage pool*) | Ühiselt hallatav salvestusruum, mida saab moodustada mitmest seadmest. |
+
 
 ## Allikad ja lisalugemine
 
-Materjal põhineb H5P-esitlusel „Failisüsteemid” (Priit Paap, 08.2025). Sisu on ümber töötatud ning täpsustatud järgmiste esmaste allikate abil. Veebiallikad kontrollitud **04.10.2026**.
-
-1. Linux Kernel Documentation: [Overview of the Linux Virtual File System](https://www.kernel.org/doc/html/latest/filesystems/vfs.html).
-2. Microsoft Learn: [File System Functionality Comparison](https://learn.microsoft.com/en-us/windows/win32/fileio/filesystem-functionality-comparison). Erista teoreetilisi formaadipiire ning konkreetse Windowsi versiooni rakenduspiire.
-3. Microsoft Learn: [NTFS overview](https://learn.microsoft.com/en-us/windows-server/storage/file-server/ntfs-overview).
-4. Linux Kernel Documentation: [ext4 Journal (jbd2)](https://www.kernel.org/doc/html/latest/filesystems/ext4/journal.html).
-5. Microsoft Learn: [Resilient File System (ReFS) overview](https://learn.microsoft.com/en-us/windows-server/storage/refs/refs-overview).
-6. Red Hat Documentation: [RHEL 10 — Overview of available file systems](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/10/html/managing_file_systems/overview-of-available-file-systems).
-7. Btrfs Documentation: [Introduction](https://btrfs.readthedocs.io/en/latest/Introduction.html).
-8. Fedora Project: [Btrfs](https://fedoraproject.org/wiki/Btrfs).
-9. OpenZFS Documentation: [Copy-on-Write](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Copy-on-write.html).
-10. OpenZFS Documentation: [Snapshots, Clones and Bookmarks](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Datasets/Snapshots%20and%20Clones.html).
-11. Apple Support: [File system formats available in Disk Utility on Mac](https://support.apple.com/guide/disk-utility/file-system-formats-dsku19ed921c/mac).
-12. Apple Support: [If your Mac can't save files to an external drive](https://support.apple.com/en-ie/101830).
-13. Microsoft Learn: [Set up a Dev Drive on Windows 11](https://learn.microsoft.com/en-us/windows/dev-drive/).
-14. Linux Kernel Documentation: [The Second Extended Filesystem](https://www.kernel.org/doc/html/latest/filesystems/ext2.html).
-15. OpenZFS Documentation: [Basic Concepts](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/index.html).
-16. Apple Developer, dokumentatsiooni arhiiv: [File System Details](https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemDetails/FileSystemDetails.html). Kasutatud vanemate failisüsteemide tausta jaoks; arhiivi soovitused ei pruugi kirjeldada tänapäevast macOS-i.
-
-17. Linuxi lähtekood: [exFAT-i toe seadistus](https://github.com/torvalds/linux/blob/master/fs/exfat/Kconfig).
-18. Microsofti draiverinäide: [FAT-i failisuuruse 32-bitine piir](https://github.com/microsoft/Windows-driver-samples/blob/main/filesys/fastfat/fatprocs.h).
+1. [File System Functionality Comparison](https://learn.microsoft.com/en-us/windows/win32/fileio/filesystem-functionality-comparison){ target="_blank" rel="noopener" }.
+2. [NTFS overview](https://learn.microsoft.com/en-us/windows-server/storage/file-server/ntfs-overview){ target="_blank" rel="noopener" }.
+3. [ext4 Journal (jbd2)](https://www.kernel.org/doc/html/latest/filesystems/ext4/journal.html){ target="_blank" rel="noopener" }.
+4. [Resilient File System (ReFS) overview](https://learn.microsoft.com/en-us/windows-server/storage/refs/refs-overview){ target="_blank" rel="noopener" }.
+5. [RHEL 10 — Overview of available file systems](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/10/html/managing_file_systems/overview-of-available-file-systems){ target="_blank" rel="noopener" }.
+6. [Introduction](https://btrfs.readthedocs.io/en/latest/Introduction.html){ target="_blank" rel="noopener" }.
+7. [Btrfs](https://fedoraproject.org/wiki/Btrfs){ target="_blank" rel="noopener" }.
+8. [Copy-on-Write](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Copy-on-write.html){ target="_blank" rel="noopener" }.
+9. [Snapshots, Clones and Bookmarks](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Datasets/Snapshots%20and%20Clones.html){ target="_blank" rel="noopener" }.
+10. [File system formats available in Disk Utility on Mac](https://support.apple.com/guide/disk-utility/file-system-formats-dsku19ed921c/mac){ target="_blank" rel="noopener" }.
 
 ---
-
-Seotud materjalid: [Operatsioonisüsteemi põhifunktsioonid](operatsioonisusteemi_pohifunktsioonid.md) ja [Alglaadimine ja OS-i hooldus](alglaadimine_ja_os_hooldus.md).
 
 *Õppematerjali koostaja: Priit Paap, 2026*
