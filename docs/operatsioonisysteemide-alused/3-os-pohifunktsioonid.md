@@ -85,7 +85,7 @@ flowchart TB
 See on õppimiseks mõeldud mudel. Tegelikud olekunimed ja üksikasjad sõltuvad operatsioonisüsteemist. Mitmelõimelise protsessi eri lõimed võivad olla eri olekutes.
 
 **Ennetav planeerimine** (*preemtive*) võimaldab OS-il töötava lõime täitmise katkestada ja anda protsessoriaega teisele. Rakendus ei pea ise otsustama, millal teised rakendused töötada tohivad. See ei tähenda, et OS lõpetab automaatselt iga pikalt arvutava programmi.
-**Mitte-ennetava **(*non-preemtive)** planeerija puhul peab iga protsess ise hoolitsema, et ta liiga kaua süsteemi aega ei raiskaks. Aktiivse protsesse tööd ei katkestata.
+**Mitte-ennetava** (*non-preemtive*) planeerija puhul peab iga protsess ise hoolitsema, et ta liiga kaua süsteemi aega ei raiskaks. Aktiivse protsesse tööd ei katkestata.
 
 ## 3. Mäluhaldus: tööruum programmidele
 
