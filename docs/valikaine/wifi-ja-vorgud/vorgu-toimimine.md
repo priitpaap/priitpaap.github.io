@@ -70,8 +70,8 @@ Järgmises näites on ruuter, kommutaator ja pääsupunkt eraldi seadmed. Telefo
 
 ```mermaid
 flowchart TB
-    I["Internet ja teenusepakkuja võrk"] <--> R["Ruuter"]
-    R <--> S["Kommutaator"]
+    I["Internet ja teenusepakkuja võrk"] <--> R["Ruuter (router)"]
+    R <--> S["Kommutaator(switch)"]
     S <-->|Kaabel| A["Arvuti"]
     S <-->|Kaabel| P["Printer"]
     S <-->|Kaabel| W["WiFi pääsupunkt"]
@@ -227,8 +227,6 @@ Vasta kõigepealt ise. Seejärel ava vastus ja võrdle oma põhjendust.
 3. [RFC 2131: Dynamic Host Configuration Protocol](https://www.rfc-editor.org/rfc/rfc2131){ target="_blank" rel="noopener" } — DHCP tehniline kirjeldus lisahuvilistele.
 4. [RFC 1034: Domain names — concepts and facilities](https://www.rfc-editor.org/rfc/rfc1034){ target="_blank" rel="noopener" } — DNS-i tehniline kirjeldus lisahuvilistele.
 5. [RFC 1918: Address Allocation for Private Internets](https://www.rfc-editor.org/rfc/rfc1918){ target="_blank" rel="noopener" } — privaatsed IPv4-aadressid.
-
-**Järgmine materjal:** [Oma võrguühenduse uurimine](02_oma_vorguuhenduse_uurimine.md).
 
 ---
 *Õppematerjali koostaja: Priit Paap, 2026*
