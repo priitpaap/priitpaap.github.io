@@ -55,7 +55,7 @@ Menüüde nimetused ja väljade asukohad võivad erineda. Vaikelüüsi puudumise
 
 ### Käsk ipconfig
 
-1. Ava Start-menüüst **Käsuviip** (*Command Prompt*).
+1. Ava Start-menüüst **Terminal**.
 2. Sisesta käsk ja vajuta Enter:
 
 ```text
@@ -224,35 +224,40 @@ Kui DNS-serveri nime asemel kuvatakse `UnKnown`, kuid küsitud nime aadressid ta
 
     Ei. SSID on WiFi võrgu nimi, mille järgi võrku valid. IP-aadress on võrguliidese aadress andmete suunamiseks.
 
-### 2. Arvuti aadress on 192.168.1.25 ja vaikelüüs 192.168.1.1. Kumb kuulub selles näites arvutile?
-
-??? success "Vaata vastust"
-
-    `192.168.1.25` on arvuti võrguliidese aadress. `192.168.1.1` on vaikelüüsi, tavaliselt ruuteri kohaliku liidese aadress.
-
-### 3. ipconfig näitab kolme adapterit. Kas võid valida suvalise adapteri aadressi?
+### 2. ipconfig näitab kolme adapterit. Kas võid valida suvalise adapteri aadressi?
 
 ??? success "Vaata vastust"
 
     Ei. Vaata uuritava aktiivse ühenduse adapterit. Lahti ühendatud või mõne muu ühenduse jaoks mõeldud adapteri info ei kirjelda seda ühendust.
 
-### 4. Kas nähtav kohalik IP-aadress tõendab, et internet töötab?
+### 3. Kas nähtav kohalik IP-aadress tõendab, et internet töötab?
 
 ??? success "Vaata vastust"
 
     Ei. Aadress on üks vajalikest seadetest, kuid interneti kasutamine sõltub ka ühendusteest, muudest seadetest ja kasutatava teenuse toimimisest.
 
-### 5. Miks võib telefonis veebileht avaneda ka katkise WiFi internetiühenduse korral?
+### 4. Miks võib telefonis veebileht avaneda ka katkise WiFi internetiühenduse korral?
 
 ??? success "Vaata vastust"
 
     Telefon võib kasutada mobiilset andmesidet. Seetõttu tuleb arvestada, millise ühenduse kaudu andmed tegelikult liiguvad.
 
-### 6. Kas ühendusprobleemi kirjeldamiseks on vaja abistajale oma WiFi parooli saata?
+### 5. Kas ühendusprobleemi kirjeldamiseks on vaja abistajale oma WiFi parooli saata?
 
 ??? success "Vaata vastust"
 
     Ei. Esmaseks kirjeldamiseks piisab ühenduse liigist, vajalikust ühenduse infost, sümptomitest ja tehtud kontrollidest. Parooli ei lisata töölehele ega ekraanipildile.
+
+### 6. Milliste käskudega saab kontrollida võrguühenduse toimimist?
+
+??? success "Vaata vastust"
+
+    - **ping** kontrollib, kas sihtseade vastab kontrollpäringutele, ning näitab vastamise aega ja paketikadu. Näiteks `ping 1.1.1.1`.
+    - **nslookup** kontrollib, kas DNS-server tagastab domeeninimele IP-aadressi. Näiteks `nslookup example.com`.
+
+    Edukas ping ei tõenda kõigi internetiteenuste toimimist ning vastuse puudumine võib tuleneda kontrollpäringute blokeerimisest. Õnnestunud nslookup ei kinnita veebilehe töötamist.
+
+
 
 
 ## Kokkuvõte
@@ -280,14 +285,14 @@ Kui DNS-serveri nime asemel kuvatakse `UnKnown`, kuid küsitud nime aadressid ta
 | Vaikelüüs (*default gateway*) | Tavaliselt ruuter, mille kaudu seade jõuab teistesse võrkudesse. |
 | Automaatne seadistus ehk DHCP | Võrguseadete saamine DHCP-serverilt ilma käsitsi sisestamiseta. |
 | ipconfig | Windowsi käsk võrguadapterite IP-seadete vaatamiseks. |
+| ping | Kontrollib, kas sihtseade vastab kontrollpäringutele, ning näitab vastamise aega ja paketikadu. |
+| nslookup |  kontrollib, kas DNS-server tagastab domeeninimele IP-aadressi. |
 
 ## Allikad ja lisalugemine
 
 1. [Microsoft: Essential Network Settings and Tasks in Windows](https://support.microsoft.com/en-us/windows/experience/connectivity-networking/essential-network-settings-and-tasks-in-windows){ target="_blank" rel="noopener" } — ühenduse seaded ja IP-aadressi leidmine.
 2. [Microsoft Learn: ipconfig](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/ipconfig){ target="_blank" rel="noopener" } — käsu kasutamine.
 3. [Apple: Use a private network address on iPhone](https://support.apple.com/guide/iphone/iph6b324bb33/ios){ target="_blank" rel="noopener" } — WiFi võrgu üksikasjade avamine ja WiFi-aadressi tähendus.
-
-**Järgmine materjal:** [Võrgukaabli valmistamine ja kontrollimine](03_vorgukaabli_valmistamine.md).
 
 ---
 *Õppematerjali koostaja: Priit Paap, 2026*
