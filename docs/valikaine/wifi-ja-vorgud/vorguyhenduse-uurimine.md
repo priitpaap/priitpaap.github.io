@@ -1,4 +1,4 @@
-# Oma võrguühenduse uurimine
+# Oma võrguühenduse uurimine ja kontroll
 
 Kui ühendus ei tööta, on kasulik osata öelda rohkem kui „internet on katki”. Seadme ühenduse infost näed, millist võrku kasutad ning millised võrguseaded on seadmel olemas. Selles materjalis õpid neid andmeid leidma ja selgitama.
 
