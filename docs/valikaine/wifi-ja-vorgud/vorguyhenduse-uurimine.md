@@ -2,8 +2,6 @@
 
 Kui ühendus ei tööta, on kasulik osata öelda rohkem kui „internet on katki”. Seadme ühenduse infost näed, millist võrku kasutad ning millised võrguseaded on seadmel olemas. Selles materjalis õpid neid andmeid leidma ja selgitama.
 
-**Enne alustamist:** loe [Võrgu toimimise](01_vorgu_toimimine.md) materjalist IP-aadressi, vaikelüüsi, DNS-i ja DHCP selgitusi.
-
 !!! info "Õpieesmärgid"
 
     Pärast materjali läbimist oskad:
@@ -29,9 +27,9 @@ Alusta ühenduse liigist ja valitud võrgust. Seejärel uuri aadresse ning seadm
 
 Tabeli aadressid on õppenäited. Sinu seadme aadressid võivad olla teistsugused.
 
-### Võrgunimi ei ole IP-aadress
+### Võrgunimi 
 
-**SSID** (*service set identifier*) on WiFi võrgu nimi, näiteks `Oppeklass`. Selle järgi valid võrgu. **IP-aadress** on aadress, mida seade kasutab võrgus suhtlemiseks. Need ei ole teineteise asendused.
+**SSID** (*service set identifier*) on WiFi võrgu nimi, näiteks `Oppeklass`. 
 
 Samal WiFi võrgunimel võib olla mitu pääsupunkti. Ka võõras võrk võib kasutada tuttavat nime. Koolis ühendu õpetaja näidatud võrku, järgides kooli ühendusjuhiseid.
 
@@ -131,7 +129,94 @@ Selline kirjeldus ei anna veel lõplikku diagnoosi. See aitab otsustada, mida j�
 
 Kui ühes seadmes ühendus ei tööta, kuid teistes töötab, alusta selle seadme ühenduse kontrollist. Kui probleem puudutab kõiki seadmeid, tuleb uurida ka nende ühiseid ühendusi. Ükski tähelepanek ei välista kõiki võimalikke põhjuseid.
 
-## 6. Enesekontroll
+## 6. Ühenduse kontrollimine käskudega ping ja nslookup
+
+Ühenduse infot näed käsuga `ipconfig`. Käskudega **ping** ja **nslookup** saad uurida, kas sihtseade vastab ja kas domeeninimele leitakse IP-aadress.
+
+Ava Windowsis **Terminal**. Järgmised käsud ei vaja administraatori õigusi ega muuda võrguseadeid.
+
+### 6.1. Ping — kas sihtseade vastab?
+
+**ping** saadab sihtseadmele ICMP kontrollpäringuid ja ootab vastuseid. Tulemus näitab vastuste saabumist, edasi-tagasi kulunud aega ning vastuseta jäänud päringute osakaalu. Windows saadab vaikimisi neli päringut.
+
+Alusta oma **vaikelüüsist**, mille aadressi leiad käsuga `ipconfig`. Järgmises näites on see `192.168.1.1`; asenda aadress enda vaikelüüsi aadressiga.
+
+```text
+ping 192.168.1.1
+```
+
+Seejärel proovi internetis asuvat IP-aadressi:
+
+```text
+ping 1.1.1.1
+```
+
+| Tulemus | Mida see näitab? |
+| --- | --- |
+| `Reply from ...: bytes=32 time=... TTL=...` | Sihtseadmelt saabus kontrollpäringu vastus. |
+| `time=5ms` | Päringu ja vastuse edasi-tagasi aeg oli ligikaudu 5 millisekundit. See ei ole allalaadimiskiirus. |
+| `Lost = 0 (0% loss)` | Kõigile saadetud kontrollpäringutele saadi vastus. |
+| `Request timed out` | Vastust ei saabunud ettenähtud aja jooksul. |
+| `Destination host unreachable` | Arvuti või teel olev võrguseade teatas, et sihtkoht pole kättesaadav. |
+
+!!! warning "Vastuseta ping ei tõenda alati ühenduse puudumist"
+
+    Seade või tulemüür võib kontrollpäringuid blokeerida. Edukas ping kinnitab kontrollpäringu toimimist, kuid ei tõenda veebilehe või kõigi internetiteenuste töötamist.
+
+### 6.2. Nslookup — kas nimele leitakse IP-aadress?
+
+**nslookup** küsib DNS-serverilt teavet. Domeeninimega kasutades saad kontrollida, kas DNS-server tagastab sellele IP-aadressi.
+
+```text
+nslookup example.com
+```
+
+| Väljundi osa | Mida see tähendab? |
+| --- | --- |
+| `Server` ja sellele järgnev `Address` | Päringu jaoks kasutatud DNS-serveri nimi ja aadress. |
+| Vastuse osas `Name` ning `Address` või `Addresses` | Küsitud nime kohta tagastatud nimi ja IP-aadressid. |
+| `Non-authoritative answer` | Vastus pärineb DNS-serverilt, mis ei ole selle domeeni autoriteetne server. See ei ole veateade. |
+| `DNS request timed out` | DNS-päringule ei saabunud õigel ajal vastust. |
+| `Non-existent domain` | DNS-server teatas, et küsitud nime ei ole olemas. Kontrolli ka kirjavigu. |
+
+!!! tip "Erista DNS-serveri aadressi ja küsitud nime aadressi"
+
+    Väljundi alguses olev aadress kuulub päringu jaoks kasutatud DNS-serverile. Küsitud domeeninime aadressid on vastuse osas. Neid võib olla mitu, sealhulgas IPv4- ja IPv6-aadresse.
+
+Kui DNS-serveri nime asemel kuvatakse `UnKnown`, kuid küsitud nime aadressid tagastatakse, on nimepäring siiski õnnestunud.
+
+!!! tip "Nslookup ei kontrolli veebilehe avanemist"
+
+    Õnnestunud päring näitab, et kasutatud DNS-server tagastas selle nime kohta aadressi. See ei kinnita veebiserveri töötamist ega ühendust sellega.
+
+### 6.3. Väike ühenduse kontrollimise harjutus
+
+1. Leia käsuga `ipconfig` oma vaikelüüsi aadress.
+2. Käivita `ping` oma vaikelüüsi aadressile.
+3. Käivita `ping 1.1.1.1`.
+4. Käivita `nslookup example.com`.
+5. Märgi tulemused tabelisse.
+
+| Kontroll | Sinu tulemus |
+| --- | --- |
+| Kas vaikelüüs vastas ping-päringutele? | |
+| Kas internetis asuv IP-aadress vastas? | |
+| Kas nslookup tagastas domeeninime IP-aadressi? | |
+| Millist DNS-serverit nslookup kasutas? | |
+| Millised veateated ilmusid? | |
+
+!!! example "Tulemuste võrdlemine"
+
+    Kui internetis asuv IP-aadress vastab ping-päringutele, kuid nslookup ei saa nimele aadressi, tasub edasi uurida DNS-i toimimist.
+
+    Kui nslookup tagastab aadressi, kuid ping ei saa vastust, võib sihtseade kontrollpäringuid blokeerida või esineda muu ühendusprobleem. Sellest üksi ei saa järeldada, et internet puudub.
+
+### Allikad ja lisalugemine
+
+- [Microsoft Learn: ping](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/ping){ target="_blank" rel="noopener" }
+- [Microsoft Learn: nslookup](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/nslookup){ target="_blank" rel="noopener" }
+
+## 7. Enesekontroll
 
 ### 1. Kas SSID ja IP-aadress tähendavad sama asja?
 
@@ -168,6 +253,7 @@ Kui ühes seadmes ühendus ei tööta, kuid teistes töötab, alusta selle seadm
 ??? success "Vaata vastust"
 
     Ei. Esmaseks kirjeldamiseks piisab ühenduse liigist, vajalikust ühenduse infost, sümptomitest ja tehtud kontrollidest. Parooli ei lisata töölehele ega ekraanipildile.
+
 
 ## Kokkuvõte
 
