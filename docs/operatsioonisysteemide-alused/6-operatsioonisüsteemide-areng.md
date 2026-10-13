@@ -49,7 +49,7 @@ Unixi juures kujunes oluliseks tööriistade koostöö: üks programm täidab ki
 
 ### BSD ja Unixi mõju
 
-1970. aastate lõpus kujunes California ülikoolis Berkeleys **BSD** (*Berkeley Software Distribution*). Algul oli see Unixi juurde loodud lisade ja muudatuste kogum. Hiljem arenesid sellest iseseisvad süsteemid, näiteks FreeBSD, OpenBSD ja NetBSD.
+**1970.** aastate lõpus kujunes California ülikoolis Berkeleys **BSD** (*Berkeley Software Distribution*). Algul oli see Unixi juurde loodud lisade ja muudatuste kogum. Hiljem arenesid sellest iseseisvad süsteemid, näiteks FreeBSD, OpenBSD ja NetBSD.
 
 Unixi mõju on näha ka tänapäevases macOS-is ja Linuxi süsteemides, kuid nende seos Unixiga on erinev.
 
