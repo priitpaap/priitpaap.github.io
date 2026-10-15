@@ -1,6 +1,6 @@
 # Linuxi süsteemi monitooring
 
-**Monitooring** ehk **seire** tähendab süsteemi seisundi ja muutuste jälgimist. Linuxi serveris uurime näiteks protsessori kasutust, mälu, kettaruumi, võrguühendusi ning teenuste tööd. Eesmärk on märgata probleemi, leida selle põhjus ja kontrollida, kas lahendus aitas.
+**Monitooring** ehk **seire** tähendab süsteemi seisundi ja muutuste jälgimist. Linuxi serveris uurime näiteks protsessori kasutust, mälu, kettaruumi, võrguühendusi ning teenuste tööd. Eesmärk on märgata probleemi, leida selle põhjus ja kontrollida, kas lahendus aitas. Regulaarne monitooring aitab IT-spetsialistidel ennetada probleeme enne, kui need muutuvad tõsisteks.
 
 Materjali käsunäited lähtuvad **Debian 13** süsteemist. 
 
@@ -75,10 +75,15 @@ Lugemiskäsud ei vaja alati haldusõigusi. Teiste kasutajate protsesside mõjuta
 ```bash
 top
 ```
+![top](assets/systeemi-monitooring/top.jpg){ width="90%" }
+
 
 ```bash
 htop
 ```
+
+![htop](assets/systeemi-monitooring/htop.jpg)
+
 
 | Väli | Tähendus |
 | --- | --- |
@@ -93,37 +98,36 @@ htop
 
 `top`-is saab tavaliselt vajutada `P`, et sorteerida CPU kasutuse järgi, `M`, et sorteerida mälu järgi, ning `1`, et vahetada CPU koondvaadet ja üksikute loogiliste protsessorite vaadet. Väljumiseks vajuta `q`. `htop`-i sortimisvalikud leiab näiteks klahviga `F6` ning abi klahviga `F1`. 
 
-### 3.2. Mida tähendab CPU kasutusprotsent?
-
 Erista **kogu süsteemi** ja **ühe protsessi** kasutusnäitu. Paljudes tavapärastes protsessivaadetes tähendab protsessi 100% ligikaudu ühe loogilise protsessori täielikku kasutamist. Mitme lõimega protsess võib näidata ka üle 100%; täpne esitus sõltub tööriistast ja seadistusest. 
 
 **Näide:** nelja vCPU-ga virtuaalmasinas kasutab üks protsess ühe vCPU täielikult ära. Selle protsessi näit võib olla ligikaudu 100%, kuid kogu masina CPU koondkasutus ligikaudu 25%.
 
 Seetõttu ei piisa järeldusest „näen 100%, järelikult on kogu server üle koormatud”. Uuri protsessorite arvu, näidu tähendust, koormuse kestust ja teenuse käitumist.
 
-### 3.3. uptime ja koormuskeskmine
+### 3.2. uptime
 
 ```bash
 uptime
 ```
 
-Käsk näitab muu hulgas süsteemi tööaega ja **koormuskeskmisi** (*load average*) viimase **1, 5 ja 15 minuti** kohta.
+Käsk näitab muu hulgas süsteemi tööaega ja **koormuse keskmisi väärtusi** (*load average*) viimase **1, 5 ja 15 minuti** kohta.
 
 Näidisväljund:
 
-```text
-10:15:00 up 2 days, 3:10, 1 user, load average: 2.10, 1.40, 0.80
-```
+![uptime](assets/systeemi-monitooring/uptime.jpg){ width="80%" }
 
-Koormuskeskmine arvestab Linuxis nii töötavaid või CPU aega ootavaid töid kui ka katkestamatus ooteolekus töid, näiteks teatud sisend-väljundi ootamisi. **See ei ole CPU kasutusprotsent.**
+Koormuste keskmine arvestab Linuxis nii töötavaid või CPU aega ootavaid töid kui ka katkestamatus ooteolekus töid, näiteks teatud sisend-väljundi ootamisi. **See ei ole CPU kasutusprotsent.**
 
 Nelja loogilise protsessoriga süsteemis ei tähenda koormuskeskmine `2.10` üksinda, et kogu CPU võimekus oleks ammendatud. Samuti võib kõrge koormuskeskmine koos tagasihoidliku CPU kasutusega suunata uurima sisend-väljundi ootamist.
 
 Väärtusi võrreldes saab märgata suunda. Näites on ühe minuti keskmine suurem kui 15 minuti keskmine: hiljutine koormus on varasemast kõrgem. Pärast parandust langevad pikema ajavahemiku keskmised järk-järgult.
 
-### 3.4. ps: protsesside hetkeülevaade
+### 3.3. ps: protsesside hetkeülevaade
 
 `ps` kuvab valitud protsesside kohta **hetkeülevaate**. Ilma valikuteta ei näita see kõiki süsteemi protsesse. 
+
+![ps](assets/systeemi-monitooring/ps.jpg){ width="50%" }
+
 
 ```bash
 ps aux
@@ -215,8 +219,9 @@ Näites määratakse nice-väärtuseks 10. Tavakasutaja saab üldjuhul oma prots
 ```bash
 free -h
 ```
+![free](assets/systeemi-monitooring/free.jpg){ width="75%" }
 
-`free` näitab füüsilise mälu ja swap'i kasutust. `-h` muudab ühikud inimloetavaks. [9]
+`free` näitab füüsilise mälu ja swap'i kasutust. `-h` muudab ühikud inimloetavaks.
 
 | Väli | Kuidas seda mõista? |
 | --- | --- |
@@ -230,8 +235,6 @@ Linux kasutab mälu ka andmete vahemällu hoidmiseks. Seetõttu ei tähenda väi
 
 **Swap** on mehhanism, kuhu saab paigutada mälulehti väljapoole tavapärast RAM-i tööala, näiteks kettal olevasse swap-faili või -partitsiooni. Swap ei muuda ketast sama kiireks kui RAM. Üksnes kasutatud swap'i olemasolu ei tõenda parajasti toimuvat mälupuudust.
 
-**Näide:** kahe sama suure RAM-iga serveri `free` väärtus on erinev. Ühel võib suur osa mälust olla vahemäluna kasutusel, kuid rakendustele on endiselt piisavalt mälu saadaval. Järeldus „RAM on täis” vajab täpsemat uurimist.
-
 ## 6. Kettaruumi jälgimine
 
 ### 6.1. df: failisüsteemi ruum
@@ -240,7 +243,10 @@ Linux kasutab mälu ka andmete vahemällu hoidmiseks. Seetõttu ei tähenda väi
 df -hT
 ```
 
-`df` näitab failisüsteemide ruumikasutust; `-T` lisab tüübi. See ei ole kõigi füüsiliste ketaste ja nende terviseseisundi loetelu. [10]
+`df` näitab failisüsteemide ruumikasutust; `-T` lisab tüübi. See ei ole kõigi füüsiliste ketaste ja nende terviseseisundi loetelu.
+
+![df](assets/systeemi-monitooring/df.jpg){ width="60%" }
+
 
 | Väli | Tähendus |
 | --- | --- |
@@ -270,6 +276,9 @@ sudo du -sh /var/log
 
 `-s` kuvab koondmahu ja `-h` inimloetava suuruse.
 
+![du](assets/systeemi-monitooring/du.jpg){ width="50%" }
+
+
 Ühe taseme kaupa uurimiseks:
 
 ```bash
@@ -282,9 +291,7 @@ Suuremate kirjete lõppu järjestamiseks:
 sudo du -h --max-depth=1 /var/log | sort -h
 ```
 
-**df vastab küsimusele „kui palju ruumi on failisüsteemil?”, du küsimusele „kui palju ruumi kasutavad need failid ja kataloogid?”.** Nende tulemused ei pea olema identsed: näiteks võib kustutatud faili ruum olla endiselt kasutusel, kuni mõni protsess hoiab faili avatuna. [18]
-
-Vaba kettaruum ei tõenda kiiret kettatööd. Salvestusseadme sisend-väljundi jõudlus on eraldi näitaja. Vajaduse korral saab lisaks uurida inode'ide kasutust käsuga `df -i`: väga paljud väikesed failid võivad ammendada failisüsteemi failikirjete ressursi enne andmeruumi lõppu. [10]
+**df vastab küsimusele „kui palju ruumi on failisüsteemil?”, du küsimusele „kui palju ruumi kasutavad need failid ja kataloogid?”.** Nende tulemused ei pea olema identsed: näiteks võib kustutatud faili ruum olla endiselt kasutusel, kuni mõni protsess hoiab faili avatuna.
 
 ## 7. Võrgu jälgimine
 
@@ -302,7 +309,7 @@ Konkreetse liidese liiklusloendurid:
 ip -s link show dev ens192
 ```
 
-**RX** tähistab vastuvõetud ja **TX** saadetud liiklust. Vaata baite, pakette ning vigade ja kõrvalejäetud pakettide loendureid. Need on kogunevad loendurid, mitte automaatselt kiirus baitides sekundis. Kiiruse hindamiseks on vaja muutust kindla ajavahemiku jooksul. [12]
+**RX** tähistab vastuvõetud ja **TX** saadetud liiklust. Vaata baite, pakette ning vigade ja kõrvalejäetud pakettide loendureid. Need on kogunevad loendurid, mitte automaatselt kiirus baitides sekundis. Kiiruse hindamiseks on vaja muutust kindla ajavahemiku jooksul.
 
 Liidese tegelik nimi võib olla näiteks `ens192`, `ens18` või `enp1s0`; vali nimi oma süsteemi järgi.
 
@@ -314,6 +321,10 @@ Liidese tegelik nimi võib olla näiteks `ens192`, `ens18` või `enp1s0`; vali n
 sudo ss -tulnp
 ```
 
+![ss](assets/systeemi-monitooring/ss.png){ width="90%" }
+
+*Punasega tähistatud rida on näide ssh serveri pordi kuulamisest.*
+
 | Valik | Tähendus |
 | --- | --- |
 | `-t` | TCP-soklid. |
@@ -323,8 +334,6 @@ sudo ss -tulnp
 | `-p` | Võimaluse korral sokliga seotud protsessi teave. |
 
 TCP puhul näeb kuulamisolekut `LISTEN`. UDP on ühenduseta protokoll ja selle vastuvõtusokkel võib olla märgitud näiteks `UNCONN`; UDP-d ei tule tõlgendada TCP ühenduse loomise mudeli järgi. 
-
-**Näide:** `127.0.0.1:8080` viitab kohalikule loopback-aadressile seotud teenusele. `0.0.0.0:8080` tähendab seotust kõigi kohalike IPv4-aadressidega. See ei tõesta, et teenus on teisest arvutist kättesaadav: ühendust võivad takistada näiteks tulemüür või marsruutimine.
 
 Loodud TCP-ühenduste vaatamiseks:
 
@@ -339,6 +348,8 @@ ss -tn state established
 ```bash
 sudo tcpdump -i any -nn -c 20
 ```
+![tcpdump](assets/systeemi-monitooring/tcpdump.png){ width="75%" }
+
 
 Näide kuvab kuni 20 hõivatud paketti ja lõpetab siis töö. `-nn` väldib aadresside ning portide teisendamist nimedeks. Kui liiklust ei ole, võib 20 paketi täitumine oodata; katkestamiseks kasuta `Ctrl+C`.
 
@@ -349,84 +360,6 @@ sudo tcpdump -i ens192 -nn -c 20 'tcp port 22'
 ```
 
 See kuvab pakette, mille TCP lähte- või sihtport on 22. Pakettide puudumine võib tähendada ka vale liidese või filtri valimist. Krüpteeritud ühenduse pakettide nägemine ei tähenda selle sisu automaatset lahtikrüpteerimist. Hõiva laboris ainult ülesande jaoks vajalikku liiklust.
-
-## 8. Teenuse olek ja logide uurimine
-
-### 8.1. Protsess ei ole sama mis teenus
-
-**Protsess** on töötava programmi eksemplar. **Teenus** on süsteemi hallatav taustafunktsioon, millega võib olla seotud üks või mitu protsessi. Debian 13-s hallatakse paljusid teenuseid **systemd** abil.
-
-Suur CPU kasutus ei pruugi tähendada, et teenuse olek on `failed`. Teenus võib olla aktiivne, kuid teha valesti seadistatud töö tõttu liiga palju tööd. Teisalt ei pruugi mittekäivituv teenus protsesside loendis pikalt nähtav olla.
-
-Ebaõnnestunud üksuste leidmine:
-
-```bash
-systemctl --failed
-```
-
-Ühe teenuse olek ja käivitusmäärangud:
-
-```bash
-systemctl status naidis.service
-systemctl cat naidis.service
-```
-
-`naidis.service` on siin näitlik nimi. `systemctl cat` aitab leida näiteks käivitatava programmi ja konfiguratsioonifaili asukoha. Teadaoleva protsessi PID kaudu saab uurida selle systemd üksust:
-
-```bash
-systemctl status 1234
-```
-
-Tulemus sõltub sellest, millises üksuses protsess töötab; iga kasutajaprotsess ei ole eraldi teenus.
-
-### 8.2. systemd journal
-
-**Journal** on systemd logisüsteem. Seda loetakse käsuga `journalctl`; see ei ole tavaline tekstifail, mida tuleks avada `cat`-iga.
-
-| Käsk | Mida otsime? |
-| --- | --- |
-| `sudo journalctl -b` | Praeguse süsteemikäivituse sündmused. |
-| `sudo journalctl -u naidis.service -b` | Ühe teenuse selle käivituse logi. |
-| `sudo journalctl -u naidis.service -n 30 --no-pager` | Ühe teenuse 30 viimast kirjet ilma lehitsejata. |
-| `sudo journalctl --since "10 minutes ago"` | Viimase kümne minuti sündmused. |
-| `sudo journalctl -u naidis.service -f` | Teenuse uute kirjete jooksev jälgimine. |
-
-`-f` jälgimise lõpetab `Ctrl+C`. Logide kättesaadavus varasematest käivitustest sõltub säilitamise seadistusest.
-
-### 8.3. Tekstipõhised logifailid
-
-Rakendus võib lisaks journal'ile kirjutada oma logifaili. Faili asukoht sõltub rakendusest ja seadistusest. Ka `/var/log/syslog` ei ole igas Debian 13 paigalduses olemas: traditsiooniliste tekstilogide loomine sõltub muu hulgas `rsyslog`-i olemasolust ja seadistusest. [17]
-
-Järgmistes näidetes asenda `/var/log/rakendus.log` olemasoleva logifailiga:
-
-```bash
-sudo less /var/log/rakendus.log
-sudo tail -n 30 /var/log/rakendus.log
-sudo tail -f /var/log/rakendus.log
-sudo grep -in 'error' /var/log/rakendus.log
-```
-
-`less` võimaldab failis liikuda ja otsida; väljumiseks vajuta `q`. `tail` näitab lõppu ja `-f` uusi lisanduvaid ridu. `grep -i` eirab tähesuurust ning `-n` lisab reanumbri. Ainult sõna `error` otsimine ei leia tingimata kõiki probleeme: loe ka sündmuse ümbrust.
-
-### 8.4. Veateate tõlgendamine
-
-Logikirje uurimisel küsi:
-
-1. **Millal** sündmus toimus?
-2. **Milline teenus või protsess** selle kirjutas?
-3. **Millist faili, parameetrit või ressurssi** nimetatakse?
-4. **Mis juhtus** ja millist väärtust või olukorda oodati?
-5. Kas tegemist on **praeguse veaga** või varasema katse kirjega?
-
-**Näide:** kui logi ütleb, et seadistusfailis on tundmatu parameeter, tuleb võrrelda selle nime dokumentatsiooniga. Pelk korduv teenuse käivitamine sama faili muutmata põhjust tõenäoliselt ei kõrvalda.
-
-Pärast rakenduse seadistusfaili parandamist võib olla vaja teenus taaskäivitada:
-
-```bash
-sudo systemctl restart naidis.service
-```
-
-Kui muudetakse systemd enda üksusefaili, tuleb systemd määrangud enne uuesti laadida käsuga `sudo systemctl daemon-reload`. Tavalise rakenduse `.conf` faili muutmine üksinda seda käsku ei vaja. Rakendus võib toetada ka seadistuse taaslaadimist ilma taaskäivituseta; kontrolli selle dokumentatsiooni.
 
 ## 9. Probleemi uurimise tööjärjekord
 
