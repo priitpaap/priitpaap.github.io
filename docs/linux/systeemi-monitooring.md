@@ -426,18 +426,6 @@ Vasta kõigepealt ise. Seejärel ava vastus ja võrdle oma põhjendust.
 
     Ei. Tuleb kontrollida muu hulgas seotud aadressi, marsruuti ja tulemüüri ning teha ühenduskatse teisest seadmest.
 
-### 9. Kas tcpdump jälgib ilma valikuteta kõiki liideseid?
-
-??? question "Vaata vastust"
-
-    Ei. Vaikimisi valitakse sobiv liides. Linuxis võimaldab -i any hõivata pakette eri tavaliidestelt; -i koos konkreetse nimega valib ühe liidese.
-
-### 10. Kuidas leida mittekäivituva teenuse vea põhjus ja kontrollida parandust?
-
-??? question "Vaata vastust"
-
-    Vaata teenuse olekut ja selle logisid, leia konkreetne veateade ning uuri nimetatud faili või seadistust. Pärast parandust käivita teenus, vaata uusi logikirjeid ning kontrolli ka teenuse tegelikku funktsiooni. Vana veakirje logis võib alles jääda.
-
 ## Kokkuvõte
 
 - Monitooring aitab leida probleeme ja kontrollida paranduste mõju.
@@ -449,7 +437,6 @@ Vasta kõigepealt ise. Seejärel ava vastus ja võrdle oma põhjendust.
 - Mälu puhul erista täielikult kasutamata mälu ja rakendustele saadaolevat mälu.
 - df näitab failisüsteemi, du failide ja kataloogide ruumikasutust.
 - ss näitab sokleid ja ühendusi, tcpdump võimaldab uurida pakette.
-- Teenuse olek, süsteemilogid ja rakenduse logifailid täiendavad üksteist.
 
 ### Mõtle õpitule
 
@@ -466,61 +453,22 @@ Vasta kõigepealt ise. Seejärel ava vastus ja võrdle oma põhjendust.
 | **Kitsaskoht — bottleneck** | Süsteemi jõudlust piirav tegur. |
 | **Tavapärane algtase — baseline** | Võrdluseks kogutud teave süsteemi hariliku töö kohta. |
 | **Utiliit — utility** | Kindla ülesande täitmiseks mõeldud tööriist. |
-| **CPU — central processing unit** | Protsessor, mis täidab käske. |
-| **vCPU — virtual CPU** | Virtuaalmasinale esitatud virtuaalne protsessor. |
-| **RAM — random-access memory** | Arvuti töömälu. |
-| **Protsess — process** | Töötava programmi eksemplar. |
 | **PID — process ID** | Protsessi tunnusnumber. |
-| **Lõim — thread** | Protsessi sees täidetav käsujada, millele OS jagab protsessoriaega. |
-| **Koormuskeskmine — load average** | Linuxis täitmiseks valmis või teatud ooteolekus tööde arvu ajakeskmine; ei ole CPU protsent. |
+| **Koormuste keskmine — load average** | Linuxis täitmiseks valmis või teatud ooteolekus tööde arvu ajakeskmine; ei ole CPU protsent. |
 | **Tööaeg — uptime** | Aeg süsteemi viimasest käivitamisest. |
-| **Signaal — signal** | Protsessile saadetav teavitus või juhtsündmus. |
-| **SIGTERM** | Tavapärast lõpetamist taotlev signaal. |
-| **SIGKILL** | Sunniviisilise lõpetamise signaal, mida protsess ei saa püüda. |
 | **Nice-väärtus — niceness** | Tavapärase protsessoriaja jagamise suhtelist eelistust mõjutav väärtus. |
-| **Virtuaalne mälu — virtual memory** | Mälukorraldus, mis annab protsessile virtuaalse aadressiruumi; selle maht ei võrdu kasutatud RAM-iga. |
-| **RES — resident memory** | Protsessile arvestatud füüsilises mälus paiknev mälu. |
-| **VIRT — virtual memory size** | Protsessi virtuaalse aadressiruumi maht. |
-| **Vahemälu — cache** | Andmete ajutine hoidmine kiiremaks korduvkasutuseks. |
-| **Available memory** | Hinnang rakendustele ilma swap'imiseta saadaolevale mälule. |
 | **Swap** | Mälulehtede hoidmiseks kasutatav täiendav ala või lahendus, näiteks kettal olev fail või partitsioon. |
-| **Failisüsteem — file system** | Failide ja kataloogide korraldamise süsteem. |
 | **Ühenduspunkt — mount point** | Kataloog, mille kaudu ühendatud failisüsteemile ligi pääseb. |
-| **Inode** | Paljudes Linuxi failisüsteemides faili või kataloogi metaandmeid kirjeldav struktuur. |
-| **I/O — input/output** | Sisend-väljund ehk andmete vahetamine seadmetega. |
-| **Võrguliides — network interface** | Süsteemi liides võrguühenduse kasutamiseks. |
-| **RX; TX — receive; transmit** | Vastuvõtmise ja saatmise tähised. |
 | **Sokkel — socket** | Rakenduste suhtluse otspunkt. |
 | **Port — port** | TCP või UDP suhtluse otspunkti numbriline tunnus. |
-| **LISTEN** | TCP-sokli olek, milles oodatakse ühendusi. |
 | **Pakettide hõivamine — packet capture** | Valitud liidesel nähtavate võrgupakettide salvestamine või kuvamine analüüsiks. |
 | **Teenus — service** | Süsteemi hallatav taustafunktsioon, mida võivad täita protsessid. |
 | **systemd üksus — unit** | systemd hallatav objekt; teenuseüksuse nime lõpp on .service. |
-| **Logi — log** | Sündmuste ja teadete kirjed, mida kasutatakse muu hulgas veaotsinguks. |
-| **Journal** | systemd logisüsteem, mille lugemiseks kasutatakse journalctl-i. |
 
 ## Allikad ja lisalugemine
 
-Algmaterjal: Priit Paap, H5P „Süsteemi monitooring” (2024). Materjal on ajakohastatud Debian 13 käsiraamatute põhjal ning täiendatud teenuste ja logide uurimisega.
-
-1. Debian Manpages: [top(1)](https://manpages.debian.org/trixie/procps/top.1.en.html).
-2. Debian Manpages: [htop(1)](https://manpages.debian.org/trixie/htop/htop.1.en.html).
-3. Debian Manpages: [uptime(1)](https://manpages.debian.org/trixie/procps/uptime.1.en.html).
-4. Debian Manpages: [ps(1)](https://manpages.debian.org/trixie/procps/ps.1.en.html).
-5. Debian Manpages: [kill(1)](https://manpages.debian.org/trixie/procps/kill.1.en.html).
-6. Debian Manpages: [pgrep ja pkill(1)](https://manpages.debian.org/trixie/procps/pgrep.1.en.html).
-7. Debian Manpages: [nice(1)](https://manpages.debian.org/trixie/coreutils/nice.1.en.html).
-8. Debian Manpages: [renice(1)](https://manpages.debian.org/trixie/bsdutils/renice.1.en.html).
-9. Debian Manpages: [free(1)](https://manpages.debian.org/trixie/procps/free.1.en.html).
-10. Debian Manpages: [df(1)](https://manpages.debian.org/trixie/coreutils/df.1.en.html).
-11. Debian Manpages: [du(1)](https://manpages.debian.org/trixie/coreutils/du.1.en.html).
-12. Debian Manpages: [ip-link(8)](https://manpages.debian.org/trixie/iproute2/ip-link.8.en.html).
-13. Debian Manpages: [ss(8)](https://manpages.debian.org/trixie/iproute2/ss.8.en.html).
-14. Debian Manpages: [tcpdump(8)](https://manpages.debian.org/trixie/tcpdump/tcpdump.8.en.html).
-15. Debian Manpages: [systemctl(1)](https://manpages.debian.org/trixie/systemd/systemctl.1.en.html).
-16. Debian Manpages: [journalctl(1)](https://manpages.debian.org/trixie/systemd/journalctl.1.en.html).
-17. Debian: [Muudatused süsteemi logimises alates Debian 12-st](https://www.debian.org/releases/bookworm/amd64/release-notes/ch-information#changes-to-system-logging).
-18. GNU Coreutils: [Frequently Asked Questions — df and du report different information](https://www.gnu.org/software/coreutils/faq/coreutils-faq.html#df-and-du-report-different-information).
+1. [Debian manpages](https://manpages.debian.org).
+2. [Frequently Asked Questions — df and du report different information](https://www.gnu.org/software/coreutils/faq/coreutils-faq.html#df-and-du-report-different-information).
 
 ---
 
