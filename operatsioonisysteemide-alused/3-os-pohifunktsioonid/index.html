@@ -1,0 +1,2920 @@
+
+<!doctype html>
+<html lang="et" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../images/computer.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Operatsioonisüsteemi põhifunktsioonid - IT alased õppematerjalid</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="deep-orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#operatsioonisusteemi-pohifunktsioonid" class="md-skip">
+          Keri sisuni
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Päis">
+    <a href="../.." title="IT alased õppematerjalid" class="md-header__button md-logo" aria-label="IT alased õppematerjalid" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M348.8 32C340.7 46.1 336 62.5 336 80v16H64v224h272v64H64c-35.3 0-64-28.7-64-64V96c0-35.3 28.7-64 64-64zM336 432c0 17.5 4.7 33.9 12.8 48H120c-13.3 0-24-10.7-24-24s10.7-24 24-24zm96-400h96c26.5 0 48 21.5 48 48v352c0 26.5-21.5 48-48 48h-96c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48m24 64c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24zm56 144a32 32 0 1 0-64 0 32 32 0 1 0 64 0"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            IT alased õppematerjalid
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Operatsioonisüsteemi põhifunktsioonid
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="deep-orange"  aria-label="Lülitu heledale režiimile"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Lülitu heledale režiimile" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-blue" data-md-color-accent="deep-orange"  aria-label="Lülitu tumedale režiimile"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Lülitu tumedale režiimile" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Otsi" placeholder="Otsi" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Otsing">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Jaga" aria-label="Jaga" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Lähtesta" aria-label="Lähtesta" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Otsingu lähtestamine
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Vaheleht" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://priitpaap.github.io" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Avalehele
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../linux/unixi-ja-bsd-ajalugu/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Linux
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ansible/ansibleintro/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Automatiseerimine
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Mitmesugust
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigatsioon" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="IT alased õppematerjalid" class="md-nav__button md-logo" aria-label="IT alased õppematerjalid" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M348.8 32C340.7 46.1 336 62.5 336 80v16H64v224h272v64H64c-35.3 0-64-28.7-64-64V96c0-35.3 28.7-64 64-64zM336 432c0 17.5 4.7 33.9 12.8 48H120c-13.3 0-24-10.7-24-24s10.7-24 24-24zm96-400h96c26.5 0 48 21.5 48 48v352c0 26.5-21.5 48-48 48h-96c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48m24 64c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24zm56 144a32 32 0 1 0-64 0 32 32 0 1 0 64 0"/></svg>
+
+    </a>
+    IT alased õppematerjalid
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://priitpaap.github.io" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Avalehele
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Linux
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ajalugu
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Ajalugu
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/unixi-ja-bsd-ajalugu/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.5 8H12v5l4.28 2.54.72-1.21-3.5-2.08zM13 3a9 9 0 0 0-9 9H1l3.96 4.03L9 12H6a7 7 0 0 1 7-7 7 7 0 0 1 7 7 7 7 0 0 1-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42A8.9 8.9 0 0 0 13 21a9 9 0 0 0 9-9 9 9 0 0 0-9-9"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Unixi ja BSD ajalugu
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/linuxi-ajalugu/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.5 8H12v5l4.28 2.54.72-1.21-3.5-2.08zM13 3a9 9 0 0 0-9 9H1l3.96 4.03L9 12H6a7 7 0 0 1 7-7 7 7 0 0 1 7 7 7 7 0 0 1-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42A8.9 8.9 0 0 0 13 21a9 9 0 0 0 9-9 9 9 0 0 0-9-9"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Linuxi ajalugu
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Paigaldamine
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Paigaldamine
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/debpaigaldus/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Debian Linuxi paigaldamine virutaalmasinale
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linuxi baasteadmised
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Linuxi baasteadmised
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/linuxi-baaskasud-spikker/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Linuxi käskude spikker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/linuxi-ulesehitus-ja-tookeskkond/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Linuxi ülesehitus ja töökeskkond
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/failihalduse-baaskasud/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Linuxi failhaldus ja baaskäsud
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/kataloogipuu-ja-failisusteemi-alused/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Linuxi katalogipuu ja failisusteemi alused
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/linuxi-kasutajate-haldus/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Linuxi kasutajate haldus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/linuxi-failioigused/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Linuxi failiõigused
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/linuxi-tarkvarahaldus/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 16.5c0 .38-.21.71-.53.88l-7.9 4.44c-.16.12-.36.18-.57.18s-.41-.06-.57-.18l-7.9-4.44A.99.99 0 0 1 3 16.5v-9c0-.38.21-.71.53-.88l7.9-4.44c.16-.12.36-.18.57-.18s.41.06.57.18l7.9 4.44c.32.17.53.5.53.88zM12 4.15l-1.89 1.07L16 8.61l1.96-1.11zM6.04 7.5 12 10.85l1.96-1.1-5.88-3.4zM5 15.91l6 3.38v-6.71L5 9.21zm14 0v-6.7l-6 3.37v6.71z"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Linuxi tarkvarahaldus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/tarkvarahaldus-debiani-laadsetes/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Tarkvarahaldus Debiani laadsetes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/tarkvarahaldus-red-hati-laadsetes/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.34 13.16c1.32 0 3.22-.27 3.22-1.84q.015-.18-.03-.36l-.78-3.4c-.18-.75-.34-1.09-1.66-1.75-1.02-.52-3.24-1.38-3.9-1.38-.61 0-.79.79-1.52.79-.7 0-1.22-.59-1.88-.59-.63 0-1.04.43-1.36 1.31 0 0-.88 2.5-1 2.86-.01.07-.02.13-.02.2 0 .97 3.82 4.15 8.93 4.15m3.43-1.19c.18.86.18.95.18 1.04 0 1.5-1.66 2.31-3.83 2.31-4.92 0-9.23-2.88-9.23-4.78 0-.27.06-.53.16-.77-1.77.08-4.05.4-4.05 2.42 0 3.32 7.84 7.39 14.05 7.39 4.76 0 5.95-2.15 5.95-3.85 0-1.34-1.15-2.86-3.23-3.76"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Tarkvarahaldus Red Hati laadsetes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/otsinguvahendid/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Otsinguvahendid
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/kasutajakeskkonna-seadistamine/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 19V7H4v12zm0-16a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-7 14v-2h5v2zm-3.42-4L5.57 9H8.4l3.3 3.3c.39.39.39 1.03 0 1.42L8.42 17H5.59z"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Kasutajakeskkonna seadistamine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/shelli-ja-keskkonnamuutujad/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.41 3c1.39 2.71 1.94 5.84 1.59 9-.2 3.16-1.3 6.29-3.17 9l-1.53-1c1.61-2.43 2.55-5.2 2.7-8 .34-2.8-.11-5.57-1.3-8zM5.17 3 6.7 4C5.09 6.43 4.15 9.2 4 12c-.34 2.8.12 5.57 1.3 8l-1.69 1c-1.4-2.71-1.96-5.83-1.61-9 .2-3.16 1.3-6.29 3.17-9m6.91 7.68 2.32-3.23h2.53l-3.78 5 2.2 4.92h-2.26L11.71 14l-2.43 3.33H6.76l3.9-5.12-2.13-4.76h2.27z"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Shelli ja keskkonnamuutujad
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linuxi serverid ja teenused
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Linuxi serverid ja teenused
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/dhcp/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    DHCP serveri seadistamine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/dns/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    DNS serveri seadistamine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Automatiseerimine
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Automatiseerimine
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ansible
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Ansible
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansibleintro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ansible ülevaade
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansibleinstall/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ansible paigaldamine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansibleinventory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ansible inventory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansibleconf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ansible levinumad seadistused
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansiblenodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hallatavate hostide ühendamine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansiblemodules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Moodulid ja ad-hoc käsud
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansibleplaybooks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Playbookid ja YAML
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansiblevars/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Muutujad ja nende kasutamine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansiblejinja2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Jinja2 mallid
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansibleconditionals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tingimuslikkus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansibleloops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tsüklid
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansiblehandlers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tegevuste käivitamine ainult vajadusel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansiblevault/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Turvalisus ja Ansible Vault
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansibleroles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rollid ja struktuur
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansiblegalaxy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ansible Galaxy Collections
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansiblebestpractises/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ansible parimad praktikad
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mitmesugust
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Sisukord">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Sisukord
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-protsessihaldus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          1. Protsessihaldus
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Protsessihaldus">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#loim-kui-protsessi-sees-tootav-taitmisuksus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Lõim kui protsessi sees töötav täitmisüksus
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-kuidas-mitu-programmi-korraga-tootavad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          2. Kuidas mitu programmi korraga töötavad?
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Kuidas mitu programmi korraga töötavad?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#protsessi-olekud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Protsessi olekud
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-maluhaldus-tooruum-programmidele" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          3. Mäluhaldus: tööruum programmidele
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Mäluhaldus: tööruum programmidele">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#virtuaalmalu-ja-saalimine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Virtuaalmälu ja saalimine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vahemalu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Vahemälu
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-failid-kaustad-ja-failisusteem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          4. Failid, kaustad ja failisüsteem
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Failid, kaustad ja failisüsteem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#salvestusseade-partitsioon-ja-failisusteem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Salvestusseade, partitsioon ja failisüsteem
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-seadmed-sisend-ja-valjund" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          5. Seadmed, sisend ja väljund
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Seadmed, sisend ja väljund">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#katkestused-ja-susteemikutsed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Katkestused ja süsteemikutsed
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-kasutajad-oigused-ja-protsesside-kaitse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          6. Kasutajad, õigused ja protsesside kaitse
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-protsesside-suhtlus-teenused-ja-vead" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          7. Protsesside suhtlus, teenused ja vead
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-miks-voib-arvuti-aeglaseks-muutuda" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          8. Miks võib arvuti aeglaseks muutuda?
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-enesekontroll" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          9. Enesekontroll
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Enesekontroll">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-tekstiredaktor-on-arvutisse-paigaldatud-kuid-suletud-kas-selle-olemasolu-tahendab-et-redaktori-protsess-tootab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          1. Tekstiredaktor on arvutisse paigaldatud, kuid suletud. Kas selle olemasolu tähendab, et redaktori protsess töötab?
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-miks-voib-tegumihalduris-naha-uhe-rakenduse-jaoks-mitut-protsessi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          2. Miks võib tegumihalduris näha ühe rakenduse jaoks mitut protsessi?
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-mis-erinevus-on-ajajaotusel-ja-paralleelsel-taitmisel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          3. Mis erinevus on ajajaotusel ja paralleelsel täitmisel?
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-kas-kettal-olev-100-gib-vaba-ruumi-tahendab-et-arvutil-ei-saa-olla-ram-i-puudust" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          4. Kas kettal olev 100 GiB vaba ruumi tähendab, et arvutil ei saa olla RAM-i puudust?
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-kas-virtuaalmalu-on-saalefaili-sunonuum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          5. Kas virtuaalmälu on saalefaili sünonüüm?
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-miks-ei-mahu-6-gib-fail-fat32-malupulgale-millel-on-20-gib-vaba-ruumi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          6. Miks ei mahu 6 GiB fail FAT32-mälupulgale, millel on 20 GiB vaba ruumi?
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-miks-voib-tekstiredaktor-edasi-tootada-kui-printer-ei-vasta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          7. Miks võib tekstiredaktor edasi töötada, kui printer ei vasta?
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-kas-cpu-suur-kasutus-tahendab-alati-et-programm-tuleb-lopetada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          8. Kas CPU suur kasutus tähendab alati, et programm tuleb lõpetada?
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-mille-poolest-erinevad-autentimine-ja-oiguste-kontroll" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          9. Mille poolest erinevad autentimine ja õiguste kontroll?
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kokkuvote" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Kokkuvõte
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Kokkuvõte">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#motle-opitule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Mõtle õpitule
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#teema-sonastik" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Teema sõnastik
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#allikad-ja-lisalugemine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Allikad ja lisalugemine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="operatsioonisusteemi-pohifunktsioonid">Operatsioonisüsteemi põhifunktsioonid<a class="headerlink" href="#operatsioonisusteemi-pohifunktsioonid" title="Permanent link">&para;</a></h1>
+<p>Operatsioonisüsteem korraldab protsessori, mälu, failide ja seadmete kasutamist ning süsteemi kaitset. Selles materjalis vaatame, millised on operatsioonisüsteemi põhilised ülesanded. </p>
+<p><img alt="operatsioonisusteemi pohifunktsioonid" src="../assets/3-os-pohifunktsioonid/operatsioonisusteemi-pohifunktsioonid.png" width="75%" /></p>
+<div class="admonition info">
+<p class="admonition-title">Õpieesmärgid</p>
+<p>Pärast materjali läbimist oskad:</p>
+<ul>
+<li>eristada programmi, protsessi ja lõime;</li>
+<li>selgitada protsessoriaja jagamise ja paralleelse töö erinevust;</li>
+<li>eristada RAM-i, salvestusruumi, virtuaalmälu ja vahemälu;</li>
+<li>kirjeldada failisüsteemi ja draiveri ülesannet;</li>
+<li>selgitada kasutajaõiguste ning protsesside eraldamise vajadust;</li>
+<li>seostada arvuti aeglustumise võimalikke põhjuseid ressursside kasutamisega.</li>
+</ul>
+</div>
+<h2 id="1-protsessihaldus">1. Protsessihaldus<a class="headerlink" href="#1-protsessihaldus" title="Permanent link">&para;</a></h2>
+<p><strong>Programm</strong> on käskude ja muu vajaliku sisu kogum, mille abil arvuti täidab ülesandeid. Paigaldatud rakenduse failid asuvad tavaliselt salvestusseadmel. Nende olemasolu ei tähenda veel, et rakendus töötab.</p>
+<p>Kui programm pannakse käima, siis saab sellest protsess. <strong>Protsess</strong> on töötava programmi eksemplar koos selle täitmiseks vajalike ressursside ja olekuga. Protsessil on näiteks identifikaator, mäluaadressiruum ja kasutatavate failide kohta käiv teave. <strong>PID</strong> (<em>process identifier</em>) on protsessi identifitseeriv number. Protsesse võivad käivitada kasutaja, operatsioonisüsteem või teised juba töötavad protsessid. Vanemprotsessid (parent) võivad luua lapsprotsesse (children). Iga lapsprotsess võib olla teistele protsessidele omakorda vanemaks. Nii tekib protsesside puu:</p>
+<p><img alt="process tree" src="../assets/3-os-pohifunktsioonid/process-tree.png" width="50%" /></p>
+<p>Sama programmi võib käivitada rohkem kui ühe korra. Üks rakendus võib ka ise luua mitu protsessi.</p>
+<div class="admonition example">
+<p class="admonition-title">Näide: brauser</p>
+<p>Brauser võib kasutada eraldi protsesse eri veebisisu, laienduste või muude komponentide jaoks. Seetõttu ei tähenda mitu brauseri nimega protsessi automaatselt viga. Samuti ei ole kindlat reeglit, et igale vahekaardile vastab täpselt üks protsess: jaotus sõltub brauseri ülesehitusest.</p>
+</div>
+<h3 id="loim-kui-protsessi-sees-tootav-taitmisuksus">Lõim kui protsessi sees töötav täitmisüksus<a class="headerlink" href="#loim-kui-protsessi-sees-tootav-taitmisuksus" title="Permanent link">&para;</a></h3>
+<p><strong>Lõim</strong> ehk <em>thread</em> on protsessi sees olev täitmisüksus. Protsessil on vähemalt üks lõim. Mitme lõimega protsess võib korraldada näiteks kasutajaliidese tööd ja andmete töötlemist eraldi. Sama protsessi lõimed jagavad selle mäluaadressiruumi ja mitmeid ressursse.</p>
+<p><img alt="threds" src="../assets/3-os-pohifunktsioonid/threds.png" width="75%" /></p>
+<table>
+<thead>
+<tr>
+<th>Mõiste</th>
+<th>Lihtne seletus</th>
+<th>Näide</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Programm</strong></td>
+<td>Salvestatud tarkvara, mida saab käivitada.</td>
+<td>Tekstiredaktori failid SSD-l.</td>
+</tr>
+<tr>
+<td><strong>Protsess</strong></td>
+<td>Programmi töötav eksemplar koos oma ressurssidega.</td>
+<td>Käivitatud tekstiredaktor.</td>
+</tr>
+<tr>
+<td><strong>Lõim</strong></td>
+<td>Protsessi sees toimuv käskude täitmine.</td>
+<td>Üks lõim reageerib sisendile, teine teeb taustal arvutust.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Pea meeles</p>
+<p>Programm, protsess ja lõim on seotud, kuid erinevad mõisted. Üks rakendus võib kasutada mitut protsessi ning ühes protsessis võib olla mitu lõime. Mitme lõime olemasolu ei taga iseenesest, et kõik need parajasti paralleelselt töötavad.</p>
+</div>
+<h2 id="2-kuidas-mitu-programmi-korraga-tootavad">2. Kuidas mitu programmi korraga töötavad?<a class="headerlink" href="#2-kuidas-mitu-programmi-korraga-tootavad" title="Permanent link">&para;</a></h2>
+<p><strong>Protsessor</strong> ehk <strong>CPU</strong> täidab programmide käske. Operatsioonisüsteemi <strong>planeerija</strong> (<em>scheduler</em>) otsustab, milline töötamiseks valmis lõim saab protsessoriaega. Planeerimine on üks op. süsteemi põhitegevustest. Valikut võivad mõjutada prioriteedid, ootel tööd ja muud süsteemi reeglid.</p>
+<p>Ühel protsessori täitmisüksusel saavad eri tööd kiiresti vahelduda. Seda nimetatakse <strong>ajajaotuseks</strong>. Kasutajale võib jääda mulje, et kõik rakendused töötavad ühel ajal.</p>
+<p>Mitme tuumaga protsessor võimaldab ka tegelikku <strong>paralleelset täitmist</strong>: eri tööd saavad töötada samal ajal eri tuumadel. Mõnel protsessoril on ühe füüsilise tuuma kohta mitu loogilist protsessorit. Alguses piisab teadmisest, et ajajaotus ja paralleelne töö on erinevad nähtused.</p>
+<div class="admonition example">
+<p class="admonition-title">Näide: muusika ja faili allalaadimine</p>
+<p>Muusikapleier vajab aeg-ajalt protsessoriaega heliandmete töötlemiseks. Brauser vajab seda saabunud andmete käsitlemiseks. Kui brauser ootab võrgust järgmisi andmeid, saab CPU teha muud tööd. Ootamine ei tähenda, et kogu arvuti peab peatuma.</p>
+</div>
+<h3 id="protsessi-olekud">Protsessi olekud<a class="headerlink" href="#protsessi-olekud" title="Permanent link">&para;</a></h3>
+<p>Protsess ei kasuta kogu oma eluea jooksul pidevalt protsessorit. Lihtsustatud mudelis eristame järgmisi olekuid:</p>
+<table>
+<thead>
+<tr>
+<th>Olek</th>
+<th>Tähendus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Loodud</strong> (<em>New</em>)</td>
+<td>Protsessi tööks valmistatakse ressursse ette.</td>
+</tr>
+<tr>
+<td><strong>Valmis</strong> (<em>Ready</em>)</td>
+<td>Protsess on valmis töötama, kuid ootab protsessoriaega.</td>
+</tr>
+<tr>
+<td><strong>Töötav</strong> (<em>Running</em>)</td>
+<td>Protsessi lõim täidab parajasti käske.</td>
+</tr>
+<tr>
+<td><strong>Ootel</strong> (<em>Waiting / Blocked</em>)</td>
+<td>Töö jätkamiseks on vaja näiteks faili lugemise lõppu või uusi andmeid.</td>
+</tr>
+<tr>
+<td><strong>Lõpetatud</strong> (<em>Terminated</em>)</td>
+<td>Protsessi töö on lõppenud ja ressursid vabastatakse.</td>
+</tr>
+</tbody>
+</table>
+<pre class="mermaid"><code>flowchart TB
+    N["Loodud"] --&gt; R["Valmis"]
+    R --&gt;|Saab protsessoriaega| E["Töötav"]
+    E --&gt;|Annab protsessoriaja üle| R
+    E --&gt;|Ootab andmeid või sündmust| W["Ootel"]
+    W --&gt;|Ootamine lõpeb| R
+    E --&gt;|Töö lõpeb| T["Lõpetatud"]</code></pre>
+<p>See on õppimiseks mõeldud mudel. Tegelikud olekunimed ja üksikasjad sõltuvad operatsioonisüsteemist. Mitmelõimelise protsessi eri lõimed võivad olla eri olekutes.</p>
+<p><strong>Ennetav planeerimine</strong> (<em>preemtive</em>) võimaldab OS-il töötava lõime täitmise katkestada ja anda protsessoriaega teisele. Rakendus ei pea ise otsustama, millal teised rakendused töötada tohivad. See ei tähenda, et OS lõpetab automaatselt iga pikalt arvutava programmi.
+<strong>Mitte-ennetava</strong> (<em>non-preemtive</em>) planeerija puhul peab iga protsess ise hoolitsema, et ta liiga kaua süsteemi aega ei raiskaks. Aktiivse protsesse tööd ei katkestata.</p>
+<h2 id="3-maluhaldus-tooruum-programmidele">3. Mäluhaldus: tööruum programmidele<a class="headerlink" href="#3-maluhaldus-tooruum-programmidele" title="Permanent link">&para;</a></h2>
+<p><strong>Muutmälu</strong> ehk <strong>RAM</strong> on tööruum, kus hoitakse töötamiseks vajalikke käske ja andmeid. Tavapärane RAM kaotab sisu toite kadumisel.</p>
+<p><strong>Salvestusseade</strong>, näiteks SSD või kõvaketas, hoiab programme ja faile ka siis, kui arvuti on välja lülitatud. Andmete lugemine salvestusseadmelt on üldjuhul aeglasem kui nende kasutamine RAM-ist.</p>
+<table>
+<thead>
+<tr>
+<th>Võrdlus</th>
+<th>RAM</th>
+<th>SSD või kõvaketas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Peamine ülesanne</td>
+<td>Töötavate programmide ja kasutatavate andmete hoidmine.</td>
+<td>Programmide ja failide püsiv salvestamine.</td>
+</tr>
+<tr>
+<td>Sisu toite kadumisel</td>
+<td>Tavaliselt kaob.</td>
+<td>Säilib.</td>
+</tr>
+<tr>
+<td>Näide</td>
+<td>Avatud dokumendi töötlemiseks kasutatav mälu.</td>
+<td>Salvestatud dokumendifail.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Salvestamine on vajalik</p>
+<p>See, et dokument on ekraanil avatud, ei tähenda, et kõik viimased muudatused on juba püsivalt salvestatud. Automaatse salvestamise olemasolu ja töö sõltuvad rakendusest ning selle seadistustest.</p>
+</div>
+<p>OS eraldab protsessidele mälu, peab kasutuse üle arvestust ning vabastab mälu, mida enam vaja ei ole. Mälu kaitsmine aitab vältida olukorda, kus üks protsess muudab kogemata teise protsessi või OS-i andmeid.</p>
+<h3 id="virtuaalmalu-ja-saalimine">Virtuaalmälu ja saalimine<a class="headerlink" href="#virtuaalmalu-ja-saalimine" title="Permanent link">&para;</a></h3>
+<p><strong>Virtuaalmälu</strong> pakub protsessile oma mäluaadressiruumi. OS ja riistvara seostavad selles kasutatavad aadressid tegeliku füüsilise mäluga. Nii saab mälukasutust korraldada ja protsesse üksteisest eraldada.</p>
+<p>Osa mälus olevatest andmetest võib vajaduse korral ajutiselt salvestusseadmele viia ja hiljem tagasi tuua. Seda nimetatakse <strong>saalimiseks</strong>. Windowsis kasutatakse selleks muu hulgas saalefaili (<em>pagefile</em>), Linuxis saaleala või saalefaili (<em>swap</em>).</p>
+<p>Virtuaalmälu ei ole ainult saalefaili teine nimi. Protsesside virtuaalsed aadressiruumid on kasutusel ka siis, kui parajasti andmeid kettale ei saalita.</p>
+<div class="admonition example">
+<p class="admonition-title">Näide: liiga palju avatud rakendusi</p>
+<p>Kui rakenduste aktiivsed andmed ei mahu RAM-i ja neid tuleb sageli salvestusseadmelt tagasi tuua, võib arvuti muutuda aeglaseks. Kettal oleva vaba ruumi suurendamine ei muuda seda sama kiireks kui piisava RAM-iga töötamine.</p>
+</div>
+<h3 id="vahemalu">Vahemälu<a class="headerlink" href="#vahemalu" title="Permanent link">&para;</a></h3>
+<p><strong>Vahemälu</strong> ehk <em>cache</em> hoiab ajutiselt andmeid, mille korduv kasutamine võiks muidu olla aeglasem. Näiteks saab OS hoida hiljuti loetud faili andmeid RAM-is, et neid ei peaks iga kord SSD-lt uuesti lugema. Protsessoril on lisaks oma kiired vahemälud.</p>
+<p>Kõigil neil mõistetel on eri tähendus: <strong>RAM</strong> on muutmälu, <strong>virtuaalmälu</strong> on mälukasutuse korraldamise mehhanism ja <strong>vahemälu</strong> kirjeldab andmete hoidmist kiirema korduskasutuse jaoks.</p>
+<details class="info">
+<summary>Lisalugemine: leheküljed, raamid ja MMU</summary>
+<p>Virtuaalne aadressiruum jagatakse mälulehekülgedeks ning füüsiline mälu vastava suurusega raamidesse. Leheküljetabelid kirjeldavad nende vastavusi. Lehekülje suurus sõltub süsteemist; üks levinud suurus on 4 KiB.</p>
+<p><strong>MMU</strong> (<em>memory management unit</em>) on riistvaraline mäluhaldusüksus, mis osaleb virtuaalsete aadresside teisendamisel füüsilisteks. OS korraldab selleks vajalikke tabeleid ja käsitleb olukordi, kus vajalik lehekülg ei ole kättesaadav. </p>
+<p><img alt="mmu" src="../assets/3-os-pohifunktsioonid/mmu.png" width="75%" /></p>
+<p>Oluline on aru saada, et programmi nähtav mäluaadress ei pea olema sama mis füüsiline aadress RAM-is.</p>
+<p><strong>Mälu leheküljed</strong>: Kujuta ette, et mälu on suur raamat, mis on jagatud lehekülgedeks. Iga lehekülg on kindla suurusega plokk mälu, näiteks 4 KB.</p>
+<p><strong>Raamid:</strong> Raamid on füüsilise mälu osad, kuhu need leheküljed paigutatakse. Mõtle raamidest kui riiulikohtadest, kuhu leheküljed asetatakse.</p>
+<p><strong>Virtuaalmälu</strong> võimaldab programmidel kasutada rohkem mälu, kui füüsiliselt saadaval on. Kui mälu saab täis, saab osa andmeid ajutiselt kõvakettale salvestada ja vajadusel tagasi laadida. Näide: Kujuta ette, et sul on rohkem raamatuid, kui riiulile mahub. Sa võid osa raamatuid ajutiselt kasti panna ja vajadusel tagasi riiulile tõsta.</p>
+<p>Lehekülgede ja raamide süsteem aitab vältida mälu raiskamist, kuna mälu saab jaotada väiksemateks osadeks ja kasutada vastavalt vajadusele. Näide: Kui sul on suur raamat, mida sa ei loe tervikuna, vaid ainult mõned leheküljed korraga, siis on mõistlik hoida ainult neid lehekülgi käepärast, mida sa hetkel vajad.</p>
+</details>
+<h2 id="4-failid-kaustad-ja-failisusteem">4. Failid, kaustad ja failisüsteem<a class="headerlink" href="#4-failid-kaustad-ja-failisusteem" title="Permanent link">&para;</a></h2>
+<p><strong>Fail</strong> on nimega käsitletav andmekogum. <strong>Kaust</strong> ehk <strong>kataloog</strong> aitab faile ja teisi kaustu korraldada. <strong>Failitee</strong> kirjeldab faili või kausta asukohta kataloogistruktuuris.</p>
+<p><strong>Failisüsteem</strong> korraldab, kuidas failide sisu ja nende kohta käiv teave salvestusruumis paiknevad ning kuidas neid leitakse. Selline lisateave ehk <strong>metaandmed</strong> võib sisaldada näiteks faili nime, suurust, ajatemplite väärtusi ja ligipääsuõigusi.</p>
+<table>
+<thead>
+<tr>
+<th>Failisüsteem</th>
+<th>Tüüpiline kasutuskoht</th>
+<th>Põhiteadmine</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>NTFS</strong></td>
+<td>Windowsi süsteemi- ja andmeköited.</td>
+<td>Toetab näiteks kasutajaõigusi ja päevikut.</td>
+</tr>
+<tr>
+<td><strong>ext4</strong></td>
+<td>Paljud Linuxi süsteemid.</td>
+<td>Levinud Linuxi failisüsteem, mis toetab õigusi ja päevikut.</td>
+</tr>
+<tr>
+<td><strong>APFS</strong></td>
+<td>Tänapäevased Mac-arvutid.</td>
+<td>Apple'i failisüsteem, mis toetab näiteks krüpteerimist ja hetktõmmiseid.</td>
+</tr>
+<tr>
+<td><strong>exFAT</strong></td>
+<td>Eemaldatavad andmekandjad.</td>
+<td>Sobib suurte failide jaoks; toetatud paljudes arvutisüsteemides, kuid seadmete sobivust tuleb kontrollida.</td>
+</tr>
+<tr>
+<td><strong>FAT32</strong></td>
+<td>Mitmesugused eemaldatavad andmekandjad ja eriseadmed.</td>
+<td>Ühe faili suurus peab jääma alla 4 GiB.</td>
+</tr>
+</tbody>
+</table>
+<p>Failisüsteemide omaduste kohta on kursusel ka põhjalikum materjal. </p>
+<div class="admonition example">
+<p class="admonition-title">Näide: fail ei mahu, kuigi vaba ruumi on</p>
+<p>FAT32-ga USB-mälupulgal võib olla 20 GiB vaba ruumi, kuid sinna ei saa kirjutada üht 6 GiB suurust faili. Piirang puudutab ühe faili suurust, mitte üksnes vaba ruumi hulka. Seda probleemi ei lahenda sama faili kopeerimise korduv proovimine.</p>
+</div>
+<h3 id="salvestusseade-partitsioon-ja-failisusteem">Salvestusseade, partitsioon ja failisüsteem<a class="headerlink" href="#salvestusseade-partitsioon-ja-failisusteem" title="Permanent link">&para;</a></h3>
+<p>Need mõisted kirjeldavad eri asju:</p>
+<ul>
+<li><strong>Salvestusseade</strong> on näiteks terve SSD.</li>
+<li><strong>Partitsioon</strong> on salvestusseadmele määratud piirkond.</li>
+<li><strong>Failisüsteem</strong> korraldab failide hoidmist näiteks selle piirkonna sees.</li>
+</ul>
+<p>Ühel seadmel võib olla mitu partitsiooni. Failisüsteemi saab luua ka muudele salvestusruumi üksustele, kuid tavalisel paigaldatud arvutil on partitsioon hea lähtekoht nende mõistete eristamiseks.</p>
+<h2 id="5-seadmed-sisend-ja-valjund">5. Seadmed, sisend ja väljund<a class="headerlink" href="#5-seadmed-sisend-ja-valjund" title="Permanent link">&para;</a></h2>
+<p><strong>Sisend</strong> on andmete jõudmine süsteemi, näiteks klaviatuurilt, mikrofonist või võrgust. <strong>Väljund</strong> on andmete saatmine süsteemist välja, näiteks ekraanile, kõlarisse või printerisse. Ingliskeelne lühend <strong>I/O</strong> tähendab <em>input/output</em>. Ka sisend- ja väljundseadmete haldus on osa os-i tööst. </p>
+<p><strong>Draiver</strong> on tarkvarakomponent, mis võimaldab operatsioonisüsteemil konkreetse seadme või seadmeklassiga suhelda. Rakendus ei pea seetõttu tundma iga printeri või võrguadapteri kõiki tehnilisi üksikasju.</p>
+<div class="admonition example">
+<p class="admonition-title">Näide: dokumendi printimine</p>
+<p>Tekstiredaktor annab printimistöö süsteemi prinditeenusele. Teenus korraldab töö järjekorda ja sobivad draiverid aitavad printeriga suhelda. Kui printer ei ole kättesaadav, võib töö jääda järjekorda, kuigi tekstiredaktor ise jätkab töötamist.</p>
+</div>
+<h3 id="katkestused-ja-susteemikutsed">Katkestused ja süsteemikutsed<a class="headerlink" href="#katkestused-ja-susteemikutsed" title="Permanent link">&para;</a></h3>
+<p>Riistvara saab protsessorile teatada tähelepanu vajavast sündmusest <strong>katkestuse</strong> abil. Näiteks võib võrguadapter teatada andmete saabumisest. Süsteem käsitleb sündmust ja jätkab seejärel sobiva tööga. Katkestus ei tähenda tingimata rakenduse sulgemist.</p>
+<p>Kui rakendus vajab tuuma teenust, näiteks faili avamiseks, jõuab ta tavaliselt selleni programmeerimisliideste kaudu tehtava <strong>süsteemikutsega</strong>. Süsteemikutse on rakenduse teadlik teenusepäring; riistvarakatkestus on seadme teavitus. Nende täpne teostus sõltub protsessorist ja OS-ist.</p>
+<p>Tavalisi arvutuskäske täidab protsessor ka rakenduse kasutajarežiimis. Kõik rakenduse käsud ei läbi eraldi operatsioonisüsteemi. OS vahendab muu hulgas kaitstud toiminguid ja korraldab ressursside kasutamist.</p>
+<h2 id="6-kasutajad-oigused-ja-protsesside-kaitse">6. Kasutajad, õigused ja protsesside kaitse<a class="headerlink" href="#6-kasutajad-oigused-ja-protsesside-kaitse" title="Permanent link">&para;</a></h2>
+<p>Mitme kasutaja või rakendusega arvutis ei saa kõigile anda piiramatut ligipääsu kõigele.</p>
+<p><strong>Autentimine</strong> kontrollib, kes kasutaja on. <strong>Õiguste kontroll</strong> määrab, mida tuvastatud kasutaja või protsess teha tohib.</p>
+<p>Näiteks saab OS lubada kasutajal lugeda mõnda faili, kuid keelata selle muutmise. Programm töötab talle antud õigustega ega tohi tavaliselt teiste protsesside mälu vabalt muuta.</p>
+<table>
+<thead>
+<tr>
+<th>Õigus</th>
+<th>Mida see võimaldab?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lugemine</strong></td>
+<td>Faili sisu vaadata või töödelda.</td>
+</tr>
+<tr>
+<td><strong>Kirjutamine</strong></td>
+<td>Faili sisu muuta.</td>
+</tr>
+<tr>
+<td><strong>Käivitamine</strong></td>
+<td>Sobivat faili programmina käivitada.</td>
+</tr>
+</tbody>
+</table>
+<p>Täpne õiguste mudel sõltub OS-ist ja failisüsteemist. Ka faili kustutamise võimalus võib sõltuda kausta õigustest.</p>
+<p><strong>Tavakasutaja</strong> ja <strong>administraatori</strong> õigused erinevad. Administraator saab muuta seadistusi, mille mõju ulatub kogu süsteemile. Tavakasutus ei vaja iga tegevuse jaoks selliseid õigusi.</p>
+<div class="admonition warning">
+<p class="admonition-title">Õiguste küsimine on otsustuskoht</p>
+<p>Kui rakendus küsib suuremaid õigusi, tuleb mõista, miks neid vaja on. Näiteks kogu süsteemi mõjutav paigaldus võib õigusi vajada. Õiguste andmine ei muuda programmi automaatselt usaldusväärseks.</p>
+</div>
+<p>Protsesside eraldamine aitab piirata vigade mõju. Ühe kasutajarakenduse kokkujooksmine ei pea kogu OS-i peatama. Kaitse ei ole siiski absoluutne: õigustega lubatud suhtlus, vigased süsteemikomponendid ja haavatavused võivad olukorda muuta.</p>
+<h2 id="7-protsesside-suhtlus-teenused-ja-vead">7. Protsesside suhtlus, teenused ja vead<a class="headerlink" href="#7-protsesside-suhtlus-teenused-ja-vead" title="Permanent link">&para;</a></h2>
+<p>Eraldatud protsessidel on mõnikord vaja koostööd teha. OS pakub selleks kontrollitud suhtlusvõimalusi. Näiteks võib rakendus saata prinditeenusele töö või küsida teiselt protsessilt andmeid.</p>
+<p><strong>Teenus</strong> on taustal vajalikku ülesannet täitev tarkvarakomponent. Linuxis kasutatakse paljude taustaprotsesside kohta ka sõna <em>daemon</em>. Teenus ei vaja oma tööks tingimata nähtavat rakendusakent.</p>
+<p>OS ja rakendused saavad registreerida sündmusi <strong>logidesse</strong>. Logi võib aidata selgitada, miks programm ei käivitunud või miks seadme kasutamine ebaõnnestus. Iga logikirje ei tähenda viga ning iga tõrge ei ole OS-i viga.</p>
+<h2 id="8-miks-voib-arvuti-aeglaseks-muutuda">8. Miks võib arvuti aeglaseks muutuda?<a class="headerlink" href="#8-miks-voib-arvuti-aeglaseks-muutuda" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Tähelepanek</th>
+<th>Üks võimalik seletus</th>
+<th>Mida sellest järeldada?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CPU kasutus on suur.</td>
+<td>Rakendus teeb palju arvutusi.</td>
+<td>See võib olla normaalne töö, mitte tingimata rike.</td>
+</tr>
+<tr>
+<td>RAM on tugevalt koormatud ja salvestusseade töötab palju.</td>
+<td>Toimub sage saalimine või muu mahukas andmetöötlus.</td>
+<td>Põhjust tuleb hinnata mitme näitaja abil.</td>
+</tr>
+<tr>
+<td>Salvestusruum on peaaegu täis.</td>
+<td>Ajutiste failide ja uuenduste jaoks jääb vähe ruumi.</td>
+<td>Vaba salvestusruum ja vaba RAM on erinevad asjad.</td>
+</tr>
+<tr>
+<td>Veebileht avaneb aeglaselt.</td>
+<td>Võrk või kaugserver on aeglane.</td>
+<td>Kohaliku arvuti CPU ei pruugi olla probleemi põhjus.</td>
+</tr>
+<tr>
+<td>Üks rakendus ei reageeri, teised töötavad.</td>
+<td>Rakendus ootab midagi või on tõrkesse sattunud.</td>
+<td>Kogu arvuti ei pruugi vajada taaskäivitamist.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Pudelikael</strong> on piirav tegur, mis takistab tegevuse kiiremat täitmist. Rohkem RAM-i ei paranda automaatselt aeglast võrku ning kiirem protsessor ei lahenda kõiki salvestusseadme probleeme.</p>
+<p>Ressursikasutust näitavad näiteks Windowsi tegumihaldur ja Linuxi süsteemimonitorid. Nende näidud kirjeldavad mõõtmise hetke, mitte üksinda kogu probleemi põhjust.</p>
+<h2 id="9-enesekontroll">9. Enesekontroll<a class="headerlink" href="#9-enesekontroll" title="Permanent link">&para;</a></h2>
+<p>Vasta kõigepealt ise. Seejärel ava vastus ja võrdle oma põhjendust.</p>
+<h3 id="1-tekstiredaktor-on-arvutisse-paigaldatud-kuid-suletud-kas-selle-olemasolu-tahendab-et-redaktori-protsess-tootab">1. Tekstiredaktor on arvutisse paigaldatud, kuid suletud. Kas selle olemasolu tähendab, et redaktori protsess töötab?<a class="headerlink" href="#1-tekstiredaktor-on-arvutisse-paigaldatud-kuid-suletud-kas-selle-olemasolu-tahendab-et-redaktori-protsess-tootab" title="Permanent link">&para;</a></h3>
+<details class="success">
+<summary>Vaata vastust</summary>
+<p>Ei. Paigaldatud programmifailid ja töötav protsess on eri asjad. Rakenduse taustakomponent võib eraldi töötada, kuid paigaldus üksi ei tõenda redaktori protsessi töötamist.</p>
+</details>
+<h3 id="2-miks-voib-tegumihalduris-naha-uhe-rakenduse-jaoks-mitut-protsessi">2. Miks võib tegumihalduris näha ühe rakenduse jaoks mitut protsessi?<a class="headerlink" href="#2-miks-voib-tegumihalduris-naha-uhe-rakenduse-jaoks-mitut-protsessi" title="Permanent link">&para;</a></h3>
+<details class="success">
+<summary>Vaata vastust</summary>
+<p>Rakendus võib jagada oma töö eri protsesside vahel. See võimaldab näiteks komponente eraldada ja eri ülesandeid korraldada. Mitme protsessi olemasolu ei tõenda automaatselt riket.</p>
+</details>
+<h3 id="3-mis-erinevus-on-ajajaotusel-ja-paralleelsel-taitmisel">3. Mis erinevus on ajajaotusel ja paralleelsel täitmisel?<a class="headerlink" href="#3-mis-erinevus-on-ajajaotusel-ja-paralleelsel-taitmisel" title="Permanent link">&para;</a></h3>
+<details class="success">
+<summary>Vaata vastust</summary>
+<p>Ajajaotuse korral eri tööd vahelduvad ühe täitmisüksuse protsessoriajas. Paralleelse täitmise korral tehakse eri töid tegelikult samal ajal eri täitmisüksustel. Arvuti võib kasutada mõlemat.</p>
+</details>
+<h3 id="4-kas-kettal-olev-100-gib-vaba-ruumi-tahendab-et-arvutil-ei-saa-olla-ram-i-puudust">4. Kas kettal olev 100 GiB vaba ruumi tähendab, et arvutil ei saa olla RAM-i puudust?<a class="headerlink" href="#4-kas-kettal-olev-100-gib-vaba-ruumi-tahendab-et-arvutil-ei-saa-olla-ram-i-puudust" title="Permanent link">&para;</a></h3>
+<details class="success">
+<summary>Vaata vastust</summary>
+<p>Ei. Salvestusruum ja RAM täidavad eri ülesandeid. Saalimine võib võimaldada osa andmeid ajutiselt kettal hoida, kuid sage andmete liigutamine ei anna sama jõudlust kui piisav RAM.</p>
+</details>
+<h3 id="5-kas-virtuaalmalu-on-saalefaili-sunonuum">5. Kas virtuaalmälu on saalefaili sünonüüm?<a class="headerlink" href="#5-kas-virtuaalmalu-on-saalefaili-sunonuum" title="Permanent link">&para;</a></h3>
+<details class="success">
+<summary>Vaata vastust</summary>
+<p>Ei. Virtuaalmälu korraldab protsesside aadressiruume ja nende seostamist füüsilise mäluga. Saalefail on üks võimalik vahend osa andmete ajutiseks hoidmiseks salvestusseadmel.</p>
+</details>
+<h3 id="6-miks-ei-mahu-6-gib-fail-fat32-malupulgale-millel-on-20-gib-vaba-ruumi">6. Miks ei mahu 6 GiB fail FAT32-mälupulgale, millel on 20 GiB vaba ruumi?<a class="headerlink" href="#6-miks-ei-mahu-6-gib-fail-fat32-malupulgale-millel-on-20-gib-vaba-ruumi" title="Permanent link">&para;</a></h3>
+<details class="success">
+<summary>Vaata vastust</summary>
+<p>FAT32 ühe faili suuruse piirang jääb alla 4 GiB. Vaba ruumi on piisavalt, kuid fail on selle failisüsteemi jaoks liiga suur.</p>
+</details>
+<h3 id="7-miks-voib-tekstiredaktor-edasi-tootada-kui-printer-ei-vasta">7. Miks võib tekstiredaktor edasi töötada, kui printer ei vasta?<a class="headerlink" href="#7-miks-voib-tekstiredaktor-edasi-tootada-kui-printer-ei-vasta" title="Permanent link">&para;</a></h3>
+<details class="success">
+<summary>Vaata vastust</summary>
+<p>Printimist saab korraldada taustal prinditeenuse ja järjekorra kaudu. Printeri ootamine ei pea peatama redaktori ega teiste rakenduste kogu tööd.</p>
+</details>
+<h3 id="8-kas-cpu-suur-kasutus-tahendab-alati-et-programm-tuleb-lopetada">8. Kas CPU suur kasutus tähendab alati, et programm tuleb lõpetada?<a class="headerlink" href="#8-kas-cpu-suur-kasutus-tahendab-alati-et-programm-tuleb-lopetada" title="Permanent link">&para;</a></h3>
+<details class="success">
+<summary>Vaata vastust</summary>
+<p>Ei. Näiteks video töötlemine või mahukas arvutus võib CPU-d õiguspäraselt palju kasutada. Tuleb arvestada tegevuse eesmärki, kestust ja mõju muudele töödele.</p>
+</details>
+<h3 id="9-mille-poolest-erinevad-autentimine-ja-oiguste-kontroll">9. Mille poolest erinevad autentimine ja õiguste kontroll?<a class="headerlink" href="#9-mille-poolest-erinevad-autentimine-ja-oiguste-kontroll" title="Permanent link">&para;</a></h3>
+<details class="success">
+<summary>Vaata vastust</summary>
+<p>Autentimine kontrollib kasutaja identiteeti. Õiguste kontroll otsustab, mida see kasutaja teha tohib. Edukas sisselogimine ei anna automaatselt õigust lugeda kõiki teiste kasutajate faile.</p>
+</details>
+<h2 id="kokkuvote">Kokkuvõte<a class="headerlink" href="#kokkuvote" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Programm on salvestatud tarkvara, protsess selle töötav eksemplar ja lõim protsessi sees olev täitmisüksus.</li>
+<li>OS-i ajastaja ehk planeerija jagab protsessoriaega. Ajajaotus tähendab tööde vaheldumist; paralleelne täitmine tähendab tegelikku samaaegset tööd eri täitmisüksustel.</li>
+<li>RAM on programmide töömälu, salvestusseade hoiab programme ja faile püsivalt. Vaba kettaruum ei asenda piisavat RAM-i.</li>
+<li>Virtuaalmälu korraldab protsesside aadressiruume. Saalimine võimaldab osa andmeid ajutiselt salvestusseadmel hoida; vahemälu kiirendab andmete korduskasutust.</li>
+<li>Failisüsteem korraldab failide ja metaandmete hoidmist. Salvestusseade, partitsioon ja failisüsteem on erinevad mõisted.</li>
+<li>Sisend ja väljund ehk I/O hõlmavad andmete liikumist süsteemi ning sellest välja. Draiverid võimaldavad OS-il seadmetega suhelda.</li>
+<li>Riistvarakatkestus teatab sündmusest; süsteemikutse kaudu küsib rakendus tuuma teenust.</li>
+<li>Autentimine kontrollib identiteeti, õiguste kontroll lubatud tegevusi. Protsesside eraldamine aitab piirata vigade mõju.</li>
+<li>Teenused töötavad sageli taustal ja logid aitavad sündmusi uurida. Arvuti aeglustumise põhjust tuleb hinnata mitme näitaja põhjal.</li>
+</ul>
+<h3 id="motle-opitule">Mõtle õpitule<a class="headerlink" href="#motle-opitule" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Milliseid mälu mõisteid oli kõige raskem eristada: RAM, virtuaalmälu, saalimine või vahemälu? Selgita nende erinevust oma sõnadega ja too üks kasutusnäide.</li>
+<li>Kujutle, et brauser muutub aeglaseks, aga muusika mängib edasi. Millist teavet koguksid enne põhjuse kohta järelduse tegemist? Põhjenda, miks üks ressursikasutuse näit ei pruugi vastust anda.</li>
+<li>Vali igapäevane tegevus, näiteks faili salvestamine või printimine. Milliseid OS-i põhifunktsioone see vajab? Milline osa sellest tegevusest on sulle veel ebaselge?</li>
+</ol>
+<h2 id="teema-sonastik">Teema sõnastik<a class="headerlink" href="#teema-sonastik" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Mõiste</th>
+<th>Selgitus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Programm (<em>program</em>)</td>
+<td>Käskude ja muu vajaliku sisu kogum, mille abil arvuti täidab ülesandeid.</td>
+</tr>
+<tr>
+<td>Protsess (<em>process</em>)</td>
+<td>Töötava programmi eksemplar koos täitmiseks vajalike ressursside ja olekuga.</td>
+</tr>
+<tr>
+<td>PID (<em>process identifier</em>)</td>
+<td>Number, millega OS protsessi identifitseerib.</td>
+</tr>
+<tr>
+<td>Lõim (<em>thread</em>)</td>
+<td>Protsessi sees olev täitmisüksus; sama protsessi lõimed jagavad selle mälu ja mitmeid ressursse.</td>
+</tr>
+<tr>
+<td>Protsessor; CPU (<em>Central Processing Unit</em>)</td>
+<td>Riistvarakomponent, mis täidab programmide käske.</td>
+</tr>
+<tr>
+<td>Protsessorituum (<em>processor core</em>)</td>
+<td>Protsessori osa, mis saab käske täita; mitu tuuma võimaldavad eri töid paralleelselt täita.</td>
+</tr>
+<tr>
+<td>Ajastaja ehk planeerija (<em>scheduler</em>)</td>
+<td>OS-i komponent, mis valib, milline töötamiseks valmis lõim saab protsessoriaega.</td>
+</tr>
+<tr>
+<td>Prioriteet (<em>priority</em>)</td>
+<td>Töö suhteline tähtsus, mida ajastaja võib protsessoriaja jagamisel arvestada.</td>
+</tr>
+<tr>
+<td>Ajajaotus (<em>time-sharing</em>)</td>
+<td>Protsessoriaja jagamine tööde vahel nii, et need saavad vaheldumisi edeneda.</td>
+</tr>
+<tr>
+<td>Paralleelne täitmine (<em>parallel execution</em>)</td>
+<td>Eri tööde tegelik samaaegne täitmine eri täitmisüksustel.</td>
+</tr>
+<tr>
+<td>Ennetav planeerimine (<em>preemptive scheduling</em>)</td>
+<td>Töökorraldus, kus OS saab töötava lõime täitmise katkestada ja anda protsessoriaega teisele.</td>
+</tr>
+<tr>
+<td>Muutmälu; RAM (<em>Random Access Memory</em>)</td>
+<td>Töötamiseks vajalike käskude ja andmete töömälu; tavapärane RAM kaotab sisu toite kadumisel.</td>
+</tr>
+<tr>
+<td>Salvestusseade (<em>storage device</em>)</td>
+<td>Seade, näiteks SSD või kõvaketas, mis hoiab programme ja andmeid püsivalt.</td>
+</tr>
+<tr>
+<td>Virtuaalmälu (<em>virtual memory</em>)</td>
+<td>Mälukasutuse korraldamise mehhanism, mis pakub protsessidele virtuaalseid aadressiruume.</td>
+</tr>
+<tr>
+<td>Mäluaadressiruum (<em>memory address space</em>)</td>
+<td>Mäluaadresside kogum, mille kaudu protsess oma käske ja andmeid kasutab.</td>
+</tr>
+<tr>
+<td>Saalimine (<em>swapping</em>)</td>
+<td>Osa mälus olevate andmete ajutine viimine salvestusseadmele ja vajaduse korral tagasi toomine.</td>
+</tr>
+<tr>
+<td>Saalefail või saaleala (<em>pagefile</em>, <em>swap</em>)</td>
+<td>Salvestusruum, mida süsteem saab kasutada saalitavate andmete hoidmiseks.</td>
+</tr>
+<tr>
+<td>Vahemälu (<em>cache</em>)</td>
+<td>Ajutine andmete hoidmise koht nende kiiremaks korduskasutuseks.</td>
+</tr>
+<tr>
+<td>Mäluhaldusüksus; MMU (<em>Memory Management Unit</em>)</td>
+<td>Riistvarakomponent, mis osaleb virtuaalsete mäluaadresside teisendamisel füüsilisteks.</td>
+</tr>
+<tr>
+<td>Fail (<em>file</em>)</td>
+<td>Nimega käsitletav andmekogum.</td>
+</tr>
+<tr>
+<td>Kaust ehk kataloog (<em>directory</em>)</td>
+<td>Struktuur, mis aitab faile ja teisi kaustu korraldada.</td>
+</tr>
+<tr>
+<td>Failitee (<em>path</em>)</td>
+<td>Faili või kausta asukohta kirjeldav tee kataloogistruktuuris.</td>
+</tr>
+<tr>
+<td>Failisüsteem (<em>file system</em>)</td>
+<td>Korraldus, mille järgi failide sisu ja metaandmeid salvestatakse ning leitakse.</td>
+</tr>
+<tr>
+<td>Metaandmed (<em>metadata</em>)</td>
+<td>Andmed faili või muu andmekogumi kohta, näiteks suurus, ajatemplid ja õigused.</td>
+</tr>
+<tr>
+<td>Partitsioon (<em>partition</em>)</td>
+<td>Salvestusseadmele määratud piirkond.</td>
+</tr>
+<tr>
+<td>Failisüsteemi päevik (<em>journal</em>)</td>
+<td>Failisüsteemi muudatuste arvestus, mis aitab pärast katkestust taastamist korraldada.</td>
+</tr>
+<tr>
+<td>Sisend ja väljund; I/O (<em>input/output</em>)</td>
+<td>Andmete jõudmine süsteemi ja nende saatmine süsteemist välja.</td>
+</tr>
+<tr>
+<td>Draiver (<em>driver</em>)</td>
+<td>Tarkvarakomponent, mis võimaldab OS-il seadme või seadmeklassiga suhelda.</td>
+</tr>
+<tr>
+<td>Riistvarakatkestus (<em>hardware interrupt</em>)</td>
+<td>Riistvara teavitus protsessorile tähelepanu vajavast sündmusest.</td>
+</tr>
+<tr>
+<td>Süsteemikutse (<em>system call</em>)</td>
+<td>Rakenduse teenusepäring OS-i tuumale, näiteks faili avamiseks.</td>
+</tr>
+<tr>
+<td>Autentimine (<em>authentication</em>)</td>
+<td>Kasutaja identiteedi kontrollimine.</td>
+</tr>
+<tr>
+<td>Õiguste kontroll (<em>authorization</em>)</td>
+<td>Kontroll, mis määrab, milliseid tegevusi kasutaja või protsess teha tohib.</td>
+</tr>
+<tr>
+<td>Administraator (<em>administrator</em>)</td>
+<td>Kasutaja, kelle õigused võimaldavad teha kogu süsteemi mõjutavaid muudatusi.</td>
+</tr>
+<tr>
+<td>Protsesside eraldamine (<em>process isolation</em>)</td>
+<td>Protsesside töö ja ligipääsu piiramine nii, et need ei saaks teiste andmeid vabalt muuta.</td>
+</tr>
+<tr>
+<td>Teenus (<em>service</em>); <em>daemon</em></td>
+<td>Taustal vajalikku ülesannet täitev tarkvarakomponent; Linuxis nimetatakse paljusid taustaprotsesse deemoniteks.</td>
+</tr>
+<tr>
+<td>Logi (<em>log</em>)</td>
+<td>Registreeritud sündmuste kogum, mis aitab süsteemi tööd ja tõrkeid uurida.</td>
+</tr>
+<tr>
+<td>Pudelikael (<em>bottleneck</em>)</td>
+<td>Piirav tegur, mis takistab tegevuse kiiremat täitmist.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="allikad-ja-lisalugemine">Allikad ja lisalugemine<a class="headerlink" href="#allikad-ja-lisalugemine" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="https://learn.microsoft.com/en-us/windows/win32/procthread/about-processes-and-threads" rel="noopener" target="_blank">Microsoft Learn: About Processes and Threads</a>.</li>
+<li><a href="https://learn.microsoft.com/en-us/windows/win32/procthread/scheduling" rel="noopener" target="_blank">Microsoft Learn: Scheduling</a>.</li>
+<li><a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/gettingstarted/virtual-address-spaces" rel="noopener" target="_blank">Microsoft Learn: Virtual Address Spaces</a>.</li>
+<li><a href="https://docs.kernel.org/mm/page_tables.html" rel="noopener" target="_blank">Linux Kernel Documentation: Page Tables</a>.</li>
+<li><a href="https://learn.microsoft.com/en-us/windows/win32/fileio/filesystem-functionality-comparison" rel="noopener" target="_blank">Microsoft Learn: File System Functionality Comparison</a>.</li>
+<li><a href="https://support.apple.com/guide/disk-utility/file-system-formats-dsku19ed921c/mac" rel="noopener" target="_blank">Apple Support: File system formats available in Disk Utility on Mac</a>.</li>
+<li><a href="https://docs.kernel.org/filesystems/ext4/index.html" rel="noopener" target="_blank">Linux Kernel Documentation: ext4</a>.</li>
+<li><a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/gettingstarted/user-mode-and-kernel-mode" rel="noopener" target="_blank">Microsoft Learn: User Mode and Kernel Mode</a>.</li>
+</ol>
+<hr />
+<p><em>Õppematerjali koostaja: Priit Paap, 2026</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Üles
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Priit Paap
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.annotate", "content.code.copy", "content.tabs.link", "header.autohide", "announce.dismiss", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Kopeeritud", "clipboard.copy": "Kopeeri l\u00f5ikelauale", "search.result.more.one": "1 veel sellel lehel", "search.result.more.other": "# veel sellel lehel", "search.result.none": "Otsingule ei leitud \u00fchtegi vastet", "search.result.one": "Leiti \u00fcks tulemus", "search.result.other": "Leiti # tulemust", "search.result.placeholder": "Otsimiseks kirjuta siia", "search.result.term.missing": "Puudub", "select.version": "Vali versioon"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
