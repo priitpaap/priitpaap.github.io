@@ -10,7 +10,6 @@ Materjali põhikeskkond on **Debian 13**. Põhjalikumalt käsitleme `ifupdown`-i
 
     - selgitada IP-aadressi, prefiksi, vaikimisi lüüsi, DNS-i ja DHCP ülesannet;
     - vaadata Linuxi võrguliideste aadresse, olekut ja marsruute;
-    - eristada ajutist ning püsivat võrguseadistust;
     - leida, milline tööriist konkreetset liidest haldab;
     - seadistada IPv4-võrguparameetreid kasutatavale keskkonnale sobiva meetodiga;
     - kontrollida aadressi, marsruutimist, nimelahendust ja teenuse kättesaadavust;
@@ -23,13 +22,11 @@ Materjali põhikeskkond on **Debian 13**. Põhjalikumalt käsitleme `ifupdown`-i
 | **IP-aadress — IP address** | Tähistab liidese aadressi IP-võrgus. | `10.100.0.20` |
 | **Võrguprefiks — network prefix** | Määrab, milline aadressi osa tähistab võrku. | `/24` |
 | **Alamvõrgumask — subnet mask** | IPv4-prefiksi teine esitusviis. | `/24` vastab maskile `255.255.255.0`. |
-| **Vaikimisi lüüs — default gateway** | Järgmine hüpe sihtkohtadele, mille jaoks pole täpsemat marsruuti. | `10.100.0.1` |
+| **Vaikimisi lüüs — default gateway** | Järgmine hüpe sihtkohtadele, mille jaoks pole täpsemat marsruuti. Tavaliselt ruuteri aadress. | `10.100.0.1` |
 | **DNS-server — DNS server** | Vastab nimepäringutele, näiteks aitab leida nimele vastava IP-aadressi. | `1.1.1.1` |
-| **DHCP — Dynamic Host Configuration Protocol** | Võimaldab saada aadressi ja muid parameetreid automaatselt. | DHCP-server annab aadressi koos rendiajaga. |
+| **DHCP — Dynamic Host Configuration Protocol** | Võimaldab saada aadressi ja muid parameetreid automaatselt. | DHCP-server annab aadressi koos liisimisajaga. |
 
 Näites `10.100.0.20/24` on IPv4-võrk `10.100.0.0/24`. Tavapärased hostiaadressid on selles võrgus `10.100.0.1` kuni `10.100.0.254`; aadress peab olema konkreetsele seadmele määratud ja vaba. Lüüs `10.100.0.1` asub siin samas alamvõrgus.
-
-**Staatiline aadress** määratakse seadme konfiguratsioonis. **DHCP-reservatsioon** võimaldab DHCP-serveril anda seadmele kokkulepitud aadressi, kuigi klient kasutab automaatset seadistust. Serveri püsiv aadress ei pea seega alati tähendama käsitsi sisestatud kliendiseadistust.
 
 Materjali aadressid ja liides `ens192` on **näited**. Laboris kasuta õpetaja antud väärtusi. Avalikud DNS-serverid ei pruugi osata lahendada kooli või ettevõtte sisemisi nimesid; selleks kasuta organisatsiooni DNS-serverit.
 
@@ -49,7 +46,10 @@ Sama käsu levinud lühivorm on `ip a`. Lühikese ülevaate annab:
 ip -brief address show
 ```
 
-See näitab liideste nimesid, olekut ja aadresse. Võid kohata nimesid `ens192`, `ens18` või `enp1s0`; need ei pea eri masinates kattuma. `lo` on kohalik **loopback-liides**. [1, 2]
+See näitab liideste nimesid, olekut ja aadresse. Võid kohata nimesid `ens192`, `ens18` või `enp1s0`; need ei pea eri masinates kattuma. `lo` on kohalik **loopback-liides**.
+
+![ipa](assets/vorguseaded-linuxis/ipa.png){ width="75%" }
+
 
 Ühe liidese täpsem teave:
 
@@ -58,7 +58,7 @@ ip address show dev ens192
 ip link show dev ens192
 ```
 
-`ip link` näitab muu hulgas liidese olekut ja MAC-aadressi, mitte IP-aadresse. Tähis `UP` kirjeldab administratiivset lubamist; see ei tõenda iseenesest toimivat kaabelühendust, IP-seadistust ega internetiühendust. [3]
+`ip link` näitab muu hulgas liidese olekut ja MAC-aadressi, mitte IP-aadresse. Tähis `UP` kirjeldab administratiivset lubamist; see ei tõenda iseenesest toimivat kaabelühendust, IP-seadistust ega internetiühendust.
 
 ### 2.2. Marsruudid
 
@@ -72,13 +72,16 @@ Näidisrida:
 default via 10.100.0.1 dev ens192
 ```
 
+![iproute](assets/vorguseaded-linuxis/iproute.png){ width="75%" }
+
+
 See tähendab, et IPv4 vaikimisi marsruut kasutab lüüsi `10.100.0.1` liidese `ens192` kaudu. Konkreetse sihtkoha jaoks valitavat marsruuti saab uurida:
 
 ```bash
 ip route get 1.1.1.1
 ```
 
-Käsk näitab marsruudi valikut, kuid ei saada ise ühenduse toimimist tõendavat päringut. IPv6 marsruute näitab `ip -6 route show`. [4]
+Käsk näitab marsruudi valikut, kuid ei saada ise ühenduse toimimist tõendavat päringut. IPv6 marsruute näitab `ip -6 route show`.
 
 ## 3. Võrguhalduri tuvastamine ja muudatuse ettevalmistamine
 
@@ -91,7 +94,7 @@ Käsk näitab marsruudi valikut, kuid ei saada ise ühenduse toimimist tõendava
 | **systemd-networkd** | Näiteks `/etc/systemd/network/*.network`. |
 | **Netplan** | YAML-failid näiteks `/etc/netplan/`; seadistus genereeritakse taustal töötavale võrguhaldurile. |
 
-Debiani nimi ega systemd kasutamine ei määra üksi, milline lahendus sinu liidest haldab. Ühes süsteemis võib eri liideseid hallata eri tarkvara, kuid **sama liidese aadresse ja marsruute ei peaks korraga seadistama mitu võrguhaldurit**. [1]
+Debiani nimi ega systemd kasutamine ei määra üksi, milline lahendus sinu liidest haldab. Ühes süsteemis võib eri liideseid hallata eri tarkvara, kuid **sama liidese aadresse ja marsruute ei peaks korraga seadistama mitu võrguhaldurit**.
 
 Alusta teenuste olekutest:
 
@@ -106,7 +109,7 @@ nmcli device status
 networkctl status ens192
 ```
 
-`nmcli` eeldab paigaldatud NetworkManagerit. `networkctl` näitab liidest systemd-networkd vaatenurgast. Ainult teenuse aktiivne olek või konfiguratsioonifaili olemasolu ei tõenda veel selle liidese haldamist. [5, 6]
+`nmcli` eeldab paigaldatud NetworkManagerit. `networkctl` näitab liidest systemd-networkd vaatenurgast. Ainult teenuse aktiivne olek või konfiguratsioonifaili olemasolu ei tõenda veel selle liidese haldamist.
 
 ### 3.2. Säilita algseis
 
@@ -122,25 +125,8 @@ Kui muudad kaasatud faili kataloogis `interfaces.d`, varunda ka see fail. Networ
 
 !!! warning "Võrgumuudatus võib katkestada kaugühenduse"
 
-    IP-aadressi, lüüsi või aktiivse liidese muutmine võib katkestada SSH-ühenduse. Tee labori ühendust katkestavad toimingud virtuaalmasina konsoolilt. Hoia algseadistus ja taastamise võimalus enne muudatust valmis.
+    IP-aadressi, lüüsi või aktiivse liidese muutmine võib katkestada SSH-ühenduse.
 
-### 3.3. Ajutine ja püsiv muudatus
-
-`ip` muudab üldjuhul süsteemi hetkeolekut, mitte võrguhalduri salvestatud konfiguratsiooni. Muudatus võib kaduda taaskäivitamisel või võrguhalduri seadistuse uuesti rakendamisel.
-
-Näiteks saab **eraldi harjutuseks**, õpetaja määratud vaba aadressiga, lisada liidesele ajutise aadressi:
-
-```bash
-sudo ip address add 10.100.0.50/24 dev ens192
-```
-
-Sama aadressi eemaldamine:
-
-```bash
-sudo ip address del 10.100.0.50/24 dev ens192
-```
-
-Need käsud ei muuda DNS-i ega loo automaatselt sobivat vaikimisi marsruuti. Püsiv muudatus tehakse liidest haldava lahenduse kaudu. [2]
 
 ## 4. Debian 13: ifupdown ja interfaces-fail
 
@@ -169,7 +155,7 @@ auto lo
 iface lo inet loopback
 ```
 
-Enne põhifaili muutmist vaata ka kaasatud faile. Sama liidese dubleerivad määrangud eri failides võivad tekitada segadust. Kommentaarid kirjuta omaette reale. [7]
+Enne põhifaili muutmist vaata ka kaasatud faile. Sama liidese dubleerivad määrangud eri failides võivad tekitada segadust. Kommentaarid kirjuta omaette reale.
 
 ### 4.2. DHCP kaudu saadav IPv4-seadistus
 
@@ -178,7 +164,7 @@ auto ens192
 iface ens192 inet dhcp
 ```
 
-`inet` tähistab siin IPv4 seadistust ning `dhcp` automaatset aadressi hankimist. Töötamiseks on vaja ligipääsu DHCP-serverile ja süsteemis sobivat DHCP-kliendilahendust. [7]
+`inet` tähistab siin IPv4 seadistust ning `dhcp` automaatset aadressi hankimist. Töötamiseks on vaja ligipääsu DHCP-serverile ja süsteemis sobivat DHCP-kliendilahendust.
 
 ### 4.3. Staatiline IPv4-seadistus
 
@@ -191,7 +177,7 @@ iface ens192 inet static
     gateway 10.100.0.1
 ```
 
-`address` määrab aadressi koos prefiksiga; `gateway` lisab vaikimisi lüüsi. Kõigile liidestele pole vaja lisada vaikimisi lüüsi: näiteks eraldi laborivõrgu liides võib suhelda ainult oma alamvõrgus. [7]
+`address` määrab aadressi koos prefiksiga; `gateway` lisab vaikimisi lüüsi. 
 
 DNS-i seadistamine sõltub nimelahenduse korraldusest; seda käsitleb järgmine peatükk. Ainult IP-aadressi ja lüüsi sisestamine ei määra DNS-servereid.
 
@@ -202,7 +188,7 @@ DNS-i seadistamine sõltub nimelahenduse korraldusest; seda käsitleb järgmine 
 | `auto ens192` | Liides tuuakse üles käsuga `ifup -a`, mida kasutatakse ka süsteemi käivitamisel. |
 | `allow-hotplug ens192` | Liidese aktiveerimise saab käivitada selle tuvastamine udev'i poolt, näiteks käivitamisel või USB-võrgukaardi lisamisel. |
 
-`allow-hotplug` **ei tähenda DHCP-d** ega võrgukaabli ühendamise jälgimist. Seda võib kasutada ka staatilise aadressiga liidesel. [7]
+`allow-hotplug` **ei tähenda DHCP-d** ega võrgukaabli ühendamise jälgimist. Seda võib kasutada ka staatilise aadressiga liidesel.
 
 ### 4.5. Seadistuse rakendamine
 
@@ -212,7 +198,14 @@ Kui liides peatati enne konfiguratsiooni muutmist, rakenda salvestatud seadistus
 sudo ifup ens192
 ```
 
-Kui muudad juba aktiivset seadistust, planeeri vana ühenduse peatamine ja uue aktiveerimine konsoolilt. Pelk `ifup` juba üles toodud liidesele ei pruugi muudatust rakendada. Kontrolli aadressi ja marsruute:
+Kui muudad juba aktiivset seadistust, planeeri vana ühenduse peatamine ja uue aktiveerimine konsoolilt. Lihtsalt `ifup` juba üles toodud liidesele ei pruugi muudatust rakendada. 
+
+```bash
+sudo ifdown ens192
+sudo ifup ens192
+```
+
+Kontrolli aadressi ja marsruute:
 
 ```bash
 ip -brief address show dev ens192
@@ -225,7 +218,6 @@ Teenuse oleku vaatamiseks sobib:
 systemctl status networking.service
 ```
 
-`sudo systemctl restart networking.service` võib mõjutada mitut selle teenuse hallatavat liidest. Vali toiming selle järgi, mida soovid rakendada; ära käsitle kogu võrguteenuse taaskäivitamist iga olukorra kohustusliku sammuna.
 
 ## 5. DNS ja /etc/resolv.conf
 
@@ -236,13 +228,13 @@ ls -l /etc/resolv.conf
 cat /etc/resolv.conf
 ```
 
-Fail võib olla tavaline tekstifail või sümbollink näiteks `resolvconf`-i või systemd-resolved-i hallatavale failile. Faili päis ja lingi siht aitavad lahendust tuvastada. Võrguhaldur või DHCP-klient võib faili hiljem uuendada. [1, 8, 9]
+Fail võib olla tavaline tekstifail või sümbollink näiteks `resolvconf`-i või systemd-resolved-i hallatavale failile. Faili päis ja lingi siht aitavad lahendust tuvastada. Võrguhaldur või DHCP-klient võib faili hiljem uuendada.
 
 **DNS-serveri aadress**, **selle info edastamine rakendustele** ja **nimede lahendamise teenus** on seotud, kuid eri ülesanded. Võrgufailis oleva DNS-rea olemasolu üksi ei tõenda, et rakendused seda kasutavad.
 
 ### 5.2. ifupdown koos resolvconf-iga
 
-Järgmine näide eeldab, et laborimasinas on **resolvconf paigaldatud ja selle haldusviis seadistatud**, sealhulgas `/etc/resolv.conf` seos failiga `/run/resolvconf/resolv.conf`. See on üks lahendus; juba töötavat systemd-resolved-i või NetworkManageri DNS-korraldust ei tule selle näite rakendamiseks automaatselt asendada.
+Järgmine näide eeldab, et laborimasinas on **resolvconf paigaldatud ja selle haldusviis seadistatud**, sealhulgas `/etc/resolv.conf` seos failiga `/run/resolvconf/resolv.conf`. 
 
 Staatilise liidese plokile saab lisada:
 
@@ -254,7 +246,7 @@ iface ens192 inet static
     dns-nameservers 1.1.1.1 8.8.8.8
 ```
 
-ifupdown-i ja resolvconf-i integratsioon töötleb `dns-nameservers` väärtusi liidese aktiveerimisel. `resolvconf` ei ole ise rekursiivne DNS-server. Selle paigaldamist ja olemasoleva nimelahenduse ülevõtmist planeeritakse enne võrgumuudatust; paketi nimi on `resolvconf`. [8]
+ifupdown-i ja resolvconf-i integratsioon töötleb `dns-nameservers` väärtusi liidese aktiveerimisel. Paki paigaldamist ja olemasoleva nimelahenduse ülevõtmist planeeritakse enne võrgumuudatust; paketi nimi on `resolvconf`.
 
 ### 5.3. Käsitsi hallatav resolv.conf
 
@@ -284,13 +276,13 @@ resolvectl status
 
 Need käsud eeldavad vastava tarkvara olemasolu; `resolvectl` ei ole iga Debiani paigalduse universaalne DNS-i vaatamise käsk.
 
-systemd-resolved-i kasutavas lahenduses on soovitatav `/etc/resolv.conf` link failile `/run/systemd/resolve/stub-resolv.conf`. Seal olev `127.0.0.53` tähistab kohalikku DNS-vahendajat, mitte vigast välise DNS-serveri aadressi. Tegelikud ülesvoolu serverid on nähtavad `resolvectl status` väljundis. [9]
+systemd-resolved-i kasutavas lahenduses on soovitatav `/etc/resolv.conf` link failile `/run/systemd/resolve/stub-resolv.conf`. Seal olev `127.0.0.53` tähistab kohalikku DNS-vahendajat, mitte vigast välise DNS-serveri aadressi. Tegelikud ülesvoolu serverid on nähtavad `resolvectl status` väljundis.
 
-Link `/run/systemd/resolve/resolv.conf` failile on samuti toetatud, kuid selle kaudu pöörduvad tavapärased DNS-kliendid otse failis loetletud serverite poole. See võib mööda minna kohaliku resolveri liidesepõhisest nimelahenduse korraldusest. [9]
+Link `/run/systemd/resolve/resolv.conf` failile on samuti toetatud, kuid selle kaudu pöörduvad tavapärased DNS-kliendid otse failis loetletud serverite poole. See võib mööda minna kohaliku resolveri liidesepõhisest nimelahenduse korraldusest.
 
 ## 6. NetworkManager: profiilid, nmcli ja nmtui
 
-NetworkManager sobib nii graafilise töölauaga masinale kui ka serverile. **nmcli** on käsureatööriist ja **nmtui** terminalis töötav menüüliides. [5]
+NetworkManager sobib nii graafilise töölauaga masinale kui ka serverile. **nmcli** on käsureatööriist ja **nmtui** terminalis töötav menüüliides.
 
 ### 6.1. Liides ja ühendusprofiil
 
@@ -363,7 +355,7 @@ Faili näitlik asukoht:
 /etc/systemd/network/10-ens192.network
 ```
 
-Laiend peab olema `.network`. Failid järjestatakse nime järgi ning **rakendub esimene liidesega sobiv fail**. Ära hoia aktiivsena kahte sama liidest sobitavat DHCP- ja staatilise seadistuse faili. DHCP-lt staatilisele üle minnes muuda sama faili sisu. [10]
+Laiend peab olema `.network`. Failid järjestatakse nime järgi ning **rakendub esimene liidesega sobiv fail**. Ära hoia aktiivsena kahte sama liidest sobitavat DHCP- ja staatilise seadistuse faili. DHCP-lt staatilisele üle minnes muuda sama faili sisu.
 
 ### 7.2. DHCP kaudu IPv4-seadistus
 
@@ -375,7 +367,7 @@ Name=ens192
 DHCP=ipv4
 ```
 
-`[Match]` määrab liidese, `[Network]` võrguparameetrid. `DHCP=ipv4` lubab DHCPv4; `DHCP=yes` lubaks nii DHCPv4 kui ka DHCPv6. IPv6 ruuteriteadete töötlemine on sellest eraldi seadistus. [10]
+`[Match]` määrab liidese, `[Network]` võrguparameetrid. `DHCP=ipv4` lubab DHCPv4; `DHCP=yes` lubaks nii DHCPv4 kui ka DHCPv6. IPv6 ruuteriteadete töötlemine on sellest eraldi seadistus.
 
 ### 7.3. Staatiline IPv4-seadistus
 
@@ -396,11 +388,11 @@ Destination=0.0.0.0/0
 Gateway=10.100.0.1
 ```
 
-`[Route]` plokk määrab siin IPv4 vaikimisi marsruudi. DNS-read annavad serverite teabe systemd-resolved-ile; toimivaks nimelahenduseks peab ka see osa olema seadistatud. [10]
+`[Route]` plokk määrab siin IPv4 vaikimisi marsruudi. DNS-read annavad serverite teabe systemd-resolved-ile; toimivaks nimelahenduseks peab ka see osa olema seadistatud.
 
 ### 7.4. Teenused, DNS ja rakendamine
 
-Kui labori jaoks on **teadlikult valitud networkd + resolved** ja teiste haldurite konflikt eemaldatud, peab systemd-resolved olema paigaldatud. Debianis on paketi nimi `systemd-resolved`. Paigaldamine võib muuta nimelahenduse korraldust, seega tee see võrgu veel töötamise ajal ja säilita senine seadistus.
+Kui on **teadlikult valitud networkd + resolved** ja teiste haldurite konflikt eemaldatud, peab systemd-resolved olema paigaldatud. Debianis on paketi nimi `systemd-resolved`. Paigaldamine võib muuta nimelahenduse korraldust, seega tee see võrgu veel töötamise ajal ja säilita senine seadistus.
 
 Teenuste lubamine koos kohese käivitamisega:
 
@@ -434,13 +426,13 @@ ip -brief address show dev ens192
 ip route show
 ```
 
-Networkd faili muutmine ei nõua tavaliselt `systemctl daemon-reload` käsku: see on systemd üksusefailide, mitte `.network` konfiguratsiooni uuesti laadimiseks. [6]
+Networkd faili muutmine ei nõua tavaliselt `systemctl daemon-reload` käsku: see on systemd üksusefailide, mitte `.network` konfiguratsiooni uuesti laadimiseks.
 
 ## 8. Ubuntu Server: Netplan
 
 ### 8.1. Netplan ja taustal töötav haldur
 
-Ubuntu Serveris kasutatakse sageli **Netplani**. See loeb YAML-seadistuse ja genereerib selle **systemd-networkd** või **NetworkManageri** jaoks. Nimelahendusega võib tegeleda systemd-resolved. Need komponendid ei ole ühe tööriista eri nimed. [1, 11]
+Ubuntu Serveris kasutatakse sageli **Netplani**. See loeb YAML-seadistuse ja genereerib selle **systemd-networkd** või **NetworkManageri** jaoks. Nimelahendusega võib tegeleda systemd-resolved. Need komponendid ei ole ühe tööriista eri nimed.
 
 Failid paiknevad tavaliselt `/etc/netplan/` kataloogis. Nimi võib olla näiteks `00-installer-config.yaml` või `50-cloud-init.yaml`. Uuri olemasolevaid faile enne uue lisamist: mitu faili võivad koos seadistust mõjutada ning pilvemallis võib konfiguratsiooni genereerida cloud-init.
 
@@ -503,7 +495,7 @@ Kinnitusega proovimine:
 sudo netplan try
 ```
 
-Netplan proovib seadistust ja ootab kinnitust. Kinnituseta peaks rakenduma tagasipöördumine; selle tulemust tuleb vajaduse korral kontrollida. Hoia konsool ja algseadistus alles. Teadlikult kohe rakendamiseks on olemas ka `sudo netplan apply`; edukalt kinnitatud `try` järel pole `apply` kohustuslik lisasamm. [12]
+Netplan proovib seadistust ja ootab kinnitust. Kinnituseta peaks rakenduma tagasipöördumine; selle tulemust tuleb vajaduse korral kontrollida. Hoia konsool ja algseadistus alles. Teadlikult kohe rakendamiseks on olemas ka `sudo netplan apply`; edukalt kinnitatud `try` järel pole `apply` kohustuslik lisasamm.
 
 Tulemust kontrolli `ip`-käskudega ning systemd-resolved-i kasutamisel `resolvectl status` abil. Püsiv DNS-seadistus tehakse Netplanis, mitte genereeritud `/etc/resolv.conf` faili käsitsi muutes.
 
@@ -638,7 +630,7 @@ Vasta kõigepealt ise. Seejärel ava vastus ja võrdle oma põhjendust.
 ## Kokkuvõte
 
 - IP-aadress, prefiks, lüüs ja DNS täidavad erinevaid ülesandeid.
-- ip aitab vaadata ja ajutiselt muuta hetkeolekut; püsiseadistus sõltub haldurist.
+- `ip` aitab vaadata ja ajutiselt muuta hetkeolekut; püsiseadistus sõltub haldurist.
 - Enne muutmist tuvasta liides, profiil või fail ja selle tegelik haldaja.
 - ifupdown, NetworkManager ja systemd-networkd on erinevad seadistuslahendused.
 - Sama liidese konkureeriv haldamine võib põhjustada segadust ja ühenduse katkemist.
@@ -671,40 +663,25 @@ Vasta kõigepealt ise. Seejärel ava vastus ja võrdle oma põhjendust.
 | **DHCP-reservatsioon — DHCP reservation** | Serveripoolne kokkulepe anda kindlale kliendile määratud aadress. |
 | **Staatiline aadress — static address** | Kliendi konfiguratsioonis määratud aadress. |
 | **Loopback** | Kohaliku süsteemi suhtluseks mõeldud võrguliides või aadress. |
-| **MAC-aadress — Media Access Control address** | Liidese lingikihi aadress. |
 | **Võrguhaldur — network manager** | Tarkvara, mis korraldab liideste võrguseadistust. |
 | **ifupdown** | Interfaces-faili järgi liideseid seadistav tööriistakomplekt. |
-| **auto; allow-hotplug** | ifupdown-i liidese automaatse aktiveerimise eri käivitusviisid. |
 | **NetworkManager** | Profiilidel põhinev võrguhaldustarkvara. |
 | **Ühendusprofiil — connection profile** | Ühenduse salvestatud parameetrite kogum. |
-| **UUID — Universally Unique Identifier** | Näiteks profiili üheseks viitamiseks kasutatav identifikaator. |
 | **nmcli; nmtui** | NetworkManageri käsurea- ja terminalimenüü tööriistad. |
 | **systemd-networkd** | Systemd võrguliideste seadistamise teenus. |
 | **systemd-resolved** | Kohaliku nimelahenduse teenus. |
 | **resolvconf** | Nimelahenduse seadistusteavet koondav ja edastav tööriist. |
 | **Netplan** | YAML-kirjeldusest võrguhalduri konfiguratsiooni genereeriv tööriist. |
 | **Renderer** | Netplani kasutatav taustal töötav võrguhaldur. |
-| **YAML — YAML Ain't Markup Language** | Taandepõhine andmete ja seadistuse kirjeldamise vorming. |
 | **ICMP — Internet Control Message Protocol** | IP-võrkude juht- ja veateadete protokoll; seda kasutab ka ping. |
-| **SSH — Secure Shell** | Turvalise kaugühenduse protokoll ja sellega seotud tööriistad. |
-| **Konsool — console** | Masina kohalik või virtualiseerimisplatvormi pakutav juhtimiskeskkond. |
 
 ## Allikad ja lisalugemine
 
-Algmaterjal: „Võrguparameetrite seadistamine”. Näited on ajakohastatud Debian 13 jaoks ning täiendatud nimelahenduse, kontrollimise ja taastamise selgitustega. Ubuntu Netplani näited lähtuvad projekti dokumentatsioonist.
-
-1. Debian Reference: [Network setup](https://www.debian.org/doc/manuals/debian-reference/ch05.en.html).
-2. Debian Manpages: [ip-address(8)](https://manpages.debian.org/trixie/iproute2/ip-address.8.en.html).
-3. Debian Manpages: [ip-link(8)](https://manpages.debian.org/trixie/iproute2/ip-link.8.en.html).
-4. Debian Manpages: [ip-route(8)](https://manpages.debian.org/trixie/iproute2/ip-route.8.en.html).
-5. NetworkManager: [nmcli reference](https://networkmanager.dev/docs/api/latest/nmcli.html).
-6. Debian Manpages: [networkctl(1)](https://manpages.debian.org/trixie/systemd/networkctl.1.en.html).
-7. Debian Manpages: [interfaces(5)](https://manpages.debian.org/trixie/ifupdown/interfaces.5.en.html).
-8. Debian Manpages: [resolvconf(8)](https://manpages.debian.org/trixie/resolvconf/resolvconf.8.en.html).
-9. Debian Manpages: [systemd-resolved.service(8)](https://manpages.debian.org/trixie/systemd-resolved/systemd-resolved.service.8.en.html).
-10. Debian Manpages: [systemd.network(5)](https://manpages.debian.org/trixie/systemd/systemd.network.5.en.html).
-11. Netplan: [Configuration examples](https://netplan.readthedocs.io/en/stable/examples/).
-12. Netplan: [netplan try](https://github.com/canonical/netplan/blob/main/doc/netplan-try.md).
+1. [Network setup](https://www.debian.org/doc/manuals/debian-reference/ch05.en.html).
+5. [nmcli reference](https://networkmanager.dev/docs/api/latest/nmcli.html).
+3. [systemd-resolved.service(8)](https://manpages.debian.org/trixie/systemd-resolved/systemd-resolved.service.8.en.html).
+4. [systemd.network(5)](https://manpages.debian.org/trixie/systemd/systemd.network.5.en.html).
+5. [Configuration examples](https://netplan.readthedocs.io/en/stable/examples/).
 
 ---
 
