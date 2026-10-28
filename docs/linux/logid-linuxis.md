@@ -193,7 +193,19 @@ Sõna `error` puudumine ei tõenda vigade puudumist. Teade võib kasutada teist 
 
 ## 5. Journal'i lugemine ja filtreerimine
 
-### 5.1. Vali teenus ja käivitus
+### 5.1. Alusta uusimatest kirjetest
+
+Lihtne käsk journal'i vaatamiseks on:
+
+```bash
+sudo journalctl -r
+```
+
+Valik **`-r`** (*reverse*) kuvab kirjed **uusimast vanimani**. Nii näed kõigepealt viimaseid sündmusi, mis on eriti mugav äsja tekkinud probleemi uurimisel. Ilma `-r` valikuta alustab `journalctl` vaikimisi vanimatest kirjetest.
+
+Väljundit saab lehitsejas sirvida; väljumiseks vajuta **`q`**.
+
+### 5.2. Vali teenus ja käivitus
 
 Näidetes tähistab `naidis.service` **sinu uuritava teenuse tegelikku nime**.
 
@@ -213,7 +225,7 @@ sudo journalctl -u naidis.service -b
 
 `-f` jälgimise lõpetab `Ctrl+C`. Eelmise käivituse logide kättesaadavus sõltub säilitamise seadistusest ja sellest, kas vanad kirjed on veel alles.
 
-### 5.2. Piira aega
+### 5.3. Piira aega
 
 Viimase kümne minuti sündmused ühe teenuse kohta:
 
@@ -229,7 +241,7 @@ sudo journalctl -u naidis.service --since "2026-10-16 12:00:00" --until "2026-10
 
 Asenda näite kuupäev uuritava sündmuse kuupäevaga. Ajavööndi eraldi määramata kasutatakse selle ajavormingu puhul süsteemi kohalikku aega.
 
-### 5.3. Piira olulisust
+### 5.4. Piira olulisust
 
 ```bash
 sudo journalctl -b -p warning
@@ -241,7 +253,7 @@ See valib hoiatused **ja neist olulisemad kirjed** ehk tasemed 0–4. Ainult vea
 
     journalctl-i valik -p kasutab kirje prioriteedivälja. grep otsib teksti. Kui rakendus edastab oma teated sama prioriteediga, võib sõnumis olla tekst ERROR, kuid prioriteedifilter seda kirjet mitte valida. Kontrolli vajaduse korral ka filtreerimata teenuselogi.
 
-### 5.4. Kuidas oma prooviteadet leida?
+### 5.5. Kuidas oma prooviteadet leida?
 
 Käsk `logger` võimaldab saata süsteemi logimistaristusse teate. See sobib logimise toimimise kontrollimiseks:
 
