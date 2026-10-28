@@ -157,7 +157,7 @@ Lisa taaskäivitusejärgsed kontrollide hinnang raportisse. Kui midagi ei püsin
 
 ## 7. Töö esitamine
 
-**20.** Esita Moodle'i ülesande alla **üks raport ühe pdf failina**. Lisa käsuväljundid ja vajalikud kuvatõmmised aruande vastava osa juurde.
+**20.** Esita Moodle'i ülesande alla **raport ühe pdf failina**. Lisa käsuväljundid ja vajalikud kuvatõmmised aruande vastava osa juurde.
 
 Aruanne peab sisaldama:
 
