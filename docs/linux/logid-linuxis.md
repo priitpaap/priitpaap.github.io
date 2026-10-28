@@ -305,7 +305,7 @@ Pärast rakenduse seadistuse parandamist võib olla vaja:
 sudo systemctl restart naidis.service
 ```
 
-Rakenduse tavalise `.conf` faili muutmine ei vaja üldjuhul `systemctl daemon-reload` käsku. See on vajalik systemd üksuse määrangute uuesti laadimiseks, kui muudeti üksusefaili. Mõni rakendus toetab ka seadistuse taaslaadimist ilma taaskäivituseta. [12]
+Rakenduse tavalise `.conf` faili muutmine ei vaja üldjuhul `systemctl daemon-reload` käsku. See on vajalik systemd üksuse määrangute uuesti laadimiseks, kui muudeti üksusefaili. Mõni rakendus toetab ka seadistuse taaslaadimist ilma taaskäivituseta.
 
 **Vana veateade võib pärast parandust logisse alles jääda.** Kontrolli viimase käivituskatse aega, uusi kirjeid ja teenuse tegelikku funktsiooni. Veateate kustutamine ei paranda teenust.
 
