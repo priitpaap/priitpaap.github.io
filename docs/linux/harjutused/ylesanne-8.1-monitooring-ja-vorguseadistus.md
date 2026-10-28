@@ -1,6 +1,6 @@
 # Ülesanne: Debian 13 serveri monitooring, logide uurimine ja võrguseadistus
 
-Oled saanud haldamiseks Debian 13 serveri, mille töös esineb probleeme. Serveri protsessorikasutus on kõrge, üks teenus ei käivitu ning varasem käsitsi tehtud võrguseadistus vajab uuendamist.
+Oled saanud haldamiseks Debian 13 serveri, mille töös esineb probleeme. Serveri ressursikasutus on kõrge, üks teenus ei käivitu ning varasem dhcp põhine võrguseadistus vajab uuendamist.
 
 Sinu ülesanne on **uurida algseisu, leida probleemide põhjused, teha vajalikud parandused ja tõendada kontrollidega, et server töötab nõutud viisil**.
 
@@ -11,7 +11,7 @@ Sinu ülesanne on **uurida algseisu, leida probleemide põhjused, teha vajalikud
     - süsteemi ressursikasutuse mõõtmist ja tulemuste tõlgendamist;
     - protsessi seostamist teenuse ning selle seadistusega;
     - logidest vea põhjuse leidmist;
-    - püsiva IP- ja DNS-seadistuse muutmist;
+    - püsiva IP- ja DNS-seadistuse lisamist;
     - ühenduse kontrollimist osade kaupa;
     - muudatuste dokumenteerimist ja paranduse mõju põhjendamist.
 
@@ -19,34 +19,21 @@ Sinu ülesanne on **uurida algseisu, leida probleemide põhjused, teha vajalikud
 
     - Tee ülesanne õpetaja ettevalmistatud Debian 13 virtuaalmasinas kasutaja `student` õigustes.
     - Mitmed toimingud vajavad `sudo` kasutamist.
-    - Veendu, et saad avada virtuaalmasina konsooli. Tee võrgumuudatused konsoolilt, sest senine SSH-ühendus võib katkeda.
-    - Säilita algne konfiguratsioon enne selle muutmist.
+    - Tee võrgumuudatused konsoolilt, sest senine SSH-ühendus võib katkeda, muud toimingu võid sooritada SSH kaudu.
+    - Säilita algne konfiguratsioon enne selle muutmist ehk kasuta seadistusfailide varundust.
     - Mõlemad õppeteenused peavad pärast parandamist töötama edasi. Ainult koormava protsessi lõpetamine või teenuse keelamine ei lahenda ülesannet.
     - Ära kustuta vea peitmiseks logisid ega muuda teenuste ressursipiiranguid.
     - Tee tegevused esitatud järjekorras ja kogu tõendid töö käigus.
 
-## Labori algseis
-
-| Valdkond | Ettevalmistatud olukord |
-| --- | --- |
-| **Operatsioonisüsteem** | Debian 13. |
-| **Koormus** | Teenus `oslab-tootleja.service` töötab, kuid kasutab liiga palju protsessoriaega. |
-| **Teenuse tõrge** | `oslab-andmekoguja.service` on `failed`-olekus. Seadistuses on vigane parameetriväärtus. |
-| **Võrk** | Varasem käsitsi tehtud seadistus tuleb asendada õpetaja antud parameetritega. Muuta tuleb ka DNS-seadistust failis `/etc/resolv.conf`. |
-
 ## 1. Ettevalmistamine ja süsteemi algseis
 
-**1.** Veendu, et kasutad õiget virtuaalmasinat. Pane aruandesse kirja:
+**1.** Veendu, et kasutad õiget virtuaalmasinat. Pane raportisse kirja:
 
 - oma nimi ja töö tegemise kuupäev;
 - serveri hostinimi;
 - Debiani versioon;
-- loogiliste protsessorite ehk vCPU-de arv;
-- RAM-i kogumaht.
 
-**2.** Loo kodukausta kataloog `laboritulemused`. Säilita seal aruanne ja vajalikud tõendid. Lisa aruandesse olulisemad kasutatud käsud ning selgita, mida nende abil kontrollisid.
-
-**3.** Uuri serveri algset koormust. Kasuta sobivaid vahendeid, näiteks `htop`, `top`, `uptime` ja `free -h`.
+**2.** Uuri serveri algset koormust. Kasuta sobivaid vahendeid, näiteks `htop`, `top`, `uptime` ja `free -h`.
 
 Jälgi CPU kasutust umbes **30 sekundi jooksul**. Pane kirja tüüpiline näit või vahemik; ära vali järelduse aluseks ainult üht juhuslikku hetke. Märgi mõõtmise aeg ja kasutatud tööriist.
 
@@ -63,18 +50,16 @@ Täida tabeli algseisu veerg. Parandusejärgse veeru täidad hiljem.
 | Rakendustele saadaval RAM: `available` |  |  |
 | Kasutatud swap |  |  |
 
-Kui kasutad CPU näitude jaoks eri vaateid, märgi, **milline on kogu süsteemi ja milline ühe protsessi näit**. Märgi swap'i puudumine samuti tabelisse.
 
-**4.** Uuri kettaruumi kasutust. Pane vähemalt juurfailisüsteemi `/` kohta kirja:
+**3.** Uuri kettaruumi kasutust. Pane vähemalt juurfailisüsteemi `/` kohta kirja:
 
 - failisüsteemi allikas ja ühenduspunkt;
 - kogumaht;
 - kasutatud ja saadaval maht;
 - kasutuse protsent.
 
-Kontrolli ka, kas `/var` ja `/home` asuvad eraldi failisüsteemidel või jagavad juurfailisüsteemi. Ära liida sama failisüsteemi korduvaid näite kokku.
 
-**5.** Uuri käsu `du` abil kataloogi `/var/log` ruumikasutust. Leia seal üks suurema ruumikasutusega alamkataloog või fail ning pane selle nimi ja maht aruandesse. **Faile ei ole vaja kustutada.**
+**4.** Uuri käsu `du` abil kataloogi `/var/log` ruumikasutust. Leia seal üks suurema ruumikasutusega alamkataloog või fail ning pane selle nimi ja maht aruandesse. **Faile ei ole vaja kustutada.**
 
 Anna lühihinnang: kas mälu ja kettaruumi näitude põhjal on põhjust kahtlustada lisaprobleemi? Põhjenda oma mõõtmistega. Ära eelda, et kõik suured näidud tähendavad viga.
 
