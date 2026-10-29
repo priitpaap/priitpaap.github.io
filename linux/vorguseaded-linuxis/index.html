@@ -1,0 +1,3381 @@
+
+<!doctype html>
+<html lang="et" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../images/computer.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+    
+    
+      
+        <title>Võrguparameetrite seadistamine Linuxis - IT alased õppematerjalid</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="deep-orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#vorguparameetrite-seadistamine-linuxis" class="md-skip">
+          Keri sisuni
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Päis">
+    <a href="../.." title="IT alased õppematerjalid" class="md-header__button md-logo" aria-label="IT alased õppematerjalid" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M348.8 32C340.7 46.1 336 62.5 336 80v16H64v224h272v64H64c-35.3 0-64-28.7-64-64V96c0-35.3 28.7-64 64-64zM336 432c0 17.5 4.7 33.9 12.8 48H120c-13.3 0-24-10.7-24-24s10.7-24 24-24zm96-400h96c26.5 0 48 21.5 48 48v352c0 26.5-21.5 48-48 48h-96c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48m24 64c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24zm56 144a32 32 0 1 0-64 0 32 32 0 1 0 64 0"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            IT alased õppematerjalid
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Võrguparameetrite seadistamine Linuxis
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="deep-orange"  aria-label="Lülitu heledale režiimile"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Lülitu heledale režiimile" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-blue" data-md-color-accent="deep-orange"  aria-label="Lülitu tumedale režiimile"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Lülitu tumedale režiimile" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Otsi" placeholder="Otsi" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Otsing">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Jaga" aria-label="Jaga" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Lähtesta" aria-label="Lähtesta" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Otsingu lähtestamine
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Vaheleht" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://priitpaap.github.io" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Avalehele
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../unixi-ja-bsd-ajalugu/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Linux
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ansible/ansibleintro/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Automatiseerimine
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Mitmesugust
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigatsioon" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="IT alased õppematerjalid" class="md-nav__button md-logo" aria-label="IT alased õppematerjalid" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M348.8 32C340.7 46.1 336 62.5 336 80v16H64v224h272v64H64c-35.3 0-64-28.7-64-64V96c0-35.3 28.7-64 64-64zM336 432c0 17.5 4.7 33.9 12.8 48H120c-13.3 0-24-10.7-24-24s10.7-24 24-24zm96-400h96c26.5 0 48 21.5 48 48v352c0 26.5-21.5 48-48 48h-96c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48m24 64c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24zm56 144a32 32 0 1 0-64 0 32 32 0 1 0 64 0"/></svg>
+
+    </a>
+    IT alased õppematerjalid
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://priitpaap.github.io" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Avalehele
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Linux
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ajalugu
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Ajalugu
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unixi-ja-bsd-ajalugu/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.5 8H12v5l4.28 2.54.72-1.21-3.5-2.08zM13 3a9 9 0 0 0-9 9H1l3.96 4.03L9 12H6a7 7 0 0 1 7-7 7 7 0 0 1 7 7 7 7 0 0 1-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42A8.9 8.9 0 0 0 13 21a9 9 0 0 0 9-9 9 9 0 0 0-9-9"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Unixi ja BSD ajalugu
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linuxi-ajalugu/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.5 8H12v5l4.28 2.54.72-1.21-3.5-2.08zM13 3a9 9 0 0 0-9 9H1l3.96 4.03L9 12H6a7 7 0 0 1 7-7 7 7 0 0 1 7 7 7 7 0 0 1-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42A8.9 8.9 0 0 0 13 21a9 9 0 0 0 9-9 9 9 0 0 0-9-9"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Linuxi ajalugu
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Paigaldamine
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Paigaldamine
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../debpaigaldus/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Debian Linuxi paigaldamine virutaalmasinale
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linuxi baasteadmised
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Linuxi baasteadmised
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linuxi-baaskasud-spikker/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Linuxi käskude spikker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linuxi-ulesehitus-ja-tookeskkond/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Linuxi ülesehitus ja töökeskkond
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../failihalduse-baaskasud/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Linuxi failhaldus ja baaskäsud
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kataloogipuu-ja-failisusteemi-alused/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Linuxi katalogipuu ja failisusteemi alused
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linuxi-kasutajate-haldus/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Linuxi kasutajate haldus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linuxi-failioigused/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Linuxi failiõigused
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linuxi-tarkvarahaldus/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 16.5c0 .38-.21.71-.53.88l-7.9 4.44c-.16.12-.36.18-.57.18s-.41-.06-.57-.18l-7.9-4.44A.99.99 0 0 1 3 16.5v-9c0-.38.21-.71.53-.88l7.9-4.44c.16-.12.36-.18.57-.18s.41.06.57.18l7.9 4.44c.32.17.53.5.53.88zM12 4.15l-1.89 1.07L16 8.61l1.96-1.11zM6.04 7.5 12 10.85l1.96-1.1-5.88-3.4zM5 15.91l6 3.38v-6.71L5 9.21zm14 0v-6.7l-6 3.37v6.71z"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Linuxi tarkvarahaldus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tarkvarahaldus-debiani-laadsetes/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Tarkvarahaldus Debiani laadsetes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tarkvarahaldus-red-hati-laadsetes/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.34 13.16c1.32 0 3.22-.27 3.22-1.84q.015-.18-.03-.36l-.78-3.4c-.18-.75-.34-1.09-1.66-1.75-1.02-.52-3.24-1.38-3.9-1.38-.61 0-.79.79-1.52.79-.7 0-1.22-.59-1.88-.59-.63 0-1.04.43-1.36 1.31 0 0-.88 2.5-1 2.86-.01.07-.02.13-.02.2 0 .97 3.82 4.15 8.93 4.15m3.43-1.19c.18.86.18.95.18 1.04 0 1.5-1.66 2.31-3.83 2.31-4.92 0-9.23-2.88-9.23-4.78 0-.27.06-.53.16-.77-1.77.08-4.05.4-4.05 2.42 0 3.32 7.84 7.39 14.05 7.39 4.76 0 5.95-2.15 5.95-3.85 0-1.34-1.15-2.86-3.23-3.76"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Tarkvarahaldus Red Hati laadsetes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../otsinguvahendid/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Otsinguvahendid
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kasutajakeskkonna-seadistamine/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 19V7H4v12zm0-16a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-7 14v-2h5v2zm-3.42-4L5.57 9H8.4l3.3 3.3c.39.39.39 1.03 0 1.42L8.42 17H5.59z"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Kasutajakeskkonna seadistamine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shelli-ja-keskkonnamuutujad/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.41 3c1.39 2.71 1.94 5.84 1.59 9-.2 3.16-1.3 6.29-3.17 9l-1.53-1c1.61-2.43 2.55-5.2 2.7-8 .34-2.8-.11-5.57-1.3-8zM5.17 3 6.7 4C5.09 6.43 4.15 9.2 4 12c-.34 2.8.12 5.57 1.3 8l-1.69 1c-1.4-2.71-1.96-5.83-1.61-9 .2-3.16 1.3-6.29 3.17-9m6.91 7.68 2.32-3.23h2.53l-3.78 5 2.2 4.92h-2.26L11.71 14l-2.43 3.33H6.76l3.9-5.12-2.13-4.76h2.27z"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Shelli ja keskkonnamuutujad
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linuxi serverid ja teenused
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Linuxi serverid ja teenused
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dhcp/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    DHCP serveri seadistamine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dns/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    DNS serveri seadistamine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Automatiseerimine
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Automatiseerimine
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ansible
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Ansible
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansibleintro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ansible ülevaade
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansibleinstall/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ansible paigaldamine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansibleinventory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ansible inventory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansibleconf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ansible levinumad seadistused
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansiblenodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hallatavate hostide ühendamine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansiblemodules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Moodulid ja ad-hoc käsud
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansibleplaybooks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Playbookid ja YAML
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansiblevars/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Muutujad ja nende kasutamine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansiblejinja2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Jinja2 mallid
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansibleconditionals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tingimuslikkus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansibleloops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tsüklid
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansiblehandlers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tegevuste käivitamine ainult vajadusel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansiblevault/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Turvalisus ja Ansible Vault
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansibleroles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rollid ja struktuur
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansiblegalaxy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ansible Galaxy Collections
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansiblebestpractises/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ansible parimad praktikad
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mitmesugust
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Sisukord">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Sisukord
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-milliseid-parameetreid-seadistame" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          1. Milliseid parameetreid seadistame?
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-vorguparameetrite-vaatamine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          2. Võrguparameetrite vaatamine
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Võrguparameetrite vaatamine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-liideste-aadressid-ja-olek" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          2.1. Liideste aadressid ja olek
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-marsruudid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          2.2. Marsruudid
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-vorguhalduri-tuvastamine-ja-muudatuse-ettevalmistamine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          3. Võrguhalduri tuvastamine ja muudatuse ettevalmistamine
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Võrguhalduri tuvastamine ja muudatuse ettevalmistamine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-kes-konkreetset-liidest-haldab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          3.1. Kes konkreetset liidest haldab?
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-sailita-algseis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          3.2. Säilita algseis
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-debian-13-ifupdown-ja-interfaces-fail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          4. Debian 13: ifupdown ja interfaces-fail
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Debian 13: ifupdown ja interfaces-fail">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-faili-ulesehitus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          4.1. Faili ülesehitus
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-dhcp-kaudu-saadav-ipv4-seadistus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          4.2. DHCP kaudu saadav IPv4-seadistus
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-staatiline-ipv4-seadistus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          4.3. Staatiline IPv4-seadistus
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-auto-ja-allow-hotplug" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          4.4. auto ja allow-hotplug
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-seadistuse-rakendamine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          4.5. Seadistuse rakendamine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-dns-ja-etcresolvconf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          5. DNS ja /etc/resolv.conf
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. DNS ja /etc/resolv.conf">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-koigepealt-tuvasta-haldusviis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          5.1. Kõigepealt tuvasta haldusviis
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-ifupdown-koos-resolvconf-iga" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          5.2. ifupdown koos resolvconf-iga
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-kasitsi-hallatav-resolvconf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          5.3. Käsitsi hallatav resolv.conf
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-systemd-resolved" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          5.4. systemd-resolved
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-networkmanager-profiilid-nmcli-ja-nmtui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          6. NetworkManager: profiilid, nmcli ja nmtui
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. NetworkManager: profiilid, nmcli ja nmtui">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-liides-ja-uhendusprofiil" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          6.1. Liides ja ühendusprofiil
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-staatiline-ipv4-seadistus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          6.2. Staatiline IPv4-seadistus
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-dhcp-le-tagasiminek" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          6.3. DHCP-le tagasiminek
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-systemd-networkd-network-failid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          7. systemd-networkd: .network-failid
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. systemd-networkd: .network-failid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-eeltingimused-ja-faili-valik" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          7.1. Eeltingimused ja faili valik
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-dhcp-kaudu-ipv4-seadistus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          7.2. DHCP kaudu IPv4-seadistus
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-staatiline-ipv4-seadistus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          7.3. Staatiline IPv4-seadistus
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74-teenused-dns-ja-rakendamine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          7.4. Teenused, DNS ja rakendamine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-ubuntu-server-netplan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          8. Ubuntu Server: Netplan
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Ubuntu Server: Netplan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-netplan-ja-taustal-tootav-haldur" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          8.1. Netplan ja taustal töötav haldur
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-dhcp-naide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          8.2. DHCP-näide
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-staatiline-ipv4-naide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          8.3. Staatiline IPv4-näide
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#84-kontroll-ja-rakendamine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          8.4. Kontroll ja rakendamine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-kuidas-kontrollida-kas-seadistus-tootab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          9. Kuidas kontrollida, kas seadistus töötab?
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-veaotsing-ja-algseisu-taastamine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          10. Veaotsing ja algseisu taastamine
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Veaotsing ja algseisu taastamine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-levinud-pohjused" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          10.1. Levinud põhjused
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-taastamise-pohimote" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          10.2. Taastamise põhimõte
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-enesekontroll" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          11. Enesekontroll
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Enesekontroll">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-mille-poolest-erinevad-ip-aadress-luus-ja-dns-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          1. Mille poolest erinevad IP-aadress, lüüs ja DNS-server?
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-kas-ip-address-add-muudab-pusivat-konfiguratsioonifaili" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          2. Kas ip address add muudab püsivat konfiguratsioonifaili?
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-kas-allow-hotplug-tahendab-dhcp-kasutamist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          3. Kas allow-hotplug tähendab DHCP kasutamist?
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-miks-ei-tohi-eeldada-et-dns-read-interfaces-failis-on-piisavad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          4. Miks ei tohi eeldada, et DNS-read interfaces-failis on piisavad?
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-kas-networkmanager-vajab-graafilist-toolauda" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          5. Kas NetworkManager vajab graafilist töölauda?
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-miks-voib-nmcli-connection-modify-ens192-ebaonnestuda" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          6. Miks võib nmcli connection modify ens192 ebaõnnestuda?
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-kas-systemd-networkd-rakendab-sama-liidese-koik-network-failid-jarjest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          7. Kas systemd-networkd rakendab sama liidese kõik .network-failid järjest?
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-mis-vahe-on-enable-ja-enable-now-kasutamisel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          8. Mis vahe on enable ja enable --now kasutamisel?
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-kas-netplan-asendab-alati-systemd-networkd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          9. Kas Netplan asendab alati systemd-networkd?
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-ip-aadressiga-uhendus-toimib-nimega-mitte-millest-alustada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          10. IP-aadressiga ühendus toimib, nimega mitte. Millest alustada?
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-kuidas-toendada-et-seadistus-on-pusiv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          11. Kuidas tõendada, et seadistus on püsiv?
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kokkuvote" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Kokkuvõte
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Kokkuvõte">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#motle-opitule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Mõtle õpitule
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#teema-sonastik" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Teema sõnastik
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#allikad-ja-lisalugemine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Allikad ja lisalugemine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="vorguparameetrite-seadistamine-linuxis">Võrguparameetrite seadistamine Linuxis<a class="headerlink" href="#vorguparameetrite-seadistamine-linuxis" title="Permanent link">&para;</a></h1>
+<p>Linuxi võrguühendus vajab sobivat IP-aadressi, võrguprefiksit, marsruute ja nimelahendust. Neid saab vaadata ühiste tööriistadega, kuid <strong>püsiva seadistuse tegemise viis sõltub kasutatavast võrguhaldurist</strong>.</p>
+<p>Materjali põhikeskkond on <strong>Debian 13</strong>. Põhjalikumalt käsitleme <code>ifupdown</code>-i ning eraldi peatükkides NetworkManagerit, systemd-networkd-d ja Ubuntu Serveris levinud Netplani. Need on alternatiivsed seadistusviisid: ühe liidese näidetele ei tule järjest kõiki meetodeid rakendada.</p>
+<div class="admonition info">
+<p class="admonition-title">Õpieesmärgid</p>
+<p>Pärast materjali läbimist oskad:</p>
+<ul>
+<li>selgitada IP-aadressi, prefiksi, vaikimisi lüüsi, DNS-i ja DHCP ülesannet;</li>
+<li>vaadata Linuxi võrguliideste aadresse, olekut ja marsruute;</li>
+<li>leida, milline tööriist konkreetset liidest haldab;</li>
+<li>seadistada IPv4-võrguparameetreid kasutatavale keskkonnale sobiva meetodiga;</li>
+<li>kontrollida aadressi, marsruutimist, nimelahendust ja teenuse kättesaadavust;</li>
+<li>säilitada algseadistuse ning taastada see vajaduse korral konsoolilt.</li>
+</ul>
+</div>
+<h2 id="1-milliseid-parameetreid-seadistame">1. Milliseid parameetreid seadistame?<a class="headerlink" href="#1-milliseid-parameetreid-seadistame" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Parameeter</th>
+<th>Ülesanne</th>
+<th>Näide</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>IP-aadress — IP address</strong></td>
+<td>Tähistab liidese aadressi IP-võrgus.</td>
+<td><code>10.100.0.20</code></td>
+</tr>
+<tr>
+<td><strong>Võrguprefiks — network prefix</strong></td>
+<td>Määrab, milline aadressi osa tähistab võrku.</td>
+<td><code>/24</code></td>
+</tr>
+<tr>
+<td><strong>Alamvõrgumask — subnet mask</strong></td>
+<td>IPv4-prefiksi teine esitusviis.</td>
+<td><code>/24</code> vastab maskile <code>255.255.255.0</code>.</td>
+</tr>
+<tr>
+<td><strong>Vaikimisi lüüs — default gateway</strong></td>
+<td>Järgmine hüpe sihtkohtadele, mille jaoks pole täpsemat marsruuti. Tavaliselt ruuteri aadress.</td>
+<td><code>10.100.0.1</code></td>
+</tr>
+<tr>
+<td><strong>DNS-server — DNS server</strong></td>
+<td>Vastab nimepäringutele, näiteks aitab leida nimele vastava IP-aadressi.</td>
+<td><code>1.1.1.1</code></td>
+</tr>
+<tr>
+<td><strong>DHCP — Dynamic Host Configuration Protocol</strong></td>
+<td>Võimaldab saada aadressi ja muid parameetreid automaatselt.</td>
+<td>DHCP-server annab aadressi koos liisimisajaga.</td>
+</tr>
+</tbody>
+</table>
+<p>Näites <code>10.100.0.20/24</code> on IPv4-võrk <code>10.100.0.0/24</code>. Tavapärased hostiaadressid on selles võrgus <code>10.100.0.1</code> kuni <code>10.100.0.254</code>; aadress peab olema konkreetsele seadmele määratud ja vaba. Lüüs <code>10.100.0.1</code> asub siin samas alamvõrgus.</p>
+<p>Materjali aadressid ja liides <code>ens192</code> on <strong>näited</strong>. Laboris kasuta õpetaja antud väärtusi. Avalikud DNS-serverid ei pruugi osata lahendada kooli või ettevõtte sisemisi nimesid; selleks kasuta organisatsiooni DNS-serverit.</p>
+<p><strong>IPv4 ja IPv6 on eri protokollid.</strong> Siinsed püsiseadistuse näited keskenduvad IPv4-le. IPv4 muutmine ei tähenda automaatselt IPv6 seadistuse muutmist ega keelamist.</p>
+<h2 id="2-vorguparameetrite-vaatamine">2. Võrguparameetrite vaatamine<a class="headerlink" href="#2-vorguparameetrite-vaatamine" title="Permanent link">&para;</a></h2>
+<h3 id="21-liideste-aadressid-ja-olek">2.1. Liideste aadressid ja olek<a class="headerlink" href="#21-liideste-aadressid-ja-olek" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ip<span class="w"> </span>address<span class="w"> </span>show
+</code></pre></div>
+<p>Sama käsu levinud lühivorm on <code>ip a</code>. Lühikese ülevaate annab:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ip<span class="w"> </span>-brief<span class="w"> </span>address<span class="w"> </span>show
+</code></pre></div>
+<p>See näitab liideste nimesid, olekut ja aadresse. Võid kohata nimesid <code>ens192</code>, <code>ens18</code> või <code>enp1s0</code>; need ei pea eri masinates kattuma. <code>lo</code> on kohalik <strong>loopback-liides</strong>.</p>
+<p><img alt="ipa" src="../assets/vorguseaded-linuxis/ipa.png" width="75%" /></p>
+<p>Ühe liidese täpsem teave:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ip<span class="w"> </span>address<span class="w"> </span>show<span class="w"> </span>dev<span class="w"> </span>ens192
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>ip<span class="w"> </span>link<span class="w"> </span>show<span class="w"> </span>dev<span class="w"> </span>ens192
+</code></pre></div>
+<p><code>ip link</code> näitab muu hulgas liidese olekut ja MAC-aadressi, mitte IP-aadresse. Tähis <code>UP</code> kirjeldab administratiivset lubamist; see ei tõenda iseenesest toimivat kaabelühendust, IP-seadistust ega internetiühendust.</p>
+<h3 id="22-marsruudid">2.2. Marsruudid<a class="headerlink" href="#22-marsruudid" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ip<span class="w"> </span>route<span class="w"> </span>show
+</code></pre></div>
+<p>Näidisrida:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>default via 10.100.0.1 dev ens192
+</code></pre></div>
+<p><img alt="iproute" src="../assets/vorguseaded-linuxis/iproute.png" width="75%" /></p>
+<p>See tähendab, et IPv4 vaikimisi marsruut kasutab lüüsi <code>10.100.0.1</code> liidese <code>ens192</code> kaudu. Konkreetse sihtkoha jaoks valitavat marsruuti saab uurida:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>ip<span class="w"> </span>route<span class="w"> </span>get<span class="w"> </span><span class="m">1</span>.1.1.1
+</code></pre></div>
+<p>Käsk näitab marsruudi valikut, kuid ei saada ise ühenduse toimimist tõendavat päringut. IPv6 marsruute näitab <code>ip -6 route show</code>.</p>
+<h2 id="3-vorguhalduri-tuvastamine-ja-muudatuse-ettevalmistamine">3. Võrguhalduri tuvastamine ja muudatuse ettevalmistamine<a class="headerlink" href="#3-vorguhalduri-tuvastamine-ja-muudatuse-ettevalmistamine" title="Permanent link">&para;</a></h2>
+<h3 id="31-kes-konkreetset-liidest-haldab">3.1. Kes konkreetset liidest haldab?<a class="headerlink" href="#31-kes-konkreetset-liidest-haldab" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Lahendus</th>
+<th>Püsiseadistuse koht või tööriist</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ifupdown</strong></td>
+<td><code>/etc/network/interfaces</code> ja sealt kaasatud failid, näiteks <code>/etc/network/interfaces.d/</code>.</td>
+</tr>
+<tr>
+<td><strong>NetworkManager</strong></td>
+<td>Ühendusprofiilid, mida hallatakse näiteks <code>nmcli</code>, <code>nmtui</code> või graafilise liidesega.</td>
+</tr>
+<tr>
+<td><strong>systemd-networkd</strong></td>
+<td>Näiteks <code>/etc/systemd/network/*.network</code>.</td>
+</tr>
+<tr>
+<td><strong>Netplan</strong></td>
+<td>YAML-failid näiteks <code>/etc/netplan/</code>; seadistus genereeritakse taustal töötavale võrguhaldurile.</td>
+</tr>
+</tbody>
+</table>
+<p>Debiani nimi ega systemd kasutamine ei määra üksi, milline lahendus sinu liidest haldab. Ühes süsteemis võib eri liideseid hallata eri tarkvara, kuid <strong>sama liidese aadresse ja marsruute ei peaks korraga seadistama mitu võrguhaldurit</strong>.</p>
+<p>Alusta teenuste olekutest:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>systemctl<span class="w"> </span>is-active<span class="w"> </span>networking.service<span class="w"> </span>NetworkManager.service<span class="w"> </span>systemd-networkd.service
+</code></pre></div>
+<p>Mõni teenus võib puududa või olla mitteaktiivne. Seejärel uuri sobiva tööriistaga konkreetset liidest:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>nmcli<span class="w"> </span>device<span class="w"> </span>status
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>networkctl<span class="w"> </span>status<span class="w"> </span>ens192
+</code></pre></div>
+<p><code>nmcli</code> eeldab paigaldatud NetworkManagerit. <code>networkctl</code> näitab liidest systemd-networkd vaatenurgast. Ainult teenuse aktiivne olek või konfiguratsioonifaili olemasolu ei tõenda veel selle liidese haldamist.</p>
+<h3 id="32-sailita-algseis">3.2. Säilita algseis<a class="headerlink" href="#32-sailita-algseis" title="Permanent link">&para;</a></h3>
+<p>Enne muutmist märgi üles aadress, prefiks, vaikimisi lüüs, DNS-serverid ja võrguhaldur. Kopeeri muudetav seadistus failinimega, mida haldur ei loe aktiivse konfiguratsioonina.</p>
+<p>ifupdown-i põhifaili koopia näide:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>sudo<span class="w"> </span>cp<span class="w"> </span>-a<span class="w"> </span>/etc/network/interfaces<span class="w"> </span>/root/interfaces.before-network-change
+</code></pre></div>
+<p>Kui muudad kaasatud faili kataloogis <code>interfaces.d</code>, varunda ka see fail. NetworkManageri puhul salvesta profiili senised väärtused ja vajaduse korral tee profiilist eraldi taastamiskoopia. Algfaili säilitamine ja virtuaalmasina snapshot täidavad erinevaid taastamisvajadusi.</p>
+<div class="admonition warning">
+<p class="admonition-title">Võrgumuudatus võib katkestada kaugühenduse</p>
+<p>IP-aadressi, lüüsi või aktiivse liidese muutmine võib katkestada SSH-ühenduse.</p>
+</div>
+<h2 id="4-debian-13-ifupdown-ja-interfaces-fail">4. Debian 13: ifupdown ja interfaces-fail<a class="headerlink" href="#4-debian-13-ifupdown-ja-interfaces-fail" title="Permanent link">&para;</a></h2>
+<p>Seda peatükki kasuta siis, kui sinu liidest haldab <strong>ifupdown</strong>. Graafilise töölauaga või pilvest loodud Debiani masin võib kasutada teist lahendust.</p>
+<h3 id="41-faili-ulesehitus">4.1. Faili ülesehitus<a class="headerlink" href="#41-faili-ulesehitus" title="Permanent link">&para;</a></h3>
+<p>Kui hakkad aktiivse liidese seadistust asendama, säilita algfail ja ava konsool. Peata liides <strong>enne vana seadistuse muutmist</strong>, eriti DHCP-lt staatilisele aadressile minnes:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>sudo<span class="w"> </span>ifdown<span class="w"> </span>ens192
+</code></pre></div>
+<p>Nii saab ifupdown vana konfiguratsiooni järgi ühenduse lõpetada. Võrk võib kuni uue seadistuse rakendamiseni puududa. Seejärel ava konfiguratsioon:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/network/interfaces
+</code></pre></div>
+<p>Näites säilib loopback-liidese seadistus ning kaasatakse kataloogi <code>interfaces.d</code> failid:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>source /etc/network/interfaces.d/*
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>auto lo
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>iface lo inet loopback
+</code></pre></div>
+<p>Enne põhifaili muutmist vaata ka kaasatud faile. Sama liidese dubleerivad määrangud eri failides võivad tekitada segadust. Kommentaarid kirjuta omaette reale.</p>
+<h3 id="42-dhcp-kaudu-saadav-ipv4-seadistus">4.2. DHCP kaudu saadav IPv4-seadistus<a class="headerlink" href="#42-dhcp-kaudu-saadav-ipv4-seadistus" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>auto ens192
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>iface ens192 inet dhcp
+</code></pre></div>
+<p><code>inet</code> tähistab siin IPv4 seadistust ning <code>dhcp</code> automaatset aadressi hankimist. Töötamiseks on vaja ligipääsu DHCP-serverile ja süsteemis sobivat DHCP-kliendilahendust.</p>
+<h3 id="43-staatiline-ipv4-seadistus">4.3. Staatiline IPv4-seadistus<a class="headerlink" href="#43-staatiline-ipv4-seadistus" title="Permanent link">&para;</a></h3>
+<p>Asenda sama liidese DHCP-plokk staatilisega:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>auto ens192
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>iface ens192 inet static
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>    address 10.100.0.20/24
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>    gateway 10.100.0.1
+</code></pre></div>
+<p><code>address</code> määrab aadressi koos prefiksiga; <code>gateway</code> lisab vaikimisi lüüsi. </p>
+<p>DNS-i seadistamine sõltub nimelahenduse korraldusest; seda käsitleb järgmine peatükk. Ainult IP-aadressi ja lüüsi sisestamine ei määra DNS-servereid.</p>
+<h3 id="44-auto-ja-allow-hotplug">4.4. auto ja allow-hotplug<a class="headerlink" href="#44-auto-ja-allow-hotplug" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Määrang</th>
+<th>Tähendus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>auto ens192</code></td>
+<td>Liides tuuakse üles käsuga <code>ifup -a</code>, mida kasutatakse ka süsteemi käivitamisel.</td>
+</tr>
+<tr>
+<td><code>allow-hotplug ens192</code></td>
+<td>Liidese aktiveerimise saab käivitada selle tuvastamine udev'i poolt, näiteks käivitamisel või USB-võrgukaardi lisamisel.</td>
+</tr>
+</tbody>
+</table>
+<p><code>allow-hotplug</code> <strong>ei tähenda DHCP-d</strong> ega võrgukaabli ühendamise jälgimist. Seda võib kasutada ka staatilise aadressiga liidesel.</p>
+<h3 id="45-seadistuse-rakendamine">4.5. Seadistuse rakendamine<a class="headerlink" href="#45-seadistuse-rakendamine" title="Permanent link">&para;</a></h3>
+<p>Kui liides peatati enne konfiguratsiooni muutmist, rakenda salvestatud seadistus:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>sudo<span class="w"> </span>ifup<span class="w"> </span>ens192
+</code></pre></div>
+<p>Kui muudad juba aktiivset seadistust, planeeri vana ühenduse peatamine ja uue aktiveerimine konsoolilt. Lihtsalt <code>ifup</code> juba üles toodud liidesele ei pruugi muudatust rakendada. </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>sudo<span class="w"> </span>ifdown<span class="w"> </span>ens192
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>sudo<span class="w"> </span>ifup<span class="w"> </span>ens192
+</code></pre></div>
+<p>Kontrolli aadressi ja marsruute:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>ip<span class="w"> </span>-brief<span class="w"> </span>address<span class="w"> </span>show<span class="w"> </span>dev<span class="w"> </span>ens192
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>ip<span class="w"> </span>route<span class="w"> </span>show
+</code></pre></div>
+<p>Teenuse oleku vaatamiseks sobib:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>systemctl<span class="w"> </span>status<span class="w"> </span>networking.service
+</code></pre></div>
+<h2 id="5-dns-ja-etcresolvconf">5. DNS ja /etc/resolv.conf<a class="headerlink" href="#5-dns-ja-etcresolvconf" title="Permanent link">&para;</a></h2>
+<h3 id="51-koigepealt-tuvasta-haldusviis">5.1. Kõigepealt tuvasta haldusviis<a class="headerlink" href="#51-koigepealt-tuvasta-haldusviis" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>ls<span class="w"> </span>-l<span class="w"> </span>/etc/resolv.conf
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>cat<span class="w"> </span>/etc/resolv.conf
+</code></pre></div>
+<p>Fail võib olla tavaline tekstifail või sümbollink näiteks <code>resolvconf</code>-i või systemd-resolved-i hallatavale failile. Faili päis ja lingi siht aitavad lahendust tuvastada. Võrguhaldur või DHCP-klient võib faili hiljem uuendada.</p>
+<p><strong>DNS-serveri aadress</strong>, <strong>selle info edastamine rakendustele</strong> ja <strong>nimede lahendamise teenus</strong> on seotud, kuid eri ülesanded. Võrgufailis oleva DNS-rea olemasolu üksi ei tõenda, et rakendused seda kasutavad.</p>
+<h3 id="52-ifupdown-koos-resolvconf-iga">5.2. ifupdown koos resolvconf-iga<a class="headerlink" href="#52-ifupdown-koos-resolvconf-iga" title="Permanent link">&para;</a></h3>
+<p>Järgmine näide eeldab, et laborimasinas on <strong>resolvconf paigaldatud ja selle haldusviis seadistatud</strong>, sealhulgas <code>/etc/resolv.conf</code> seos failiga <code>/run/resolvconf/resolv.conf</code>. </p>
+<p>Staatilise liidese plokile saab lisada:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>auto ens192
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>iface ens192 inet static
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>    address 10.100.0.20/24
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>    gateway 10.100.0.1
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>    dns-nameservers 1.1.1.1 8.8.8.8
+</code></pre></div>
+<p>ifupdown-i ja resolvconf-i integratsioon töötleb <code>dns-nameservers</code> väärtusi liidese aktiveerimisel. Paki paigaldamist ja olemasoleva nimelahenduse ülevõtmist planeeritakse enne võrgumuudatust; paketi nimi on <code>resolvconf</code>.</p>
+<h3 id="53-kasitsi-hallatav-resolvconf">5.3. Käsitsi hallatav resolv.conf<a class="headerlink" href="#53-kasitsi-hallatav-resolvconf" title="Permanent link">&para;</a></h3>
+<p>Kui on kontrollitud, et faili <strong>ei genereeri mõni teine teenus</strong>, saab staatilise nimelahenduse korral faili muuta:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/resolv.conf
+</code></pre></div>
+<p>Näidissisu:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>nameserver 1.1.1.1
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>nameserver 8.8.8.8
+</code></pre></div>
+<p>See sobib teadlikult valitud käsitsi haldamiseks. Genereeritud faili käsitsi muutmine ei ole püsiva DNS-seadistuse üldine lahendus. Kasuta oma võrgu jaoks sobivaid DNS-servereid.</p>
+<h3 id="54-systemd-resolved">5.4. systemd-resolved<a class="headerlink" href="#54-systemd-resolved" title="Permanent link">&para;</a></h3>
+<p><strong>systemd-resolved</strong> pakub kohalikku nimelahendust ning võib saada DNS-serverite teabe näiteks systemd-networkd-lt või NetworkManagerilt. Selle oleku ja serverite vaatamiseks:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>systemctl<span class="w"> </span>status<span class="w"> </span>systemd-resolved.service
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>resolvectl<span class="w"> </span>status
+</code></pre></div>
+<p>Need käsud eeldavad vastava tarkvara olemasolu; <code>resolvectl</code> ei ole iga Debiani paigalduse universaalne DNS-i vaatamise käsk.</p>
+<p>systemd-resolved-i kasutavas lahenduses on soovitatav <code>/etc/resolv.conf</code> link failile <code>/run/systemd/resolve/stub-resolv.conf</code>. Seal olev <code>127.0.0.53</code> tähistab kohalikku DNS-vahendajat, mitte vigast välise DNS-serveri aadressi. Tegelikud ülesvoolu serverid on nähtavad <code>resolvectl status</code> väljundis.</p>
+<p>Link <code>/run/systemd/resolve/resolv.conf</code> failile on samuti toetatud, kuid selle kaudu pöörduvad tavapärased DNS-kliendid otse failis loetletud serverite poole. See võib mööda minna kohaliku resolveri liidesepõhisest nimelahenduse korraldusest.</p>
+<h2 id="6-networkmanager-profiilid-nmcli-ja-nmtui">6. NetworkManager: profiilid, nmcli ja nmtui<a class="headerlink" href="#6-networkmanager-profiilid-nmcli-ja-nmtui" title="Permanent link">&para;</a></h2>
+<p>NetworkManager sobib nii graafilise töölauaga masinale kui ka serverile. <strong>nmcli</strong> on käsureatööriist ja <strong>nmtui</strong> terminalis töötav menüüliides.</p>
+<h3 id="61-liides-ja-uhendusprofiil">6.1. Liides ja ühendusprofiil<a class="headerlink" href="#61-liides-ja-uhendusprofiil" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>nmcli<span class="w"> </span>device<span class="w"> </span>status
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>nmcli<span class="w"> </span>connection<span class="w"> </span>show
+</code></pre></div>
+<p>Liides on näiteks <code>ens192</code>, kuid selle profiili nimi võib olla <strong><code>Wired connection 1</code></strong>. Profiil salvestab ühenduse seadistuse; ühel liidesel võib eri olukordadeks olla mitu profiili. Muutmiskäskudes kasuta tegelikku profiilinime või UUID-d. [5]</p>
+<h3 id="62-staatiline-ipv4-seadistus">6.2. Staatiline IPv4-seadistus<a class="headerlink" href="#62-staatiline-ipv4-seadistus" title="Permanent link">&para;</a></h3>
+<p>Näites muudetakse olemasolevat profiili nimega <code>Wired connection 1</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>sudo<span class="w"> </span>nmcli<span class="w"> </span>connection<span class="w"> </span>modify<span class="w"> </span><span class="s2">"Wired connection 1"</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="w">    </span>ipv4.method<span class="w"> </span>manual<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="w">    </span>ipv4.addresses<span class="w"> </span><span class="s2">"10.100.0.20/24"</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="w">    </span>ipv4.gateway<span class="w"> </span><span class="s2">"10.100.0.1"</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="w">    </span>ipv4.dns<span class="w"> </span><span class="s2">"1.1.1.1 8.8.8.8"</span>
+</code></pre></div>
+<p>Käsu lõpus olev <code>\</code> jätkab käsku järgmisel real. Muudatus salvestub profiili, kuid aktiivsele ühendusele tuleb see veel rakendada. Konsoolilt saab profiili aktiveerida:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>sudo<span class="w"> </span>nmcli<span class="w"> </span>connection<span class="w"> </span>up<span class="w"> </span><span class="s2">"Wired connection 1"</span>
+</code></pre></div>
+<p>See võib ühenduse hetkeks katkestada. Eraldi <code>connection down</code> käivitamine ei ole alati vajalik ja võib kaugühenduse katkestada enne järgmise käsu sisestamist. Kontrolli tulemust:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>nmcli<span class="w"> </span>device<span class="w"> </span>show<span class="w"> </span>ens192
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>ip<span class="w"> </span>-brief<span class="w"> </span>address<span class="w"> </span>show<span class="w"> </span>dev<span class="w"> </span>ens192
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>ip<span class="w"> </span>route<span class="w"> </span>show
+</code></pre></div>
+<h3 id="63-dhcp-le-tagasiminek">6.3. DHCP-le tagasiminek<a class="headerlink" href="#63-dhcp-le-tagasiminek" title="Permanent link">&para;</a></h3>
+<p>Staatilise näite väärtuste eemaldamine ja automaatse IPv4-seadistuse valimine:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>sudo<span class="w"> </span>nmcli<span class="w"> </span>connection<span class="w"> </span>modify<span class="w"> </span><span class="s2">"Wired connection 1"</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="w">    </span>ipv4.method<span class="w"> </span>auto<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="w">    </span>ipv4.addresses<span class="w"> </span><span class="s2">""</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="w">    </span>ipv4.gateway<span class="w"> </span><span class="s2">""</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="w">    </span>ipv4.dns<span class="w"> </span><span class="s2">""</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="w">    </span>ipv4.ignore-auto-dns<span class="w"> </span>no
+<a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a>sudo<span class="w"> </span>nmcli<span class="w"> </span>connection<span class="w"> </span>up<span class="w"> </span><span class="s2">"Wired connection 1"</span>
+</code></pre></div>
+<p>See on näide, mitte iga keerukama profiili täielik lähtestamine: eraldi määratud marsruudid ja muud omadused vajavad samuti kontrollimist.</p>
+<p>Menüüde kaudu seadistamiseks käivita:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>sudo<span class="w"> </span>nmtui
+</code></pre></div>
+<p>Vali õige profiil, muuda parameetrid, salvesta ja rakenda ühenduse muudatus. Kontrolli tulemust samade vaatamiskäskudega. NetworkManageri põhimõtted on kasutatavad ka näiteks RHEL-is; konkreetne profiil ja võimalused sõltuvad süsteemist.</p>
+<h2 id="7-systemd-networkd-network-failid">7. systemd-networkd: .network-failid<a class="headerlink" href="#7-systemd-networkd-network-failid" title="Permanent link">&para;</a></h2>
+<h3 id="71-eeltingimused-ja-faili-valik">7.1. Eeltingimused ja faili valik<a class="headerlink" href="#71-eeltingimused-ja-faili-valik" title="Permanent link">&para;</a></h3>
+<p>Kasuta seda peatükki <strong>systemd-networkd hallatava liidese</strong> puhul. Kui lähed üle teiselt haldurilt, tuleb enne eemaldada selle liidese konkureeriv haldus. Kogu <code>/etc/network/interfaces</code> faili ümbernimetamine ei ole üldine üleminekujuhend: säilitada tuleb teiste liideste ja loopback'i vajalik seadistus.</p>
+<p>Faili näitlik asukoht:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>/etc/systemd/network/10-ens192.network
+</code></pre></div>
+<p>Laiend peab olema <code>.network</code>. Failid järjestatakse nime järgi ning <strong>rakendub esimene liidesega sobiv fail</strong>. Ära hoia aktiivsena kahte sama liidest sobitavat DHCP- ja staatilise seadistuse faili. DHCP-lt staatilisele üle minnes muuda sama faili sisu.</p>
+<h3 id="72-dhcp-kaudu-ipv4-seadistus">7.2. DHCP kaudu IPv4-seadistus<a class="headerlink" href="#72-dhcp-kaudu-ipv4-seadistus" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="k">[Match]</span>
+<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="na">Name</span><span class="o">=</span><span class="s">ens192</span>
+<a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>
+<a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a><span class="k">[Network]</span>
+<a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a><span class="na">DHCP</span><span class="o">=</span><span class="s">ipv4</span>
+</code></pre></div>
+<p><code>[Match]</code> määrab liidese, <code>[Network]</code> võrguparameetrid. <code>DHCP=ipv4</code> lubab DHCPv4; <code>DHCP=yes</code> lubaks nii DHCPv4 kui ka DHCPv6. IPv6 ruuteriteadete töötlemine on sellest eraldi seadistus.</p>
+<h3 id="73-staatiline-ipv4-seadistus">7.3. Staatiline IPv4-seadistus<a class="headerlink" href="#73-staatiline-ipv4-seadistus" title="Permanent link">&para;</a></h3>
+<p>Sama faili alternatiivne sisu:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="k">[Match]</span>
+<a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="na">Name</span><span class="o">=</span><span class="s">ens192</span>
+<a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>
+<a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a><span class="k">[Network]</span>
+<a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a><span class="na">DHCP</span><span class="o">=</span><span class="s">no</span>
+<a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a><span class="na">Address</span><span class="o">=</span><span class="s">10.100.0.20/24</span>
+<a id="__codelineno-31-7" name="__codelineno-31-7" href="#__codelineno-31-7"></a><span class="na">DNS</span><span class="o">=</span><span class="s">1.1.1.1</span>
+<a id="__codelineno-31-8" name="__codelineno-31-8" href="#__codelineno-31-8"></a><span class="na">DNS</span><span class="o">=</span><span class="s">8.8.8.8</span>
+<a id="__codelineno-31-9" name="__codelineno-31-9" href="#__codelineno-31-9"></a>
+<a id="__codelineno-31-10" name="__codelineno-31-10" href="#__codelineno-31-10"></a><span class="k">[Route]</span>
+<a id="__codelineno-31-11" name="__codelineno-31-11" href="#__codelineno-31-11"></a><span class="na">Destination</span><span class="o">=</span><span class="s">0.0.0.0/0</span>
+<a id="__codelineno-31-12" name="__codelineno-31-12" href="#__codelineno-31-12"></a><span class="na">Gateway</span><span class="o">=</span><span class="s">10.100.0.1</span>
+</code></pre></div>
+<p><code>[Route]</code> plokk määrab siin IPv4 vaikimisi marsruudi. DNS-read annavad serverite teabe systemd-resolved-ile; toimivaks nimelahenduseks peab ka see osa olema seadistatud.</p>
+<h3 id="74-teenused-dns-ja-rakendamine">7.4. Teenused, DNS ja rakendamine<a class="headerlink" href="#74-teenused-dns-ja-rakendamine" title="Permanent link">&para;</a></h3>
+<p>Kui on <strong>teadlikult valitud networkd + resolved</strong> ja teiste haldurite konflikt eemaldatud, peab systemd-resolved olema paigaldatud. Debianis on paketi nimi <code>systemd-resolved</code>. Paigaldamine võib muuta nimelahenduse korraldust, seega tee see võrgu veel töötamise ajal ja säilita senine seadistus.</p>
+<p>Teenuste lubamine koos kohese käivitamisega:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>--now<span class="w"> </span>systemd-networkd.service
+<a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>--now<span class="w"> </span>systemd-resolved.service
+</code></pre></div>
+<p><code>enable</code> üksi lubab järgmisteks käivitusteks; <code>--now</code> lisab kohese käivitamise. Kontrolli <code>/etc/resolv.conf</code> tegelikku sihti. Kui selles lahenduses on vaja seadistada soovitatud stub-link, varunda senine fail või link ja loo seos:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>sudo<span class="w"> </span>cp<span class="w"> </span>-a<span class="w"> </span>/etc/resolv.conf<span class="w"> </span>/root/resolv.conf.before-network-change
+<a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a>sudo<span class="w"> </span>ln<span class="w"> </span>-sfn<span class="w"> </span>/run/systemd/resolve/stub-resolv.conf<span class="w"> </span>/etc/resolv.conf
+</code></pre></div>
+<p>See link on mõeldud <strong>töötava systemd-resolved-i</strong> kasutamiseks, mitte kõigi Linuxi süsteemide parandamiseks.</p>
+<p>Juba töötava networkd konfiguratsiooni muutmise järel:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>sudo<span class="w"> </span>networkctl<span class="w"> </span>reload
+<a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a>sudo<span class="w"> </span>networkctl<span class="w"> </span>reconfigure<span class="w"> </span>ens192
+</code></pre></div>
+<p><code>reload</code> loeb failid uuesti; <code>reconfigure</code> rakendab liidesele seadistuse. Kontrollimiseks:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>networkctl<span class="w"> </span>status<span class="w"> </span>ens192
+<a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a>resolvectl<span class="w"> </span>status
+<a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a>ip<span class="w"> </span>-brief<span class="w"> </span>address<span class="w"> </span>show<span class="w"> </span>dev<span class="w"> </span>ens192
+<a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a>ip<span class="w"> </span>route<span class="w"> </span>show
+</code></pre></div>
+<p>Networkd faili muutmine ei nõua tavaliselt <code>systemctl daemon-reload</code> käsku: see on systemd üksusefailide, mitte <code>.network</code> konfiguratsiooni uuesti laadimiseks.</p>
+<h2 id="8-ubuntu-server-netplan">8. Ubuntu Server: Netplan<a class="headerlink" href="#8-ubuntu-server-netplan" title="Permanent link">&para;</a></h2>
+<h3 id="81-netplan-ja-taustal-tootav-haldur">8.1. Netplan ja taustal töötav haldur<a class="headerlink" href="#81-netplan-ja-taustal-tootav-haldur" title="Permanent link">&para;</a></h3>
+<p>Ubuntu Serveris kasutatakse sageli <strong>Netplani</strong>. See loeb YAML-seadistuse ja genereerib selle <strong>systemd-networkd</strong> või <strong>NetworkManageri</strong> jaoks. Nimelahendusega võib tegeleda systemd-resolved. Need komponendid ei ole ühe tööriista eri nimed.</p>
+<p>Failid paiknevad tavaliselt <code>/etc/netplan/</code> kataloogis. Nimi võib olla näiteks <code>00-installer-config.yaml</code> või <code>50-cloud-init.yaml</code>. Uuri olemasolevaid faile enne uue lisamist: mitu faili võivad koos seadistust mõjutada ning pilvemallis võib konfiguratsiooni genereerida cloud-init.</p>
+<p>YAML-i taandamisel kasuta <strong>tühikuid</strong>, mitte tabulaatoreid. Näidetes on üks liides; asenda <code>ens192</code> oma liidese nimega.</p>
+<h3 id="82-dhcp-naide">8.2. DHCP-näide<a class="headerlink" href="#82-dhcp-naide" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="nt">network</span><span class="p">:</span>
+<a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a><span class="w">  </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a><span class="w">  </span><span class="nt">renderer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">networkd</span>
+<a id="__codelineno-36-4" name="__codelineno-36-4" href="#__codelineno-36-4"></a><span class="w">  </span><span class="nt">ethernets</span><span class="p">:</span>
+<a id="__codelineno-36-5" name="__codelineno-36-5" href="#__codelineno-36-5"></a><span class="w">    </span><span class="nt">ens192</span><span class="p">:</span>
+<a id="__codelineno-36-6" name="__codelineno-36-6" href="#__codelineno-36-6"></a><span class="w">      </span><span class="nt">dhcp4</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</code></pre></div>
+<h3 id="83-staatiline-ipv4-naide">8.3. Staatiline IPv4-näide<a class="headerlink" href="#83-staatiline-ipv4-naide" title="Permanent link">&para;</a></h3>
+<p>Sama liidese DHCP-seadistuse asemel:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="nt">network</span><span class="p">:</span>
+<a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a><span class="w">  </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a><span class="w">  </span><span class="nt">renderer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">networkd</span>
+<a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a><span class="w">  </span><span class="nt">ethernets</span><span class="p">:</span>
+<a id="__codelineno-37-5" name="__codelineno-37-5" href="#__codelineno-37-5"></a><span class="w">    </span><span class="nt">ens192</span><span class="p">:</span>
+<a id="__codelineno-37-6" name="__codelineno-37-6" href="#__codelineno-37-6"></a><span class="w">      </span><span class="nt">dhcp4</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<a id="__codelineno-37-7" name="__codelineno-37-7" href="#__codelineno-37-7"></a><span class="w">      </span><span class="nt">addresses</span><span class="p">:</span>
+<a id="__codelineno-37-8" name="__codelineno-37-8" href="#__codelineno-37-8"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10.100.0.20/24</span>
+<a id="__codelineno-37-9" name="__codelineno-37-9" href="#__codelineno-37-9"></a><span class="w">      </span><span class="nt">routes</span><span class="p">:</span>
+<a id="__codelineno-37-10" name="__codelineno-37-10" href="#__codelineno-37-10"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">to</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+<a id="__codelineno-37-11" name="__codelineno-37-11" href="#__codelineno-37-11"></a><span class="w">          </span><span class="nt">via</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10.100.0.1</span>
+<a id="__codelineno-37-12" name="__codelineno-37-12" href="#__codelineno-37-12"></a><span class="w">      </span><span class="nt">nameservers</span><span class="p">:</span>
+<a id="__codelineno-37-13" name="__codelineno-37-13" href="#__codelineno-37-13"></a><span class="w">        </span><span class="nt">addresses</span><span class="p">:</span>
+<a id="__codelineno-37-14" name="__codelineno-37-14" href="#__codelineno-37-14"></a><span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.1.1.1</span>
+<a id="__codelineno-37-15" name="__codelineno-37-15" href="#__codelineno-37-15"></a><span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8.8.8.8</span>
+</code></pre></div>
+<p><code>routes</code> määrab marsruudid ja <code>nameservers</code> DNS-i. See näide ei ole IPv6 täielik konfiguratsioon. Kasuta sobivaid aadresse ja kontrolli, et teine YAML-fail ei lisa samale liidesele vastuolulist seadistust. [11]</p>
+<h3 id="84-kontroll-ja-rakendamine">8.4. Kontroll ja rakendamine<a class="headerlink" href="#84-kontroll-ja-rakendamine" title="Permanent link">&para;</a></h3>
+<p>Vali tegelik muudetav fail. Näiteks uue näitefaili õigused saab piirata nii:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>sudo<span class="w"> </span>chmod<span class="w"> </span><span class="m">600</span><span class="w"> </span>/etc/netplan/00-installer-config.yaml
+</code></pre></div>
+<p>Kontrolli konfiguratsiooni genereerimist:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a>sudo<span class="w"> </span>netplan<span class="w"> </span>generate
+</code></pre></div>
+<p>See võib leida näiteks YAML-i või Netplani määrangute vigu, kuid ei tõenda veel aadressi sobivust ega ühenduse toimimist.</p>
+<p>Kinnitusega proovimine:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>sudo<span class="w"> </span>netplan<span class="w"> </span>try
+</code></pre></div>
+<p>Netplan proovib seadistust ja ootab kinnitust. Kinnituseta peaks rakenduma tagasipöördumine; selle tulemust tuleb vajaduse korral kontrollida. Hoia konsool ja algseadistus alles. Teadlikult kohe rakendamiseks on olemas ka <code>sudo netplan apply</code>; edukalt kinnitatud <code>try</code> järel pole <code>apply</code> kohustuslik lisasamm.</p>
+<p>Tulemust kontrolli <code>ip</code>-käskudega ning systemd-resolved-i kasutamisel <code>resolvectl status</code> abil. Püsiv DNS-seadistus tehakse Netplanis, mitte genereeritud <code>/etc/resolv.conf</code> faili käsitsi muutes.</p>
+<h2 id="9-kuidas-kontrollida-kas-seadistus-tootab">9. Kuidas kontrollida, kas seadistus töötab?<a class="headerlink" href="#9-kuidas-kontrollida-kas-seadistus-tootab" title="Permanent link">&para;</a></h2>
+<p>Kontrolli osade kaupa. Üks edukas käsk ei tõenda kõigi võrguvõimaluste toimimist.</p>
+<table>
+<thead>
+<tr>
+<th>Järk</th>
+<th>Näidiskäsk</th>
+<th>Mida tulemus aitab hinnata?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Liides ja aadress</strong></td>
+<td><code>ip -brief address show</code></td>
+<td>Õige liides ja oodatud aadress/prefiks.</td>
+</tr>
+<tr>
+<td><strong>Marsruudid</strong></td>
+<td><code>ip route show</code></td>
+<td>Kohaliku võrgu ja vaikimisi marsruudi olemasolu.</td>
+</tr>
+<tr>
+<td><strong>Lüüs</strong></td>
+<td><code>ping -c 4 10.100.0.1</code></td>
+<td>Kas lüüs vastab ICMP kajapäringule?</td>
+</tr>
+<tr>
+<td><strong>IP-ühendus</strong></td>
+<td><code>ping -c 4 1.1.1.1</code></td>
+<td>Kas see väline aadress vastab, kui välisühendus on laboris lubatud?</td>
+</tr>
+<tr>
+<td><strong>Süsteemi nimelahendus</strong></td>
+<td><code>getent ahosts debian.org</code></td>
+<td>Kas süsteemi nimepäring leiab nimele aadresse?</td>
+</tr>
+<tr>
+<td><strong>DNS-päring</strong></td>
+<td><code>nslookup debian.org</code></td>
+<td>Kas DNS-päring saab vastuse ja millist serverit kasutati?</td>
+</tr>
+<tr>
+<td><strong>Vajalik teenus</strong></td>
+<td>Ühendus oma serveri SSH- või veebiteenusega.</td>
+<td>Kas ülesande jaoks vajalik rakendusühendus töötab?</td>
+</tr>
+</tbody>
+</table>
+<p><code>ping</code>-i vastuse puudumine ei tõenda alati ühenduse katkemist: ICMP võib olla piiratud. <code>getent</code> kasutab süsteemi nimelahenduse järjekorda, mis võib hõlmata ka <code>/etc/hosts</code> faili; see ei tõenda üksinda just DNS-serveri kasutamist. <code>nslookup</code> on Debianis saadaval näiteks paketi <code>dnsutils</code> kaudu.</p>
+<p><strong>Näide:</strong> ühendus IP-aadressiga toimib, kuid nimed ei lahene. Uuri DNS-serveri valikut ja nimelahenduse korraldust, mitte ära muuda kohe töötavat IP-aadressi.</p>
+<p>Kui konfiguratsioon peab olema püsiv, kontrolli seda pärast taaskäivitamist: aadress, marsruudid, DNS ja vajalik teenus peavad endiselt toimima. Tee taaskäivitus alles siis, kui taastamise võimalus on olemas.</p>
+<h2 id="10-veaotsing-ja-algseisu-taastamine">10. Veaotsing ja algseisu taastamine<a class="headerlink" href="#10-veaotsing-ja-algseisu-taastamine" title="Permanent link">&para;</a></h2>
+<h3 id="101-levinud-pohjused">10.1. Levinud põhjused<a class="headerlink" href="#101-levinud-pohjused" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Sümptom</th>
+<th>Mida kontrollida?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Õiget aadressi pole.</td>
+<td>Liidese nimi, sobiv konfiguratsioonifail või profiil, DHCP kättesaadavus.</td>
+</tr>
+<tr>
+<td>Oma alamvõrk töötab, teised mitte.</td>
+<td>Prefiks, vaikimisi lüüs, marsruutimine ja tulemüür.</td>
+</tr>
+<tr>
+<td>IP-aadress töötab, nimi mitte.</td>
+<td>DNS-serverid, <code>/etc/resolv.conf</code> haldaja ja nimelahendaja olek.</td>
+</tr>
+<tr>
+<td>Muudatus kaob uuesti.</td>
+<td>Kas muudeti ainult hetkeolekut või genereeritud faili? Kas teine haldur kirjutab seadistuse üle?</td>
+</tr>
+<tr>
+<td>NetworkManager muudab vale ühendust.</td>
+<td>Kas profiili nimi ja liidese nimi aeti segi?</td>
+</tr>
+<tr>
+<td>Staatilise asemel jääb DHCP.</td>
+<td>Kas varasem <code>.network</code> fail sobitub esimesena või teine Netplani fail jätab DHCP sisse?</td>
+</tr>
+<tr>
+<td>Pärast taaskäivitamist ühendust pole.</td>
+<td>Püsiseadistus, teenuse lubamine, profiili automaatne aktiveerimine ja logid.</td>
+</tr>
+</tbody>
+</table>
+<p>Teenuse viimased kirjed <strong>uusimast vanimani</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a>sudo<span class="w"> </span>journalctl<span class="w"> </span>-r<span class="w"> </span>-u<span class="w"> </span>networking.service<span class="w"> </span>-b
+</code></pre></div>
+<p>Kasuta tegeliku halduri järgi ka <code>NetworkManager.service</code>, <code>systemd-networkd.service</code> või DNS-i puhul <code>systemd-resolved.service</code>. Konfiguratsiooniviga võib olla logis kirjas konkreetse faili ja reaga.</p>
+<h3 id="102-taastamise-pohimote">10.2. Taastamise põhimõte<a class="headerlink" href="#102-taastamise-pohimote" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Ava virtuaalmasina <strong>konsool</strong>.</li>
+<li>Taasta just selle halduri algfail või profiil, mida muutsid.</li>
+<li>Kui muutsid DNS-i haldamist, taasta ka senine fail või sümbollink ning vajalik teenus.</li>
+<li>Rakenda algseadistus sama halduri kaudu.</li>
+<li>Kontrolli aadressi, marsruute, nimelahendust ja vajalikku teenust uuesti.</li>
+</ol>
+<p>ifupdown-i põhifaili taastamise näide, kui koopia tehti peatükis 3 näidatud asukohta:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a>sudo<span class="w"> </span>cp<span class="w"> </span>-a<span class="w"> </span>/root/interfaces.before-network-change<span class="w"> </span>/etc/network/interfaces
+</code></pre></div>
+<p>Faili taastamine üksi ei pruugi juba töötavat võrguseadistust tagasi muuta. Rakenda see halduri kaudu; ifupdown-i puhul võib vaja minna liidese uuesti aktiveerimist või kontrollitud taaskäivitust. Kui algne seadistus paiknes ka kaasatud failides, taasta need samuti.</p>
+<h2 id="11-enesekontroll">11. Enesekontroll<a class="headerlink" href="#11-enesekontroll" title="Permanent link">&para;</a></h2>
+<p>Vasta kõigepealt ise. Seejärel ava vastus ja võrdle oma põhjendust.</p>
+<h3 id="1-mille-poolest-erinevad-ip-aadress-luus-ja-dns-server">1. Mille poolest erinevad IP-aadress, lüüs ja DNS-server?<a class="headerlink" href="#1-mille-poolest-erinevad-ip-aadress-luus-ja-dns-server" title="Permanent link">&para;</a></h3>
+<details class="question">
+<summary>Vaata vastust</summary>
+<p>IP-aadress määrab liidese aadressi võrgus. Lüüs on järgmine hüpe väljapoole sobivaid kohalikke marsruute. DNS-server vastab nimepäringutele. Ühe parameetri õigsus ei taga teiste toimimist.</p>
+</details>
+<h3 id="2-kas-ip-address-add-muudab-pusivat-konfiguratsioonifaili">2. Kas ip address add muudab püsivat konfiguratsioonifaili?<a class="headerlink" href="#2-kas-ip-address-add-muudab-pusivat-konfiguratsioonifaili" title="Permanent link">&para;</a></h3>
+<details class="question">
+<summary>Vaata vastust</summary>
+<p>Ei. See muudab üldjuhul hetkeolekut. Püsiv seadistus tehakse liidest haldava tööriista konfiguratsioonis või profiilis.</p>
+</details>
+<h3 id="3-kas-allow-hotplug-tahendab-dhcp-kasutamist">3. Kas allow-hotplug tähendab DHCP kasutamist?<a class="headerlink" href="#3-kas-allow-hotplug-tahendab-dhcp-kasutamist" title="Permanent link">&para;</a></h3>
+<details class="question">
+<summary>Vaata vastust</summary>
+<p>Ei. See seostub liidese tuvastamisel käivituva aktiveerimisega. Aadressi saamise viis määratakse eraldi, näiteks dhcp või static.</p>
+</details>
+<h3 id="4-miks-ei-tohi-eeldada-et-dns-read-interfaces-failis-on-piisavad">4. Miks ei tohi eeldada, et DNS-read interfaces-failis on piisavad?<a class="headerlink" href="#4-miks-ei-tohi-eeldada-et-dns-read-interfaces-failis-on-piisavad" title="Permanent link">&para;</a></h3>
+<details class="question">
+<summary>Vaata vastust</summary>
+<p>DNS-info peab jõudma rakenduste kasutatavasse nimelahendusse. Näiteks dns-nameservers ridade töötlemiseks võib olla vajalik resolvconf-i integratsioon. Kontrolli tegelikku haldusviisi ja nimepäringut.</p>
+</details>
+<h3 id="5-kas-networkmanager-vajab-graafilist-toolauda">5. Kas NetworkManager vajab graafilist töölauda?<a class="headerlink" href="#5-kas-networkmanager-vajab-graafilist-toolauda" title="Permanent link">&para;</a></h3>
+<details class="question">
+<summary>Vaata vastust</summary>
+<p>Ei. Seda saab kasutada ka serveris nmcli või nmtui abil. Graafiline liides on üks võimalik juhtimisviis.</p>
+</details>
+<h3 id="6-miks-voib-nmcli-connection-modify-ens192-ebaonnestuda">6. Miks võib nmcli connection modify ens192 ebaõnnestuda?<a class="headerlink" href="#6-miks-voib-nmcli-connection-modify-ens192-ebaonnestuda" title="Permanent link">&para;</a></h3>
+<details class="question">
+<summary>Vaata vastust</summary>
+<p>Käsk eeldab selle nimega profiili, kuid ens192 võib olla ainult liidese nimi. Profiili nimi võib olla näiteks Wired connection 1. Leia õige profiil käsuga nmcli connection show.</p>
+</details>
+<h3 id="7-kas-systemd-networkd-rakendab-sama-liidese-koik-network-failid-jarjest">7. Kas systemd-networkd rakendab sama liidese kõik .network-failid järjest?<a class="headerlink" href="#7-kas-systemd-networkd-rakendab-sama-liidese-koik-network-failid-jarjest" title="Permanent link">&para;</a></h3>
+<details class="question">
+<summary>Vaata vastust</summary>
+<p>Ei. Rakendub nimejärjestuses esimene sobiv põhifail. Ära jäta konkureerivaid DHCP- ja staatilise seadistuse faile sama liidest sobitama.</p>
+</details>
+<h3 id="8-mis-vahe-on-enable-ja-enable-now-kasutamisel">8. Mis vahe on enable ja enable --now kasutamisel?<a class="headerlink" href="#8-mis-vahe-on-enable-ja-enable-now-kasutamisel" title="Permanent link">&para;</a></h3>
+<details class="question">
+<summary>Vaata vastust</summary>
+<p>enable lubab teenuse käivitamise vastavalt üksuse määrangutele järgmistel süsteemikäivitustel. --now lisab kohese käivitamise. See ei asenda võrguparameetrite kontrollimist.</p>
+</details>
+<h3 id="9-kas-netplan-asendab-alati-systemd-networkd">9. Kas Netplan asendab alati systemd-networkd?<a class="headerlink" href="#9-kas-netplan-asendab-alati-systemd-networkd" title="Permanent link">&para;</a></h3>
+<details class="question">
+<summary>Vaata vastust</summary>
+<p>Ei. Netplan genereerib konfiguratsiooni taustal töötavale haldurile, näiteks systemd-networkd-le või NetworkManagerile. Renderer määrab selle valiku.</p>
+</details>
+<h3 id="10-ip-aadressiga-uhendus-toimib-nimega-mitte-millest-alustada">10. IP-aadressiga ühendus toimib, nimega mitte. Millest alustada?<a class="headerlink" href="#10-ip-aadressiga-uhendus-toimib-nimega-mitte-millest-alustada" title="Permanent link">&para;</a></h3>
+<details class="question">
+<summary>Vaata vastust</summary>
+<p>Uuri nimelahendust: DNS-serveri väärtusi, resolv.conf-i haldusviisi ja vajaduse korral systemd-resolved-i olekut. Kontrolli nimepäringut. Töötavat aadressiseadistust pole põhjust kohe asendada.</p>
+</details>
+<h3 id="11-kuidas-toendada-et-seadistus-on-pusiv">11. Kuidas tõendada, et seadistus on püsiv?<a class="headerlink" href="#11-kuidas-toendada-et-seadistus-on-pusiv" title="Permanent link">&para;</a></h3>
+<details class="question">
+<summary>Vaata vastust</summary>
+<p>Kontrolli salvestatud konfiguratsiooni ning testi pärast taaskäivitamist uuesti aadressi, marsruute, nimelahendust ja vajalikku teenust.</p>
+</details>
+<h2 id="kokkuvote">Kokkuvõte<a class="headerlink" href="#kokkuvote" title="Permanent link">&para;</a></h2>
+<ul>
+<li>IP-aadress, prefiks, lüüs ja DNS täidavad erinevaid ülesandeid.</li>
+<li><code>ip</code> aitab vaadata ja ajutiselt muuta hetkeolekut; püsiseadistus sõltub haldurist.</li>
+<li>Enne muutmist tuvasta liides, profiil või fail ja selle tegelik haldaja.</li>
+<li>ifupdown, NetworkManager ja systemd-networkd on erinevad seadistuslahendused.</li>
+<li>Sama liidese konkureeriv haldamine võib põhjustada segadust ja ühenduse katkemist.</li>
+<li>DNS-i puhul kontrolli nii serverite määramist kui ka rakenduste kasutatavat nimelahendust.</li>
+<li>Netplan kirjeldab võrku YAML-is ja genereerib seadistuse taustal töötavale haldurile.</li>
+<li>Kontrolli aadressi, marsruute, nimelahendust ja rakendusühendust eraldi.</li>
+<li>Säilita algseis, kasuta vajaduse korral konsooli ja kontrolli püsimist pärast taaskäivitamist.</li>
+</ul>
+<h3 id="motle-opitule">Mõtle õpitule<a class="headerlink" href="#motle-opitule" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Kuidas selgitaksid kaasõppijale, miks IP-aadressi olemasolu ei tõenda veel töötavat internetiühendust?</li>
+<li>Milliste andmete ja koopiate abil saaksid ebaõnnestunud võrgumuudatuse järel algseisu taastada?</li>
+<li>Miks on võrguhalduri tuvastamine olulisem kui esimese leitud internetijuhendi käskude kopeerimine?</li>
+</ol>
+<h2 id="teema-sonastik">Teema sõnastik<a class="headerlink" href="#teema-sonastik" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Mõiste</th>
+<th>Selgitus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Võrguliides — network interface</strong></td>
+<td>Süsteemi liides võrgus suhtlemiseks.</td>
+</tr>
+<tr>
+<td><strong>IP — Internet Protocol</strong></td>
+<td>Aadressimist ja pakettide edastamist korraldav internetiprotokoll.</td>
+</tr>
+<tr>
+<td><strong>IPv4; IPv6</strong></td>
+<td>IP kaks eri aadressivormingu ja võimalustega versiooni.</td>
+</tr>
+<tr>
+<td><strong>IP-aadress — IP address</strong></td>
+<td>Liidese aadress IP-võrgus.</td>
+</tr>
+<tr>
+<td><strong>Võrguprefiks — network prefix</strong></td>
+<td>Võrgule vastav aadressiosa; prefiksi pikkus antakse näiteks kujul /24.</td>
+</tr>
+<tr>
+<td><strong>Alamvõrgumask — subnet mask</strong></td>
+<td>IPv4 võrguosa kirjeldav mask, näiteks 255.255.255.0.</td>
+</tr>
+<tr>
+<td><strong>Vaikimisi lüüs — default gateway</strong></td>
+<td>Vaikimisi marsruudi järgmine hüpe.</td>
+</tr>
+<tr>
+<td><strong>Marsruut — route</strong></td>
+<td>Reegel, mis määrab, kuidas sihtvõrgu või aadressi poole pakette saata.</td>
+</tr>
+<tr>
+<td><strong>DNS — Domain Name System</strong></td>
+<td>Nimede ja nendega seotud andmete hajus süsteem.</td>
+</tr>
+<tr>
+<td><strong>Nimelahendaja — resolver</strong></td>
+<td>Komponent, mille kaudu rakendus saab nimepäringule vastuse.</td>
+</tr>
+<tr>
+<td><strong>DHCP — Dynamic Host Configuration Protocol</strong></td>
+<td>Protokoll võrguparameetrite automaatseks saamiseks.</td>
+</tr>
+<tr>
+<td><strong>DHCP-reservatsioon — DHCP reservation</strong></td>
+<td>Serveripoolne kokkulepe anda kindlale kliendile määratud aadress.</td>
+</tr>
+<tr>
+<td><strong>Staatiline aadress — static address</strong></td>
+<td>Kliendi konfiguratsioonis määratud aadress.</td>
+</tr>
+<tr>
+<td><strong>Loopback</strong></td>
+<td>Kohaliku süsteemi suhtluseks mõeldud võrguliides või aadress.</td>
+</tr>
+<tr>
+<td><strong>Võrguhaldur — network manager</strong></td>
+<td>Tarkvara, mis korraldab liideste võrguseadistust.</td>
+</tr>
+<tr>
+<td><strong>ifupdown</strong></td>
+<td>Interfaces-faili järgi liideseid seadistav tööriistakomplekt.</td>
+</tr>
+<tr>
+<td><strong>NetworkManager</strong></td>
+<td>Profiilidel põhinev võrguhaldustarkvara.</td>
+</tr>
+<tr>
+<td><strong>Ühendusprofiil — connection profile</strong></td>
+<td>Ühenduse salvestatud parameetrite kogum.</td>
+</tr>
+<tr>
+<td><strong>nmcli; nmtui</strong></td>
+<td>NetworkManageri käsurea- ja terminalimenüü tööriistad.</td>
+</tr>
+<tr>
+<td><strong>systemd-networkd</strong></td>
+<td>Systemd võrguliideste seadistamise teenus.</td>
+</tr>
+<tr>
+<td><strong>systemd-resolved</strong></td>
+<td>Kohaliku nimelahenduse teenus.</td>
+</tr>
+<tr>
+<td><strong>resolvconf</strong></td>
+<td>Nimelahenduse seadistusteavet koondav ja edastav tööriist.</td>
+</tr>
+<tr>
+<td><strong>Netplan</strong></td>
+<td>YAML-kirjeldusest võrguhalduri konfiguratsiooni genereeriv tööriist.</td>
+</tr>
+<tr>
+<td><strong>Renderer</strong></td>
+<td>Netplani kasutatav taustal töötav võrguhaldur.</td>
+</tr>
+<tr>
+<td><strong>ICMP — Internet Control Message Protocol</strong></td>
+<td>IP-võrkude juht- ja veateadete protokoll; seda kasutab ka ping.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="allikad-ja-lisalugemine">Allikad ja lisalugemine<a class="headerlink" href="#allikad-ja-lisalugemine" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="https://www.debian.org/doc/manuals/debian-reference/ch05.en.html">Network setup</a>.</li>
+<li><a href="https://networkmanager.dev/docs/api/latest/nmcli.html">nmcli reference</a>.</li>
+<li><a href="https://manpages.debian.org/trixie/systemd-resolved/systemd-resolved.service.8.en.html">systemd-resolved.service(8)</a>.</li>
+<li><a href="https://manpages.debian.org/trixie/systemd/systemd.network.5.en.html">systemd.network(5)</a>.</li>
+<li><a href="https://netplan.readthedocs.io/en/stable/examples/">Configuration examples</a>.</li>
+</ol>
+<hr />
+<p><em>Õppematerjali koostaja: Priit Paap, 2026</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Üles
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Priit Paap
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.annotate", "content.code.copy", "content.tabs.link", "header.autohide", "announce.dismiss", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Kopeeritud", "clipboard.copy": "Kopeeri l\u00f5ikelauale", "search.result.more.one": "1 veel sellel lehel", "search.result.more.other": "# veel sellel lehel", "search.result.none": "Otsingule ei leitud \u00fchtegi vastet", "search.result.one": "Leiti \u00fcks tulemus", "search.result.other": "Leiti # tulemust", "search.result.placeholder": "Otsimiseks kirjuta siia", "search.result.term.missing": "Puudub", "select.version": "Vali versioon"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+      
+    
+  </body>
+</html>

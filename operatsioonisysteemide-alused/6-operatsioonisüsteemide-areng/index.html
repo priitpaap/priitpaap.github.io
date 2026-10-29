@@ -1,0 +1,2710 @@
+
+<!doctype html>
+<html lang="et" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../images/computer.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+    
+    
+      
+        <title>Operatsioonisüsteemide areng - IT alased õppematerjalid</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="deep-orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#operatsioonisusteemide-areng" class="md-skip">
+          Keri sisuni
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Päis">
+    <a href="../.." title="IT alased õppematerjalid" class="md-header__button md-logo" aria-label="IT alased õppematerjalid" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M348.8 32C340.7 46.1 336 62.5 336 80v16H64v224h272v64H64c-35.3 0-64-28.7-64-64V96c0-35.3 28.7-64 64-64zM336 432c0 17.5 4.7 33.9 12.8 48H120c-13.3 0-24-10.7-24-24s10.7-24 24-24zm96-400h96c26.5 0 48 21.5 48 48v352c0 26.5-21.5 48-48 48h-96c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48m24 64c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24zm56 144a32 32 0 1 0-64 0 32 32 0 1 0 64 0"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            IT alased õppematerjalid
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Operatsioonisüsteemide areng
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="deep-orange"  aria-label="Lülitu heledale režiimile"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Lülitu heledale režiimile" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-blue" data-md-color-accent="deep-orange"  aria-label="Lülitu tumedale režiimile"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Lülitu tumedale režiimile" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Otsi" placeholder="Otsi" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Otsing">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Jaga" aria-label="Jaga" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Lähtesta" aria-label="Lähtesta" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Otsingu lähtestamine
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Vaheleht" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://priitpaap.github.io" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Avalehele
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../linux/unixi-ja-bsd-ajalugu/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Linux
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ansible/ansibleintro/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Automatiseerimine
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Mitmesugust
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigatsioon" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="IT alased õppematerjalid" class="md-nav__button md-logo" aria-label="IT alased õppematerjalid" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M348.8 32C340.7 46.1 336 62.5 336 80v16H64v224h272v64H64c-35.3 0-64-28.7-64-64V96c0-35.3 28.7-64 64-64zM336 432c0 17.5 4.7 33.9 12.8 48H120c-13.3 0-24-10.7-24-24s10.7-24 24-24zm96-400h96c26.5 0 48 21.5 48 48v352c0 26.5-21.5 48-48 48h-96c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48m24 64c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24zm56 144a32 32 0 1 0-64 0 32 32 0 1 0 64 0"/></svg>
+
+    </a>
+    IT alased õppematerjalid
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://priitpaap.github.io" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Avalehele
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Linux
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ajalugu
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Ajalugu
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/unixi-ja-bsd-ajalugu/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.5 8H12v5l4.28 2.54.72-1.21-3.5-2.08zM13 3a9 9 0 0 0-9 9H1l3.96 4.03L9 12H6a7 7 0 0 1 7-7 7 7 0 0 1 7 7 7 7 0 0 1-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42A8.9 8.9 0 0 0 13 21a9 9 0 0 0 9-9 9 9 0 0 0-9-9"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Unixi ja BSD ajalugu
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/linuxi-ajalugu/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.5 8H12v5l4.28 2.54.72-1.21-3.5-2.08zM13 3a9 9 0 0 0-9 9H1l3.96 4.03L9 12H6a7 7 0 0 1 7-7 7 7 0 0 1 7 7 7 7 0 0 1-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42A8.9 8.9 0 0 0 13 21a9 9 0 0 0 9-9 9 9 0 0 0-9-9"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Linuxi ajalugu
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Paigaldamine
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Paigaldamine
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/debpaigaldus/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Debian Linuxi paigaldamine virutaalmasinale
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linuxi baasteadmised
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Linuxi baasteadmised
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/linuxi-baaskasud-spikker/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Linuxi käskude spikker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/linuxi-ulesehitus-ja-tookeskkond/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Linuxi ülesehitus ja töökeskkond
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/failihalduse-baaskasud/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Linuxi failhaldus ja baaskäsud
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/kataloogipuu-ja-failisusteemi-alused/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Linuxi katalogipuu ja failisusteemi alused
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/linuxi-kasutajate-haldus/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Linuxi kasutajate haldus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/linuxi-failioigused/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Linuxi failiõigused
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/linuxi-tarkvarahaldus/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 16.5c0 .38-.21.71-.53.88l-7.9 4.44c-.16.12-.36.18-.57.18s-.41-.06-.57-.18l-7.9-4.44A.99.99 0 0 1 3 16.5v-9c0-.38.21-.71.53-.88l7.9-4.44c.16-.12.36-.18.57-.18s.41.06.57.18l7.9 4.44c.32.17.53.5.53.88zM12 4.15l-1.89 1.07L16 8.61l1.96-1.11zM6.04 7.5 12 10.85l1.96-1.1-5.88-3.4zM5 15.91l6 3.38v-6.71L5 9.21zm14 0v-6.7l-6 3.37v6.71z"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Linuxi tarkvarahaldus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/tarkvarahaldus-debiani-laadsetes/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Tarkvarahaldus Debiani laadsetes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/tarkvarahaldus-red-hati-laadsetes/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.34 13.16c1.32 0 3.22-.27 3.22-1.84q.015-.18-.03-.36l-.78-3.4c-.18-.75-.34-1.09-1.66-1.75-1.02-.52-3.24-1.38-3.9-1.38-.61 0-.79.79-1.52.79-.7 0-1.22-.59-1.88-.59-.63 0-1.04.43-1.36 1.31 0 0-.88 2.5-1 2.86-.01.07-.02.13-.02.2 0 .97 3.82 4.15 8.93 4.15m3.43-1.19c.18.86.18.95.18 1.04 0 1.5-1.66 2.31-3.83 2.31-4.92 0-9.23-2.88-9.23-4.78 0-.27.06-.53.16-.77-1.77.08-4.05.4-4.05 2.42 0 3.32 7.84 7.39 14.05 7.39 4.76 0 5.95-2.15 5.95-3.85 0-1.34-1.15-2.86-3.23-3.76"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Tarkvarahaldus Red Hati laadsetes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/otsinguvahendid/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Otsinguvahendid
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/kasutajakeskkonna-seadistamine/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 19V7H4v12zm0-16a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-7 14v-2h5v2zm-3.42-4L5.57 9H8.4l3.3 3.3c.39.39.39 1.03 0 1.42L8.42 17H5.59z"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Kasutajakeskkonna seadistamine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/shelli-ja-keskkonnamuutujad/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.41 3c1.39 2.71 1.94 5.84 1.59 9-.2 3.16-1.3 6.29-3.17 9l-1.53-1c1.61-2.43 2.55-5.2 2.7-8 .34-2.8-.11-5.57-1.3-8zM5.17 3 6.7 4C5.09 6.43 4.15 9.2 4 12c-.34 2.8.12 5.57 1.3 8l-1.69 1c-1.4-2.71-1.96-5.83-1.61-9 .2-3.16 1.3-6.29 3.17-9m6.91 7.68 2.32-3.23h2.53l-3.78 5 2.2 4.92h-2.26L11.71 14l-2.43 3.33H6.76l3.9-5.12-2.13-4.76h2.27z"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Shelli ja keskkonnamuutujad
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linuxi serverid ja teenused
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Linuxi serverid ja teenused
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/dhcp/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    DHCP serveri seadistamine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/dns/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.5 10.57-.2.37c.26-.78.11-1.63.15-2.37l-.07-.02c-.07-1.85-1.67-3.82-3.09-4.48-1.23-.57-3.12-.67-3.99-.24.12-.11.6-.15.45-.23-1.37.13-1.06.47-2.11.74-.29.28.86-.22.23.16-.56.13-.82-.12-1.65.74.07.12.53-.35.15.12-.79-.09-2.48 1.8-2.84 2.42l.19.04c-.31.77-.72 1.26-.77 1.72-.08 1.14-.45 3.21.08 3.85l-.06.53.23.45-.12.01c.58 1.83.62.04 1.39 1.94-.11-.04-.23-.08-.39-.32-.02.19.24.69.54 1.08l-.12.14c.16.31.32.38.43.49-.63-.35.57 1.13.7 1.32l.1-.17c-.02.24.17.56.53 1.01l.3-.01c.13.24.58.68.85.7l-.18.24c.69.2.33.29 1.18.59l-.17-.3c.43.37.56.7 1.17.98.85.3.96.18 1.82.43-.73 0-1.59 0-2.17-.22-3.96-1.07-7.56-5.72-7.32-10.5-.06-.97.1-2.18-.06-2.42.22-.74.48-1.64 1.01-2.71-.04-.07.09.21.36-.24.16-.36.29-.75.5-1.1l.1-.03c.11-.61 1.43-1.55 1.85-2.02v.18c.86-.81 2.4-1.35 3.26-1.73-.23.25.51-.03 1.04-.06l-.49.28c.63-.16.6.07 1.25-.03-.23.03-.5.1-.46.16.72.08.84-.22 1.51 0l-.05-.2c.94.34 1.13.28 2.14.82.36.01.4-.22.93 0 .1.16-.02.19.64.59.07-.03-.13-.22-.27-.37 1.3.71 2.75 2.22 3.18 3.84-.41-.74-.04.39-.18.33.18.49.33 1 .43 1.53-.12-.43-.39-1.48-.86-2.15-.03.43-.6-.3-.29.66.22.34.05-.35.34.25 0 .29.11.58.18.95-.1-.02-.22-.41-.3-.31.1.5.27.72.33.76-.03.08-.12-.08-.12.24.04.74.21.43.29.46-.09.37-.41.79-.25 1.42l-.2-.56c-.05.53.11.63-.13 1.28.18-.6.16-1.1-.01-.85.09.82-.65 1.45-.58 1.98l-.21-.29c-.57.83-.01.45-.4 1.06.14-.23-.07-.08.11-.36-.12.01-.55.53-.94.83-1.54 1.23-3.39 1.4-5.15.73h-.01c.01-.04 0-.09-.12-.17-1.51-1.15-2.4-2.13-2.11-4.41.25-.17.31-1.12.84-1.45.32-.71 1.28-1.36 2.31-1.38 1.05-.06 1.94.56 2.39 1.14-.82-.75-2.14-.98-3.28-.43-1.15.53-1.84 1.8-1.76 3.07.06-.07.1-.02.12-.18-.03 2.47 2.66 4.28 4.6 3.37l.03.05c.78-.22.68-.39 1.19-.75-.04.09-.34.3-.16.3.25-.06 1.03-.79 1.42-1.13.17-.38-.1-.23.15-.69l.3-.15c.17-.48.35-.75.35-1.32"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    DNS serveri seadistamine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Automatiseerimine
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Automatiseerimine
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ansible
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Ansible
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansibleintro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ansible ülevaade
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansibleinstall/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ansible paigaldamine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansibleinventory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ansible inventory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansibleconf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ansible levinumad seadistused
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansiblenodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hallatavate hostide ühendamine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansiblemodules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Moodulid ja ad-hoc käsud
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansibleplaybooks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Playbookid ja YAML
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansiblevars/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Muutujad ja nende kasutamine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansiblejinja2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Jinja2 mallid
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansibleconditionals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tingimuslikkus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansibleloops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tsüklid
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansiblehandlers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tegevuste käivitamine ainult vajadusel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansiblevault/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Turvalisus ja Ansible Vault
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansibleroles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rollid ja struktuur
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansiblegalaxy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ansible Galaxy Collections
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansiblebestpractises/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ansible parimad praktikad
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mitmesugust
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Sisukord">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Sisukord
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-miks-operatsioonisusteemid-muutuvad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          1. Miks operatsioonisüsteemid muutuvad?
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-varased-arvutid-pakktootlusest-ajajaotuseni" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          2. Varased arvutid: pakktöötlusest ajajaotuseni
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-unix-ideed-mis-mojutasid-paljusid-susteeme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          3. Unix: ideed, mis mõjutasid paljusid süsteeme
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Unix: ideed, mis mõjutasid paljusid süsteeme">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bsd-ja-unixi-moju" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          BSD ja Unixi mõju
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-personaalarvutid-ja-graafiline-kasutajaliides" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          4. Personaalarvutid ja graafiline kasutajaliides
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Personaalarvutid ja graafiline kasutajaliides">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#personaalarvuti-arvuti-uhe-inimese-toolaual" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Personaalarvuti: arvuti ühe inimese töölaual
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#graafiline-liides-aknad-ikoonid-ja-menuud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Graafiline liides: aknad, ikoonid ja menüüd
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-gnu-ja-linux-koostoos-arendatav-tarkvara" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          5. GNU ja Linux: koostöös arendatav tarkvara
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-tanapaevaste-toolauasusteemide-tehniline-alus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          6. Tänapäevaste töölauasüsteemide tehniline alus
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Tänapäevaste töölauasüsteemide tehniline alus">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windows-nt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Windows NT
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mac-os-x" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Mac OS X
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-vorguuhendused-ja-mobiilsed-operatsioonisusteemid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          7. Võrguühendused ja mobiilsed operatsioonisüsteemid
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Võrguühendused ja mobiilsed operatsioonisüsteemid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#uksikust-arvutist-vorku-uhendatud-toovahendiks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Üksikust arvutist võrku ühendatud töövahendiks
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#telefonid-ja-puuteekraanid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Telefonid ja puuteekraanid
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-virtualiseerimine-ja-pilveteenused" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          8. Virtualiseerimine ja pilveteenused
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-olulisemad-pidepunktid-ajajoonel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          9. Olulisemad pidepunktid ajajoonel
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-enesekontroll" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          10. Enesekontroll
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Enesekontroll">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-millist-kasutajate-vajadust-lahendas-ajajaotuse-kasutuselevott" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          1. Millist kasutajate vajadust lahendas ajajaotuse kasutuselevõtt?
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-miks-oli-unixi-umberkirjutamine-c-keeles-oluline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          2. Miks oli Unixi ümberkirjutamine C-keeles oluline?
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-kas-windows-ja-macintosh-leiutasid-graafilise-kasutajaliidese" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          3. Kas Windows ja Macintosh leiutasid graafilise kasutajaliidese?
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-kas-linux-on-unixi-jargmine-versioon-kuidas-seostub-sellega-bsd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          4. Kas Linux on Unixi järgmine versioon? Kuidas seostub sellega BSD?
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-miks-oli-gnu-tarkvara-ja-linuxi-tuuma-uhendamine-oluline-arenguetapp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          5. Miks oli GNU tarkvara ja Linuxi tuuma ühendamine oluline arenguetapp?
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-milline-oli-windows-nt-tahtsus-windowsi-arengus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          6. Milline oli Windows NT tähtsus Windowsi arengus?
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-miks-ei-piisa-telefonis-ainult-toolauaarvuti-liidese-vaiksemaks-muutmisest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          7. Miks ei piisa telefonis ainult töölauaarvuti liidese väiksemaks muutmisest?
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-miks-aitas-virtualiseerimine-kaasa-pilveteenuste-levikule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          8. Miks aitas virtualiseerimine kaasa pilveteenuste levikule?
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kokkuvote" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Kokkuvõte
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Kokkuvõte">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#motle-opitule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Mõtle õpitule
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#teema-sonastik" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Teema sõnastik
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#allikad-ja-lisalugemine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Allikad ja lisalugemine
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="operatsioonisusteemide-areng">Operatsioonisüsteemide areng<a class="headerlink" href="#operatsioonisusteemide-areng" title="Permanent link">&para;</a></h1>
+<p>Operatsioonisüsteemide areng on seotud sellega, kuidas inimesed arvuteid kasutavad. Algul oli arvuti kallis töövahend, millele anti ülesandeid järjekorras. Tänapäeval töötavad operatsioonisüsteemid sülearvutites, telefonides, serverites ja paljudes muudes seadmetes. Selles materjalis vaatame, millised muutused selle arenguni viisid ja miks need olulised olid.</p>
+<div class="admonition info">
+<p class="admonition-title">Õpieesmärgid</p>
+<p>Pärast materjali läbimist oskad:</p>
+<ul>
+<li>selgitada, miks pakktöötluse kõrval kujunes ajajaotuslik tööviis;</li>
+<li>kirjeldada Unixi mõju operatsioonisüsteemide arengule;</li>
+<li>selgitada personaalarvutite ja graafilise kasutajaliidese leviku tähendust;</li>
+<li>eristada Unixi, BSD, GNU ja Linuxi ajaloolist rolli;</li>
+<li>kirjeldada Windows NT ja Mac OS X tähtsust tänapäevaste süsteemide kujunemisel;</li>
+<li>selgitada mobiilseadmete, virtualiseerimise ja pilveteenuste mõju operatsioonisüsteemidele.</li>
+</ul>
+</div>
+<h2 id="1-miks-operatsioonisusteemid-muutuvad">1. Miks operatsioonisüsteemid muutuvad?<a class="headerlink" href="#1-miks-operatsioonisusteemid-muutuvad" title="Permanent link">&para;</a></h2>
+<p>Operatsioonisüsteemi ülesanne on korraldada riistvara kasutamist ja pakkuda rakendustele vajalikke teenuseid. See ülesanne on püsinud, kuid arvutid ja nende kasutamine on muutunud.</p>
+<p>Arengut on suunanud mitu vajadust:</p>
+<ul>
+<li><strong>Ressursside parem kasutamine.</strong> Kallis arvuti ei peaks kasutajate tegevuse ootel tarbetult seisma.</li>
+<li><strong>Mugavam suhtlemine.</strong> Arvutit peaks saama kasutada ka inimene, kes ei ole programmeerija.</li>
+<li><strong>Töökindlus ja turvalisus.</strong> Ühe programmi viga ei peaks rikkuma teiste tööd ning kasutajate andmeid tuleb kaitsta.</li>
+<li><strong>Uued seadmed ja ühendused.</strong> Süsteem peab toetama näiteks võrku, puuteekraani, kaamerat ja akutoitel töötamist.</li>
+<li><strong>Erinevad kasutusviisid.</strong> Koduarvuti, telefon ja ettevõtte server vajavad osaliselt erinevaid võimalusi.</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Kuidas ajalugu õppida?</p>
+<p>Iga arenguetapi juures mõtle kahele küsimusele: <strong>millist probleemi lahendati</strong> ja <strong>mis muutus kasutaja jaoks</strong>. Aastaarvud aitavad sündmusi järjestada, kuid olulisem on mõista muutuste tähendust.</p>
+</div>
+<h2 id="2-varased-arvutid-pakktootlusest-ajajaotuseni">2. Varased arvutid: pakktöötlusest ajajaotuseni<a class="headerlink" href="#2-varased-arvutid-pakktootlusest-ajajaotuseni" title="Permanent link">&para;</a></h2>
+<p><strong>1950.</strong> aastate arvutid olid kallid ja nende kasutamine nõudis palju ettevalmistust. <strong>Pakktöötluse</strong> levik võimaldas ettevalmistatud töid automaatselt käivitada ning vähendada nende vahele jäävat aega. Kasutaja pidi aga endiselt ootama, kuni tema töö täideti ja tulemus väljastati.</p>
+<p><strong>1960.</strong> aastatel kasvas vajadus arvutiga töö käigus suhelda. Näiteks programmi katsetamisel oli kasulik tulemust kiiresti näha ja selle põhjal järgmine muudatus teha. <strong>Ajajaotuse</strong> areng võimaldas mitmel inimesel kasutada sama kallist arvutit interaktiivselt, igaühel oma terminali kaudu.</p>
+<p><strong>Muutuse tähtsus:</strong> arvuti muutus etteantud tööde täitjast ka kasutaja töö käigus antavatele käskudele vastavaks töövahendiks. Pakktöötlus jäi samal ajal kasutusse. </p>
+<h2 id="3-unix-ideed-mis-mojutasid-paljusid-susteeme">3. Unix: ideed, mis mõjutasid paljusid süsteeme<a class="headerlink" href="#3-unix-ideed-mis-mojutasid-paljusid-susteeme" title="Permanent link">&para;</a></h2>
+<p><strong>Unixi</strong> arendus algas <strong>1969. aastal</strong> Bell Labsis. Selle kujunemisel olid olulised Ken Thompson, Dennis Ritchie ja teised arendajad. Varasemast Multicsi projektist saadud kogemused aitasid luua väiksema ja lihtsama süsteemi.</p>
+<p>Unixi juures kujunes oluliseks tööriistade koostöö: üks programm täidab kindlat ülesannet ning selle tulemust saab kasutada järgmise programmi sisendina. Näiteks saab ühe tööriistaga otsida tekstist vajalikke ridu ja teisega need sortida.</p>
+<p><strong>1973. aastal</strong> kirjutati suur osa Unixist ümber <strong>C-programmeerimiskeeles</strong>. See lihtsustas süsteemi kohandamist erinevale riistvarale. Sellist omadust nimetatakse <strong>teisaldatavuseks</strong> (<em>portability</em>). Kohandamine nõuab endiselt tööd: see ei tähenda, et sama valmis programmifail sobiks kõigile protsessoritele.</p>
+<p><strong>Muutuse tähtsus:</strong> Unixi ideed ja tarkvara levisid teadusasutustes ning mõjutasid paljude hilisemate süsteemide ülesehitust.</p>
+<h3 id="bsd-ja-unixi-moju">BSD ja Unixi mõju<a class="headerlink" href="#bsd-ja-unixi-moju" title="Permanent link">&para;</a></h3>
+<p><strong>1970.</strong> aastate lõpus kujunes California ülikoolis Berkeleys <strong>BSD</strong> (<em>Berkeley Software Distribution</em>). Algul oli see Unixi juurde loodud lisade ja muudatuste kogum. Hiljem arenesid sellest iseseisvad süsteemid, näiteks FreeBSD, OpenBSD ja NetBSD.</p>
+<p>Unixi mõju on näha ka tänapäevases macOS-is ja Linuxi süsteemides, kuid nende seos Unixiga on erinev.</p>
+<div class="admonition tip">
+<p class="admonition-title">Unix, BSD ja Linux ei ole sama asi</p>
+<ul>
+<li><strong>Unix</strong> on ajalooline operatsioonisüsteem, mille ideed mõjutasid paljusid hilisemaid süsteeme.</li>
+<li><strong>BSD</strong> arenes ajalooliselt Unixi tarkvarast ja selle edasiarendustest.</li>
+<li><strong>Linux</strong> on eraldi kirjutatud Unixilaadne tuum. See ei ole Unixi järgmine versioon ega BSD haru.</li>
+</ul>
+</div>
+<h2 id="4-personaalarvutid-ja-graafiline-kasutajaliides">4. Personaalarvutid ja graafiline kasutajaliides<a class="headerlink" href="#4-personaalarvutid-ja-graafiline-kasutajaliides" title="Permanent link">&para;</a></h2>
+<h3 id="personaalarvuti-arvuti-uhe-inimese-toolaual">Personaalarvuti: arvuti ühe inimese töölaual<a class="headerlink" href="#personaalarvuti-arvuti-uhe-inimese-toolaual" title="Permanent link">&para;</a></h3>
+<p><strong>1970.</strong> ja <strong>1980.</strong> aastatel muutusid väiksemad arvutid kättesaadavaks ettevõtetele ja kodukasutajatele. <strong>Personaalarvuti</strong> (<em>personal computer</em>, PC) oli mõeldud eelkõige ühe inimese kasutusse.</p>
+<p><strong>1981. aastal</strong> tuli turule IBM PC. Sellega seostus Microsofti arendatud DOS-süsteem, mida IBM pakkus PC DOS-i nime all. MS-DOS levis ka IBM-iga ühilduvatel arvutitel.</p>
+<p><strong>MS-DOS</strong> (<em>Microsoft Disk Operating System</em>) pakkus tekstikäskudel põhinevat töökeskkonda. Kasutaja käivitas programme ja haldas faile käsurealt. Selle põhikasutus erines tänapäevasest töölauast, kus paljud rakendused töötavad korraga.</p>
+<p><strong>Muutuse tähtsus:</strong> arvuti muutus isiklikuks töövahendiks, millel sai näiteks kirjutada dokumente, teha tabelarvutusi ja mängida.</p>
+<h3 id="graafiline-liides-aknad-ikoonid-ja-menuud">Graafiline liides: aknad, ikoonid ja menüüd<a class="headerlink" href="#graafiline-liides-aknad-ikoonid-ja-menuud" title="Permanent link">&para;</a></h3>
+<p>Graafilise kasutajaliidese ideid arendati juba enne Windowsi ja Macintoshi. Oluline roll oli 1970. aastate <strong>Xerox PARC-i</strong> uurimistööl ja <strong>Alto</strong> arvutil.</p>
+<p><strong>1984. aastal</strong> esitletud Apple Macintosh aitas akende, ikoonide, menüüde ja hiirega juhitavat tööviisi laiema kasutajaskonnani tuua. <strong>1985. aastal</strong> ilmus Windows 1.0, mis pakkus MS-DOS-i peal töötavat graafilist keskkonda. Varane Windows erines tehniliselt tänapäevasest Windowsist.</p>
+<p><strong>1995. aastal</strong> ilmunud Windows 95 tõi Windowsi kasutajatele Start-menüü ja tegumiriba. Need aitasid programme käivitada ning avatud akende vahel liikuda.</p>
+<p><strong>Muutuse tähtsus:</strong> kasutaja sai paljusid toiminguid teha nähtavate valikute kaudu, ilma et peaks iga tegevuse jaoks käsku teadma.</p>
+<div class="admonition tip">
+<p class="admonition-title">Graafiline liides ei asendanud käsurida täielikult</p>
+<p>Graafiline liides muutis arvuti kasutamist, kuid käsurida jäi oluliseks haldamisel ja automatiseerimisel. Tänapäevases operatsioonisüsteemis saab sageli kasutada mõlemat.</p>
+</div>
+<h2 id="5-gnu-ja-linux-koostoos-arendatav-tarkvara">5. GNU ja Linux: koostöös arendatav tarkvara<a class="headerlink" href="#5-gnu-ja-linux-koostoos-arendatav-tarkvara" title="Permanent link">&para;</a></h2>
+<p><strong>1983. aastal</strong> kuulutas Richard Stallman välja <strong>GNU projekti</strong>. Tarkvara arendamine algas 1984. aastal. Eesmärk oli luua Unixiga ühilduv vaba operatsioonisüsteem, mille tarkvara saaks kasutada, uurida, muuta ja jagada.</p>
+<p><strong>1991. aastal</strong> alustas Linus Torvalds <strong>Linuxi tuuma</strong> arendamist. Linux oli Unixilaadne, kuid kirjutatud eraldi. Linuxi ühendamine GNU tööriistade ja teiste projektide tarkvaraga võimaldas luua terviklikke kasutatavaid operatsioonisüsteeme.</p>
+<p>Distributsioonide kujunemine lihtsustas nende komponentide kasutuselevõttu: kasutaja sai paigaldada koostatud terviku, selle asemel et kõik osad ise kokku panna. Sellest arengusuunast pärinevad näiteks Debian ja Ubuntu.</p>
+<p><strong>Muutuse tähtsus:</strong> süsteeme said koos arendada eri organisatsioonid ja vabatahtlikud ning tarkvara sai kohandada erinevateks kasutusotstarveteks.</p>
+<h2 id="6-tanapaevaste-toolauasusteemide-tehniline-alus">6. Tänapäevaste töölauasüsteemide tehniline alus<a class="headerlink" href="#6-tanapaevaste-toolauasusteemide-tehniline-alus" title="Permanent link">&para;</a></h2>
+<p>Kasutajaliidese kõrval arenes operatsioonisüsteemi sisemine töökorraldus. Tähtsad olid programmide mäluruumi kaitsmine, kasutajate õigused ja mitme programmi töö juhtimine. Need võimalused ei tekkinud alles personaalarvutites, kuid muutusid seal üha olulisemaks.</p>
+<h3 id="windows-nt">Windows NT<a class="headerlink" href="#windows-nt" title="Permanent link">&para;</a></h3>
+<p><strong>1993. aastal</strong> ilmus Windows NT 3.1. See oli DOS-iga seotud Windowsi harust erineva tehnilise alusega süsteem, mis oli mõeldud muu hulgas ettevõtete tööjaamadele ja serveritele.</p>
+<p><strong>2001. aastal</strong> ilmunud Windows XP viis NT-põhise tehnoloogia ka Windowsi peamise kodukasutajatele mõeldud tooteperekonna aluseks. Tänapäevane Windows, sealhulgas Windows 11, kuulub NT-põhisesse arenguliini.</p>
+<h3 id="mac-os-x">Mac OS X<a class="headerlink" href="#mac-os-x" title="Permanent link">&para;</a></h3>
+<p><strong>2001. aastal</strong> ilmus Apple’i Mac OS X. Selle tehniline alus erines varasemast klassikalisest Mac OS-ist ning kasutas NeXT-i tehnoloogiat ja BSD komponente. Mac OS X ühendas Unixil põhineva süsteemi graafilise töökeskkonnaga. Hiljem sai tooteperekonna nimeks macOS.</p>
+<p><strong>Muutuse tähtsus:</strong> töölauasüsteemides levisid tugevamad kaitsemehhanismid ja töökindlam mitme programmi töökorraldus. See vähendas võimalust, et ühe rakenduse viga rikub teiste tööd, kuid ei kõrvaldanud kõiki tõrkeid.</p>
+<div class="admonition example">
+<p class="admonition-title">Näide: rakendus lõpetab ootamatult töö</p>
+<p>Kui üks rakendus jookseb kokku, saab kasutaja sageli jätkata tööd teistes rakendustes. Seda toetavad protsesside eraldamine ja mälu kaitse. Kõik vead ei piirdu siiski ühe rakendusega: näiteks tõrge tuumas või draiveris võib mõjutada tervet süsteemi.</p>
+</div>
+<h2 id="7-vorguuhendused-ja-mobiilsed-operatsioonisusteemid">7. Võrguühendused ja mobiilsed operatsioonisüsteemid<a class="headerlink" href="#7-vorguuhendused-ja-mobiilsed-operatsioonisusteemid" title="Permanent link">&para;</a></h2>
+<h3 id="uksikust-arvutist-vorku-uhendatud-toovahendiks">Üksikust arvutist võrku ühendatud töövahendiks<a class="headerlink" href="#uksikust-arvutist-vorku-uhendatud-toovahendiks" title="Permanent link">&para;</a></h3>
+<p>Arvutivõrkude ja interneti levik muutis operatsioonisüsteemide rolli. Võrgu kaudu sai jagada faile ja printereid, kasutada serverite teenuseid ning hallata arvuteid kaugelt.</p>
+<p>Operatsioonisüsteemides muutusid oluliseks võrguühenduste seadistamine, kaugligipääs ja võrgu kaudu levivate ohtude eest kaitsmine. Serveris võib tähtsaim olla teenuste töö, kasutaja arvutis aga mugav juurdepääs neile.</p>
+<p><strong>Muutuse tähtsus:</strong> arvuti ei olnud enam ainult kohalik töövahend, vaid osa teiste seadmete ja teenustega seotud keskkonnast.</p>
+<h3 id="telefonid-ja-puuteekraanid">Telefonid ja puuteekraanid<a class="headerlink" href="#telefonid-ja-puuteekraanid" title="Permanent link">&para;</a></h3>
+<p>Mobiilsed operatsioonisüsteemid olid olemas ka enne iPhone’i ja Androidi. <strong>2007. aastal</strong> turule tulnud iPhone ning <strong>2008. aastal</strong> turule tulnud esimene Android-telefon olid olulised pidepunktid tänapäevase nutitelefoni kujunemisel. iPhone’i süsteem kandis algul nime iPhone OS ja sai hiljem nimeks iOS.</p>
+<p>Mobiilseade vajas töölauaarvutist erinevaid lahendusi:</p>
+<ul>
+<li>väikesel puuteekraanil kasutatavat liidest;</li>
+<li>aku säästmist ja taustatöö piiramist;</li>
+<li>kaamera, asukoha ja andurite kasutamist;</li>
+<li>mobiilside ja Wi-Fi ühenduste haldamist;</li>
+<li>rakenduste ligipääsuõiguste kontrollimist.</li>
+</ul>
+<p><strong>Muutuse tähtsus:</strong> operatsioonisüsteem pidi sobima kaasaskantavale seadmele ning ühendama suhtlemise, internetikasutuse ja rakendused ühte keskkonda.</p>
+<div class="admonition example">
+<p class="admonition-title">Näide: kaamera kasutamise luba</p>
+<p>Rakendus võib vajada pildistamiseks kaamerat. Operatsioonisüsteem võimaldab kasutajal otsustada, kas sellele rakendusele ligipääs anda. Rakenduse paigaldamine ja kõigi õiguste lubamine on erinevad otsused.</p>
+</div>
+<h2 id="8-virtualiseerimine-ja-pilveteenused">8. Virtualiseerimine ja pilveteenused<a class="headerlink" href="#8-virtualiseerimine-ja-pilveteenused" title="Permanent link">&para;</a></h2>
+<p><strong>Virtualiseerimine</strong> võimaldab luua füüsilise arvuti ressursside abil virtuaalseid arvuteid. <strong>Virtuaalmasinas</strong> saab töötada oma operatsioonisüsteem, näiteks Linux või Windows. Virtuaalmasinate tööks vajalikke ressursse korraldab <strong>hüperviisor</strong>.</p>
+<p>Virtualiseerimine ei tekkinud alles pilveteenustega. Selle juured ulatuvad 1960. aastate suurarvutitesse; hiljem levis see serverites ja personaalarvutites.</p>
+<p><strong>Muutuse tähtsus:</strong> ühel füüsilisel arvutil sai käitada mitut eraldi süsteemi, kasutada riistvara paindlikumalt ning luua katsetamiseks eraldatud keskkondi.</p>
+<div class="admonition example">
+<p class="admonition-title">Näide: operatsioonisüsteemi õppimine laboris</p>
+<p>Windowsi kasutav õppija saab virtuaalmasinas proovida Debin Linuxit. Debian töötab oma süsteemina virtuaalsel riistvaral. Nii saab paigaldamist ja seadistamist harjutada ilma põhiarvuti operatsioonisüsteemi asendamata.</p>
+</div>
+<p><strong>Pilveteenuste</strong> puhul pakub teenuseosutaja võrgu kaudu näiteks arvutusressursse, salvestusruumi või valmis rakendusi. Osa teenuseid töötab virtuaalmasinates. Pilveteenus võib pakkuda ka kaugelt kasutatavat töölauda.</p>
+<div class="admonition tip">
+<p class="admonition-title">Pilv ei kaota operatsioonisüsteemi vajadust</p>
+<p>Pilveteenuse taga töötavad samuti arvutid ja operatsioonisüsteemid. Kasutaja ei pruugi neid ise hallata. Näiteks veebirakenduse kasutamisel töötavad rakenduse osad kasutaja seadmes ja teenuseosutaja serverites.</p>
+</div>
+<p>Tänapäevane areng ühendab varasemaid ideid: ressursside jagamist, kasutusmugavust, võrguühendusi ja turvalisust. Uus lahendus ei muuda kõiki vanemaid tööviise tarbetuks.</p>
+<h2 id="9-olulisemad-pidepunktid-ajajoonel">9. Olulisemad pidepunktid ajajoonel<a class="headerlink" href="#9-olulisemad-pidepunktid-ajajoonel" title="Permanent link">&para;</a></h2>
+<p>Ajajoon on valik olulisematest muutustest, mitte kõigi süsteemide ja versioonide loend. Mitu arengusuunda toimus samal ajal.</p>
+<table>
+<thead>
+<tr>
+<th>Aeg</th>
+<th>Pidepunkt</th>
+<th>Miks see oluline oli?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1950.–1960. aastad</strong></td>
+<td>Pakktöötluse ja ajajaotuse areng.</td>
+<td>Tööde käivitamine muutus automaatsemaks ning mitu kasutajat said arvutiga interaktiivselt töötada.</td>
+</tr>
+<tr>
+<td><strong>1969 ja 1970. aastad</strong></td>
+<td>Unixi loomine, C-keele kasutuselevõtt ja BSD kujunemine.</td>
+<td>Levisid teisaldatavus, tööriistade koostöö ja hilisemaid süsteeme mõjutanud ideed.</td>
+</tr>
+<tr>
+<td><strong>1981</strong></td>
+<td>IBM PC ja DOS-süsteemide levik.</td>
+<td>Personaalarvuti muutus laiemalt kasutatavaks isiklikuks töövahendiks.</td>
+</tr>
+<tr>
+<td><strong>1983–1991</strong></td>
+<td>GNU projekti algus ja Linuxi tuuma loomine.</td>
+<td>Kujunesid olulised osad vabadest Unixilaadsetest operatsioonisüsteemidest.</td>
+</tr>
+<tr>
+<td><strong>1984–1985</strong></td>
+<td>Macintosh ja Windows 1.0.</td>
+<td>Graafiline tööviis jõudis rohkemate personaalarvutite kasutajateni.</td>
+</tr>
+<tr>
+<td><strong>1993</strong></td>
+<td>Windows NT 3.1.</td>
+<td>Alguse sai tänapäevase Windowsi NT-põhine tooteperekond.</td>
+</tr>
+<tr>
+<td><strong>1995</strong></td>
+<td>Windows 95.</td>
+<td>Windowsis levisid Start-menüü ja tegumiriba.</td>
+</tr>
+<tr>
+<td><strong>2001</strong></td>
+<td>Windows XP ja Mac OS X.</td>
+<td>Kodukasutajate süsteemides levisid NT-põhine Windows ja Unixil põhinev Apple’i süsteem.</td>
+</tr>
+<tr>
+<td><strong>2007–2008</strong></td>
+<td>iPhone ja esimene Android-telefon.</td>
+<td>Puuteekraan, mobiilne internet ja rakendused kujundasid nutitelefoni kasutamist.</td>
+</tr>
+<tr>
+<td><strong>2000. aastatest edasi</strong></td>
+<td>Virtualiseerimise laiem kasutamine ja pilveteenuste levik.</td>
+<td>Eraldi süsteeme ja teenuseid sai pakkuda paindlikult jagatud riistvaral. Virtualiseerimise idee ise on vanem.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="10-enesekontroll">10. Enesekontroll<a class="headerlink" href="#10-enesekontroll" title="Permanent link">&para;</a></h2>
+<p>Vasta kõigepealt ise. Seejärel ava vastus ja võrdle oma põhjendust.</p>
+<h3 id="1-millist-kasutajate-vajadust-lahendas-ajajaotuse-kasutuselevott">1. Millist kasutajate vajadust lahendas ajajaotuse kasutuselevõtt?<a class="headerlink" href="#1-millist-kasutajate-vajadust-lahendas-ajajaotuse-kasutuselevott" title="Permanent link">&para;</a></h3>
+<details class="success">
+<summary>Vaata vastust</summary>
+<p>Kasutajad vajasid võimalust arvutiga töö käigus suhelda, näiteks programmi katsetada ja tulemuse põhjal järgmine muudatus teha. Ajajaotus võimaldas sellist tööd mitmele inimesele sama arvuti kaudu. See ei muutnud pakktöötlust tarbetuks.</p>
+</details>
+<h3 id="2-miks-oli-unixi-umberkirjutamine-c-keeles-oluline">2. Miks oli Unixi ümberkirjutamine C-keeles oluline?<a class="headerlink" href="#2-miks-oli-unixi-umberkirjutamine-c-keeles-oluline" title="Permanent link">&para;</a></h3>
+<details class="success">
+<summary>Vaata vastust</summary>
+<p>See lihtsustas Unixi kohandamist erinevale riistvarale. Nii sai süsteem levida rohkematele arvutitele. Teisaldatavus ei tähenda, et sama valmis programmifail töötaks muutmata kujul igal protsessoril.</p>
+</details>
+<h3 id="3-kas-windows-ja-macintosh-leiutasid-graafilise-kasutajaliidese">3. Kas Windows ja Macintosh leiutasid graafilise kasutajaliidese?<a class="headerlink" href="#3-kas-windows-ja-macintosh-leiutasid-graafilise-kasutajaliidese" title="Permanent link">&para;</a></h3>
+<details class="success">
+<summary>Vaata vastust</summary>
+<p>Ei. Graafilise liidese ideid arendati varem, muu hulgas Xerox PARC-is. Macintosh ja Windows aitasid graafilist tööviisi laiema kasutajaskonnani tuua.</p>
+</details>
+<h3 id="4-kas-linux-on-unixi-jargmine-versioon-kuidas-seostub-sellega-bsd">4. Kas Linux on Unixi järgmine versioon? Kuidas seostub sellega BSD?<a class="headerlink" href="#4-kas-linux-on-unixi-jargmine-versioon-kuidas-seostub-sellega-bsd" title="Permanent link">&para;</a></h3>
+<details class="success">
+<summary>Vaata vastust</summary>
+<p>Linux ei ole Unixi järgmine versioon. See on eraldi kirjutatud Unixilaadne tuum. BSD ajalooline areng on seotud Unixi tarkvara ja selle edasiarendustega. Linux ja BSD on erinevad arengusuunad.</p>
+</details>
+<h3 id="5-miks-oli-gnu-tarkvara-ja-linuxi-tuuma-uhendamine-oluline-arenguetapp">5. Miks oli GNU tarkvara ja Linuxi tuuma ühendamine oluline arenguetapp?<a class="headerlink" href="#5-miks-oli-gnu-tarkvara-ja-linuxi-tuuma-uhendamine-oluline-arenguetapp" title="Permanent link">&para;</a></h3>
+<details class="success">
+<summary>Vaata vastust</summary>
+<p>Eraldi projektides loodud osad täiendasid üksteist. GNU tööriistade, Linuxi tuuma ja teiste projektide tarkvara ühendamine võimaldas koostada kasutatavaid vabu operatsioonisüsteeme. Nende arengusse said panustada paljud inimesed ja organisatsioonid.</p>
+</details>
+<h3 id="6-milline-oli-windows-nt-tahtsus-windowsi-arengus">6. Milline oli Windows NT tähtsus Windowsi arengus?<a class="headerlink" href="#6-milline-oli-windows-nt-tahtsus-windowsi-arengus" title="Permanent link">&para;</a></h3>
+<details class="success">
+<summary>Vaata vastust</summary>
+<p>Windows NT tõi DOS-iga seotud Windowsi harust erineva tehnilise aluse. Windows XP viis NT-põhise tehnoloogia Windowsi peamise kodukasutajatele mõeldud tooteperekonna aluseks. Samasse arenguliini kuulub tänapäevane Windows.</p>
+</details>
+<h3 id="7-miks-ei-piisa-telefonis-ainult-toolauaarvuti-liidese-vaiksemaks-muutmisest">7. Miks ei piisa telefonis ainult töölauaarvuti liidese väiksemaks muutmisest?<a class="headerlink" href="#7-miks-ei-piisa-telefonis-ainult-toolauaarvuti-liidese-vaiksemaks-muutmisest" title="Permanent link">&para;</a></h3>
+<details class="success">
+<summary>Vaata vastust</summary>
+<p>Telefon vajab puuteekraani jaoks sobivat suhtlemisviisi, aku säästmist, mobiilside haldamist ja andurite kasutamist. Lisaks peab süsteem korraldama rakenduste taustatööd ning õigusi kasutada näiteks kaamerat ja asukohta.</p>
+</details>
+<h3 id="8-miks-aitas-virtualiseerimine-kaasa-pilveteenuste-levikule">8. Miks aitas virtualiseerimine kaasa pilveteenuste levikule?<a class="headerlink" href="#8-miks-aitas-virtualiseerimine-kaasa-pilveteenuste-levikule" title="Permanent link">&para;</a></h3>
+<details class="success">
+<summary>Vaata vastust</summary>
+<p>Virtualiseerimine võimaldas käitada ühel füüsilisel arvutil mitut eraldi süsteemi ja jagada riistvara ressursse paindlikumalt. Teenuseosutaja sai nii luua ja hallata klientidele vajalikke keskkondi. Virtualiseerimine on üks pilveteenuseid toetav tehnoloogia, mitte pilveteenuse sünonüüm.</p>
+</details>
+<h2 id="kokkuvote">Kokkuvõte<a class="headerlink" href="#kokkuvote" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Operatsioonisüsteemide arengut suunavad ressursside kasutamine, kasutusmugavus, töökindlus, turvalisus ja uued seadmed.</li>
+<li>Varaste süsteemide arengus lisandus ettevalmistatud tööde automaatsele täitmisele võimalus arvutiga töö käigus suhelda.</li>
+<li>Unix mõjutas paljude hilisemate süsteemide ülesehitust. BSD arenes ajalooliselt Unixi tarkvarast, Linux on eraldi kirjutatud Unixilaadne tuum.</li>
+<li>Personaalarvutite ja graafiliste liideste levik tõi arvutid suurema kasutajaskonna igapäevatöösse.</li>
+<li>GNU, Linux ja teised projektid võimaldasid koostada vabu operatsioonisüsteeme.</li>
+<li>Windows NT ja Mac OS X aitasid kujundada tänapäevaste töölauasüsteemide tehnilist alust.</li>
+<li>Mobiilsüsteemid arvestavad puuteekraani, aku, andurite ja rakenduste õigustega.</li>
+<li>Virtualiseerimine võimaldab mitut eraldi süsteemi jagatud riistvaral; pilveteenused pakuvad ressursse ja rakendusi võrgu kaudu.</li>
+</ul>
+<h3 id="motle-opitule">Mõtle õpitule<a class="headerlink" href="#motle-opitule" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Vali üks arenguetapp ja selgita oma sõnadega, millist probleemi see lahendas. Too näide selle mõjust tänapäevasele arvutikasutusele.</li>
+<li>Miks kasutatakse ka praegu nii käsurida kui ka graafilist liidest? Too kummagi jaoks üks sobiv ülesanne.</li>
+<li>Milline seos vajab veel selgitamist: Unix ja BSD, GNU ja Linux või virtualiseerimine ja pilveteenus? Sõnasta üks küsimus, millele soovid vastust leida.</li>
+</ol>
+<h2 id="teema-sonastik">Teema sõnastik<a class="headerlink" href="#teema-sonastik" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Mõiste</th>
+<th>Selgitus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Teisaldatavus (<em>portability</em>)</td>
+<td>Võimalus kohandada tarkvara eri riistvarale või keskkondadele.</td>
+</tr>
+<tr>
+<td>Unix</td>
+<td>Bell Labsis 1969. aastal alguse saanud operatsioonisüsteem, mis mõjutas paljusid hilisemaid süsteeme.</td>
+</tr>
+<tr>
+<td>Unixilaadne süsteem (<em>Unix-like system</em>)</td>
+<td>Süsteem, mille ülesehitus ja tööviis sarnanevad Unixiga; see ei pea pärinema Unixi lähtekoodist.</td>
+</tr>
+<tr>
+<td>BSD (<em>Berkeley Software Distribution</em>)</td>
+<td>Berkeleys Unixi lisade ja edasiarendustena kujunenud tarkvara, millest arenesid mitmed iseseisvad operatsioonisüsteemid.</td>
+</tr>
+<tr>
+<td>Personaalarvuti; PC (<em>personal computer</em>)</td>
+<td>Eelkõige ühe inimese kasutusse mõeldud arvuti.</td>
+</tr>
+<tr>
+<td>MS-DOS (<em>Microsoft Disk Operating System</em>)</td>
+<td>Microsofti tekstikäskudel põhinev personaalarvutite operatsioonisüsteem.</td>
+</tr>
+<tr>
+<td>Graafiline kasutajaliides; GUI (<em>graphical user interface</em>)</td>
+<td>Kasutajaliides, milles kasutatakse näiteks aknaid, ikoone ja menüüsid.</td>
+</tr>
+<tr>
+<td>GNU</td>
+<td>Vaba Unixiga ühilduva operatsioonisüsteemi loomise projekt ja selle raames arendatud tarkvara.</td>
+</tr>
+<tr>
+<td>Linuxi tuum (<em>Linux kernel</em>)</td>
+<td>Linus Torvaldsi algatatud ja paljude arendajate edasi arendatud Unixilaadne operatsioonisüsteemi tuum.</td>
+</tr>
+<tr>
+<td>Distributsioon (<em>distribution</em>)</td>
+<td>Koostatud tarkvarakogum, mis ühendab tuuma, süsteemitööriistad, paketihalduse ja valitud rakendused kasutatavaks tervikuks.</td>
+</tr>
+<tr>
+<td>Windows NT</td>
+<td>1993. aastal esimese väljalaskeni jõudnud Windowsi tooteperekond ja tehniline arenguliin, millel põhineb tänapäevane Windows.</td>
+</tr>
+<tr>
+<td>Virtualiseerimine (<em>virtualization</em>)</td>
+<td>Füüsiliste ressursside abil virtuaalsete keskkondade, näiteks virtuaalmasinate loomine.</td>
+</tr>
+<tr>
+<td>Virtuaalmasin; VM (<em>virtual machine</em>)</td>
+<td>Tarkvaraliselt loodud arvutikeskkond, milles saab töötada oma operatsioonisüsteem.</td>
+</tr>
+<tr>
+<td>Hüperviisor (<em>hypervisor</em>)</td>
+<td>Tarkvara, mis korraldab virtuaalmasinate tööd ja nende ligipääsu füüsilistele ressurssidele.</td>
+</tr>
+<tr>
+<td>Pilveteenus (<em>cloud service</em>)</td>
+<td>Teenuseosutaja võrgu kaudu pakutav arvutusressurss, salvestusruum või rakendus.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="allikad-ja-lisalugemine">Allikad ja lisalugemine<a class="headerlink" href="#allikad-ja-lisalugemine" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="https://softwarepreservation.computerhistory.org/os/" rel="noopener" target="_blank">Computer History Museum: Operating Systems</a>.</li>
+<li><a href="https://www.computerhistory.org/pdp-1/timesharing/" rel="noopener" target="_blank">Computer History Museum: Timesharing</a>.</li>
+<li><a href="https://www.unix.org/unix_history.html" rel="noopener" target="_blank">The Open Group: History of UNIX</a>.</li>
+<li><a href="https://cgit.freebsd.org/src/tree/share/misc/bsd-family-tree" rel="noopener" target="_blank">FreeBSD projekt: BSD süsteemide ajalooline sugupuu</a>.</li>
+<li><a href="https://computerhistory.org/blog/microsoft-ms-dos-early-source-code/" rel="noopener" target="_blank">Computer History Museum: Microsoft MS-DOS early source code</a>.</li>
+<li><a href="https://computerhistory.org/apple-timeline/" rel="noopener" target="_blank">Computer History Museum: Apple Timeline</a>.</li>
+<li><a href="https://www.computerhistory.org/revolution/personal-computers/17/305/1208" rel="noopener" target="_blank">Computer History Museum: Windows 1.0</a></li>
+<li><a href="https://www.gnu.org/gnu/gnu-history.html" rel="noopener" target="_blank">GNU projekt: Overview of the GNU System</a>.</li>
+<li><a href="https://techcommunity.microsoft.com/blog/sbs/30-years-of-windows-server/3884810" rel="noopener" target="_blank">Microsoft: 30 years of Windows Server</a>.</li>
+<li><a href="https://www.ibm.com/think/topics/virtual-machines" rel="noopener" target="_blank">IBM: What Is a Virtual Machine?</a>.</li>
+</ol>
+<hr />
+<p><em>Õppematerjali koostaja: Priit Paap, 2026</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Üles
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Priit Paap
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.annotate", "content.code.copy", "content.tabs.link", "header.autohide", "announce.dismiss", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Kopeeritud", "clipboard.copy": "Kopeeri l\u00f5ikelauale", "search.result.more.one": "1 veel sellel lehel", "search.result.more.other": "# veel sellel lehel", "search.result.none": "Otsingule ei leitud \u00fchtegi vastet", "search.result.one": "Leiti \u00fcks tulemus", "search.result.other": "Leiti # tulemust", "search.result.placeholder": "Otsimiseks kirjuta siia", "search.result.term.missing": "Puudub", "select.version": "Vali versioon"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+      
+    
+  </body>
+</html>
