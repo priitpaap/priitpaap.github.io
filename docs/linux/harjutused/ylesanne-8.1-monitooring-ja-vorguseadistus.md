@@ -1,6 +1,6 @@
 # Ülesanne: Serveri monitooring, logide uurimine ja võrguseadistus
 
-Oled saanud haldamiseks Debian 13 serveri, mille töös esineb probleeme. Serveri ressursikasutus on kõrge, üks teenus ei käivitu ning varasem dhcp põhine võrguseadistus vajab uuendamist.
+Oled saanud haldamiseks Debian 13 serveri nimega **debianserver-sinunimi**, mille töös esineb probleeme. Serveri ressursikasutus on kõrge, üks teenus ei käivitu ning varasem dhcp põhine võrguseadistus vajab uuendamist.
 
 Sinu ülesanne on **uurida algseisu, leida probleemide põhjused, teha vajalikud parandused ja tõendada kontrollidega, et server töötab nõutud viisil**.
 
