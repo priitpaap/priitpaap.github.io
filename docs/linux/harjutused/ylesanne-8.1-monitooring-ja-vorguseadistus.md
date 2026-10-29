@@ -27,7 +27,7 @@ Sinu ülesanne on **uurida algseisu, leida probleemide põhjused, teha vajalikud
 
 ## 1. Ettevalmistamine ja süsteemi algseis
 
-**1.** Veendu, et kasutad õiget virtuaalmasinat. Pane raportisse kirja:
+**1.** Veendu, et kasutad õiget virtuaalmasinat. Loo uus raport (Google Docs) ja pane raportisse kirja:
 
 - oma nimi ja töö tegemise kuupäev;
 - serveri hostinimi;
