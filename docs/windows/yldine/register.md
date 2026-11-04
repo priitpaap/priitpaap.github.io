@@ -19,7 +19,7 @@ Materjali näited lähtuvad **Windows 11-st**. Läbiv näidisvõti `HKEY_CURRENT
 
 ## 1. Milleks registrit kasutatakse?
 
-Registris võib olla näiteks rakenduste seadistusi, teenuste käivitusparameetreid, draiverite konfiguratsiooni ning kasutaja töökeskkonna eelistusi. Registri andmeid loevad ja muudavad ka Windows ning rakendused ise. [1]
+Registris võib olla näiteks rakenduste seadistusi, teenuste käivitusparameetreid, draiverite konfiguratsiooni ning kasutaja töökeskkonna eelistusi. Registri andmeid loevad ja muudavad ka Windows ning rakendused ise.
 
 | Olukord | Mida registrist uurida? |
 | --- | --- |
@@ -33,7 +33,7 @@ Registrisse suvalise nimega väärtuse lisamine ei loo uut Windowsi funktsiooni.
 
 ### 2.1. Võti, alamvõti ja väärtus
 
-Registri struktuur meenutab kaustapuud. **Võti** (*key*) võib sisaldada alamvõtmeid ja **väärtusi** (*values*). Väärtusel on nimi, andmetüüp ja andmed. [1]
+Registri struktuur meenutab kaustapuud. **Võti** (*key*) võib sisaldada alamvõtmeid ja **väärtusi** (*values*). Väärtusel on nimi, andmetüüp ja andmed.
 
 Näide:
 
@@ -52,7 +52,7 @@ Selles võtmes võiksid olla järgmised väärtused:
 
 ### 2.2. Registri põhiharud
 
-Registriredaktoris on tavaliselt näha viis põhiharu. [2]
+Registriredaktoris on tavaliselt näha viis põhiharu.
 
 | Põhiharu | Lühend | Tähendus |
 | --- | --- | --- |
@@ -68,7 +68,7 @@ Registriredaktoris on tavaliselt näha viis põhiharu. [2]
 
 ### 2.3. Kus registri andmed paiknevad?
 
-**Registrisülem** (*hive*) on võtmete, alamvõtmete ja väärtuste loogiline kogum, mille andmeid toetavad registrifailid. Põhiharu ja sülem ei ole alati üks ja sama: osa põhiharusid on vaated teistele registriosadele. [3]
+**Registrisülem** (*hive*) on võtmete, alamvõtmete ja väärtuste loogiline kogum, mille andmeid toetavad registrifailid. Põhiharu ja sülem ei ole alati üks ja sama: osa põhiharusid on vaated teistele registriosadele.
 
 | Näide | Tüüpiline fail |
 | --- | --- |
@@ -89,7 +89,7 @@ Registriredaktoris on tavaliselt näha viis põhiharu. [2]
 | **REG_MULTI_SZ** | Mitmest stringist koosnev loend | Üksikud stringid on eraldatud nullmärkidega; registriredaktoris sisestatakse need tavaliselt eri ridadele. |
 | **REG_BINARY** | Binaarandmed | Andmete tähendus sõltub neid kasutavast komponendist. |
 
-Andmetüübi peab valima vastavalt seadistuse dokumentatsioonile. Tekst `"1"` ja DWORD-arv `1` ei ole sama tüüpi andmed. [4]
+Andmetüübi peab valima vastavalt seadistuse dokumentatsioonile. Tekst `"1"` ja DWORD-arv `1` ei ole sama tüüpi andmed.
 
 !!! tip "64-bitine Windows võib vajada DWORD-väärtust"
 
@@ -99,7 +99,7 @@ Registriredaktoris saab arvväärtuse sisestamisel valida kümnend- või kuuetei
 
 ## 4. Registriredaktori kasutamine
 
-Windowsi graafiline tööriist on **Registry Editor**, mille saab avada klahvidega `Win+R`, sisestades `regedit.exe`. Vajaduse korral kinnita haldusõiguste küsimine. [5]
+Windowsi graafiline tööriist on **Registry Editor**, mille saab avada klahvidega `Win+R`, sisestades `regedit.exe`. Vajaduse korral kinnita haldusõiguste küsimine.
 
 Vasakul asub võtmete puu, paremal valitud võtme väärtused. Teekonna saab kleepida akna ülaosas olevale aadressiribale. Otsimiseks kasuta `Ctrl+F` ja järgmise vaste leidmiseks `F3`. Kontrolli alati vaste täielikku teekonda.
 
@@ -126,7 +126,7 @@ Enne olemasoleva seadistuse muutmist salvesta algne olukord. Näidisvõtme puhul
 3. Kontrolli, et valitud oleks **Selected branch** ja õige teekond.
 4. Salvesta fail näiteks nimega `registrinaide-enne.reg`.
 
-Eksporditakse valitud võtme ja selle alamvõtmete väärtused. Faili saab importida käsuga **File → Import**. [5]
+Eksporditakse valitud võtme ja selle alamvõtmete väärtused. Faili saab importida käsuga **File → Import**.
 
 !!! warning "Import ei taasta haru täpset varasemat seisu"
 
@@ -138,7 +138,7 @@ Kui väärtust alguses ei olnud, pane see enne muudatust kirja: algse olukorra t
 
 ### 5.2. Taastepunkt ja süsteemi taastamine
 
-Ulatuslikuma muudatuse eel võib kasutada **süsteemikaitset** (*System Protection*) ja luua taastepunkti. Kontrolli esmalt, kas süsteemikaitse on lubatud. [6]
+Ulatuslikuma muudatuse eel võib kasutada **süsteemikaitset** (*System Protection*) ja luua taastepunkti. Kontrolli esmalt, kas süsteemikaitse on lubatud.
 
 1. Vajuta `Win+R` ja käivita `systempropertiesprotection.exe`.
 2. Vali süsteemiketas ning vajaduse korral **Configure → Turn on system protection** ja sobiv ruumipiirang.
@@ -210,7 +210,7 @@ DWORD-väärtuse lisamine või muutmine:
 reg.exe add "HKCU\Software\OSLab\RegistriNaide" /v Lubatud /t REG_DWORD /d 0
 ```
 
-`/v` määrab väärtuse nime, `/t` tüübi ning `/d` andmed. Olemasoleva väärtuse ülekirjutamisel võib tööriist küsida kinnitust. Seejärel kontrolli tulemust uuesti `reg.exe query` abil. [8]
+`/v` määrab väärtuse nime, `/t` tüübi ning `/d` andmed. Olemasoleva väärtuse ülekirjutamisel võib tööriist küsida kinnitust. Seejärel kontrolli tulemust uuesti `reg.exe query` abil.
 
 ### 7.2. Eksportimine ja importimine
 
@@ -222,7 +222,7 @@ reg.exe export "HKCU\Software\OSLab\RegistriNaide" ".\registrinaide-enne.reg"
 reg.exe import ".\registrinaide-enne.reg"
 ```
 
-`reg.exe export` kirjutab failina välja registriharu sisu; `reg.exe import` rakendab failis kirjeldatud muudatused. Failitee alguses olev `.\` viitab terminali töökaustale. [9, 10]
+`reg.exe export` kirjutab failina välja registriharu sisu; `reg.exe import` rakendab failis kirjeldatud muudatused. Failitee alguses olev `.\` viitab terminali töökaustale.
 
 ### 7.3. Ainult näidisvõtme eemaldamine
 
@@ -232,13 +232,13 @@ Kui näidet enam vaja ei ole:
 reg.exe delete "HKCU\Software\OSLab\RegistriNaide"
 ```
 
-Kontrolli kustutamisküsimuses teekonda ning kinnita ainult selle näidisvõtme eemaldamine. Seejärel peaks sama võtme päring teatama, et võtit ei leitud. [11]
+Kontrolli kustutamisküsimuses teekonda ning kinnita ainult selle näidisvõtme eemaldamine. Seejärel peaks sama võtme päring teatama, et võtit ei leitud.
 
 ## 8. Õigused ja erinevad registrivaated
 
 ### 8.1. Juurdepääsuõigused
 
-Registrivõtmetel on juurdepääsuõigused, mis võivad päranduda ülemvõtmelt. Need määravad muu hulgas lugemise, väärtuste muutmise ja alamvõtmete loomise võimaluse. Väärtustele eraldi õigusi ei määrata: juurdepääsu juhib neid sisaldav võti. [12]
+Registrivõtmetel on juurdepääsuõigused, mis võivad päranduda ülemvõtmelt. Need määravad muu hulgas lugemise, väärtuste muutmise ja alamvõtmete loomise võimaluse. Väärtustele eraldi õigusi ei määrata: juurdepääsu juhib neid sisaldav võti.
 
 Kasutaja saab tavaliselt muuta oma `HKCU\Software` seadeid; arvuti tasemel `HKLM` muudatused vajavad sageli kõrgendatud õigusi. Haldusõigustes töötamine ei anna siiski automaatselt kirjutamisõigust igale võtmele.
 
@@ -246,11 +246,11 @@ Kui tööriist käivitatakse teise administraatorikonto mandaadiga, võib ka `HK
 
 ### 8.2. 32- ja 64-bitiste rakenduste vaated
 
-64-bitises Windowsis on osa registrist 32- ja 64-bitistele rakendustele eraldi vaadetena. Näiteks x64-süsteemis võib 32-bitise rakenduse tarkvarateave olla registriredaktoris nähtav `HKLM\SOFTWARE\WOW6432Node` all. Kõik registriosad ei ole eraldatud. [13]
+64-bitises Windowsis on osa registrist 32- ja 64-bitistele rakendustele eraldi vaadetena. Näiteks x64-süsteemis võib 32-bitise rakenduse tarkvarateave olla registriredaktoris nähtav `HKLM\SOFTWARE\WOW6432Node` all. Kõik registriosad ei ole eraldatud.
 
 See selgitab, miks ühe tööriistaga nähtud väärtus ei pruugi teise arhitektuuriga rakenduse käitumist muuta.
 
-**Registri virtualiseerimine** on teistsugune ühilduvusmehhanism: teatud vanemate 32-bitiste rakenduste kirjutamised võidakse suunata kaitstud asukohast kasutajapõhisesse asukohta. Selle eesmärk on vanema tarkvara ühilduvus, mitte registri mälumahu piiramine. See ei rakendu kõigile programmidele. [14]
+**Registri virtualiseerimine** on teistsugune ühilduvusmehhanism: teatud vanemate 32-bitiste rakenduste kirjutamised võidakse suunata kaitstud asukohast kasutajapõhisesse asukohta. Selle eesmärk on vanema tarkvara ühilduvus, mitte registri mälumahu piiramine. See ei rakendu kõigile programmidele.
 
 ## 9. Registrimuudatuse tööjärjekord
 
