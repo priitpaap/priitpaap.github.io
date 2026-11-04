@@ -69,7 +69,7 @@ Organisatsiooni puhul tuleb teada, millist toodet ja kasutusõigust leping sisal
 | **Windows 11 Enterprise** | Organisatsioonid, mis vajavad ulatuslikumaid haldus- ja turbefunktsioone ning vastavaid kasutusõigusi. |
 | **Windows 11 Education** | Õppeasutuste jaoks mõeldud väljaanne ja litsentsimisvõimalused. |
 
-Näiteks Pro toetab liitumist Active Directory domeeniga ning kaugtöölauaühenduse vastuvõtmist Windowsi Remote Desktopi abil. Home saab olla kaugtöölaua klient, kuid ei paku sama vastuvõtufunktsiooni. [4]
+Näiteks Pro toetab liitumist Active Directory domeeniga ning kaugtöölauaühenduse vastuvõtmist Windowsi Remote Desktopi abil. Home saab olla kaugtöölaua klient, kuid ei paku sama vastuvõtufunktsiooni.
 
 **Home'i litsents ei anna automaatselt Pro kasutusõigust.** Samuti ei muuda ainuüksi Enterprise'i paigaldusfaili olemasolu arvutit Enterprise'i kasutamiseks litsentsituks.
 
@@ -77,13 +77,13 @@ Näiteks Pro toetab liitumist Active Directory domeeniga ning kaugtöölauaühen
 
 Täislitsents annab vastava toote kasutusõiguse ilma nõudeta omada varasemat sobivat Windowsi litsentsi. Täienduslitsents (*upgrade license*) eeldab sobivat aluslitsentsi.
 
-Windowsi töölauaversioonide kohalikuks kasutamiseks organisatsiooni kommertslitsentsimise kaudu hangitavad õigused on üldjuhul **täiendusõigused**. Sobiva aluslitsentsi saab näiteks arvutiga kaasa tulnud OEM-litsentsina või jaemüügist. Nõutav alus sõltub konkreetsest pakkumisest. [5]
+Windowsi töölauaversioonide kohalikuks kasutamiseks organisatsiooni kommertslitsentsimise kaudu hangitavad õigused on üldjuhul **täiendusõigused**. Sobiva aluslitsentsi saab näiteks arvutiga kaasa tulnud OEM-litsentsina või jaemüügist. Nõutav alus sõltub konkreetsest pakkumisest.
 
-**Näide:** ettevõttel on Windows 11 Pro litsentsidega arvutid. Sobiva Enterprise'i tellimuse ja tehniliste eelduste täitmisel saab kasutada Enterprise'i väljaannet. Ainult Enterprise'i tellimuse olemasolust ei saa järeldada, et iga operatsioonisüsteemita arvuti on kohe kohaliku Windowsi kasutamiseks litsentsitud. [3, 5]
+**Näide:** ettevõttel on Windows 11 Pro litsentsidega arvutid. Sobiva Enterprise'i tellimuse ja tehniliste eelduste täitmisel saab kasutada Enterprise'i väljaannet. Ainult Enterprise'i tellimuse olemasolust ei saa järeldada, et iga operatsioonisüsteemita arvuti on kohe kohaliku Windowsi kasutamiseks litsentsitud.
 
 ## 4. Aktiveerimisoleku kontrollimine
 
-Windows 11 aktiveerimisoleku leiad asukohast **Sätted → Süsteem → Aktiveerimine** (*Settings → System → Activation*). Vaata paigaldatud väljaannet ja aktiveerimisolekut. [1]
+Windows 11 aktiveerimisoleku leiad asukohast **Sätted → Süsteem → Aktiveerimine** (*Settings → System → Activation*). Vaata paigaldatud väljaannet ja aktiveerimisolekut.
 
 | Teade või olukord | Kuidas seda mõista? |
 | --- | --- |
@@ -104,25 +104,25 @@ Organisatsioonis võib aktiveerimine toimuda automaatselt. Levinud lahendused on
 | **MAK — Multiple Activation Key** | Organisatsiooni võtit kasutatakse lubatud arvu aktiveerimiste tegemiseks Microsofti aktiveerimisteenuse kaudu. |
 | **Tellimuspõhine aktiveerimine** | Sobiva litsentsiga kasutaja ja seadme puhul võimaldab tellimus kasutusele võtta näiteks Enterprise'i väljaande. |
 
-Kasutusel võib olla ka Active Directory põhine aktiveerimine. Kõik need on aktiveerimise korraldamise viisid; kasutusõigus peab tulema sobivast litsentsist. [3, 6]
+Kasutusel võib olla ka Active Directory põhine aktiveerimine. Kõik need on aktiveerimise korraldamise viisid; kasutusõigus peab tulema sobivast litsentsist.
 
 ## 5. Taaspaigaldus, arvutivahetus ja virtuaalmasinad
 
 ### 5.1. Windowsi taaspaigaldamine samasse arvutisse
 
-Kui seadmel on digitaallitsents, saab samasse seadmesse sama Windowsi väljaande tavaliselt uuesti paigaldada ilma tootevõtit sisestamata. Võrguühenduse tekkimisel aktiveerub see üldjuhul automaatselt. [1]
+Kui seadmel on digitaallitsents, saab samasse seadmesse sama Windowsi väljaande tavaliselt uuesti paigaldada ilma tootevõtit sisestamata. Võrguühenduse tekkimisel aktiveerub see üldjuhul automaatselt.
 
 Enne paigaldamist pane kirja kasutatav väljaanne ja aktiveerimisolek ning varunda andmed. Kui seadmel on Home'i kasutusõigus, vali taaspaigaldamisel Home; Pro valimine ei anna Pro litsentsi.
 
 ### 5.2. Riistvara või kogu arvuti vahetamine
 
-Oluline riistvaramuudatus, eriti emaplaadi vahetus, võib põhjustada vajaduse Windows uuesti aktiveerida. Sobival juhul aitab aktiveerimise tõrkeotsing ja varem seotud Microsofti konto. Tootja tehtud garantiiremondi puhul võib abi saada arvuti tootjalt. [7]
+Oluline riistvaramuudatus, eriti emaplaadi vahetus, võib põhjustada vajaduse Windows uuesti aktiveerida. Sobival juhul aitab aktiveerimise tõrkeotsing ja varem seotud Microsofti konto. Tootja tehtud garantiiremondi puhul võib abi saada arvuti tootjalt.
 
 **Taasaktiveerimine ja litsentsi üleviimine on erinevad toimingud.** Esimene lahendab aktiveerimise tehnilise seisundi; teise lubatavus sõltub kasutusõigusest.
 
 ### 5.3. Windows virtuaalmasinas
 
-Virtuaalmasin on litsentsimise seisukohalt samuti arvestatav Windowsi kasutuskoht. Hostarvuti Windowsi litsents ei anna automaatselt piiramatut õigust käivitada täiendavaid Windowsi virtuaalmasinaid. Õigused sõltuvad litsentsist ja lepingust. [2, 5]
+Virtuaalmasin on litsentsimise seisukohalt samuti arvestatav Windowsi kasutuskoht. Hostarvuti Windowsi litsents ei anna automaatselt piiramatut õigust käivitada täiendavaid Windowsi virtuaalmasinaid. Õigused sõltuvad litsentsist ja lepingust.
 
 !!! example "Windows kooli laboris"
 
@@ -130,7 +130,7 @@ Virtuaalmasin on litsentsimise seisukohalt samuti arvestatav Windowsi kasutuskoh
 
 ## 6. Varasema versiooni kasutamine
 
-**Varasema versiooni kasutamise õigus** (*downgrade rights*) võib lubada litsentsitud Windowsi asemel kasutada varasemat versiooni. See sõltub väljaandest ja litsentsitingimustest. Organisatsiooni kommertslitsentsidel on sellised õigused, jaemüügi Windowsi litsentsidel üldjuhul mitte; OEM-i puhul tuleb vaadata vastava toote tingimusi. [8]
+**Varasema versiooni kasutamise õigus** (*downgrade rights*) võib lubada litsentsitud Windowsi asemel kasutada varasemat versiooni. See sõltub väljaandest ja litsentsitingimustest. Organisatsiooni kommertslitsentsidel on sellised õigused, jaemüügi Windowsi litsentsidel üldjuhul mitte; OEM-i puhul tuleb vaadata vastava toote tingimusi.
 
 Allaviimisõigus ei tähenda õigust kasutada sama litsentsi alusel mõlemat versiooni korraga. Samuti tuleb eraldi hinnata varasema versiooni turvatoe olemasolu: kasutusõigus ja turvauuenduste saamine on erinevad küsimused.
 
@@ -195,14 +195,13 @@ Vasta kõigepealt ise. Seejärel ava vastus ja võrdle oma põhjendust.
 ## Allikad ja lisalugemine
 
 1. [Microsoft Support — Activate Windows](https://support.microsoft.com/en-us/windows/activation/activate-windows).
-2. [Microsoft — Windows 11 litsentsitingimused (PDF)](https://www.microsoft.com/content/dam/microsoft/usetm/documents/windows/11/oem-%28pre-installed%29/Useterms_OEM_Windows_11_EnglishGreatBritain.pdf). Toote ja keele järgi saab tingimusi valida ka [Microsofti litsentsitingimuste lehel](https://www.microsoft.com/useterms).
+2. [Microsoft — Windows 11 litsentsitingimused (PDF)](https://www.microsoft.com/content/dam/microsoft/usetm/documents/windows/11/oem-%28pre-installed%29/Useterms_OEM_Windows_11_EnglishGreatBritain.pdf). 
 3. [Microsoft Learn — Windows subscription activation](https://learn.microsoft.com/en-us/windows/deployment/windows-subscription-activation).
 4. [Microsoft — Windows 11 Home'i ja Pro võrdlus](https://www.microsoft.com/en-us/windows/compare-windows-11-home-vs-pro-versions).
 5. [Microsoft — Windows 11 Qualifying Operating System Licensing Guidance](https://www.microsoft.com/licensing/guidance/Windows-11-Qualifying-Operating-System).
 6. [Microsoft Learn — Activate clients running Windows](https://learn.microsoft.com/en-us/windows/deployment/volume-activation/activate-windows-clients-vamt).
 7. [Microsoft Support — Reactivating Windows after a hardware change](https://support.microsoft.com/en-us/windows/activation/reactivating-windows-after-a-hardware-change).
 8. [Microsoft — Downgrade Rights Licensing Guidance](https://www.microsoft.com/licensing/guidance/Downgrade-rights).
-9. [Microsoft Support — Find your Windows product key](https://support.microsoft.com/en-us/windows/activation/find-your-windows-product-key).
 
 ---
 
