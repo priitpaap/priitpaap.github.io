@@ -60,7 +60,7 @@ Androidi seadmes võib olla kuvatud ka tootja kasutajaliidese nimi ja versioon, 
 
 Vasta oma töös järgmisele küsimusele.
 
-1. Nimeta üks praktiline olukord, kus on vaja teada operatsioonisüsteemi täpset versiooni või arhitektuuri.
+1. Nimeta üks praktiline olukord, kus on vaja teada operatsioonisüsteemi täpset versiooni või arhitektuuri ja selgita miks.
 
 
 ## Esitamine
@@ -72,7 +72,7 @@ Esita töö **ühe PDF-failina Moodle'i kursuse vastava ülesande juurde**.
 - sinu nime ja õpperühma;
 - täidetud Windowsi arvuti andmete tabelit;
 - täidetud nutiseadme andmete tabelit;
-- vastuseid kahele võrdlusküsimusele.
+- vastuset küsimusele.
 
 Enne esitamist ava PDF ja kontrolli, et sisu oleks loetav. 
 
