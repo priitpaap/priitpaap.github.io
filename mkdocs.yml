@@ -103,6 +103,9 @@ nav:
     - Otsinguvahendid: linux/otsinguvahendid.md
     - Kasutajakeskkonna seadistamine: linux/kasutajakeskkonna-seadistamine.md
     - Shelli ja keskkonnamuutujad: linux/shelli-ja-keskkonnamuutujad.md
+    - Võrguseaded Linuxis: linux/vorguseaded-linuxis.md
+    - Logid Linuxis: linux/logid-linuxis.md
+    - Süsteemi monitooring: linux/systeemi-monitooring.md
   - Linuxi serverid ja teenused:
     - DHCP serveri seadistamine: linux/dhcp.md
     - DNS serveri seadistamine: linux/dns.md

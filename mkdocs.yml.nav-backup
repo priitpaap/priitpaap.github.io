@@ -102,6 +102,7 @@ nav:
         linux/tarkvarahaldus-red-hati-laadsetes.md
     - Otsinguvahendid: linux/otsinguvahendid.md
     - Kasutajakeskkonna seadistamine: linux/kasutajakeskkonna-seadistamine.md
+    - Shelli ja keskkonnamuutujad: linux/shelli-ja-keskkonnamuutujad.md
   - Linuxi serverid ja teenused:
     - DHCP serveri seadistamine: linux/dhcp.md
     - DNS serveri seadistamine: linux/dns.md
