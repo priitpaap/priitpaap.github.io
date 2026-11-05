@@ -1,3 +1,5 @@
+icon:material/debian
+
 # Linuxi süsteemi monitooring
 
 **Monitooring** ehk **seire** tähendab süsteemi seisundi ja muutuste jälgimist. Linuxi serveris uurime näiteks protsessori kasutust, mälu, kettaruumi, võrguühendusi ning teenuste tööd. Eesmärk on märgata probleemi, leida selle põhjus ja kontrollida, kas lahendus aitas. Regulaarne monitooring aitab IT-spetsialistidel ennetada probleeme enne, kui need muutuvad tõsisteks.

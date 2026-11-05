@@ -1,3 +1,5 @@
+icon:material/debian
+
 # Võrguparameetrite seadistamine Linuxis
 
 Linuxi võrguühendus vajab sobivat IP-aadressi, võrguprefiksit, marsruute ja nimelahendust. Neid saab vaadata ühiste tööriistadega, kuid **püsiva seadistuse tegemise viis sõltub kasutatavast võrguhaldurist**.

@@ -20,7 +20,7 @@ Failiõigused moodustavad ühe osa Linuxi turvamudelist. Need määravad, kes v�
 ## Õpieesmärgid
 
 Pärast materjali läbimist oskad:
-
+﻿
 - selgitada Linuxi failiõiguste eesmärki;
 - lugeda `ls -l` väljundist faili tüüpi, omanikku, gruppi ja õigusi;
 - eristada omaniku, grupi ja teiste kasutajate õigusi;
