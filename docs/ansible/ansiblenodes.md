@@ -187,6 +187,17 @@ Windowsi masinatele saab Ansible'iga ligi ka OpenSSH-serveri kaudu, mis on täna
     ```powershell
     icacls.exe "C:\ProgramData\ssh\administrators_authorized_keys" /inheritance:r /grant "Administrators:F" /grant "SYSTEM:F"
     ```
+10. Sea Windosi vaikimisi shelliks powershell:
+    
+```powershell
+New-ItemProperty `
+  -Path "HKLM:\SOFTWARE\OpenSSH" `
+  -Name DefaultShell `
+  -Value "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" `
+  -PropertyType String `
+  -Force
+```
+
 10. Taaskäivita SSH teenus:
     ```powershell
     Restart-Service sshd
