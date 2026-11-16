@@ -1,114 +1,96 @@
-# Ülesanne: ühe operatsioonisüsteemi areng nelja sammuga
+# Operatsioonisüsteemi ajajoone koostamine
 
-Operatsioonisüsteemi ajalugu ei ole ainult versiooninumbrite loend. Olulised on muutused, mis mõjutasid seda, kuidas inimesed süsteemi kasutavad. Selles ülesandes uurid üht operatsioonisüsteemi, valid selle arengust neli pidepunkti ja selgitad nende tähendust.
+## Eesmärk
 
-!!! info "Ülesande eesmärk ja töökorraldus"
+Ülesande eesmärk on uurida ühe operatsioonisüsteemi arengut ning selgitada, kuidas olulisemad muudatused on mõjutanud selle kasutamist.
 
-    Ülesande eesmärk on õppida valima operatsioonisüsteemi arengust olulisi muutusi, selgitama nende mõju kasutajale ja seostama süsteemi tänapäevase kasutamisega.
+## Vajalikud vahendid
 
-    - **Töövorm:** individuaalülesanne.
-    - **Orienteeruv aeg:** 30–40 minutit.
-    - **Töö maht:** soovitatavalt üks lehekülg koos tabeli, kasutusnäite ja allikatega.
-    - **Hindamine:** arvestatud või mittearvestatud.
+- Internetiühendusega arvuti.
+- Ajajoone koostamiseks sobiv programm, näiteks diagrams.net, PowerPoint või LibreOffice Impress.
+- Võimalus salvestada töö PDF-failina.
 
-## 1. Vali üks operatsioonisüsteem
+## 1. Operatsioonisüsteemi valimine
 
-Vali uurimiseks **üks** järgmistest teemadest.
+Vali uurimiseks **üks** järgmistest teemadest:
 
-| Teema | Uurimise piirid |
+- Windowsi töölauaversioonid;
+- Ubuntu;
+- Debian;
+- macOS;
+- Android;
+- iOS;
+- FreeBSD.
+
+**Nimeta töö alguses valitud operatsioonisüsteem.**
+
+Näiteks Windowsi valimisel keskendu personaalarvutite versioonidele. Ubuntu valimisel käsitle Ubuntu arengut.
+
+## 2. Oluliste verstapostide leidmine
+
+Vali operatsioonisüsteemi arenguloost **kuus väljalaset või olulist sündmust**:
+
+- esimene avalik väljalase või arenguloo algus;
+- neli sinu hinnangul olulist vahepealset väljalaset või muutust;
+- töö tegemise ajal uusim stabiilne versioon.
+
+Vali vahepealsed verstapostid selle järgi, millised muudatused mõjutasid kasutajaid või süsteemi kasutusvõimalusi kõige rohkem. Kõiki versioone loetleda ei ole vaja.
+
+### Iga verstaposti andmed
+
+| Andmed | Mida tuleb välja tuua? |
 | --- | --- |
-| **Windowsi tööjaamasüsteemid** | Alusta Windows 1.0-st ning jõua tänapäevase Windowsini. Windows Serverit ei ole vaja käsitleda. |
-| **macOS** | Alusta Mac OS X-i esimesest avalikust töölauaväljalaskest. Varasemat klassikalist Mac OS-i ja iOS-i ei ole vaja käsitleda. |
-| **Ubuntu** | Uuri ainult Ubuntu arengut. Debiani ja teiste Linuxi distributsioonide ajalugu ei ole vaja lisada. |
-| **Android** | Alusta esimesest avalikust Androidi versioonist. Eri telefonitootjate ajalugu ei ole vaja käsitleda. |
+| **Aeg** | Aasta ja võimaluse korral täpsem väljalaskekuupäev. |
+| **Nimetus** | Versiooni või sündmuse nimetus. |
+| **Lühikirjeldus** | Selgita oma sõnadega, mis muutus ja miks see oluline oli. Piisab 2–3 lausest. |
 
-Kasuta alustuseks õppematerjale „Operatsioonisüsteemide areng: olulisemad muutused” ja „Tänapäevased operatsioonisüsteemid ja nende kasutusvaldkonnad”. Täpsusta vajalikku infot veebiallikate abil.
+!!! tip "Kirjelda konkreetset muutust"
 
-## 2. Koosta nelja arengupunktiga tabel
+    Selgita, mida kasutaja sai pärast uuendust teha või kuidas muutus süsteemi kasutamine. Ainult märkusest „süsteem muutus paremaks ja kiiremaks” ei piisa.
 
-Vali oma süsteemi arengust järgmised neli pidepunkti:
+## 3. Ajajoone koostamine
 
-1. **Esimene väljalase:** millal süsteem kasutajateni jõudis ja milleks see oli mõeldud?
-2. **Esimene oluline muutus:** milline uus võimalus või muudatus mõjutas kasutamist?
-3. **Teine oluline muutus:** milline hilisem muudatus oli kasutajale tähtis?
-4. **Praegune stabiilne versioon:** milline on töö tegemise ajal uusim ametlikult avaldatud stabiilne versioon?
+Paiguta vähemalt kuus verstaposti **vanemast uuemani** loetavale ajajoonele. Lisa iga verstaposti juurde eelmises jaotises nõutud andmed.
 
-Kaks keskmist punkti peavad käsitlema **erinevaid sisulisi muutusi**. Need võivad puudutada näiteks kasutajaliidest, turvalisust, riistvaratuge või rakenduste kasutamist. Ainult uue versiooninumbri nimetamisest ei piisa.
+Kasuta endale sobivat vahendit. Ajajoon võib paikneda ühel või mitmel leheküljel.
 
-Esita punktid **ajalises järjekorras**, varasemast hilisemani. Ajatähiseks piisab aastast või kuust ja aastast; täpset päeva ei pea otsima. Versiooni kontrollimise kuupäev kirjuta siiski päevase täpsusega.
+Oluline on, et sündmuste järjekord ja kirjeldused oleksid selgelt loetavad ja visuaalsed arusaadav. 
 
-Kasuta järgmist tabelit oma töö alusena. Kirjuta iga arengupunkti selgituseks kokku **1–2 lühikest lauset**, jaotades need kahe viimase veeru vahel.
+## 4. Vasta küsimustele
 
-| Aasta või kuupäev | Versioon või arenguetapp | Mis oli uus või muutus? | Miks see kasutajale oluline oli? |
-| --- | --- | --- | --- |
-| … | Esimene väljalase: … | Milleks süsteem loodi? | Mida kasutaja sellega teha sai? |
-| … | Esimene oluline muutus: … | Milline võimalus lisandus või muutus? | Kuidas see kasutamist mõjutas? |
-| … | Teine oluline muutus: … | Milline hilisem võimalus lisandus või muutus? | Kuidas see kasutamist mõjutas? |
-| … | Praegune stabiilne versioon: …; kontrollitud: … | Kirjuta versiooni täpne tähis. Uut funktsiooni ei pea selles reas otsima. | Millisele seadmele või kasutajale see sobib? |
+Lisa ajajoone järele vastused küsimustel:
 
-!!! tip "Selgita muutuse tähendust"
+- Milline ajajoonele valitud muudatus oli sinu hinnangul kõige olulisem ja miks?
+- Kui üks ajajoonel kirjeldatud uuendus oleks jäänud tegemata, kuidas mõjutaks see operatsioonisüsteemi kasutamist tänapäeval? Vali üks uuendus ja too konkreetne näide.
 
-    „Ilmus uus versioon” ei selgita, miks sündmus oluline oli. Kirjelda konkreetset muudatust ja selle mõju: kas toiming muutus lihtsamaks, süsteem sai toetada uusi seadmeid või kasutaja andmete kaitse paranes?
+## 5. Allikate kasutamine
 
-!!! tip "Leia praegune stabiilne versioon"
+- Kasuta vähemalt **kahte allikat**, millest vähemalt üks on operatsioonisüsteemi arendaja ametlik veebileht või dokumentatsioon.
+- Lisa töö lõppu kasutatud veebilehtede pealkirjad ja lingid.
+- Uusima stabiilse versiooni juurde märgi ka kuupäev, millal seda kontrollisid ( TI-l pole alati viimaseid andmeid, kontrolli allikaid)
 
-    Kontrolli versiooni tootja või projekti ametlikust allikast. Erista valmis väljalaset arendus- ja beetaversioonist. Vajaduse korral täpsusta põhiversiooni kõrval ka funktsiooni- või hooldusväljalase.
+## Esitamine
 
-    Androidi puhul uuri Androidi platvormi versiooni, mitte ainult sinu telefoni jaoks pakutavat viimast uuendust.
+Esita töö **ühe PDF-failina Moodle'i kursuse vastava ülesande juurde** või **jaga seda lingina**.
 
-## 3. Lisa tänapäevane kasutusnäide
+**Töö peab sisaldama:**
 
-Kirjuta tabeli alla **3–4 lauset**, mis vastavad järgmisele küsimusele:
+- sinu nime ja õpperühma;
+- valitud operatsioonisüsteemi nimetust;
+- kuue verstapostiga ajajoont koos nõutud andmetega;
+- vastuseid kahele küsimusele;
+- kasutatud allikate loendit.
 
-> Kirjelda üht konkreetset olukorda, kus valitud operatsioonisüsteem sobib kasutamiseks. Kes seda kasutab, mida ta teeb ja milline süsteemi omadus teda aitab?
+Enne esitamist, et ajajoon, tekst ja lingid oleksid loetavad ning sisu ei oleks lehe servast välja lõigatud.
 
-Vali näiteks kindel õppeülesanne, tööülesanne või serveriteenus. Seo põhjendus konkreetse võimaluse või rakendusega. Üldine väide „sobib kõigile” ei ole piisav põhjendus.
+## Hindamise alused
 
-## 4. Lisa allikad
+Ülesanne on **"arvestatud"**, kui:
 
-Lisa töö lõppu **vähemalt kahe kasutatud veebiallika lingid**. Vähemalt üks neist peab olema operatsioonisüsteemi tootja või projekti ametlik allikas.
-
-- Ajalooliste muutuste uurimiseks sobivad näiteks ametlikud väljalasketeated, dokumentatsioon ja arvutiajaloo muuseumide materjalid.
-- Praegune stabiilne versioon kontrolli ametlikust väljalaskeinfost või allalaadimislehelt.
-- Kirjuta selgitused **oma sõnadega**. Ära kopeeri pikki lõike allikatest.
-
-Allika juurde pane selle pealkiri või lühike kirjeldus, näiteks „Projekti väljalasketeade” või „Tootja versiooniinfo”.
-
-## 5. Töö esitamine
-
-Esita Moodle'is ülesande alla **üks PDF- või DOCX-fail**, mis sisaldab:
-
-1. sinu nime ja valitud operatsioonisüsteemi;
-2. nelja arengupunktiga tabelit;
-3. tänapäevast kasutusnäidet;
-4. kasutatud allikate linke.
-
-Faili nimi võiks olla näiteks `eesnimi_perenimi_os_areng.pdf` või `eesnimi_perenimi_os_areng.docx`.
-
-Eraldi ajajoone koostamise keskkonda ei ole vaja kasutada. Kujundust eraldi ei hinnata, kuid tabel ja tekst peavad olema loetavad.
-
-## 6. Hindamine
-
-Töö on **arvestatud**, kui kõik järgmised tingimused on täidetud.
-
-| Hindamistingimus | Mida kontrollitakse? |
-| --- | --- |
-| **Teema on piiritletud** | Käsitletud on ühte valitud operatsioonisüsteemi kokkulepitud piirides. |
-| **Neli arengupunkti** | Olemas on esimene väljalase, kaks erinevat olulist muutust ja praegune stabiilne versioon. |
-| **Ajaline järjestus** | Punktid on varasemast hilisemani ning ajatähised vastavad kirjeldatud sündmustele. |
-| **Muutuste tähendus** | Kahe valitud muutuse juures on selgitatud nii muudatus kui ka selle mõju kasutajale. |
-| **Praegune versioon** | Versioon on kontrollitud ametlikust allikast ja kontrollimise kuupäev on märgitud. |
-| **Kasutusnäide** | Kirjeldatud on konkreetset olukorda, kasutajat ja süsteemi sobivuse põhjendust. |
-| **Allikad ja sõnastus** | Vähemalt kaks allikat on lingitud, neist üks ametlik; selgitused on kirjutatud oma sõnadega. |
-| **Esitamine** | Üks loetav PDF- või DOCX-fail on esitatud Moodle'isse. |
-
-!!! success "Kontrolli enne esitamist"
-
-    - Kas minu tabelis on täpselt neli arengupunkti?
-    - Kas kaks keskmist punkti kirjeldavad sisulisi muutusi, mitte ainult versiooninumbreid?
-    - Kas põhjendasin, miks muutused kasutajale olulised olid?
-    - Kas praeguse versiooni juures on kontrollimise kuupäev?
-    - Kas kasutusnäide ja allikate lingid on olemas?
-
----
-*Ülesande koostaja: Priit Paap, 2026*
+- käsitletud on üht valitud operatsioonisüsteemi;
+- ajajoonel on vähemalt kuus nõutud verstaposti õiges ajalises järjestuses;
+- iga verstaposti juures on aeg, nimetus ja lühikirjeldus;
+- uusim stabiilne versioon on nimetatud koos andmete kontrollimise kuupäevaga;
+- vastatud on mõlemale küsimusele;
+- kasutatud on vähemalt kahte allikat, sealhulgas üht ametlikku allikat, ning allikate pealkirjad ja lingid on esitatud;
+- töö on esitatud loetava PDF-faili või lingina.
