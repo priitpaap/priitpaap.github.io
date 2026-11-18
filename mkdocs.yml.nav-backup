@@ -130,4 +130,4 @@ nav:
 - Mitmesugust: []
 extra:
   mkcraft:
-    export_theme: rosepine
+    export_theme: nord
