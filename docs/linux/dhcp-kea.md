@@ -282,7 +282,7 @@ Vabasta kliendi liising ja hangi aadress uuesti. Reserveeringuga klient peab nü
 
 ## 6. Sisevõrgu DNS-i lisamine hiljem
 
-Esialgne seadistus töötab ilma domeenisufiksita. Kui seadistad hiljem BINDi juhendi järgi DNS-serveri aadressil `10.100.0.2`, asenda alamvõrgu `option-data` loend järgmisega:
+Esialgne seadistus töötab ilma domeenisufiksita. Kui seadistad hiljem BINDi juhendi järgi DNS-serveri näiteks aadressil `10.100.0.2`, asenda alamvõrgu `option-data` loend järgmisega:
 
 ```text
 "option-data": [
@@ -292,7 +292,7 @@ Esialgne seadistus töötab ilma domeenisufiksita. Kui seadistad hiljem BINDi ju
 ],
 ```
 
-Domeenisufiksi edastamine ise DNS-tsooni ei loo. Pärast muudatust kontrolli seadistust, taaskäivita DHCP-teenus ja uuenda kliendi liisingut.
+Domeenisufiksi edastamine ise DNS-tsooni ei loo.kliendi liisingut.
 
 ---
 
