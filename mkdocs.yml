@@ -107,8 +107,7 @@ nav:
     - Logid Linuxis: linux/logid-linuxis.md
     - Süsteemi monitooring: linux/systeemi-monitooring.md
   - Linuxi serverid ja teenused:
-    - DHCP serveri seadistamine: linux/dhcp-isc.md
-    - DNS serveri seadistamine: linux/dns.md
+    - DHCP serveri seadistamine: linux/dhcp-kea.md
 - Automatiseerimine:
   - Ansible:
     - Ansible ülevaade: ansible/ansibleintro.md
