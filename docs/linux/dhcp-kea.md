@@ -175,13 +175,23 @@ nano /etc/kea/kea-dhcp4.conf
 
 ## 3. Teenuse käivitamine ja kontrollimine
 
-Salvesta fail ja kontrolli seadistust:
+Salvesta fail ja kontrolli seadistust Kea teenuse kasutajana `_kea`:
 
 ```bash
-kea-dhcp4 -t /etc/kea/kea-dhcp4.conf
+sudo -u _kea kea-dhcp4 -t /etc/kea/kea-dhcp4.conf
 ```
 
 Veateate korral paranda viga enne jätkamist. Edukas kontroll ei tõesta veel teenuse toimimist võrgus.
+
+!!! info "Kontrolli käivitamise õigused"
+
+    Käivita kontroll kasutajana `_kea`. Selles Debian 13 laborikeskkonnas andis kontroll
+    root-kasutajana veateate `Unable to open file`, kuid kasutajana `_kea` sai faili lugeda.
+    Root-kasutajana ilma `sudo` käsuta saab kasutada:
+
+    ```bash
+    runuser -u _kea -- kea-dhcp4 -t /etc/kea/kea-dhcp4.conf
+    ```
 
 Taaskäivita teenus, luba automaatkäivitus ja kontrolli olekut:
 
@@ -266,7 +276,7 @@ Näite `.144` jääb dünaamilisest vahemikust välja. Kea lubab vaikeseadistuse
 Kontrolli seadistust ja eduka kontrolli järel taaskäivita teenus:
 
 ```bash
-kea-dhcp4 -t /etc/kea/kea-dhcp4.conf
+sudo -u _kea kea-dhcp4 -t /etc/kea/kea-dhcp4.conf
 systemctl restart kea-dhcp4-server
 ```
 
