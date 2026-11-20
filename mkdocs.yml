@@ -108,6 +108,7 @@ nav:
     - Süsteemi monitooring: linux/systeemi-monitooring.md
   - Linuxi serverid ja teenused:
     - DHCP serveri seadistamine: linux/dhcp-kea.md
+    - DNS serveri seadistamine: linux/dns.md
 - Automatiseerimine:
   - Ansible:
     - Ansible ülevaade: ansible/ansibleintro.md
