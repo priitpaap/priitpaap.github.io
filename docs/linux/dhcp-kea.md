@@ -81,21 +81,13 @@ Juhendis kasutatav võrk:
 | Printerile reserveeritav aadress | `10.100.0.144` |
 | Domeenisufiks | Esialgu ei määrata |
 
-!!! warning "Kui samas masinas töötas ISC DHCP"
-
-    Peata vana teenus ja eemalda see automaatkäivitusest enne Kea käivitamist:
-
-    ```bash
-    systemctl disable --now isc-dhcp-server
-    ```
-
 ---
 
 ## 1. Tarkvara paigaldamine
 
 ```bash
-apt update
-apt install kea-dhcp4-server
+sudo apt update
+sudo apt install kea-dhcp4-server
 ```
 
 Enne seadistamist ei pruugi teenus käivituda ega klientidele aadresse jagada.
@@ -107,13 +99,13 @@ Enne seadistamist ei pruugi teenus käivituda ega klientidele aadresse jagada.
 Tee enne esimest muutmist algsest failist varukoopia:
 
 ```bash
-cp -a /etc/kea/kea-dhcp4.conf /etc/kea/kea-dhcp4.conf.algne
+sudo cp -a /etc/kea/kea-dhcp4.conf /etc/kea/kea-dhcp4.conf.algne
 ```
 
 Ava fail:
 
 ```bash
-nano /etc/kea/kea-dhcp4.conf
+sudo nano /etc/kea/kea-dhcp4.conf
 ```
 
 **Asenda faili kogu sisu järgmise näitega.** Seejärel kohanda liidese nimi ja võrgu väärtused oma laborile.
@@ -192,9 +184,9 @@ Veateate korral paranda viga enne jätkamist. Edukas kontroll ei tõesta veel te
 Taaskäivita teenus, luba automaatkäivitus ja kontrolli olekut:
 
 ```bash
-systemctl restart kea-dhcp4-server
-systemctl enable kea-dhcp4-server
-systemctl status kea-dhcp4-server --no-pager
+sudo systemctl restart kea-dhcp4-server
+sudo systemctl enable kea-dhcp4-server
+sudo systemctl status kea-dhcp4-server --no-pager
 ```
 
 Teenus peab olema olekus **active (running)**.
@@ -204,7 +196,7 @@ Teenus peab olema olekus **active (running)**.
     Vaata logi:
 
     ```bash
-    journalctl -u kea-dhcp4-server -b -n 50 --no-pager
+    sudo journalctl -u kea-dhcp4-server -b -n 50 --no-pager
     ```
 
     Kontrolli sulge ja komasid, liidese nime ning liidese IPv4-aadressi.
@@ -229,7 +221,7 @@ Teenus peab olema olekus **active (running)**.
 Serveris saad liisinguid vaadata käsuga:
 
 ```bash
-less /var/lib/kea/kea-leases4.csv
+sudo less /var/lib/kea/kea-leases4.csv
 ```
 
 Fail võib sisaldada sama aadressi varasemaid kirjeid; viimane kirjeldab viimast salvestatud olekut. Ära muuda seda töötava teenuse ajal käsitsi.
@@ -237,7 +229,7 @@ Fail võib sisaldada sama aadressi varasemaid kirjeid; viimane kirjeldab viimast
 !!! tip "Logi jälgimine"
 
     ```bash
-    journalctl -u kea-dhcp4-server -f
+    sudo journalctl -u kea-dhcp4-server -f
     ```
 
     INFO-tase näitab teenuse põhisündmusi ja vigu; kõiki DORA-sõnumeid seal ei kuvata.
@@ -273,7 +265,7 @@ Kontrolli seadistust ja eduka kontrolli järel taaskäivita teenus:
 
 ```bash
 sudo -u _kea kea-dhcp4 -t /etc/kea/kea-dhcp4.conf
-systemctl restart kea-dhcp4-server
+sudo systemctl restart kea-dhcp4-server
 ```
 
 Vabasta kliendi liising ja hangi aadress uuesti. Reserveeringuga klient peab nüüd saama aadressi **`10.100.0.144`**. Serveri taaskäivitamine üksi kliendi kehtivat liisingut kohe ei muuda.
