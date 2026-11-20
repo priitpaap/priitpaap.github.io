@@ -6,6 +6,7 @@ icon: material/debian
 
 Juhendis kasutatav operatsioonisüsteem: **Debian 13**  
 Juhend käsitleb **DHCPv4** seadistamist paketiga `kea-dhcp4-server`.
+
 Kasutame lühikest näidiskonfi ja lisame sellele hiljem aadressireserveeringu.
 
 Selles juhendis:
@@ -185,13 +186,8 @@ Veateate korral paranda viga enne jätkamist. Edukas kontroll ei tõesta veel te
 
 !!! info "Kontrolli käivitamise õigused"
 
-    Käivita kontroll kasutajana `_kea`. Selles Debian 13 laborikeskkonnas andis kontroll
-    root-kasutajana veateate `Unable to open file`, kuid kasutajana `_kea` sai faili lugeda.
-    Root-kasutajana ilma `sudo` käsuta saab kasutada:
-
-    ```bash
-    runuser -u _kea -- kea-dhcp4 -t /etc/kea/kea-dhcp4.conf
-    ```
+    Käivita kontroll kasutajana `_kea`. Selles Debian 13 laborikeskkonnas annab lihtsalt kontroll
+    root-kasutajana muidu veateate `Unable to open file`
 
 Taaskäivita teenus, luba automaatkäivitus ja kontrolli olekut:
 
