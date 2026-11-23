@@ -2,7 +2,7 @@
 icon: material/debian
 ---
 
-# Veebiserver ja WordPress LAMP-platvormil
+# Veebiserveri seadistamine koos Wordpressiga
 
 Juhendis kasutatav operatsioonisüsteem: **Debian 13**  
 Veebilehe aadress: **`http://www.firma.lan`**
@@ -142,8 +142,21 @@ GRANT ALL PRIVILEGES ON wordpress.* TO 'wpuser'@'localhost';
 EXIT;
 ```
 
-`wpuser` saab õigused ainult `wordpress` andmebaasile. `localhost` tähendab siin, et kasutaja ühendub samast masinast. WordPress ei kasuta andmebaasiga suhtlemiseks root-kontot.
+SQL-käskude selgitus
 
+| Käsk | Mida see teeb? |
+|---|---|
+| `CREATE DATABASE wordpress ...;` | Loob andmebaasi nimega `wordpress`. `utf8mb4` võimaldab salvestada täpitähti ja emotikone. `utf8mb4_unicode_ci` määrab teksti võrdlemise ja sortimise reeglid; `ci` tähendab, et suur- ja väiketähti võrdlemisel ei eristata. |
+| `CREATE USER 'wpuser'@'localhost' ...;` | Loob andmebaasikasutaja `wpuser`, kes saab ühenduda samast serverist (`localhost`). `IDENTIFIED BY` määrab kasutaja parooli – asenda näidistekst enda valitud parooliga. |
+| `GRANT ALL PRIVILEGES ON wordpress.* ...;` | Annab kasutajale `wpuser` kõik õigused andmebaasis `wordpress`. Tärn tähendab kõiki selle andmebaasi tabeleid. Teistele andmebaasidele see käsk õigusi ei anna. |
+| `EXIT;` | Väljub MariaDB käsurealt tagasi Linuxi terminali. |
+
+!!! info "Andmebaasi kasutaja"
+
+    `wpuser` on WordPressi ühendus andmebaasiga. See ei ole Linuxi kasutaja ega
+    WordPressi haldusliidese konto. SQL-lausete lõpus olev semikoolon `;`
+    tähistab lause lõppu.
+    
 ---
 
 ## 4. WordPressi failide paigaldamine
@@ -281,7 +294,13 @@ Sisesta andmebaasi ühenduse andmed:
 | Andmebaasi server | `localhost` |
 | Tabelite eesliide | Jäta vaikimisi `wp_`. |
 
-Jätka paigaldusega. Määra veebilehe pealkiri ning loo **WordPressi administraatori kasutaja**, parool ja e-posti aadress. See on veebilehe halduskonto, mis erineb MariaDB kasutajast `wpuser`.
+Jätka paigaldusega. Määra veebilehe pealkiri ning loo **WordPressi administraatori kasutaja**, parool (turvaline parool haldusliidese jaoks) ja e-posti aadress. See on veebilehe halduskonto, mis erineb MariaDB kasutajast `wpuser`.
+
+!!! info "WordPressi seadistusfail"
+
+    Sisestatud andmebaasi nimi, kasutaja, parool ja serveri aadress salvestatakse
+    faili `/var/www/wordpress/wp-config.php`. Paigaldaja loob selle automaatselt.
+    Kui hiljem on vaja seadistusi muuta, saab seda teha sellest failist.
 
 Pärast paigaldamist logi haldusliidesesse:
 
@@ -289,15 +308,7 @@ Pärast paigaldamist logi haldusliidesesse:
 
 ---
 
-## 8. Tulemuse kontrollimine
-
-1. Loo WordPressis uus leht pealkirjaga **Minu laboriveeb** ja avalda see.
-2. Lisa lehele pilt meediateegist või laadi üks pilt üles.
-3. Vali seadetes **Püsiviited / Permalinks → Postituse nimi / Post name** ja salvesta.
-4. Ava avaldatud leht kliendi brauseris. Kontrolli, et sisu ja pilt kuvatakse ning püsiviide töötab.
-5. Logi haldusliidesest välja ja kontrolli lehe avalikku vaadet.
-
-### Kui midagi ei tööta
+## Kui midagi ei tööta
 
 | Probleem | Mida kontrollida? |
 |---|---|
@@ -305,7 +316,6 @@ Pärast paigaldamist logi haldusliidesesse:
 | Kuvatakse Apache'i vaikimisi leht | `a2ensite`, `a2dissite`, õige veebiserveri aadress ja Apache'i taaskäivitus. |
 | Andmebaasiühenduse viga | MariaDB töö, andmebaasi nimi, `wpuser` parool ja õigused. |
 | Püsiviide annab 404-vea | `rewrite` moodul, `AllowOverride FileInfo` ning püsiviidete uuesti salvestamine. |
-| Pilti ei saa üles laadida | Kataloogi `/var/www/wordpress/wp-content` omaniku- ja kirjutamisõigused. |
 
 Apache'i teenuse logi:
 
