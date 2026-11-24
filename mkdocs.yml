@@ -91,7 +91,7 @@ nav:
     - Linuxi ülesehitus ja töökeskkond: 
         linux/linuxi-ulesehitus-ja-tookeskkond.md
     - Linuxi failhaldus ja baaskäsud: linux/failihalduse-baaskasud.md
-    - Linuxi katalogipuu ja failisusteemi alused: 
+    - Linuxi kataloogipuu ja failisusteemi alused: 
         linux/kataloogipuu-ja-failisusteemi-alused.md
     - Linuxi kasutajate haldus: linux/linuxi-kasutajate-haldus.md
     - Linuxi failiõigused: linux/linuxi-failioigused.md

@@ -108,7 +108,7 @@ sudo nano /etc/bind/named.conf.options
 
 Server vastab oma tsoonide päringutele ise. Oma tsoonidest väljapoole jäävate nimede päringud, mille vastust vahemälus pole, edastab ta välisele DNS-serverile.
 
-**Mall **– asenda X oma DNS-serveri aadressiga
+**Mall** – asenda X oma DNS-serveri aadressiga
 
 ```text
 options {
