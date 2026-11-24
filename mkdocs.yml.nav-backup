@@ -109,6 +109,7 @@ nav:
   - Linuxi serverid ja teenused:
     - DHCP serveri seadistamine: linux/dhcp-kea.md
     - DNS serveri seadistamine: linux/dns.md
+    - Veebiserveri seadistamine koos Wordpressiga: linux/webserver.md
 - Automatiseerimine:
   - Ansible:
     - Ansible ülevaade: ansible/ansibleintro.md
