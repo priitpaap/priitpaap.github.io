@@ -243,7 +243,7 @@ Paigalda administraatorina klienditööriistad:
 
 ```bash
 apt update
-apt tarkvara smbclient gvfs-backends
+apt install smbclient gvfs-backends
 ```
 
 `smbclient` võimaldab testida terminalis. `gvfs-backends` lisab SMB toe näiteks Thunari ja GNOME'i failihaldurile. `cifs-utils` on vajalik siis, kui soovid jagamise käsuga `mount` Linuxi kataloogipuu külge haakida; selles juhendis seda ei kasutata.
